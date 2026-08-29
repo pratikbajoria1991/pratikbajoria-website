@@ -1,0 +1,33 @@
+# Pratik Bajoria — AI Implementation for Business
+
+> Pratik Bajoria is a Chartered Accountant and ex-Big 4 AI implementation consultant helping companies create measurable P&L impact.
+
+## Primary services
+
+- AI Opportunity Audit: workflow mapping, use-case scoring and a prioritised 90-day roadmap.
+- Workflow Automation: production systems, document agents, WhatsApp/email automation and business-system integrations.
+- Finance & Compliance AI: reconciliation, month-end close, GST, TDS, MIS and audit-ready controls.
+- Team Enablement: workshops, prompt libraries, SOPs and AI usage policy.
+- Fractional AI Leadership: roadmap ownership, governance, vendor selection and reporting.
+- AI Product Advisory: architecture, model choices, pricing and go-to-market for AI products.
+
+## Process
+
+Diagnose → Prioritise → Build → Embed.
+
+## About
+
+Pratik works from India with business leaders in India, the United States, the United Kingdom and globally. He is also the founder of Findost, an AI-powered wealth management platform.
+
+## Contact
+
+- Website: https://pratikbajoria.com/
+- LinkedIn: https://www.linkedin.com/in/pratik-bajoria-6288b1119/
+- WhatsApp: https://api.whatsapp.com/send?phone=919804182483
+- Email: mailto:hello@pratikbajoria.in
+- Findost: https://findost.io
+
+## Editorial policy
+
+Insights are practical, implementation-focused and may contain disclosed affiliate links. Affiliate recommendations are editorially independent.
+
