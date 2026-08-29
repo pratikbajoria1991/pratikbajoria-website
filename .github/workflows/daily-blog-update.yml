@@ -1,0 +1,48 @@
+name: Daily Blog Update
+
+on:
+  schedule:
+    # Run every day at 08:00 UTC (2:00 AM CST)
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-blog:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Generate daily editorial draft
+        run: node scripts/generate-daily-blog.js
+      
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Blog Update Bot"
+          git add public/blog-posts.json
+          git commit -m "Daily blog post update - $(date +%Y-%m-%d)" || echo "No changes to commit"
+          git push
+
+  deploy:
+    needs: update-blog
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy static site to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          command: pages deploy public --project-name=${{ vars.CLOUDFLARE_PAGES_PROJECT }} --branch=main
+
