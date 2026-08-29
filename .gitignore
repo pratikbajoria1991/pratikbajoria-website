@@ -1,0 +1,12 @@
+node_modules/
+.env
+.env.local
+.DS_Store
+*.log
+dist/
+build/
+.cache/
+.claude/remote/.oauth_token
+.claude/remote/.session_ingress_token
+wrangler.toml
+
