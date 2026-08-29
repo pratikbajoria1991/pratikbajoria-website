@@ -1,0 +1,7 @@
+{
+  "name": "pratikbajoria-com",
+  "pages_build_output_dir": "./public",
+  "compatibility_date": "2026-08-30",
+  "vars": { "ENVIRONMENT": "production" }
+}
+
