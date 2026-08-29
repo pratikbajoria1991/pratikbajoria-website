@@ -8,7 +8,7 @@ const esc = (value = '') => String(value).replace(/[&<>'"]/g, (char) => ({ '&': 
 const formatDate = (value) => new Intl.DateTimeFormat('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }).format(new Date(value));
 
 function storyCard(post) {
-  const target = post.url && post.url !== '#' ? post.url : `#${esc(post.slug || '')}`;
+  const target = post.url && post.url !== '#' ? post.url : '#insights';
   return `<article class="story-card"><a href="${target}" aria-label="Read ${esc(post.title)}"><div class="story-image"><img loading="lazy" src="${esc(post.image)}" alt="" /></div><div class="story-meta"><span>${esc(post.category || 'AI implementation')}</span><span>${formatDate(post.date)} · ${esc(post.readTime || 6)} min</span></div><h3 class="story-title">${esc(post.title)}</h3><p class="story-excerpt">${esc(post.excerpt || '')}</p></a></article>`;
 }
 
