@@ -1,0 +1,16 @@
+{
+  "name": "pratikbajoria-website",
+  "version": "1.0.0",
+  "description": "Pratik Bajoria's world-class affiliate blog with Cloudflare Pages deployment",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'Build complete - static site ready for deployment'",
+    "dev": "echo 'Development mode not configured - use static files directly'",
+    "test": "echo 'No tests configured'"
+  },
+  "keywords": ["blog", "affiliate", "cloudflare"],
+  "author": "Pratik Bajoria",
+  "license": "MIT",
+  "devDependencies": {}
+}
+
