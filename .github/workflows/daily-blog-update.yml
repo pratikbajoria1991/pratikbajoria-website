@@ -2,7 +2,7 @@ name: Daily Blog Update
 
 on:
   schedule:
-    # Run every day at 08:00 UTC (2:00 AM CST)
+    # Run every day at 08:00 UTC (13:30 IST)
     - cron: '0 8 * * *'
   workflow_dispatch:
 
@@ -20,10 +20,7 @@ jobs:
         with:
           node-version: '18'
       
-      - name: Install dependencies
-        run: npm install
-      
-      - name: Generate daily editorial draft
+      - name: Generate daily AI implementation article
         run: node scripts/generate-daily-blog.js
       
       - name: Commit and push changes
