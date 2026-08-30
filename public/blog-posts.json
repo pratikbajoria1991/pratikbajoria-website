@@ -1,6 +1,94 @@
 [
-  {"id":"2026-02-18-corporate-ai-pilots","title":"Why 70% of Corporate AI Pilots Never Reach Production","slug":"corporate-ai-pilots","date":"2026-02-18","author":"Pratik Bajoria","category":"AI adoption","readTime":8,"image":"https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=85","excerpt":"The failure is almost never technical. It is scoping, ownership and change management — and there is a repeatable pattern to avoiding all three.","content":"The strongest AI programs start with a measurable workflow, a clear owner and adoption designed into the build. This note breaks down the operating pattern that turns a pilot into a production capability.","keywords":["AI implementation","AI adoption","business automation"],"affiliate":{"disclosure":"This article may contain affiliate links. Recommendations remain editorially independent.","links":[]}},
-  {"id":"2026-02-10-finance-highest-roi","title":"The Finance Function is AI's Highest-ROI Starting Point","slug":"finance-highest-roi","date":"2026-02-10","author":"Pratik Bajoria","category":"Finance & compliance","readTime":6,"image":"https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=85","excerpt":"Structured data, repetitive judgement, measurable output. A CA’s view on why reconciliation and close automation beat chatbots every time.","content":"Finance teams have the structured data, recurring workflows and measurable controls that make an excellent first AI deployment. Start with reconciliation, close and reporting before chasing novelty.","keywords":["finance AI","reconciliation automation","compliance"],"affiliate":{"disclosure":"This article may contain affiliate links. Recommendations remain editorially independent.","links":[]}},
-  {"id":"2026-01-28-build-vs-buy-ai-tooling","title":"Build vs. Buy: A Decision Framework for AI Tooling","slug":"build-vs-buy-ai-tooling","date":"2026-01-28","author":"Pratik Bajoria","category":"AI strategy","readTime":7,"image":"https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=85","excerpt":"When to license a vendor, when to build in-house, and the hidden switching costs most leadership teams discover far too late.","content":"The right choice depends on differentiation, data sensitivity, time to value and switching costs. A disciplined framework helps leadership teams avoid both premature custom development and expensive lock-in.","keywords":["AI tooling","build vs buy","AI strategy"],"affiliate":{"disclosure":"This article may contain affiliate links. Recommendations remain editorially independent.","links":[]}}
+  {
+    "id": "2026-08-30-the-finance-function-is-ai-s-highest-roi-starting-point",
+    "title": "The Finance Function Is AI’s Highest-ROI Starting Point",
+    "slug": "2026-08-30-the-finance-function-is-ai-s-highest-roi-starting-point",
+    "date": "2026-08-30",
+    "author": "Pratik Bajoria",
+    "category": "Finance & compliance",
+    "readTime": 6,
+    "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=85",
+    "excerpt": "Structured data, repetitive judgement and measurable output make finance the most defensible place to begin an AI program.",
+    "content": "Start with reconciliation, close, reporting and document-heavy controls. These workflows are repetitive enough to automate, measurable enough to prove and important enough to fund the next deployment.",
+    "keywords": [
+      "finance AI",
+      "reconciliation automation",
+      "AI implementation"
+    ],
+    "affiliate": {
+      "disclosure": "This article may contain affiliate links. Recommendations remain editorially independent.",
+      "links": [
+        {
+          "partner": "REPLACE_WITH_APPROVED_PARTNER",
+          "label": "Approved partner recommendation",
+          "url": "",
+          "commission_model": "To be confirmed",
+          "status": "pending-approval"
+        }
+      ]
+    }
+  },
+  {
+    "id": "2026-02-18-corporate-ai-pilots",
+    "title": "Why 70% of Corporate AI Pilots Never Reach Production",
+    "slug": "corporate-ai-pilots",
+    "date": "2026-02-18",
+    "author": "Pratik Bajoria",
+    "category": "AI adoption",
+    "readTime": 8,
+    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=85",
+    "excerpt": "The failure is almost never technical. It is scoping, ownership and change management — and there is a repeatable pattern to avoiding all three.",
+    "content": "The strongest AI programs start with a measurable workflow, a clear owner and adoption designed into the build. This note breaks down the operating pattern that turns a pilot into a production capability.",
+    "keywords": [
+      "AI implementation",
+      "AI adoption",
+      "business automation"
+    ],
+    "affiliate": {
+      "disclosure": "This article may contain affiliate links. Recommendations remain editorially independent.",
+      "links": []
+    }
+  },
+  {
+    "id": "2026-02-10-finance-highest-roi",
+    "title": "The Finance Function is AI's Highest-ROI Starting Point",
+    "slug": "finance-highest-roi",
+    "date": "2026-02-10",
+    "author": "Pratik Bajoria",
+    "category": "Finance & compliance",
+    "readTime": 6,
+    "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=85",
+    "excerpt": "Structured data, repetitive judgement, measurable output. A CA’s view on why reconciliation and close automation beat chatbots every time.",
+    "content": "Finance teams have the structured data, recurring workflows and measurable controls that make an excellent first AI deployment. Start with reconciliation, close and reporting before chasing novelty.",
+    "keywords": [
+      "finance AI",
+      "reconciliation automation",
+      "compliance"
+    ],
+    "affiliate": {
+      "disclosure": "This article may contain affiliate links. Recommendations remain editorially independent.",
+      "links": []
+    }
+  },
+  {
+    "id": "2026-01-28-build-vs-buy-ai-tooling",
+    "title": "Build vs. Buy: A Decision Framework for AI Tooling",
+    "slug": "build-vs-buy-ai-tooling",
+    "date": "2026-01-28",
+    "author": "Pratik Bajoria",
+    "category": "AI strategy",
+    "readTime": 7,
+    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=85",
+    "excerpt": "When to license a vendor, when to build in-house, and the hidden switching costs most leadership teams discover far too late.",
+    "content": "The right choice depends on differentiation, data sensitivity, time to value and switching costs. A disciplined framework helps leadership teams avoid both premature custom development and expensive lock-in.",
+    "keywords": [
+      "AI tooling",
+      "build vs buy",
+      "AI strategy"
+    ],
+    "affiliate": {
+      "disclosure": "This article may contain affiliate links. Recommendations remain editorially independent.",
+      "links": []
+    }
+  }
 ]
-
