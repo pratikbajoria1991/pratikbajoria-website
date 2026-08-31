@@ -153,6 +153,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   const year = document.querySelector('#year');
   if (year) year.textContent = new Date().getFullYear();
 
+  // Bind voice controls before any awaited content load so the floating agent
+  // is interactive even if the featured-post request is slow or unavailable.
+  setupVoiceAgent();
+
   const grid = document.querySelector('#featured-grid');
   if (grid) grid.innerHTML = (await loadPosts()).map(storyCard).join('');
 
@@ -166,8 +170,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.querySelectorAll('[data-close-modal]').forEach((button) => button.addEventListener('click', () => closeModal(button.closest('.modal-backdrop'))));
   document.querySelectorAll('.modal-backdrop').forEach((modal) => modal.addEventListener('click', (event) => { if (event.target === modal) closeModal(modal); }));
   document.addEventListener('keydown', (event) => { if (event.key === 'Escape') document.querySelectorAll('.modal-backdrop:not([hidden])').forEach(closeModal); });
-
-  setupVoiceAgent();
 
   subscribeForm?.addEventListener('submit', async (event) => {
     event.preventDefault();
