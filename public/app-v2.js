@@ -39,13 +39,91 @@ function answerFor(question) {
   return match ? match.answer : 'I can help with services, the engagement process, pricing, sectors, Pratik’s background, Findost, or how to get in touch.';
 }
 
-function addChatMessage(type, text) {
-  const message = document.createElement('div');
-  message.className = `chat-msg ${type}`;
-  message.textContent = text;
-  const messages = document.querySelector('#chat-messages');
-  messages.appendChild(message);
-  messages.scrollTop = messages.scrollHeight;
+function setupVoiceAgent() {
+  const panel = document.querySelector('#voice-panel');
+  const toggle = document.querySelector('[data-toggle-voice]');
+  const close = document.querySelector('[data-close-voice]');
+  const listen = document.querySelector('[data-voice-listen]');
+  const status = document.querySelector('#voice-status');
+  const transcript = document.querySelector('#voice-transcript');
+  const response = document.querySelector('#voice-response');
+  if (!panel || !toggle || !listen || !status || !transcript || !response) return;
+
+  const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const canSpeak = 'speechSynthesis' in window;
+  let recognition = null;
+  let listening = false;
+
+  const setPanel = (open) => {
+    panel.hidden = !open;
+    if (!open && listening && recognition) recognition.stop();
+    if (!open && canSpeak) window.speechSynthesis.cancel();
+    if (open && !Recognition) status.textContent = 'Voice input is not available in this browser. Please use Chrome or Edge, or contact Pratik on WhatsApp.';
+  };
+
+  const setListening = (active) => {
+    listening = active;
+    panel.classList.toggle('is-listening', active);
+    listen.classList.toggle('is-listening', active);
+    listen.querySelector('span').textContent = active ? 'Listening…' : 'Start listening';
+    if (active) status.textContent = 'Listening — ask one clear question, then pause.';
+  };
+
+  const speak = (text) => {
+    if (!canSpeak) return;
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-IN';
+    utterance.rate = 0.96;
+    utterance.pitch = 1;
+    window.speechSynthesis.speak(utterance);
+  };
+
+  const answer = (question) => {
+    const text = answerFor(question);
+    transcript.textContent = `You asked: ${question}`;
+    response.textContent = text;
+    status.textContent = 'Answer ready — tap the microphone to ask another question.';
+    speak(text);
+  };
+
+  if (Recognition) {
+    recognition = new Recognition();
+    recognition.lang = 'en-IN';
+    recognition.continuous = false;
+    recognition.interimResults = true;
+    recognition.maxAlternatives = 1;
+    recognition.onstart = () => setListening(true);
+    recognition.onresult = (event) => {
+      let finalText = '';
+      let interimText = '';
+      for (let index = event.resultIndex; index < event.results.length; index += 1) {
+        const text = event.results[index][0].transcript;
+        if (event.results[index].isFinal) finalText += text;
+        else interimText += text;
+      }
+      transcript.textContent = interimText ? `Hearing: ${interimText}` : transcript.textContent;
+      if (finalText.trim()) answer(finalText.trim());
+    };
+    recognition.onerror = (event) => {
+      setListening(false);
+      const message = event.error === 'not-allowed' ? 'Microphone access was blocked. Allow microphone access in your browser settings and try again.' : 'I could not hear that clearly. Please try again.';
+      status.textContent = message;
+    };
+    recognition.onend = () => setListening(false);
+  }
+
+  toggle.addEventListener('click', () => setPanel(panel.hidden));
+  close?.addEventListener('click', () => setPanel(false));
+  listen.addEventListener('click', () => {
+    if (!recognition) return;
+    if (listening) recognition.stop();
+    else {
+      transcript.textContent = 'Listening for your question…';
+      response.textContent = 'Your answer will appear here.';
+      try { recognition.start(); } catch { status.textContent = 'The microphone is already starting. Please try again in a moment.'; }
+    }
+  });
 }
 
 function openModal(id) { document.querySelector(`#${id}`).hidden = false; document.body.style.overflow = 'hidden'; }
@@ -89,11 +167,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.querySelectorAll('.modal-backdrop').forEach((modal) => modal.addEventListener('click', (event) => { if (event.target === modal) closeModal(modal); }));
   document.addEventListener('keydown', (event) => { if (event.key === 'Escape') document.querySelectorAll('.modal-backdrop:not([hidden])').forEach(closeModal); });
 
-  const chatPanel = document.querySelector('#chat-panel');
-  document.querySelector('[data-toggle-chat]')?.addEventListener('click', () => { chatPanel.hidden = !chatPanel.hidden; if (!chatPanel.hidden) document.querySelector('#chat-input').focus(); });
-  const sendChat = () => { const input = document.querySelector('#chat-input'); const question = input.value.trim(); if (!question) return; addChatMessage('user', question); input.value = ''; window.setTimeout(() => addChatMessage('bot', answerFor(question)), 280); };
-  document.querySelector('[data-send-chat]')?.addEventListener('click', sendChat);
-  document.querySelector('#chat-input')?.addEventListener('keydown', (event) => { if (event.key === 'Enter') sendChat(); });
+  setupVoiceAgent();
 
   subscribeForm?.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -149,3 +223,4 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.querySelector('#generator-output').hidden = false;
   });
 });
+
