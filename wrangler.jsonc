@@ -2,6 +2,13 @@
   "name": "pratikbajoria-com",
   "pages_build_output_dir": "./public",
   "compatibility_date": "2026-08-30",
-  "vars": { "ENVIRONMENT": "production" }
+  "vars": { "ENVIRONMENT": "production" },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "pratikbajoria-leads",
+      "database_id": "8bbf5c13-e2ba-47ce-914e-cabbd8b2566a",
+      "migrations_dir": "migrations"
+    }
+  ]
 }
-
