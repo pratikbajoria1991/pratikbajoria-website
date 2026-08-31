@@ -8,7 +8,7 @@ const esc = (value = '') => String(value).replace(/[&<>'"]/g, (char) => ({ '&': 
 const formatDate = (value) => new Intl.DateTimeFormat('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }).format(new Date(value));
 
 function storyCard(post) {
-  const target = post.url && post.url !== '#' ? post.url : '#insights';
+  const target = post.url && post.url !== '#' ? post.url : `/blog.html?slug=${encodeURIComponent(post.slug || '')}`;
   return `<article class="story-card"><a href="${target}" aria-label="Read ${esc(post.title)}"><div class="story-image"><img loading="lazy" src="${esc(post.image)}" alt="" /></div><div class="story-meta"><span>${esc(post.category || 'AI implementation')}</span><span>${formatDate(post.date)} · ${esc(post.readTime || 6)} min</span></div><h3 class="story-title">${esc(post.title)}</h3><p class="story-excerpt">${esc(post.excerpt || '')}</p></a></article>`;
 }
 
@@ -51,12 +51,37 @@ function addChatMessage(type, text) {
 function openModal(id) { document.querySelector(`#${id}`).hidden = false; document.body.style.overflow = 'hidden'; }
 function closeModal(modal) { modal.hidden = true; document.body.style.overflow = ''; }
 
+function addPrivacyControls(form, label) {
+  if (!form) return;
+  if (!form.querySelector('[name="website"]')) {
+    const honeypot = document.createElement('input');
+    honeypot.type = 'text';
+    honeypot.name = 'website';
+    honeypot.tabIndex = -1;
+    honeypot.autocomplete = 'off';
+    honeypot.setAttribute('aria-hidden', 'true');
+    honeypot.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;opacity:0';
+    form.appendChild(honeypot);
+  }
+  if (!form.querySelector('[name="consent"]')) {
+    const consent = document.createElement('label');
+    consent.className = 'consent-row';
+    consent.innerHTML = `<input type="checkbox" name="consent" required /> <span>${label} I agree to the <a href="/privacy.html" target="_blank" rel="noopener">privacy notice</a>.</span>`;
+    form.appendChild(consent);
+  }
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
   const year = document.querySelector('#year');
   if (year) year.textContent = new Date().getFullYear();
 
   const grid = document.querySelector('#featured-grid');
   if (grid) grid.innerHTML = (await loadPosts()).map(storyCard).join('');
+
+  const bookingForm = document.querySelector('#booking-form');
+  const subscribeForm = document.querySelector('#subscribe-form');
+  addPrivacyControls(bookingForm, 'I agree that Pratik may use these details to respond to my discovery-call request.');
+  addPrivacyControls(subscribeForm, 'I agree to receive the AI Implementation Brief by email.');
 
   document.querySelectorAll('[data-open-booking]').forEach((button) => button.addEventListener('click', () => openModal('booking-modal')));
   document.querySelectorAll('[data-open-generator]').forEach((button) => button.addEventListener('click', () => openModal('generator-modal')));
@@ -70,17 +95,50 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.querySelector('[data-send-chat]')?.addEventListener('click', sendChat);
   document.querySelector('#chat-input')?.addEventListener('keydown', (event) => { if (event.key === 'Enter') sendChat(); });
 
-  document.querySelector('#subscribe-form')?.addEventListener('submit', (event) => { event.preventDefault(); const status = document.querySelector('#form-status'); status.textContent = 'You’re on the list — welcome to the AI Implementation Brief.'; status.classList.add('success'); event.target.reset(); });
-
-  document.querySelector('#booking-form')?.addEventListener('submit', (event) => {
+  subscribeForm?.addEventListener('submit', async (event) => {
     event.preventDefault();
-    const data = new FormData(event.target);
+    const form = event.target;
+    const status = document.querySelector('#form-status');
+    const button = form.querySelector('button[type="submit"]');
+    const data = new FormData(form);
+    button.disabled = true;
+    button.textContent = 'Saving…';
+    status.classList.remove('success', 'error');
+    try {
+      const response = await fetch('/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: data.get('email'), consent: data.get('consent') === 'on', website: data.get('website'), pageUrl: window.location.href, referrer: document.referrer || 'direct' }) });
+      if (!response.ok) throw new Error('Unable to save subscriber');
+      status.textContent = 'You’re on the list — welcome to the AI Implementation Brief.';
+      status.classList.add('success');
+      form.reset();
+    } catch {
+      status.textContent = 'We couldn’t save that automatically. Please email hello@pratikbajoria.in to subscribe.';
+      status.classList.add('error');
+    } finally {
+      button.disabled = false;
+      button.innerHTML = 'Subscribe <span>↗</span>';
+    }
+  });
+
+  bookingForm?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const data = new FormData(form);
+    const submitButton = form.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.textContent = 'Saving request…';
+    let saved = false;
+    try {
+      const response = await fetch('/api/discovery', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: data.get('name'), email: data.get('email'), company: data.get('company'), phone: data.get('phone'), challenge: data.get('challenge'), consent: data.get('consent') === 'on', website: data.get('website'), pageUrl: window.location.href, referrer: document.referrer || 'direct' }) });
+      saved = response.ok;
+    } catch { saved = false; }
     const subject = encodeURIComponent(`Discovery call request from ${data.get('name')}`);
     const body = encodeURIComponent(`Name: ${data.get('name')}\nEmail: ${data.get('email')}\nCompany: ${data.get('company')}\nPhone: ${data.get('phone') || '—'}\nChallenge: ${data.get('challenge')}`);
     document.querySelector('#booking-email').href = `mailto:hello@pratikbajoria.in?subject=${subject}&body=${body}`;
     document.querySelector('#booking-whatsapp').href = `https://api.whatsapp.com/send?phone=919804182483&text=${encodeURIComponent(`Hi Pratik, I’m ${data.get('name')} from ${data.get('company')}. ${data.get('challenge')}`)}`;
+    document.querySelector('#booking-success p').textContent = saved ? 'Your request has been securely recorded. I’ll come back within one business day with a couple of time slots.' : 'The request could not be saved automatically. Please use email or WhatsApp below so I receive your details.';
     document.querySelector('#booking-form-view').hidden = true;
     document.querySelector('#booking-success').hidden = false;
+    submitButton.disabled = false;
   });
 
   document.querySelector('#generator-form')?.addEventListener('submit', (event) => {
@@ -91,4 +149,3 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.querySelector('#generator-output').hidden = false;
   });
 });
-
