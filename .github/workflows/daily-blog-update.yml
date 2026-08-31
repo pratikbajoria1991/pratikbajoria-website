@@ -24,6 +24,9 @@ jobs:
           node-version: '18'
       
       - name: Generate daily AI implementation article
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
         run: node scripts/generate-daily-blog.js
       
       - name: Commit and push changes
@@ -46,5 +49,4 @@ jobs:
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: pages deploy public --project-name=${{ vars.CLOUDFLARE_PAGES_PROJECT }} --branch=main
-
+          command: pages deploy public --project-name=pratikbajoria-com --branch=main
