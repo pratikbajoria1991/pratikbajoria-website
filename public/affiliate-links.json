@@ -1,0 +1,52 @@
+{
+  "hubspot": {
+    "name": "HubSpot",
+    "category": "CRM and growth",
+    "productUrl": "https://www.hubspot.com/products/crm",
+    "programUrl": "https://www.hubspot.com/partners/affiliates",
+    "affiliateUrl": null
+  },
+  "semrush": {
+    "name": "Semrush",
+    "category": "SEO and market intelligence",
+    "productUrl": "https://www.semrush.com/",
+    "programUrl": "https://www.semrush.com/lp/affiliate-program/en/",
+    "affiliateUrl": null
+  },
+  "getresponse": {
+    "name": "GetResponse",
+    "category": "Email marketing and automation",
+    "productUrl": "https://www.getresponse.com/",
+    "programUrl": "https://www.getresponse.com/affiliate-programs",
+    "affiliateUrl": null
+  },
+  "upmetrics": {
+    "name": "Upmetrics",
+    "category": "Business planning and forecasting",
+    "productUrl": "https://upmetrics.co/",
+    "programUrl": "https://upmetrics.co/affiliate",
+    "affiliateUrl": null
+  },
+  "synder": {
+    "name": "Synder",
+    "category": "Accounting automation",
+    "productUrl": "https://synder.com/",
+    "programUrl": "https://synder.com/affiliate-program/",
+    "affiliateUrl": null
+  },
+  "notion": {
+    "name": "Notion",
+    "category": "Knowledge management and workspace",
+    "productUrl": "https://www.notion.so/product",
+    "programUrl": "https://www.notion.so/affiliates",
+    "affiliateUrl": null
+  },
+  "writesonic": {
+    "name": "Writesonic",
+    "category": "AI search and content workflow",
+    "productUrl": "https://writesonic.com/",
+    "programUrl": "https://affiliates.writesonic.com/",
+    "affiliateUrl": null
+  }
+}
+
