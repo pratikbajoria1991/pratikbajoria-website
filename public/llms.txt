@@ -31,3 +31,19 @@ Pratik works from India with business leaders in India, the United States, the U
 
 Insights are practical, implementation-focused and may contain disclosed affiliate links. Affiliate recommendations are editorially independent.
 
+## Editorial pillars
+
+- AI for Business: implementation, automation, governance and measurable operating impact.
+- Finance & Markets: financial analysis, controls and decision-making education; not investment advice.
+- Business Systems: dashboards, planning, CRM, workflow design and operating cadence.
+- Tool Reviews & Comparisons: practical evaluation of business software, AI tools and automation platforms.
+- CA Insights: accounting, compliance, controls and finance transformation explained for operators.
+
+## Current editorial series
+
+The site publishes a daily series of practical guides for Chartered Accountants, finance professionals, entrepreneurs and business owners. Topics include AI tools for finance, business planning software, accounting automation, CRM, monthly dashboards, SEO research, Notion workflows, lead generation and competitive analysis.
+
+## Affiliate transparency
+
+Product links are provided for independent evaluation. Approved partner links, when active, are marked and may earn a commission at no extra cost to the reader. Investment content is educational and does not constitute financial advice, a recommendation, or a return guarantee.
+
