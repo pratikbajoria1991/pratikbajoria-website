@@ -14,9 +14,12 @@ function storyCard(post) {
 
 async function loadPosts() {
   try {
-    const response = await fetch('/blog-posts.json', { cache: 'no-store' });
-    if (!response.ok) throw new Error('Posts unavailable');
-    const posts = await response.json();
+    const [response, editorialResponse] = await Promise.all([
+      fetch('/blog-posts.json', { cache: 'no-store' }),
+      fetch('/affiliate-articles.json', { cache: 'no-store' })
+    ]);
+    if (!response.ok || !editorialResponse.ok) throw new Error('Posts unavailable');
+    const posts = [...await editorialResponse.json(), ...await response.json()];
     return Array.isArray(posts) && posts.length ? posts.slice(0, 3) : fallbackPosts;
   } catch {
     return fallbackPosts;
