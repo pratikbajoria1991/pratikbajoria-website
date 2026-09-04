@@ -32,7 +32,7 @@ const faq = [
   { terms: ['price', 'pricing', 'cost', 'fee', 'budget'], answer: 'The AI Opportunity Audit is a fixed-fee two-week sprint. Build projects are scoped after the audit, workshops are priced per session, and fractional leadership runs on a monthly retainer.' },
   { terms: ['sector', 'industry', 'financial', 'accounting', 'manufacturing', 'retail', 'healthcare', 'real estate', 'legal', 'saas'], answer: 'Pratik works across financial services, accounting and professional services, manufacturing and distribution, retail and e-commerce, healthcare, real estate, legal and compliance, and SaaS and technology.' },
   { terms: ['findost', 'wealth', 'portfolio', 'investment'], answer: 'Findost is Pratik’s AI-powered wealth management platform at findost.io, with portfolio intelligence, personalised planning, conversational advisory and goal-based tracking.' },
-  { terms: ['contact', 'reach', 'email', 'call', 'whatsapp', 'linkedin', 'book'], answer: 'Use the booking form on this page, message Pratik on WhatsApp, connect on LinkedIn, or email hello@pratikbajoria.in. He aims to reply within one business day.' },
+  { terms: ['contact', 'reach', 'email', 'call', 'whatsapp', 'linkedin', 'book'], answer: 'Use the booking form on this page, message Pratik on WhatsApp, connect on LinkedIn, or email hello@pratikbajoria.com. He aims to reply within one business day.' },
   { terms: ['background', 'experience', 'chartered', 'big 4', 'about'], answer: 'Pratik is a Chartered Accountant with over nine years of post-qualification experience across audit, financial analysis, taxation and business process transformation, including time at a Big-4 firm.' }
 ];
 
@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       status.classList.add('success');
       form.reset();
     } catch {
-      status.textContent = 'We couldn’t save that automatically. Please email hello@pratikbajoria.in to subscribe.';
+      status.textContent = 'We couldn’t save that automatically. Please email hello@pratikbajoria.com to subscribe.';
       status.classList.add('error');
     } finally {
       button.disabled = false;
@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     } catch { saved = false; }
     const subject = encodeURIComponent(`Discovery call request from ${data.get('name')}`);
     const body = encodeURIComponent(`Name: ${data.get('name')}\nEmail: ${data.get('email')}\nCompany: ${data.get('company')}\nPhone: ${data.get('phone') || '—'}\nChallenge: ${data.get('challenge')}`);
-    document.querySelector('#booking-email').href = `mailto:hello@pratikbajoria.in?subject=${subject}&body=${body}`;
+    document.querySelector('#booking-email').href = `mailto:hello@pratikbajoria.com?subject=${subject}&body=${body}`;
     document.querySelector('#booking-whatsapp').href = `https://api.whatsapp.com/send?phone=919804182483&text=${encodeURIComponent(`Hi Pratik, I’m ${data.get('name')} from ${data.get('company')}. ${data.get('challenge')}`)}`;
     document.querySelector('#booking-success p').textContent = saved ? 'Your request has been securely recorded. I’ll come back within one business day with a couple of time slots.' : 'The request could not be saved automatically. Please use email or WhatsApp below so I receive your details.';
     document.querySelector('#booking-form-view').hidden = true;
