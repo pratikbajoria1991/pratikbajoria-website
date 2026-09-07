@@ -30,7 +30,7 @@ async function loadArticle() {
     const catalog = await catalogResponse.json();
     const post = posts.find((item) => item.slug === slug || item.id === slug);
     if (!post) throw new Error('Article not found');
-    const canonical = `https://pratikbajoria.com/blog.html?slug=${encodeURIComponent(post.slug)}`;
+    const canonical = `https://pratikbajoria.com/blog?slug=${encodeURIComponent(post.slug)}`;
     document.title = `${post.title} — Pratik Bajoria`;
     document.querySelector('meta[name="description"]').setAttribute('content', post.excerpt || 'Practical writing on implementing AI inside real businesses.');
     document.querySelector('link[rel="canonical"]').setAttribute('href', canonical);
