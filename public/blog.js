@@ -16,7 +16,7 @@ function renderAffiliateTools(post, catalog) {
     const label = isAffiliate ? `Explore ${tool.name}` : `Visit ${tool.name} official site`;
     const rel = isAffiliate ? 'nofollow sponsored noopener noreferrer' : 'noopener noreferrer';
     return `<a href="${escapeHtml(href)}" target="_blank" rel="${rel}"><strong>${escapeHtml(tool.name)}</strong><span>${escapeHtml(tool.category)}</span><small>${escapeHtml(label)} ↗</small></a>`;
-  }).join('')}</div><p class="article-tool-note">Links marked as partner links may earn a commission at no extra cost to you. Where a partner link is not yet active, this page uses the tool’s official website until the approved tracking URL is configured.</p></aside>`;
+  }).join('')}</div></aside>`;
 }
 
 async function loadArticle() {
@@ -51,7 +51,7 @@ async function loadArticle() {
       keywords: post.keywords || []
     });
     document.head.appendChild(articleSchema);
-    article.innerHTML = `<p class="eyebrow">${escapeHtml(post.category || 'AI implementation')} · ${escapeHtml(post.date || '')} · ${escapeHtml(post.readTime || 7)} min read</p><h1>${escapeHtml(post.title)}</h1><p class="article-dek">${escapeHtml(post.excerpt || '')}</p><div class="article-body">${renderParagraphs(post.content)}</div>${renderAffiliateTools(post, catalog)}<div class="article-sources"><h2>Sources and further reading</h2>${(post.sources || []).map((source) => `<a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.title || source.url)} ↗</a>`).join('')}</div><p class="article-disclosure">${escapeHtml(post.affiliate?.disclosure || '')}</p>`;
+    article.innerHTML = `<p class="eyebrow">${escapeHtml(post.category || 'AI implementation')} · ${escapeHtml(post.date || '')} · ${escapeHtml(post.readTime || 7)} min read</p><h1>${escapeHtml(post.title)}</h1><p class="article-dek">${escapeHtml(post.excerpt || '')}</p><div class="article-body">${renderParagraphs(post.content)}</div>${renderAffiliateTools(post, catalog)}<div class="article-sources"><h2>Sources and further reading</h2>${(post.sources || []).map((source) => `<a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.title || source.url)} ↗</a>`).join('')}</div>`;
   } catch {
     article.innerHTML = '<p class="eyebrow">Insight unavailable</p><h1>This article could not be loaded.</h1><p class="article-dek">Return to the insights index and try another article.</p><p><a class="button button-dark" href="/#insights">Return to insights <span>↗</span></a></p>';
   }
