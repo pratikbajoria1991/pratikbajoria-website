@@ -84,11 +84,18 @@ function setupVoiceAgent() {
   let listening = false;
   const conversation = { lastIntent: 'greeting', turns: [] };
   const voiceUnavailable = !Recognition || !canSpeak;
-  if (fallback) fallback.hidden = !voiceUnavailable;
+  // Keep the typed conversation available even on devices that expose the
+  // speech APIs but have no usable microphone or audio output.
+  if (fallback) fallback.hidden = false;
   if (voiceUnavailable) {
     listen.setAttribute('aria-disabled', 'true');
     listen.title = 'Live voice is not available in this browser';
   }
+
+  const showTextFallback = (message) => {
+    if (fallback) fallback.hidden = false;
+    if (message) status.textContent = message;
+  };
 
   const setPanel = (open) => {
     panel.hidden = !open;
@@ -118,7 +125,7 @@ function setupVoiceAgent() {
       utterance.pitch = 1.02;
       utterance.onstart = () => { status.textContent = 'Disha bol rahi hai…'; };
       utterance.onend = () => { if (!listening) status.textContent = 'Jawab ready hai — follow-up ke liye phir Talk to Disha press kijiye.'; };
-      utterance.onerror = () => { status.textContent = 'Audio output start nahi ho paaya. Neeche type karke Disha se chat kijiye.'; };
+      utterance.onerror = () => { showTextFallback('Audio output start nahi ho paaya. Neeche type karke Disha se chat kijiye.'); };
       window.speechSynthesis.speak(utterance);
     };
     if (window.speechSynthesis.getVoices().length) say();
@@ -156,7 +163,7 @@ function setupVoiceAgent() {
     recognition.onerror = (event) => {
       setListening(false);
       const message = event.error === 'not-allowed' || event.error === 'service-not-allowed' ? 'Microphone permission blocked hai. Browser settings mein pratikbajoria.com ke liye allow karke phir try kijiye.' : event.error === 'audio-capture' ? 'Microphone detect nahi hua. Device mic check karke phir try kijiye.' : event.error === 'no-speech' ? 'Mujhe awaaz nahi mili. Thoda clearly bolkar dobara try kijiye.' : event.error === 'network' ? 'Voice service temporarily unavailable hai. Neeche type karke Disha se chat kijiye.' : 'Main clearly sun nahi paayi. Thoda slowly dobara boliye.';
-      status.textContent = message;
+      showTextFallback(message);
     };
     recognition.onend = () => setListening(false);
   }
@@ -165,8 +172,7 @@ function setupVoiceAgent() {
   close?.addEventListener('click', () => setPanel(false));
   listen.addEventListener('click', () => {
     if (!recognition) {
-      status.textContent = 'Is browser mein microphone voice input available nahi hai. Neeche type karke Disha se chat kijiye.';
-      fallback?.removeAttribute('hidden');
+      showTextFallback('Is browser mein microphone voice input available nahi hai. Neeche type karke Disha se chat kijiye.');
       textInput?.focus();
       return;
     }
