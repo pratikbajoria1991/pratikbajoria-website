@@ -26,20 +26,43 @@ async function loadPosts() {
   }
 }
 
-const faq = [
-  { terms: ['service', 'offer', 'what do you do', 'consult'], answer: 'Pratik offers six service lines: AI Opportunity Audit, Workflow Automation, Finance & Compliance AI, Team Enablement, Fractional AI Leadership, and AI Product Advisory. Most engagements start with the audit.' },
-  { terms: ['process', 'how do you work', 'engagement', 'timeline', 'steps'], answer: 'The engagement runs through four stages: Diagnose, Prioritise, Build and Embed. We map workflows, score use cases on impact and risk, ship the highest-value system, then train and hand it over.' },
-  { terms: ['price', 'pricing', 'cost', 'fee', 'budget'], answer: 'The AI Opportunity Audit is a fixed-fee two-week sprint. Build projects are scoped after the audit, workshops are priced per session, and fractional leadership runs on a monthly retainer.' },
-  { terms: ['sector', 'industry', 'financial', 'accounting', 'manufacturing', 'retail', 'healthcare', 'real estate', 'legal', 'saas'], answer: 'Pratik works across financial services, accounting and professional services, manufacturing and distribution, retail and e-commerce, healthcare, real estate, legal and compliance, and SaaS and technology.' },
-  { terms: ['findost', 'wealth', 'portfolio', 'investment'], answer: 'Findost is Pratik’s AI-powered wealth management platform at findost.io, with portfolio intelligence, personalised planning, conversational advisory and goal-based tracking.' },
-  { terms: ['contact', 'reach', 'email', 'call', 'whatsapp', 'linkedin', 'book'], answer: 'Use the booking form on this page, message Pratik on WhatsApp, connect on LinkedIn, or email hello@pratikbajoria.com. He aims to reply within one business day.' },
-  { terms: ['background', 'experience', 'chartered', 'big 4', 'about'], answer: 'Pratik is a Chartered Accountant with over nine years of post-qualification experience across audit, financial analysis, taxation and business process transformation, including time at a Big-4 firm.' }
-];
+const voiceTopics = {
+  services: 'Pratik ki six service lines hain: AI Opportunity Audit, workflow automation, finance aur compliance AI, team enablement, fractional AI leadership, aur AI product advisory. Usually pehla step audit hota hai, taaki recommendation actual business process aur ROI par based ho.',
+  process: 'Engagement chaar stages mein hota hai: pehle Diagnose — workflow aur leakage samajhna; phir Prioritise — impact, effort aur risk score karna; uske baad Build — highest-value system ko real users ke saath ship karna; aur finally Embed — training, documentation aur handover. Goal pilot banana nahi, usable system ko production mein lana hai.',
+  pricing: 'Pricing scope par depend karti hai. AI Opportunity Audit fixed-fee, two-week sprint hota hai. Build project ka estimate audit ke baad aata hai, workshops per session priced hote hain, aur fractional AI leadership monthly retainer par hoti hai. Discovery call par Pratik realistic range share karenge.',
+  sectors: 'Strong fit generally finance-heavy aur process-led businesses hote hain: financial services, accounting, manufacturing, retail aur e-commerce, healthcare, real estate, legal-compliance, aur SaaS-tech. Aapka sector bata dein, main use-case ko more specific bana dungi.',
+  findost: 'Findost, findost.io par Pratik ka AI-powered wealth-management platform hai. Ismein portfolio intelligence, personalised planning, conversational advisory aur goal-based tracking hai. Yahan AI patterns ko live product mein test kiya jaata hai.',
+  contact: 'Aap website par Book a Discovery Call form fill kar sakte hain, WhatsApp par message kar sakte hain, LinkedIn par connect kar sakte hain, ya hello@pratikbajoria.com par email bhej sakte hain. Pratik generally one business day mein reply karte hain.',
+  background: 'Pratik Bajoria Chartered Accountant hain, with 9+ years post-qualification experience across audit, financial analysis, taxation aur business-process transformation. Career ka ek part Big-4 firm mein tha; aaj woh AI implementation aur Findost build kar rahe hain.',
+  greeting: 'Namaste! Main Disha hoon — Pratik ki assistant. Aap mujhse AI implementation, services, pricing, sectors, Findost ya discovery call ke baare mein Hinglish mein baat kar sakte hain. Aapka primary business challenge kya hai?',
+  thanks: 'Bilkul, khushi hui help karke. Agar aap apna process ya bottleneck share karein, main next practical step suggest kar dungi.',
+  fallback: 'Haan, samajh gayi. Main services, AI implementation process, pricing, sectors, Pratik ka background, Findost ya contact options par help kar sakti hoon. Aapka exact business question ya current bottleneck kya hai?'
+};
 
-function answerFor(question) {
+function intentFor(question) {
   const normalized = question.toLowerCase();
-  const match = faq.find((entry) => entry.terms.some((term) => normalized.includes(term)));
-  return match ? match.answer : 'I can help with services, the engagement process, pricing, sectors, Pratik’s background, Findost, or how to get in touch.';
+  if (/^(hi|hello|hey|namaste|good morning|good evening)\b/.test(normalized)) return 'greeting';
+  if (/thank|thanks|great|helpful|shukriya/.test(normalized)) return 'thanks';
+  if (/service|offer|consult|capabilit|what do you do/.test(normalized)) return 'services';
+  if (/process|how do you work|engagement|timeline|steps|start|roadmap/.test(normalized)) return 'process';
+  if (/price|pricing|cost|fee|budget|quote|how much/.test(normalized)) return 'pricing';
+  if (/sector|industry|financial|accounting|manufactur|retail|ecommerce|healthcare|real estate|legal|saas|startup/.test(normalized)) return 'sectors';
+  if (/findost|wealth|portfolio|investment/.test(normalized)) return 'findost';
+  if (/contact|reach|email|call|whatsapp|linkedin|book|connect|talk/.test(normalized)) return 'contact';
+  if (/background|experience|chartered|big 4|about|who is pratik/.test(normalized)) return 'background';
+  return null;
+}
+
+function answerFor(question, conversation) {
+  const intent = intentFor(question) || (conversation.lastIntent && /^(and|also|what about|how about|more)/i.test(question.trim()) ? conversation.lastIntent : null);
+  let answer = voiceTopics[intent] || voiceTopics.fallback;
+  const normalized = question.toLowerCase();
+  if (intent === 'services' && /finance|compliance|accounting|gst|tds/.test(normalized)) answer = 'Finance aur compliance AI mein reconciliation, month-end close, GST/TDS workflows, MIS reporting aur audit-ready controls cover hote hain. Aapka current process Excel-heavy hai ya multiple systems mein data split hai?';
+  if (intent === 'services' && /automation|workflow|agent|copilot|whatsapp/.test(normalized)) answer = 'Workflow automation ka focus production use-case par hota hai: document processing, WhatsApp/email workflows, CRM-ERP-finance integration aur internal copilots. Pehle ek measurable bottleneck choose karte hain — aapke business mein sabse repetitive process kaunsa hai?';
+  if (intent === 'process' && conversation.lastIntent === 'services') answer = 'Agar service choose karni ho, best sequence usually Audit → Prioritise → Build → Embed hota hai. Isse team ko clear ROI, ownership aur adoption plan milta hai. Aap implementation abhi explore kar rahe hain ya koi specific workflow already identify hai?';
+  if (intent === 'contact' && /book|call|meeting/.test(normalized)) answer = 'Discovery call focused 30-minute conversation hoti hai. Aap process, bottleneck aur timeline batayenge; Pratik top AI opportunities aur realistic effort-cost discuss karenge. Form kholne ke liye Book a Discovery Call button use kijiye, ya WhatsApp par direct message bhejiye.';
+  conversation.lastIntent = intent || conversation.lastIntent;
+  return answer;
 }
 
 function setupVoiceAgent() {
@@ -56,37 +79,41 @@ function setupVoiceAgent() {
   const canSpeak = 'speechSynthesis' in window;
   let recognition = null;
   let listening = false;
+  const conversation = { lastIntent: 'greeting', turns: [] };
 
   const setPanel = (open) => {
     panel.hidden = !open;
     if (!open && listening && recognition) recognition.stop();
     if (!open && canSpeak) window.speechSynthesis.cancel();
-    if (open && !Recognition) status.textContent = 'Voice input is not available in this browser. Please use Chrome or Edge, or contact Pratik on WhatsApp.';
+    if (open && !Recognition) status.textContent = 'Is browser mein voice input available nahi hai. Chrome/Edge try kijiye, ya Pratik ko WhatsApp par message kijiye.';
   };
 
   const setListening = (active) => {
     listening = active;
     panel.classList.toggle('is-listening', active);
     listen.classList.toggle('is-listening', active);
-    listen.querySelector('span').textContent = active ? 'Listening…' : 'Start listening';
-    if (active) status.textContent = 'Listening — ask one clear question, then pause.';
+    listen.querySelector('span').textContent = active ? 'Listening…' : 'Talk to Disha';
+    if (active) status.textContent = 'Main sun rahi hoon — apna sawaal naturally boliye, phir pause kijiye.';
   };
 
   const speak = (text) => {
     if (!canSpeak) return;
     window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'en-IN';
-    utterance.rate = 0.96;
-    utterance.pitch = 1;
+    const voices = window.speechSynthesis.getVoices();
+    const voice = voices.find((entry) => /^hi-IN$/i.test(entry.lang)) || voices.find((entry) => /^en-IN$/i.test(entry.lang));
+    if (voice) { utterance.voice = voice; utterance.lang = voice.lang; } else utterance.lang = 'en-IN';
+    utterance.rate = 0.92;
+    utterance.pitch = 1.02;
     window.speechSynthesis.speak(utterance);
   };
 
   const answer = (question) => {
-    const text = answerFor(question);
-    transcript.textContent = `You asked: ${question}`;
+    const text = answerFor(question, conversation);
+    conversation.turns.push({ question, answer: text });
+    transcript.textContent = `Aapne poocha: ${question}`;
     response.textContent = text;
-    status.textContent = 'Answer ready — tap the microphone to ask another question.';
+    status.textContent = 'Jawab ready hai — follow-up ke liye phir Talk to Disha press kijiye.';
     speak(text);
   };
 
@@ -110,7 +137,7 @@ function setupVoiceAgent() {
     };
     recognition.onerror = (event) => {
       setListening(false);
-      const message = event.error === 'not-allowed' ? 'Microphone access was blocked. Allow microphone access in your browser settings and try again.' : 'I could not hear that clearly. Please try again.';
+      const message = event.error === 'not-allowed' ? 'Microphone permission blocked hai. Browser settings mein allow karke phir try kijiye.' : 'Main clearly sun nahi paayi. Thoda slowly dobara boliye.';
       status.textContent = message;
     };
     recognition.onend = () => setListening(false);
@@ -122,8 +149,8 @@ function setupVoiceAgent() {
     if (!recognition) return;
     if (listening) recognition.stop();
     else {
-      transcript.textContent = 'Listening for your question…';
-      response.textContent = 'Your answer will appear here.';
+      transcript.textContent = 'Main sun rahi hoon…';
+      response.textContent = 'Aapke sawaal ka conversational jawab yahan dikhega.';
       try { recognition.start(); } catch { status.textContent = 'The microphone is already starting. Please try again in a moment.'; }
     }
   });
