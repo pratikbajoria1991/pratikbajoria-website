@@ -70,22 +70,31 @@ function setupVoiceAgent() {
   const toggle = document.querySelector('[data-toggle-voice]');
   const close = document.querySelector('[data-close-voice]');
   const listen = document.querySelector('[data-voice-listen]');
+  const fallback = document.querySelector('[data-voice-fallback]');
+  const textInput = document.querySelector('[data-voice-text]');
+  const textSend = document.querySelector('[data-voice-send]');
   const status = document.querySelector('#voice-status');
   const transcript = document.querySelector('#voice-transcript');
   const response = document.querySelector('#voice-response');
   if (!panel || !toggle || !listen || !status || !transcript || !response) return;
 
   const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-  const canSpeak = 'speechSynthesis' in window;
+  const canSpeak = typeof window.speechSynthesis !== 'undefined' && typeof window.SpeechSynthesisUtterance !== 'undefined';
   let recognition = null;
   let listening = false;
   const conversation = { lastIntent: 'greeting', turns: [] };
+  const voiceUnavailable = !Recognition || !canSpeak;
+  if (fallback) fallback.hidden = !voiceUnavailable;
+  if (voiceUnavailable) {
+    listen.setAttribute('aria-disabled', 'true');
+    listen.title = 'Live voice is not available in this browser';
+  }
 
   const setPanel = (open) => {
     panel.hidden = !open;
     if (!open && listening && recognition) recognition.stop();
     if (!open && canSpeak) window.speechSynthesis.cancel();
-    if (open && !Recognition) status.textContent = 'Is browser mein voice input available nahi hai. Chrome/Edge try kijiye, ya Pratik ko WhatsApp par message kijiye.';
+    if (open && voiceUnavailable) status.textContent = 'Is browser mein live voice available nahi hai. Neeche type karke Disha se Hinglish mein chat kijiye, ya Chrome/Edge ki normal tab mein microphone allow karke Talk to Disha use kijiye.';
   };
 
   const setListening = (active) => {
@@ -97,15 +106,24 @@ function setupVoiceAgent() {
   };
 
   const speak = (text) => {
-    if (!canSpeak) return;
-    window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(text);
-    const voices = window.speechSynthesis.getVoices();
-    const voice = voices.find((entry) => /^hi-IN$/i.test(entry.lang)) || voices.find((entry) => /^en-IN$/i.test(entry.lang));
-    if (voice) { utterance.voice = voice; utterance.lang = voice.lang; } else utterance.lang = 'en-IN';
-    utterance.rate = 0.92;
-    utterance.pitch = 1.02;
-    window.speechSynthesis.speak(utterance);
+    if (!canSpeak) return false;
+    const say = () => {
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.resume();
+      const utterance = new SpeechSynthesisUtterance(text);
+      const voices = window.speechSynthesis.getVoices();
+      const voice = voices.find((entry) => /^hi-IN$/i.test(entry.lang)) || voices.find((entry) => /^en-IN$/i.test(entry.lang));
+      if (voice) { utterance.voice = voice; utterance.lang = voice.lang; } else utterance.lang = 'en-IN';
+      utterance.rate = 0.92;
+      utterance.pitch = 1.02;
+      utterance.onstart = () => { status.textContent = 'Disha bol rahi hai…'; };
+      utterance.onend = () => { if (!listening) status.textContent = 'Jawab ready hai — follow-up ke liye phir Talk to Disha press kijiye.'; };
+      utterance.onerror = () => { status.textContent = 'Audio output start nahi ho paaya. Neeche type karke Disha se chat kijiye.'; };
+      window.speechSynthesis.speak(utterance);
+    };
+    if (window.speechSynthesis.getVoices().length) say();
+    else window.speechSynthesis.addEventListener('voiceschanged', say, { once: true });
+    return true;
   };
 
   const answer = (question) => {
@@ -137,7 +155,7 @@ function setupVoiceAgent() {
     };
     recognition.onerror = (event) => {
       setListening(false);
-      const message = event.error === 'not-allowed' ? 'Microphone permission blocked hai. Browser settings mein allow karke phir try kijiye.' : 'Main clearly sun nahi paayi. Thoda slowly dobara boliye.';
+      const message = event.error === 'not-allowed' || event.error === 'service-not-allowed' ? 'Microphone permission blocked hai. Browser settings mein pratikbajoria.com ke liye allow karke phir try kijiye.' : event.error === 'audio-capture' ? 'Microphone detect nahi hua. Device mic check karke phir try kijiye.' : event.error === 'no-speech' ? 'Mujhe awaaz nahi mili. Thoda clearly bolkar dobara try kijiye.' : event.error === 'network' ? 'Voice service temporarily unavailable hai. Neeche type karke Disha se chat kijiye.' : 'Main clearly sun nahi paayi. Thoda slowly dobara boliye.';
       status.textContent = message;
     };
     recognition.onend = () => setListening(false);
@@ -146,7 +164,12 @@ function setupVoiceAgent() {
   toggle.addEventListener('click', () => setPanel(panel.hidden));
   close?.addEventListener('click', () => setPanel(false));
   listen.addEventListener('click', () => {
-    if (!recognition) return;
+    if (!recognition) {
+      status.textContent = 'Is browser mein microphone voice input available nahi hai. Neeche type karke Disha se chat kijiye.';
+      fallback?.removeAttribute('hidden');
+      textInput?.focus();
+      return;
+    }
     if (listening) recognition.stop();
     else {
       transcript.textContent = 'Main sun rahi hoon…';
@@ -154,6 +177,15 @@ function setupVoiceAgent() {
       try { recognition.start(); } catch { status.textContent = 'The microphone is already starting. Please try again in a moment.'; }
     }
   });
+
+  const sendTextQuestion = () => {
+    const question = textInput?.value.trim();
+    if (!question) return;
+    textInput.value = '';
+    answer(question);
+  };
+  textSend?.addEventListener('click', sendTextQuestion);
+  textInput?.addEventListener('keydown', (event) => { if (event.key === 'Enter') sendTextQuestion(); });
 }
 
 function openModal(id) { document.querySelector(`#${id}`).hidden = false; document.body.style.overflow = 'hidden'; }
