@@ -2,6 +2,7 @@ const headers = { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Cont
 const json = (body, status = 200) => new Response(JSON.stringify(body), { status, headers });
 const text = (value, max = 500) => typeof value === 'string' ? value.trim().slice(0, max) : '';
 const isEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+const isBlogSlug = (value) => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value);
 
 async function handleDiscovery(request, env) {
   if (!env.DB) return json({ ok: false, error: 'Lead storage is not configured.' }, 503);
@@ -36,6 +37,13 @@ async function handleLeads(request, env) {
   return json({ ok: true, count: result.results.length, leads: result.results });
 }
 
+async function serveBlogAsset(request, env) {
+  const assetUrl = new URL(request.url);
+  assetUrl.pathname = '/blog.html';
+  assetUrl.search = '';
+  return env.ASSETS.fetch(new Request(assetUrl.toString(), request));
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -43,6 +51,20 @@ export default {
     if (request.method === 'POST' && url.pathname === '/api/discovery') return handleDiscovery(request, env);
     if (request.method === 'POST' && url.pathname === '/api/subscribe') return handleSubscribe(request, env);
     if (request.method === 'GET' && url.pathname === '/api/leads') return handleLeads(request, env);
+
+    if (request.method === 'GET' && (url.pathname === '/blog' || url.pathname === '/blog.html')) {
+      const legacySlug = url.searchParams.get('slug')?.trim();
+      if (legacySlug && isBlogSlug(legacySlug)) {
+        return Response.redirect(new URL(`/blog/${encodeURIComponent(legacySlug)}`, url), 301);
+      }
+      return serveBlogAsset(request, env);
+    }
+
+    if (request.method === 'GET' && url.pathname.startsWith('/blog/')) {
+      const slug = decodeURIComponent(url.pathname.slice('/blog/'.length)).replace(/\/+$/, '');
+      if (isBlogSlug(slug)) return serveBlogAsset(request, env);
+    }
+
     return env.ASSETS.fetch(request);
   }
 };
