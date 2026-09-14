@@ -3,6 +3,7 @@ const json = (body, status = 200) => new Response(JSON.stringify(body), { status
 const text = (value, max = 500) => typeof value === 'string' ? value.trim().slice(0, max) : '';
 const isEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 const isBlogSlug = (value) => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value);
+const INTERNAL_ASSET_HEADER = 'x-pages-internal-asset';
 
 async function handleDiscovery(request, env) {
   if (!env.DB) return json({ ok: false, error: 'Lead storage is not configured.' }, 503);
@@ -39,14 +40,21 @@ async function handleLeads(request, env) {
 
 async function serveBlogAsset(request, env) {
   const assetUrl = new URL(request.url);
-  assetUrl.pathname = '/blog.html';
+  assetUrl.pathname = '/blog';
   assetUrl.search = '';
-  return env.ASSETS.fetch(new Request(assetUrl.toString(), request));
+  const assetHeaders = new Headers(request.headers);
+  assetHeaders.set(INTERNAL_ASSET_HEADER, '1');
+  return env.ASSETS.fetch(new Request(assetUrl.toString(), {
+    method: request.method,
+    headers: assetHeaders,
+    redirect: 'manual'
+  }));
 }
 
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (request.headers.get(INTERNAL_ASSET_HEADER) === '1') return env.ASSETS.fetch(request);
     if (request.method === 'OPTIONS' && url.pathname.startsWith('/api/')) return new Response(null, { status: 204, headers });
     if (request.method === 'POST' && url.pathname === '/api/discovery') return handleDiscovery(request, env);
     if (request.method === 'POST' && url.pathname === '/api/subscribe') return handleSubscribe(request, env);
