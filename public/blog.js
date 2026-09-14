@@ -1,7 +1,10 @@
 const article = document.querySelector('#article');
 const escapeHtml = (value = '') => String(value).replace(/[&<>'"]/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[char]));
 const params = new URLSearchParams(window.location.search);
-const slug = params.get('slug');
+const slug = (() => {
+  const pathSlug = window.location.pathname.startsWith('/blog/') ? window.location.pathname.slice('/blog/'.length).replace(/\/+$/, '') : '';
+  return pathSlug ? decodeURIComponent(pathSlug) : params.get('slug');
+})();
 
 function renderParagraphs(content) {
   return String(content || '').split(/\n\s*\n/).filter(Boolean).map((paragraph) => `<p>${escapeHtml(paragraph).replace(/\n/g, '<br />')}</p>`).join('');
@@ -30,7 +33,7 @@ async function loadArticle() {
     const catalog = await catalogResponse.json();
     const post = posts.find((item) => item.slug === slug || item.id === slug);
     if (!post) throw new Error('Article not found');
-    const canonical = `https://pratikbajoria.com/blog?slug=${encodeURIComponent(post.slug)}`;
+    const canonical = `https://pratikbajoria.com/blog/${encodeURIComponent(post.slug)}`;
     document.title = `${post.title} — Pratik Bajoria`;
     document.querySelector('meta[name="description"]').setAttribute('content', post.excerpt || 'Practical writing on implementing AI inside real businesses.');
     document.querySelector('link[rel="canonical"]').setAttribute('href', canonical);
@@ -58,4 +61,3 @@ async function loadArticle() {
 }
 
 loadArticle();
-
