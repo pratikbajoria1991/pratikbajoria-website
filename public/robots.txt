@@ -3,3 +3,22 @@ Allow: /
 Sitemap: https://pratikbajoria.com/sitemap.xml
 Host: pratikbajoria.com
 
+# AI / LLM crawler access (AEO/GEO visibility)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
