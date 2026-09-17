@@ -38,17 +38,25 @@ async function handleLeads(request, env) {
   return json({ ok: true, count: result.results.length, leads: result.results });
 }
 
-async function serveBlogAsset(request, env) {
-  const assetUrl = new URL(request.url);
-  assetUrl.pathname = '/blog';
-  assetUrl.search = '';
+async function serveBlogAsset(request, env, slug) {
   const assetHeaders = new Headers(request.headers);
   assetHeaders.set(INTERNAL_ASSET_HEADER, '1');
-  return env.ASSETS.fetch(new Request(assetUrl.toString(), {
-    method: request.method,
-    headers: assetHeaders,
-    redirect: 'manual'
-  }));
+  const fetchAsset = (pathname) => {
+    const assetUrl = new URL(request.url);
+    assetUrl.pathname = pathname;
+    assetUrl.search = '';
+    return env.ASSETS.fetch(new Request(assetUrl.toString(), {
+      method: request.method,
+      headers: assetHeaders,
+      redirect: 'manual'
+    }));
+  };
+  // Prefer static SSR HTML when present (SEO/AEO).
+  if (slug) {
+    const ssr = await fetchAsset(`/blog/${encodeURIComponent(slug)}.html`);
+    if (ssr.status === 200) return ssr;
+  }
+  return fetchAsset('/blog');
 }
 
 export default {
@@ -65,12 +73,12 @@ export default {
       if (legacySlug && isBlogSlug(legacySlug)) {
         return Response.redirect(new URL(`/blog/${encodeURIComponent(legacySlug)}`, url), 301);
       }
-      return serveBlogAsset(request, env);
+      return serveBlogAsset(request, env, null);
     }
 
     if (request.method === 'GET' && url.pathname.startsWith('/blog/')) {
       const slug = decodeURIComponent(url.pathname.slice('/blog/'.length)).replace(/\/+$/, '');
-      if (isBlogSlug(slug)) return serveBlogAsset(request, env);
+      if (isBlogSlug(slug)) return serveBlogAsset(request, env, slug);
     }
 
     return env.ASSETS.fetch(request);
