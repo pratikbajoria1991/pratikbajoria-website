@@ -87,10 +87,7 @@ export default {
       return serveBlogAsset(request, env, null);
     }
 
-    if (request.method === 'GET' && url.pathname.startsWith('/blog/')) {
-      const slug = decodeURIComponent(url.pathname.slice('/blog/'.length)).replace(/\/+$/, '');
-      if (isBlogSlug(slug)) return serveBlogAsset(request, env, slug);
-    }
+    // /blog/{slug} is served as static SSR HTML by Pages assets (no rewrite).
 
     return env.ASSETS.fetch(request);
   }
