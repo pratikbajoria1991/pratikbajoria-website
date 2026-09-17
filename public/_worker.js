@@ -39,24 +39,35 @@ async function handleLeads(request, env) {
 }
 
 async function serveBlogAsset(request, env, slug) {
-  const assetHeaders = new Headers(request.headers);
-  assetHeaders.set(INTERNAL_ASSET_HEADER, '1');
-  const fetchAsset = (pathname) => {
-    const assetUrl = new URL(request.url);
-    assetUrl.pathname = pathname;
-    assetUrl.search = '';
-    return env.ASSETS.fetch(new Request(assetUrl.toString(), {
-      method: request.method,
+  // Prefer static SSR HTML via Pages pretty URLs / explicit .html asset.
+  if (slug) {
+    const direct = await env.ASSETS.fetch(request);
+    if (direct.status === 200) {
+      const ctype = direct.headers.get('content-type') || '';
+      if (ctype.includes('text/html')) return direct;
+    }
+    const assetHeaders = new Headers(request.headers);
+    assetHeaders.set(INTERNAL_ASSET_HEADER, '1');
+    const htmlUrl = new URL(request.url);
+    htmlUrl.pathname = `/blog/${encodeURIComponent(slug)}.html`;
+    htmlUrl.search = '';
+    const htmlResp = await env.ASSETS.fetch(new Request(htmlUrl.toString(), {
+      method: 'GET',
       headers: assetHeaders,
       redirect: 'manual'
     }));
-  };
-  // Prefer static SSR HTML when present (SEO/AEO).
-  if (slug) {
-    const ssr = await fetchAsset(`/blog/${encodeURIComponent(slug)}.html`);
-    if (ssr.status === 200) return ssr;
+    if (htmlResp.status === 200) return htmlResp;
   }
-  return fetchAsset('/blog');
+  const assetHeaders = new Headers(request.headers);
+  assetHeaders.set(INTERNAL_ASSET_HEADER, '1');
+  const shellUrl = new URL(request.url);
+  shellUrl.pathname = '/blog';
+  shellUrl.search = '';
+  return env.ASSETS.fetch(new Request(shellUrl.toString(), {
+    method: request.method,
+    headers: assetHeaders,
+    redirect: 'manual'
+  }));
 }
 
 export default {
