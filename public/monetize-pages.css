@@ -1,0 +1,87 @@
+/* Monetize package pages — small additions on top of styles.css / styles-overrides.css */
+
+.page-hero{padding-top:96px;padding-bottom:48px}
+.page-hero .hero-copy{max-width:560px}
+.page-hero h1{font-size:clamp(48px,7vw,92px);max-width:900px}
+.page-kicker{display:inline-flex;align-items:center;gap:10px;margin-bottom:8px}
+.package-meta{display:flex;flex-wrap:wrap;gap:18px 28px;margin-top:36px;padding-top:18px;border-top:1px solid var(--line)}
+.package-meta strong{display:block;font:400 22px var(--serif);letter-spacing:-.02em}
+.package-meta small{display:block;margin-top:3px;color:var(--muted);font:500 10px var(--mono);text-transform:uppercase;letter-spacing:.05em}
+
+.split-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fit-card{border:1px solid var(--line);padding:28px 26px;background:rgba(255,255,255,.14)}
+.fit-card h3{font:400 28px var(--serif);margin:0 0 14px;letter-spacing:-.02em}
+.fit-card ul{margin:0;padding:0;list-style:none}
+.fit-card li{padding:8px 0;border-bottom:1px solid rgba(200,198,187,.55);color:var(--muted);font-size:13px;line-height:1.5}
+.fit-card li::before{margin-right:8px;color:var(--ink)}
+.fit-card.for li::before{content:'→'}
+.fit-card.not li::before{content:'×';color:#9a3f3f}
+.fit-card.not{background:#f3eee6}
+
+.include-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.include-card{border:1px solid var(--line);padding:26px;background:rgba(255,255,255,.14)}
+.include-card span{display:block;color:var(--muted);font:500 10px var(--mono);letter-spacing:.08em;margin-bottom:16px}
+.include-card h3{font:400 26px var(--serif);margin:0 0 10px;letter-spacing:-.02em}
+.include-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.6}
+
+.invest-band{border:1px solid var(--line);padding:34px 32px;background:#f8f4eb;display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:center}
+.invest-band h3{font:400 36px var(--serif);margin:10px 0 12px;letter-spacing:-.03em}
+.invest-band p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+
+.agenda-list{border-top:1px solid var(--line)}
+.agenda-list article{display:grid;grid-template-columns:88px 1fr;gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}
+.agenda-list span{color:var(--muted);font:500 10px var(--mono);letter-spacing:.08em;padding-top:6px}
+.agenda-list h3{font:400 24px var(--serif);margin:0 0 6px;letter-spacing:-.02em}
+.agenda-list p{margin:0;color:var(--muted);font-size:13px;line-height:1.6}
+
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.product-card{border:1px solid var(--line);padding:28px 26px;background:rgba(255,255,255,.14);display:flex;flex-direction:column;min-height:340px}
+.product-card .service-num{margin-bottom:18px}
+.product-card h3{font:400 28px var(--serif);margin:0 0 12px;letter-spacing:-.02em}
+.product-card p{color:var(--muted);font-size:13px;line-height:1.6;margin:0 0 18px;flex:1}
+.product-price{font:400 28px var(--serif);margin-bottom:18px}
+.product-price small{display:block;font:500 10px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:4px}
+.product-card .button{width:100%;justify-content:space-between}
+.resources-note{margin-top:36px;padding:22px 24px;border:1px dashed var(--line);color:var(--muted);font-size:13px;line-height:1.6}
+.resources-note a{color:var(--ink);border-bottom:1px solid var(--ink)}
+
+.score-preview,.score-full{border:1px solid var(--line);background:rgba(255,255,255,.2)}
+.score-row{display:grid;grid-template-columns:1fr 120px 90px;gap:12px;align-items:start;padding:16px 20px;border-bottom:1px solid rgba(200,198,187,.55)}
+.score-row:last-child{border-bottom:0}
+.score-row strong{display:block;font:500 14px var(--sans);margin-bottom:4px}
+.score-row span{display:block;color:var(--muted);font-size:12px;line-height:1.5}
+.score-row .dim{font:500 10px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.score-row .pts{font:400 18px var(--serif);text-align:right}
+.score-head{display:grid;grid-template-columns:1fr 120px 90px;gap:12px;padding:12px 20px;border-bottom:1px solid var(--line);font:500 10px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);background:#ebe7dd}
+.score-gate{margin-top:28px;padding:28px;border:1px solid var(--line);background:#f8f4eb;max-width:560px}
+.score-gate label{display:block;font:500 10px var(--mono);color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.score-gate .consent-row{margin-top:14px!important}
+.score-full{margin-top:28px}
+.score-total{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-top:1px solid var(--line);background:#ebe7dd}
+.score-total strong{font:400 28px var(--serif)}
+.score-cta{margin-top:28px;padding:26px;border:1px solid var(--line)}
+.score-cta h3{font:400 28px var(--serif);margin:0 0 10px}
+.score-cta p{margin:0 0 18px;color:var(--muted);font-size:14px;line-height:1.6}
+.print-hint{color:var(--muted);font:500 10px var(--mono);text-transform:uppercase;letter-spacing:.05em;margin:0 0 12px}
+.inquiry-form{max-width:640px;margin-top:8px}
+.inquiry-form .form-two{margin-bottom:0}
+.inquiry-form label{display:block;margin:0 0 16px;font:500 10px var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.inquiry-form input,.inquiry-form textarea{display:block;width:100%;margin-top:7px;border:1px solid var(--line);padding:11px;background:transparent;color:var(--ink);font:400 13px var(--sans);outline:0}
+.inquiry-form textarea{min-height:90px;resize:vertical}
+.page-cta-band{padding:70px 0 90px;border-top:1px solid var(--line)}
+.muted-link{color:var(--muted);font-size:13px}
+.muted-link:hover{color:var(--ink)}
+.nav-links a[aria-current="page"]{color:var(--ink)}
+
+@media print{
+  .site-header,.site-footer,.score-gate,.page-cta-band,.wa-float,.nav-cta,.hero-actions,.button{display:none!important}
+  .score-full{display:block!important}
+  body{background:#fff}
+}
+
+@media(max-width:900px){
+  .split-2,.include-grid,.invest-band,.product-grid{grid-template-columns:1fr}
+  .agenda-list article{grid-template-columns:1fr}
+  .score-row,.score-head{grid-template-columns:1fr 70px}
+  .score-row .dim,.score-head span:nth-child(2){display:none}
+}

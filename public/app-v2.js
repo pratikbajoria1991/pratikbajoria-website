@@ -8,7 +8,7 @@ const esc = (value = '') => String(value).replace(/[&<>'"]/g, (char) => ({ '&': 
 const formatDate = (value) => new Intl.DateTimeFormat('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }).format(new Date(value));
 
 function storyCard(post) {
-  const target = post.url && post.url !== '#' ? post.url : `/blog?slug=${encodeURIComponent(post.slug || '')}`;
+  const target = post.url && post.url !== '#' ? post.url : `/blog/${encodeURIComponent(post.slug || '')}`;
   return `<article class="story-card"><a href="${target}" aria-label="Read ${esc(post.title)}"><div class="story-image"><img loading="lazy" src="${esc(post.image)}" alt="" /></div><div class="story-meta"><span>${esc(post.category || 'AI implementation')}</span><span>${formatDate(post.date)} · ${esc(post.readTime || 6)} min</span></div><h3 class="story-title">${esc(post.title)}</h3><p class="story-excerpt">${esc(post.excerpt || '')}</p></a></article>`;
 }
 
@@ -226,7 +226,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   setupVoiceAgent();
 
   const grid = document.querySelector('#featured-grid');
-  if (grid) grid.innerHTML = (await loadPosts()).map(storyCard).join('');
+  // Keep static SSR cards for crawlers; only fill when empty (enhance later without wiping).
+  if (grid && !grid.querySelector('.featured-card, a, article')) {
+    grid.innerHTML = (await loadPosts()).map(storyCard).join('') || '<p class="empty-state">The next dispatch is being edited.</p>';
+  }
 
   const bookingForm = document.querySelector('#booking-form');
   const subscribeForm = document.querySelector('#subscribe-form');

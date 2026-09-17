@@ -16,3 +16,24 @@
 /blog-posts.json
   Cache-Control: public, max-age=300, must-revalidate
 
+/og.png
+  Cache-Control: public, max-age=604800
+  Content-Type: image/png
+
+/favicon.ico
+  Cache-Control: public, max-age=604800
+
+/favicon.png
+  Cache-Control: public, max-age=604800
+
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/.well-known/llms.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/blog/*
+  Cache-Control: public, max-age=300, must-revalidate
+

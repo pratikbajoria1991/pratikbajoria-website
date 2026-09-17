@@ -1,10 +1,13 @@
 const article = document.querySelector('#article');
 const escapeHtml = (value = '') => String(value).replace(/[&<>'"]/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[char]));
-const params = new URLSearchParams(window.location.search);
-const slug = (() => {
-  const pathSlug = window.location.pathname.startsWith('/blog/') ? window.location.pathname.slice('/blog/'.length).replace(/\/+$/, '') : '';
-  return pathSlug ? decodeURIComponent(pathSlug) : params.get('slug');
-})();
+
+function slugFromLocation() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('slug')) return params.get('slug');
+  const m = window.location.pathname.match(/^\/blog\/([^\/]+)\/?$/);
+  if (m && m[1] && m[1] !== 'index.html') return decodeURIComponent(m[1].replace(/\.html$/, ''));
+  return null;
+}
 
 function renderParagraphs(content) {
   return String(content || '').split(/\n\s*\n/).filter(Boolean).map((paragraph) => `<p>${escapeHtml(paragraph).replace(/\n/g, '<br />')}</p>`).join('');
@@ -23,6 +26,20 @@ function renderAffiliateTools(post, catalog) {
 }
 
 async function loadArticle() {
+  const slug = slugFromLocation();
+  if (document.body && document.body.dataset && document.body.dataset.staticArticle === '1') {
+    if (slug && window.location.search.includes('slug=')) {
+      history.replaceState(null, '', `/blog/${encodeURIComponent(slug)}`);
+    }
+    return;
+  }
+  if (!slug) return;
+  if (window.location.search.includes('slug=') && (window.location.pathname === '/blog' || window.location.pathname === '/blog.html' || window.location.pathname === '/blog/')) {
+    window.location.replace(`/blog/${encodeURIComponent(slug)}`);
+    return;
+  }
+  if (!article) return;
+  article.hidden = false;
   try {
     const [postsResponse, catalogResponse, editorialResponse] = await Promise.all([
       fetch('/blog-posts.json', { cache: 'no-store' }),
@@ -35,8 +52,8 @@ async function loadArticle() {
     if (!post) throw new Error('Article not found');
     const canonical = `https://pratikbajoria.com/blog/${encodeURIComponent(post.slug)}`;
     document.title = `${post.title} — Pratik Bajoria`;
-    document.querySelector('meta[name="description"]').setAttribute('content', post.excerpt || 'Practical writing on implementing AI inside real businesses.');
-    document.querySelector('link[rel="canonical"]').setAttribute('href', canonical);
+    document.querySelector('meta[name="description"]')?.setAttribute('content', post.excerpt || 'Practical writing on implementing AI inside real businesses.');
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', canonical);
     document.querySelector('#article-schema')?.remove();
     const articleSchema = document.createElement('script');
     articleSchema.id = 'article-schema';
@@ -48,7 +65,7 @@ async function loadArticle() {
       description: post.excerpt || '',
       datePublished: post.date || undefined,
       dateModified: post.date || undefined,
-      author: { '@type': 'Person', name: 'Pratik Bajoria', url: 'https://pratikbajoria.com/#about' },
+      author: { '@type': 'Person', name: 'Pratik Bajoria', url: 'https://pratikbajoria.com/#person' },
       publisher: { '@type': 'Person', name: 'Pratik Bajoria' },
       mainEntityOfPage: canonical,
       keywords: post.keywords || []
@@ -56,7 +73,7 @@ async function loadArticle() {
     document.head.appendChild(articleSchema);
     article.innerHTML = `<p class="eyebrow">${escapeHtml(post.category || 'AI implementation')} · ${escapeHtml(post.date || '')} · ${escapeHtml(post.readTime || 7)} min read</p><h1>${escapeHtml(post.title)}</h1><p class="article-dek">${escapeHtml(post.excerpt || '')}</p><div class="article-body">${renderParagraphs(post.content)}</div>${renderAffiliateTools(post, catalog)}<div class="article-sources"><h2>Sources and further reading</h2>${(post.sources || []).map((source) => `<a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.title || source.url)} ↗</a>`).join('')}</div>`;
   } catch {
-    article.innerHTML = '<p class="eyebrow">Insight unavailable</p><h1>This article could not be loaded.</h1><p class="article-dek">Return to the insights index and try another article.</p><p><a class="button button-dark" href="/#insights">Return to insights <span>↗</span></a></p>';
+    article.innerHTML = '<p class="eyebrow">Insight unavailable</p><h1>This article could not be loaded.</h1><p class="article-dek">Return to the insights index and try another article.</p><p><a class="button button-dark" href="/blog">Return to insights <span>↗</span></a></p>';
   }
 }
 

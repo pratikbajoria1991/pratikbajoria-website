@@ -3,7 +3,7 @@
     "id": "2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point",
     "title": "The Finance Function Is AI’s Highest-ROI Starting Point",
     "slug": "2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point",
-    "url": "/blog.html?slug=2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point",
+    "url": "/blog/2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point",
     "date": "2026-09-17",
     "author": "Pratik Bajoria",
     "category": "Finance & compliance",
@@ -32,7 +32,7 @@
     "id": "2026-09-16-what-good-ai-governance-looks-like-in-a-mid-market-company",
     "title": "What Good AI Governance Looks Like in a Mid-Market Company",
     "slug": "2026-09-16-what-good-ai-governance-looks-like-in-a-mid-market-company",
-    "url": "/blog.html?slug=2026-09-16-what-good-ai-governance-looks-like-in-a-mid-market-company",
+    "url": "/blog/2026-09-16-what-good-ai-governance-looks-like-in-a-mid-market-company",
     "date": "2026-09-16",
     "author": "Pratik Bajoria",
     "category": "AI governance",
@@ -61,7 +61,7 @@
     "id": "2026-09-15-ai-in-real-estate-start-with-lead-qualification-and-documents",
     "title": "AI in Real Estate: Start With Lead Qualification and Documents",
     "slug": "2026-09-15-ai-in-real-estate-start-with-lead-qualification-and-documents",
-    "url": "/blog.html?slug=2026-09-15-ai-in-real-estate-start-with-lead-qualification-and-documents",
+    "url": "/blog/2026-09-15-ai-in-real-estate-start-with-lead-qualification-and-documents",
     "date": "2026-09-15",
     "author": "Pratik Bajoria",
     "category": "Real estate & infrastructure",
@@ -90,7 +90,7 @@
     "id": "2026-09-14-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders",
     "title": "The AI Opportunity Audit: A 90-Day Roadmap for Leaders",
     "slug": "2026-09-14-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders",
-    "url": "/blog.html?slug=2026-09-14-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders",
+    "url": "/blog/2026-09-14-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders",
     "date": "2026-09-14",
     "author": "Pratik Bajoria",
     "category": "AI implementation",
@@ -116,10 +116,39 @@
     }
   },
   {
+    "id": "2026-09-14-how-much-should-a-mid-market-finance-team-budget-for-ai",
+    "title": "How Much Should a Mid-Market Finance Team Budget for AI?",
+    "slug": "2026-09-14-how-much-should-a-mid-market-finance-team-budget-for-ai",
+    "url": "/blog/2026-09-14-how-much-should-a-mid-market-finance-team-budget-for-ai",
+    "date": "2026-09-14",
+    "author": "Pratik Bajoria",
+    "category": "Finance & compliance",
+    "readTime": 8,
+    "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=85",
+    "excerpt": "Budget for AI as an operating programme with discovery, tooling, controls and adoption — not as a single software line item or a vanity pilot.",
+    "content": "Most mid-market finance leaders do not struggle to find AI tools. They struggle to decide what the budget is actually for. Treat the spend as an operating programme — discovery, tooling, controls and adoption — rather than a single software licence or a one-off pilot that never reaches production.\n\nStart with the question the board will ask later: which measurable constraint are we relieving? Close cycle time, unreconciled items, review hours, exception backlog, cash visibility lag and manual reporting effort are defensible starting points. A budget without a named constraint usually becomes a catalogue of experiments.\n\nA practical budget has four buckets. First, discovery: mapping a small set of workflows, agreeing owners, baselining current cycle time and error patterns, and ranking use cases on impact, feasibility and control risk. Second, tooling: model or platform access, connectors, secure environments and logging. Third, delivery: the time to configure, integrate, test and document one bounded release. Fourth, embedding: SOP updates, reviewer training, exception handling and a weekly operating review.\n\nWhat you should usually refuse to fund is a vanity pilot with no owner, no success metric and no audit trail. An impressive demo that cannot explain data access, human review points or how exceptions escalate is not a production system — and it is a weak justification for next year’s renewal.\n\nFinance-adjacent work needs control costs in the first version, not as a later add-on. Decide which data classes the system may touch, where a person must approve the output, what gets logged, how long evidence is retained, and who owns model or prompt changes. Those choices are part of the budget because they consume time from finance, IT, risk and sometimes external advisors.\n\nSequencing matters more than headline spend. Automate handoffs and standardisation before nuanced judgement. Put a review queue in place before promising straight-through processing. Standardise inputs before asking a model to interpret messy documents. This order reduces rework and makes the business case easier to defend with audit and compliance stakeholders.\n\nWrite the investment case in finance language. Link each release to a metric the function already manages: days to close, items aged beyond policy, hours spent on first-pass reconciliations, time to produce a board pack, or the volume of routine queries diverted from senior reviewers. Avoid abstract claims about transformation. Evidence from one bounded release funds the next.\n\nA useful board narrative covers scope, constraint, control design, expected operating change, review cadence and stop conditions. If the metric does not move after a fair trial, pause or redesign. If it does, document the pattern — workflow map, baseline, exception policy, named owner — so the next deployment is cheaper than the first.\n\nBuild versus buy should follow differentiation, data sensitivity, time to value and switching cost. Commodity drafting or classification often favours configured tooling. Deeply proprietary processes, sensitive ledgers or tightly regulated workflows may justify more custom delivery — but still start narrow. Do not invent a platform programme before one workflow works.\n\nFor mid-market teams, the cheapest path is rarely the smallest invoice. It is the path that avoids stranded pilots, duplicated licences and uncontrolled shadow tools. Centralise approved tools where possible, keep a short register of AI use cases, and review spend against operating outcomes rather than curiosity.\n\nIf you are unsure where to start, pressure-test readiness before locking a large annual commitment. A structured opportunity review — which workflows, which metrics, which controls — usually costs less than a year of unfocused tooling and gives finance a clearer ask for the board.\n\nThis article is educational and does not constitute accounting, tax, legal, investment or budgeting advice. Confirm vendor pricing, data-processing terms and your own internal policies before committing spend.",
+    "keywords": [
+      "AI budget",
+      "finance AI",
+      "mid-market AI implementation"
+    ],
+    "sources": [
+      {
+        "title": "NIST AI Risk Management Framework",
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+      }
+    ],
+    "generatedBy": "editorial-monday-seo",
+    "affiliate": {
+      "disclosure": "This article may contain affiliate links. Recommendations remain editorially independent.",
+      "links": []
+    }
+  },
+  {
     "id": "2026-09-13-how-to-automate-a-whatsapp-workflow-without-losing-control",
     "title": "How to Automate a WhatsApp Workflow Without Losing Control",
     "slug": "2026-09-13-how-to-automate-a-whatsapp-workflow-without-losing-control",
-    "url": "/blog.html?slug=2026-09-13-how-to-automate-a-whatsapp-workflow-without-losing-control",
+    "url": "/blog/2026-09-13-how-to-automate-a-whatsapp-workflow-without-losing-control",
     "date": "2026-09-13",
     "author": "Pratik Bajoria",
     "category": "Workflow automation",
@@ -148,7 +177,7 @@
     "id": "2026-09-12-build-vs-buy-a-practical-framework-for-ai-tooling",
     "title": "Build vs Buy: A Practical Framework for AI Tooling",
     "slug": "2026-09-12-build-vs-buy-a-practical-framework-for-ai-tooling",
-    "url": "/blog.html?slug=2026-09-12-build-vs-buy-a-practical-framework-for-ai-tooling",
+    "url": "/blog/2026-09-12-build-vs-buy-a-practical-framework-for-ai-tooling",
     "date": "2026-09-12",
     "author": "Pratik Bajoria",
     "category": "AI strategy",
@@ -177,7 +206,7 @@
     "id": "2026-09-11-why-most-corporate-ai-pilots-never-reach-production",
     "title": "Why Most Corporate AI Pilots Never Reach Production",
     "slug": "2026-09-11-why-most-corporate-ai-pilots-never-reach-production",
-    "url": "/blog.html?slug=2026-09-11-why-most-corporate-ai-pilots-never-reach-production",
+    "url": "/blog/2026-09-11-why-most-corporate-ai-pilots-never-reach-production",
     "date": "2026-09-11",
     "author": "Pratik Bajoria",
     "category": "AI adoption",
@@ -206,7 +235,7 @@
     "id": "2026-09-10-the-finance-function-is-ai-s-highest-roi-starting-point",
     "title": "The Finance Function Is AI’s Highest-ROI Starting Point",
     "slug": "2026-09-10-the-finance-function-is-ai-s-highest-roi-starting-point",
-    "url": "/blog.html?slug=2026-09-10-the-finance-function-is-ai-s-highest-roi-starting-point",
+    "url": "/blog/2026-09-10-the-finance-function-is-ai-s-highest-roi-starting-point",
     "date": "2026-09-10",
     "author": "Pratik Bajoria",
     "category": "Finance & compliance",
@@ -235,7 +264,7 @@
     "id": "2026-09-09-what-good-ai-governance-looks-like-in-a-mid-market-company",
     "title": "What Good AI Governance Looks Like in a Mid-Market Company",
     "slug": "2026-09-09-what-good-ai-governance-looks-like-in-a-mid-market-company",
-    "url": "/blog.html?slug=2026-09-09-what-good-ai-governance-looks-like-in-a-mid-market-company",
+    "url": "/blog/2026-09-09-what-good-ai-governance-looks-like-in-a-mid-market-company",
     "date": "2026-09-09",
     "author": "Pratik Bajoria",
     "category": "AI governance",
@@ -264,7 +293,7 @@
     "id": "2026-09-08-ai-in-real-estate-start-with-lead-qualification-and-documents",
     "title": "AI in Real Estate: Start With Lead Qualification and Documents",
     "slug": "2026-09-08-ai-in-real-estate-start-with-lead-qualification-and-documents",
-    "url": "/blog.html?slug=2026-09-08-ai-in-real-estate-start-with-lead-qualification-and-documents",
+    "url": "/blog/2026-09-08-ai-in-real-estate-start-with-lead-qualification-and-documents",
     "date": "2026-09-08",
     "author": "Pratik Bajoria",
     "category": "Real estate & infrastructure",
@@ -293,7 +322,7 @@
     "id": "2026-09-07-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders",
     "title": "The AI Opportunity Audit: A 90-Day Roadmap for Leaders",
     "slug": "2026-09-07-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders",
-    "url": "/blog.html?slug=2026-09-07-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders",
+    "url": "/blog/2026-09-07-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders",
     "date": "2026-09-07",
     "author": "Pratik Bajoria",
     "category": "AI implementation",
@@ -322,7 +351,7 @@
     "id": "2026-09-06-how-to-automate-a-whatsapp-workflow-without-losing-control",
     "title": "How to Automate a WhatsApp Workflow Without Losing Control",
     "slug": "2026-09-06-how-to-automate-a-whatsapp-workflow-without-losing-control",
-    "url": "/blog?slug=2026-09-06-how-to-automate-a-whatsapp-workflow-without-losing-control",
+    "url": "/blog/2026-09-06-how-to-automate-a-whatsapp-workflow-without-losing-control",
     "date": "2026-09-06",
     "author": "Pratik Bajoria",
     "category": "Workflow automation",
@@ -351,7 +380,7 @@
     "id": "2026-09-05-build-vs-buy-a-practical-framework-for-ai-tooling",
     "title": "Build vs Buy: A Practical Framework for AI Tooling",
     "slug": "2026-09-05-build-vs-buy-a-practical-framework-for-ai-tooling",
-    "url": "/blog?slug=2026-09-05-build-vs-buy-a-practical-framework-for-ai-tooling",
+    "url": "/blog/2026-09-05-build-vs-buy-a-practical-framework-for-ai-tooling",
     "date": "2026-09-05",
     "author": "Pratik Bajoria",
     "category": "AI strategy",
@@ -380,7 +409,7 @@
     "id": "2026-09-04-why-most-corporate-ai-pilots-never-reach-production",
     "title": "Why Most Corporate AI Pilots Never Reach Production",
     "slug": "2026-09-04-why-most-corporate-ai-pilots-never-reach-production",
-    "url": "/blog?slug=2026-09-04-why-most-corporate-ai-pilots-never-reach-production",
+    "url": "/blog/2026-09-04-why-most-corporate-ai-pilots-never-reach-production",
     "date": "2026-09-04",
     "author": "Pratik Bajoria",
     "category": "AI adoption",
@@ -409,7 +438,7 @@
     "id": "2026-09-03-the-finance-function-is-ai-s-highest-roi-starting-point",
     "title": "The Finance Function Is AI’s Highest-ROI Starting Point",
     "slug": "2026-09-03-the-finance-function-is-ai-s-highest-roi-starting-point",
-    "url": "/blog?slug=2026-09-03-the-finance-function-is-ai-s-highest-roi-starting-point",
+    "url": "/blog/2026-09-03-the-finance-function-is-ai-s-highest-roi-starting-point",
     "date": "2026-09-03",
     "author": "Pratik Bajoria",
     "category": "Finance & compliance",
@@ -438,7 +467,7 @@
     "id": "2026-09-02-what-good-ai-governance-looks-like-in-a-mid-market-company",
     "title": "What Good AI Governance Looks Like in a Mid-Market Company",
     "slug": "2026-09-02-what-good-ai-governance-looks-like-in-a-mid-market-company",
-    "url": "/blog?slug=2026-09-02-what-good-ai-governance-looks-like-in-a-mid-market-company",
+    "url": "/blog/2026-09-02-what-good-ai-governance-looks-like-in-a-mid-market-company",
     "date": "2026-09-02",
     "author": "Pratik Bajoria",
     "category": "AI governance",
@@ -467,7 +496,7 @@
     "id": "2026-09-01-ai-in-real-estate-start-with-lead-qualification-and-documents",
     "title": "AI in Real Estate: Start With Lead Qualification and Documents",
     "slug": "2026-09-01-ai-in-real-estate-start-with-lead-qualification-and-documents",
-    "url": "/blog?slug=2026-09-01-ai-in-real-estate-start-with-lead-qualification-and-documents",
+    "url": "/blog/2026-09-01-ai-in-real-estate-start-with-lead-qualification-and-documents",
     "date": "2026-09-01",
     "author": "Pratik Bajoria",
     "category": "Real estate & infrastructure",
@@ -496,7 +525,7 @@
     "id": "2026-08-31-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders",
     "title": "The AI Opportunity Audit: A 90-Day Roadmap for Leaders",
     "slug": "2026-08-31-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders",
-    "url": "/blog?slug=2026-08-31-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders",
+    "url": "/blog/2026-08-31-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders",
     "date": "2026-08-31",
     "author": "Pratik Bajoria",
     "category": "AI implementation",
@@ -540,7 +569,8 @@
     "affiliate": {
       "disclosure": "This article may contain affiliate links. Recommendations remain editorially independent.",
       "links": []
-    }
+    },
+    "url": "/blog/corporate-ai-pilots"
   },
   {
     "id": "2026-02-10-finance-highest-roi",
@@ -561,7 +591,8 @@
     "affiliate": {
       "disclosure": "This article may contain affiliate links. Recommendations remain editorially independent.",
       "links": []
-    }
+    },
+    "url": "/blog/finance-highest-roi"
   },
   {
     "id": "2026-01-28-build-vs-buy-ai-tooling",
@@ -582,6 +613,7 @@
     "affiliate": {
       "disclosure": "This article may contain affiliate links. Recommendations remain editorially independent.",
       "links": []
-    }
+    },
+    "url": "/blog/build-vs-buy-ai-tooling"
   }
 ]
