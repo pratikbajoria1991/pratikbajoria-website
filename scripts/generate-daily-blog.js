@@ -364,7 +364,7 @@ async function main() {
     affiliateTools: topic.affiliateTools || [],
     affiliate: {
       disclosure:
-        'This article may contain affiliate links. Recommendations remain editorially independent; commissions do not change the assessment.'
+        'Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission.'
     }
   };
 
