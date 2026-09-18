@@ -1,4 +1,58 @@
 [
-  {"partner":"REPLACE_WITH_APPROVED_PARTNER","label":"Approved partner recommendation","url":"","commission_model":"To be confirmed","status":"pending-approval"}
+  {
+    "partner": "hubspot",
+    "label": "HubSpot",
+    "url": "",
+    "productUrl": "https://www.hubspot.com/products/crm",
+    "status": "needs-affiliate-url"
+  },
+  {
+    "partner": "semrush",
+    "label": "Semrush",
+    "url": "",
+    "productUrl": "https://www.semrush.com/",
+    "status": "needs-affiliate-url"
+  },
+  {
+    "partner": "getresponse",
+    "label": "GetResponse",
+    "url": "",
+    "productUrl": "https://www.getresponse.com/",
+    "status": "needs-affiliate-url"
+  },
+  {
+    "partner": "upmetrics",
+    "label": "Upmetrics",
+    "url": "",
+    "productUrl": "https://upmetrics.co/",
+    "status": "needs-affiliate-url"
+  },
+  {
+    "partner": "synder",
+    "label": "Synder",
+    "url": "",
+    "productUrl": "https://synder.com/",
+    "status": "needs-affiliate-url"
+  },
+  {
+    "partner": "notion",
+    "label": "Notion",
+    "url": "",
+    "productUrl": "https://www.notion.so/product",
+    "status": "needs-affiliate-url"
+  },
+  {
+    "partner": "writesonic",
+    "label": "Writesonic",
+    "url": "",
+    "productUrl": "https://writesonic.com/",
+    "status": "needs-affiliate-url"
+  },
+  {
+    "partner": "databox",
+    "label": "Databox",
+    "url": "",
+    "productUrl": "https://databox.com/",
+    "status": "needs-affiliate-url"
+  }
 ]
-

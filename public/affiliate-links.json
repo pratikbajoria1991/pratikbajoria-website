@@ -47,6 +47,12 @@
     "productUrl": "https://writesonic.com/",
     "programUrl": "https://affiliates.writesonic.com/",
     "affiliateUrl": null
+  },
+  "databox": {
+    "name": "Databox",
+    "category": "Business dashboards and KPI reporting",
+    "productUrl": "https://databox.com/",
+    "programUrl": "https://databox.com/partners",
+    "affiliateUrl": null
   }
 }
-
