@@ -84,6 +84,10 @@ export default {
       if (legacySlug && isBlogSlug(legacySlug)) {
         return Response.redirect(new URL(`/blog/${encodeURIComponent(legacySlug)}`, url), 301);
       }
+      // Collapse /blog.html → /blog (single hop; avoids GSC redirect-chain errors)
+      if (url.pathname === '/blog.html') {
+        return Response.redirect(new URL('/blog', url), 301);
+      }
       return serveBlogAsset(request, env, null);
     }
 
