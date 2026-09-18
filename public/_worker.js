@@ -93,6 +93,23 @@ export default {
 
     // /blog/{slug} is served as static SSR HTML by Pages assets (no rewrite).
 
+    // Absolute 301s for legacy .html URLs (GSC flagged relative _redirects Location as Redirect error)
+    const htmlAliases = {
+      '/topics.html': '/topics',
+      '/privacy.html': '/privacy',
+      '/audit.html': '/audit',
+      '/scorecard.html': '/scorecard',
+      '/workshops.html': '/workshops',
+      '/resources.html': '/resources',
+      '/how-to-start-ai-implementation.html': '/how-to-start-ai-implementation',
+      '/ai-opportunity-audit-for-ca-firms.html': '/ai-opportunity-audit-for-ca-firms',
+      '/ai-implementation-for-finance-teams.html': '/ai-implementation-for-finance-teams',
+      '/workflow-automation-with-ai-for-mid-market.html': '/workflow-automation-with-ai-for-mid-market',
+    };
+    if (request.method === 'GET' && htmlAliases[url.pathname]) {
+      return Response.redirect(new URL(htmlAliases[url.pathname], url), 301);
+    }
+
     return env.ASSETS.fetch(request);
   }
 };
