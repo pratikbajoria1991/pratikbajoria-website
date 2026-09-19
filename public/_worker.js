@@ -5,6 +5,18 @@ const isEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 const isBlogSlug = (value) => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value);
 const INTERNAL_ASSET_HEADER = 'x-pages-internal-asset';
 
+const absoluteRedirect = (requestUrl, pathname) => {
+  const target = new URL(pathname, requestUrl);
+  return new Response(null, {
+    status: 301,
+    headers: {
+      Location: target.toString(),
+      'Cache-Control': 'public, max-age=3600'
+    }
+  });
+};
+
+
 async function handleDiscovery(request, env) {
   if (!env.DB) return json({ ok: false, error: 'Lead storage is not configured.' }, 503);
   let body; try { body = await request.json(); } catch { return json({ ok: false, error: 'Invalid request.' }, 400); }
@@ -82,16 +94,21 @@ export default {
     if (request.method === 'GET' && (url.pathname === '/blog' || url.pathname === '/blog.html')) {
       const legacySlug = url.searchParams.get('slug')?.trim();
       if (legacySlug && isBlogSlug(legacySlug)) {
-        return Response.redirect(new URL(`/blog/${encodeURIComponent(legacySlug)}`, url), 301);
+        return absoluteRedirect(url, `/blog/${encodeURIComponent(legacySlug)}`);
       }
       // Collapse /blog.html → /blog (single hop; avoids GSC redirect-chain errors)
       if (url.pathname === '/blog.html') {
-        return Response.redirect(new URL('/blog', url), 301);
+        return absoluteRedirect(url, '/blog');
       }
       return serveBlogAsset(request, env, null);
     }
 
     // /blog/{slug} is served as static SSR HTML by Pages assets (no rewrite).
+
+
+    if (request.method === 'GET' && (url.pathname === '/insights' || url.pathname === '/insights/')) {
+      return absoluteRedirect(url, '/blog');
+    }
 
     // Absolute 301s for legacy .html URLs (GSC flagged relative _redirects Location as Redirect error)
     const htmlAliases = {
@@ -107,7 +124,7 @@ export default {
       '/workflow-automation-with-ai-for-mid-market.html': '/workflow-automation-with-ai-for-mid-market',
     };
     if (request.method === 'GET' && htmlAliases[url.pathname]) {
-      return Response.redirect(new URL(htmlAliases[url.pathname], url), 301);
+      return absoluteRedirect(url, htmlAliases[url.pathname]);
     }
 
     return env.ASSETS.fetch(request);
