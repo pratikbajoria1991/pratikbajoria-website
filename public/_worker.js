@@ -127,6 +127,23 @@ export default {
       return absoluteRedirect(url, '/blog');
     }
 
+    const blogPathAliases = {
+      '/blog/2026-08-31-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/blog/2026-09-14-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders',
+      '/blog/2026-09-01-ai-in-real-estate-start-with-lead-qualification-and-documents': '/blog/2026-09-15-ai-in-real-estate-start-with-lead-qualification-and-documents',
+      '/blog/2026-09-02-what-good-ai-governance-looks-like-in-a-mid-market-company': '/blog/2026-09-16-what-good-ai-governance-looks-like-in-a-mid-market-company',
+      '/blog/2026-09-03-the-finance-function-is-ai-s-highest-roi-starting-point': '/blog/2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point',
+      '/blog/2026-09-04-why-most-corporate-ai-pilots-never-reach-production': '/blog/2026-09-11-why-most-corporate-ai-pilots-never-reach-production',
+      '/blog/2026-09-05-build-vs-buy-a-practical-framework-for-ai-tooling': '/blog/2026-09-12-build-vs-buy-a-practical-framework-for-ai-tooling',
+      '/blog/2026-09-06-how-to-automate-a-whatsapp-workflow-without-losing-control': '/blog/2026-09-13-how-to-automate-a-whatsapp-workflow-without-losing-control',
+      '/blog/2026-09-07-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/blog/2026-09-14-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders',
+      '/blog/2026-09-08-ai-in-real-estate-start-with-lead-qualification-and-documents': '/blog/2026-09-15-ai-in-real-estate-start-with-lead-qualification-and-documents',
+      '/blog/2026-09-09-what-good-ai-governance-looks-like-in-a-mid-market-company': '/blog/2026-09-16-what-good-ai-governance-looks-like-in-a-mid-market-company',
+      '/blog/2026-09-10-the-finance-function-is-ai-s-highest-roi-starting-point': '/blog/2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point',
+    };
+    if (request.method === 'GET' && blogPathAliases[url.pathname]) {
+      return absoluteRedirect(url, blogPathAliases[url.pathname]);
+    }
+
     // Absolute 301s for legacy .html URLs (GSC flagged relative _redirects Location as Redirect error)
     const htmlAliases = {
       '/topics.html': '/topics',
