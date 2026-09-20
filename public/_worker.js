@@ -5,6 +5,23 @@ const isEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 const isBlogSlug = (value) => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value);
 const INTERNAL_ASSET_HEADER = 'x-pages-internal-asset';
 
+const GA4_SNIPPET = '<script src="/ga4.js" defer></script>\n';
+async function injectGa4(response) {
+  const ctype = response.headers.get('content-type') || '';
+  if (response.status !== 200 || !ctype.includes('text/html')) return response;
+  const text = await response.text();
+  if (text.includes('/ga4.js') || text.includes('G-CXQP7F8CRT')) {
+    return new Response(text, { status: response.status, statusText: response.statusText, headers: response.headers });
+  }
+  const out = text.includes('</head>')
+    ? text.replace('</head>', `${GA4_SNIPPET}</head>`)
+    : `${text}${GA4_SNIPPET}`;
+  const headers = new Headers(response.headers);
+  headers.delete('content-length');
+  return new Response(out, { status: response.status, statusText: response.statusText, headers });
+}
+
+
 const absoluteRedirect = (requestUrl, pathname) => {
   const target = new URL(pathname, requestUrl);
   return new Response(null, {
@@ -56,7 +73,7 @@ async function serveBlogAsset(request, env, slug) {
     const direct = await env.ASSETS.fetch(request);
     if (direct.status === 200) {
       const ctype = direct.headers.get('content-type') || '';
-      if (ctype.includes('text/html')) return direct;
+      if (ctype.includes('text/html')) return injectGa4(direct);
     }
     const assetHeaders = new Headers(request.headers);
     assetHeaders.set(INTERNAL_ASSET_HEADER, '1');
@@ -68,18 +85,18 @@ async function serveBlogAsset(request, env, slug) {
       headers: assetHeaders,
       redirect: 'manual'
     }));
-    if (htmlResp.status === 200) return htmlResp;
+    if (htmlResp.status === 200) return injectGa4(htmlResp);
   }
   const assetHeaders = new Headers(request.headers);
   assetHeaders.set(INTERNAL_ASSET_HEADER, '1');
   const shellUrl = new URL(request.url);
   shellUrl.pathname = '/blog';
   shellUrl.search = '';
-  return env.ASSETS.fetch(new Request(shellUrl.toString(), {
+  return injectGa4(await env.ASSETS.fetch(new Request(shellUrl.toString(), {
     method: request.method,
     headers: assetHeaders,
     redirect: 'manual'
-  }));
+  })));
 }
 
 export default {
@@ -127,6 +144,6 @@ export default {
       return absoluteRedirect(url, htmlAliases[url.pathname]);
     }
 
-    return env.ASSETS.fetch(request);
+    return injectGa4(await env.ASSETS.fetch(request));
   }
 };
