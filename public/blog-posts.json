@@ -1,5 +1,36 @@
 [
   {
+    "id": "2026-09-21-semrush-for-owners-when-search-spend-is-actually-rational",
+    "title": "Semrush for Owners: When Search Spend Is Actually Rational",
+    "slug": "2026-09-21-semrush-for-owners-when-search-spend-is-actually-rational",
+    "url": "/blog/2026-09-21-semrush-for-owners-when-search-spend-is-actually-rational",
+    "date": "2026-09-21",
+    "author": "Pratik Bajoria",
+    "category": "Tool review",
+    "readTime": 6,
+    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=85",
+    "excerpt": "Pay for Semrush when you will act on one commercial question a week — not when you want prettier reports.",
+    "content": "Tool reviews are only useful when they help you decide what to try next week — not when they read like a feature brochure.\n\nPay for Semrush when you will act on one commercial question a week — not when you want prettier reports.\n\nHere is the practical cut. Write the current workflow on one page: input, decision, output, owner, and what \"good\" looks like today. If you cannot fill those five lines, you are not choosing a model yet — you are guessing.\n\nPick one bottleneck with volume and a measurable cost: cycle time, error rate, review hours, or cash delay. Ignore the impressive adjacent idea. Narrow beats clever. The teams that win treat AI like any other operating change: small scope, named owner, visible metric.\n\nDesign the human gate before the automation. Who approves? What evidence must remain? What must never leave the company systems? In finance and client work, an unauditable answer is not a deliverable. If a tool cannot show you how it reached a result, keep it in draft mode.\n\nShip a thin release to one team for two to four weeks. Run it beside the old process if the risk is material. Review the metric every week — not in a steering committee three months later. Capture exceptions in a shared log so patterns become obvious.\n\nIf the metric moves and controls hold, document the pattern so the next team does not start from folklore. If it does not move, stop. A failed pilot that you can explain is cheaper than a zombie subscription. I would rather a team keep a simple shared checklist and one honest metric than buy three tools and lose the plot.\n\nWhere software helps, use it as scaffolding — a CRM for pipeline truth, a workspace for SOPs, a planning tool for assumptions — not as a substitute for judgement. Mentioned products are options to evaluate against your process, not endorsements that replace due diligence.\n\nMonday-morning checklist: (1) name the owner, (2) name the metric, (3) name the exception path, (4) name the data the tool may see, (5) book the weekly review. If any line is blank, pause the rollout.\n\nThis is educational commentary from implementation work — not personalised financial, tax, legal or investment advice. Verify vendor pricing, privacy terms and any partner arrangements before you buy.",
+    "keywords": [
+      "Semrush review",
+      "SEO tool",
+      "search visibility"
+    ],
+    "sources": [
+      {
+        "title": "Semrush",
+        "url": "https://www.semrush.com/"
+      }
+    ],
+    "generatedBy": "editorial-fallback",
+    "affiliateTools": [
+      "semrush"
+    ],
+    "affiliate": {
+      "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
+    }
+  },
+  {
     "id": "2026-09-21-how-do-you-know-finance-ai-will-pay-for-itself-before-you-buy",
     "title": "How Do You Know Finance AI Will Pay for Itself Before You Buy?",
     "slug": "2026-09-21-how-do-you-know-finance-ai-will-pay-for-itself-before-you-buy",
