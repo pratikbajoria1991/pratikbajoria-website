@@ -1,5 +1,36 @@
 [
   {
+    "id": "2026-09-24-when-a-finance-team-should-say-no-to-an-ai-pilot",
+    "title": "When a Finance Team Should Say No to an AI Pilot",
+    "slug": "2026-09-24-when-a-finance-team-should-say-no-to-an-ai-pilot",
+    "url": "/blog/2026-09-24-when-a-finance-team-should-say-no-to-an-ai-pilot",
+    "date": "2026-09-24",
+    "author": "Pratik Bajoria",
+    "category": "Finance & compliance",
+    "readTime": 6,
+    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=85",
+    "excerpt": "A polite no beats a six-month pilot with no owner and no metric.",
+    "content": "I still see finance teams approve AI pilots the way they used to approve \"innovation labs\": interesting demo, unclear owner, no metric that shows up in the month-end pack.\n\nA polite no beats a six-month pilot with no owner and no metric.\n\nHere is the practical cut. Write the current workflow on one page: input, decision, output, owner, and what \"good\" looks like today. If you cannot fill those five lines, you are not choosing a model yet — you are guessing.\n\nPick one bottleneck with volume and a measurable cost: cycle time, error rate, review hours, or cash delay. Ignore the impressive adjacent idea. Narrow beats clever. The teams that win treat AI like any other operating change: small scope, named owner, visible metric.\n\nDesign the human gate before the automation. Who approves? What evidence must remain? What must never leave the company systems? In finance and client work, an unauditable answer is not a deliverable. If a tool cannot show you how it reached a result, keep it in draft mode.\n\nShip a thin release to one team for two to four weeks. Run it beside the old process if the risk is material. Review the metric every week — not in a steering committee three months later. Capture exceptions in a shared log so patterns become obvious.\n\nIf the metric moves and controls hold, document the pattern so the next team does not start from folklore. If it does not move, stop. A failed pilot that you can explain is cheaper than a zombie subscription. I would rather a team keep a simple shared checklist and one honest metric than buy three tools and lose the plot.\n\nWhere software helps, use it as scaffolding — a CRM for pipeline truth, a workspace for SOPs, a planning tool for assumptions — not as a substitute for judgement. Mentioned products are options to evaluate against your process, not endorsements that replace due diligence.\n\nMonday-morning checklist: (1) name the owner, (2) name the metric, (3) name the exception path, (4) name the data the tool may see, (5) book the weekly review. If any line is blank, pause the rollout.\n\nThis is educational commentary from implementation work — not personalised financial, tax, legal or investment advice. Verify vendor pricing, privacy terms and any partner arrangements before you buy.",
+    "keywords": [
+      "AI pilot",
+      "finance AI",
+      "AI governance"
+    ],
+    "sources": [
+      {
+        "title": "NIST AI Risk Management Framework",
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+      }
+    ],
+    "generatedBy": "editorial-fallback",
+    "affiliateTools": [
+      "notion"
+    ],
+    "affiliate": {
+      "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
+    }
+  },
+  {
     "id": "2026-09-23-build-vs-buy-for-ai-what-i-ask-founders-before-they-sign",
     "title": "Build vs Buy for AI: What I Ask Founders Before They Sign",
     "slug": "2026-09-23-build-vs-buy-for-ai-what-i-ask-founders-before-they-sign",
