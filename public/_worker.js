@@ -139,6 +139,7 @@ export default {
       '/blog/2026-09-08-ai-in-real-estate-start-with-lead-qualification-and-documents': '/blog/2026-09-15-ai-in-real-estate-start-with-lead-qualification-and-documents',
       '/blog/2026-09-09-what-good-ai-governance-looks-like-in-a-mid-market-company': '/blog/2026-09-16-what-good-ai-governance-looks-like-in-a-mid-market-company',
       '/blog/2026-09-10-the-finance-function-is-ai-s-highest-roi-starting-point': '/blog/2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point',
+      '/blog/finance-highest-roi': '/blog/2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point',
     };
     if (request.method === 'GET' && blogPathAliases[url.pathname]) {
       return absoluteRedirect(url, blogPathAliases[url.pathname]);

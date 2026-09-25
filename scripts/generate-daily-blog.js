@@ -7,7 +7,7 @@ const path = require('path');
 const root = path.join(__dirname, '..');
 const postsPath = path.join(root, 'public', 'blog-posts.json');
 const catalogPath = path.join(root, 'public', 'affiliate-links.json');
-const today = new Date().toISOString().slice(0, 10);
+const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Kolkata', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
 
 /** Expandable topic bank — each entry used at most once until the bank cycles; avoids same-7 daily clones. */
 const topics = [
@@ -235,6 +235,15 @@ function qualityCheck(post) {
   );
 }
 
+function kolkataDate(d = new Date()) {
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Kolkata',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  }).format(d);
+}
+
 function writeSsrHtml(post, catalog) {
   const esc = (s) =>
     String(s || '')
@@ -261,12 +270,37 @@ function writeSsrHtml(post, catalog) {
       .join('');
     toolsHtml = `<aside class="article-tools" aria-label="Tools mentioned in this article"><p class="eyebrow">Tools worth evaluating</p><div class="article-tool-grid">${cards}</div><p class="article-tool-note">${esc(post.affiliate.disclosure)}</p></aside>`;
   }
+  const sourceList = Array.isArray(post.sources) ? post.sources : [];
+  const sourcesHtml = sourceList.length
+    ? `<h2>Sources</h2>\n<ul>\n${sourceList
+        .map((s) => `  <li><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title || s.url)}</a></li>`)
+        .join('\n')}\n</ul>`
+    : '';
   const canonical = `https://pratikbajoria.com/blog/${post.slug}`;
+  const ld = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    dateModified: kolkataDate(),
+    author: {
+      '@type': 'Person',
+      name: 'Pratik Bajoria',
+      url: 'https://pratikbajoria.com/#person',
+      sameAs: ['https://www.linkedin.com/in/pratik-bajoria-6288b1119/']
+    },
+    publisher: { '@type': 'Person', name: 'Pratik Bajoria', '@id': 'https://pratikbajoria.com/#person' },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+    image: post.image,
+    keywords: post.keywords || []
+  };
   const html = `<!doctype html>
 <html lang="en-IN">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f0e8" />
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
     <meta name="author" content="Pratik Bajoria" />
     <title>${esc(post.title)} — Pratik Bajoria</title>
@@ -277,8 +311,15 @@ function writeSsrHtml(post, catalog) {
     <meta property="og:description" content="${esc(post.excerpt)}" />
     <meta property="og:url" content="${esc(canonical)}" />
     <meta property="og:image" content="${esc(post.image)}" />
+    <meta property="og:site_name" content="Pratik Bajoria" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.ico" />
     <link rel="stylesheet" href="/styles.css" />
-    <link rel="stylesheet" href="/styles-overrides.css?v=20260910" />
+    <link rel="stylesheet" href="/styles-overrides.css?v=20260925" />
+    <script type="application/ld+json">
+${JSON.stringify(ld, null, 2)}
+    </script>
+    <script src="/ga4.js" defer></script>
   </head>
   <body data-static-article="1" data-slug="${esc(post.slug)}">
     <main class="shell article-page">
@@ -287,6 +328,7 @@ function writeSsrHtml(post, catalog) {
         <div class="article-header-links">
           <a class="text-link" href="/topics">50 topic guide ↗</a>
           <a class="text-link" href="/blog">All insights ↗</a>
+          <a class="text-link" href="/#insights">Home insights ↗</a>
         </div>
       </header>
       <article id="article">
@@ -295,6 +337,7 @@ function writeSsrHtml(post, catalog) {
         <p class="article-dek">${esc(post.excerpt)}</p>
         <div class="article-body">
 ${paras}
+${sourcesHtml}
         </div>
         ${toolsHtml}
         <p class="ymyl-note" style="margin-top:28px;font-size:0.92rem;color:#6f746d"><em>Educational content; not financial, investment, or legal advice.</em></p>
@@ -302,20 +345,39 @@ ${paras}
           <p class="eyebrow">Next step</p>
           <h2 style="font-size:1.4rem;margin:8px 0 12px">Turn this insight into action</h2>
           <p>Discuss where AI creates measurable P&amp;L impact — or start free with the scorecard.</p>
-          <p class="article-cta-actions" style="margin-top:16px;display:flex;flex-wrap:wrap;gap:12px">
+          <p class="article-cta-actions" style="margin-top:16px;display:flex;flex-wrap:wrap;gap:12px;align-items:center">
             <a class="button button-dark" href="/#contact">Book a discovery call <span>↗</span></a>
             <a class="button button-cream" href="/scorecard">Get the free AI Opportunity Scorecard <span>↗</span></a>
           </p>
+          <p style="margin-top:14px"><a class="muted-link" href="/audit">See the AI Opportunity Audit →</a></p>
         </div>
       </article>
     </main>
-    <script src="/blog.js" defer></script>
+    <script src="/blog.js?v=20260925" defer></script>
   </body>
 </html>
 `;
-  const out = path.join(root, 'public', 'blog', `${post.slug}.html`);
-  fs.writeFileSync(out, html);
+  const outDir = path.join(root, 'public', 'blog');
+  fs.mkdirSync(outDir, { recursive: true });
+  fs.writeFileSync(path.join(outDir, `${post.slug}.html`), html);
 }
+
+function updateSitemap(post) {
+  const sitemapPath = path.join(root, 'public', 'sitemap.xml');
+  if (!fs.existsSync(sitemapPath)) return;
+  let xml = fs.readFileSync(sitemapPath, 'utf8');
+  const loc = `https://pratikbajoria.com/blog/${post.slug}`;
+  const lastmod = kolkataDate();
+  const entry = `  <url><loc>${loc}</loc><lastmod>${lastmod}</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>\n`;
+  const escaped = loc.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const re = new RegExp('  <url><loc>' + escaped + '</loc>[\\s\\S]*?</url>\\n');
+  if (re.test(xml)) xml = xml.replace(re, entry);
+  else xml = xml.replace('</urlset>', entry + '</urlset>');
+  xml = xml.replace(/(<url><loc>https:\/\/pratikbajoria\.com\/blog<\/loc><lastmod>)[^<]+/, '$1' + lastmod);
+  xml = xml.replace(/(<url><loc>https:\/\/pratikbajoria\.com\/<\/loc><lastmod>)[^<]+/, '$1' + lastmod);
+  fs.writeFileSync(sitemapPath, xml);
+}
+
 
 async function main() {
   const existing = JSON.parse(fs.readFileSync(postsPath, 'utf8'));
@@ -373,6 +435,7 @@ async function main() {
   const posts = [post, ...existing.filter((item) => item.id !== post.id && item.slug !== post.slug)].slice(0, 30);
   fs.writeFileSync(postsPath, JSON.stringify(posts, null, 2) + '\n');
   writeSsrHtml(post, catalog);
+  updateSitemap(post);
   console.log(`Published ${generatedBy} article: ${post.title} (${words(post.content)} words) tools=${(post.affiliateTools || []).join(',') || 'none'}`);
 }
 

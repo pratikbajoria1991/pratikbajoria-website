@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en-IN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f0e8" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
+    <meta name="author" content="Pratik Bajoria" />
+    <title>AI Governance for Mid-Market Teams Who Do Not Have a Chief AI Officer — Pratik Bajoria</title>
+    <meta name="description" content="Four one-page rules beat a 40-page policy nobody reads." />
+    <link rel="canonical" href="https://pratikbajoria.com/blog/2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="AI Governance for Mid-Market Teams Who Do Not Have a Chief AI Officer" />
+    <meta property="og:description" content="Four one-page rules beat a 40-page policy nobody reads." />
+    <meta property="og:url" content="https://pratikbajoria.com/blog/2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=85" />
+    <meta property="og:site_name" content="Pratik Bajoria" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AI Governance for Mid-Market Teams Who Do Not Have a Chief AI Officer" />
+    <meta name="twitter:description" content="Four one-page rules beat a 40-page policy nobody reads." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=85" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/styles-overrides.css?v=20260910" />
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI Governance for Mid-Market Teams Who Do Not Have a Chief AI Officer",
+  "description": "Four one-page rules beat a 40-page policy nobody reads.",
+  "datePublished": "2026-09-19",
+  "dateModified": "2026-09-25",
+  "author": {
+    "@type": "Person",
+    "name": "Pratik Bajoria",
+    "url": "https://pratikbajoria.com/#person",
+    "sameAs": [
+      "https://www.linkedin.com/in/pratik-bajoria-6288b1119/"
+    ]
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Pratik Bajoria",
+    "@id": "https://pratikbajoria.com/#person"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://pratikbajoria.com/blog/2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer"
+  },
+  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=85",
+  "keywords": [
+    "AI governance",
+    "AI policy",
+    "mid-market AI"
+  ]
+}
+    </script>
+      <script src="/ga4.js" defer></script>
+</head>
+  <body data-static-article="1" data-slug="2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer">
+    <main class="shell article-page">
+      <header class="article-header">
+        <a class="wordmark" href="/" aria-label="Pratik Bajoria home"><span>PB</span></a>
+        <div class="article-header-links">
+          <a class="text-link" href="/topics">50 topic guide ↗</a>
+          <a class="text-link" href="/blog">All insights ↗</a>
+          <a class="text-link" href="/#insights">Home insights ↗</a>
+        </div>
+      </header>
+      <article id="article">
+        <p class="eyebrow">AI governance · 2026-09-19 · 6 min read</p>
+        <h1>AI Governance for Mid-Market Teams Who Do Not Have a Chief AI Officer</h1>
+        <p class="article-dek">Four one-page rules beat a 40-page policy nobody reads.</p>
+        <div class="article-body">
+
+<p>Mid-market teams do not need a Chief AI Officer to govern AI. They need four rules people can recite on a Monday morning. A 40-page policy nobody opens is theatre. A one-page set of ownership, data, review and logging rules is an operating control.</p>
+<p>I still see boards ask for “AI governance” the way they once asked for “innovation labs”: a committee, a slide, and no change to how work actually moves. Governance that works is boring on purpose. It makes the safe path the easy path. It names who owns a use case, which data classes a system may touch, when a human must approve, and what evidence must remain if auditors or clients ask how an answer was produced.</p>
+<p>Start with a use-case register, not a model catalogue. For each candidate workflow write five lines: input, decision, output, owner, and what “good” looks like today. If those lines are blank, you are not ready for a model — you are guessing. Rank the register by P&amp;L impact and control risk. Fund one narrow release with a named metric. Ignore the impressive adjacent idea until the first release either proves itself or fails cleanly.</p>
+<p>The four one-page rules I recommend teams adopt are deliberately short.</p>
+<p><strong>1. Ownership.</strong> Every live AI-assisted workflow has a named business owner and a named technical steward. The business owner owns the metric and the stop conditions. The steward owns access, logging and change control. Dual ownership prevents the classic failure mode where IT “keeps the lights on” while Finance assumes the output is already reviewed.</p>
+<p><strong>2. Data classes.</strong> Decide in advance which data may leave the company systems, which must stay in a controlled environment, and which must never be pasted into a consumer chatbot. Client identifiable data, unpublished financials and privileged advice sit in the restricted class by default. If a tool cannot honour that boundary, it stays in draft mode or it is declined.</p>
+<p><strong>3. Human gates.</strong> Define which outputs require a person to approve before they become a deliverable, a journal, a client message or a management pack line. In finance and client work, an unauditable answer is not a deliverable. Keep judgement and exception handling with a named human; automate intake, drafting and matching where the risk is lower.</p>
+<p><strong>4. Logging and change.</strong> Prompt libraries, model versions, connectors and access grants change. Treat those changes like any other control-relevant change: note who changed what, when, and why. Retain enough evidence that you can reconstruct a contested output. If you cannot reconstruct it, you cannot defend it.</p>
+<p>These rules align with the spirit of public frameworks such as the NIST AI Risk Management Framework: map risks, measure what matters, manage with proportionate controls, and govern with clear accountability. You do not need to copy a regulator’s vocabulary wholesale. You do need the same discipline — proportionate, documented, owned.</p>
+<aside class="site-callout" style="margin:28px 0;padding:20px 22px;border:1px solid rgba(28,28,26,0.12);border-radius:12px;background:#faf7f1">
+  <p class="eyebrow" style="margin:0 0 8px">From pratikbajoria.com</p>
+  <p style="margin:0 0 12px"><strong>Buy tools after you know which workflow pays back.</strong> Start with the free <a href="https://pratikbajoria.com/scorecard">AI Opportunity Scorecard</a>, or see the scoped <a href="https://pratikbajoria.com/audit">AI Opportunity Audit</a> for a 90-day map.</p>
+  <p style="margin:0;display:flex;flex-wrap:wrap;gap:10px"><a class="button button-cream" href="/scorecard">Open scorecard ↗</a> <a class="muted-link" href="/audit">View audit →</a></p>
+</aside>
+<p>Where software helps, use a shared workspace as scaffolding for the register, exception log and weekly review — not as a second policy binder. A simple Notion board with owners, statuses and evidence links is often enough for a mid-market team. Fancy GRC suites can wait until the operating cadence is real.</p>
+<p>Ship a thin release to one team for two to four weeks. Run it beside the old process if the risk is material. Review the metric every week — not in a steering committee three months later. Capture exceptions in a shared log so patterns become obvious. If the metric moves and controls hold, document the pattern so the next team does not start from folklore. If it does not move, stop. A failed pilot you can explain is cheaper than a zombie subscription.</p>
+<p>Common failure modes are predictable. Governance written by Legal alone becomes unread. Governance owned only by IT becomes a ticket queue. Governance that never names a metric becomes a branding exercise. The cure is the same in each case: one page, four rules, one funded release, one weekly review.</p>
+<h2>Monday-morning checklist</h2>
+<ul>
+  <li>Name the business owner and technical steward for every live AI workflow.</li>
+  <li>Classify data the tool may see; block restricted classes by default.</li>
+  <li>Write the human approval gate before go-live.</li>
+  <li>Confirm logging and change notes exist for prompts, models and connectors.</li>
+  <li>Book the weekly metric review; blank lines mean pause the rollout.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+  <li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST AI Risk Management Framework</a></li>
+  <li><a href="https://www.cisa.gov/resources-tools/resources/ai-cybersecurity-collaboration-playbook" target="_blank" rel="noopener noreferrer">CISA AI Cybersecurity Collaboration Playbook</a></li>
+</ul>
+<p>This is educational commentary from implementation work — not personalised financial, tax, legal or investment advice. Verify vendor pricing, privacy terms and your own internal policies before you buy or deploy.</p>
+
+        </div>
+        <aside class="article-tools" aria-label="Tools mentioned in this article"><p class="eyebrow">Tools worth evaluating</p><div class="article-tool-grid"><a href="https://www.notion.so/product" target="_blank" rel="noopener noreferrer"><strong>Notion</strong><span>Knowledge management and workspace</span><small>Visit Notion official site ↗</small></a></div><p class="article-tool-note">Tool links go to the vendor’s official site. No affiliate tracking is active on this page yet. Recommendations are based on fit for finance, ops and AI implementation work — not on commission.</p></aside>
+        <p class="ymyl-note" style="margin-top:28px;font-size:0.92rem;color:#6f746d"><em>Educational content; not financial, investment, or legal advice.</em></p>
+                <div class="article-cta" style="margin-top:40px;padding:24px;border:1px solid rgba(28,28,26,0.12);border-radius:12px">
+          <p class="eyebrow">Next step</p>
+          <h2 style="font-size:1.4rem;margin:8px 0 12px">Turn this insight into action</h2>
+          <p>Discuss where AI creates measurable P&amp;L impact — or start free with the scorecard.</p>
+          <p class="article-cta-actions" style="margin-top:16px;display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+            <a class="button button-dark" href="/#contact">Book a discovery call <span>↗</span></a>
+            <a class="button button-cream" href="/scorecard">Get the free AI Opportunity Scorecard <span>↗</span></a>
+          </p>
+          <p style="margin-top:14px"><a class="muted-link" href="/audit">See the AI Opportunity Audit →</a></p>
+        </div>
+</article>
+    </main>
+    <footer class="site-footer shell">
+      <div class="wordmark"><span>PB</span></div>
+      <div>© <span id="year"></span> Pratik Bajoria</div>
+      <div>
+        <a href="/privacy">Privacy</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/blog">Blog</a>
+        <a href="/topics">Topics</a>
+        <a href="mailto:hello@pratikbajoria.com">Contact</a>
+      </div>
+    </footer>
+    <script>document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());</script>
+    <script src="/blog.js?v=20260909" defer></script>
+  </body>
+</html>
