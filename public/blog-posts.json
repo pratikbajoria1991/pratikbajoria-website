@@ -1,5 +1,37 @@
 [
   {
+    "id": "2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre",
+    "title": "A 90-Day AI Opportunity Audit Without the Theatre",
+    "slug": "2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre",
+    "url": "/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre",
+    "date": "2026-09-25",
+    "author": "Pratik Bajoria",
+    "category": "AI implementation",
+    "readTime": 6,
+    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=85",
+    "excerpt": "Rank use cases by P&L and control risk, then fund one narrow release — not a catalogue of ideas.",
+    "content": "A useful AI audit is boring on purpose. It ranks work, names owners, and ends with one funded release — not a slide of fifty ideas.\n\nRank use cases by P&L and control risk, then fund one narrow release — not a catalogue of ideas.\n\nHere is the practical cut. Write the current workflow on one page: input, decision, output, owner, and what \"good\" looks like today. If you cannot fill those five lines, you are not choosing a model yet — you are guessing.\n\nPick one bottleneck with volume and a measurable cost: cycle time, error rate, review hours, or cash delay. Ignore the impressive adjacent idea. Narrow beats clever. The teams that win treat AI like any other operating change: small scope, named owner, visible metric.\n\nDesign the human gate before the automation. Who approves? What evidence must remain? What must never leave the company systems? In finance and client work, an unauditable answer is not a deliverable. If a tool cannot show you how it reached a result, keep it in draft mode.\n\nShip a thin release to one team for two to four weeks. Run it beside the old process if the risk is material. Review the metric every week — not in a steering committee three months later. Capture exceptions in a shared log so patterns become obvious.\n\nIf the metric moves and controls hold, document the pattern so the next team does not start from folklore. If it does not move, stop. A failed pilot that you can explain is cheaper than a zombie subscription. I would rather a team keep a simple shared checklist and one honest metric than buy three tools and lose the plot.\n\nWhere software helps, use it as scaffolding — a CRM for pipeline truth, a workspace for SOPs, a planning tool for assumptions — not as a substitute for judgement. Mentioned products are options to evaluate against your process, not endorsements that replace due diligence.\n\nMonday-morning checklist: (1) name the owner, (2) name the metric, (3) name the exception path, (4) name the data the tool may see, (5) book the weekly review. If any line is blank, pause the rollout.\n\nThis is educational commentary from implementation work — not personalised financial, tax, legal or investment advice. Verify vendor pricing, privacy terms and any partner arrangements before you buy.",
+    "keywords": [
+      "AI audit",
+      "90-day roadmap",
+      "AI opportunity"
+    ],
+    "sources": [
+      {
+        "title": "NIST AI Risk Management Framework",
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+      }
+    ],
+    "generatedBy": "editorial-fallback",
+    "affiliateTools": [
+      "notion",
+      "upmetrics"
+    ],
+    "affiliate": {
+      "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
+    }
+  },
+  {
     "id": "ai-for-chartered-accountants-in-india",
     "title": "AI for Chartered Accountants in India: A Practical Implementation Hub",
     "slug": "ai-for-chartered-accountants-in-india",
@@ -857,49 +889,5 @@
       "links": []
     },
     "url": "/blog/corporate-ai-pilots"
-  },
-  {
-    "id": "2026-02-10-finance-highest-roi",
-    "title": "The Finance Function is AI's Highest-ROI Starting Point",
-    "slug": "finance-highest-roi",
-    "date": "2026-02-10",
-    "author": "Pratik Bajoria",
-    "category": "Finance & compliance",
-    "readTime": 6,
-    "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=85",
-    "excerpt": "Structured data, repetitive judgement, measurable output. A CA’s view on why reconciliation and close automation beat chatbots every time.",
-    "content": "Finance teams have the structured data, recurring workflows and measurable controls that make an excellent first AI deployment. Start with reconciliation, close and reporting before chasing novelty.",
-    "keywords": [
-      "finance AI",
-      "reconciliation automation",
-      "compliance"
-    ],
-    "affiliate": {
-      "disclosure": "This article may contain affiliate links. Recommendations remain editorially independent.",
-      "links": []
-    },
-    "url": "/blog/finance-highest-roi"
-  },
-  {
-    "id": "2026-01-28-build-vs-buy-ai-tooling",
-    "title": "Build vs. Buy: A Decision Framework for AI Tooling",
-    "slug": "build-vs-buy-ai-tooling",
-    "date": "2026-01-28",
-    "author": "Pratik Bajoria",
-    "category": "AI strategy",
-    "readTime": 7,
-    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=85",
-    "excerpt": "When to license a vendor, when to build in-house, and the hidden switching costs most leadership teams discover far too late.",
-    "content": "The right choice depends on differentiation, data sensitivity, time to value and switching costs. A disciplined framework helps leadership teams avoid both premature custom development and expensive lock-in.",
-    "keywords": [
-      "AI tooling",
-      "build vs buy",
-      "AI strategy"
-    ],
-    "affiliate": {
-      "disclosure": "This article may contain affiliate links. Recommendations remain editorially independent.",
-      "links": []
-    },
-    "url": "/blog/build-vs-buy-ai-tooling"
   }
 ]
