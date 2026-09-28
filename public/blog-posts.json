@@ -1,5 +1,37 @@
 [
   {
+    "id": "2026-09-28-whatsapp-automation-that-still-feels-like-customer-care",
+    "title": "WhatsApp Automation That Still Feels Like Customer Care",
+    "slug": "2026-09-28-whatsapp-automation-that-still-feels-like-customer-care",
+    "url": "/blog/2026-09-28-whatsapp-automation-that-still-feels-like-customer-care",
+    "date": "2026-09-28",
+    "author": "Pratik Bajoria",
+    "category": "Workflow automation",
+    "readTime": 6,
+    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=85",
+    "excerpt": "Automate intake and logging first; keep judgement and exceptions with a named human.",
+    "content": "Most AI workflows fail quietly. The model works in a sandbox; the Monday morning handoff does not.\n\nAutomate intake and logging first; keep judgement and exceptions with a named human.\n\nHere is the practical cut. Write the current workflow on one page: input, decision, output, owner, and what \"good\" looks like today. If you cannot fill those five lines, you are not choosing a model yet — you are guessing.\n\nPick one bottleneck with volume and a measurable cost: cycle time, error rate, review hours, or cash delay. Ignore the impressive adjacent idea. Narrow beats clever. The teams that win treat AI like any other operating change: small scope, named owner, visible metric.\n\nDesign the human gate before the automation. Who approves? What evidence must remain? What must never leave the company systems? In finance and client work, an unauditable answer is not a deliverable. If a tool cannot show you how it reached a result, keep it in draft mode.\n\nShip a thin release to one team for two to four weeks. Run it beside the old process if the risk is material. Review the metric every week — not in a steering committee three months later. Capture exceptions in a shared log so patterns become obvious.\n\nIf the metric moves and controls hold, document the pattern so the next team does not start from folklore. If it does not move, stop. A failed pilot that you can explain is cheaper than a zombie subscription. I would rather a team keep a simple shared checklist and one honest metric than buy three tools and lose the plot.\n\nWhere software helps, use it as scaffolding — a CRM for pipeline truth, a workspace for SOPs, a planning tool for assumptions — not as a substitute for judgement. Mentioned products are options to evaluate against your process, not endorsements that replace due diligence.\n\nMonday-morning checklist: (1) name the owner, (2) name the metric, (3) name the exception path, (4) name the data the tool may see, (5) book the weekly review. If any line is blank, pause the rollout.\n\nThis is educational commentary from implementation work — not personalised financial, tax, legal or investment advice. Verify vendor pricing, privacy terms and any partner arrangements before you buy.",
+    "keywords": [
+      "WhatsApp automation",
+      "workflow automation",
+      "customer ops"
+    ],
+    "sources": [
+      {
+        "title": "NIST AI Risk Management Framework",
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+      }
+    ],
+    "generatedBy": "editorial-fallback",
+    "affiliateTools": [
+      "getresponse",
+      "hubspot"
+    ],
+    "affiliate": {
+      "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
+    }
+  },
+  {
     "id": "2026-09-27-hubspot-vs-spreadsheet-crm-the-real-switching-cost",
     "title": "HubSpot vs Spreadsheet CRM: The Real Switching Cost",
     "slug": "2026-09-27-hubspot-vs-spreadsheet-crm-the-real-switching-cost",
@@ -860,35 +892,6 @@
       "AI governance",
       "AI policy",
       "risk controls"
-    ],
-    "sources": [
-      {
-        "title": "NIST AI Risk Management Framework",
-        "url": "https://www.nist.gov/itl/ai-risk-management-framework"
-      }
-    ],
-    "generatedBy": "editorial-fallback",
-    "affiliate": {
-      "disclosure": "This article may contain affiliate links. Recommendations remain editorially independent.",
-      "links": []
-    }
-  },
-  {
-    "id": "2026-09-01-ai-in-real-estate-start-with-lead-qualification-and-documents",
-    "title": "AI in Real Estate: Start With Lead Qualification and Documents",
-    "slug": "2026-09-01-ai-in-real-estate-start-with-lead-qualification-and-documents",
-    "url": "/blog/2026-09-01-ai-in-real-estate-start-with-lead-qualification-and-documents",
-    "date": "2026-09-01",
-    "author": "Pratik Bajoria",
-    "category": "Real estate & infrastructure",
-    "readTime": 7,
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=85",
-    "excerpt": "Real-estate teams can create early value by structuring fragmented leads and document-heavy operations before attempting ambitious prediction products.",
-    "content": "Real-estate teams can create early value by structuring fragmented leads and document-heavy operations before attempting ambitious prediction products. That sounds obvious, but it changes the order of operations. Start with the process and the economics; choose the model only after the work, controls and expected outcome are clear.\n\nThe first question is not “Where can we use AI?” It is “Which workflow has enough volume, enough friction and enough measurable output to justify a controlled intervention?” A strong candidate usually has a defined input, a repeatable decision or transformation, and an owner who can explain what good looks like today.\n\nA practical deployment begins narrowly. Map the current workflow, record cycle time and error patterns, identify the decisions that must remain human, and define one success metric. Then ship one bounded release to one team. This creates a baseline against which the business can judge time saved, quality improved, revenue protected or risk reduced.\n\nControls belong in the first version. Decide what data the system may access, where a person must review the result, what gets logged, and how an exception is escalated. In finance, compliance and customer-facing workflows, an impressive demo without an audit trail is not a production system.\n\nThe operating lesson is simple: adoption is part of the build. Give the team a short standard operating procedure, show examples of correct and incorrect use, and review the metric weekly. If the process does not improve, stop or redesign it. If it does, document the pattern and use the evidence to fund the next use case.\n\nThere is also a sequencing decision. Automate the handoffs that create delay before automating nuanced judgement. Standardise the input before asking a model to interpret it. Create a review queue before promising straight-through processing. These choices reduce operational risk and make the business case easier to defend with finance, risk and compliance stakeholders.\n\nA useful weekly review asks four questions: did the workflow get faster, did quality hold, did people actually use it, and did the control environment remain intact? The answers should be visible in a small operating dashboard, not buried in a project update. Evidence is what turns enthusiasm into a repeatable investment thesis.\n\nThe business case should be written in the language of the function being improved. A finance leader may care about close days, unreconciled items and review hours. A commercial leader may care about response time, qualified pipeline and conversion. An operations leader may care about throughput, rework and exception rates. The same model can be valuable or wasteful depending on which constraint it is designed to relieve.\n\nThis is also why implementation should leave behind operating assets: a workflow map, a baseline metric, a prompt or rules library, an exception policy, a named owner and a review cadence. Those artefacts make the next deployment cheaper and reduce the risk that knowledge disappears when the original project team moves on.\n\nFor leaders, the best first AI win is rarely the most spectacular one. It is the one that can be scoped honestly, measured quickly and trusted by the people who must use it. That is how an experiment becomes operating capability.",
-    "keywords": [
-      "real estate AI",
-      "lead qualification",
-      "document automation"
     ],
     "sources": [
       {
