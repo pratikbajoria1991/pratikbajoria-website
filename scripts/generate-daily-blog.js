@@ -432,7 +432,7 @@ async function main() {
 
   if (!qualityCheck(post)) throw new Error('Quality gate failed.');
 
-  const posts = [post, ...existing.filter((item) => item.id !== post.id && item.slug !== post.slug)].slice(0, 30);
+  const posts = [post, ...existing.filter((item) => item.id !== post.id && item.slug !== post.slug)]; // no cap: older posts stay in JSON (each has an SSR page; dropping them breaks listings)
   fs.writeFileSync(postsPath, JSON.stringify(posts, null, 2) + '\n');
   writeSsrHtml(post, catalog);
   updateSitemap(post);
