@@ -22,6 +22,21 @@ async function injectGa4(response) {
 }
 
 
+const blogPathAliases = {
+  '/blog/2026-08-31-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/blog/2026-09-14-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders',
+  '/blog/2026-09-01-ai-in-real-estate-start-with-lead-qualification-and-documents': '/blog/2026-09-15-ai-in-real-estate-start-with-lead-qualification-and-documents',
+  '/blog/2026-09-02-what-good-ai-governance-looks-like-in-a-mid-market-company': '/blog/2026-09-16-what-good-ai-governance-looks-like-in-a-mid-market-company',
+  '/blog/2026-09-03-the-finance-function-is-ai-s-highest-roi-starting-point': '/blog/2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point',
+  '/blog/2026-09-04-why-most-corporate-ai-pilots-never-reach-production': '/blog/2026-09-11-why-most-corporate-ai-pilots-never-reach-production',
+  '/blog/2026-09-05-build-vs-buy-a-practical-framework-for-ai-tooling': '/blog/2026-09-12-build-vs-buy-a-practical-framework-for-ai-tooling',
+  '/blog/2026-09-06-how-to-automate-a-whatsapp-workflow-without-losing-control': '/blog/2026-09-13-how-to-automate-a-whatsapp-workflow-without-losing-control',
+  '/blog/2026-09-07-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/blog/2026-09-14-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders',
+  '/blog/2026-09-08-ai-in-real-estate-start-with-lead-qualification-and-documents': '/blog/2026-09-15-ai-in-real-estate-start-with-lead-qualification-and-documents',
+  '/blog/2026-09-09-what-good-ai-governance-looks-like-in-a-mid-market-company': '/blog/2026-09-16-what-good-ai-governance-looks-like-in-a-mid-market-company',
+  '/blog/2026-09-10-the-finance-function-is-ai-s-highest-roi-starting-point': '/blog/2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point',
+  '/blog/finance-highest-roi': '/blog/2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point',
+};
+
 const absoluteRedirect = (requestUrl, pathname) => {
   const target = new URL(pathname, requestUrl);
   return new Response(null, {
@@ -33,6 +48,261 @@ const absoluteRedirect = (requestUrl, pathname) => {
   });
 };
 
+
+// ---------------------------------------------------------------------------
+// Blog safety net: /blog/{slug} with no static SSR file is rendered from
+// blog-posts.json (same markup as public/blog/*.html); unknown slugs get a
+// real HTTP 404 instead of the SPA/homepage fallback (soft-404).
+// ---------------------------------------------------------------------------
+const SITE = 'https://pratikbajoria.com';
+const escHtml = (s) => String(s ?? '')
+  .replace(/&/g, '&amp;')
+  .replace(/</g, '&lt;')
+  .replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;');
+
+function internalAssetRequest(request, pathname) {
+  const u = new URL(request.url);
+  u.pathname = pathname;
+  u.search = '';
+  const h = new Headers();
+  h.set(INTERNAL_ASSET_HEADER, '1');
+  return new Request(u.toString(), { method: 'GET', headers: h, redirect: 'manual' });
+}
+
+async function loadJsonAsset(request, env, pathname, fallback) {
+  try {
+    const r = await env.ASSETS.fetch(internalAssetRequest(request, pathname));
+    if (r.status !== 200) return fallback;
+    return await r.json();
+  } catch {
+    return fallback;
+  }
+}
+
+async function loadAllPosts(request, env) {
+  const [daily, editorial] = await Promise.all([
+    loadJsonAsset(request, env, '/blog-posts.json', []),
+    loadJsonAsset(request, env, '/affiliate-articles.json', [])
+  ]);
+  return [...(Array.isArray(daily) ? daily : []), ...(Array.isArray(editorial) ? editorial : [])];
+}
+
+// Detects Pages' SPA fallback (homepage served with 200 for a missing asset).
+function looksLikeRealBlogPage(html, slug) {
+  return html.includes(`data-slug="${slug}"`) || html.includes(`rel="canonical" href="${SITE}/blog/`);
+}
+
+const FALLBACK_404_HTML = `<!doctype html><html lang="en-IN"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="robots" content="noindex" /><title>Page not found — Pratik Bajoria</title><link rel="stylesheet" href="/styles.css" /></head><body><main class="shell article-page"><h1>Page not found</h1><p><a href="/blog">Browse all insights</a> · <a href="/">Home</a></p></main></body></html>`;
+
+async function notFound(request, env) {
+  let body = FALLBACK_404_HTML;
+  try {
+    const r = await env.ASSETS.fetch(internalAssetRequest(request, '/404'));
+    const ctype = r.headers.get('content-type') || '';
+    if ((r.status === 200 || r.status === 404) && ctype.includes('text/html')) {
+      const t = await r.text();
+      if (t.includes('noindex')) body = t;
+    }
+  } catch { /* use inline fallback */ }
+  return new Response(body, {
+    status: 404,
+    headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'public, max-age=60', 'X-Robots-Tag': 'noindex' }
+  });
+}
+
+// Plain-text content -> paragraphs. Blank lines split paragraphs (generator format);
+// a single flattened blob is chunked at sentence boundaries so it stays readable.
+function splitParagraphs(content) {
+  const parts = String(content || '').split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+  if (parts.length !== 1 || parts[0].length < 1500) return parts;
+  const sentences = parts[0].match(/[^.!?]+[.!?]+["”’)]*\s*|[^.!?]+$/g) || [parts[0]];
+  const out = [];
+  let buf = '';
+  for (const sentence of sentences) {
+    buf += sentence;
+    if (buf.length >= 550) { out.push(buf.trim()); buf = ''; }
+  }
+  if (buf.trim()) out.push(buf.trim());
+  return out;
+}
+
+function renderPostHtml(post, catalog) {
+  const slug = post.slug;
+  const canonical = `${SITE}/blog/${slug}`;
+  const title = post.title || slug;
+  const excerpt = post.excerpt || '';
+  const image = post.image || 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=85';
+  const paras = splitParagraphs(post.content)
+    .map((p) => `<p>${escHtml(p).replace(/\n/g, '<br />')}</p>`)
+    .join('\n');
+  const sources = Array.isArray(post.sources) ? post.sources.filter((s) => s && /^https?:\/\//.test(s.url || '')) : [];
+  const sourcesHtml = sources.length
+    ? `<h2>Sources</h2>\n<ul>\n${sources.map((s) => `  <li><a href="${escHtml(s.url)}" target="_blank" rel="noopener noreferrer">${escHtml(s.title || s.url)}</a></li>`).join('\n')}\n</ul>`
+    : '';
+  const tools = (Array.isArray(post.affiliateTools) ? post.affiliateTools : []).map((k) => catalog && catalog[k]).filter(Boolean);
+  let toolsHtml = '';
+  if (tools.length) {
+    const cards = tools.map((tool) => {
+      const isAff = Boolean(tool.affiliateUrl);
+      const href = isAff ? tool.affiliateUrl : tool.productUrl;
+      const label = isAff ? `Explore ${tool.name}` : `Visit ${tool.name} official site`;
+      const rel = isAff ? 'nofollow sponsored noopener noreferrer' : 'noopener noreferrer';
+      return `<a href="${escHtml(href)}" target="_blank" rel="${rel}"><strong>${escHtml(tool.name)}</strong><span>${escHtml(tool.category)}</span><small>${escHtml(label)} ↗</small></a>`;
+    }).join('');
+    const disclosure = (post.affiliate && post.affiliate.disclosure) || 'Tool links go to the vendor’s official site unless an affiliate URL is configured.';
+    toolsHtml = `<aside class="article-tools" aria-label="Tools mentioned in this article"><p class="eyebrow">Tools worth evaluating</p><div class="article-tool-grid">${cards}</div><p class="article-tool-note">${escHtml(disclosure)}</p></aside>`;
+  }
+  const ld = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description: excerpt,
+    datePublished: post.date || undefined,
+    dateModified: post.dateModified || post.date || undefined,
+    author: { '@type': 'Person', name: 'Pratik Bajoria', url: `${SITE}/#person`, sameAs: ['https://www.linkedin.com/in/pratik-bajoria-6288b1119/'] },
+    publisher: { '@type': 'Person', name: 'Pratik Bajoria', '@id': `${SITE}/#person` },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+    image,
+    keywords: Array.isArray(post.keywords) ? post.keywords : []
+  };
+  const ldJson = JSON.stringify(ld, null, 2).replace(/</g, '\\u003c');
+  return `<!doctype html>
+<html lang="en-IN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f0e8" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
+    <meta name="author" content="Pratik Bajoria" />
+    <title>${escHtml(title)} — Pratik Bajoria</title>
+    <meta name="description" content="${escHtml(excerpt)}" />
+    <link rel="canonical" href="${escHtml(canonical)}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="${escHtml(title)}" />
+    <meta property="og:description" content="${escHtml(excerpt)}" />
+    <meta property="og:url" content="${escHtml(canonical)}" />
+    <meta property="og:image" content="${escHtml(image)}" />
+    <meta property="og:site_name" content="Pratik Bajoria" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${escHtml(title)}" />
+    <meta name="twitter:description" content="${escHtml(excerpt)}" />
+    <meta name="twitter:image" content="${escHtml(image)}" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/styles-overrides.css?v=20260910" />
+    <script type="application/ld+json">
+${ldJson}
+    </script>
+    <script src="/ga4.js" defer></script>
+  </head>
+  <body data-static-article="1" data-slug="${escHtml(slug)}">
+    <main class="shell article-page">
+      <header class="article-header">
+        <a class="wordmark" href="/" aria-label="Pratik Bajoria home"><span>PB</span></a>
+        <div class="article-header-links">
+          <a class="text-link" href="/topics">50 topic guide ↗</a>
+          <a class="text-link" href="/blog">All insights ↗</a>
+          <a class="text-link" href="/#insights">Home insights ↗</a>
+        </div>
+      </header>
+      <article id="article">
+        <p class="eyebrow">${escHtml(post.category || 'AI implementation')} · ${escHtml(post.date || '')} · ${escHtml(post.readTime || 6)} min read</p>
+        <h1>${escHtml(title)}</h1>
+        <p class="article-dek">${escHtml(excerpt)}</p>
+        <div class="article-body">
+${paras}
+${sourcesHtml}
+        </div>
+        ${toolsHtml}
+        <p class="ymyl-note" style="margin-top:28px;font-size:0.92rem;color:#6f746d"><em>Educational content; not financial, investment, or legal advice.</em></p>
+        <div class="article-cta" style="margin-top:40px;padding:24px;border:1px solid rgba(28,28,26,0.12);border-radius:12px">
+          <p class="eyebrow">Next step</p>
+          <h2 style="font-size:1.4rem;margin:8px 0 12px">Turn this insight into action</h2>
+          <p>Discuss where AI creates measurable P&amp;L impact — or start free with the scorecard.</p>
+          <p class="article-cta-actions" style="margin-top:16px;display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+            <a class="button button-dark" href="/#contact">Book a discovery call <span>↗</span></a>
+            <a class="button button-cream" href="/scorecard">Get the free AI Opportunity Scorecard <span>↗</span></a>
+          </p>
+          <p style="margin-top:14px"><a class="muted-link" href="/audit">See the AI Opportunity Audit →</a></p>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer shell">
+      <div class="wordmark"><span>PB</span></div>
+      <div>© <span id="year"></span> Pratik Bajoria</div>
+      <div>
+        <a href="/privacy">Privacy</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/blog">Blog</a>
+        <a href="/topics">Topics</a>
+        <a href="mailto:hello@pratikbajoria.com">Contact</a>
+      </div>
+    </footer>
+    <script>document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());</script>
+    <script src="/blog.js?v=20260909" defer></script>
+  </body>
+</html>
+`;
+}
+
+async function serveBlogPost(request, env, slug) {
+  // 1. Static SSR file (public/blog/{slug}.html) wins.
+  const direct = await env.ASSETS.fetch(request);
+  if (direct.status === 200) {
+    const ctype = direct.headers.get('content-type') || '';
+    if (!ctype.includes('text/html')) return direct;
+    const html = await direct.text();
+    if (looksLikeRealBlogPage(html, slug)) {
+      return injectGa4(new Response(html, { status: 200, statusText: direct.statusText, headers: direct.headers }));
+    }
+    // else: SPA/homepage fallback — fall through.
+  } else if (direct.status >= 300 && direct.status < 400) {
+    return direct;
+  }
+  // 2. JSON-only post: server-render from blog-posts.json / affiliate-articles.json.
+  const posts = await loadAllPosts(request, env);
+  const post = posts.find((p) => p && p.slug === slug);
+  if (post) {
+    const catalog = await loadJsonAsset(request, env, '/affiliate-links.json', {});
+    return new Response(request.method === 'HEAD' ? null : renderPostHtml(post, catalog), {
+      status: 200,
+      headers: {
+        'Content-Type': 'text/html; charset=utf-8',
+        'Cache-Control': 'public, max-age=300, must-revalidate',
+        'X-Blog-Render': 'json-fallback'
+      }
+    });
+  }
+  // 3. Unknown slug: real 404.
+  return notFound(request, env);
+}
+
+// sitemap.xml = static file + any JSON posts not yet listed (e.g. JSON-only daily posts).
+async function serveSitemap(request, env) {
+  const r = await env.ASSETS.fetch(request);
+  if (r.status !== 200) return r;
+  let xml = await r.text();
+  const posts = await loadAllPosts(request, env);
+  const have = new Set([...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim()));
+  const extra = [];
+  const seen = new Set();
+  for (const p of posts) {
+    if (!p || !p.slug || !isBlogSlug(p.slug) || seen.has(p.slug)) continue;
+    seen.add(p.slug);
+    if (blogPathAliases[`/blog/${p.slug}`]) continue;
+    const loc = `${SITE}/blog/${p.slug}`;
+    if (have.has(loc)) continue;
+    const lastmod = /^\d{4}-\d{2}-\d{2}$/.test(p.date || '') ? `<lastmod>${p.date}</lastmod>` : '';
+    extra.push(`  <url><loc>${loc}</loc>${lastmod}<changefreq>monthly</changefreq><priority>0.75</priority></url>\n`);
+  }
+  if (extra.length) xml = xml.replace('</urlset>', extra.join('') + '</urlset>');
+  return new Response(xml, {
+    status: 200,
+    headers: { 'Content-Type': 'application/xml; charset=utf-8', 'Cache-Control': 'public, max-age=3600' }
+  });
+}
 
 async function handleDiscovery(request, env) {
   if (!env.DB) return json({ ok: false, error: 'Lead storage is not configured.' }, 503);
@@ -120,27 +390,13 @@ export default {
       return serveBlogAsset(request, env, null);
     }
 
-    // /blog/{slug} is served as static SSR HTML by Pages assets (no rewrite).
+    // /blog/{slug}: static SSR HTML first, then JSON server-render, else real 404 (see serveBlogPost).
 
 
     if (request.method === 'GET' && (url.pathname === '/insights' || url.pathname === '/insights/')) {
       return absoluteRedirect(url, '/blog');
     }
 
-    const blogPathAliases = {
-      '/blog/2026-08-31-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/blog/2026-09-14-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders',
-      '/blog/2026-09-01-ai-in-real-estate-start-with-lead-qualification-and-documents': '/blog/2026-09-15-ai-in-real-estate-start-with-lead-qualification-and-documents',
-      '/blog/2026-09-02-what-good-ai-governance-looks-like-in-a-mid-market-company': '/blog/2026-09-16-what-good-ai-governance-looks-like-in-a-mid-market-company',
-      '/blog/2026-09-03-the-finance-function-is-ai-s-highest-roi-starting-point': '/blog/2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point',
-      '/blog/2026-09-04-why-most-corporate-ai-pilots-never-reach-production': '/blog/2026-09-11-why-most-corporate-ai-pilots-never-reach-production',
-      '/blog/2026-09-05-build-vs-buy-a-practical-framework-for-ai-tooling': '/blog/2026-09-12-build-vs-buy-a-practical-framework-for-ai-tooling',
-      '/blog/2026-09-06-how-to-automate-a-whatsapp-workflow-without-losing-control': '/blog/2026-09-13-how-to-automate-a-whatsapp-workflow-without-losing-control',
-      '/blog/2026-09-07-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/blog/2026-09-14-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders',
-      '/blog/2026-09-08-ai-in-real-estate-start-with-lead-qualification-and-documents': '/blog/2026-09-15-ai-in-real-estate-start-with-lead-qualification-and-documents',
-      '/blog/2026-09-09-what-good-ai-governance-looks-like-in-a-mid-market-company': '/blog/2026-09-16-what-good-ai-governance-looks-like-in-a-mid-market-company',
-      '/blog/2026-09-10-the-finance-function-is-ai-s-highest-roi-starting-point': '/blog/2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point',
-      '/blog/finance-highest-roi': '/blog/2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point',
-    };
     if (request.method === 'GET' && blogPathAliases[url.pathname]) {
       return absoluteRedirect(url, blogPathAliases[url.pathname]);
     }
@@ -160,6 +416,15 @@ export default {
     };
     if (request.method === 'GET' && htmlAliases[url.pathname]) {
       return absoluteRedirect(url, htmlAliases[url.pathname]);
+    }
+
+    if (request.method === 'GET' && url.pathname === '/sitemap.xml') {
+      return serveSitemap(request, env);
+    }
+
+    if (request.method === 'GET' || request.method === 'HEAD') {
+      const m = url.pathname.match(/^\/blog\/([^\/]+)$/);
+      if (m && isBlogSlug(m[1])) return serveBlogPost(request, env, m[1]);
     }
 
     return injectGa4(await env.ASSETS.fetch(request));
