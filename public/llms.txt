@@ -53,6 +53,7 @@ Pratik works from India with business leaders in India, the United States, the U
 ## Selected articles
 
 - [AI for Chartered Accountants in India: A Practical Implementation Hub](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india)
+- [AI for Chartered Accountants: Practical Use Cases and Control Gates](https://pratikbajoria.com/blog/ai-for-chartered-accountants-practical-use-cases-and-controls)
 - [AI for Audit Working Papers in India: What a CA Should Automate and What Must Stay Human](https://pratikbajoria.com/blog/2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human)
 - [The Monday Morning Test for Any AI Workflow](https://pratikbajoria.com/blog/2026-09-29-the-monday-morning-test-for-any-ai-workflow)
 - [WhatsApp Automation That Still Feels Like Customer Care](https://pratikbajoria.com/blog/2026-09-28-whatsapp-automation-that-still-feels-like-customer-care)
