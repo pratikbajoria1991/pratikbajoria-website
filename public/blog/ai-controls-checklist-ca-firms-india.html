@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en-IN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f0e8" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
+    <meta name="author" content="Pratik Bajoria" />
+    <title>AI Controls Checklist for CA Firms in India: Practical Review Gates — Pratik Bajoria</title>
+    <meta name="description" content="A practical AI controls checklist for CA firms in India covering client data, approved tools, human review, audit trails, testing, retention and incident handling." />
+    <link rel="canonical" href="https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="AI Controls Checklist for CA Firms in India: Practical Review Gates" />
+    <meta property="og:description" content="A practical AI controls checklist for CA firms in India covering client data, approved tools, human review, audit trails, testing, retention and incident handling." />
+    <meta property="og:url" content="https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india" />
+    <meta property="og:site_name" content="Pratik Bajoria" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AI Controls Checklist for CA Firms in India: Practical Review Gates" />
+    <meta name="twitter:description" content="A practical AI controls checklist for CA firms in India covering client data, approved tools, human review, audit trails, testing, retention and incident handling." />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/styles-overrides.css?v=20260910" />
+    <script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"AI Controls Checklist for CA Firms in India: Practical Review Gates",
+  "description":"A practical AI controls checklist for CA firms in India covering client data, approved tools, human review, audit trails, testing, retention and incident handling.",
+  "datePublished":"2026-10-04",
+  "dateModified":"2026-10-04",
+  "inLanguage":"en-IN",
+  "author":{
+    "@type":"Person",
+    "name":"Pratik Bajoria",
+    "url":"https://pratikbajoria.com/#person",
+    "sameAs":["https://www.linkedin.com/in/pratik-bajoria-6288b1119/"]
+  },
+  "publisher":{"@type":"Person","name":"Pratik Bajoria","@id":"https://pratikbajoria.com/#person"},
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india"},
+  "keywords":["AI controls for CA firms","AI governance for chartered accountants","AI compliance checklist India","confidentiality and AI for accounting firms"]
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"What should an AI controls checklist for a CA firm include?",
+      "acceptedAnswer":{"@type":"Answer","text":"It should cover purpose and ownership, data classification, approved tools, human review, evidence and audit trails, access and retention, testing, client communication, monitoring and incident handling."}
+    },
+    {
+      "@type":"Question",
+      "name":"Can a CA firm use AI for client work without human review?",
+      "acceptedAnswer":{"@type":"Answer","text":"AI may assist with research, extraction, drafting, reconciliation and routing, but the firm should define a human review gate for professional judgement, material conclusions, unusual items and client-facing advice."}
+    },
+    {
+      "@type":"Question",
+      "name":"How should a small CA firm start AI governance?",
+      "acceptedAnswer":{"@type":"Answer","text":"Start with one low-risk workflow, name an owner, classify the data, approve the tool, keep a test set and log exceptions before expanding to more sensitive work."}
+    }
+  ]
+}
+    </script>
+    <script src="/ga4.js" defer></script>
+  </head>
+  <body data-static-article="1" data-slug="ai-controls-checklist-ca-firms-india">
+    <main class="shell article-page">
+      <header class="article-header">
+        <a class="wordmark" href="/" aria-label="Pratik Bajoria home"><span>PB</span></a>
+        <div class="article-header-links">
+          <a class="text-link" href="/topics">50 topic guide ↗</a>
+          <a class="text-link" href="/blog">All insights ↗</a>
+          <a class="text-link" href="/#insights">Home insights ↗</a>
+        </div>
+      </header>
+      <article id="article">
+        <p class="eyebrow">CA insights · 2026-10-04 · 9 min read</p>
+        <h1>AI Controls Checklist for CA Firms in India: Practical Review Gates</h1>
+        <p class="article-dek">A practical checklist for using AI in accounting and advisory workflows without losing confidentiality, evidence, review discipline or professional judgement.</p>
+
+        <aside style="margin:24px 0;padding:18px 20px;border-left:3px solid #7a5d32;background:#f1ece2;color:#3e443e">
+          <strong>Quick answer:</strong> AI governance for a CA firm is not a policy document alone. It is a set of repeatable review gates around data, tools, people, evidence and exceptions. Start with one controlled workflow and make the decision trail visible before expanding.
+        </aside>
+
+        <p>AI can help a CA firm research a standard, extract fields from a document, draft a first version of a memo, identify reconciliation exceptions or organise a client query queue. It can also create a confidentiality incident, reproduce an error at scale or make a polished draft look more reliable than it is. The control environment determines which outcome the firm gets.</p>
+        <p>I write this as a Chartered Accountant and AI implementation practitioner. The checklist is designed for partners, proprietors, finance leaders and practice managers who want a usable operating baseline. It is not a substitute for professional judgement, engagement terms, applicable law or the firm's own quality-control framework.</p>
+
+        <h2>1. Write the purpose and name the owner</h2>
+        <p>Every AI workflow should start with a narrow sentence: what work is being assisted, who owns the result and what good looks like. “Use AI for audit” is not a control objective. “Extract invoice fields into a review queue; the senior reviews low-confidence items before posting” is closer.</p>
+        <ul>
+          <li>Purpose: the process constraint being addressed.</li>
+          <li>Owner: one person accountable for the workflow and exceptions.</li>
+          <li>Users: the people permitted to run or review it.</li>
+          <li>Output: the exact document, queue, report or draft produced.</li>
+          <li>Stop rule: the condition that sends work back to a human.</li>
+        </ul>
+
+        <h2>2. Classify the data before choosing a tool</h2>
+        <p>Do not begin with a model catalogue. Begin with the data. Client identity, unpublished financial statements, payroll, bank details, tax working papers, audit evidence and draft advice should be classified before anyone decides where an input may be processed.</p>
+        <p>Record whether each data class may be used in an approved cloud service, requires redaction, must remain in a controlled environment or should not enter the workflow at all. Data classification also needs an owner; a label nobody applies is not a control.</p>
+
+        <h2>3. Approve tools and accounts</h2>
+        <p>Maintain a short approved-tool register. For each service, document the account owner, permitted data classes, access method, retention setting, export route, vendor terms reviewed and the process for revoking access. A free trial account used by one employee can quietly become an unmanaged system of record.</p>
+        <ul>
+          <li>Use named business accounts rather than personal accounts for client work.</li>
+          <li>Enable multi-factor authentication and least-privilege access.</li>
+          <li>Record which tools may receive client data and which may not.</li>
+          <li>Keep an exit path for prompts, files, outputs and workflow configuration.</li>
+        </ul>
+
+        <h2>4. Define the human review gate</h2>
+        <p>AI can prepare, classify, reconcile, route and draft. The firm remains responsible for professional judgement and client-facing conclusions. Write the human gate in plain language: what the system may suggest, what must be checked, which confidence or exception conditions trigger review, and who signs off.</p>
+        <p>For material items, unusual evidence, ambiguous documents, fraud indicators, tax positions, audit conclusions and investment or client advice, the review gate should be explicit rather than implied. “The partner will look at it” is weaker than a named review step with evidence.</p>
+
+        <h2>5. Preserve evidence and an audit trail</h2>
+        <p>A useful AI workflow should make reconstruction easier, not harder. Keep enough information to answer: which input was used, which workflow version ran, what output was produced, who reviewed it, what changed and why the final result was accepted.</p>
+        <ul>
+          <li>Input source and date.</li>
+          <li>Workflow or prompt version.</li>
+          <li>Output and confidence or exception status.</li>
+          <li>Reviewer identity and review date.</li>
+          <li>Corrections, overrides and escalation reason.</li>
+        </ul>
+        <p>Retention should follow the firm's engagement, privacy and quality-control requirements. Do not retain sensitive data merely because the tool makes retention easy.</p>
+
+        <h2>6. Test normal cases and awkward cases</h2>
+        <p>A demonstration with clean data is not a control test. Build a small test set containing ordinary examples, missing fields, duplicate records, unusual vendors, low-quality scans, conflicting dates and items that should be escalated. Keep the test set separate from live client data where possible.</p>
+        <p>Before release, record the expected result, observed result, error type, reviewer decision and remediation. After release, sample outputs periodically. A workflow that was safe in one month-end can drift when templates, vendors or source systems change.</p>
+
+        <h2>7. Protect client communication and engagement boundaries</h2>
+        <p>Decide what the firm tells clients about AI-assisted work. The answer depends on the engagement, data, professional standards and the role the tool plays. At minimum, staff should know what may be shared externally, what must be reviewed internally and how to respond when a client asks whether AI was used.</p>
+        <p>Do not allow a generated answer to create a new client commitment, change a filing position or communicate professional advice without the review required by the engagement and the firm's quality process.</p>
+
+        <h2>8. Create an incident and exception path</h2>
+        <p>Controls are tested when something goes wrong. Define how a user reports an incorrect output, accidental disclosure, prompt injection, unusual document, suspected fraud signal or vendor outage. The workflow should make it easy to pause processing and preserve the relevant evidence.</p>
+        <ul>
+          <li>Stop the workflow and quarantine the output where necessary.</li>
+          <li>Notify the named owner and relevant quality or security contact.</li>
+          <li>Assess affected data, clients, deliverables and deadlines.</li>
+          <li>Record the decision, remediation and return-to-service condition.</li>
+        </ul>
+
+        <h2>9. Run a 30-day implementation sequence</h2>
+        <p>Small firms do not need a forty-page AI policy to start. A controlled first month is more useful:</p>
+        <ol>
+          <li><strong>Days 1–5:</strong> choose one low-risk, repetitive workflow and name its owner.</li>
+          <li><strong>Days 6–10:</strong> classify data, approve the tool and define the human gate.</li>
+          <li><strong>Days 11–20:</strong> test normal and awkward cases; record corrections.</li>
+          <li><strong>Days 21–25:</strong> run a limited parallel workflow with review evidence.</li>
+          <li><strong>Days 26–30:</strong> review time saved, exception quality, adoption and control concerns before scaling.</li>
+        </ol>
+        <p>For a broader finance sequence, see the <a href="/blog/2026-10-04-ai-finance-automation-roadmap-for-cfos-and-controllers">AI finance automation roadmap for CFOs and controllers</a>. For a CA-specific implementation hub, see <a href="/blog/ai-for-chartered-accountants-in-india">AI for Chartered Accountants in India</a>.</p>
+
+        <h2>10. What should stay human?</h2>
+        <p>Keep accountability human for material judgement, ambiguous evidence, unusual estimates, fraud indicators, client advice, professional conclusions and decisions that are difficult to reverse. Automation can reduce preparation and routing effort without becoming the decision-maker.</p>
+
+        <h2>Frequently asked questions</h2>
+        <h3>What should an AI controls checklist for a CA firm include?</h3>
+        <p>It should cover purpose and ownership, data classification, approved tools, human review, evidence and audit trails, access and retention, testing, client communication, monitoring and incident handling.</p>
+        <h3>Can a CA firm use AI for client work without human review?</h3>
+        <p>AI may assist with research, extraction, drafting, reconciliation and routing, but the firm should define a human review gate for professional judgement, material conclusions, unusual items and client-facing advice.</p>
+        <h3>How should a small CA firm start AI governance?</h3>
+        <p>Start with one low-risk workflow, name an owner, classify the data, approve the tool, keep a test set and log exceptions before expanding to more sensitive work.</p>
+
+        <h2>Sources</h2>
+        <ul>
+          <li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST AI Risk Management Framework</a></li>
+          <li><a href="https://icai.org/post/ai-announ-070624" target="_blank" rel="noopener noreferrer">ICAI announcement on AI in finance, accounting and tax services</a></li>
+        </ul>
+        <p>This operational checklist is educational commentary, not personalised accounting, tax, legal, audit or investment advice. Verify current professional requirements, client terms, privacy obligations and vendor policies before deployment.</p>
+
+        <section style="margin-top:28px;padding:22px;background:#f1ece2;border-radius:10px">
+          <p class="eyebrow">NEXT STEP</p>
+          <h2 style="margin-top:6px">Turn the checklist into a scoped release</h2>
+          <p>Use the <a href="/scorecard">free AI Opportunity Scorecard</a> to score process, data, ROI, risk and ownership, or book a conversation about an <a href="/audit">AI Opportunity Audit</a>.</p>
+          <p><a class="button" href="/#contact">Discuss an AI workflow ↗</a></p>
+        </section>
+      </article>
+      <footer class="article-footer">
+        <p><strong>Pratik Bajoria</strong> is a Chartered Accountant and ex-Big 4 AI implementation consultant.</p>
+        <div class="footer-links">
+          <a href="/privacy">Privacy</a>
+          <a href="/llms.txt">LLMs.txt</a>
+          <a href="/blog">Blog</a>
+          <a href="/topics">Topics</a>
+          <a href="mailto:hello@pratikbajoria.com">Contact</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
