@@ -1,6 +1,6 @@
 // Page content for the cross-border site. British spelling. No invented clients,
 // logos, testimonials, deal counts, stats or fee percentages ("fees agreed per deal").
-import { CONTACT_EMAIL, MAIN_SITE, WHATSAPP_DISPLAY, BUILD_DATE, LINKEDIN } from './config.mjs';
+import { CONTACT_EMAIL, MAIN_SITE, WHATSAPP_DISPLAY, BUILD_DATE, LINKEDIN, BUYER_PATH, SELLER_PATH } from './config.mjs';
 import { esc, wa, waButton } from './layout.mjs';
 import { INSIGHTS, FAIRS } from './insights.mjs';
 
@@ -12,8 +12,8 @@ const hero = ({ eyebrow, h1, lede, ctas = true, home = false, extra = '' }) => `
         <h1>${h1}</h1>
         <p class="lede">${lede}</p>
         ${ctas ? `<div class="cta-row">
-          <a class="button button-dark" href="/contact#buyer">I’m looking for a partner or supplier <span>↗</span></a>
-          <a class="button button-cream" href="/contact#seller">I want international clients or buyers <span>↗</span></a>
+          <a class="button button-dark" href="${BUYER_PATH}#enquire">I’m looking for a partner or supplier <span>↗</span></a>
+          <a class="button button-cream" href="${SELLER_PATH}#enquire">I want international clients or buyers <span>↗</span></a>
         </div>` : ''}
         ${extra}
       </section>`;
@@ -21,9 +21,11 @@ const hero = ({ eyebrow, h1, lede, ctas = true, home = false, extra = '' }) => `
 const STEPS = [
   ['Tell us your need or capacity', 'A short note or call: what you buy or sell, specifications, volumes or scope, target markets, timelines and what a good partner looks like to you.'],
   ['Shortlist and vet', 'I shortlist possible matches and check them before anyone is introduced: registration, track record, reviews, certifications, export history and references.'],
-  ['Introduction under a signed agreement', 'A short written agreement covering confidentiality, non-circumvention and the success-fee terms is signed before any names are shared.'],
-  ['Fee only on a closed deal', 'No retainer. A fee is due only when a deal between the introduced parties closes (a signed and paid project, or a shipped and paid order) on terms agreed upfront.']
+  ['Introduction under a signed agreement', 'A short written agreement covering confidentiality, non-circumvention and the fee terms is signed before any names are shared.'],
+  ['Fee only on a closed deal', 'No retainer. Fees are agreed per deal, in writing and upfront, and paid only on a closed deal: a signed and paid project, or a shipped and paid order.']
 ];
+const STEPS_SHORT = ['A short note on what you need or can supply.', 'Possible matches shortlisted and checked.', 'Names shared once a short agreement is signed.', 'Fees agreed per deal, paid only on a closed deal.'];
+const stepsShortHtml = () => `<ol class="steps steps-short">${STEPS.map(([t], i) => `<li><span class="n">STEP 0${i + 1}</span><h3>${t}</h3><p>${STEPS_SHORT[i]}</p></li>`).join('')}</ol>`;
 const stepsHtml = (light = false) => `<ol class="steps${light ? ' light' : ''}">${STEPS.map(([t, d], i) => `<li><span class="n">STEP 0${i + 1}</span><h3>${t}</h3><p>${d}</p></li>`).join('')}</ol>`;
 
 const SECTORS = [
@@ -36,57 +38,91 @@ const SECTORS = [
 const sectorGrid = () => `<div class="grid-5">${SECTORS.map((s, i) => `<a class="card sector-card" href="/sectors/${s.slug}"><span class="num">0${i + 1}</span><h3>${s.name}</h3><p>${s.short}</p><span class="more">Read more<span aria-hidden="true">→</span></span></a>`).join('')}</div>`;
 const plain = (t, body) => `<div class="list-card"><h3>${t}</h3><p style="color:var(--muted);font-size:14px;margin:0">${body}</p></div>`;
 
+const formHtml = ({ id, interest, title, intro, detailsLabel, placeholder }) => `<div class="form-card" id="${id}">
+            <span class="eyebrow">${interest === 'cross-border-buyer' ? 'Buyers · overseas companies' : 'Sellers · Indian businesses'}</span>
+            <h2>${title}</h2>
+            <p>${intro}</p>
+            <form class="xb-form" data-interest="${interest}" novalidate>
+              <input type="hidden" name="interest" value="${interest}" />
+              <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+              <div class="two">
+                <label>Full name *<input name="name" required autocomplete="name" placeholder="Your name" /></label>
+                <label>Work email *<input name="email" type="email" required autocomplete="email" placeholder="you@company.com" /></label>
+              </div>
+              <div class="two">
+                <label>Company *<input name="company" required autocomplete="organization" placeholder="Company name" /></label>
+                <label>Country *<input name="country" required autocomplete="country-name" placeholder="Where you are based" /></label>
+              </div>
+              <div class="two">
+                <label>Sector
+                  <select name="lane">
+                    <option value="Software & AI development">Software &amp; AI development</option>
+                    <option value="Spices & agri-food">Spices &amp; agri-food</option>
+                    <option value="Home textiles">Home textiles</option>
+                    <option value="Engineering components">Engineering components</option>
+                    <option value="Specialty chemicals">Specialty chemicals</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </label>
+                <label>WhatsApp / phone<input name="phone" type="tel" autocomplete="tel" placeholder="Optional" /></label>
+              </div>
+              <label>${detailsLabel} *<textarea name="challenge" required placeholder="${placeholder}"></textarea></label>
+              <label class="consent"><input type="checkbox" name="consent" required /> <span>I agree that Pratik may use these details to respond to my enquiry, as described in the <a href="${MAIN_SITE}/privacy" target="_blank" rel="noopener">privacy notice</a>.</span></label>
+              <p class="form-error" role="alert" hidden></p>
+              <button class="button button-dark" type="submit">Send enquiry <span>↗</span></button>
+            </form>
+          </div>`;
+const WA_HELLO = 'Hi Pratik, I’d like to discuss a cross-border introduction.';
+const WA_BUYER = 'Hi Pratik, I’m looking for a partner or supplier in India.';
+const WA_SELLER = 'Hi Pratik, I’m looking for international clients or buyers.';
+const formAside = (waText) => `<aside class="list-card form-aside" aria-label="Other ways to get in touch">
+            <h3>Prefer to chat?</h3>
+            <p>Message me on WhatsApp and I’ll reply personally.</p>
+            <div class="cta-row" style="margin-top:14px">${waButton(`WhatsApp ${WHATSAPP_DISPLAY}`, waText)}</div>${CONTACT_EMAIL ? `
+            <p style="margin-top:14px">Or email <a class="inline-link" href="mailto:${esc(CONTACT_EMAIL)}">${esc(CONTACT_EMAIL)}</a></p>` : ''}
+            <ul>
+              <li>Keep confidential detail until an agreement is in place</li>
+              <li>Nothing is shared with anyone else without your consent</li>
+              <li><a class="inline-link" href="/how-it-works#faq">Read the FAQ</a></li>
+            </ul>
+          </aside>`;
+
 const pages = [];
 const add = (p) => pages.push(p);
 
-// ------------------------------------------------------------------ Home
+// ------------------------------------------------------------------ Home (a simple fork)
 add({
   path: '/',
-  title: 'Cross-border Deals & Partnerships by Pratik Bajoria | India and the world, success fee only',
+  title: 'Cross-border Deals & Partnerships by Pratik Bajoria | India and the world',
   ogTitle: 'Cross-border Deals & Partnerships by Pratik Bajoria',
-  description: 'Cross-border deals between India and the world, success fee only. Vetted introductions to Indian software agencies, manufacturers and exporters, and qualified overseas clients and buyers for Indian businesses. No retainer.',
+  description: 'Cross-border deals between India and the world. Overseas companies: find a deployable partner in India. Indian businesses: win clients and buyers abroad. Vetted introductions by Pratik Bajoria, Chartered Accountant.',
   priority: '1.0',
-  body: `${hero({
-    home: true,
-    eyebrow: 'Success fee only · No retainer · CA-led',
-    h1: 'Cross-border deals between India and the world, <em>success fee only.</em>',
-    lede: 'I make selective, vetted introductions in both directions: overseas companies to dependable Indian software agencies, manufacturers and exporters, and Indian businesses to qualified international clients and buyers. A fee is payable only when a deal closes.',
-    extra: `<div class="meta-strip">
-          <div><strong>Success fee</strong><small>Only on a closed deal</small></div>
-          <div><strong>No retainer</strong><small>Nothing to pay upfront</small></div>
-          <div><strong>Signed agreement</strong><small>Before any introduction</small></div>
-          <div><strong>Fees agreed per deal</strong><small>In writing, upfront</small></div>
-        </div>`
-  })}
-
-      <section class="section shell" aria-labelledby="who">
-        ${sectionHead('Who it’s for', '01 — 02')}
-        <h2 class="section-title" id="who">Two sides, <em>one introduction.</em></h2>
-        <div class="grid-2">
-          <a class="card audience" href="/buyers">
-            <span class="tag">For overseas buyers</span>
-            <h3>Find a dependable partner <em>in India.</em></h3>
-            <p>For companies in the US, UK, EU, Middle East and South-East Asia that want to hire an Indian tech team or source products from India, without wading through directories and cold pitches.</p>
-            <ul><li>Hire Indian tech teams: web, mobile, AI, healthcare and fintech builds</li><li>Source from India: samples, compliance documents, direct pricing</li><li>Partners checked before you meet them</li></ul>
-            <span class="more">For overseas buyers<span aria-hidden="true">→</span></span>
+  body: `      <section class="hero shell home fork-hero">
+        <p class="eyebrow kicker"><span class="dot" aria-hidden="true"></span>India and the world · Vetted introductions · CA-led</p>
+        <h1>Cross-border deals between <em>India and the world.</em></h1>
+        <p class="lede">Careful introductions in both directions. Which side are you on?</p>
+        <div class="fork" role="list">
+          <a class="fork-card" role="listitem" href="${BUYER_PATH}">
+            <span class="tag">For overseas companies</span>
+            <h2>Find a deployable partner <em>in India.</em></h2>
+            <p>Hire an Indian tech team, or source from vetted manufacturers and exporters, with partners checked before you meet them.</p>
+            <span class="fork-go">Find a partner in India<span aria-hidden="true">→</span></span>
           </a>
-          <a class="card audience" href="/indian-businesses">
+          <a class="fork-card" role="listitem" href="${SELLER_PATH}">
             <span class="tag">For Indian businesses</span>
-            <h3>Win clients and buyers <em>abroad.</em></h3>
-            <p>For Indian software agencies, manufacturers and exporters with proven delivery that want qualified international clients, importers and distributors, and only want to pay when it works.</p>
-            <ul><li>IT &amp; software agencies: referral fee only on signed, paid projects</li><li>Manufacturers &amp; exporters: commission only on shipped, paid orders</li><li>Existing customers excluded</li></ul>
-            <span class="more">For Indian businesses<span aria-hidden="true">→</span></span>
+            <h2>Win clients and buyers <em>abroad.</em></h2>
+            <p>Qualified overseas clients for IT and software agencies; importers and distributors for manufacturers and exporters.</p>
+            <span class="fork-go">Win clients abroad<span aria-hidden="true">→</span></span>
           </a>
         </div>
       </section>
 
-      <section class="band" aria-labelledby="how">
+      <section class="band band-compact" aria-labelledby="how">
         <div class="shell">
           ${sectionHead('How it works', 'A — D')}
-          <h2 class="section-title" id="how">Four steps, <em>one fee.</em></h2>
-          <p class="section-intro">Nothing is shared with the other side until you are comfortable, and nothing is payable unless a deal closes.</p>
-          ${stepsHtml()}
-          <p style="margin-top:34px"><a class="button button-cream" href="/how-it-works">How it works, in full <span>↗</span></a></p>
+          <h2 class="section-title" id="how">Four steps, <em>start to finish.</em></h2>
+          ${stepsShortHtml()}
+          <p style="margin-top:30px"><a class="button button-cream" href="/how-it-works">How it works, in full <span>↗</span></a></p>
         </div>
       </section>
 
@@ -95,45 +131,78 @@ add({
         <h2 class="section-title" id="sectors">Deliberately <em>narrow.</em></h2>
         <p class="section-intro">Five sectors where I can understand both sides properly, so each introduction is considered rather than speculative.</p>
         ${sectorGrid()}
-      </section>
-
-      <section class="section shell" aria-labelledby="why">
-        ${sectionHead('Why me', 'CA · Ex-Big 4 · Founder')}
-        <h2 class="section-title" id="why">A finance lens <em>on every match.</em></h2>
-        <div class="grid-3">
-          ${plain('Diligence instincts', 'As a Chartered Accountant with a background in audit and financial analysis, I look at a potential counterparty the way a diligence team would: who they are, whether the story hangs together and what could go wrong.')}
-          ${plain('Process and paperwork', 'Big 4 training is about evidence, documentation and controls. I apply the same discipline to vetting and to the short agreement behind every introduction.')}
-          ${plain('Paid on outcome', 'Success fee only means I am paid only if an introduction becomes a deal. That keeps me selective. <a class="inline-link" href="/about">More about me</a>')}
-        </div>
       </section>`
 });
 
-// ------------------------------------------------------------------ Buyers hub
+// ------------------------------------------------------------------ Landing: Find a deployable partner in India (overseas buyers)
 add({
-  path: '/buyers',
-  title: 'For Overseas Buyers: Indian tech teams and suppliers',
-  description: 'For overseas companies: vetted introductions to Indian software agencies, manufacturers and exporters. Partners checked before you meet them; success fee only, fees agreed per deal.',
-  crumbs: [{ name: 'For Overseas Buyers', path: '/buyers' }],
+  path: BUYER_PATH,
+  title: 'Find a Deployable Partner in India: tech teams, manufacturers, exporters',
+  ogTitle: 'Find a deployable partner in India',
+  description: 'For overseas companies: introductions to vetted Indian software agencies, manufacturers and exporters that can actually deliver. What you can find, how partners are vetted, the four steps and an enquiry form.',
+  priority: '0.9',
+  crumbs: [{ name: 'Find a Partner in India', path: BUYER_PATH }],
+  noCta: true,
   body: `${hero({
     eyebrow: 'For overseas buyers',
-    h1: 'A dependable partner in India, <em>introduced properly.</em>',
-    lede: 'Whether you need a development team or a manufacturer, the hard part is not finding names: it is knowing who will actually deliver. I shortlist and check Indian partners against your brief before you spend time on calls.'
+    h1: 'Find a deployable partner <em>in India.</em>',
+    lede: 'Whether you need a development team or a manufacturer, the hard part is not finding names: it is knowing who will actually deliver. I shortlist and check Indian partners against your brief before you spend time on calls.',
+    ctas: false,
+    extra: `<div class="cta-row"><a class="button button-dark" href="#enquire">Send your brief <span>↓</span></a>${waButton('WhatsApp', WA_BUYER)}</div>`
   })}
-      <section class="section shell" aria-labelledby="ways">
-        ${sectionHead('Ways I help', '03')}
-        <h2 class="section-title" id="ways">Choose <em>your route.</em></h2>
-        <div class="grid-3">
-          <a class="card" href="/buyers/hire-indian-tech-teams"><span class="tag">Software</span><h3>Hire Indian tech teams</h3><p>Introductions to vetted Indian software agencies for web, mobile, AI and regulated-industry builds such as healthcare and fintech.</p><span class="more">Hire Indian tech teams<span aria-hidden="true">→</span></span></a>
-          <a class="card" href="/buyers/source-from-india"><span class="tag">Goods</span><h3>Source from India</h3><p>Introductions to vetted Indian manufacturers and exporters, covering samples, compliance documents and direct pricing.</p><span class="more">Source from India<span aria-hidden="true">→</span></span></a>
-          <a class="card" href="/buyers/how-we-vet-partners"><span class="tag">Diligence</span><h3>How we vet partners</h3><p>What I check before an introduction: track record, reviews, certifications, export history and references.</p><span class="more">How we vet partners<span aria-hidden="true">→</span></span></a>
+      <section class="section shell" aria-labelledby="find">
+        ${sectionHead('What you can find', '02')}
+        <h2 class="section-title" id="find">Teams that build, <em>suppliers that ship.</em></h2>
+        <div class="grid-2">
+          <a class="card" href="/buyers/hire-indian-tech-teams">
+            <span class="tag">Software</span>
+            <h3>Indian tech teams</h3>
+            <p>Vetted software agencies for web, mobile, AI and regulated-industry builds such as healthcare and fintech.</p>
+            <ul><li>Fixed-scope projects or dedicated teams</li><li>Security and compliance experience checked, not assumed</li><li>Time-zone overlap agreed upfront</li></ul>
+            <span class="more">Hire Indian tech teams<span aria-hidden="true">→</span></span>
+          </a>
+          <a class="card" href="/buyers/source-from-india">
+            <span class="tag">Goods</span>
+            <h3>Manufacturers and exporters</h3>
+            <p>Vetted Indian manufacturers and exporters for importers, distributors and brands, dealing with you directly.</p>
+            <ul><li>Samples arranged directly with the supplier</li><li>Compliance documents for your market</li><li>Direct pricing, with no trading margin from me</li></ul>
+            <span class="more">Source from India<span aria-hidden="true">→</span></span>
+          </a>
         </div>
       </section>
-      <section class="section shell" aria-labelledby="expect">
-        ${sectionHead('What to expect', 'Plainly')}
-        <h2 class="section-title" id="expect">What you get, <em>and what you don’t.</em></h2>
+
+      <section class="section shell" aria-labelledby="vetting">
+        ${sectionHead('Vetting, in summary', '05 checks')}
+        <h2 class="section-title" id="vetting">Checked before <em>you meet them.</em></h2>
         <div class="grid-2">
-          ${listCard('You can expect', ['A shortlist matched to your brief, not a directory dump', 'Partners checked before the first call', 'Direct contact with the agency or manufacturer', 'A short written agreement before any names are shared', 'No retainer; fees agreed per deal'])}
-          ${listCard('Please don’t expect', ['A guarantee of delivery, quality or price', 'Legal, tax, customs or logistics advice', 'That vetting replaces your own due diligence', 'Introductions outside the five sectors I cover'], 'not')}
+          ${listCard('What I check', ['<strong>Track record:</strong> comparable work, how long they have operated, capacity for your brief', '<strong>Reviews:</strong> public reviews read for patterns, and how complaints were handled', '<strong>Certifications:</strong> checked against the issuer’s register where one exists', '<strong>Export history:</strong> IEC and export registrations for goods; overseas client experience for services', '<strong>References:</strong> existing clients or buyers you can follow up yourself'])}
+          ${listCard('What vetting is not', ['An audit, a certification or a warranty', 'A guarantee of quality, delivery, price or any other outcome', 'A substitute for your own samples, pilots, contracts and due diligence'], 'not')}
+        </div>
+        <p class="note">Red flags end the process: if registration details are withheld or documents don’t match, I don’t make the introduction. <a class="inline-link" href="/buyers/how-we-vet-partners">How we vet partners, in full</a></p>
+      </section>
+
+      <section class="band" aria-labelledby="steps">
+        <div class="shell">
+          ${sectionHead('How it works', 'A — D')}
+          <h2 class="section-title" id="steps">Four steps, <em>start to finish.</em></h2>
+          <p class="section-intro">Nothing is shared with the other side until you are comfortable and an agreement is signed.</p>
+          ${stepsHtml()}
+          <p style="margin-top:34px"><a class="button button-cream" href="/how-it-works">How it works and FAQ <span>↗</span></a></p>
+        </div>
+      </section>
+
+      <section class="section shell" aria-labelledby="sectors" style="padding-top:72px">
+        ${sectionHead('Sectors', '05')}
+        <h2 class="section-title" id="sectors">Where I can <em>help you buy.</em></h2>
+        ${sectorGrid()}
+      </section>
+
+      <section class="section shell" aria-labelledby="enquire-title">
+        ${sectionHead('Send your brief', 'Form · WhatsApp')}
+        <h2 class="section-title" id="enquire-title">Tell me what <em>you need.</em></h2>
+        <div class="forms forms-aside">
+          ${formHtml({ id: 'enquire', interest: 'cross-border-buyer', title: 'I’m looking for a partner or supplier', intro: 'A few lines is enough: what you want built or sourced, rough scope or volumes, your market and timelines.', detailsLabel: 'What do you need?', placeholder: 'Product or service, specification, volumes or scope, target markets and timelines.' })}
+          ${formAside(WA_BUYER)}
         </div>
       </section>`
 });
@@ -142,8 +211,8 @@ add({
 add({
   path: '/buyers/hire-indian-tech-teams',
   title: 'Hire Indian Tech Teams: vetted software agencies',
-  description: 'Introductions to vetted Indian software agencies for web, mobile, AI and regulated-industry builds (healthcare, fintech). Shortlisted against your brief; success fee only, fees agreed per deal.',
-  crumbs: [{ name: 'For Overseas Buyers', path: '/buyers' }, { name: 'Hire Indian Tech Teams', path: '/buyers/hire-indian-tech-teams' }],
+  description: 'Introductions to vetted Indian software agencies for web, mobile, AI and regulated-industry builds (healthcare, fintech). Shortlisted against your brief and checked before you meet them.',
+  crumbs: [{ name: 'Find a Partner in India', path: BUYER_PATH }, { name: 'Hire Indian Tech Teams', path: '/buyers/hire-indian-tech-teams' }],
   body: `${hero({
     eyebrow: 'For overseas buyers · Software',
     h1: 'Hire Indian tech teams, <em>vetted first.</em>',
@@ -178,8 +247,8 @@ add({
 add({
   path: '/buyers/source-from-india',
   title: 'Source from India: vetted manufacturers and exporters',
-  description: 'Introductions to vetted Indian manufacturers and exporters for importers, distributors and brands, covering samples, compliance documents and direct pricing. Success fee only, fees agreed per deal.',
-  crumbs: [{ name: 'For Overseas Buyers', path: '/buyers' }, { name: 'Source from India', path: '/buyers/source-from-india' }],
+  description: 'Introductions to vetted Indian manufacturers and exporters for importers, distributors and brands, covering samples, compliance documents and direct pricing.',
+  crumbs: [{ name: 'Find a Partner in India', path: BUYER_PATH }, { name: 'Source from India', path: '/buyers/source-from-india' }],
   body: `${hero({
     eyebrow: 'For overseas buyers · Goods',
     h1: 'Source from India, <em>straight from the maker.</em>',
@@ -220,7 +289,7 @@ add({
   path: '/buyers/how-we-vet-partners',
   title: 'How We Vet Partners: what I check before an introduction',
   description: 'How Indian partners are checked before an introduction: track record, reviews, certifications, export history and references, plus registration basics. What vetting is, and what it is not.',
-  crumbs: [{ name: 'For Overseas Buyers', path: '/buyers' }, { name: 'How We Vet Partners', path: '/buyers/how-we-vet-partners' }],
+  crumbs: [{ name: 'Find a Partner in India', path: BUYER_PATH }, { name: 'How We Vet Partners', path: '/buyers/how-we-vet-partners' }],
   body: `${hero({
     eyebrow: 'For overseas buyers · Diligence',
     h1: 'How we vet partners, <em>before you meet them.</em>',
@@ -249,32 +318,82 @@ add({
       </section>`
 });
 
-// ------------------------------------------------------------------ Indian businesses hub
+// ------------------------------------------------------------------ Landing: Win clients and buyers abroad (Indian businesses)
 add({
-  path: '/indian-businesses',
-  title: 'For Indian Businesses: international clients and buyers',
-  description: 'For Indian software agencies, manufacturers and exporters: qualified overseas clients, importers and distributors. Success fee only: referral fee on signed, paid projects; commission on shipped, paid orders.',
-  crumbs: [{ name: 'For Indian Businesses', path: '/indian-businesses' }],
+  path: SELLER_PATH,
+  title: 'Win Clients and Buyers Abroad: for Indian agencies, manufacturers and exporters',
+  ogTitle: 'Win clients and buyers abroad',
+  description: 'For Indian IT and software agencies, manufacturers and exporters: introductions to qualified overseas clients, importers and distributors. Who it is for, how introductions work, partner terms, sectors and an application form.',
+  priority: '0.9',
+  crumbs: [{ name: 'Win Clients Abroad', path: SELLER_PATH }],
+  noCta: true,
   body: `${hero({
     eyebrow: 'For Indian businesses',
-    h1: 'International clients and buyers, <em>paid on results.</em>',
-    lede: 'If you deliver well and want more overseas business, I introduce you to qualified clients, importers and distributors. No retainer, no listing fee: you pay only when an introduction turns into paid business.'
+    h1: 'Win clients and buyers <em>abroad.</em>',
+    lede: 'If you deliver well and want more overseas business, I introduce you to qualified clients, importers and distributors, with the terms written down before anyone is introduced.',
+    ctas: false,
+    extra: `<div class="cta-row"><a class="button button-dark" href="#enquire">Apply as a partner <span>↓</span></a>${waButton('WhatsApp', WA_SELLER)}</div>`
   })}
-      <section class="section shell" aria-labelledby="ways">
-        ${sectionHead('Ways I help', '03')}
-        <h2 class="section-title" id="ways">Choose <em>your route.</em></h2>
-        <div class="grid-3">
-          <a class="card" href="/indian-businesses/it-software-agencies"><span class="tag">Services</span><h3>IT &amp; software agencies</h3><p>Qualified overseas clients in the US, UK and Middle East. Referral fee only on signed and paid projects.</p><span class="more">IT &amp; software agencies<span aria-hidden="true">→</span></span></a>
-          <a class="card" href="/indian-businesses/manufacturers-exporters"><span class="tag">Goods</span><h3>Manufacturers &amp; exporters</h3><p>Qualified overseas importers and distributors. Commission only on shipped and paid orders.</p><span class="more">Manufacturers &amp; exporters<span aria-hidden="true">→</span></span></a>
-          <a class="card" href="/indian-businesses/partner-terms"><span class="tag">Terms</span><h3>Partner terms</h3><p>Success fee only, no retainer, existing customers excluded, and a short written agreement before any introduction.</p><span class="more">Partner terms<span aria-hidden="true">→</span></span></a>
+      <section class="section shell" aria-labelledby="who">
+        ${sectionHead('Who it’s for', '02')}
+        <h2 class="section-title" id="who">Proven delivery, <em>ready for more.</em></h2>
+        <div class="grid-2">
+          <a class="card" href="/indian-businesses/it-software-agencies">
+            <span class="tag">Services</span>
+            <h3>IT and software agencies</h3>
+            <p>Introductions to qualified clients in the US, UK and Middle East who need web, mobile, AI or regulated-industry builds.</p>
+            <ul><li>Real projects with a defined need and budget</li><li>A decision-maker involved from the start</li><li>You set your own pricing and contract terms</li></ul>
+            <span class="more">IT &amp; software agencies<span aria-hidden="true">→</span></span>
+          </a>
+          <a class="card" href="/indian-businesses/manufacturers-exporters">
+            <span class="tag">Goods</span>
+            <h3>Manufacturers and exporters</h3>
+            <p>Introductions to qualified importers and distributors in the US, UK/EU, Gulf and South-East Asia.</p>
+            <ul><li>Genuine requirements: product, specification, volumes</li><li>Buyers whose volumes suit your capacity</li><li>Samples, Incoterms and payment terms agreed between you</li></ul>
+            <span class="more">Manufacturers &amp; exporters<span aria-hidden="true">→</span></span>
+          </a>
+        </div>
+        <div class="grid-2" style="margin-top:18px">
+          ${listCard('A good fit', ['Work or products you can show, and references', 'Capacity to take on new overseas business now', 'Willingness to be checked (registration, certifications, references)', 'Clear, prompt communication in English'])}
+          ${listCard('Not a fit', ['Looking for a lead list or mass outreach', 'Unwilling to sign a short agreement first', 'Sectors outside the five I cover'], 'not')}
         </div>
       </section>
-      <section class="section shell" aria-labelledby="fit">
-        ${sectionHead('Fit', 'Selective')}
-        <h2 class="section-title" id="fit">Who I can <em>help.</em></h2>
-        <div class="grid-2">
-          ${listCard('A good fit', ['Proven delivery, with work or products you can show', 'Capacity to take on new overseas business now', 'Willingness to be checked (registration, certifications, references)', 'Clear, prompt communication in English'])}
-          ${listCard('Not a fit', ['Businesses looking for a lead list or mass outreach', 'Anyone unwilling to sign a short agreement first', 'Sectors outside the five I cover'], 'not')}
+
+      <section class="band" aria-labelledby="intros">
+        <div class="shell">
+          ${sectionHead('How introductions work', 'A — D')}
+          <h2 class="section-title" id="intros">Qualified first, <em>introduced properly.</em></h2>
+          <p class="section-intro">I share the client’s or buyer’s brief with you before any introduction, and you decide whether to go ahead. Nobody is introduced until a short agreement is signed.</p>
+          ${stepsHtml()}
+          <p style="margin-top:34px"><a class="button button-cream" href="/how-it-works">How it works and FAQ <span>↗</span></a></p>
+        </div>
+      </section>
+
+      <section class="section shell" aria-labelledby="terms" style="padding-top:72px">
+        ${sectionHead('Partner terms, in summary', '05')}
+        <h2 class="section-title" id="terms">Simple terms, <em>written down first.</em></h2>
+        <div class="terms-grid">
+          ${plain('Fees agreed per deal', 'Fees are agreed per deal and paid only on a closed deal: signed and paid projects for agencies, shipped and paid orders for goods.')}
+          ${plain('No retainer', 'No retainer, no listing fee and nothing upfront. An introduction on its own costs nothing.')}
+          ${plain('Existing customers excluded', 'Clients or buyers you already work with, or were already talking to, are listed at the start and excluded.')}
+          ${plain('Agreement first', 'A short written agreement is signed before any introduction, setting out the fee basis, trigger, duration and exclusions.')}
+          ${plain('Confidentiality', 'Your details are shared only with your consent, and introduced parties agree not to bypass the agreement.')}
+        </div>
+        <p class="note"><a class="inline-link" href="/indian-businesses/partner-terms">Read the partner terms in full</a></p>
+      </section>
+
+      <section class="section shell" aria-labelledby="sectors">
+        ${sectionHead('Sectors', '05')}
+        <h2 class="section-title" id="sectors">Where I can <em>find you buyers.</em></h2>
+        ${sectorGrid()}
+      </section>
+
+      <section class="section shell" aria-labelledby="enquire-title">
+        ${sectionHead('Apply as a partner', 'Form · WhatsApp')}
+        <h2 class="section-title" id="enquire-title">Tell me what <em>you offer.</em></h2>
+        <div class="forms forms-aside">
+          ${formHtml({ id: 'enquire', interest: 'cross-border-seller', title: 'I want international clients or buyers', intro: 'A few lines is enough: what you build or make, capacity, certifications, and the markets you want to reach.', detailsLabel: 'What do you offer?', placeholder: 'What you make or build, capacity, certifications, current and target markets.' })}
+          ${formAside(WA_SELLER)}
         </div>
       </section>`
 });
@@ -283,12 +402,12 @@ add({
 add({
   path: '/indian-businesses/it-software-agencies',
   title: 'IT & Software Agencies: qualified overseas clients',
-  description: 'For Indian IT and software agencies: introductions to qualified clients in the US, UK and Middle East. Referral fee only on signed and paid projects; fees agreed per deal; existing customers excluded.',
-  crumbs: [{ name: 'For Indian Businesses', path: '/indian-businesses' }, { name: 'IT & Software Agencies', path: '/indian-businesses/it-software-agencies' }],
+  description: 'For Indian IT and software agencies: introductions to qualified clients in the US, UK and Middle East with real projects, allocated budgets and a decision-maker involved.',
+  crumbs: [{ name: 'Win Clients Abroad', path: SELLER_PATH }, { name: 'IT & Software Agencies', path: '/indian-businesses/it-software-agencies' }],
   body: `${hero({
     eyebrow: 'For Indian businesses · Software',
     h1: 'Qualified overseas clients for <em>Indian agencies.</em>',
-    lede: 'Introductions to qualified clients in the US, UK and Middle East who need web, mobile, AI or regulated-industry builds. A referral fee is payable only on signed and paid projects.'
+    lede: 'Introductions to qualified clients in the US, UK and Middle East who need web, mobile, AI or regulated-industry builds.'
   })}
       <section class="section shell" aria-labelledby="qualified">
         ${sectionHead('What “qualified” means', '04')}
@@ -313,12 +432,12 @@ add({
 add({
   path: '/indian-businesses/manufacturers-exporters',
   title: 'Manufacturers & Exporters: qualified overseas buyers',
-  description: 'For Indian manufacturers and exporters: introductions to qualified overseas importers and distributors in the US, UK/EU, Gulf and South-East Asia. Commission only on shipped and paid orders.',
-  crumbs: [{ name: 'For Indian Businesses', path: '/indian-businesses' }, { name: 'Manufacturers & Exporters', path: '/indian-businesses/manufacturers-exporters' }],
+  description: 'For Indian manufacturers and exporters: introductions to qualified overseas importers and distributors in the US, UK/EU, Gulf and South-East Asia, with genuine requirements and volumes that suit your capacity.',
+  crumbs: [{ name: 'Win Clients Abroad', path: SELLER_PATH }, { name: 'Manufacturers & Exporters', path: '/indian-businesses/manufacturers-exporters' }],
   body: `${hero({
     eyebrow: 'For Indian businesses · Goods',
     h1: 'Overseas importers and distributors, <em>qualified first.</em>',
-    lede: 'Introductions to qualified importers and distributors in the US, UK/EU, Gulf and South-East Asia for spices and agri-food, home textiles, engineering components and specialty chemicals. Commission only on shipped and paid orders.'
+    lede: 'Introductions to qualified importers and distributors in the US, UK/EU, Gulf and South-East Asia for spices and agri-food, home textiles, engineering components and specialty chemicals.'
   })}
       <section class="section shell" aria-labelledby="buyers">
         ${sectionHead('Qualified buyers', '04')}
@@ -342,28 +461,28 @@ add({
 // ------------------------------------------------------------------ Partner Terms
 add({
   path: '/indian-businesses/partner-terms',
-  title: 'Partner Terms: success fee only, no retainer',
-  description: 'Partner terms for cross-border introductions: success fee only, no retainer, fees agreed per deal, existing customers excluded, and a short written agreement signed before any introduction.',
-  crumbs: [{ name: 'For Indian Businesses', path: '/indian-businesses' }, { name: 'Partner Terms', path: '/indian-businesses/partner-terms' }],
+  title: 'Partner Terms: how fees and introductions work',
+  description: 'Partner terms for cross-border introductions: fees agreed per deal, paid only on a closed deal; no retainer; existing customers excluded; a short written agreement signed before any introduction.',
+  crumbs: [{ name: 'Win Clients Abroad', path: SELLER_PATH }, { name: 'Partner Terms', path: '/indian-businesses/partner-terms' }],
   body: `${hero({
     eyebrow: 'For Indian businesses · Terms',
     h1: 'Partner terms, <em>in plain English.</em>',
-    lede: 'Simple terms that keep incentives aligned: I am paid only when an introduction becomes paid business, and everything is written down before any names are shared.',
+    lede: 'Simple terms, written down before any names are shared: how fees work, what is excluded and how both sides are protected.',
     ctas: false
   })}
       <section class="section shell" aria-labelledby="terms">
         ${sectionHead('The terms', '06')}
         <h2 class="section-title" id="terms">Six things <em>to know.</em></h2>
         <div class="grid-2">
-          ${listCard('01 · Success fee only', ['No retainer, no listing fee, no upfront charges', 'Nothing is payable for an introduction on its own'])}
-          ${listCard('02 · Fees agreed per deal', ['The basis and amount of the fee are agreed for each deal', 'Agreed in writing before the introduction, never after'])}
+          ${listCard('01 · Fees agreed per deal, paid only on a closed deal', ['No retainer, no listing fee, no upfront charges', 'Nothing is payable for an introduction on its own'])}
+          ${listCard('02 · Agreed upfront, in writing', ['The basis and amount of the fee are agreed for each deal', 'Agreed in writing before the introduction, never after'])}
           ${listCard('03 · When a fee is due', ['IT &amp; software: on signed and paid projects, as the client pays', 'Goods: on shipped and paid orders', 'The exact trigger is written into the agreement'])}
           ${listCard('04 · Existing customers excluded', ['Clients or buyers you already work with, or were already talking to, are excluded', 'We list them at the start so there is no ambiguity'])}
           ${listCard('05 · A short written agreement first', ['Signed before any introduction', 'Covers the parties, fee basis, trigger, duration, confidentiality, non-circumvention and exclusions'])}
           ${listCard('06 · Confidentiality and non-circumvention', ['Details are shared only with your consent and only for the purpose of the introduction', 'Introduced parties agree not to bypass the agreement to avoid the fee for the period it sets out'])}
         </div>
         <p class="note"><strong>No guarantees.</strong> I make considered introductions; whether a deal happens, and on what terms, is between you and the other party. I am not your employee or agent, and I don’t handle client funds or goods.</p>
-        <div class="cta-row"><a class="button button-dark" href="/contact#seller">Apply as a partner <span>↗</span></a><a class="button button-cream" href="/how-it-works#faq">Read the FAQ <span>↗</span></a></div>
+        <div class="cta-row"><a class="button button-dark" href="${SELLER_PATH}#enquire">Apply as a partner <span>↗</span></a><a class="button button-cream" href="/how-it-works#faq">Read the FAQ <span>↗</span></a></div>
       </section>`
 });
 
@@ -415,7 +534,7 @@ const goodsRelated = 'Related: <a class="inline-link" href="/buyers/source-from-
 sectorPage({
   slug: 'software-ai-development', name: 'Software &amp; AI Development',
   title: 'Software & AI Development: Indian agencies for overseas clients',
-  description: 'Software and AI development partnerships between overseas companies and vetted Indian agencies: what buyers usually need and how introductions work. Success fee only.',
+  description: 'Software and AI development partnerships between overseas companies and vetted Indian agencies: what buyers usually need and how introductions work.',
   h1: 'Software &amp; AI development, <em>with the right team.</em>',
   lede: 'India has a deep pool of software agencies; the challenge is finding one that fits your stack, domain and way of working. I introduce overseas companies to vetted agencies, and Indian agencies to qualified overseas clients.',
   needs: ['Clear scoping, and a choice between fixed-price and dedicated-team models', 'Reliable communication and enough time-zone overlap', 'Security practices, data protection and clear IP assignment', 'Domain experience for regulated builds such as healthcare and fintech', 'Support and maintenance after launch'],
@@ -474,7 +593,7 @@ sectorPage({
 
 // ------------------------------------------------------------------ How It Works
 export const FAQ = [
-  { q: 'Who pays the fee?', a: 'It is agreed in writing before any introduction. Typically it is the Indian business that wins the work: a referral fee for agencies, a commission for manufacturers and exporters. Where an overseas buyer asks me to run a specific search, any fee is agreed with them upfront. Either way, there is no retainer and fees are agreed per deal.' },
+  { q: 'Who pays the fee?', a: 'It is agreed in writing before any introduction. Typically it is the Indian business that wins the work: a referral fee for agencies, a commission for manufacturers and exporters. Where an overseas buyer asks me to run a specific search, any fee is agreed with them upfront. Either way, there is no retainer: fees are agreed per deal, paid only on a closed deal.' },
   { q: 'When is the fee payable?', a: 'Only when a deal closes. For IT and software, that means a signed project that the client has paid for (usually in line with the client’s payments). For goods, it means an order that has shipped and been paid for. The exact trigger is written into the agreement.' },
   { q: 'What is excluded?', a: 'Existing customers: clients or buyers you already work with, or were already talking to, are excluded, and we list them at the start. I also don’t provide legal, tax, customs, logistics or investment advice, I don’t arrange securities or investment transactions, and I don’t hold client funds or goods.' },
   { q: 'How long does it take?', a: 'It depends on the sector and how specific the brief is. I reply personally to every enquiry. Putting together a vetted shortlist usually takes a few weeks, and longer for specialised briefs. After the introduction, timing is in the hands of the parties: software projects often start with a discovery or pilot phase, while goods usually involve samples, documents and trial orders, which can take months.' },
@@ -484,18 +603,19 @@ export const FAQ = [
 ];
 add({
   path: '/how-it-works',
-  title: 'How It Works: four steps, one success fee',
-  description: 'How cross-border introductions work: tell us your need or capacity, shortlist and vet, introduction under a signed agreement, fee only on a closed deal. Confidentiality, non-circumvention and FAQ.',
+  title: 'How It Works: from brief to introduction in four steps',
+  description: 'How cross-border introductions work: tell us your need or capacity, shortlist and vet, introduction under a signed agreement, fees agreed per deal and paid only on a closed deal. Confidentiality, non-circumvention and FAQ.',
   crumbs: [{ name: 'How It Works', path: '/how-it-works' }],
   faq: FAQ,
   body: `${hero({
     eyebrow: 'How it works',
-    h1: 'Four steps, <em>one fee.</em>',
-    lede: 'Simple by design. Nothing is shared with the other side until you are comfortable and an agreement is signed, and nothing is payable unless a deal closes.',
+    h1: 'Four steps, <em>from brief to deal.</em>',
+    lede: 'Simple by design. Nothing is shared with the other side until you are comfortable and an agreement is signed.',
     ctas: false
   })}
       <section class="section shell" aria-label="The four steps" style="padding-top:20px">
         ${stepsHtml(true)}
+        <p class="note"><strong>Fees:</strong> no retainer. Fees are agreed per deal, paid only on a closed deal, and written into a short agreement before any introduction. See <a class="inline-link" href="/indian-businesses/partner-terms">partner terms</a> and the <a class="inline-link" href="#faq">FAQ</a>.</p>
       </section>
       <section class="section shell" aria-labelledby="protect">
         ${sectionHead('Protections', 'Both sides')}
@@ -518,12 +638,12 @@ add({
 add({
   path: '/about',
   title: 'About Pratik Bajoria: Chartered Accountant, ex-Big 4, founder',
-  description: 'About Pratik Bajoria: Chartered Accountant, ex-Big 4, founder of Findost and AI implementation consultant, making selective success-fee introductions between India and the world.',
+  description: 'About Pratik Bajoria: Chartered Accountant, ex-Big 4, founder of Findost and AI implementation consultant, making selective cross-border introductions between India and the world.',
   crumbs: [{ name: 'About', path: '/about' }],
   body: `${hero({
     eyebrow: 'About',
     h1: 'Chartered Accountant. <em>Ex-Big 4. Founder.</em>',
-    lede: 'I’m Pratik Bajoria. I make a small number of cross-border introductions between Indian businesses and overseas clients, buyers and partners, and I’m paid only if they work.',
+    lede: 'I’m Pratik Bajoria. I make a small number of carefully vetted cross-border introductions between Indian businesses and overseas clients, buyers and partners.',
     ctas: false
   })}
       <section class="section shell" aria-labelledby="bio" style="padding-top:10px">
@@ -547,45 +667,10 @@ add({
 });
 
 // ------------------------------------------------------------------ Contact
-const formHtml = ({ id, interest, title, intro, detailsLabel, placeholder }) => `<div class="form-card" id="${id}">
-            <span class="eyebrow">${interest === 'cross-border-buyer' ? 'Buyers · overseas companies' : 'Sellers · Indian businesses'}</span>
-            <h2>${title}</h2>
-            <p>${intro}</p>
-            <form class="xb-form" data-interest="${interest}" novalidate>
-              <input type="hidden" name="interest" value="${interest}" />
-              <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
-              <div class="two">
-                <label>Full name *<input name="name" required autocomplete="name" placeholder="Your name" /></label>
-                <label>Work email *<input name="email" type="email" required autocomplete="email" placeholder="you@company.com" /></label>
-              </div>
-              <div class="two">
-                <label>Company *<input name="company" required autocomplete="organization" placeholder="Company name" /></label>
-                <label>Country *<input name="country" required autocomplete="country-name" placeholder="Where you are based" /></label>
-              </div>
-              <div class="two">
-                <label>Sector
-                  <select name="lane">
-                    <option value="Software & AI development">Software &amp; AI development</option>
-                    <option value="Spices & agri-food">Spices &amp; agri-food</option>
-                    <option value="Home textiles">Home textiles</option>
-                    <option value="Engineering components">Engineering components</option>
-                    <option value="Specialty chemicals">Specialty chemicals</option>
-                    <option value="Other">Other</option>
-                  </select>
-                </label>
-                <label>WhatsApp / phone<input name="phone" type="tel" autocomplete="tel" placeholder="Optional" /></label>
-              </div>
-              <label>${detailsLabel} *<textarea name="challenge" required placeholder="${placeholder}"></textarea></label>
-              <label class="consent"><input type="checkbox" name="consent" required /> <span>I agree that Pratik may use these details to respond to my enquiry, as described in the <a href="${MAIN_SITE}/privacy" target="_blank" rel="noopener">privacy notice</a>.</span></label>
-              <p class="form-error" role="alert" hidden></p>
-              <button class="button button-dark" type="submit">Send enquiry <span>↗</span></button>
-            </form>
-          </div>`;
-const WA_HELLO = 'Hi Pratik, I’d like to discuss a cross-border introduction.';
 add({
   path: '/contact',
   title: 'Contact: start a cross-border conversation',
-  description: 'Contact Pratik Bajoria about a cross-border introduction: find a partner or supplier in India, or win international clients and buyers. Success fee only. Enquiry forms and WhatsApp.',
+  description: 'Contact Pratik Bajoria about a cross-border introduction: find a partner or supplier in India, or win international clients and buyers. Enquiry forms and WhatsApp.',
   crumbs: [{ name: 'Contact', path: '/contact' }],
   noCta: true,
   body: `${hero({

@@ -48,6 +48,11 @@ const XB_ORIGIN = `https://${XB_HOST}`;
 const XB_DIR = '/crossborder';
 const XB_OLD_PAGE = '/cross-border-partnerships';
 const XB_SHARED_ROOT_ASSETS = new Set(['/favicon.ico', '/favicon.png', '/ga4.js']);
+// Retired cross-border URLs -> their replacements (301 on the subdomain and on the /crossborder/ preview).
+const XB_REDIRECTS = {
+  '/buyers': '/find-a-partner-in-india',
+  '/indian-businesses': '/win-clients-abroad'
+};
 
 function rewriteMainCrossborderLinks(text) {
   if (!CROSSBORDER_LIVE) return text;
@@ -155,7 +160,8 @@ async function serveCrossborder(request, env, url, mode) {
       return request.method === 'HEAD' ? new Response(null, r) : r;
     }
   }
-  const path = xbNormalise(raw);
+  const normalised = xbNormalise(raw);
+  const path = XB_REDIRECTS[normalised] || normalised;
   const wanted = preview ? (path === '/' ? `${XB_DIR}/` : `${XB_DIR}${path}`) : path;
   if (raw !== wanted) return xbRedirect(preview ? new URL(`${wanted}${url.search}`, url).toString() : `${XB_ORIGIN}${wanted}${url.search}`);
 
@@ -541,7 +547,8 @@ export default {
     // pratikbajoria.com/crossborder/*: 301 to the subdomain once live; noindex preview until then.
     if (url.pathname === XB_DIR || url.pathname.startsWith(`${XB_DIR}/`)) {
       if (CROSSBORDER_LIVE) {
-        const p = xbNormalise(url.pathname);
+        const n = xbNormalise(url.pathname);
+        const p = XB_REDIRECTS[n] || n;
         return xbRedirect(`${XB_ORIGIN}${p === '/' ? '/' : p}${url.search}`);
       }
       return serveCrossborder(request, env, url, 'preview');

@@ -1,5 +1,7 @@
 // Shared header, footer, <head> and helpers for the cross-border site.
-import { CONTACT_EMAIL, ORIGIN, MAIN_SITE, WHATSAPP_NUMBER, WHATSAPP_DISPLAY, LINKEDIN, BRAND, BRAND_SHORT } from './config.mjs';
+import { CONTACT_EMAIL, ORIGIN, MAIN_SITE, WHATSAPP_NUMBER, WHATSAPP_DISPLAY, LINKEDIN, BRAND, BRAND_SHORT, BUYER_PATH, SELLER_PATH } from './config.mjs';
+
+const ASSET_VERSION = '20261003b';
 
 export const esc = (s) => String(s ?? '')
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -16,17 +18,20 @@ const CHEVRON = '<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4
 export function buildNav(includeInsights) {
   return [
     { label: 'Home', href: '/' },
-    { label: 'For Overseas Buyers', href: '/buyers', id: 'buyers', overview: 'Overview for overseas buyers', children: [
+    { label: 'Find a Partner in India', href: BUYER_PATH, id: 'buyers', children: [
+      { label: 'Find a Deployable Partner in India', href: BUYER_PATH, blurb: 'Start here: what you can find, how partners are vetted, enquiry form' },
       { label: 'Hire Indian Tech Teams', href: '/buyers/hire-indian-tech-teams', blurb: 'Vetted Indian software agencies for web, mobile, AI and regulated builds' },
       { label: 'Source from India', href: '/buyers/source-from-india', blurb: 'Vetted manufacturers and exporters, samples, documents, direct pricing' },
       { label: 'How We Vet Partners', href: '/buyers/how-we-vet-partners', blurb: 'Track record, reviews, certifications, export history, references' }
     ] },
-    { label: 'For Indian Businesses', href: '/indian-businesses', id: 'indian', overview: 'Overview for Indian businesses', children: [
-      { label: 'IT & Software Agencies', href: '/indian-businesses/it-software-agencies', blurb: 'Qualified US, UK and Middle East clients; fee on signed, paid projects' },
-      { label: 'Manufacturers & Exporters', href: '/indian-businesses/manufacturers-exporters', blurb: 'Qualified importers and distributors; commission on shipped, paid orders' },
-      { label: 'Partner Terms', href: '/indian-businesses/partner-terms', blurb: 'Success fee only, no retainer, a short agreement first' }
+    { label: 'Win Clients Abroad', href: SELLER_PATH, id: 'indian', children: [
+      { label: 'Win Clients and Buyers Abroad', href: SELLER_PATH, blurb: 'Start here: who it’s for, how introductions work, application form' },
+      { label: 'IT & Software Agencies', href: '/indian-businesses/it-software-agencies', blurb: 'Qualified overseas clients in the US, UK and Middle East' },
+      { label: 'Manufacturers & Exporters', href: '/indian-businesses/manufacturers-exporters', blurb: 'Qualified overseas importers and distributors' },
+      { label: 'Partner Terms', href: '/indian-businesses/partner-terms', blurb: 'Fees agreed per deal, paid only on a closed deal; agreement first' }
     ] },
-    { label: 'Sectors', href: '/sectors', id: 'sectors', overview: 'All sectors', children: [
+    { label: 'Sectors', href: '/sectors', id: 'sectors', children: [
+      { label: 'All Sectors', href: '/sectors', blurb: 'The five sectors at a glance' },
       { label: 'Software & AI Development', href: '/sectors/software-ai-development', blurb: 'Web, mobile, AI and data engineering' },
       { label: 'Spices & Agri-food', href: '/sectors/spices-agri-food', blurb: 'Whole and ground spices, processed and organic foods' },
       { label: 'Home Textiles', href: '/sectors/home-textiles', blurb: 'Bed, bath, kitchen and furnishing textiles' },
@@ -46,10 +51,7 @@ function header(nav, current) {
     if (!item.children) {
       return `<li class="xb-nav-item${cur}"><a class="xb-nav-link" href="${item.href}"${item.href === current ? ' aria-current="page"' : ''}>${esc(item.label)}</a></li>`;
     }
-    const links = [
-      `<a class="dd-overview" href="${item.href}"${item.href === current ? ' aria-current="page"' : ''}>${esc(item.overview)} →</a>`,
-      ...item.children.map((c) => `<a href="${c.href}"${c.href === current ? ' aria-current="page"' : ''}><strong>${esc(c.label)}</strong><small>${esc(c.blurb)}</small></a>`)
-    ].join('');
+    const links = item.children.map((c, i) => `<a${i === 0 ? ' class="dd-first"' : ''} href="${c.href}"${c.href === current ? ' aria-current="page"' : ''}><strong>${esc(c.label)}</strong><small>${esc(c.blurb)}</small></a>`).join('');
     return `<li class="xb-nav-item has-dd${cur}"><button class="dd-toggle" type="button" aria-expanded="false" aria-controls="dd-${item.id}">${esc(item.label)}${CHEVRON}</button><div class="dd" id="dd-${item.id}">${links}</div></li>`;
   }).join('\n          ');
   return `<a class="skip" href="#main">Skip to content</a>
@@ -70,12 +72,12 @@ function header(nav, current) {
 export function ctaBand() {
   return `<section class="cta-band" aria-labelledby="cta-title">
       <div class="shell">
-        <span class="eyebrow">Start a conversation · Success fee only</span>
+        <span class="eyebrow">Start a conversation · I reply personally</span>
         <h2 id="cta-title">A few lines is <em>enough to start.</em></h2>
         <p>Tell me what you need or what you can supply. I reply personally, and nothing is shared with anyone else until you are comfortable and an agreement is in place.</p>
         <div class="cta-row">
-          <a class="button button-dark" href="/contact#buyer">I’m looking for a partner or supplier <span>↗</span></a>
-          <a class="button button-cream" href="/contact#seller">I want international clients or buyers <span>↗</span></a>
+          <a class="button button-dark" href="${BUYER_PATH}#enquire">I’m looking for a partner or supplier <span>↗</span></a>
+          <a class="button button-cream" href="${SELLER_PATH}#enquire">I want international clients or buyers <span>↗</span></a>
           ${waButton('WhatsApp')}
         </div>
       </div>
@@ -88,6 +90,8 @@ function footer(nav) {
       <div class="xb-footer-top">
         <a class="xb-brand" href="/" aria-label="${esc(BRAND)}: home"><span class="xb-mark" aria-hidden="true">PB</span><span class="xb-brand-text"><strong>Cross-border Deals &amp; Partnerships</strong><small>by Pratik Bajoria</small></span></a>
         <nav aria-label="Footer">
+          <a href="${BUYER_PATH}">Find a partner in India</a>
+          <a href="${SELLER_PATH}">Win clients abroad</a>
           <a href="/how-it-works">How it works</a>
           <a href="/indian-businesses/partner-terms">Partner terms</a>
           <a href="/sectors">Sectors</a>
@@ -98,7 +102,7 @@ function footer(nav) {
           <a href="${MAIN_SITE}/">AI consulting ↗</a>
         </nav>
       </div>
-      <p class="fine">© <span data-year>2026</span> Pratik Bajoria · <a href="${wa('Hi Pratik, I’d like to discuss a cross-border introduction.')}" target="_blank" rel="noopener noreferrer">WhatsApp ${esc(WHATSAPP_DISPLAY)}</a>${emailLink ? ` · ${emailLink}` : ''} · <a href="${LINKEDIN}" target="_blank" rel="noopener noreferrer">LinkedIn</a><br />Introductions only, on a success-fee basis agreed in writing. Not a broker-dealer, investment adviser, legal adviser, customs agent or freight forwarder; no client funds or goods are handled. Pratik’s main practice is <a href="${MAIN_SITE}/">AI implementation consulting</a>.</p>
+      <p class="fine">© <span data-year>2026</span> Pratik Bajoria · <a href="${wa('Hi Pratik, I’d like to discuss a cross-border introduction.')}" target="_blank" rel="noopener noreferrer">WhatsApp ${esc(WHATSAPP_DISPLAY)}</a>${emailLink ? ` · ${emailLink}` : ''} · <a href="${LINKEDIN}" target="_blank" rel="noopener noreferrer">LinkedIn</a><br />Introductions only; fees are agreed per deal in writing and paid only on a closed deal. Not a broker-dealer, investment adviser, legal adviser, customs agent or freight forwarder; no client funds or goods are handled. Pratik’s main practice is <a href="${MAIN_SITE}/">AI implementation consulting</a>.</p>
     </footer>`;
 }
 
@@ -117,7 +121,7 @@ export function orgNode() {
     '@id': `${ORIGIN}/#organization`,
     name: BRAND,
     url: `${ORIGIN}/`,
-    description: 'Success-fee-only cross-border introductions between India and the world: overseas buyers to vetted Indian software agencies, manufacturers and exporters; Indian businesses to qualified international clients and buyers.',
+    description: 'Cross-border introductions between India and the world: overseas buyers to vetted Indian software agencies, manufacturers and exporters; Indian businesses to qualified international clients and buyers.',
     founder: { '@id': `${MAIN_SITE}/#person` },
     telephone: `+${WHATSAPP_NUMBER}`,
     areaServed: ['India', 'United States', 'United Kingdom', 'European Union', 'Middle East', 'South-East Asia'],
@@ -195,7 +199,7 @@ export function renderPage(page, nav) {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/assets/xb.css?v=20261003" />
+    <link rel="stylesheet" href="/assets/xb.css?v=${ASSET_VERSION}" />
     <script type="application/ld+json">
 ${ld}
     </script>
@@ -209,7 +213,7 @@ ${page.body}
     </main>
     ${page.noCta ? '' : ctaBand()}
     ${footer(nav)}
-    <script src="/assets/xb.js?v=20261003" defer></script>
+    <script src="/assets/xb.js?v=${ASSET_VERSION}" defer></script>
   </body>
 </html>
 `;

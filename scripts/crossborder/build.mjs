@@ -2,7 +2,7 @@
 // Builds the static cross-border site into public/crossborder/.
 // Usage: node scripts/crossborder/build.mjs
 // Served at https://crossborder.pratikbajoria.com/ by public/_worker.js (host-based routing).
-import { mkdirSync, writeFileSync, rmSync, existsSync } from 'node:fs';
+import { mkdirSync, writeFileSync, rmSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CONTACT_EMAIL, BUILD_DATE } from './config.mjs';
@@ -18,9 +18,8 @@ const pages = buildPages({ includeInsights });
 
 const fileFor = (path) => path === '/' ? 'index.html' : `${path.slice(1)}.html`;
 for (const dir of ['buyers', 'indian-businesses', 'sectors']) rmSync(join(OUT, dir), { recursive: true, force: true });
-for (const f of ['index.html', 'buyers.html', 'indian-businesses.html', 'sectors.html', 'how-it-works.html', 'insights.html', 'about.html', 'contact.html', '404.html']) {
-  if (existsSync(join(OUT, f))) rmSync(join(OUT, f));
-}
+// Remove every previously generated top-level page so renamed or retired pages don't linger.
+for (const f of readdirSync(OUT)) if (f.endsWith('.html')) rmSync(join(OUT, f));
 for (const page of [...pages, notFoundPage]) {
   const file = join(OUT, fileFor(page.path));
   mkdirSync(dirname(file), { recursive: true });
