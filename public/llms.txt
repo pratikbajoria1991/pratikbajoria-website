@@ -92,6 +92,8 @@ Pratik works from India with business leaders in India, the United States, the U
 - [Why Most Corporate AI Pilots Never Reach Production](https://pratikbajoria.com/blog/corporate-ai-pilots)
 - [Build vs Buy: A Decision Framework for AI Tooling](https://pratikbajoria.com/blog/build-vs-buy-ai-tooling)
 
+- [AI Finance Automation Roadmap: A 90-Day Plan for CFOs and Controllers](https://pratikbajoria.com/blog/2026-10-04-ai-finance-automation-roadmap-for-cfos-and-controllers)
+
 ## Contact
 
 - Website: https://pratikbajoria.com/
