@@ -29,9 +29,12 @@ export async function onRequestPost({ request, env }) {
   const consent = body.consent === true;
   if (!name || !company || !challenge || !isEmail(email) || !consent) return json({ ok: false, error: 'Please complete the required fields and consent.' }, 422);
 
+  const interests = new Set(['cross-border-buyer', 'cross-border-seller']);
+  const interest = interests.has(text(body.interest, 40)) ? text(body.interest, 40) : '';
+  const metadata = interest ? JSON.stringify({ interest, country: text(body.country, 80) || null, lane: text(body.lane, 80) || null }) : null;
   const now = new Date().toISOString();
-  await env.DB.prepare(`INSERT INTO leads (id, kind, created_at, consent_at, name, email, company, phone, challenge, source, page_url, referrer) VALUES (?, 'discovery', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
-    .bind(crypto.randomUUID(), now, now, name, email, company, phone || null, challenge, 'website', pageUrl || null, referrer || null).run();
+  await env.DB.prepare(`INSERT INTO leads (id, kind, created_at, consent_at, name, email, company, phone, challenge, source, page_url, referrer, metadata) VALUES (?, 'discovery', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
+    .bind(crypto.randomUUID(), now, now, name, email, company, phone || null, challenge, interest || 'website', pageUrl || null, referrer || null, metadata).run();
   return json({ ok: true, message: 'Your discovery request has been received.' }, 201);
 }
 

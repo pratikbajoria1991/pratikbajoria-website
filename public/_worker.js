@@ -4,6 +4,7 @@ const text = (value, max = 500) => typeof value === 'string' ? value.trim().slic
 const isEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 const isBlogSlug = (value) => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value);
 const INTERNAL_ASSET_HEADER = 'x-pages-internal-asset';
+const LEAD_INTERESTS = new Set(['cross-border-buyer', 'cross-border-seller']);
 
 const GA4_SNIPPET = '<script src="/ga4.js" defer></script>\n';
 async function injectGa4(response) {
@@ -310,9 +311,13 @@ async function handleDiscovery(request, env) {
   if (text(body.website, 80)) return json({ ok: true });
   const name = text(body.name, 120), email = text(body.email, 254).toLowerCase(), company = text(body.company, 160), phone = text(body.phone, 60), challenge = text(body.challenge, 3000), pageUrl = text(body.pageUrl, 500), referrer = text(body.referrer, 500);
   if (!name || !company || !challenge || !isEmail(email) || body.consent !== true) return json({ ok: false, error: 'Please complete the required fields and consent.' }, 422);
+  // Optional enquiry type (e.g. cross-border page CTAs). Allow-listed; stored in source + metadata.
+  const interest = LEAD_INTERESTS.has(text(body.interest, 40)) ? text(body.interest, 40) : '';
+  const source = interest || 'website';
+  const metadata = interest ? JSON.stringify({ interest, country: text(body.country, 80) || null, lane: text(body.lane, 80) || null }) : null;
   const now = new Date().toISOString();
-  await env.DB.prepare(`INSERT INTO leads (id, kind, created_at, consent_at, name, email, company, phone, challenge, source, page_url, referrer) VALUES (?, 'discovery', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
-    .bind(crypto.randomUUID(), now, now, name, email, company, phone || null, challenge, 'website', pageUrl || null, referrer || null).run();
+  await env.DB.prepare(`INSERT INTO leads (id, kind, created_at, consent_at, name, email, company, phone, challenge, source, page_url, referrer, metadata) VALUES (?, 'discovery', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
+    .bind(crypto.randomUUID(), now, now, name, email, company, phone || null, challenge, source, pageUrl || null, referrer || null, metadata).run();
   return json({ ok: true, message: 'Your discovery request has been received.' }, 201);
 }
 
@@ -413,6 +418,7 @@ export default {
       '/ai-opportunity-audit-for-ca-firms.html': '/ai-opportunity-audit-for-ca-firms',
       '/ai-implementation-for-finance-teams.html': '/ai-implementation-for-finance-teams',
       '/workflow-automation-with-ai-for-mid-market.html': '/workflow-automation-with-ai-for-mid-market',
+      '/cross-border-partnerships.html': '/cross-border-partnerships',
     };
     if (request.method === 'GET' && htmlAliases[url.pathname]) {
       return absoluteRedirect(url, htmlAliases[url.pathname]);
