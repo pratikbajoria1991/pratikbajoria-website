@@ -10,18 +10,169 @@ const GA4_SNIPPET = '<script src="/ga4.js" defer></script>\n';
 async function injectGa4(response) {
   const ctype = response.headers.get('content-type') || '';
   if (response.status !== 200 || !ctype.includes('text/html')) return response;
-  const text = await response.text();
+  const text = rewriteMainCrossborderLinks(await response.text());
+  const headers = new Headers(response.headers);
+  headers.delete('content-length');
   if (text.includes('/ga4.js') || text.includes('G-CXQP7F8CRT')) {
-    return new Response(text, { status: response.status, statusText: response.statusText, headers: response.headers });
+    return new Response(text, { status: response.status, statusText: response.statusText, headers });
   }
   const out = text.includes('</head>')
     ? text.replace('</head>', `${GA4_SNIPPET}</head>`)
     : `${text}${GA4_SNIPPET}`;
-  const headers = new Headers(response.headers);
-  headers.delete('content-length');
   return new Response(out, { status: response.status, statusText: response.statusText, headers });
 }
 
+
+
+// ---------------------------------------------------------------------------
+// Cross-border site: https://crossborder.pratikbajoria.com
+// Static pages live in public/crossborder/ (built by scripts/crossborder/build.mjs).
+// Requests whose Host is crossborder.pratikbajoria.com are served from /crossborder/
+// with clean URLs, their own sitemap.xml, robots.txt and 404.
+//
+// GO-LIVE SWITCH — flip to true only once the custom domain
+// crossborder.pratikbajoria.com is attached to this Pages project and resolves.
+//   false (now): main-site nav/footer/homepage links keep pointing at
+//     /cross-border-partnerships (which stays live and in the main sitemap); the
+//     subdomain sitemap is not advertised from the main robots.txt; and
+//     pratikbajoria.com/crossborder/* is a noindex preview whose canonicals point
+//     at the subdomain.
+//   true: /cross-border-partnerships(.html) and pratikbajoria.com/crossborder/*
+//     301 to the subdomain; main-site HTML links, JSON-LD and llms.txt are
+//     rewritten to https://crossborder.pratikbajoria.com/; the old page leaves the
+//     main sitemap; the main robots.txt also lists the subdomain sitemap.
+// ---------------------------------------------------------------------------
+const CROSSBORDER_LIVE = false;
+const XB_HOST = 'crossborder.pratikbajoria.com';
+const XB_ORIGIN = `https://${XB_HOST}`;
+const XB_DIR = '/crossborder';
+const XB_OLD_PAGE = '/cross-border-partnerships';
+const XB_SHARED_ROOT_ASSETS = new Set(['/favicon.ico', '/favicon.png', '/ga4.js']);
+
+function rewriteMainCrossborderLinks(text) {
+  if (!CROSSBORDER_LIVE) return text;
+  return text
+    .split(`href="${XB_OLD_PAGE}"`).join(`href="${XB_ORIGIN}/"`)
+    .split(`https://pratikbajoria.com${XB_OLD_PAGE}`).join(`${XB_ORIGIN}/`);
+}
+
+function requestHost(request, url) {
+  return (request.headers.get('host') || url.host || '').split(':')[0].toLowerCase();
+}
+
+function xbRedirect(location) {
+  return new Response(null, { status: 301, headers: { Location: location, 'Cache-Control': 'public, max-age=3600' } });
+}
+
+// /crossborder/x, /x.html, /x/ and /index.html all collapse to the clean path /x.
+function xbNormalise(pathname) {
+  let p = pathname;
+  if (p === XB_DIR || p.startsWith(`${XB_DIR}/`)) p = p.slice(XB_DIR.length) || '/';
+  if (p.endsWith('/index.html')) p = p.slice(0, -'index.html'.length);
+  else if (p.endsWith('.html')) p = p.slice(0, -'.html'.length);
+  if (p.length > 1 && p.endsWith('/')) p = p.replace(/\/+$/, '') || '/';
+  return p || '/';
+}
+
+let xbManifestCache = null;
+async function xbManifest(request, env) {
+  if (xbManifestCache) return xbManifestCache;
+  const m = await loadJsonAsset(request, env, `${XB_DIR}/site-manifest.json`, null);
+  if (m && Array.isArray(m.pages)) { xbManifestCache = m; return m; }
+  return { pages: [] };
+}
+
+// Fetch a static asset; follow one internal Pages pretty-URL redirect if needed.
+async function xbFetchAsset(request, env, assetPath) {
+  let r = await env.ASSETS.fetch(internalAssetRequest(request, assetPath));
+  if (r.status >= 300 && r.status < 400 && r.headers.get('location')) {
+    const next = new URL(r.headers.get('location'), request.url).pathname;
+    if (next.startsWith(`${XB_DIR}/`)) r = await env.ASSETS.fetch(internalAssetRequest(request, next));
+  }
+  return r;
+}
+
+// On pratikbajoria.com/crossborder/* (preview), root-relative links get the /crossborder prefix.
+function xbPreviewHtml(html) {
+  return html
+    .replace(/<meta name="robots" content="[^"]*"\s*\/?>/, '<meta name="robots" content="noindex,follow" />')
+    .replace(/(href|src|action)="\/(?!\/)([^"]*)"/g, (m, attr, rest) => {
+      const p = `/${rest}`;
+      if (XB_SHARED_ROOT_ASSETS.has(p.split(/[?#]/)[0]) || p.startsWith('/api/')) return m;
+      return `${attr}="${XB_DIR}${p}"`;
+    });
+}
+
+function xbHtml(request, body, status, preview) {
+  const h = {
+    'Content-Type': 'text/html; charset=utf-8',
+    'Cache-Control': status === 200 ? 'public, max-age=300, must-revalidate' : 'public, max-age=60'
+  };
+  if (preview || status !== 200) h['X-Robots-Tag'] = 'noindex, follow';
+  return new Response(request.method === 'HEAD' ? null : body, { status, headers: h });
+}
+
+async function xbNotFound(request, env, preview) {
+  let body = '<!doctype html><html lang="en-GB"><head><meta charset="utf-8" /><meta name="robots" content="noindex" /><title>Page not found</title></head><body><h1>Page not found</h1><p><a href="/">Cross-border home</a></p></body></html>';
+  try {
+    const r = await xbFetchAsset(request, env, `${XB_DIR}/404`);
+    if ((r.status === 200 || r.status === 404) && (r.headers.get('content-type') || '').includes('text/html')) body = await r.text();
+  } catch { /* inline fallback */ }
+  return xbHtml(request, preview ? xbPreviewHtml(body) : body, 404, true);
+}
+
+function xbRobots(request) {
+  const body = `# ${XB_HOST}
+# Content Signals — https://contentsignals.org/
+User-agent: *
+Content-Signal: search=yes,ai-input=yes,ai-train=no
+Allow: /
+
+Sitemap: ${XB_ORIGIN}/sitemap.xml
+`;
+  return new Response(request.method === 'HEAD' ? null : body, { status: 200, headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'public, max-age=3600' } });
+}
+
+async function xbSitemap(request, env) {
+  const { pages } = await xbManifest(request, env);
+  const urls = pages.map((p) => `  <url><loc>${XB_ORIGIN}${p.path === '/' ? '/' : p.path}</loc>${p.lastmod ? `<lastmod>${p.lastmod}</lastmod>` : ''}<changefreq>monthly</changefreq><priority>${p.priority || '0.7'}</priority></url>`).join('\n');
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
+  return new Response(request.method === 'HEAD' ? null : xml, { status: 200, headers: { 'Content-Type': 'application/xml; charset=utf-8', 'Cache-Control': 'public, max-age=3600' } });
+}
+
+// mode 'subdomain' = Host crossborder.pratikbajoria.com; 'preview' = pratikbajoria.com/crossborder/*
+async function serveCrossborder(request, env, url, mode) {
+  const preview = mode === 'preview';
+  const raw = url.pathname;
+  if (request.method !== 'GET' && request.method !== 'HEAD') {
+    return new Response('Method Not Allowed', { status: 405, headers: { Allow: 'GET, HEAD' } });
+  }
+  if (!preview) {
+    if (raw === '/robots.txt') return xbRobots(request);
+    if (raw === '/sitemap.xml') return xbSitemap(request, env);
+    if (XB_SHARED_ROOT_ASSETS.has(raw)) {
+      const r = await env.ASSETS.fetch(internalAssetRequest(request, raw));
+      return request.method === 'HEAD' ? new Response(null, r) : r;
+    }
+  }
+  const path = xbNormalise(raw);
+  const wanted = preview ? (path === '/' ? `${XB_DIR}/` : `${XB_DIR}${path}`) : path;
+  if (raw !== wanted) return xbRedirect(preview ? new URL(`${wanted}${url.search}`, url).toString() : `${XB_ORIGIN}${wanted}${url.search}`);
+
+  const { pages } = await xbManifest(request, env);
+  if (pages.some((p) => p.path === path)) {
+    const r = await xbFetchAsset(request, env, path === '/' ? `${XB_DIR}/` : `${XB_DIR}${path}`);
+    if (r.status === 200) {
+      const html = await r.text();
+      return xbHtml(request, preview ? xbPreviewHtml(html) : html, 200, preview);
+    }
+  }
+  if (path.startsWith('/assets/') || path === '/og.png') {
+    const r = await env.ASSETS.fetch(internalAssetRequest(request, `${XB_DIR}${path}`));
+    if (r.status === 200) return request.method === 'HEAD' ? new Response(null, r) : r;
+  }
+  return xbNotFound(request, env, preview);
+}
 
 const blogPathAliases = {
   '/blog/2026-08-31-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/blog/2026-09-14-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders',
@@ -285,6 +436,7 @@ async function serveSitemap(request, env) {
   const r = await env.ASSETS.fetch(request);
   if (r.status !== 200) return r;
   let xml = await r.text();
+  if (CROSSBORDER_LIVE) xml = xml.replace(/[ \t]*<url>\s*<loc>https:\/\/pratikbajoria\.com\/cross-border-partnerships<\/loc>[\s\S]*?<\/url>\s*\n?/g, '');
   const posts = await loadAllPosts(request, env);
   const have = new Set([...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim()));
   const extra = [];
@@ -382,6 +534,34 @@ export default {
     if (request.method === 'POST' && url.pathname === '/api/discovery') return handleDiscovery(request, env);
     if (request.method === 'POST' && url.pathname === '/api/subscribe') return handleSubscribe(request, env);
     if (request.method === 'GET' && url.pathname === '/api/leads') return handleLeads(request, env);
+
+    // Cross-border subdomain (API routes above work on both hosts).
+    if (requestHost(request, url) === XB_HOST) return serveCrossborder(request, env, url, 'subdomain');
+
+    // pratikbajoria.com/crossborder/*: 301 to the subdomain once live; noindex preview until then.
+    if (url.pathname === XB_DIR || url.pathname.startsWith(`${XB_DIR}/`)) {
+      if (CROSSBORDER_LIVE) {
+        const p = xbNormalise(url.pathname);
+        return xbRedirect(`${XB_ORIGIN}${p === '/' ? '/' : p}${url.search}`);
+      }
+      return serveCrossborder(request, env, url, 'preview');
+    }
+
+    // Old cross-border page -> subdomain, only once live.
+    if (CROSSBORDER_LIVE && (url.pathname === XB_OLD_PAGE || url.pathname === `${XB_OLD_PAGE}.html` || url.pathname === `${XB_OLD_PAGE}/`)) {
+      return xbRedirect(`${XB_ORIGIN}/`);
+    }
+    if (CROSSBORDER_LIVE && request.method === 'GET' && (url.pathname === '/robots.txt' || url.pathname === '/llms.txt')) {
+      const r = await env.ASSETS.fetch(request);
+      if (r.status === 200) {
+        let body = rewriteMainCrossborderLinks(await r.text());
+        if (url.pathname === '/robots.txt' && !body.includes(`${XB_ORIGIN}/sitemap.xml`)) body = `${body.replace(/\s*$/, '\n')}Sitemap: ${XB_ORIGIN}/sitemap.xml\n`;
+        const h = new Headers(r.headers);
+        h.delete('content-length');
+        return new Response(body, { status: 200, headers: h });
+      }
+      return r;
+    }
 
     if (request.method === 'GET' && (url.pathname === '/blog' || url.pathname === '/blog.html')) {
       const legacySlug = url.searchParams.get('slug')?.trim();
