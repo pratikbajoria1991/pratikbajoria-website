@@ -42,7 +42,7 @@ async function injectGa4(response) {
 //     rewritten to https://crossborder.pratikbajoria.com/; the old page leaves the
 //     main sitemap; the main robots.txt also lists the subdomain sitemap.
 // ---------------------------------------------------------------------------
-const CROSSBORDER_LIVE = false;
+const CROSSBORDER_LIVE = true;
 const XB_HOST = 'crossborder.pratikbajoria.com';
 const XB_ORIGIN = `https://${XB_HOST}`;
 const XB_DIR = '/crossborder';
