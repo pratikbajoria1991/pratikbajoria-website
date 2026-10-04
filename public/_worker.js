@@ -562,12 +562,20 @@ export default {
       return xbRedirect(`${XB_ORIGIN}/`);
     }
     if (CROSSBORDER_LIVE && request.method === 'GET' && (url.pathname === '/robots.txt' || url.pathname === '/llms.txt')) {
-      const r = await env.ASSETS.fetch(request);
+      // The body is rewritten here, so the static file's validators no longer describe it:
+      // ignore the client's/edge's If-None-Match / If-Modified-Since (otherwise the asset
+      // server answers 304 and a stale cached copy survives) and drop ETag/Last-Modified.
+      const fresh = new Headers(request.headers);
+      fresh.delete('if-none-match');
+      fresh.delete('if-modified-since');
+      const r = await env.ASSETS.fetch(new Request(request, { headers: fresh }));
       if (r.status === 200) {
         let body = rewriteMainCrossborderLinks(await r.text());
         if (url.pathname === '/robots.txt' && !body.includes(`${XB_ORIGIN}/sitemap.xml`)) body = `${body.replace(/\s*$/, '\n')}Sitemap: ${XB_ORIGIN}/sitemap.xml\n`;
         const h = new Headers(r.headers);
         h.delete('content-length');
+        h.delete('etag');
+        h.delete('last-modified');
         return new Response(body, { status: 200, headers: h });
       }
       return r;
