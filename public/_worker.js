@@ -47,7 +47,9 @@ const XB_HOST = 'crossborder.pratikbajoria.com';
 const XB_ORIGIN = `https://${XB_HOST}`;
 const XB_DIR = '/crossborder';
 const XB_OLD_PAGE = '/cross-border-partnerships';
-const XB_SHARED_ROOT_ASSETS = new Set(['/favicon.ico', '/favicon.png', '/ga4.js']);
+// Root files the subdomain shares with the main site (incl. the IndexNow key file, which
+// IndexNow requires on every host whose URLs are submitted).
+const XB_SHARED_ROOT_ASSETS = new Set(['/favicon.ico', '/favicon.png', '/ga4.js', '/d5d19724f0e88d56c47096f6decf1880.txt']);
 // Retired cross-border URLs -> their replacements (301 on the subdomain and on the /crossborder/ preview).
 const XB_REDIRECTS = {
   '/buyers': '/find-a-partner-in-india',
