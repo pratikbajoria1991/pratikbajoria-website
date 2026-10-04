@@ -4,7 +4,7 @@
 // CONTACT_EMAIL: leave as null while hello@pratikbajoria.com does not receive mail.
 // Set it to 'hello@pratikbajoria.com' to show the address on the Contact page, in the
 // footer, in the form success state and in the JSON-LD (one switch, everywhere).
-export const CONTACT_EMAIL = null;
+export const CONTACT_EMAIL = 'hello@pratikbajoria.com';
 
 export const ORIGIN = 'https://crossborder.pratikbajoria.com';
 export const MAIN_SITE = 'https://pratikbajoria.com';

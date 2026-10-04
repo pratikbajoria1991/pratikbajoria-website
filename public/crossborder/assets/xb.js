@@ -126,9 +126,10 @@
       success.className = 'form-success';
       success.setAttribute('role', 'status');
       success.innerHTML = `<span class="tick" aria-hidden="true">✓</span><h3>${saved ? 'Thank you.' : 'Almost there.'}</h3><p></p><div class="cta-row"></div>`;
+      const via = EMAIL ? 'on WhatsApp or by email' : 'on WhatsApp';
       success.querySelector('p').textContent = saved
-        ? 'Your enquiry has been recorded and I’ll reply personally. If you’d like a copy in your own chat, you can also send it on WhatsApp.'
-        : 'Your enquiry could not be saved automatically. Please send it on WhatsApp so it reaches me.';
+        ? `Your enquiry has been recorded and I’ll reply personally. If you’d like a copy for your own records, you can also send it ${via}.`
+        : `Your enquiry could not be saved automatically. Please send it ${via} so it reaches me.`;
       const row = success.querySelector('.cta-row');
       const wa = document.createElement('a');
       wa.className = 'button button-whatsapp';

@@ -1,7 +1,7 @@
 // Shared header, footer, <head> and helpers for the cross-border site.
 import { CONTACT_EMAIL, ORIGIN, MAIN_SITE, WHATSAPP_NUMBER, WHATSAPP_DISPLAY, LINKEDIN, BRAND, BRAND_SHORT, BUYER_PATH, SELLER_PATH } from './config.mjs';
 
-const ASSET_VERSION = '20261003b';
+const ASSET_VERSION = '20261005';
 
 export const esc = (s) => String(s ?? '')
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
