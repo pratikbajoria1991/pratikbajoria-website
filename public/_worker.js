@@ -581,7 +581,12 @@ export default {
       return r;
     }
 
-    if (request.method === 'GET' && (url.pathname === '/blog' || url.pathname === '/blog.html')) {
+    // Redirect-bearing routes below must answer HEAD exactly like GET. Otherwise HEAD falls
+    // through to env.ASSETS and Pages answers with its own 308 + relative Location
+    // (e.g. HEAD /topics.html -> 308 /topics), which crawlers/GSC report as a redirect error.
+    const isRead = request.method === 'GET' || request.method === 'HEAD';
+
+    if (isRead && (url.pathname === '/blog' || url.pathname === '/blog.html')) {
       const legacySlug = url.searchParams.get('slug')?.trim();
       if (legacySlug && isBlogSlug(legacySlug)) {
         return absoluteRedirect(url, `/blog/${encodeURIComponent(legacySlug)}`);
@@ -596,11 +601,11 @@ export default {
     // /blog/{slug}: static SSR HTML first, then JSON server-render, else real 404 (see serveBlogPost).
 
 
-    if (request.method === 'GET' && (url.pathname === '/insights' || url.pathname === '/insights/')) {
+    if (isRead && (url.pathname === '/insights' || url.pathname === '/insights/')) {
       return absoluteRedirect(url, '/blog');
     }
 
-    if (request.method === 'GET' && blogPathAliases[url.pathname]) {
+    if (isRead && blogPathAliases[url.pathname]) {
       return absoluteRedirect(url, blogPathAliases[url.pathname]);
     }
 
@@ -618,7 +623,7 @@ export default {
       '/workflow-automation-with-ai-for-mid-market.html': '/workflow-automation-with-ai-for-mid-market',
       '/cross-border-partnerships.html': '/cross-border-partnerships',
     };
-    if (request.method === 'GET' && htmlAliases[url.pathname]) {
+    if (isRead && htmlAliases[url.pathname]) {
       return absoluteRedirect(url, htmlAliases[url.pathname]);
     }
 
