@@ -11,6 +11,115 @@ const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Kolkata', year:
 
 /** Expandable topic bank — each entry used at most once until the bank cycles; avoids same-7 daily clones. */
 const topics = [
+  // --- CA + AI India topic batch added 7 Oct 2026 (distinct from published/retired posts) ---
+  {
+    title: 'AI for Tax Audit Reports in India: What a CA Can Safely Automate in Form 3CD Work',
+    category: 'CA insights',
+    keywords: ['AI for tax audit', 'Form 3CD AI', 'tax audit automation India', 'AI for chartered accountants'],
+    thesis: 'Let AI pull and tie out the data behind Form 3CD clauses; keep every reported position and the signature with the CA.',
+    affiliateTools: [],
+    angle: 'ca-controls',
+    sourceLinks: [{ title: 'Income Tax Department e-filing portal', url: 'https://www.incometax.gov.in/' }, { title: 'ICAI VERA digital audit suite', url: 'https://vera.icai.org/' }]
+  },
+  {
+    title: 'Drafting Replies to GST and Income Tax Notices With AI Without Losing Control',
+    category: 'CA insights',
+    keywords: ['AI for GST notices', 'AI notice reply drafting', 'income tax notice AI', 'CA firm AI India'],
+    thesis: 'AI is good at the first draft and the chronology; the legal position, the facts check and the filing stay with a named CA.',
+    affiliateTools: [],
+    angle: 'ca-controls',
+    sourceLinks: [{ title: 'GST portal', url: 'https://www.gst.gov.in/' }, { title: 'Income Tax Department e-filing portal', url: 'https://www.incometax.gov.in/' }]
+  },
+  {
+    title: 'Using AI for TDS Reconciliation in Indian CA Firms: 26AS and AIS Mismatches',
+    category: 'CA insights',
+    keywords: ['TDS reconciliation AI', '26AS reconciliation', 'AIS mismatch', 'AI for CA firms India'],
+    thesis: 'Automate the matching and the mismatch list; a reviewer still decides what to chase with the deductor.',
+    affiliateTools: [],
+    angle: 'ops',
+    sourceLinks: [{ title: 'Income Tax Department e-filing portal', url: 'https://www.incometax.gov.in/' }]
+  },
+  {
+    title: 'How CA Firms in India Should Price Work When AI Cuts the Hours',
+    category: 'CA insights',
+    keywords: ['CA firm pricing AI', 'value pricing CA India', 'AI and billable hours', 'CA practice management'],
+    thesis: 'If AI halves preparation time, price on outcome and risk, not on the hours you no longer spend.',
+    affiliateTools: [],
+    angle: 'budget',
+    sourceLinks: [{ title: 'Microsoft India: 2024 Work Trend Index India findings', url: 'https://news.microsoft.com/en-in/92-of-indian-knowledge-workers-use-ai-in-the-workplace-finds-microsoft-and-linkedin-2024-work-trend-index/' }]
+  },
+  {
+    title: 'AI and Articleship: How CA Firms Should Train Article Assistants Now',
+    category: 'CA insights',
+    keywords: ['articleship AI', 'CA article assistants AI', 'training CA students AI', 'CA firm training India'],
+    thesis: 'Teach article assistants to review machine output and chase exceptions, not just to prepare what a tool now drafts.',
+    affiliateTools: [],
+    angle: 'ops',
+    sourceLinks: [{ title: 'ICAI: AI Innovation Summit 2026 press release', url: 'https://www.icai.org/post/icai-ais2026-26062026' }]
+  },
+  {
+    title: 'AI for CARO 2020 Reporting: Where It Helps and Where Judgement Stays',
+    category: 'CA insights',
+    keywords: ['CARO 2020 AI', 'AI in statutory audit India', 'audit reporting AI', 'AI for auditors India'],
+    thesis: 'AI can assemble evidence for each CARO clause; whether a clause is reported adversely is the auditor’s call.',
+    affiliateTools: [],
+    angle: 'audit',
+    sourceLinks: [{ title: 'ICAI VERA digital audit suite', url: 'https://vera.icai.org/' }]
+  },
+  {
+    title: 'Updating Engagement Letters for AI Use in a CA Firm',
+    category: 'CA insights',
+    keywords: ['engagement letter AI clause', 'CA firm AI policy', 'client data AI India', 'DPDP Act CA firms'],
+    thesis: 'Tell clients plainly how AI is used on their work, what data it sees and who reviews it, before they ask.',
+    affiliateTools: [],
+    angle: 'governance',
+    sourceLinks: [{ title: 'Digital Personal Data Protection Act, 2023 (MeitY)', url: 'https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf' }]
+  },
+  {
+    title: 'AI for Month-End Close in Indian Mid-Market Finance Teams',
+    category: 'Finance & compliance',
+    keywords: ['AI month-end close', 'finance close automation India', 'AI for CFOs India', 'AI in accounting'],
+    thesis: 'Shave days off the close by automating accruals support and variance commentary drafts, with the controller signing off.',
+    affiliateTools: [],
+    angle: 'ops',
+    sourceLinks: [{ title: 'NIST AI Risk Management Framework', url: 'https://www.nist.gov/itl/ai-risk-management-framework' }]
+  },
+  {
+    title: 'AI for Bank Statement Categorisation for Bookkeeping Clients in India',
+    category: 'CA insights',
+    keywords: ['bank statement categorisation AI', 'AI bookkeeping India', 'Tally AI', 'AI for accountants India'],
+    thesis: 'Categorisation is the best first AI workflow for most bookkeeping practices: high volume, easy to check, low risk.',
+    affiliateTools: [],
+    angle: 'ops',
+    sourceLinks: [{ title: 'NIST AI Risk Management Framework', url: 'https://www.nist.gov/itl/ai-risk-management-framework' }]
+  },
+  {
+    title: 'Using AI for Ind AS Research and Disclosure Checklists',
+    category: 'CA insights',
+    keywords: ['Ind AS AI', 'disclosure checklist AI', 'financial reporting AI India', 'AI for CAs in industry'],
+    thesis: 'Use AI to find the right paragraph and build the checklist; never let it decide the accounting treatment.',
+    affiliateTools: [],
+    angle: 'ca-controls',
+    sourceLinks: [{ title: 'ICAI CA GPT press release', url: 'https://icai.org/post/prc-icai-unveils-groundbreaking-ca-gpt-platform' }]
+  },
+  {
+    title: 'AI for Internal Audit in Indian Companies: A Practical Starting Point',
+    category: 'Finance & compliance',
+    keywords: ['AI in internal audit', 'internal audit analytics India', 'continuous auditing AI', 'AI for auditors'],
+    thesis: 'Start internal audit AI with full-population testing of one process, not a dashboard nobody reads.',
+    affiliateTools: [],
+    angle: 'audit',
+    sourceLinks: [{ title: 'EY: agentic AI in EY Canvas (April 2026)', url: 'https://www.ey.com/en_gl/newsroom/2026/04/ey-launches-enterprise-scale-agentic-ai-to-redefine-the-audit-experience-for-the-ai-era' }]
+  },
+  {
+    title: 'AI for Virtual CFO Services: MIS Packs Clients Actually Read',
+    category: 'CA insights',
+    keywords: ['virtual CFO AI', 'MIS reporting AI', 'AI for CA practices', 'management reporting India'],
+    thesis: 'AI makes the monthly MIS pack faster; the value is the three sentences of commentary a partner stands behind.',
+    affiliateTools: [],
+    angle: 'tools',
+    sourceLinks: [{ title: 'NIST AI Risk Management Framework', url: 'https://www.nist.gov/itl/ai-risk-management-framework' }]
+  },
   {
     title: 'When a Finance Team Should Say No to an AI Pilot',
     category: 'Finance & compliance',
