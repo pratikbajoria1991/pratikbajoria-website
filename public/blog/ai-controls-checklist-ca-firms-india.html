@@ -28,7 +28,7 @@
   "headline":"AI Controls Checklist for CA Firms in India: Practical Review Gates",
   "description":"A practical AI controls checklist for CA firms in India covering client data, approved tools, human review, audit trails, testing, retention and incident handling.",
   "datePublished":"2026-10-04",
-  "dateModified":"2026-10-04",
+  "dateModified": "2026-10-07",
   "inLanguage":"en-IN",
   "author":{
     "@type":"Person",
@@ -77,7 +77,7 @@
         </div>
       </header>
       <article id="article">
-        <p class="eyebrow">CA insights · 2026-10-04 · 9 min read</p>
+        <p class="eyebrow">CA insights · 2026-10-04 · Updated 7 Oct 2026 · 9 min read</p>
         <h1>AI Controls Checklist for CA Firms in India: Practical Review Gates</h1>
         <p class="article-dek">A practical checklist for using AI in accounting and advisory workflows without losing confidentiality, evidence, review discipline or professional judgement.</p>
 
@@ -85,7 +85,7 @@
           <strong>Quick answer:</strong> AI governance for a CA firm is not a policy document alone. It is a set of repeatable review gates around data, tools, people, evidence and exceptions. Start with one controlled workflow and make the decision trail visible before expanding.
         </aside>
 
-        <p>AI can help a CA firm research a standard, extract fields from a document, draft a first version of a memo, identify reconciliation exceptions or organise a client query queue. It can also create a confidentiality incident, reproduce an error at scale or make a polished draft look more reliable than it is. The control environment determines which outcome the firm gets.</p>
+        <p>In practice, what I see in CA firms is that AI is already in use before anyone has written the rules. Which tools are approved? Which client data may go in? Who checks the output, and what happens when it is wrong? AI can help a firm research a standard, extract fields from a document, draft a first version of a memo, flag reconciliation exceptions or organise a client query queue. It can also cause a confidentiality incident, repeat one error across fifty files, or make a polished draft look more reliable than it is. Which of those the firm gets depends on its controls, not on the model.</p>
         <p>I write this as a Chartered Accountant and AI implementation practitioner. The checklist is designed for partners, proprietors, finance leaders and practice managers who want a usable operating baseline. It is not a substitute for professional judgement, engagement terms, applicable law or the firm's own quality-control framework.</p>
 
         <h2>1. Write the purpose and name the owner</h2>
@@ -101,9 +101,11 @@
         <h2>2. Classify the data before choosing a tool</h2>
         <p>Do not begin with a model catalogue. Begin with the data. Client identity, unpublished financial statements, payroll, bank details, tax working papers, audit evidence and draft advice should be classified before anyone decides where an input may be processed.</p>
         <p>Record whether each data class may be used in an approved cloud service, requires redaction, must remain in a controlled environment or should not enter the workflow at all. Data classification also needs an owner; a label nobody applies is not a control.</p>
+<p>This is no longer only good practice. Under the Digital Personal Data Protection Act, 2023, failing to take reasonable security safeguards to prevent a personal data breach can attract <a href="https://www.meity.gov.in/static/uploads/2024/02/Digital-Personal-Data-Protection-Act-2023.pdf" target="_blank" rel="noopener noreferrer">a penalty of up to ₹250 crore</a>. The DPDP Rules, 2025, <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2190014" target="_blank" rel="noopener noreferrer">notified in November 2025</a>, give organisations an 18-month phased timeline to comply. Payroll, KYC and individual taxpayer files are personal data; classify them as such.</p>
 
         <h2>3. Approve tools and accounts</h2>
         <p>Maintain a short approved-tool register. For each service, document the account owner, permitted data classes, access method, retention setting, export route, vendor terms reviewed and the process for revoking access. A free trial account used by one employee can quietly become an unmanaged system of record.</p>
+<p>Read the vendor terms rather than assuming them. OpenAI states that it <a href="https://openai.com/business-data/" target="_blank" rel="noopener noreferrer">does not train its models on data from its business products, such as ChatGPT Enterprise and the API, by default</a>. Microsoft states that <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection" target="_blank" rel="noopener noreferrer">prompts and responses in Microsoft 365 Copilot are not used to train its foundation models</a>. Both commitments attach to the business offerings. Neither covers a personal account an employee signed up for on their phone.</p>
         <ul>
           <li>Use named business accounts rather than personal accounts for client work.</li>
           <li>Enable multi-factor authentication and least-privilege access.</li>
@@ -117,6 +119,7 @@
 
         <h2>5. Preserve evidence and an audit trail</h2>
         <p>A useful AI workflow should make reconstruction easier, not harder. Keep enough information to answer: which input was used, which workflow version ran, what output was produced, who reviewed it, what changed and why the final result was accepted.</p>
+<p>Companies already live with a version of this rule. Since 1 April 2023, the proviso to Rule 3(1) of the Companies (Accounts) Rules, 2014 has required <a href="https://cajournal.icai.org/article-details/mandatory-audit-trail-step-towards-greater-transparency" target="_blank" rel="noopener noreferrer">accounting software that records an audit trail of every transaction, with an edit log that cannot be disabled</a>. An AI step that feeds those books should not be the weak link in that trail.</p>
         <ul>
           <li>Input source and date.</li>
           <li>Workflow or prompt version.</li>
@@ -169,7 +172,12 @@
         <ul>
           <li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST AI Risk Management Framework</a></li>
           <li><a href="https://icai.org/post/ai-announ-070624" target="_blank" rel="noopener noreferrer">ICAI announcement on AI in finance, accounting and tax services</a></li>
-        </ul>
+          <li><a href="https://www.meity.gov.in/static/uploads/2024/02/Digital-Personal-Data-Protection-Act-2023.pdf" target="_blank" rel="noopener noreferrer">MeitY — Digital Personal Data Protection Act, 2023 (Schedule: penalties)</a></li>
+  <li><a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2190014" target="_blank" rel="noopener noreferrer">PIB — Government notifies DPDP Rules (14 November 2025)</a></li>
+  <li><a href="https://openai.com/business-data/" target="_blank" rel="noopener noreferrer">OpenAI — Business data privacy, security and compliance</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection" target="_blank" rel="noopener noreferrer">Microsoft Learn — Enterprise data protection in Microsoft 365 Copilot</a></li>
+  <li><a href="https://cajournal.icai.org/article-details/mandatory-audit-trail-step-towards-greater-transparency" target="_blank" rel="noopener noreferrer">The Chartered Accountant journal (ICAI) — Mandatory audit trail</a></li>
+</ul>
         <p>This operational checklist is educational commentary, not personalised accounting, tax, legal, audit or investment advice. Verify current professional requirements, client terms, privacy obligations and vendor policies before deployment.</p>
 
         <section style="margin-top:28px;padding:22px;background:#f1ece2;border-radius:10px">

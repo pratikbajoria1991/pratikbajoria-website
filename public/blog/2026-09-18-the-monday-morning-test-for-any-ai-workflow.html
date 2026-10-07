@@ -15,6 +15,10 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&amp;q=85" />
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/styles-overrides.css?v=20260910" />
+    <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"The Monday Morning Test for Any AI Workflow","datePublished": "2026-09-18",
+  "dateModified": "2026-10-07","author":{"@type":"Person","name":"Pratik Bajoria","url":"https://pratikbajoria.com/#person"},"mainEntityOfPage":"https://pratikbajoria.com/blog/2026-09-18-the-monday-morning-test-for-any-ai-workflow"}
+    </script>
       <script src="/ga4.js" defer></script>
 </head>
   <body data-static-article="1" data-slug="2026-09-18-the-monday-morning-test-for-any-ai-workflow">
@@ -27,12 +31,13 @@
         </div>
       </header>
       <article id="article">
-        <p class="eyebrow">AI implementation · 2026-09-18 · 6 min read</p>
+        <p class="eyebrow">AI implementation · 2026-09-18 · Updated 7 Oct 2026 · 6 min read</p>
         <h1>The Monday Morning Test for Any AI Workflow</h1>
         <p class="article-dek">If the team cannot explain the workflow in five minutes on Monday, it is not ready for a model.</p>
         <div class="article-body">
-<p>Most AI workflows fail quietly. The model works in a sandbox; the Monday morning handoff does not.</p>
-<p>If the team cannot explain the workflow in five minutes on Monday, it is not ready for a model.</p>
+<p>Most AI workflows do not fail in the demo. They fail on a Monday morning, when the person who set them up is on leave, the input file has a new column, and nobody is sure whether last week's output was checked before it went to a client.</p>
+<p>That is the normal outcome rather than bad luck. Gartner predicted that <a href="https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025" target="_blank" rel="noopener noreferrer">at least 30% of generative AI projects would be abandoned after proof of concept by the end of 2025</a>, citing poor data quality, inadequate risk controls, escalating costs or unclear business value. Meanwhile Microsoft and LinkedIn's 2024 Work Trend Index found that <a href="https://news.microsoft.com/source/2024/05/08/microsoft-and-linkedin-release-the-2024-work-trend-index-on-the-state-of-ai-at-work/" target="_blank" rel="noopener noreferrer">75% of knowledge workers already use generative AI at work, and 78% of those users bring their own tools</a>. The workflow is often running before anyone has designed it.</p>
+<p>So the test I use is short. If the team cannot explain the workflow in five minutes on Monday, it is not ready for a model.</p>
 <p>Here is the practical cut. Write the current workflow on one page: input, decision, output, owner, and what &quot;good&quot; looks like today. If you cannot fill those five lines, you are not choosing a model yet — you are guessing.</p>
 <p>Pick one bottleneck with volume and a measurable cost: cycle time, error rate, review hours, or cash delay. Ignore the impressive adjacent idea. Narrow beats clever. The teams that win treat AI like any other operating change: small scope, named owner, visible metric.</p>
 <p>Design the human gate before the automation. Who approves? What evidence must remain? What must never leave the company systems? In finance and client work, an unauditable answer is not a deliverable. If a tool cannot show you how it reached a result, keep it in draft mode.</p>
@@ -40,6 +45,12 @@
 <p>If the metric moves and controls hold, document the pattern so the next team does not start from folklore. If it does not move, stop. A failed pilot that you can explain is cheaper than a zombie subscription. I would rather a team keep a simple shared checklist and one honest metric than buy three tools and lose the plot.</p>
 <p>Where software helps, use it as scaffolding — a CRM for pipeline truth, a workspace for SOPs, a planning tool for assumptions — not as a substitute for judgement. Mentioned products are options to evaluate against your process, not endorsements that replace due diligence.</p>
 <p>Monday-morning checklist: (1) name the owner, (2) name the metric, (3) name the exception path, (4) name the data the tool may see, (5) book the weekly review. If any line is blank, pause the rollout.</p>
+<p>In a CA or finance team, the test has a specific shape. Can the reviewer see the source document behind each output? Is there a list of what the tool got wrong last week, and what was done about it? Does the article assistant know which client files may never go into it? If the answer to any of those is a shrug, the problem is the operating design, not the model. For the firm-level rules, see the <a href="/blog/ai-controls-checklist-ca-firms-india">AI controls checklist for CA firms</a>. For a CA-specific map of where to start, see <a href="/blog/ai-for-chartered-accountants-in-india">AI for chartered accountants in India</a>.</p>
+<h2>Sources</h2>
+<ul>
+  <li><a href="https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025" target="_blank" rel="noopener noreferrer">Gartner — 30% of generative AI projects predicted to be abandoned after proof of concept by end of 2025 (29 July 2024)</a></li>
+  <li><a href="https://news.microsoft.com/source/2024/05/08/microsoft-and-linkedin-release-the-2024-work-trend-index-on-the-state-of-ai-at-work/" target="_blank" rel="noopener noreferrer">Microsoft and LinkedIn — 2024 Work Trend Index</a></li>
+</ul>
 <p>This is educational commentary from implementation work — not personalised financial, tax, legal or investment advice. Verify vendor pricing, privacy terms and any partner arrangements before you buy.</p>
         </div>
         <aside class="article-tools" aria-label="Tools mentioned in this article"><p class="eyebrow">Tools worth evaluating</p><div class="article-tool-grid"><a href="https://www.notion.so/product" target="_blank" rel="noopener noreferrer"><strong>Notion</strong><span>Knowledge management and workspace</span><small>Visit Notion official site ↗</small></a></div><p class="article-tool-note">This article may contain affiliate links. Recommendations remain editorially independent; commissions do not change the assessment.</p></aside>
