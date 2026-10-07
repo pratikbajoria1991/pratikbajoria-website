@@ -30,7 +30,7 @@
   "headline": "Build vs Buy: A Decision Framework for AI Tooling",
   "description": "Build vs buy AI tooling: compare differentiation, data sensitivity, controls, 24-month cost, time-to-value and switching risk before you choose.",
   "datePublished": "2026-01-28",
-  "dateModified": "2026-10-04",
+  "dateModified": "2026-10-07",
   "author": {
     "@type": "Person",
     "name": "Pratik Bajoria",
@@ -104,7 +104,7 @@
         </div>
       </header>
       <article id="article">
-        <p class="eyebrow">AI strategy · 2026-01-28 · 9 min read</p>
+        <p class="eyebrow">AI strategy · 2026-01-28 · Updated 7 Oct 2026 · 9 min read</p>
         <h1>Build vs Buy: A Decision Framework for AI Tooling</h1>
         <p class="article-dek">Build vs buy AI: choose vendor, assembly or in-house tooling using differentiation, data sensitivity, time-to-value, controls and switching cost.</p>
         <aside class="direct-answer" style="margin:22px 0;padding:16px 18px;border-left:3px solid #1c1c1a;background:#faf7f1;line-height:1.55"><strong>Quick answer.</strong> Buy the commodity layer when a credible product can meet your workflow, control and data requirements. Build or assemble only when the process, data, control design or user experience is genuinely differentiating and you can fund ownership after launch.</aside>
@@ -167,10 +167,20 @@
 <h3>What should a build-versus-buy decision include?</h3>
 <p>Include differentiation, data sensitivity, time to value, engineering and maintenance capacity, control requirements, 24-month total cost, portability and switching risk. A model demo alone is not a business case.</p>
 
+<h2>The questions I ask founders before they sign</h2>
+<p>Founders ask me “build or buy?” as if it is a branding choice. It is a capital and control choice. Buy undifferentiated plumbing; build only where your data or process is the product. Most mid-market teams over-build chat interfaces and under-invest in the workflow, data access and review gates that make any model useful.</p>
+<p><strong>Is this differentiating?</strong> If a competent competitor could buy the same capability next quarter, prefer buy or configure. If the advantage sits in your proprietary data, regulated process, or client-specific judgement, a thinner custom layer on top of bought components may be justified.</p>
+<p><strong>What is the workflow map?</strong> Input, decision, output, owner, definition of good. If that page does not exist, you are not choosing architecture — you are shopping for demos. Map the human gate before you argue about models.</p>
+<p><strong>Where does data live, and what may leave?</strong> Build-versus-buy collapses quickly when client or financial data cannot sit in a vendor’s multi-tenant environment. Sometimes the answer is buy a vendor with strong isolation; sometimes it is keep inference inside your cloud with strict logging. Public playbooks such as CISA’s AI cybersecurity collaboration materials are useful prompts for threat and access discussions — not a substitute for your own risk assessment.</p>
+<p><strong>Time to a falsifiable release?</strong> A bought tool that can be in one team’s hands in weeks beats a twelve-month build that never ships. Conversely, a bought tool that cannot meet your control gates is not “fast” — it is a future incident. Define a thin release: one workflow, one metric, stop conditions.</p>
+<p><strong>Switching cost and evidence export.</strong> Ask how you leave. Can you export prompts, logs, embeddings and configurations? Will the vendor’s roadmap force a rewrite? Buy when lock-in is tolerable and documented; build when exit cost would threaten the business.</p>
+<p><strong>Total cost, not licence cost.</strong> Discovery, integration, review time, exception handling and change control belong on the same sheet as software. An AI budget that only lists licences is incomplete. CRM and workspace products (for example HubSpot for pipeline truth, Notion for SOPs) often appear in the “buy plumbing” column — evaluate them as operating scaffolding, not as AI magic.</p>
+<p>A practical default for finance and professional-services founders: buy document extraction, retrieval, ticketing and CRM; configure carefully; build only thin orchestration and domain rules you must own. Revisit the decision when volume, regulation or proprietary data quality changes the economics.</p>
 <h2>Sources</h2>
 <ul>
   <li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST AI Risk Management Framework</a></li>
   <li><a href="https://investor.sebi.gov.in/" target="_blank" rel="noopener noreferrer">SEBI investor education</a></li>
+  <li><a href="https://www.cisa.gov/resources-tools/resources/ai-cybersecurity-collaboration-playbook" target="_blank" rel="noopener noreferrer">CISA AI Cybersecurity Collaboration Playbook</a></li>
 </ul>
         </div>
         <p class="ymyl-note" style="margin-top:28px;font-size:0.92rem;color:#6f746d"><em>Educational content; not financial, investment, or legal advice.</em></p>

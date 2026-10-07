@@ -1,0 +1,185 @@
+{
+  "note": "Topics/slugs consolidated on 7 Oct 2026. The daily generator must never republish these titles or base slugs; they 301 to the survivor.",
+  "retired": [
+    {
+      "slug": "2026-08-31-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders",
+      "baseSlug": "the-ai-opportunity-audit-a-90-day-roadmap-for-leaders",
+      "title": "The AI Opportunity Audit: A 90-Day Roadmap for Leaders",
+      "survivor": "/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre"
+    },
+    {
+      "slug": "2026-09-07-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders",
+      "baseSlug": "the-ai-opportunity-audit-a-90-day-roadmap-for-leaders",
+      "title": "The AI Opportunity Audit: A 90-Day Roadmap for Leaders",
+      "survivor": "/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre"
+    },
+    {
+      "slug": "2026-09-14-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders",
+      "baseSlug": "the-ai-opportunity-audit-a-90-day-roadmap-for-leaders",
+      "title": "The AI Opportunity Audit: A 90-Day Roadmap for Leaders",
+      "survivor": "/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre"
+    },
+    {
+      "slug": "2026-10-02-a-90-day-ai-opportunity-audit-without-the-theatre",
+      "baseSlug": "a-90-day-ai-opportunity-audit-without-the-theatre",
+      "title": "A 90-Day AI Opportunity Audit Without the Theatre",
+      "survivor": "/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre"
+    },
+    {
+      "slug": "2026-09-01-ai-in-real-estate-start-with-lead-qualification-and-documents",
+      "baseSlug": "ai-in-real-estate-start-with-lead-qualification-and-documents",
+      "title": "AI in Real Estate: Start With Lead Qualification and Documents",
+      "survivor": "/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction"
+    },
+    {
+      "slug": "2026-09-08-ai-in-real-estate-start-with-lead-qualification-and-documents",
+      "baseSlug": "ai-in-real-estate-start-with-lead-qualification-and-documents",
+      "title": "AI in Real Estate: Start With Lead Qualification and Documents",
+      "survivor": "/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction"
+    },
+    {
+      "slug": "2026-09-15-ai-in-real-estate-start-with-lead-qualification-and-documents",
+      "baseSlug": "ai-in-real-estate-start-with-lead-qualification-and-documents",
+      "title": "AI in Real Estate: Start With Lead Qualification and Documents",
+      "survivor": "/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction"
+    },
+    {
+      "slug": "2026-10-03-real-estate-ai-start-with-leads-and-documents-not-prediction",
+      "baseSlug": "real-estate-ai-start-with-leads-and-documents-not-prediction",
+      "title": "Real Estate AI: Start With Leads and Documents, Not Prediction",
+      "survivor": "/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction"
+    },
+    {
+      "slug": "2026-09-02-what-good-ai-governance-looks-like-in-a-mid-market-company",
+      "baseSlug": "what-good-ai-governance-looks-like-in-a-mid-market-company",
+      "title": "What Good AI Governance Looks Like in a Mid-Market Company",
+      "survivor": "/blog/2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer"
+    },
+    {
+      "slug": "2026-09-09-what-good-ai-governance-looks-like-in-a-mid-market-company",
+      "baseSlug": "what-good-ai-governance-looks-like-in-a-mid-market-company",
+      "title": "What Good AI Governance Looks Like in a Mid-Market Company",
+      "survivor": "/blog/2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer"
+    },
+    {
+      "slug": "2026-09-16-what-good-ai-governance-looks-like-in-a-mid-market-company",
+      "baseSlug": "what-good-ai-governance-looks-like-in-a-mid-market-company",
+      "title": "What Good AI Governance Looks Like in a Mid-Market Company",
+      "survivor": "/blog/2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer"
+    },
+    {
+      "slug": "2026-10-04-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer",
+      "baseSlug": "ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer",
+      "title": "AI Governance for Mid-Market Teams Who Do Not Have a Chief AI Officer",
+      "survivor": "/blog/2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer"
+    },
+    {
+      "slug": "2026-09-03-the-finance-function-is-ai-s-highest-roi-starting-point",
+      "baseSlug": "the-finance-function-is-ai-s-highest-roi-starting-point",
+      "title": "The Finance Function Is AI’s Highest-ROI Starting Point",
+      "survivor": "/blog/2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point"
+    },
+    {
+      "slug": "2026-09-10-the-finance-function-is-ai-s-highest-roi-starting-point",
+      "baseSlug": "the-finance-function-is-ai-s-highest-roi-starting-point",
+      "title": "The Finance Function Is AI’s Highest-ROI Starting Point",
+      "survivor": "/blog/2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point"
+    },
+    {
+      "slug": "finance-highest-roi",
+      "baseSlug": "finance-highest-roi",
+      "title": null,
+      "survivor": "/blog/2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point"
+    },
+    {
+      "slug": "2026-09-04-why-most-corporate-ai-pilots-never-reach-production",
+      "baseSlug": "why-most-corporate-ai-pilots-never-reach-production",
+      "title": "Why Most Corporate AI Pilots Never Reach Production",
+      "survivor": "/blog/corporate-ai-pilots"
+    },
+    {
+      "slug": "2026-09-11-why-most-corporate-ai-pilots-never-reach-production",
+      "baseSlug": "why-most-corporate-ai-pilots-never-reach-production",
+      "title": "Why Most Corporate AI Pilots Never Reach Production",
+      "survivor": "/blog/corporate-ai-pilots"
+    },
+    {
+      "slug": "2026-09-05-build-vs-buy-a-practical-framework-for-ai-tooling",
+      "baseSlug": "build-vs-buy-a-practical-framework-for-ai-tooling",
+      "title": "Build vs Buy: A Practical Framework for AI Tooling",
+      "survivor": "/blog/build-vs-buy-ai-tooling"
+    },
+    {
+      "slug": "2026-09-12-build-vs-buy-a-practical-framework-for-ai-tooling",
+      "baseSlug": "build-vs-buy-a-practical-framework-for-ai-tooling",
+      "title": "Build vs Buy: A Practical Framework for AI Tooling",
+      "survivor": "/blog/build-vs-buy-ai-tooling"
+    },
+    {
+      "slug": "2026-09-23-build-vs-buy-for-ai-what-i-ask-founders-before-they-sign",
+      "baseSlug": "build-vs-buy-for-ai-what-i-ask-founders-before-they-sign",
+      "title": "Build vs Buy for AI: What I Ask Founders Before They Sign",
+      "survivor": "/blog/build-vs-buy-ai-tooling"
+    },
+    {
+      "slug": "2026-09-30-build-vs-buy-for-ai-what-i-ask-founders-before-they-sign",
+      "baseSlug": "build-vs-buy-for-ai-what-i-ask-founders-before-they-sign",
+      "title": "Build vs Buy for AI: What I Ask Founders Before They Sign",
+      "survivor": "/blog/build-vs-buy-ai-tooling"
+    },
+    {
+      "slug": "2026-09-06-how-to-automate-a-whatsapp-workflow-without-losing-control",
+      "baseSlug": "how-to-automate-a-whatsapp-workflow-without-losing-control",
+      "title": "How to Automate a WhatsApp Workflow Without Losing Control",
+      "survivor": "/blog/2026-09-28-whatsapp-automation-that-still-feels-like-customer-care"
+    },
+    {
+      "slug": "2026-09-13-how-to-automate-a-whatsapp-workflow-without-losing-control",
+      "baseSlug": "how-to-automate-a-whatsapp-workflow-without-losing-control",
+      "title": "How to Automate a WhatsApp Workflow Without Losing Control",
+      "survivor": "/blog/2026-09-28-whatsapp-automation-that-still-feels-like-customer-care"
+    },
+    {
+      "slug": "2026-10-01-whatsapp-automation-that-still-feels-like-customer-care",
+      "baseSlug": "whatsapp-automation-that-still-feels-like-customer-care",
+      "title": "WhatsApp Automation That Still Feels Like Customer Care",
+      "survivor": "/blog/2026-09-28-whatsapp-automation-that-still-feels-like-customer-care"
+    },
+    {
+      "slug": "2026-10-05-how-much-should-a-mid-market-finance-team-budget-for-ai",
+      "baseSlug": "how-much-should-a-mid-market-finance-team-budget-for-ai",
+      "title": "How Much Should a Mid-Market Finance Team Budget for AI?",
+      "survivor": "/blog/2026-09-14-how-much-should-a-mid-market-finance-team-budget-for-ai"
+    },
+    {
+      "slug": "2026-09-18-the-monday-morning-test-for-any-ai-workflow",
+      "baseSlug": "the-monday-morning-test-for-any-ai-workflow",
+      "title": "The Monday Morning Test for Any AI Workflow",
+      "survivor": "/blog/2026-09-29-the-monday-morning-test-for-any-ai-workflow"
+    },
+    {
+      "slug": "2026-09-21-semrush-for-owners-when-search-spend-is-actually-rational",
+      "baseSlug": "semrush-for-owners-when-search-spend-is-actually-rational",
+      "title": "Semrush for Owners: When Search Spend Is Actually Rational",
+      "survivor": "/blog/semrush-review-business-owners"
+    },
+    {
+      "slug": "2026-10-06-semrush-for-owners-when-search-spend-is-actually-rational",
+      "baseSlug": "semrush-for-owners-when-search-spend-is-actually-rational",
+      "title": "Semrush for Owners: When Search Spend Is Actually Rational",
+      "survivor": "/blog/semrush-review-business-owners"
+    },
+    {
+      "slug": "2026-09-22-notion-as-a-finance-control-layer-not-a-second-ledger",
+      "baseSlug": "notion-as-a-finance-control-layer-not-a-second-ledger",
+      "title": "Notion as a Finance Control Layer — Not a Second Ledger",
+      "survivor": "/blog/notion-for-finance-professionals-templates-dashboards-workflows"
+    },
+    {
+      "slug": "ai-tools-that-pay-back-for-finance-and-ca-teams",
+      "baseSlug": "ai-tools-that-pay-back-for-finance-and-ca-teams",
+      "title": "AI Tools That Actually Pay Back for Finance and CA Teams",
+      "survivor": "/blog/best-ai-tools-chartered-accountants-finance-professionals"
+    }
+  ]
+}

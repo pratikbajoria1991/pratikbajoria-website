@@ -182,20 +182,44 @@ async function serveCrossborder(request, env, url, mode) {
   return xbNotFound(request, env, preview);
 }
 
+// Consolidated near-duplicate posts (7 Oct 2026): every loser 301s straight to its survivor (single hop).
+// Lookup is applied after normalising .html and trailing slashes, and to /blog?slug= / /blog.html?slug=.
 const blogPathAliases = {
-  '/blog/2026-08-31-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/blog/2026-09-14-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders',
-  '/blog/2026-09-01-ai-in-real-estate-start-with-lead-qualification-and-documents': '/blog/2026-09-15-ai-in-real-estate-start-with-lead-qualification-and-documents',
-  '/blog/2026-09-02-what-good-ai-governance-looks-like-in-a-mid-market-company': '/blog/2026-09-16-what-good-ai-governance-looks-like-in-a-mid-market-company',
+  '/blog/2026-08-31-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre',
+  '/blog/2026-09-07-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre',
+  '/blog/2026-09-14-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre',
+  '/blog/2026-10-02-a-90-day-ai-opportunity-audit-without-the-theatre': '/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre',
+  '/blog/2026-09-01-ai-in-real-estate-start-with-lead-qualification-and-documents': '/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction',
+  '/blog/2026-09-08-ai-in-real-estate-start-with-lead-qualification-and-documents': '/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction',
+  '/blog/2026-09-15-ai-in-real-estate-start-with-lead-qualification-and-documents': '/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction',
+  '/blog/2026-10-03-real-estate-ai-start-with-leads-and-documents-not-prediction': '/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction',
+  '/blog/2026-09-02-what-good-ai-governance-looks-like-in-a-mid-market-company': '/blog/2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer',
+  '/blog/2026-09-09-what-good-ai-governance-looks-like-in-a-mid-market-company': '/blog/2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer',
+  '/blog/2026-09-16-what-good-ai-governance-looks-like-in-a-mid-market-company': '/blog/2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer',
+  '/blog/2026-10-04-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer': '/blog/2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer',
   '/blog/2026-09-03-the-finance-function-is-ai-s-highest-roi-starting-point': '/blog/2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point',
-  '/blog/2026-09-04-why-most-corporate-ai-pilots-never-reach-production': '/blog/2026-09-11-why-most-corporate-ai-pilots-never-reach-production',
-  '/blog/2026-09-05-build-vs-buy-a-practical-framework-for-ai-tooling': '/blog/build-vs-buy-ai-tooling',
-  '/blog/2026-09-12-build-vs-buy-a-practical-framework-for-ai-tooling': '/blog/build-vs-buy-ai-tooling',
-  '/blog/2026-09-06-how-to-automate-a-whatsapp-workflow-without-losing-control': '/blog/2026-09-13-how-to-automate-a-whatsapp-workflow-without-losing-control',
-  '/blog/2026-09-07-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/blog/2026-09-14-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders',
-  '/blog/2026-09-08-ai-in-real-estate-start-with-lead-qualification-and-documents': '/blog/2026-09-15-ai-in-real-estate-start-with-lead-qualification-and-documents',
-  '/blog/2026-09-09-what-good-ai-governance-looks-like-in-a-mid-market-company': '/blog/2026-09-16-what-good-ai-governance-looks-like-in-a-mid-market-company',
   '/blog/2026-09-10-the-finance-function-is-ai-s-highest-roi-starting-point': '/blog/2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point',
   '/blog/finance-highest-roi': '/blog/2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point',
+  '/blog/2026-09-04-why-most-corporate-ai-pilots-never-reach-production': '/blog/corporate-ai-pilots',
+  '/blog/2026-09-11-why-most-corporate-ai-pilots-never-reach-production': '/blog/corporate-ai-pilots',
+  '/blog/2026-09-05-build-vs-buy-a-practical-framework-for-ai-tooling': '/blog/build-vs-buy-ai-tooling',
+  '/blog/2026-09-12-build-vs-buy-a-practical-framework-for-ai-tooling': '/blog/build-vs-buy-ai-tooling',
+  '/blog/2026-09-23-build-vs-buy-for-ai-what-i-ask-founders-before-they-sign': '/blog/build-vs-buy-ai-tooling',
+  '/blog/2026-09-30-build-vs-buy-for-ai-what-i-ask-founders-before-they-sign': '/blog/build-vs-buy-ai-tooling',
+  '/blog/2026-09-06-how-to-automate-a-whatsapp-workflow-without-losing-control': '/blog/2026-09-28-whatsapp-automation-that-still-feels-like-customer-care',
+  '/blog/2026-09-13-how-to-automate-a-whatsapp-workflow-without-losing-control': '/blog/2026-09-28-whatsapp-automation-that-still-feels-like-customer-care',
+  '/blog/2026-10-01-whatsapp-automation-that-still-feels-like-customer-care': '/blog/2026-09-28-whatsapp-automation-that-still-feels-like-customer-care',
+  '/blog/2026-10-05-how-much-should-a-mid-market-finance-team-budget-for-ai': '/blog/2026-09-14-how-much-should-a-mid-market-finance-team-budget-for-ai',
+  '/blog/2026-09-18-the-monday-morning-test-for-any-ai-workflow': '/blog/2026-09-29-the-monday-morning-test-for-any-ai-workflow',
+  '/blog/2026-09-21-semrush-for-owners-when-search-spend-is-actually-rational': '/blog/semrush-review-business-owners',
+  '/blog/2026-10-06-semrush-for-owners-when-search-spend-is-actually-rational': '/blog/semrush-review-business-owners',
+  '/blog/2026-09-22-notion-as-a-finance-control-layer-not-a-second-ledger': '/blog/notion-for-finance-professionals-templates-dashboards-workflows',
+  '/blog/ai-tools-that-pay-back-for-finance-and-ca-teams': '/blog/best-ai-tools-chartered-accountants-finance-professionals',
+};
+const blogAliasFor = (pathname) => {
+  if (!pathname.startsWith('/blog/')) return null;
+  const p = pathname.replace(/\/+$/, '').replace(/\.html$/, '');
+  return blogPathAliases[p] || null;
 };
 
 const absoluteRedirect = (requestUrl, pathname) => {
@@ -410,12 +434,16 @@ ${sourcesHtml}
 
 async function serveBlogPost(request, env, slug) {
   // 1. Static SSR file (public/blog/{slug}.html) wins.
-  const direct = await env.ASSETS.fetch(request);
+  // HEAD must be validated against the real body (an empty HEAD body would fail the
+  // looksLikeRealBlogPage check and wrongly 404 static-only posts), so probe with GET.
+  const isHead = request.method === 'HEAD';
+  const direct = await env.ASSETS.fetch(isHead ? new Request(request, { method: 'GET' }) : request);
   if (direct.status === 200) {
     const ctype = direct.headers.get('content-type') || '';
-    if (!ctype.includes('text/html')) return direct;
+    if (!ctype.includes('text/html')) return isHead ? new Response(null, { status: 200, headers: direct.headers }) : direct;
     const html = await direct.text();
     if (looksLikeRealBlogPage(html, slug)) {
+      if (isHead) return new Response(null, { status: 200, statusText: direct.statusText, headers: direct.headers });
       return injectGa4(new Response(html, { status: 200, statusText: direct.statusText, headers: direct.headers }));
     }
     // else: SPA/homepage fallback — fall through.
@@ -589,7 +617,8 @@ export default {
     if (isRead && (url.pathname === '/blog' || url.pathname === '/blog.html')) {
       const legacySlug = url.searchParams.get('slug')?.trim();
       if (legacySlug && isBlogSlug(legacySlug)) {
-        return absoluteRedirect(url, `/blog/${encodeURIComponent(legacySlug)}`);
+        const aliased = blogPathAliases[`/blog/${legacySlug}`];
+        return absoluteRedirect(url, aliased || `/blog/${encodeURIComponent(legacySlug)}`);
       }
       // Collapse /blog.html → /blog (single hop; avoids GSC redirect-chain errors)
       if (url.pathname === '/blog.html') {
@@ -605,8 +634,9 @@ export default {
       return absoluteRedirect(url, '/blog');
     }
 
-    if (isRead && blogPathAliases[url.pathname]) {
-      return absoluteRedirect(url, blogPathAliases[url.pathname]);
+    const blogAlias = isRead ? blogAliasFor(url.pathname) : null;
+    if (blogAlias) {
+      return absoluteRedirect(url, blogAlias);
     }
 
     // Absolute 301s for legacy .html URLs (GSC flagged relative _redirects Location as Redirect error)

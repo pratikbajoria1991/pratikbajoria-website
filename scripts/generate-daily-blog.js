@@ -135,13 +135,34 @@ function loadCatalog() {
   return JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
 }
 
+const retiredPath = path.join(__dirname, 'blog-retired-topics.json');
+const baseSlugOf = (slug) => String(slug || '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
+const normTitle = (t) => String(t || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+function loadRetired() {
+  if (!fs.existsSync(retiredPath)) return [];
+  try { return JSON.parse(fs.readFileSync(retiredPath, 'utf8')).retired || []; } catch { return []; }
+}
+/** Titles and base slugs already published (any date) or retired by consolidation. */
+function takenKeys(existing) {
+  const retired = loadRetired();
+  const titles = new Set([...existing.map((p) => normTitle(p.title)), ...retired.map((r) => normTitle(r.title))]);
+  const slugs = new Set([
+    ...existing.map((p) => baseSlugOf(p.slug)),
+    ...retired.map((r) => r.baseSlug || baseSlugOf(r.slug)),
+    ...retired.map((r) => baseSlugOf(String(r.survivor || '').replace(/^\/blog\//, '')))
+  ]);
+  return { titles, slugs };
+}
+function isDuplicate(title, existing) {
+  const { titles, slugs } = takenKeys(existing);
+  return titles.has(normTitle(title)) || slugs.has(slugify(title));
+}
+// Never cycle back to used topics: when the bank is exhausted, publish nothing (add new topics instead).
 function pickTopic(existing) {
-  const usedTitles = new Set(existing.slice(0, 40).map((p) => (p.title || '').toLowerCase()));
-  const unused = topics.filter((t) => !usedTitles.has(t.title.toLowerCase()));
-  const pool = unused.length ? unused : topics;
-  // Stable-ish daily pick without repeating the same index forever
-  const idx = Math.floor(Date.parse(`${today}T00:00:00Z`) / 86400000) % pool.length;
-  return pool[idx];
+  const unused = topics.filter((t) => !isDuplicate(t.title, existing));
+  if (!unused.length) return null;
+  const idx = Math.floor(Date.parse(`${today}T00:00:00Z`) / 86400000) % unused.length;
+  return unused[idx];
 }
 
 function humanFallback(topic) {
@@ -383,6 +404,10 @@ async function main() {
   const existing = JSON.parse(fs.readFileSync(postsPath, 'utf8'));
   const catalog = loadCatalog();
   const topic = pickTopic(existing);
+  if (!topic) {
+    console.log('Topic bank exhausted: every topic is already published or retired. Skipping today (no duplicate post). Add new topics to scripts/generate-daily-blog.js.');
+    return;
+  }
   let draft = null;
   let generatedBy = 'editorial-fallback';
   try {
@@ -406,6 +431,10 @@ async function main() {
   }
 
   const baseSlug = slugify(draft?.title || topic.title);
+  if (isDuplicate(draft?.title || topic.title, existing)) {
+    console.log(`Duplicate title/slug guard: "${draft?.title || topic.title}" already exists or was retired. Skipping today.`);
+    return;
+  }
   const slug = `${today}-${baseSlug}`;
   const sources = Array.isArray(draft?.sources) && draft.sources.length ? draft.sources : topic.sourceLinks;
   const post = {
