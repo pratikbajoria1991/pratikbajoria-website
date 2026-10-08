@@ -21,7 +21,7 @@
 // 13 homepage Person + ProfessionalService/Organization JSON-LD with name/url/email/sameAs
 // 14 visible breadcrumb + BreadcrumbList JSON-LD on inner pages; all JSON-LD parses
 // 15 first-party raster <img> served as WebP/AVIF
-// 16 width/height on every <img>; Google Fonts use display=swap
+// 16 width/height on every <img>; web fonts use font-display swap/optional
 // 17 TTFB < 800 ms, HTML < 150 KB, no render-blocking <script> in <head>
 // 18 http/www/.html/trailing-slash variants: one 301 hop to the absolute 200 URL (GET + HEAD)
 // 19 AI/search crawlers allowed in robots.txt and not blocked at the edge (curl with their UA)
@@ -88,8 +88,9 @@ function parse(html) {
   const h1 = [...bodyHtml.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)].map((m) => m[1].replace(/<[^>]+>/g, '').trim());
   const headScripts = [...head.matchAll(/<script\b[^>]*>/gi)].map((m) => m[0]).filter((t) => attr(t, 'src') && !/\s(defer|async)\b/i.test(t) && !/type=["']module["']/i.test(t));
   const fontLinks = [...html.matchAll(/<link\b[^>]*href=["'](https:\/\/fonts\.googleapis\.com\/[^"']+)["'][^>]*>/gi)].map((m) => decode(m[1]));
+  const fontFacesWithoutDisplay = [...html.matchAll(/@font-face\s*\{([^}]*)\}/gi)].filter((m) => !/font-display\s*:\s*(swap|optional|fallback)/i.test(m[1])).length;
   const hasVisibleBreadcrumb = /<nav\b[^>]*aria-label=["']breadcrumb["']/i.test(bodyHtml) || /class=["'][^"']*\bbreadcrumbs?\b/i.test(bodyHtml);
-  return { head, title, description: metaContent(html, 'description'), robots: metaContent(html, 'robots'), viewport: metaContent(html, 'viewport'), canonicals, jsonld, imgs, sources, links, text, h1, headScripts, fontLinks, hasVisibleBreadcrumb };
+  return { head, title, description: metaContent(html, 'description'), robots: metaContent(html, 'robots'), viewport: metaContent(html, 'viewport'), canonicals, jsonld, imgs, sources, links, text, h1, headScripts, fontLinks, fontFacesWithoutDisplay, hasVisibleBreadcrumb };
 }
 
 function ldTypes(blocks) {
@@ -208,6 +209,7 @@ async function main() {
       }
     }
     for (const f of p.fontLinks) if (!/display=swap/.test(f)) fail(16, `${loc} font CSS without display=swap: ${f}`);
+    if (p.fontFacesWithoutDisplay) fail(16, `${loc} has ${p.fontFacesWithoutDisplay} @font-face rule(s) without font-display`);
     // 17 perf proxies
     touch(17);
     if (r.ttfb > 800) warn(17, `${loc} TTFB ${Math.round(r.ttfb)} ms`);
