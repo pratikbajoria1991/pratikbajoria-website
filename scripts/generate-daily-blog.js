@@ -1,258 +1,64 @@
 #!/usr/bin/env node
-/* Daily editorial publisher. Prefer OpenAI when OPENAI_API_KEY is set; otherwise a human-voice local draft.
-   Never invent client metrics, awards, or affiliate tracking URLs. */
+/* Daily editorial publisher (run by .github/workflows/daily-blog-update.yml).
+
+   Builds the day's post ONLY from a topic in scripts/daily-topics/, each of which carries its own
+   first-person intro, specific sections, FAQ, internal links and verified source links. There is no
+   generic fallback body: if the next topic lacks complete material, fails a check, or is too similar
+   to an existing post (> 60% shared 5-word shingles), the generator publishes nothing that day.
+
+   Usage:
+     node scripts/generate-daily-blog.js              publish today's post (writes public/blog-posts.json + sitemap)
+     node scripts/generate-daily-blog.js --dry-run    build and check today's post, print it, write nothing
+     node scripts/generate-daily-blog.js --dry-run --topic 3   same, for the 3rd topic in the bank
+     node scripts/generate-daily-blog.js --validate   check every queued topic (used by npm test); exit 1 on problems
+
+   Never invent statistics, prices, clients or testimonials: every figure must sit in a topic file
+   next to a [text][n] citation of a real source. */
 const fs = require('fs');
 const path = require('path');
+const sim = require('./content-similarity');
 
 const root = path.join(__dirname, '..');
 const postsPath = path.join(root, 'public', 'blog-posts.json');
-const catalogPath = path.join(root, 'public', 'affiliate-links.json');
-const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Kolkata', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
-
-/** Expandable topic bank — each entry used at most once until the bank cycles; avoids same-7 daily clones. */
-const topics = [
-  // --- CA + AI India topic batch added 7 Oct 2026 (distinct from published/retired posts) ---
-  {
-    title: 'AI for Tax Audit Reports in India: What a CA Can Safely Automate in Form 3CD Work',
-    category: 'CA insights',
-    keywords: ['AI for tax audit', 'Form 3CD AI', 'tax audit automation India', 'AI for chartered accountants'],
-    thesis: 'Let AI pull and tie out the data behind Form 3CD clauses; keep every reported position and the signature with the CA.',
-    affiliateTools: [],
-    angle: 'ca-controls',
-    sourceLinks: [{ title: 'Income Tax Department e-filing portal', url: 'https://www.incometax.gov.in/' }, { title: 'ICAI VERA digital audit suite', url: 'https://vera.icai.org/' }]
-  },
-  {
-    title: 'Drafting Replies to GST and Income Tax Notices With AI Without Losing Control',
-    category: 'CA insights',
-    keywords: ['AI for GST notices', 'AI notice reply drafting', 'income tax notice AI', 'CA firm AI India'],
-    thesis: 'AI is good at the first draft and the chronology; the legal position, the facts check and the filing stay with a named CA.',
-    affiliateTools: [],
-    angle: 'ca-controls',
-    sourceLinks: [{ title: 'GST portal', url: 'https://www.gst.gov.in/' }, { title: 'Income Tax Department e-filing portal', url: 'https://www.incometax.gov.in/' }]
-  },
-  {
-    title: 'Using AI for TDS Reconciliation in Indian CA Firms: 26AS and AIS Mismatches',
-    category: 'CA insights',
-    keywords: ['TDS reconciliation AI', '26AS reconciliation', 'AIS mismatch', 'AI for CA firms India'],
-    thesis: 'Automate the matching and the mismatch list; a reviewer still decides what to chase with the deductor.',
-    affiliateTools: [],
-    angle: 'ops',
-    sourceLinks: [{ title: 'Income Tax Department e-filing portal', url: 'https://www.incometax.gov.in/' }]
-  },
-  {
-    title: 'How CA Firms in India Should Price Work When AI Cuts the Hours',
-    category: 'CA insights',
-    keywords: ['CA firm pricing AI', 'value pricing CA India', 'AI and billable hours', 'CA practice management'],
-    thesis: 'If AI halves preparation time, price on outcome and risk, not on the hours you no longer spend.',
-    affiliateTools: [],
-    angle: 'budget',
-    sourceLinks: [{ title: 'Microsoft India: 2024 Work Trend Index India findings', url: 'https://news.microsoft.com/en-in/92-of-indian-knowledge-workers-use-ai-in-the-workplace-finds-microsoft-and-linkedin-2024-work-trend-index/' }]
-  },
-  {
-    title: 'AI and Articleship: How CA Firms Should Train Article Assistants Now',
-    category: 'CA insights',
-    keywords: ['articleship AI', 'CA article assistants AI', 'training CA students AI', 'CA firm training India'],
-    thesis: 'Teach article assistants to review machine output and chase exceptions, not just to prepare what a tool now drafts.',
-    affiliateTools: [],
-    angle: 'ops',
-    sourceLinks: [{ title: 'ICAI: AI Innovation Summit 2026 press release', url: 'https://www.icai.org/post/icai-ais2026-26062026' }]
-  },
-  {
-    title: 'AI for CARO 2020 Reporting: Where It Helps and Where Judgement Stays',
-    category: 'CA insights',
-    keywords: ['CARO 2020 AI', 'AI in statutory audit India', 'audit reporting AI', 'AI for auditors India'],
-    thesis: 'AI can assemble evidence for each CARO clause; whether a clause is reported adversely is the auditor’s call.',
-    affiliateTools: [],
-    angle: 'audit',
-    sourceLinks: [{ title: 'ICAI VERA digital audit suite', url: 'https://vera.icai.org/' }]
-  },
-  {
-    title: 'Updating Engagement Letters for AI Use in a CA Firm',
-    category: 'CA insights',
-    keywords: ['engagement letter AI clause', 'CA firm AI policy', 'client data AI India', 'DPDP Act CA firms'],
-    thesis: 'Tell clients plainly how AI is used on their work, what data it sees and who reviews it, before they ask.',
-    affiliateTools: [],
-    angle: 'governance',
-    sourceLinks: [{ title: 'Digital Personal Data Protection Act, 2023 (MeitY)', url: 'https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf' }]
-  },
-  {
-    title: 'AI for Month-End Close in Indian Mid-Market Finance Teams',
-    category: 'Finance & compliance',
-    keywords: ['AI month-end close', 'finance close automation India', 'AI for CFOs India', 'AI in accounting'],
-    thesis: 'Shave days off the close by automating accruals support and variance commentary drafts, with the controller signing off.',
-    affiliateTools: [],
-    angle: 'ops',
-    sourceLinks: [{ title: 'NIST AI Risk Management Framework', url: 'https://www.nist.gov/itl/ai-risk-management-framework' }]
-  },
-  {
-    title: 'AI for Bank Statement Categorisation for Bookkeeping Clients in India',
-    category: 'CA insights',
-    keywords: ['bank statement categorisation AI', 'AI bookkeeping India', 'Tally AI', 'AI for accountants India'],
-    thesis: 'Categorisation is the best first AI workflow for most bookkeeping practices: high volume, easy to check, low risk.',
-    affiliateTools: [],
-    angle: 'ops',
-    sourceLinks: [{ title: 'NIST AI Risk Management Framework', url: 'https://www.nist.gov/itl/ai-risk-management-framework' }]
-  },
-  {
-    title: 'Using AI for Ind AS Research and Disclosure Checklists',
-    category: 'CA insights',
-    keywords: ['Ind AS AI', 'disclosure checklist AI', 'financial reporting AI India', 'AI for CAs in industry'],
-    thesis: 'Use AI to find the right paragraph and build the checklist; never let it decide the accounting treatment.',
-    affiliateTools: [],
-    angle: 'ca-controls',
-    sourceLinks: [{ title: 'ICAI CA GPT press release', url: 'https://icai.org/post/prc-icai-unveils-groundbreaking-ca-gpt-platform' }]
-  },
-  {
-    title: 'AI for Internal Audit in Indian Companies: A Practical Starting Point',
-    category: 'Finance & compliance',
-    keywords: ['AI in internal audit', 'internal audit analytics India', 'continuous auditing AI', 'AI for auditors'],
-    thesis: 'Start internal audit AI with full-population testing of one process, not a dashboard nobody reads.',
-    affiliateTools: [],
-    angle: 'audit',
-    sourceLinks: [{ title: 'EY: agentic AI in EY Canvas (April 2026)', url: 'https://www.ey.com/en_gl/newsroom/2026/04/ey-launches-enterprise-scale-agentic-ai-to-redefine-the-audit-experience-for-the-ai-era' }]
-  },
-  {
-    title: 'AI for Virtual CFO Services: MIS Packs Clients Actually Read',
-    category: 'CA insights',
-    keywords: ['virtual CFO AI', 'MIS reporting AI', 'AI for CA practices', 'management reporting India'],
-    thesis: 'AI makes the monthly MIS pack faster; the value is the three sentences of commentary a partner stands behind.',
-    affiliateTools: [],
-    angle: 'tools',
-    sourceLinks: [{ title: 'NIST AI Risk Management Framework', url: 'https://www.nist.gov/itl/ai-risk-management-framework' }]
-  },
-  {
-    title: 'When a Finance Team Should Say No to an AI Pilot',
-    category: 'Finance & compliance',
-    keywords: ['AI pilot', 'finance AI', 'AI governance'],
-    thesis: 'A polite no beats a six-month pilot with no owner and no metric.',
-    affiliateTools: ['notion'],
-    angle: 'ca-controls',
-    sourceLinks: [{ title: 'NIST AI Risk Management Framework', url: 'https://www.nist.gov/itl/ai-risk-management-framework' }]
-  },
-  {
-    title: 'The Monday Morning Test for Any AI Workflow',
-    category: 'AI implementation',
-    keywords: ['AI workflow', 'AI implementation', 'operating cadence'],
-    thesis: 'If the team cannot explain the workflow in five minutes on Monday, it is not ready for a model.',
-    affiliateTools: ['notion'],
-    angle: 'ops',
-    sourceLinks: [{ title: 'NIST AI Risk Management Framework', url: 'https://www.nist.gov/itl/ai-risk-management-framework' }]
-  },
-  {
-    title: 'Build vs Buy for AI: What I Ask Founders Before They Sign',
-    category: 'AI strategy',
-    keywords: ['build vs buy', 'AI tooling', 'vendor selection'],
-    thesis: 'Buy undifferentiated plumbing; build only where your data or process is the product.',
-    affiliateTools: ['hubspot', 'notion'],
-    angle: 'vendor',
-    sourceLinks: [{ title: 'CISA AI Cybersecurity Collaboration Playbook', url: 'https://www.cisa.gov/resources-tools/resources/ai-cybersecurity-collaboration-playbook' }]
-  },
-  {
-    title: 'WhatsApp Automation That Still Feels Like Customer Care',
-    category: 'Workflow automation',
-    keywords: ['WhatsApp automation', 'workflow automation', 'customer ops'],
-    thesis: 'Automate intake and logging first; keep judgement and exceptions with a named human.',
-    affiliateTools: ['getresponse', 'hubspot'],
-    angle: 'ops',
-    sourceLinks: [{ title: 'NIST AI Risk Management Framework', url: 'https://www.nist.gov/itl/ai-risk-management-framework' }]
-  },
-  {
-    title: 'A 90-Day AI Opportunity Audit Without the Theatre',
-    category: 'AI implementation',
-    keywords: ['AI audit', '90-day roadmap', 'AI opportunity'],
-    thesis: 'Rank use cases by P&L and control risk, then fund one narrow release — not a catalogue of ideas.',
-    affiliateTools: ['notion', 'upmetrics'],
-    angle: 'audit',
-    sourceLinks: [{ title: 'NIST AI Risk Management Framework', url: 'https://www.nist.gov/itl/ai-risk-management-framework' }]
-  },
-  {
-    title: 'Real Estate AI: Start With Leads and Documents, Not Prediction',
-    category: 'Real estate & infrastructure',
-    keywords: ['real estate AI', 'lead qualification', 'document automation'],
-    thesis: 'Structure the mess before you ask a model to forecast anything.',
-    affiliateTools: ['hubspot', 'notion'],
-    angle: 'sector',
-    sourceLinks: [{ title: 'NIST AI Risk Management Framework', url: 'https://www.nist.gov/itl/ai-risk-management-framework' }]
-  },
-  {
-    title: 'AI Governance for Mid-Market Teams Who Do Not Have a Chief AI Officer',
-    category: 'AI governance',
-    keywords: ['AI governance', 'AI policy', 'mid-market AI'],
-    thesis: 'Four one-page rules beat a 40-page policy nobody reads.',
-    affiliateTools: ['notion'],
-    angle: 'governance',
-    sourceLinks: [{ title: 'NIST AI Risk Management Framework', url: 'https://www.nist.gov/itl/ai-risk-management-framework' }]
-  },
-  {
-    title: 'How Much Should a Mid-Market Finance Team Budget for AI?',
-    category: 'Finance & compliance',
-    keywords: ['AI budget', 'finance AI', 'AI ROI'],
-    thesis: 'Budget for people, process and review time — not just licences.',
-    affiliateTools: ['upmetrics', 'notion'],
-    angle: 'budget',
-    sourceLinks: [{ title: 'NIST AI Risk Management Framework', url: 'https://www.nist.gov/itl/ai-risk-management-framework' }]
-  },
-  {
-    title: 'Semrush for Owners: When Search Spend Is Actually Rational',
-    category: 'Tool review',
-    keywords: ['Semrush review', 'SEO tool', 'search visibility'],
-    thesis: 'Pay for Semrush when you will act on one commercial question a week — not when you want prettier reports.',
-    affiliateTools: ['semrush'],
-    angle: 'tools',
-    sourceLinks: [{ title: 'Semrush', url: 'https://www.semrush.com/' }]
-  },
-  {
-    title: 'Notion as a Finance Control Layer — Not a Second Ledger',
-    category: 'CA insights',
-    keywords: ['Notion for finance', 'close checklist', 'CA workflow'],
-    thesis: 'Use Notion for ownership and evidence trails; keep the books in the books.',
-    affiliateTools: ['notion'],
-    angle: 'tools',
-    sourceLinks: [{ title: 'Notion', url: 'https://www.notion.so/product' }]
-  },
-  {
-    title: 'Ecommerce Reconciliation: Where Automation Helps and Where It Lies',
-    category: 'Business systems',
-    keywords: ['ecommerce accounting', 'reconciliation', 'Synder'],
-    thesis: 'Automate mapping and matching; never automate away the settlement exception review.',
-    affiliateTools: ['synder', 'notion'],
-    angle: 'tools',
-    sourceLinks: [{ title: 'Synder', url: 'https://synder.com/' }]
-  },
-  {
-    title: 'HubSpot vs Spreadsheet CRM: The Real Switching Cost',
-    category: 'Tool comparison',
-    keywords: ['HubSpot CRM', 'CRM adoption', 'sales process'],
-    thesis: 'The cost is not the licence — it is defining stages your team will actually use.',
-    affiliateTools: ['hubspot'],
-    angle: 'tools',
-    sourceLinks: [{ title: 'HubSpot CRM', url: 'https://www.hubspot.com/products/crm' }]
-  }
-];
-
-function words(value) {
-  return String(value || '').trim().split(/\s+/).filter(Boolean).length;
-}
-function clean(value, max) {
-  return typeof value === 'string' ? value.trim().slice(0, max) : '';
-}
-function slugify(title) {
-  return String(title).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-}
-function loadCatalog() {
-  if (!fs.existsSync(catalogPath)) return {};
-  return JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
-}
-
+const sitemapPath = path.join(root, 'public', 'sitemap.xml');
 const retiredPath = path.join(__dirname, 'blog-retired-topics.json');
+
+const kolkataDate = (d = new Date()) =>
+  new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Kolkata', year: 'numeric', month: '2-digit', day: '2-digit' }).format(d);
+
+// Phrases from the retired generic template. A topic body containing any of them is rejected.
+const BANNED_PHRASES = [
+  'Here is the practical cut',
+  'Narrow beats clever',
+  'Design the human gate before the automation',
+  'Ship a thin release to one team',
+  'A failed pilot that you can explain is cheaper than a zombie subscription',
+  'Monday-morning checklist: (1) name the owner',
+  'Where software helps, use it as scaffolding'
+];
+const STATIC_PATHS = new Set(['/', '/blog', '/audit', '/scorecard', '/topics', '/privacy']);
+const MIN_BODY_WORDS = 550; // intro + sections
+const MIN_TOTAL_WORDS = 700; // including FAQ
+const DISCLOSURE = 'Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission.';
+
+const words = (v) => String(v || '').trim().split(/\s+/).filter(Boolean).length;
+const slugify = (t) => String(t).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const baseSlugOf = (slug) => String(slug || '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
 const normTitle = (t) => String(t || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+
+function loadTopics() {
+  return require('./daily-topics');
+}
+function loadPosts() {
+  return JSON.parse(fs.readFileSync(postsPath, 'utf8'));
+}
 function loadRetired() {
   if (!fs.existsSync(retiredPath)) return [];
   try { return JSON.parse(fs.readFileSync(retiredPath, 'utf8')).retired || []; } catch { return []; }
 }
+
 /** Titles and base slugs already published (any date) or retired by consolidation. */
-function takenKeys(existing) {
+function isDuplicate(title, existing) {
   const retired = loadRetired();
   const titles = new Set([...existing.map((p) => normTitle(p.title)), ...retired.map((r) => normTitle(r.title))]);
   const slugs = new Set([
@@ -260,324 +66,225 @@ function takenKeys(existing) {
     ...retired.map((r) => r.baseSlug || baseSlugOf(r.slug)),
     ...retired.map((r) => baseSlugOf(String(r.survivor || '').replace(/^\/blog\//, '')))
   ]);
-  return { titles, slugs };
-}
-function isDuplicate(title, existing) {
-  const { titles, slugs } = takenKeys(existing);
   return titles.has(normTitle(title)) || slugs.has(slugify(title));
 }
-// Never cycle back to used topics: when the bank is exhausted, publish nothing (add new topics instead).
-function pickTopic(existing) {
-  const unused = topics.filter((t) => !isDuplicate(t.title, existing));
-  if (!unused.length) return null;
-  const idx = Math.floor(Date.parse(`${today}T00:00:00Z`) / 86400000) % unused.length;
-  return unused[idx];
+
+/** Every text block of a topic that may carry inline markup. */
+function textBlocks(t) {
+  const blocks = [];
+  for (const p of t.intro || []) blocks.push(p);
+  for (const s of t.sections || []) blocks.push(...(s.paragraphs || []), ...(s.bullets || []));
+  for (const f of t.faq || []) blocks.push(f.a || '');
+  return blocks;
+}
+function internalPathExists(p, existing) {
+  const clean = p.split('#')[0].replace(/\/$/, '') || '/';
+  if (STATIC_PATHS.has(clean)) return true;
+  const m = clean.match(/^\/blog\/([a-z0-9-]+)$/);
+  if (m) return fs.existsSync(path.join(root, 'public', 'blog', `${m[1]}.html`)) || existing.some((x) => x.slug === m[1]);
+  return fs.existsSync(path.join(root, 'public', `${clean.slice(1)}.html`)) || fs.existsSync(path.join(root, 'public', clean.slice(1), 'index.html'));
 }
 
-function humanFallback(topic) {
-  const openers = {
-    'ca-controls': `I still see finance teams approve AI pilots the way they used to approve "innovation labs": interesting demo, unclear owner, no metric that shows up in the month-end pack.`,
-    ops: `Most AI workflows fail quietly. The model works in a sandbox; the Monday morning handoff does not.`,
-    vendor: `Founders ask me "build or buy?" as if it is a branding choice. It is a capital and control choice.`,
-    audit: `A useful AI audit is boring on purpose. It ranks work, names owners, and ends with one funded release — not a slide of fifty ideas.`,
-    sector: `In real estate, the data is rarely clean enough for clever prediction. Lead hygiene and document chaos come first.`,
-    governance: `Mid-market teams do not need a Chief AI Officer to govern AI. They need four rules people can recite.`,
-    budget: `An AI budget that only lists software is incomplete. Review time and exception handling are part of the cost.`,
-    tools: `Tool reviews are only useful when they help you decide what to try next week — not when they read like a feature brochure.`
+/** Returns a list of problems; an empty list means the topic has complete, specific, sourced material. */
+function validateTopic(t, existing = loadPosts()) {
+  const problems = [];
+  const need = (cond, msg) => { if (!cond) problems.push(msg); };
+  need(t && typeof t.title === 'string' && t.title.length >= 20 && t.title.length <= 95, 'title missing or not 20-95 chars');
+  need(typeof t.category === 'string' && t.category, 'category missing');
+  need(/^https:\/\//.test(t.image || ''), 'image must be an https URL');
+  need(typeof t.excerpt === 'string' && t.excerpt.length >= 120 && t.excerpt.length <= 170, `excerpt must be 120-170 chars (has ${String(t.excerpt || '').length})`);
+  need(Array.isArray(t.keywords) && t.keywords.length >= 3, 'at least 3 keywords');
+  const sources = Array.isArray(t.sources) ? t.sources : [];
+  need(sources.length >= 3, 'at least 3 sources');
+  sources.forEach((s, i) => need(s && s.title && /^https:\/\/[^\s]+$/.test(s.url || ''), `source ${i + 1} needs a title and an https URL`));
+  need(Array.isArray(t.intro) && t.intro.filter((p) => words(p) >= 15).length >= 2, 'intro needs at least 2 real paragraphs');
+  const sections = Array.isArray(t.sections) ? t.sections : [];
+  need(sections.length >= 4, 'at least 4 sections');
+  sections.forEach((s, i) => need(s && s.heading && ((s.paragraphs || []).length || (s.bullets || []).length), `section ${i + 1} needs a heading and content`));
+  const faq = Array.isArray(t.faq) ? t.faq : [];
+  need(faq.length >= 3 && faq.every((f) => f && f.q && words(f.a) >= 12), 'at least 3 FAQ items with real answers');
+  const related = Array.isArray(t.related) ? t.related : [];
+  need(related.length >= 2 && related.every((r) => r && r.title && /^\//.test(r.url || '')), 'at least 2 related internal links');
+
+  const blocks = textBlocks(t);
+  const cited = new Set();
+  for (const b of blocks) {
+    for (const m of b.matchAll(/\[([^\]]+)\]\[(\d+)\]/g)) {
+      const n = Number(m[2]);
+      if (n < 1 || n > sources.length) problems.push(`citation [${m[1]}][${n}] points to a missing source`);
+      else cited.add(n);
+    }
+    for (const m of b.matchAll(/\[([^\]]+)\]\(([^)]*)\)/g)) {
+      if (!/^\/[a-z0-9\-/]*$/i.test(m[2])) problems.push(`inline link (${m[2]}) must be an internal /path; cite external pages as [text][n]`);
+      else if (!internalPathExists(m[2], existing)) problems.push(`internal link ${m[2]} does not exist`);
+    }
+  }
+  for (const r of related) if (r && /^\//.test(r.url || '') && !internalPathExists(r.url, existing)) problems.push(`related link ${r.url} does not exist`);
+  need(cited.size >= 3, `at least 3 distinct sources must be cited inline (found ${cited.size})`);
+  sources.forEach((s, i) => need(cited.has(i + 1), `source ${i + 1} (${s && s.title}) is listed but never cited`));
+
+  const body = [...(t.intro || []), ...sections.flatMap((s) => [s.heading, ...(s.paragraphs || []), ...(s.bullets || [])])].join(' ');
+  const total = body + ' ' + faq.map((f) => `${f.q} ${f.a}`).join(' ');
+  need(words(sim.stripInline(body)) >= MIN_BODY_WORDS, `body has ${words(sim.stripInline(body))} words; needs ${MIN_BODY_WORDS}+`);
+  need(words(sim.stripInline(total)) >= MIN_TOTAL_WORDS, `body + FAQ has ${words(sim.stripInline(total))} words; needs ${MIN_TOTAL_WORDS}+`);
+  for (const phrase of BANNED_PHRASES) if (total.includes(phrase)) problems.push(`contains retired boilerplate: "${phrase}"`);
+  return problems;
+}
+
+/** Build the JSON entry the worker renders (structured sections + plain-text content for feeds/search). */
+function buildPost(t, date) {
+  const slug = `${date}-${slugify(t.title)}`;
+  const plain = [];
+  for (const p of t.intro) plain.push(sim.stripInline(p));
+  for (const s of t.sections) {
+    plain.push(s.heading);
+    for (const p of s.paragraphs || []) plain.push(sim.stripInline(p));
+    for (const b of s.bullets || []) plain.push(`• ${sim.stripInline(b)}`);
+  }
+  plain.push('Frequently asked questions');
+  for (const f of t.faq) plain.push(`${f.q}\n${sim.stripInline(f.a)}`);
+  const content = plain.join('\n\n');
+  return {
+    id: slug,
+    title: t.title,
+    slug,
+    url: `/blog/${slug}`,
+    date,
+    dateModified: date,
+    author: 'Pratik Bajoria',
+    category: t.category,
+    readTime: Math.max(4, Math.round(words(content) / 220)),
+    image: t.image,
+    excerpt: t.excerpt,
+    content,
+    intro: t.intro,
+    sections: t.sections.map((s) => ({ heading: s.heading, paragraphs: s.paragraphs || [], bullets: s.bullets || [] })),
+    faq: t.faq.map((f) => ({ q: f.q, a: f.a })),
+    related: t.related.map((r) => ({ title: r.title, url: r.url })),
+    keywords: t.keywords.slice(0, 6),
+    sources: t.sources.map((s) => ({ title: s.title, url: s.url })),
+    generatedBy: 'topic-bank',
+    topicFile: t.file,
+    affiliateTools: [],
+    affiliate: { disclosure: DISCLOSURE }
   };
-  const opener = openers[topic.angle] || openers.ops;
-  const body = [
-    opener,
-    topic.thesis,
-    `Here is the practical cut. Write the current workflow on one page: input, decision, output, owner, and what "good" looks like today. If you cannot fill those five lines, you are not choosing a model yet — you are guessing.`,
-    `Pick one bottleneck with volume and a measurable cost: cycle time, error rate, review hours, or cash delay. Ignore the impressive adjacent idea. Narrow beats clever. The teams that win treat AI like any other operating change: small scope, named owner, visible metric.`,
-    `Design the human gate before the automation. Who approves? What evidence must remain? What must never leave the company systems? In finance and client work, an unauditable answer is not a deliverable. If a tool cannot show you how it reached a result, keep it in draft mode.`,
-    `Ship a thin release to one team for two to four weeks. Run it beside the old process if the risk is material. Review the metric every week — not in a steering committee three months later. Capture exceptions in a shared log so patterns become obvious.`,
-    `If the metric moves and controls hold, document the pattern so the next team does not start from folklore. If it does not move, stop. A failed pilot that you can explain is cheaper than a zombie subscription. I would rather a team keep a simple shared checklist and one honest metric than buy three tools and lose the plot.`,
-    `Where software helps, use it as scaffolding — a CRM for pipeline truth, a workspace for SOPs, a planning tool for assumptions — not as a substitute for judgement. Mentioned products are options to evaluate against your process, not endorsements that replace due diligence.`,
-    `Monday-morning checklist: (1) name the owner, (2) name the metric, (3) name the exception path, (4) name the data the tool may see, (5) book the weekly review. If any line is blank, pause the rollout.`,
-    `This is educational commentary from implementation work — not personalised financial, tax, legal or investment advice. Verify vendor pricing, privacy terms and any partner arrangements before you buy.`
-  ];
-  return body.join('\n\n');
-}
-
-async function aiArticle(topic) {
-  if (!process.env.OPENAI_API_KEY) return null;
-  const response = await fetch(process.env.OPENAI_API_URL || 'https://api.openai.com/v1/chat/completions', {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${process.env.OPENAI_API_KEY}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      model: process.env.OPENAI_MODEL || 'gpt-4o-mini',
-      temperature: 0.55,
-      response_format: { type: 'json_object' },
-      messages: [
-        {
-          role: 'system',
-          content:
-            'You write as Pratik Bajoria: Chartered Accountant, ex-Big 4, AI implementation consultant and Findost founder. Voice: clear, specific, slightly conversational, British spelling. Short paragraphs. No hype. Never invent statistics, client names, revenue, case-study metrics, awards or quotes. Prefer concrete operating advice over abstract AI talk. Return only valid JSON.'
-        },
-        {
-          role: 'user',
-          content: JSON.stringify({
-            task: 'Write one original blog article for pratikbajoria.com',
-            date: today,
-            topic: topic.title,
-            category: topic.category,
-            thesis: topic.thesis,
-            angle: topic.angle,
-            keywords: topic.keywords,
-            toolsToMentionNaturally: topic.affiliateTools || [],
-            requirements: {
-              title: 'Use the supplied title or a close human refinement (max 90 chars).',
-              excerpt: '140-190 characters, sounds like a person wrote it.',
-              content:
-                '850-1200 words. Plain text with blank lines between paragraphs. Open with a concrete situation. Include a short Monday-morning checklist near the end. Mention listed tools only where they genuinely fit; do not force product pitches. No fabricated numbers.',
-              keywords: 'Return 4-6 search phrases.',
-              sources: 'Use only the supplied sources unless you add a primary public URL you are sure is correct.'
-            },
-            sourceLinks: topic.sourceLinks
-          })
-        }
-      ]
-    })
-  });
-  if (!response.ok) throw new Error(`AI provider returned ${response.status}`);
-  const payload = await response.json();
-  const raw = payload.choices?.[0]?.message?.content;
-  if (!raw) throw new Error('AI provider returned no content');
-  return JSON.parse(raw.replace(/^```json\s*|\s*```$/g, ''));
 }
 
 function qualityCheck(post) {
-  const validSources =
-    Array.isArray(post.sources) &&
-    post.sources.length &&
-    post.sources.every((source) => source && /^https:\/\//.test(source.url));
-  const minimumWords = post.generatedBy === 'openai' ? 650 : 350;
   return Boolean(
-    post.title &&
-      post.excerpt &&
-      words(post.content) >= minimumWords &&
-      Array.isArray(post.keywords) &&
-      post.keywords.length >= 3 &&
-      validSources &&
-      post.affiliate?.disclosure
+    post.title && post.excerpt && words(post.content) >= MIN_TOTAL_WORDS &&
+    Array.isArray(post.sections) && post.sections.length >= 4 &&
+    Array.isArray(post.faq) && post.faq.length >= 3 &&
+    Array.isArray(post.keywords) && post.keywords.length >= 3 &&
+    Array.isArray(post.sources) && post.sources.length >= 3 && post.sources.every((s) => /^https:\/\//.test(s.url))
   );
 }
 
-function kolkataDate(d = new Date()) {
-  return new Intl.DateTimeFormat('en-CA', {
-    timeZone: 'Asia/Kolkata',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit'
-  }).format(d);
-}
-
-function writeSsrHtml(post, catalog) {
-  const esc = (s) =>
-    String(s || '')
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
-  const paras = String(post.content || '')
-    .split(/\n\s*\n/)
-    .filter(Boolean)
-    .map((p) => `<p>${esc(p).replace(/\n/g, '<br />')}</p>`)
-    .join('\n');
-  const tools = (post.affiliateTools || []).map((k) => catalog[k]).filter(Boolean);
-  let toolsHtml = '';
-  if (tools.length) {
-    const cards = tools
-      .map((tool) => {
-        const isAff = Boolean(tool.affiliateUrl);
-        const href = isAff ? tool.affiliateUrl : tool.productUrl;
-        const label = isAff ? `Explore ${tool.name}` : `Visit ${tool.name} official site`;
-        const rel = isAff ? 'nofollow sponsored noopener noreferrer' : 'noopener noreferrer';
-        return `<a href="${esc(href)}" target="_blank" rel="${rel}"><strong>${esc(tool.name)}</strong><span>${esc(tool.category)}</span><small>${esc(label)} ↗</small></a>`;
-      })
-      .join('');
-    toolsHtml = `<aside class="article-tools" aria-label="Tools mentioned in this article"><p class="eyebrow">Tools worth evaluating</p><div class="article-tool-grid">${cards}</div><p class="article-tool-note">${esc(post.affiliate.disclosure)}</p></aside>`;
-  }
-  const sourceList = Array.isArray(post.sources) ? post.sources : [];
-  const sourcesHtml = sourceList.length
-    ? `<h2>Sources</h2>\n<ul>\n${sourceList
-        .map((s) => `  <li><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title || s.url)}</a></li>`)
-        .join('\n')}\n</ul>`
-    : '';
-  const canonical = `https://pratikbajoria.com/blog/${post.slug}`;
-  const ld = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: post.title,
-    description: post.excerpt,
-    datePublished: post.date,
-    dateModified: kolkataDate(),
-    author: {
-      '@type': 'Person',
-      name: 'Pratik Bajoria',
-      url: 'https://pratikbajoria.com/#person',
-      sameAs: ['https://www.linkedin.com/in/pratik-bajoria-6288b1119/']
-    },
-    publisher: { '@type': 'Person', name: 'Pratik Bajoria', '@id': 'https://pratikbajoria.com/#person' },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
-    image: post.image,
-    keywords: post.keywords || []
-  };
-  const html = `<!doctype html>
-<html lang="en-IN">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f4f0e8" />
-    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
-    <meta name="author" content="Pratik Bajoria" />
-    <title>${esc(post.title)} — Pratik Bajoria</title>
-    <meta name="description" content="${esc(post.excerpt)}" />
-    <link rel="canonical" href="${esc(canonical)}" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="${esc(post.title)}" />
-    <meta property="og:description" content="${esc(post.excerpt)}" />
-    <meta property="og:url" content="${esc(canonical)}" />
-    <meta property="og:image" content="${esc(post.image)}" />
-    <meta property="og:site_name" content="Pratik Bajoria" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="/styles.css" />
-    <link rel="stylesheet" href="/styles-overrides.css?v=20260925" />
-    <script type="application/ld+json">
-${JSON.stringify(ld, null, 2)}
-    </script>
-    <script src="/ga4.js" defer></script>
-  </head>
-  <body data-static-article="1" data-slug="${esc(post.slug)}">
-    <main class="shell article-page">
-      <header class="article-header">
-        <a class="wordmark" href="/" aria-label="Pratik Bajoria home"><span>PB</span></a>
-        <div class="article-header-links">
-          <a class="text-link" href="/topics">50 topic guide ↗</a>
-          <a class="text-link" href="/blog">All insights ↗</a>
-          <a class="text-link" href="/#insights">Home insights ↗</a>
-        </div>
-      </header>
-      <article id="article">
-        <p class="eyebrow">${esc(post.category)} · ${esc(post.date)} · ${esc(post.readTime)} min read</p>
-        <h1>${esc(post.title)}</h1>
-        <p class="article-dek">${esc(post.excerpt)}</p>
-        <div class="article-body">
-${paras}
-${sourcesHtml}
-        </div>
-        ${toolsHtml}
-        <p class="ymyl-note" style="margin-top:28px;font-size:0.92rem;color:#6f746d"><em>Educational content; not financial, investment, or legal advice.</em></p>
-        <div class="article-cta" style="margin-top:40px;padding:24px;border:1px solid rgba(28,28,26,0.12);border-radius:12px">
-          <p class="eyebrow">Next step</p>
-          <h2 style="font-size:1.4rem;margin:8px 0 12px">Turn this insight into action</h2>
-          <p>Discuss where AI creates measurable P&amp;L impact — or start free with the scorecard.</p>
-          <p class="article-cta-actions" style="margin-top:16px;display:flex;flex-wrap:wrap;gap:12px;align-items:center">
-            <a class="button button-dark" href="/#contact">Book a discovery call <span>↗</span></a>
-            <a class="button button-cream" href="/scorecard">Get the free AI Opportunity Scorecard <span>↗</span></a>
-          </p>
-          <p style="margin-top:14px"><a class="muted-link" href="/audit">See the AI Opportunity Audit →</a></p>
-        </div>
-      </article>
-    </main>
-    <script src="/blog.js?v=20260925" defer></script>
-  </body>
-</html>
-`;
-  const outDir = path.join(root, 'public', 'blog');
-  fs.mkdirSync(outDir, { recursive: true });
-  fs.writeFileSync(path.join(outDir, `${post.slug}.html`), html);
-}
-
-function updateSitemap(post) {
-  const sitemapPath = path.join(root, 'public', 'sitemap.xml');
+function updateSitemap(post, date) {
   if (!fs.existsSync(sitemapPath)) return;
   let xml = fs.readFileSync(sitemapPath, 'utf8');
   const loc = `https://pratikbajoria.com/blog/${post.slug}`;
-  const lastmod = kolkataDate();
-  const entry = `  <url><loc>${loc}</loc><lastmod>${lastmod}</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>\n`;
+  const entry = `  <url><loc>${loc}</loc><lastmod>${date}</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>\n`;
   const escaped = loc.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const re = new RegExp('  <url><loc>' + escaped + '</loc>[\\s\\S]*?</url>\\n');
-  if (re.test(xml)) xml = xml.replace(re, entry);
-  else xml = xml.replace('</urlset>', entry + '</urlset>');
-  xml = xml.replace(/(<url><loc>https:\/\/pratikbajoria\.com\/blog<\/loc><lastmod>)[^<]+/, '$1' + lastmod);
-  xml = xml.replace(/(<url><loc>https:\/\/pratikbajoria\.com\/<\/loc><lastmod>)[^<]+/, '$1' + lastmod);
+  xml = re.test(xml) ? xml.replace(re, entry) : xml.replace('</urlset>', entry + '</urlset>');
+  xml = xml.replace(/(<url><loc>https:\/\/pratikbajoria\.com\/blog<\/loc><lastmod>)[^<]+/, '$1' + date);
   fs.writeFileSync(sitemapPath, xml);
 }
 
-
-async function main() {
-  const existing = JSON.parse(fs.readFileSync(postsPath, 'utf8'));
-  const catalog = loadCatalog();
-  const topic = pickTopic(existing);
-  if (!topic) {
-    console.log('Topic bank exhausted: every topic is already published or retired. Skipping today (no duplicate post). Add new topics to scripts/generate-daily-blog.js.');
-    return;
-  }
-  let draft = null;
-  let generatedBy = 'editorial-fallback';
-  try {
-    const candidate = await aiArticle(topic);
-    const candidateSources =
-      Array.isArray(candidate?.sources) && candidate.sources.length ? candidate.sources : topic.sourceLinks;
-    const candidateIsUsable =
-      candidate &&
-      words(candidate.content) >= 650 &&
-      Array.isArray(candidate.keywords) &&
-      candidate.keywords.length >= 3 &&
-      candidateSources.every((source) => source && /^https:\/\//.test(source.url));
-    if (candidateIsUsable) {
-      draft = candidate;
-      generatedBy = 'openai';
-    } else {
-      console.warn('AI draft did not meet the editorial quality gate; using human-voice fallback.');
-    }
-  } catch (error) {
-    console.warn(`AI draft unavailable (${error.message}); using human-voice fallback.`);
-  }
-
-  const baseSlug = slugify(draft?.title || topic.title);
-  if (isDuplicate(draft?.title || topic.title, existing)) {
-    console.log(`Duplicate title/slug guard: "${draft?.title || topic.title}" already exists or was retired. Skipping today.`);
-    return;
-  }
-  const slug = `${today}-${baseSlug}`;
-  const sources = Array.isArray(draft?.sources) && draft.sources.length ? draft.sources : topic.sourceLinks;
-  const post = {
-    id: slug,
-    title: clean(draft?.title || topic.title, 180),
-    slug,
-    url: `/blog/${slug}`,
-    date: today,
-    author: 'Pratik Bajoria',
-    category: topic.category,
-    readTime: draft?.readTime || Math.max(6, Math.round(words(draft?.content || humanFallback(topic)) / 140)),
-    image: draft?.image || 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=85',
-    excerpt: clean(draft?.excerpt || topic.thesis, 220),
-    content: clean(draft?.content || humanFallback(topic), 18000),
-    keywords: Array.isArray(draft?.keywords) ? draft.keywords.slice(0, 6) : topic.keywords,
-    sources,
-    generatedBy,
-    affiliateTools: topic.affiliateTools || [],
-    affiliate: {
-      disclosure:
-        'Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission.'
-    }
-  };
-
-  if (!qualityCheck(post)) throw new Error('Quality gate failed.');
-
-  const posts = [post, ...existing.filter((item) => item.id !== post.id && item.slug !== post.slug)]; // no cap: older posts stay in JSON (each has an SSR page; dropping them breaks listings)
-  fs.writeFileSync(postsPath, JSON.stringify(posts, null, 2) + '\n');
-  writeSsrHtml(post, catalog);
-  updateSitemap(post);
-  console.log(`Published ${generatedBy} article: ${post.title} (${words(post.content)} words) tools=${(post.affiliateTools || []).join(',') || 'none'}`);
+function parseArgs(argv) {
+  const args = { dryRun: argv.includes('--dry-run'), validate: argv.includes('--validate'), topic: null, date: null };
+  const ti = argv.indexOf('--topic');
+  if (ti >= 0) args.topic = Number(argv[ti + 1]);
+  const di = argv.indexOf('--date');
+  if (di >= 0) args.date = argv[di + 1];
+  return args;
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+/** Check every queued topic: material complete and not a near-duplicate of any live post. */
+function validateAll({ quiet = false } = {}) {
+  const existing = loadPosts();
+  const corpus = sim.loadCorpus(root);
+  const topics = loadTopics();
+  const report = [];
+  const built = [];
+  topics.forEach((t, i) => {
+    const problems = validateTopic(t, existing);
+    const post = problems.length ? null : buildPost(t, '2099-01-01');
+    let nearest = { slug: null, score: 0 };
+    if (post) {
+      nearest = sim.mostSimilar(sim.jsonBodyText(post), corpus, null);
+      // the same topic may already be live (published earlier); that is the duplicate guard's job, not a failure here
+      if (isDuplicate(t.title, existing)) nearest = { slug: '(already published)', score: 0 };
+      else if (nearest.score > sim.MAX_SIMILARITY) problems.push(`${Math.round(nearest.score * 100)}% similar to ${nearest.slug}`);
+      for (const other of built) {
+        const s = sim.similarity(sim.jsonBodyText(post), sim.jsonBodyText(other.post));
+        if (s > sim.MAX_SIMILARITY) problems.push(`${Math.round(s * 100)}% similar to queued topic "${other.title}"`);
+      }
+      built.push({ title: t.title, post });
+    }
+    report.push({ n: i + 1, title: t.title, file: t.file, problems, nearest, words: post ? words(post.content) : 0 });
+  });
+  if (!quiet) {
+    for (const r of report) {
+      console.log(`${String(r.n).padStart(2)}. ${r.problems.length ? 'FAIL' : 'ok  '} ${r.title} (${r.words} words; nearest ${r.nearest.slug || '-'} ${Math.round(r.nearest.score * 100)}%)`);
+      for (const p of r.problems) console.log(`      - ${p}`);
+    }
+  }
+  return report;
+}
+
+function main() {
+  const args = parseArgs(process.argv.slice(2));
+  if (args.validate) {
+    const report = validateAll();
+    if (report.some((r) => r.problems.length)) process.exitCode = 1;
+    return;
+  }
+  const date = args.date || kolkataDate();
+  const existing = loadPosts();
+  const topics = loadTopics();
+  let topic;
+  if (args.topic) {
+    topic = topics[args.topic - 1];
+    if (!topic) throw new Error(`No topic #${args.topic} (bank has ${topics.length}).`);
+  } else {
+    topic = topics.find((t) => !isDuplicate(t.title, existing));
+    if (!topic) {
+      console.log('Topic bank exhausted: every topic is already published or retired. Skipping today. Add a fully sourced topic file to scripts/daily-topics/.');
+      return;
+    }
+  }
+  const problems = validateTopic(topic, existing);
+  if (problems.length) {
+    console.log(`Skipping today: "${topic.title}" (${topic.file}) lacks complete material, so nothing is published.`);
+    for (const p of problems) console.log(`  - ${p}`);
+    return;
+  }
+  if (!args.dryRun && isDuplicate(topic.title, existing)) {
+    console.log(`Duplicate guard: "${topic.title}" already exists or was retired. Skipping today.`);
+    return;
+  }
+  const post = buildPost(topic, date);
+  const nearest = sim.mostSimilar(sim.jsonBodyText(post), sim.loadCorpus(root), post.slug);
+  if (nearest.score > sim.MAX_SIMILARITY) {
+    console.log(`Similarity guard: "${post.title}" shares ${Math.round(nearest.score * 100)}% of its body with ${nearest.slug}. Skipping today.`);
+    return;
+  }
+  if (!qualityCheck(post)) throw new Error('Quality gate failed.');
+  if (args.dryRun) {
+    console.log(`[dry run] ${post.title}\n  slug: ${post.slug}\n  words: ${words(post.content)}  sections: ${post.sections.length}  faq: ${post.faq.length}  sources: ${post.sources.length}\n  nearest existing post: ${nearest.slug} (${Math.round(nearest.score * 100)}%)\n`);
+    console.log(post.content);
+    return;
+  }
+  const posts = [post, ...existing.filter((p) => p.id !== post.id && p.slug !== post.slug)];
+  fs.writeFileSync(postsPath, JSON.stringify(posts, null, 2) + '\n');
+  updateSitemap(post, date);
+  console.log(`Published topic-bank article: ${post.title} (${words(post.content)} words, ${post.sources.length} sources, nearest ${Math.round(nearest.score * 100)}%)`);
+}
+
+module.exports = { validateTopic, validateAll, buildPost, isDuplicate, BANNED_PHRASES };
+
+if (require.main === module) {
+  try { main(); } catch (error) { console.error(error); process.exitCode = 1; }
+}

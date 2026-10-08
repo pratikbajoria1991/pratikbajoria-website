@@ -353,16 +353,58 @@ function injectMissingBlogCards(html, posts) {
   return html.replace(marker, marker + cards);
 }
 
+// Structured daily posts (scripts/daily-topics): intro + sections + FAQ + related, with inline links.
+// [text][n] -> sources[n-1] (https only); [text](/path) -> internal link. Everything else is escaped text.
+const STRUCTURED_DISCLAIMER = 'Disclaimer: this article is general educational commentary. It is not legal, tax, audit or data-protection advice and does not create an adviser–client relationship. Laws, standards and thresholds change; check the current official text and take professional advice on your facts before acting.';
+function inlineHtml(raw, sources) {
+  return escHtml(raw)
+    .replace(/\[([^\]]+)\]\[(\d+)\]/g, (m, label, n) => {
+      const src = sources[Number(n) - 1];
+      return src && /^https:\/\//.test(src.url || '') ? `<a href="${escHtml(src.url)}" target="_blank" rel="noopener noreferrer">${label}</a>` : label;
+    })
+    .replace(/\[([^\]]+)\]\((\/[a-z0-9\-\/]*)\)/gi, (m, label, href) => `<a href="${href}">${label}</a>`);
+}
+function structuredBodyHtml(post, sources) {
+  const out = [];
+  for (const p of Array.isArray(post.intro) ? post.intro : []) out.push(`<p>${inlineHtml(p, sources)}</p>`);
+  for (const sec of post.sections) {
+    if (!sec || !sec.heading) continue;
+    out.push(`<h2>${escHtml(sec.heading)}</h2>`);
+    for (const p of Array.isArray(sec.paragraphs) ? sec.paragraphs.slice(0, 1) : []) out.push(`<p>${inlineHtml(p, sources)}</p>`);
+    if (Array.isArray(sec.bullets) && sec.bullets.length) out.push(`<ul>\n${sec.bullets.map((b) => `  <li>${inlineHtml(b, sources)}</li>`).join('\n')}\n</ul>`);
+    for (const p of Array.isArray(sec.paragraphs) ? sec.paragraphs.slice(1) : []) out.push(`<p>${inlineHtml(p, sources)}</p>`);
+  }
+  const faq = Array.isArray(post.faq) ? post.faq.filter((f) => f && f.q && f.a) : [];
+  if (faq.length) {
+    out.push('<h2 id="faq">Frequently asked questions</h2>');
+    for (const f of faq) out.push(`<h3>${escHtml(f.q)}</h3>\n<p>${inlineHtml(f.a, sources)}</p>`);
+  }
+  const related = Array.isArray(post.related) ? post.related.filter((r) => r && /^\/[a-z0-9\-\/]*$/i.test(r.url || '')) : [];
+  if (related.length) out.push(`<h2>Related reading</h2>\n<ul>\n${related.map((r) => `  <li><a href="${r.url}">${escHtml(r.title || r.url)}</a></li>`).join('\n')}\n</ul>`);
+  return out.join('\n');
+}
+function faqJsonLd(post, canonical) {
+  const faq = Array.isArray(post.faq) ? post.faq.filter((f) => f && f.q && f.a) : [];
+  if (!faq.length) return '';
+  const strip = (t) => String(t).replace(/\[([^\]]+)\]\[\d+\]/g, '$1').replace(/\[([^\]]+)\]\((\/[^)\s]*)\)/g, '$1');
+  const ld = { '@context': 'https://schema.org', '@type': 'FAQPage', '@id': `${canonical}#faq`, mainEntity: faq.map((f) => ({ '@type': 'Question', name: strip(f.q), acceptedAnswer: { '@type': 'Answer', text: strip(f.a) } })) };
+  return `\n    <script type="application/ld+json">\n${JSON.stringify(ld, null, 2).replace(/</g, '\\u003c')}\n    </script>`;
+}
+
 function renderPostHtml(post, catalog) {
   const slug = post.slug;
   const canonical = `${SITE}/blog/${slug}`;
   const title = post.title || slug;
   const excerpt = post.excerpt || '';
   const image = post.image || 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=85';
-  const paras = splitParagraphs(post.content)
-    .map((p) => `<p>${escHtml(p).replace(/\n/g, '<br />')}</p>`)
-    .join('\n');
-  const sources = Array.isArray(post.sources) ? post.sources.filter((s) => s && /^https?:\/\//.test(s.url || '')) : [];
+  const allSources = Array.isArray(post.sources) ? post.sources : [];
+  const sources = allSources.filter((s) => s && /^https?:\/\//.test(s.url || ''));
+  const structured = Array.isArray(post.sections) && post.sections.length > 0;
+  const paras = structured
+    ? structuredBodyHtml(post, allSources)
+    : splitParagraphs(post.content)
+      .map((p) => `<p>${escHtml(p).replace(/\n/g, '<br />')}</p>`)
+      .join('\n');
   const sourcesHtml = sources.length
     ? `<h2>Sources</h2>\n<ul>\n${sources.map((s) => `  <li><a href="${escHtml(s.url)}" target="_blank" rel="noopener noreferrer">${escHtml(s.title || s.url)}</a></li>`).join('\n')}\n</ul>`
     : '';
@@ -433,7 +475,7 @@ ${ldJson}
     </script>
     <script type="application/ld+json">
 ${crumbsJson}
-    </script>
+    </script>${structured ? faqJsonLd(post, canonical) : ''}
     <script src="/ga4.js" defer></script>
   </head>
   <body data-static-article="1" data-slug="${escHtml(slug)}">
@@ -453,7 +495,7 @@ ${crumbsJson}
         <p class="article-dek">${escHtml(excerpt)}</p>
         <div class="article-body">
 ${paras}
-${sourcesHtml}
+${sourcesHtml}${structured ? `\n<p><em>${escHtml(post.disclaimer || STRUCTURED_DISCLAIMER)}</em></p>` : ''}
         </div>
         ${toolsHtml}
         <p class="ymyl-note" style="margin-top:28px;font-size:0.92rem;color:#6f746d"><em>Educational content; not financial, investment, or legal advice.</em></p>

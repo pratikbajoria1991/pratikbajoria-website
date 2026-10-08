@@ -6,8 +6,10 @@
   "scripts": {
     "build": "echo 'Build complete - static site ready for deployment'",
     "dev": "echo 'Development mode not configured - use static files directly'",
-    "test": "echo 'No tests configured'",
-    "seo:audit": "node scripts/seo-audit.mjs"
+    "test": "node scripts/test-content-similarity.mjs",
+    "seo:audit": "node scripts/seo-audit.mjs",
+    "blog:validate": "node scripts/generate-daily-blog.js --validate",
+    "blog:dry-run": "node scripts/generate-daily-blog.js --dry-run"
   },
   "keywords": [
     "blog",
