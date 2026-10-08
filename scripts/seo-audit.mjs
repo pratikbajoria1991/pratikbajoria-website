@@ -186,7 +186,7 @@ async function main() {
     // 4 viewport
     touch(4);
     if (!p.viewport || !/width=device-width/.test(p.viewport)) fail(4, `${loc} missing viewport meta`);
-    if (/<(table|div|img|section)\b[^>]*style=["'][^"']*\bwidth:\s*([6-9]\d\d|\d{4,})px/i.test(r.body)) warn(4, `${loc} has an inline fixed width >= 600px`);
+    if (/<(table|div|img|section)\b[^>]*style=["'][^"']*(?<![-\w])width:\s*([6-9]\d\d|\d{4,})px/i.test(r.body)) warn(4, `${loc} has an inline fixed width >= 600px`);
     // 7/8
     touch(7); touch(8);
     if (!p.title) fail(7, `${loc} missing <title>`); else { (titles.get(p.title) || titles.set(p.title, []).get(p.title)).push(loc); if (p.title.length > 70 || p.title.length < 25) warn(7, `${loc} title ${p.title.length} chars`); }
