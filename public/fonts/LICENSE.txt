@@ -1,0 +1,5 @@
+Self-hosted web fonts (latin and latin-ext subsets, WOFF2) downloaded from Google Fonts:
+  - Instrument Serif  https://fonts.google.com/specimen/Instrument+Serif
+  - Manrope           https://fonts.google.com/specimen/Manrope
+  - DM Mono           https://fonts.google.com/specimen/DM+Mono
+All three are licensed under the SIL Open Font License, Version 1.1: https://openfontlicense.org/

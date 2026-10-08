@@ -157,7 +157,7 @@ async function serveCrossborder(request, env, url, mode) {
   if (!preview) {
     if (raw === '/robots.txt') return xbRobots(request);
     if (raw === '/sitemap.xml') return xbSitemap(request, env);
-    if (XB_SHARED_ROOT_ASSETS.has(raw)) {
+    if (XB_SHARED_ROOT_ASSETS.has(raw) || /^\/fonts\/[a-z0-9-]+\.woff2$/.test(raw)) {
       const r = await env.ASSETS.fetch(internalAssetRequest(request, raw));
       return request.method === 'HEAD' ? new Response(null, r) : r;
     }
