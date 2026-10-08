@@ -118,6 +118,9 @@ HEAD = """<!doctype html>
     <script type="application/ld+json">
 {ld}
     </script>
+    <script type="application/ld+json">
+{crumbs_ld}
+    </script>
       <script src="/ga4.js" defer></script>
 </head>
   <body data-static-article="1" data-slug="{slug}">
@@ -130,6 +133,7 @@ HEAD = """<!doctype html>
           <a class="text-link" href="/#insights">Home insights ↗</a>
         </div>
       </header>
+      {crumbs_nav}
       <article id="article">
         <p class="eyebrow">{category} · {published} · {read} min read</p>
         <h1>{h1}</h1>
@@ -202,6 +206,30 @@ TAIL_NO_TOOLS = """
 </html>
 """
 
+def breadcrumbs(title: str, slug: str) -> tuple[str, str]:
+    """Visible breadcrumb nav + BreadcrumbList JSON-LD (Home / Blog / post)."""
+    import json
+    url = f"https://pratikbajoria.com/blog/{slug}"
+    ld = json.dumps({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pratikbajoria.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://pratikbajoria.com/blog"},
+            {"@type": "ListItem", "position": 3, "name": title, "item": url},
+        ],
+    }, ensure_ascii=False, indent=2).replace("</", "<\\/")
+    sep = '<span aria-hidden="true" style="margin:0 8px;color:#a3a69e">/</span>'
+    link = 'style="border-bottom:1px solid rgba(31,37,35,.25)"'
+    nav = (
+        '<nav class="breadcrumbs" aria-label="Breadcrumb" style="font-size:12px;line-height:1.5;color:#5f645e;margin:18px 0 0">'
+        '<ol style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:baseline">'
+        f'<li><a href="/" {link}>Home</a></li><li>{sep}<a href="/blog" {link}>Blog</a></li>'
+        f'<li>{sep}<span aria-current="page">{esc(title)}</span></li></ol></nav>'
+    )
+    return nav, ld
+
+
 def render(meta: dict, body: str, tools_html: str | None = None) -> str:
     title = meta["title"]
     h1 = meta.get("h1", title)
@@ -219,6 +247,8 @@ def render(meta: dict, body: str, tools_html: str | None = None) -> str:
         read=meta["read"],
         h1=h1,
         dek=desc,
+        crumbs_nav=breadcrumbs(h1, meta["slug"])[0],
+        crumbs_ld=breadcrumbs(h1, meta["slug"])[1],
     )
     if tools_html is None:
         return head + body + TAIL_NO_TOOLS

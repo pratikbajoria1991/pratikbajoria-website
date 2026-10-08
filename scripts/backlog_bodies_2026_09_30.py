@@ -117,7 +117,7 @@ DAILY["2026-09-28-whatsapp-automation-that-still-feels-like-customer-care"] = f"
     "Record opt-in and move documents into your approved system.",
     "Review a sample of real conversations weekly, not just response-time charts.",
 ])}
-{sources([("WhatsApp Business Messaging Policy (Meta)", "https://business.whatsapp.com/policy"), DPDP, NIST])}
+{sources([("WhatsApp Business Messaging Policy (Meta)", "https://whatsappbusiness.com/policy/"), DPDP, NIST])}
 <p>Educational content only — not legal advice. Check current platform policies and your data-protection obligations before deploying messaging automation.</p>
 """
 

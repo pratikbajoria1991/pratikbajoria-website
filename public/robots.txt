@@ -6,6 +6,13 @@ User-agent: *
 Content-Signal: search=yes,ai-input=yes,ai-train=no
 Allow: /
 
+# Explicit allow for search engine crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 # Explicit allow for major AI retrieval / citation crawlers
 User-agent: GPTBot
 Allow: /

@@ -22,7 +22,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" /></noscript>
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/styles-overrides.css" />
     <link rel="stylesheet" href="/monetize-pages.css" />
@@ -99,6 +100,26 @@
 }
     </script>
       <script src="/ga4.js" defer></script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://pratikbajoria.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Resources",
+      "item": "https://pratikbajoria.com/resources"
+    }
+  ]
+}
+    </script>
 </head>
   <body>
     <header class="site-header">
@@ -114,6 +135,7 @@
       </nav>
       <a class="nav-cta" href="/#contact">Book a call <span>↗</span></a>
     </header>
+    <nav class="breadcrumbs shell" aria-label="Breadcrumb" style="font-size:12px;line-height:1.5;color:#5f645e;margin:18px 0 0"><ol style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:baseline"><li><a href="/" style="border-bottom:1px solid rgba(31,37,35,.25)">Home</a></li><li><span aria-hidden="true" style="margin:0 8px;color:#a3a69e">/</span><span aria-current="page">Resources</span></li></ol></nav>
 
     <main>
       <section class="page-hero shell">

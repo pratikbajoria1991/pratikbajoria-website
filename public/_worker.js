@@ -222,6 +222,15 @@ const blogAliasFor = (pathname) => {
   return blogPathAliases[p] || null;
 };
 
+// Clean URL form used in the sitemap and canonicals: no trailing slash, no .html, no index.html.
+// Search-engine verification files keep their .html name.
+const cleanPathname = (pathname) => {
+  if (pathname === '/' || /^\/(api|cdn-cgi|\.well-known)\//.test(pathname) || /^\/(google[a-z0-9]+|yandex_[a-z0-9]+)\.html$/i.test(pathname)) return pathname;
+  let p = pathname.replace(/\/index\.html$/i, '/').replace(/\.html$/i, '');
+  if (p.length > 1) p = p.replace(/\/+$/, '');
+  return p || '/';
+};
+
 const absoluteRedirect = (requestUrl, pathname) => {
   const target = new URL(pathname, requestUrl);
   return new Response(null, {
@@ -312,6 +321,38 @@ function splitParagraphs(content) {
   return out;
 }
 
+// Visible breadcrumb trail (same markup as the static pages); last item is the current page.
+function breadcrumbNav(items) {
+  const sep = '<span aria-hidden="true" style="margin:0 8px;color:#a3a69e">/</span>';
+  const lis = items.map(([name, href], i) => {
+    const label = escHtml(name);
+    const inner = href ? `<a href="${escHtml(href)}" style="border-bottom:1px solid rgba(31,37,35,.25)">${label}</a>` : `<span aria-current="page">${label}</span>`;
+    return `<li>${i ? sep : ''}${inner}</li>`;
+  }).join('');
+  return `<nav class="breadcrumbs" aria-label="Breadcrumb" style="font-size:12px;line-height:1.5;color:#5f645e;margin:18px 0 0"><ol style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:baseline">${lis}</ol></nav>`;
+}
+
+// /blog index: JSON-only posts (e.g. daily posts with no static card yet) get a server-rendered
+// card so every post is linked from crawlable HTML (no orphans, no JS needed).
+function injectMissingBlogCards(html, posts) {
+  const marker = '<div id="blog-index-list">';
+  if (!html.includes(marker)) return html;
+  const seen = new Set();
+  const missing = posts
+    .filter((p) => p && p.slug && isBlogSlug(p.slug) && !blogPathAliases[`/blog/${p.slug}`])
+    .filter((p) => { if (seen.has(p.slug)) return false; seen.add(p.slug); return true; })
+    .filter((p) => !html.includes(`href="/blog/${p.slug}"`))
+    .sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
+  if (!missing.length) return html;
+  const cards = missing.map((p) => `
+      <article class="blog-index-card" style="padding:20px 0;border-bottom:1px solid rgba(28,28,26,0.08)">
+        <p class="eyebrow">${escHtml(p.category || 'AI implementation')} · ${escHtml(p.date || '')}</p>
+        <h2 style="font-size:1.35rem;margin:6px 0 8px"><a href="/blog/${escHtml(p.slug)}">${escHtml(p.title || p.slug)}</a></h2>
+        <p style="color:#6f746d;max-width:720px">${escHtml(p.excerpt || '')}</p>
+      </article>`).join('');
+  return html.replace(marker, marker + cards);
+}
+
 function renderPostHtml(post, catalog) {
   const slug = post.slug;
   const canonical = `${SITE}/blog/${slug}`;
@@ -352,6 +393,16 @@ function renderPostHtml(post, catalog) {
     keywords: Array.isArray(post.keywords) ? post.keywords : []
   };
   const ldJson = JSON.stringify(ld, null, 2).replace(/</g, '\\u003c');
+  const crumbs = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog` },
+      { '@type': 'ListItem', position: 3, name: title, item: canonical }
+    ]
+  };
+  const crumbsJson = JSON.stringify(crumbs, null, 2).replace(/</g, '\\u003c');
   return `<!doctype html>
 <html lang="en-IN">
   <head>
@@ -380,6 +431,9 @@ function renderPostHtml(post, catalog) {
     <script type="application/ld+json">
 ${ldJson}
     </script>
+    <script type="application/ld+json">
+${crumbsJson}
+    </script>
     <script src="/ga4.js" defer></script>
   </head>
   <body data-static-article="1" data-slug="${escHtml(slug)}">
@@ -392,6 +446,7 @@ ${ldJson}
           <a class="text-link" href="/#insights">Home insights ↗</a>
         </div>
       </header>
+      ${breadcrumbNav([['Home', '/'], ['Blog', '/blog'], [title, null]])}
       <article id="article">
         <p class="eyebrow">${escHtml(post.category || 'AI implementation')} · ${escHtml(post.date || '')} · ${escHtml(post.readTime || 6)} min read</p>
         <h1>${escHtml(title)}</h1>
@@ -556,11 +611,17 @@ async function serveBlogAsset(request, env, slug) {
   const shellUrl = new URL(request.url);
   shellUrl.pathname = '/blog';
   shellUrl.search = '';
-  return injectGa4(await env.ASSETS.fetch(new Request(shellUrl.toString(), {
+  const shell = await env.ASSETS.fetch(new Request(shellUrl.toString(), {
     method: request.method,
     headers: assetHeaders,
     redirect: 'manual'
-  })));
+  }));
+  if (request.method !== 'GET' || shell.status !== 200 || !(shell.headers.get('content-type') || '').includes('text/html')) return injectGa4(shell);
+  const html = injectMissingBlogCards(await shell.text(), await loadAllPosts(request, env));
+  const h = new Headers(shell.headers);
+  h.delete('content-length');
+  h.delete('etag');
+  return injectGa4(new Response(html, { status: 200, statusText: shell.statusText, headers: h }));
 }
 
 export default {
@@ -655,6 +716,13 @@ export default {
     };
     if (isRead && htmlAliases[url.pathname]) {
       return absoluteRedirect(url, htmlAliases[url.pathname]);
+    }
+
+    // Every other /path/, /path.html and /path/index.html: one absolute 301 to the clean URL
+    // (Pages would otherwise answer 308 with a relative Location, which GSC flags).
+    if (isRead) {
+      const clean = cleanPathname(url.pathname);
+      if (clean !== url.pathname) return absoluteRedirect(url, `${blogAliasFor(clean) || clean}${url.search}`);
     }
 
     if (request.method === 'GET' && url.pathname === '/sitemap.xml') {

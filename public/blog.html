@@ -19,6 +19,26 @@
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/styles-overrides.css?v=20260910" />
       <script src="/ga4.js" defer></script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://pratikbajoria.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://pratikbajoria.com/blog"
+    }
+  ]
+}
+    </script>
 </head>
   <body>
     <main class="shell article-page">
@@ -29,6 +49,7 @@
           <a class="text-link" href="/#insights">Home insights ↗</a>
         </div>
       </header>
+      <nav class="breadcrumbs" aria-label="Breadcrumb" style="font-size:12px;line-height:1.5;color:#5f645e;margin:18px 0 0"><ol style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:baseline"><li><a href="/" style="border-bottom:1px solid rgba(31,37,35,.25)">Home</a></li><li><span aria-hidden="true" style="margin:0 8px;color:#a3a69e">/</span><span aria-current="page">Blog</span></li></ol></nav>
       <section>
         <p class="eyebrow">Editorial</p>
         <h1>Insights</h1>
@@ -223,11 +244,6 @@
         <p class="eyebrow">AI adoption · 2026-02-18</p>
         <h2 style="font-size:1.35rem;margin:6px 0 8px"><a href="/blog/corporate-ai-pilots">Why Most Corporate AI Pilots Never Reach Production</a></h2>
         <p style="color:#6f746d;max-width:720px">The failure is almost never technical. It is scoping, ownership and change management — and there is a repeatable pattern to avoiding all three.</p>
-      </article>
-      <article class="blog-index-card" style="padding:20px 0;border-bottom:1px solid rgba(28,28,26,0.08)">
-        <p class="eyebrow">AI strategy · 2026-01-28</p>
-        <h2 style="font-size:1.35rem;margin:6px 0 8px"><a href="/blog/build-vs-buy-ai-tooling">Build vs Buy: A Decision Framework for AI Tooling</a></h2>
-        <p style="color:#6f746d;max-width:720px">When to license a vendor, when to build in-house, and the hidden switching costs most leadership teams discover far too late.</p>
       </article>
         </div>
         <article id="article" hidden aria-live="polite"></article>

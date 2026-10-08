@@ -6,11 +6,15 @@
   "scripts": {
     "build": "echo 'Build complete - static site ready for deployment'",
     "dev": "echo 'Development mode not configured - use static files directly'",
-    "test": "echo 'No tests configured'"
+    "test": "echo 'No tests configured'",
+    "seo:audit": "node scripts/seo-audit.mjs"
   },
-  "keywords": ["blog", "affiliate", "cloudflare"],
+  "keywords": [
+    "blog",
+    "affiliate",
+    "cloudflare"
+  ],
   "author": "Pratik Bajoria",
   "license": "MIT",
   "devDependencies": {}
 }
-

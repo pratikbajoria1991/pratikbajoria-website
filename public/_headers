@@ -37,3 +37,23 @@
 /blog/*
   Cache-Control: public, max-age=300, must-revalidate
 
+/images/*
+  Cache-Control: public, max-age=2592000
+
+/crossborder/assets/*
+  Cache-Control: public, max-age=604800
+
+/blog.js
+  Cache-Control: public, max-age=86400
+
+/ga4.js
+  Cache-Control: public, max-age=86400
+
+/scorecard.js
+  Cache-Control: public, max-age=86400
+
+/cross-border.js
+  Cache-Control: public, max-age=86400
+
+/monetize-pages.css
+  Cache-Control: public, max-age=86400

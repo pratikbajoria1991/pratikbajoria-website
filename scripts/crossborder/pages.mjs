@@ -95,7 +95,7 @@ add({
   path: '/',
   title: 'Cross-border Deals & Partnerships by Pratik Bajoria | India and the world',
   ogTitle: 'Cross-border Deals & Partnerships by Pratik Bajoria',
-  description: 'Cross-border deals between India and the world. Overseas companies: find a deployable partner in India. Indian businesses: win clients and buyers abroad. Vetted introductions by Pratik Bajoria, Chartered Accountant.',
+  description: 'Cross-border deals for India: find a deployable partner in India, or win clients and buyers abroad. Vetted introductions by a Chartered Accountant.',
   priority: '1.0',
   body: `      <section class="hero shell home fork-hero">
         <p class="eyebrow kicker"><span class="dot" aria-hidden="true"></span>India and the world · Vetted introductions · CA-led</p>
@@ -139,7 +139,7 @@ add({
   path: BUYER_PATH,
   title: 'Find a Deployable Partner in India: tech teams, manufacturers, exporters',
   ogTitle: 'Find a deployable partner in India',
-  description: 'For overseas companies: introductions to vetted Indian software agencies, manufacturers and exporters that can actually deliver. What you can find, how partners are vetted, the four steps and an enquiry form.',
+  description: 'For overseas companies: vetted Indian software agencies, manufacturers and exporters that can deliver. How vetting works, the four steps and how to enquire.',
   priority: '0.9',
   crumbs: [{ name: 'Find a Partner in India', path: BUYER_PATH }],
   noCta: true,
@@ -211,7 +211,7 @@ add({
 add({
   path: '/buyers/hire-indian-tech-teams',
   title: 'Hire Indian Tech Teams: vetted software agencies',
-  description: 'Introductions to vetted Indian software agencies for web, mobile, AI and regulated-industry builds (healthcare, fintech). Shortlisted against your brief and checked before you meet them.',
+  description: 'Vetted Indian software agencies for web, mobile, AI and regulated builds such as healthcare and fintech, shortlisted against your brief before you meet them.',
   crumbs: [{ name: 'Find a Partner in India', path: BUYER_PATH }, { name: 'Hire Indian Tech Teams', path: '/buyers/hire-indian-tech-teams' }],
   body: `${hero({
     eyebrow: 'For overseas buyers · Software',
@@ -288,7 +288,7 @@ add({
 add({
   path: '/buyers/how-we-vet-partners',
   title: 'How We Vet Partners: what I check before an introduction',
-  description: 'How Indian partners are checked before an introduction: track record, reviews, certifications, export history and references, plus registration basics. What vetting is, and what it is not.',
+  description: 'How Indian partners are checked before an introduction: track record, reviews, certifications, export history and references, and what vetting is not.',
   crumbs: [{ name: 'Find a Partner in India', path: BUYER_PATH }, { name: 'How We Vet Partners', path: '/buyers/how-we-vet-partners' }],
   body: `${hero({
     eyebrow: 'For overseas buyers · Diligence',
@@ -323,7 +323,7 @@ add({
   path: SELLER_PATH,
   title: 'Win Clients and Buyers Abroad: for Indian agencies, manufacturers and exporters',
   ogTitle: 'Win clients and buyers abroad',
-  description: 'For Indian IT and software agencies, manufacturers and exporters: introductions to qualified overseas clients, importers and distributors. Who it is for, how introductions work, partner terms, sectors and an application form.',
+  description: 'For Indian software agencies, manufacturers and exporters: introductions to qualified overseas clients, importers and distributors. Terms and how to apply.',
   priority: '0.9',
   crumbs: [{ name: 'Win Clients Abroad', path: SELLER_PATH }],
   noCta: true,
@@ -432,7 +432,7 @@ add({
 add({
   path: '/indian-businesses/manufacturers-exporters',
   title: 'Manufacturers & Exporters: qualified overseas buyers',
-  description: 'For Indian manufacturers and exporters: introductions to qualified overseas importers and distributors in the US, UK/EU, Gulf and South-East Asia, with genuine requirements and volumes that suit your capacity.',
+  description: 'For Indian manufacturers and exporters: qualified importers and distributors in the US, UK/EU, Gulf and South-East Asia, with volumes that suit your capacity.',
   crumbs: [{ name: 'Win Clients Abroad', path: SELLER_PATH }, { name: 'Manufacturers & Exporters', path: '/indian-businesses/manufacturers-exporters' }],
   body: `${hero({
     eyebrow: 'For Indian businesses · Goods',
@@ -462,7 +462,7 @@ add({
 add({
   path: '/indian-businesses/partner-terms',
   title: 'Partner Terms: how fees and introductions work',
-  description: 'Partner terms for cross-border introductions: fees agreed per deal, paid only on a closed deal; no retainer; existing customers excluded; a short written agreement signed before any introduction.',
+  description: 'Partner terms for cross-border introductions: fees agreed per deal, paid only on a closed deal, no retainer, existing customers excluded, written agreement first.',
   crumbs: [{ name: 'Win Clients Abroad', path: SELLER_PATH }, { name: 'Partner Terms', path: '/indian-businesses/partner-terms' }],
   body: `${hero({
     eyebrow: 'For Indian businesses · Terms',
@@ -490,7 +490,7 @@ add({
 add({
   path: '/sectors',
   title: 'Sectors: software, spices, textiles, engineering, chemicals',
-  description: 'The five sectors covered by Cross-border Deals & Partnerships: software and AI development, spices and agri-food, home textiles, engineering components and specialty chemicals.',
+  description: 'Five sectors for cross-border introductions: software and AI development, spices and agri-food, home textiles, engineering components and specialty chemicals.',
   crumbs: [{ name: 'Sectors', path: '/sectors' }],
   body: `${hero({
     eyebrow: 'Sectors',
@@ -546,7 +546,7 @@ sectorPage({
 sectorPage({
   slug: 'spices-agri-food', name: 'Spices &amp; Agri-food',
   title: 'Spices & Agri-food: sourcing from Indian exporters',
-  description: 'Spices and agri-food sourcing from vetted Indian exporters: what importers usually need (specifications, food-safety compliance, certifications, traceability) and how introductions work.',
+  description: 'Spices and agri-food from vetted Indian exporters: the specifications, food-safety compliance, certifications and traceability importers need, and how it works.',
   h1: 'Spices &amp; agri-food, <em>to specification.</em>',
   lede: 'From whole and ground spices to blends and processed or organic foods, buyers need consistent quality that meets their market’s food-safety rules. I introduce importers to exporters who can document it.',
   needs: ['Consistent specifications: grade, moisture, colour, purity and cleanliness', 'Compliance with destination food-safety rules, including pesticide-residue limits', 'Recognised certifications where required (for example organic certification or ISO 22000 food-safety management)', 'Lab reports or certificates of analysis per lot, and traceability', 'Packaging, labelling and private-label options; dependable lead times'],
@@ -558,7 +558,7 @@ sectorPage({
 sectorPage({
   slug: 'home-textiles', name: 'Home Textiles',
   title: 'Home Textiles: sourcing from Indian manufacturers',
-  description: 'Home textiles sourcing from vetted Indian manufacturers: bed, bath, kitchen and furnishing textiles. What buyers usually need (specifications, certifications, social compliance, private label) and how introductions work.',
+  description: 'Home textiles from vetted Indian manufacturers: bed, bath, kitchen and furnishings, with the certifications, social compliance and private label buyers need.',
   h1: 'Home textiles, <em>made to your standard.</em>',
   lede: 'Bed and bath linen, towels, kitchen textiles, curtains, cushions and rugs: buyers need the right fabric, finish and compliance paperwork, at volumes the mill can actually deliver.',
   needs: ['Fabric specifications: fibre, construction, GSM or thread count, finishes', 'Product certifications where required (for example OEKO-TEX, or GOTS for organic claims)', 'Social-compliance audits that retailers ask for', 'Private label, packaging and labelling for the destination market', 'Realistic minimum order quantities and lead times'],
@@ -570,7 +570,7 @@ sectorPage({
 sectorPage({
   slug: 'engineering-components', name: 'Engineering Components',
   title: 'Engineering Components: castings, forgings and machined parts from India',
-  description: 'Engineering components from vetted Indian manufacturers: castings, forgings, machined and fabricated parts. What buyers usually need (drawings, tolerances, material certificates, quality systems) and how introductions work.',
+  description: 'Engineering components from vetted Indian manufacturers: castings, forgings, machined and fabricated parts, with the tolerances and certificates buyers need.',
   h1: 'Engineering components, <em>to drawing.</em>',
   lede: 'Castings, forgings, machined, fabricated and assembled parts: buyers need suppliers who can hold tolerances, document materials and scale from samples to production.',
   needs: ['Parts made to drawing, with tolerances and finishes held consistently', 'Material test certificates and inspection reports', 'Quality systems such as ISO 9001, and sector standards where required (for example IATF 16949 for automotive)', 'First-article or sample approval before production', 'Protective packaging, export documentation and dependable lead times'],
@@ -582,7 +582,7 @@ sectorPage({
 sectorPage({
   slug: 'specialty-chemicals', name: 'Specialty Chemicals',
   title: 'Specialty Chemicals: sourcing from Indian manufacturers',
-  description: 'Specialty chemicals from vetted Indian manufacturers: intermediates, additives, dyes, pigments and performance chemicals. What buyers usually need (specifications, COAs, SDS, regulatory documentation) and how introductions work.',
+  description: 'Specialty chemicals from vetted Indian manufacturers: intermediates, additives, dyes and pigments, with the COAs, SDS and regulatory documents buyers need.',
   h1: 'Specialty chemicals, <em>with the paperwork.</em>',
   lede: 'Intermediates, additives, dyes, pigments and performance chemicals: buyers need consistent batches and complete regulatory documentation for their market, from suppliers who can show both.',
   needs: ['Specifications and a certificate of analysis for each batch', 'Safety data sheets and correct labelling', 'Regulatory documentation for the destination market (for example REACH in the EU or TSCA in the US)', 'Batch-to-batch consistency and change notification', 'Packaging and dangerous-goods handling suited to the product'],
@@ -604,7 +604,7 @@ export const FAQ = [
 add({
   path: '/how-it-works',
   title: 'How It Works: from brief to introduction in four steps',
-  description: 'How cross-border introductions work: tell us your need or capacity, shortlist and vet, introduction under a signed agreement, fees agreed per deal and paid only on a closed deal. Confidentiality, non-circumvention and FAQ.',
+  description: 'How cross-border introductions work: share your need or capacity, we shortlist and vet, introduce under a signed agreement, and fees are paid only on a closed deal.',
   crumbs: [{ name: 'How It Works', path: '/how-it-works' }],
   faq: FAQ,
   body: `${hero({
@@ -638,7 +638,7 @@ add({
 add({
   path: '/about',
   title: 'About Pratik Bajoria: Chartered Accountant, ex-Big 4, founder',
-  description: 'About Pratik Bajoria: Chartered Accountant, ex-Big 4, founder of Findost and AI implementation consultant, making selective cross-border introductions between India and the world.',
+  description: 'About Pratik Bajoria: Chartered Accountant, ex-Big 4, Findost founder and AI implementation consultant, making selective cross-border introductions for India.',
   crumbs: [{ name: 'About', path: '/about' }],
   body: `${hero({
     eyebrow: 'About',
@@ -717,7 +717,7 @@ function insightsPage() {
   return {
     path: '/insights',
     title: 'Insights: India trade notes and trade-fair calendar',
-    description: 'Short, sourced trade notes for India cross-border deals: the UK–India trade agreement in force since 15 July 2026, the planned EU–India agreement, and a trade-fair calendar for October 2026 to March 2027.',
+    description: 'Sourced trade notes for India cross-border deals: the UK–India trade agreement in force since 15 July 2026, the planned EU–India deal and a trade-fair calendar.',
     crumbs: [{ name: 'Insights', path: '/insights' }],
     body: `${hero({
       eyebrow: 'Insights · Sourced trade notes',
