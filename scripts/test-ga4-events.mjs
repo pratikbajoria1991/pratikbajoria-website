@@ -66,6 +66,22 @@ await check('robots.txt disallows /api/ in every user-agent group', () => {
   for (const g of groups) assert.ok(/\nDisallow: \/api\/\n/.test(`${g}\n`), `group without Disallow: /api/ -> ${g.split('\n')[0]}`);
 });
 
+await check('no blog post links to itself or to a redirected URL', async () => {
+  const w = readFileSync(join(pub, '_worker.js'), 'utf8');
+  const aliased = new Set([...w.matchAll(/^\s*'(\/blog\/[^']+)': '\/blog\//gm)].map((m) => m[1]));
+  const bad = [];
+  for (const f of walk(pub).filter((x) => x.endsWith('.html') && !x.includes(`${join('public', 'crossborder')}`) && !x.endsWith('cross-border-partnerships.html'))) {
+    const html = readFileSync(f, 'utf8');
+    const own = f.includes(`${join('public', 'blog')}`) ? `/blog/${f.split(/[\\/]/).pop().replace(/\.html$/, '')}` : null;
+    for (const [, href] of html.matchAll(/<a\b[^>]*?href="([^"#]+)/g)) {
+      const p = href.replace(/^https:\/\/pratikbajoria\.com/, '').replace(/\/$/, '') || '/';
+      if (own && p === own) bad.push(`${f}: self-link ${href}`);
+      if (aliased.has(p) || p === '/cross-border-partnerships' || /^\/blog\/.+\.html$/.test(p) || p === '/blog.html' || p === '/insights') bad.push(`${f}: redirected ${href}`);
+    }
+  }
+  assert.equal(bad.length, 0, bad.slice(0, 8).join('\n'));
+});
+
 // Worker behaviour with a stub ASSETS binding.
 const worker = (await import(pathToFileURL(join(pub, '_worker.js')).href)).default;
 const env = {
