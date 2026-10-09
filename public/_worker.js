@@ -6,14 +6,14 @@ const isBlogSlug = (value) => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value);
 const INTERNAL_ASSET_HEADER = 'x-pages-internal-asset';
 const LEAD_INTERESTS = new Set(['cross-border-buyer', 'cross-border-seller']);
 
-const GA4_SNIPPET = '<script src="/ga4.js?v=20261009-lcp" defer></script>\n';
+const GA4_SNIPPET = '<script src="/ga4.js?v=20261009-ev" defer></script>\n';
 async function injectGa4(response) {
   const ctype = response.headers.get('content-type') || '';
   if (response.status !== 200 || !ctype.includes('text/html')) return response;
   const text = rewriteMainCrossborderLinks(await response.text());
   const headers = new Headers(response.headers);
   headers.delete('content-length');
-  if (text.includes('/ga4.js?v=20261009-lcp') || text.includes('G-CXQP7F8CRT')) {
+  if (text.includes('/ga4.js') || text.includes('G-CXQP7F8CRT')) {
     return new Response(text, { status: response.status, statusText: response.statusText, headers });
   }
   const out = text.includes('</head>')
@@ -49,7 +49,7 @@ const XB_DIR = '/crossborder';
 const XB_OLD_PAGE = '/cross-border-partnerships';
 // Root files the subdomain shares with the main site (incl. the IndexNow key file, which
 // IndexNow requires on every host whose URLs are submitted).
-const XB_SHARED_ROOT_ASSETS = new Set(['/favicon.ico', '/favicon.png', '/ga4.js?v=20261009-lcp', '/d5d19724f0e88d56c47096f6decf1880.txt']);
+const XB_SHARED_ROOT_ASSETS = new Set(['/favicon.ico', '/favicon.png', '/ga4.js', '/d5d19724f0e88d56c47096f6decf1880.txt']);
 // Retired cross-border URLs -> their replacements (301 on the subdomain and on the /crossborder/ preview).
 const XB_REDIRECTS = {
   '/buyers': '/find-a-partner-in-india',
@@ -134,6 +134,7 @@ function xbRobots(request) {
 User-agent: *
 Content-Signal: search=yes,ai-input=yes,ai-train=no
 Allow: /
+Disallow: /api/
 
 Sitemap: ${XB_ORIGIN}/sitemap.xml
 `;
@@ -476,7 +477,7 @@ ${ldJson}
     <script type="application/ld+json">
 ${crumbsJson}
     </script>${structured ? faqJsonLd(post, canonical) : ''}
-    <script src="/ga4.js?v=20261009-lcp" defer></script>
+    <script src="/ga4.js?v=20261009-ev" defer></script>
   </head>
   <body data-static-article="1" data-slug="${escHtml(slug)}">
     <main class="shell article-page">
@@ -666,14 +667,32 @@ async function serveBlogAsset(request, env, slug) {
   return injectGa4(new Response(html, { status: 200, statusText: shell.statusText, headers: h }));
 }
 
+// Every /api/* response (both hosts) carries X-Robots-Tag: noindex; robots.txt also disallows /api/.
+const API_POST_ONLY = new Set(['/api/discovery', '/api/subscribe']);
+async function handleApi(request, env, url) {
+  if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers });
+  if (request.method === 'POST' && url.pathname === '/api/discovery') return handleDiscovery(request, env);
+  if (request.method === 'POST' && url.pathname === '/api/subscribe') return handleSubscribe(request, env);
+  if (request.method === 'GET' && url.pathname === '/api/leads') return handleLeads(request, env);
+  if (API_POST_ONLY.has(url.pathname)) {
+    const r = json({ ok: false, error: 'Method not allowed.' }, 405);
+    r.headers.set('Allow', 'POST, OPTIONS');
+    return request.method === 'HEAD' ? new Response(null, r) : r;
+  }
+  const r = json({ ok: false, error: 'Not found.' }, 404);
+  return request.method === 'HEAD' ? new Response(null, r) : r;
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (request.headers.get(INTERNAL_ASSET_HEADER) === '1') return env.ASSETS.fetch(request);
-    if (request.method === 'OPTIONS' && url.pathname.startsWith('/api/')) return new Response(null, { status: 204, headers });
-    if (request.method === 'POST' && url.pathname === '/api/discovery') return handleDiscovery(request, env);
-    if (request.method === 'POST' && url.pathname === '/api/subscribe') return handleSubscribe(request, env);
-    if (request.method === 'GET' && url.pathname === '/api/leads') return handleLeads(request, env);
+    if (url.pathname === '/api' || url.pathname.startsWith('/api/')) {
+      const r = await handleApi(request, env, url);
+      const out = new Response(r.body, r);
+      out.headers.set('X-Robots-Tag', 'noindex, nofollow');
+      return out;
+    }
 
     // Cross-border subdomain (API routes above work on both hosts).
     if (requestHost(request, url) === XB_HOST) return serveCrossborder(request, env, url, 'subdomain');

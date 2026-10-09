@@ -1,7 +1,7 @@
 // Shared header, footer, <head> and helpers for the cross-border site.
-import { CONTACT_EMAIL, ORIGIN, MAIN_SITE, WHATSAPP_NUMBER, WHATSAPP_DISPLAY, LINKEDIN, BRAND, BRAND_SHORT, BUYER_PATH, SELLER_PATH } from './config.mjs';
+import { CONTACT_EMAIL, GOOGLE_SITE_VERIFICATION, ORIGIN, MAIN_SITE, WHATSAPP_NUMBER, WHATSAPP_DISPLAY, LINKEDIN, BRAND, BRAND_SHORT, BUYER_PATH, SELLER_PATH } from './config.mjs';
 
-const ASSET_VERSION = '20261005';
+const ASSET_VERSION = '20261009';
 
 export const esc = (s) => String(s ?? '')
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -178,7 +178,7 @@ export function renderPage(page, nav) {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f4f0e8" />
     <meta name="robots" content="${robots}" />
-    <meta name="author" content="Pratik Bajoria" />
+    <meta name="author" content="Pratik Bajoria" />${GOOGLE_SITE_VERIFICATION ? `\n    <meta name="google-site-verification" content="${esc(GOOGLE_SITE_VERIFICATION)}" />` : ''}
     <title>${esc(fullTitle)}</title>
     <meta name="description" content="${esc(page.description)}" />
     ${page.noindex ? '' : `<link rel="canonical" href="${canonical}" />\n    `}<meta property="og:type" content="website" />
@@ -203,7 +203,7 @@ export function renderPage(page, nav) {
     <script type="application/ld+json">
 ${ld}
     </script>
-    <script src="/ga4.js?v=20261009-lcp" defer></script>
+    <script src="/ga4.js?v=20261009-ev" defer></script>
   </head>
   <body data-page="${esc(page.path)}">
     ${header(nav, page.path)}

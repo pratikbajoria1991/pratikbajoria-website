@@ -6,7 +6,7 @@
   "scripts": {
     "build": "echo 'Build complete - static site ready for deployment'",
     "dev": "echo 'Development mode not configured - use static files directly'",
-    "test": "node scripts/test-content-similarity.mjs",
+    "test": "node scripts/test-content-similarity.mjs && node --no-warnings scripts/test-ga4-events.mjs",
     "seo:audit": "node scripts/seo-audit.mjs",
     "blog:validate": "node scripts/generate-daily-blog.js --validate",
     "blog:dry-run": "node scripts/generate-daily-blog.js --dry-run"

@@ -118,9 +118,7 @@
         });
         saved = response.ok;
       } catch { saved = false; }
-      if (typeof window.gtag === 'function') {
-        try { window.gtag('event', 'generate_lead', { lead_type: interest, saved }); } catch { /* ignore */ }
-      }
+      // GA4: crossborder_enquiry is sent by /ga4.js when /api/discovery answers 201 (stored).
       const summary = `${c.wa} I’m ${get('name')} from ${get('company')} (${get('country')}). Area: ${get('lane')}. ${get('challenge')}`;
       const success = document.createElement('div');
       success.className = 'form-success';

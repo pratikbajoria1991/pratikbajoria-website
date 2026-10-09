@@ -6,6 +6,12 @@
 // footer, in the form success state and in the JSON-LD (one switch, everywhere).
 export const CONTACT_EMAIL = 'hello@pratikbajoria.com';
 
+// GOOGLE_SITE_VERIFICATION: Search Console HTML-tag verification for the URL-prefix property
+// https://crossborder.pratikbajoria.com/. Paste only the content="..." token from the tag GSC shows
+// (e.g. 'AbC123...'), rebuild, push to main, then click Verify in GSC. Leave the tag in place afterwards.
+// null = no tag emitted.
+export const GOOGLE_SITE_VERIFICATION = null;
+
 export const ORIGIN = 'https://crossborder.pratikbajoria.com';
 export const MAIN_SITE = 'https://pratikbajoria.com';
 export const WHATSAPP_NUMBER = '919804182483';
