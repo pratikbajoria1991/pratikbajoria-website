@@ -6,14 +6,14 @@ const isBlogSlug = (value) => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value);
 const INTERNAL_ASSET_HEADER = 'x-pages-internal-asset';
 const LEAD_INTERESTS = new Set(['cross-border-buyer', 'cross-border-seller']);
 
-const GA4_SNIPPET = '<script src="/ga4.js" defer></script>\n';
+const GA4_SNIPPET = '<script src="/ga4.js?v=20261009-lcp" defer></script>\n';
 async function injectGa4(response) {
   const ctype = response.headers.get('content-type') || '';
   if (response.status !== 200 || !ctype.includes('text/html')) return response;
   const text = rewriteMainCrossborderLinks(await response.text());
   const headers = new Headers(response.headers);
   headers.delete('content-length');
-  if (text.includes('/ga4.js') || text.includes('G-CXQP7F8CRT')) {
+  if (text.includes('/ga4.js?v=20261009-lcp') || text.includes('G-CXQP7F8CRT')) {
     return new Response(text, { status: response.status, statusText: response.statusText, headers });
   }
   const out = text.includes('</head>')
@@ -49,7 +49,7 @@ const XB_DIR = '/crossborder';
 const XB_OLD_PAGE = '/cross-border-partnerships';
 // Root files the subdomain shares with the main site (incl. the IndexNow key file, which
 // IndexNow requires on every host whose URLs are submitted).
-const XB_SHARED_ROOT_ASSETS = new Set(['/favicon.ico', '/favicon.png', '/ga4.js', '/d5d19724f0e88d56c47096f6decf1880.txt']);
+const XB_SHARED_ROOT_ASSETS = new Set(['/favicon.ico', '/favicon.png', '/ga4.js?v=20261009-lcp', '/d5d19724f0e88d56c47096f6decf1880.txt']);
 // Retired cross-border URLs -> their replacements (301 on the subdomain and on the /crossborder/ preview).
 const XB_REDIRECTS = {
   '/buyers': '/find-a-partner-in-india',
@@ -476,7 +476,7 @@ ${ldJson}
     <script type="application/ld+json">
 ${crumbsJson}
     </script>${structured ? faqJsonLd(post, canonical) : ''}
-    <script src="/ga4.js" defer></script>
+    <script src="/ga4.js?v=20261009-lcp" defer></script>
   </head>
   <body data-static-article="1" data-slug="${escHtml(slug)}">
     <main class="shell article-page">
