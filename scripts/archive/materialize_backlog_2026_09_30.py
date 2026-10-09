@@ -3,13 +3,19 @@
 blog-posts.json (soft-404 fix), publish two CA + AI India editorial posts, and update
 sitemap, blog index, topics, hub and llms.txt. Idempotent."""
 from __future__ import annotations
+import os as _os, sys as _sys
+if _os.environ.get("ALLOW_ARCHIVED_SCRIPT") != "1":
+    _sys.exit("Archived one-off script (already applied). Re-running would overwrite newer rewrites and could "
+             "recreate posts retired on 7 Oct 2026 (see scripts/archive/README.md). Set ALLOW_ARCHIVED_SCRIPT=1 "
+             "only if you really mean it; retired slugs are skipped regardless.")
 import json
 import re
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
+sys.path.insert(0, str(ROOT / "scripts" / "archive"))
 import _blog_helpers as H  # noqa: E402
 
 TODAY = "2026-09-30"
@@ -53,6 +59,15 @@ def upsert_sitemap(urls):
     SITEMAP.write_text(text)
 
 
+def _retired_slugs():
+    import json as _json
+    p = Path(__file__).resolve().parents[1] / "blog-retired-topics.json"
+    try:
+        return {r["slug"] for r in _json.loads(p.read_text()).get("retired", [])}
+    except FileNotFoundError:
+        return set()
+
+
 def main():
     posts = json.loads(POSTS_PATH.read_text())
     by_slug = {p["slug"]: p for p in posts}
@@ -60,7 +75,11 @@ def main():
     done = []
 
     # 1) Daily posts missing SSR pages
+    retired = _retired_slugs()
     for slug, body in DAILY.items():
+        if slug in retired:
+            print(f"Skip retired slug {slug} (301s to its survivor)")
+            continue
         p = by_slug[slug]
         read = max(5, round(wcount(body) / 200))
         meta = {"title": p["title"], "description": p["excerpt"], "published": p["date"], "slug": slug,

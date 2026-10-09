@@ -5,48 +5,51 @@ permissions:
 
 on:
   schedule:
-    # Run every day at 08:00 UTC (13:30 IST)
-    - cron: '0 8 * * *'
+    # Mon–Fri 08:00 UTC (13:30 IST) — weekday cadence to keep quality high
+    - cron: '0 8 * * 1-5'
+    # Backup Mon–Fri 11:45 UTC (17:15 IST): GitHub often skips or delays scheduled runs.
+    # The generator publishes at most one topic-bank post per IST date, so this is a no-op
+    # when the 13:30 run already published.
+    - cron: '45 11 * * 1-5'
   workflow_dispatch:
+
+concurrency:
+  group: daily-blog-update
+  cancel-in-progress: false
 
 jobs:
   update-blog:
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-      
+
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
-      
-      - name: Generate daily AI implementation article
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          node-version: '20'
+
+      - name: Generate daily article from the sourced topic bank
         run: node scripts/generate-daily-blog.js
-      
+
+      - name: Test (topic validation + content similarity)
+        run: npm test
+
       - name: Commit and push changes
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "Blog Update Bot"
-          git add public/blog-posts.json
-          git commit -m "Daily blog post update - $(date +%Y-%m-%d)" || echo "No changes to commit"
-          git push
+          # The worker server-renders /blog/{slug} from blog-posts.json; the sitemap must list it too.
+          # Stage everything the generator may touch under public/ (JSON, sitemap, any SSR HTML).
+          git add public/blog-posts.json public/sitemap.xml public/blog
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git -c user.name="Blog Update Bot" -c user.email="action@github.com" \
+            commit -m "Daily blog post update - $(TZ=Asia/Kolkata date +%Y-%m-%d)"
+          git pull --rebase origin main
+          git push origin HEAD:main
 
-  deploy:
-    needs: update-blog
-    runs-on: ubuntu-latest
-    
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: main
-      - name: Deploy static site to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: pages deploy public --project-name=pratikbajoria-com --branch=main
+  # No deploy job: Cloudflare Pages is git-connected to main and auto-deploys on every push.
+  # The old wrangler Direct Upload job failed on an invalid CLOUDFLARE_API_TOKEN secret.

@@ -1,4 +1,5 @@
-"""Expanded bodies for the Sep 25–29 daily posts (materialised 2026-09-30).
+"""ARCHIVED data module (see scripts/archive/README.md); bodies for retired slugs are skipped by the materialiser.
+Expanded bodies for the Sep 25–29 daily posts (materialised 2026-09-30).
 No invented statistics, prices, client results or quotes."""
 from _blog_helpers import checklist, sources, CALLOUT
 

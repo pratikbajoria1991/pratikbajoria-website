@@ -11,6 +11,8 @@
      node scripts/generate-daily-blog.js --dry-run    build and check today's post, print it, write nothing
      node scripts/generate-daily-blog.js --dry-run --topic 3   same, for the 3rd topic in the bank
      node scripts/generate-daily-blog.js --validate   check every queued topic (used by npm test); exit 1 on problems
+     --force   publish even if a topic-bank post already exists for today's IST date (default: skip, so the
+               workflow's backup cron is idempotent)
 
    Never invent statistics, prices, clients or testimonials: every figure must sit in a topic file
    next to a [text][n] citation of a real source. */
@@ -193,7 +195,7 @@ function updateSitemap(post, date) {
 }
 
 function parseArgs(argv) {
-  const args = { dryRun: argv.includes('--dry-run'), validate: argv.includes('--validate'), topic: null, date: null };
+  const args = { dryRun: argv.includes('--dry-run'), validate: argv.includes('--validate'), force: argv.includes('--force'), topic: null, date: null };
   const ti = argv.indexOf('--topic');
   if (ti >= 0) args.topic = Number(argv[ti + 1]);
   const di = argv.indexOf('--date');
@@ -243,6 +245,13 @@ function main() {
   }
   const date = args.date || kolkataDate();
   const existing = loadPosts();
+  // One daily post per IST date. The workflow has a backup cron (GitHub often skips/delays scheduled
+  // runs), so a second run on a day that already has its topic-bank post must be a no-op.
+  const todays = existing.find((p) => p.date === date && p.generatedBy === 'topic-bank');
+  if (todays && !args.dryRun && !args.force) {
+    console.log(`Already published today (${date}): ${todays.slug}. Skipping. Use --force to publish another.`);
+    return;
+  }
   const topics = loadTopics();
   let topic;
   if (args.topic) {
