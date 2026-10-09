@@ -203,7 +203,7 @@ export function renderPage(page, nav) {
     <script type="application/ld+json">
 ${ld}
     </script>
-    <script src="/ga4.js?v=20261009-ev" defer></script>
+    <script src="/ga4.js?v=20261009-nobot" defer></script>
   </head>
   <body data-page="${esc(page.path)}">
     ${header(nav, page.path)}

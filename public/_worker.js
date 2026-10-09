@@ -6,7 +6,7 @@ const isBlogSlug = (value) => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value);
 const INTERNAL_ASSET_HEADER = 'x-pages-internal-asset';
 const LEAD_INTERESTS = new Set(['cross-border-buyer', 'cross-border-seller']);
 
-const GA4_SNIPPET = '<script src="/ga4.js?v=20261009-ev" defer></script>\n';
+const GA4_SNIPPET = '<script src="/ga4.js?v=20261009-nobot" defer></script>\n';
 async function injectGa4(response) {
   const ctype = response.headers.get('content-type') || '';
   if (response.status !== 200 || !ctype.includes('text/html')) return response;
@@ -477,7 +477,7 @@ ${ldJson}
     <script type="application/ld+json">
 ${crumbsJson}
     </script>${structured ? faqJsonLd(post, canonical) : ''}
-    <script src="/ga4.js?v=20261009-ev" defer></script>
+    <script src="/ga4.js?v=20261009-nobot" defer></script>
   </head>
   <body data-static-article="1" data-slug="${escHtml(slug)}">
     <main class="shell article-page">

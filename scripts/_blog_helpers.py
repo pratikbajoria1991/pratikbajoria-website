@@ -121,7 +121,7 @@ HEAD = """<!doctype html>
     <script type="application/ld+json">
 {crumbs_ld}
     </script>
-      <script src="/ga4.js?v=20261009-ev" defer></script>
+      <script src="/ga4.js?v=20261009-nobot" defer></script>
 </head>
   <body data-static-article="1" data-slug="{slug}">
     <main class="shell article-page">

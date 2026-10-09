@@ -14,10 +14,19 @@
    Every event carries page_path, site_section (main | crossborder) and, for clicks, link_text / cta_label / link_domain.
    Honeypot (bot) submissions get HTTP 200, not 201, so they never count.
    Same-origin navigations made before gtag.js has loaded are parked in sessionStorage and replayed on the next page;
-   same-tab outbound clicks wait (max 800 ms) for the hit to be sent. */
+   same-tab outbound clicks wait (max 800 ms) for the hit to be sent.
+   Automation/bot browsers (navigator.webdriver, or a headless/bot UA) never load gtag.js and send nothing;
+   the page itself is served to them unchanged. */
+var PB_GA_SKIP = (function () {
+  try {
+    return navigator.webdriver === true ||
+      /HeadlessChrome|bot|crawl|spider|Lighthouse|PhantomJS|Puppeteer|Playwright/i.test(navigator.userAgent || '');
+  } catch (e) { return false; }
+})();
 window.dataLayer = window.dataLayer || [];
-function gtag(){ dataLayer.push(arguments); }
+function gtag(){ if (!PB_GA_SKIP) dataLayer.push(arguments); }
 (function () {
+  if (PB_GA_SKIP) return;
   var GA_ID = 'G-CXQP7F8CRT';
   var XB_HOST = 'crossborder.pratikbajoria.com';
   // Keep in sync with public/affiliate-links.json (checked by scripts/test-ga4-events.mjs).

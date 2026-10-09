@@ -37,6 +37,11 @@ await check('ga4.js defines every conversion event', () => {
   }
   assert.ok(ga.includes('page_path'), 'events must carry page_path');
 });
+await check('ga4.js skips GA for webdriver/headless/bot user agents', () => {
+  assert.ok(ga.includes('navigator.webdriver === true'));
+  for (const t of ['HeadlessChrome', 'bot', 'crawl', 'spider', 'Lighthouse', 'PhantomJS', 'Puppeteer', 'Playwright']) assert.ok(ga.includes(t), t);
+  assert.ok(/function gtag\(\)\{ if \(!PB_GA_SKIP\)/.test(ga) && ga.includes('if (PB_GA_SKIP) return;'));
+});
 await check('AFFILIATE_DOMAINS covers every host in affiliate-links.json', () => {
   const list = JSON.parse(ga.match(/AFFILIATE_DOMAINS = (\[[^\]]*\])/)[1].replace(/'/g, '"'));
   const links = JSON.parse(readFileSync(join(pub, 'affiliate-links.json'), 'utf8'));

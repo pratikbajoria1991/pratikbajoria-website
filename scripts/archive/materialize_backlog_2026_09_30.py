@@ -104,7 +104,7 @@ def main():
                 "image": np["image"], "keywords": np["keywords"], "category": np["category"], "read": read}
         html = render(meta, np["body"], None)
         faq_block = f'    <script type="application/ld+json">\n{faq_ld(np["faq"], url)}\n    </script>\n'
-        html = html.replace('      <script src="/ga4.js?v=20261009-ev" defer></script>', faq_block + '      <script src="/ga4.js?v=20261009-ev" defer></script>', 1)
+        html = html.replace('      <script src="/ga4.js?v=20261009-nobot" defer></script>', faq_block + '      <script src="/ga4.js?v=20261009-nobot" defer></script>', 1)
         (BLOG / f"{slug}.html").write_text(html)
         entry = {
             "id": slug, "title": np["title"], "slug": slug, "url": f"/blog/{slug}", "date": np["date"],
