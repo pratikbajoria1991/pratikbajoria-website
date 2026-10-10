@@ -160,6 +160,7 @@ function buildPost(t, date) {
     excerpt: t.excerpt,
     content,
     intro: t.intro,
+    ...(Array.isArray(t.takeaways) && t.takeaways.length ? { takeaways: t.takeaways.map(String) } : {}),
     sections: t.sections.map((s) => ({ heading: s.heading, paragraphs: s.paragraphs || [], bullets: s.bullets || [] })),
     faq: t.faq.map((f) => ({ q: f.q, a: f.a })),
     related: t.related.map((r) => ({ title: r.title, url: r.url })),

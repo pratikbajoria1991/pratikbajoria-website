@@ -50,53 +50,69 @@ Pratik works from India with business leaders in India, the United States, the U
 - **How is sensitive data handled?** Architecture, retention and access controls are scoped to client policies; sensitive work can use redaction, private deployments and audit trails.
 - **How do I get in touch?** Book a discovery call, WhatsApp, LinkedIn, or email hello@pratikbajoria.com — replies within one business day.
 
-## Selected articles
+## Key pages
 
-- [AI for Chartered Accountants in India: A Practical Implementation Hub](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india)
-- [Will AI Replace Chartered Accountants in India? A CA’s Honest Answer](https://pratikbajoria.com/blog/2026-10-07-will-ai-replace-chartered-accountants-in-india)
-- [AI Courses for Chartered Accountants in India: What Is Actually Worth It](https://pratikbajoria.com/blog/2026-10-07-ai-courses-for-chartered-accountants-in-india-what-is-worth-it)
-- [How Audit and Accounting Firms in India Are Using AI in 2026](https://pratikbajoria.com/blog/2026-10-07-how-audit-and-accounting-firms-in-india-are-using-ai)
-- [Is CA Worth It in 2026 With AI? A Chartered Accountant’s View](https://pratikbajoria.com/blog/2026-10-07-is-ca-worth-it-in-2026-with-ai)
-- [How to Run a 90-Day AI Pilot in a CA Firm in India: A 30/60/90 Playbook](https://pratikbajoria.com/blog/2026-10-07-how-to-run-a-90-day-ai-pilot-in-a-ca-firm-in-india)
-- [AI for Internal Audit in Indian Companies: A Practical Starting Point](https://pratikbajoria.com/blog/2026-10-08-ai-for-internal-audit-in-indian-companies-a-practical-starting-point)
-- [ChatGPT, Copilot or Gemini? How a CA Firm in India Should Choose an AI Assistant](https://pratikbajoria.com/blog/2026-10-05-chatgpt-vs-copilot-vs-gemini-how-a-ca-firm-in-india-should-choose-an-ai-assistant)
-- [AI for Chartered Accountants: Practical Use Cases and Control Gates](https://pratikbajoria.com/blog/ai-for-chartered-accountants-practical-use-cases-and-controls)
-- [AI for Audit Working Papers in India: What a CA Should Automate and What Must Stay Human](https://pratikbajoria.com/blog/2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human)
-- [The Monday Morning Test for Any AI Workflow](https://pratikbajoria.com/blog/2026-09-29-the-monday-morning-test-for-any-ai-workflow)
-- [WhatsApp Automation That Still Feels Like Customer Care](https://pratikbajoria.com/blog/2026-09-28-whatsapp-automation-that-still-feels-like-customer-care)
-- [How Indian CA Firms Can Use AI for GST Reconciliation Without Risking Client Data](https://pratikbajoria.com/blog/2026-09-28-how-indian-ca-firms-can-use-ai-for-gst-reconciliation-without-risking-client-data)
-- [HubSpot vs Spreadsheet CRM: The Real Switching Cost](https://pratikbajoria.com/blog/2026-09-27-hubspot-vs-spreadsheet-crm-the-real-switching-cost)
-- [Real Estate AI: Start With Leads and Documents, Not Prediction](https://pratikbajoria.com/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction)
-- [A 90-Day AI Opportunity Audit Without the Theatre](https://pratikbajoria.com/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre)
-- [When a Finance Team Should Say No to an AI Pilot](https://pratikbajoria.com/blog/2026-09-24-when-a-finance-team-should-say-no-to-an-ai-pilot)
-- [How Do You Know Finance AI Will Pay for Itself Before You Buy?](https://pratikbajoria.com/blog/2026-09-21-how-do-you-know-finance-ai-will-pay-for-itself-before-you-buy)
-- [Ecommerce Reconciliation: Where Automation Helps and Where It Lies](https://pratikbajoria.com/blog/2026-09-20-ecommerce-reconciliation-where-automation-helps-and-where-it-lies)
-- [AI Governance for Mid-Market Teams Who Do Not Have a Chief AI Officer](https://pratikbajoria.com/blog/2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer)
-- [The Finance Function Is AI’s Highest-ROI Starting Point](https://pratikbajoria.com/blog/2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point)
-- [How Much Should a Mid-Market Finance Team Budget for AI?](https://pratikbajoria.com/blog/2026-09-14-how-much-should-a-mid-market-finance-team-budget-for-ai)
-- [Build vs Buy: A Practical Framework for AI Tooling](https://pratikbajoria.com/blog/build-vs-buy-ai-tooling)
-- [Best AI Tools for Chartered Accountants and Finance Professionals](https://pratikbajoria.com/blog/best-ai-tools-chartered-accountants-finance-professionals)
-- [How Small Businesses Can Use AI Without Losing Financial Control](https://pratikbajoria.com/blog/small-business-ai-without-losing-financial-control)
-- [Best Business Planning Software: A CA's Review](https://pratikbajoria.com/blog/best-business-planning-software-ca-review)
-- [AI Tools for Financial Analysis: Practical Use Cases and Limitations](https://pratikbajoria.com/blog/ai-tools-financial-analysis-practical-use-cases)
-- [Best Accounting Automation Software for Ecommerce Businesses](https://pratikbajoria.com/blog/best-accounting-automation-software-ecommerce-businesses)
-- [HubSpot vs Zoho CRM: Which Is Better for a Growing Business?](https://pratikbajoria.com/blog/hubspot-vs-zoho-crm-growing-business)
-- [How to Build a Monthly Business Dashboard for Better Decisions](https://pratikbajoria.com/blog/how-to-build-a-monthly-business-dashboard)
-- [Semrush Review for Business Owners: Is It Worth the Investment?](https://pratikbajoria.com/blog/semrush-review-business-owners)
-- [Notion for Finance Professionals: Templates, Dashboards, and Workflows](https://pratikbajoria.com/blog/notion-for-finance-professionals-templates-dashboards-workflows)
-- [How to Build a Lead-Generation System Using AI and Email Automation](https://pratikbajoria.com/blog/build-lead-generation-system-ai-email-automation)
-- [Best AI Tools for Business Research and Competitive Analysis](https://pratikbajoria.com/blog/best-ai-tools-business-research-competitive-analysis)
-- [A Chartered Accountant's AI Toolkit for Entrepreneurs](https://pratikbajoria.com/blog/chartered-accountant-ai-toolkit-entrepreneurs)
-- [Why Most Corporate AI Pilots Never Reach Production](https://pratikbajoria.com/blog/corporate-ai-pilots)
-- [Build vs Buy: A Decision Framework for AI Tooling](https://pratikbajoria.com/blog/build-vs-buy-ai-tooling)
+- [Pratik Bajoria — AI Implementation for Business](https://pratikbajoria.com/): Pratik Bajoria is a Chartered Accountant and ex-Big 4 AI implementation consultant helping companies create measurable P&L impact.
+- [AI Opportunity Audit: A 2-Week AI Roadmap](https://pratikbajoria.com/audit): AI Opportunity Audit: a fixed-fee two-week sprint to map workflows, score AI use cases and leave with a prioritised 90-day roadmap before you fund a build.
+- [AI Opportunity Scorecard](https://pratikbajoria.com/scorecard): Free AI Opportunity Scorecard for CFOs and operators — score process, data, ROI, risk and ownership before you spend on AI.
+- [Finance Team AI Workshops](https://pratikbajoria.com/workshops): Finance team AI enablement: half-day executive workshop plus optional two-week cohort follow-on. Prompt libraries, SOPs and usage policy sketch.
+- [Resources](https://pratikbajoria.com/resources): Digital resources for finance and ops leaders: AI opportunity checklist, finance SOP starter pack and CA/finance prompt library.
+- [Insights](https://pratikbajoria.com/blog): Practical writing on implementing AI inside real businesses — audits, finance workflows, governance and tooling.
+- [AI, Finance and Business Systems Topic Guide](https://pratikbajoria.com/topics): A practical topic guide to AI for Chartered Accountants, finance professionals, entrepreneurs and business leaders from Pratik Bajoria.
+- [AI Opportunity Audit for CA Firms](https://pratikbajoria.com/ai-opportunity-audit-for-ca-firms): What an AI Opportunity Audit means for CA firms: map delivery workflows, score use cases with auditability in mind, and leave with a prioritised 90-day roadmap.
+- [How to Start AI Implementation — Mid-Market & Finance](https://pratikbajoria.com/how-to-start-ai-implementation): How mid-market and finance teams should start AI implementation: map workflows, score use cases, then ship a prioritised 90-day roadmap — not another pilot.
+- [AI Implementation for Finance Teams — CFOs & Controllers](https://pratikbajoria.com/ai-implementation-for-finance-teams): Where CFOs and controllers should start with AI: month-end close, reconciliations, invoice intake and MIS, with controls, owners and a 90-day roadmap.
+- [Workflow Automation with AI for Mid-Market — Ops & COO](https://pratikbajoria.com/workflow-automation-with-ai-for-mid-market): Workflow automation with AI for mid-market COOs: map hand-offs, pick owned bottlenecks, decide build, buy or wait, and ship automations within 90 days.
+- [Cross-border Deals & Partnerships by Pratik Bajoria](https://crossborder.pratikbajoria.com/): Cross-border deals for India: find a deployable partner in India, or win clients and buyers abroad. Vetted introductions by a Chartered Accountant.
 
-- [AI Finance Automation Roadmap: A 90-Day Plan for CFOs and Controllers](https://pratikbajoria.com/blog/2026-10-04-ai-finance-automation-roadmap-for-cfos-and-controllers)
+## CA + AI articles (start with the hub)
 
-- [AI Controls Checklist for CA Firms in India: Practical Review Gates](https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india)
+- [AI for Chartered Accountants in India: A Practical Implementation Hub](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india): AI for chartered accountants in India: a practical map for CA firms on which workflows to start with, client-data controls, human review and pilots.
+- [AI for Tax Audit in India: Form 3CD This Year, Form 26 Next Year](https://pratikbajoria.com/blog/2026-10-09-ai-for-tax-audit-in-india-form-3cd-this-year-form-26-next-year): Form 26 replaces Form 3CD from tax year 2026-27. Where AI helps a CA prepare tax audit data, and where the reported position must stay with the signer.
+- [AI for Internal Audit in Indian Companies: A Practical Starting Point](https://pratikbajoria.com/blog/2026-10-08-ai-for-internal-audit-in-indian-companies-a-practical-starting-point): A CA's starting point for AI in internal audit in India: who s.138 covers, what ICAI's new SIA 240 on tools asks for, and one full-population test.
+- [Will AI Replace Chartered Accountants in India? A CA’s Honest Answer](https://pratikbajoria.com/blog/2026-10-07-will-ai-replace-chartered-accountants-in-india): Will AI replace chartered accountants in India? A CA on which tasks AI is taking, which stay human, and what ICAI, WEF and Microsoft data actually show.
+- [Is CA Worth It in 2026 With AI? A Chartered Accountant’s View](https://pratikbajoria.com/blog/2026-10-07-is-ca-worth-it-in-2026-with-ai): Is CA worth it in 2026 now AI handles routine accounting? A practising CA weighs pass rates, membership growth and AI’s impact, and the skills that pay off.
+- [How to Run a 90-Day AI Pilot in a CA Firm in India: A 30/60/90 Playbook](https://pratikbajoria.com/blog/2026-10-07-how-to-run-a-90-day-ai-pilot-in-a-ca-firm-in-india): A 30/60/90-day AI pilot playbook for CA firms in India: choosing the first workflow, taking a baseline, client-data rules, review gates and an honest go/no-go decision.
+- [How Audit and Accounting Firms in India Are Using AI in 2026](https://pratikbajoria.com/blog/2026-10-07-how-audit-and-accounting-firms-in-india-are-using-ai): How audit and accounting firms in India use AI in 2026: what Big 4 platforms, ICAI’s tools and mid-sized CA practices deploy, and what smaller firms should copy.
+- [AI Courses for Chartered Accountants in India: What Is Actually Worth It](https://pratikbajoria.com/blog/2026-10-07-ai-courses-for-chartered-accountants-in-india-what-is-worth-it): AI courses for chartered accountants in India in 2026: what ICAI’s AICA Levels 1–3 cost and cover, when a paid course helps, and how to learn on real work.
+- [ChatGPT, Copilot or Gemini? How a CA Firm in India Should Choose an AI Assistant](https://pratikbajoria.com/blog/2026-10-05-chatgpt-vs-copilot-vs-gemini-how-a-ca-firm-in-india-should-choose-an-ai-assistant): ChatGPT, Microsoft 365 Copilot or Gemini for a CA practice in India? Compare data terms, permissions and retention, with a decision rubric for partners.
+- [AI for Chartered Accountants: Practical Use Cases and Control Gates](https://pratikbajoria.com/blog/ai-for-chartered-accountants-practical-use-cases-and-controls): A practical CA-led guide to AI for Chartered Accountants: five high-value use cases, review gates, data rules and a 90-day rollout plan for Indian CA firms.
+- [AI Controls Checklist for CA Firms in India: Practical Review Gates](https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india): A practical AI controls checklist for CA firms in India covering client data, approved tools, human review, audit trails, testing, retention and incident handling.
+- [AI for Audit Working Papers in India: What a CA Should Automate and What Must Stay Human](https://pratikbajoria.com/blog/2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human): Using AI on audit working papers without weakening SA 230 documentation: what to automate, what stays with the engagement team, and how to record AI use.
+- [How Indian CA Firms Can Use AI for GST Reconciliation Without Risking Client Data](https://pratikbajoria.com/blog/2026-09-28-how-indian-ca-firms-can-use-ai-for-gst-reconciliation-without-risking-client-data): A CA’s playbook for AI on GSTR-2B reconciliation, IMS review and GST notice replies: what to automate, where the human gate sits, and how to protect client data.
+- [A 90-Day AI Opportunity Audit Without the Theatre](https://pratikbajoria.com/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre): Rank use cases by P&L and control risk, then fund one narrow release — not a catalogue of ideas.
+- [Best AI Tools for Chartered Accountants and Finance Professionals](https://pratikbajoria.com/blog/best-ai-tools-chartered-accountants-finance-professionals): A CA-led selection framework: map five recurring jobs, score control gates 1–5, and only keep tools that reduce review time without weakening evidence.
+- [A Chartered Accountant's AI Toolkit for Entrepreneurs](https://pratikbajoria.com/blog/chartered-accountant-ai-toolkit-entrepreneurs): A practical stack for planning, building, marketing, operating and analysing a business — chosen around controls, adoption and measurable return.
 
-## Latest finance and operations guide
+## AI implementation, finance and operations
 
-- [Zoho CRM and HubSpot Integration for Finance Workflows](https://pratikbajoria.com/blog/zoho-crm-hubspot-crm-integration-finance-workflows)
+- [AI Finance Automation Roadmap: A 90-Day Plan for CFOs and Controllers](https://pratikbajoria.com/blog/2026-10-04-ai-finance-automation-roadmap-for-cfos-and-controllers): A practical 90-day AI finance automation roadmap for CFOs and controllers: choose one workflow, protect controls, measure payback and scale only after adoption.
+- [The Monday Morning Test for Any AI Workflow](https://pratikbajoria.com/blog/2026-09-29-the-monday-morning-test-for-any-ai-workflow): If the team cannot explain the workflow in five minutes on Monday, it is not ready for a model.
+- [WhatsApp Automation That Still Feels Like Customer Care](https://pratikbajoria.com/blog/2026-09-28-whatsapp-automation-that-still-feels-like-customer-care): Automate intake and logging first; keep judgement and exceptions with a named human.
+- [Real Estate AI: Start With Leads and Documents, Not Prediction](https://pratikbajoria.com/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction): Real estate AI that pays back: put every enquiry in one pipeline, let AI flag missing unit documents, keep legal judgement with people, and leave prediction for later.
+- [When a Finance Team Should Say No to an AI Pilot](https://pratikbajoria.com/blog/2026-09-24-when-a-finance-team-should-say-no-to-an-ai-pilot): When a finance team should say no to an AI pilot: refuse pilots with no owner, metric or baseline, write stop conditions, and fund a thin release instead.
+- [How Do You Know Finance AI Will Pay for Itself Before You Buy?](https://pratikbajoria.com/blog/2026-09-21-how-do-you-know-finance-ai-will-pay-for-itself-before-you-buy): Prove the payback before the purchase: name the constraint, baseline the cost of today, design the human gate, then buy only what moves a metric you already manage.
+- [Ecommerce Reconciliation: Where Automation Helps and Where It Lies](https://pratikbajoria.com/blog/2026-09-20-ecommerce-reconciliation-where-automation-helps-and-where-it-lies): Automate mapping and matching; never automate away the settlement exception review.
+- [AI Governance for Mid-Market Teams Who Do Not Have a Chief AI Officer](https://pratikbajoria.com/blog/2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer): AI governance for mid-market teams without a Chief AI Officer: four one-page rules (owners, data classes, human gates, logging) and a weekly review.
+- [The Finance Function Is AI’s Highest-ROI Starting Point](https://pratikbajoria.com/blog/2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point): Finance is a defensible first deployment because its work is structured, repetitive and measurable.
+- [How Much Should a Mid-Market Finance Team Budget for AI?](https://pratikbajoria.com/blog/2026-09-14-how-much-should-a-mid-market-finance-team-budget-for-ai): Budget for AI as an operating programme with discovery, tooling, controls and adoption — not as a single software line item or a vanity pilot.
+- [How Small Businesses Can Use AI Without Losing Financial Control](https://pratikbajoria.com/blog/small-business-ai-without-losing-financial-control): The operating controls, approval rules and metrics that let an SME adopt AI while keeping its books, data and decisions defensible.
+- [AI Tools for Financial Analysis: Practical Use Cases and Limitations](https://pratikbajoria.com/blog/ai-tools-financial-analysis-practical-use-cases): Where AI can accelerate financial analysis — and where judgement, source validation and professional accountability must remain human.
+- [How to Build a Monthly Business Dashboard for Better Decisions](https://pratikbajoria.com/blog/how-to-build-a-monthly-business-dashboard): Build a monthly dashboard that answers what happened, why, and what you will do next — with a six-axis quality rubric and a Monday operating checklist.
+- [How to Build a Lead-Generation System Using AI and Email Automation](https://pratikbajoria.com/blog/build-lead-generation-system-ai-email-automation): A permission-based acquisition system connecting useful content, qualification, CRM ownership and measurable follow-up.
+- [Why Most Corporate AI Pilots Never Reach Production](https://pratikbajoria.com/blog/corporate-ai-pilots): The failure is almost never technical. It is scoping, ownership and change management — and there is a repeatable pattern to avoiding all three.
+
+## Tool reviews and comparisons
+
+- [HubSpot vs Zoho CRM Integration: Finance Workflow Guide](https://pratikbajoria.com/blog/zoho-crm-hubspot-crm-integration-finance-workflows): HubSpot vs Zoho CRM integration: compare data ownership, finance workflows, automation, controls and migration questions before connecting your systems.
+- [HubSpot vs Spreadsheet CRM: The Real Switching Cost](https://pratikbajoria.com/blog/2026-09-27-hubspot-vs-spreadsheet-crm-the-real-switching-cost): The cost is not the licence — it is defining stages your team will actually use.
+- [Best Business Planning Software: A CA's Review](https://pratikbajoria.com/blog/best-business-planning-software-ca-review): How to judge planning software by assumptions, cash visibility, scenario quality and decision usefulness — not by presentation polish.
+- [Best Accounting Automation Software for Ecommerce: A CA Comparison](https://pratikbajoria.com/blog/best-accounting-automation-software-ecommerce-businesses): Ecommerce accounting automation software: compare reconciliation, settlements, inventory, returns, GST, exceptions and reporting before you choose.
+- [HubSpot vs Zoho CRM: Which Is Better for a Growing Business?](https://pratikbajoria.com/blog/hubspot-vs-zoho-crm-growing-business): Zoho CRM vs HubSpot for a growing business: compare adoption, reporting, automation, controls, integration and 24-month cost before you choose.
+- [Semrush Review for Business Owners: Is It Worth the Investment?](https://pratikbajoria.com/blog/semrush-review-business-owners): A CA- and ops-led Semrush review: score fit on six axes, run a four-week pilot, and only renew when search work moves pipeline — not vanity rankings.
+- [Notion for Finance Professionals: Templates, Dashboards, and Workflows](https://pratikbajoria.com/blog/notion-for-finance-professionals-templates-dashboards-workflows): Use Notion as a controlled knowledge layer for close checklists, SOPs, decision logs and research — with a six-axis design rubric finance teams can score on Monday.
+- [Best AI Tools for Business Research and Competitive Analysis](https://pratikbajoria.com/blog/best-ai-tools-business-research-competitive-analysis): A source-first research workflow for market mapping, competitor monitoring and decision briefs without confusing generated text with evidence.
+- [Build vs Buy: A Decision Framework for AI Tooling](https://pratikbajoria.com/blog/build-vs-buy-ai-tooling): Build vs buy AI tooling: compare differentiation, data sensitivity, controls, 24-month cost, time-to-value and switching risk before you choose.
 
 ## Contact
 
@@ -105,7 +121,7 @@ Pratik works from India with business leaders in India, the United States, the U
 - WhatsApp: https://api.whatsapp.com/send?phone=919804182483
 - Email: mailto:hello@pratikbajoria.com
 - Findost: https://findost.io
-- Machine-readable: https://pratikbajoria.com/llms.txt
+- Machine-readable: https://pratikbajoria.com/llms.txt (full text of key pages: https://pratikbajoria.com/llms-full.txt)
 
 ## Editorial policy
 

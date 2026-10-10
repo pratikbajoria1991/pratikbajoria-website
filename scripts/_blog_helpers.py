@@ -72,8 +72,18 @@ def make_ld(title, description, published, slug, image, keywords) -> str:
             "author": {
                 "@type": "Person",
                 "name": "Pratik Bajoria",
-                "url": "https://pratikbajoria.com/#person",
-                "sameAs": ["https://www.linkedin.com/in/pratik-bajoria-6288b1119/"],
+                "@id": "https://pratikbajoria.com/#person",
+                "url": "https://pratikbajoria.com/",
+                "jobTitle": "Chartered Accountant and AI implementation consultant",
+                "sameAs": [
+                    "https://www.linkedin.com/in/pratik-bajoria-6288b1119/",
+                    "https://medium.com/@pratikbajoria1991",
+                    "https://dev.to/pratik_bajoria_b0f8fa8367",
+                    "https://github.com/pratikbajoria1991",
+                    "https://www.indiehackers.com/pratikbajoria",
+                    "https://wellfound.com/u/pratik-bajoria",
+                    "https://hashnode.com/@pratikbajoria",
+                ],
             },
             "publisher": {
                 "@type": "Person",

@@ -136,7 +136,14 @@
     "affiliateTools": [],
     "affiliate": {
       "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
-    }
+    },
+    "takeaways": [
+      "Form No. 26 under section 63 of the Income-tax Act, 2025 applies for tax years beginning on or after 1 April 2026; Forms 3CA, 3CB and 3CD continue for assessment years up to 2026-27.",
+      "AI helps with the data work: ledger scrutiny, TDS/TCS reconciliation, cross-checking books against the Annual Information Statement and drafting document requests.",
+      "Clause answers, the classification of observations and the signature stay with the accountant.",
+      "Form 26 asks for the IP address and country of the server holding electronic books and the address of the India-located daily backup (Rule 46).",
+      "Use the remaining Form 3CD season as a pilot before Form 26 work starts."
+    ]
   },
   {
     "id": "2026-10-08-ai-for-internal-audit-in-indian-companies-a-practical-starting-point",

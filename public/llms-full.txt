@@ -1,0 +1,1738 @@
+# Pratik Bajoria: full text of key pages
+
+> Plain-text copies of the main service pages and the most-used CA + AI articles on https://pratikbajoria.com, written by Pratik Bajoria (Chartered Accountant, ex-Big 4, AI implementation consultant). Cite the canonical URL given for each section. Index of everything: https://pratikbajoria.com/llms.txt
+
+Generated: 2026-10-10. Educational content; not legal, tax, audit, financial or investment advice.
+
+---
+
+## Services overview (homepage)
+
+URL: https://pratikbajoria.com/
+Summary: Pratik Bajoria is a Chartered Accountant and ex-Big 4 AI implementation consultant helping companies create measurable P&L impact.
+
+### I help companies actually implement AI.
+
+Chartered Accountant, ex-Big 4, with over nine years of experience. I work with business leaders to identify where AI creates real P&L impact — then build and ship the systems that deliver it.
+
+Alongside AI work, I make selective cross-border introductions — Indian businesses to international clients and buyers, overseas companies to vetted Indian partners. Cross-border partnerships →
+
+### AI implementation, grounded in business reality.
+
+Most AI initiatives fail because they start with the technology instead of the process. I start with your P&L, your workflows and your constraints — then bring AI to where it actually moves the number.
+
+Direct answer. Most engagements begin with the AI Opportunity Audit — a fixed-fee two-week sprint that produces a prioritised 90-day roadmap.
+
+#### AI Opportunity Audit
+
+A structured diagnostic of your operations to find where AI delivers measurable ROI — and where it does not.
+
+- Process & workflow mapping
+- Use-case scoring by ROI and effort
+- Build vs. buy vs. wait analysis
+- Prioritised 90-day roadmap
+
+#### Workflow Automation
+
+Production-grade AI systems built on your existing stack — deployed, tested and handed over with documentation your team can maintain.
+
+- Document & data processing agents
+- WhatsApp and email automation
+- CRM, ERP and finance integrations
+- Internal copilots and assistants
+
+#### Finance & Compliance AI
+
+AI applied to the finance function by someone who has actually run it.
+
+- Reconciliation and close automation
+- GST, TDS and compliance workflows
+- MIS and management reporting
+- Audit-ready process controls
+
+#### Team Enablement
+
+Adoption is the real bottleneck. I train your people to use AI confidently and correctly, with guardrails that hold up under scrutiny.
+
+- Executive and team workshops
+- Prompt libraries and SOPs
+- Internal AI usage policy
+- Ongoing advisory retainer
+
+#### Fractional AI Leadership
+
+Senior AI ownership without a senior hire — I sit alongside your leadership team and drive the roadmap to completion.
+
+- Roadmap ownership and governance
+- Vendor and tooling selection
+- Cost and performance monitoring
+- Board and investor reporting
+
+#### AI Product Advisory
+
+For founders embedding AI into what they sell — architecture, positioning and go-to-market, informed by building my own AI product.
+
+- Product architecture review
+- Model and infrastructure choices
+- Pricing and packaging strategy
+- GTM and distribution design
+
+### From ambiguity to shipped.
+
+A deliberately unglamorous four-stage engagement. No pilots that never leave the lab, no decks that gather dust.
+
+#### Diagnose
+
+Two weeks inside your operations. I map workflows, interview your team and quantify where time and margin are leaking.
+
+#### Prioritise
+
+Every candidate use case scored on business impact, implementation effort and risk. You get a ranked roadmap, not a wish list.
+
+#### Build
+
+We ship the highest-value use case first, in weeks rather than quarters. Real system, real users, real measurement.
+
+#### Embed
+
+Training, documentation and handover so the capability outlives the engagement. Optional retainer for the next horizon.
+
+### Where I do my best work.
+
+AI implementation isn’t sector-agnostic. These are the industries where my finance background and process expertise translate into faster, safer deployments.
+
+#### Financial Services
+
+Wealth management, NBFCs, brokerages and fintech — where accuracy and auditability are non-negotiable.
+
+#### Accounting & Professional Services
+
+CA firms, consultancies and advisory practices looking to scale delivery without scaling headcount.
+
+#### Manufacturing & Distribution
+
+Mid-market manufacturers and distributors with heavy paperwork and thin operating margins.
+
+#### Retail & E-Commerce
+
+D2C brands and multi-channel retailers drowning in customer queries and order operations.
+
+#### Healthcare & Diagnostics
+
+Clinics, labs and healthtech operators balancing patient experience with strict record-keeping.
+
+#### Real Estate & Infrastructure
+
+Developers and brokerages managing long sales cycles, heavy documentation and fragmented lead flow.
+
+#### Legal & Compliance Teams
+
+In-house legal and compliance functions handling high-volume contract and regulatory review.
+
+#### SaaS & Technology
+
+Founders embedding AI into the product itself, and tech teams needing senior AI direction.
+
+### Chartered Accountant. AI practitioner.
+
+I’m Pratik Bajoria — a Chartered Accountant with over nine years of post-qualification experience across audit, financial analysis, taxation and business process transformation. Part of that career was spent at a Big-4 firm; the rest across industry roles and, latterly, building my own ventures.
+
+The Big-4 years taught me something most AI consultants never learn: how enterprise processes actually behave under pressure. Materiality thresholds. Control environments. Why a workflow that looks inefficient on paper often exists for a very good reason. The years since — in operating roles and as a founder — taught me the other half: how to actually ship something inside a business that has limited budget and no patience for theory.
+
+My advantage isn’t that I understand AI. Plenty of people do. It’s that I spent nearly a decade inside the finance and operations functions AI is meant to transform, so I can tell a genuine opportunity from an expensive distraction before you commit budget to it.
+
+Today my main work is advising companies on AI implementation, alongside building Findost , my AI-powered wealth management platform. Everything I recommend to clients, I have shipped myself.
+
+I also make a small number of cross-border introductions — connecting Indian businesses with international clients and buyers, and overseas companies with vetted Indian partners. Same lens, different problem: I vet both sides the way I would review a counterparty, and I am paid only if a deal closes.
+
+### Findost — AI-powered wealth management.
+
+The platform I build and operate. It’s also my proof of work: every AI pattern I recommend to clients has been battle-tested here first.
+
+Findost brings AI-driven intelligence to personal wealth management — helping individuals understand their portfolios, plan their financial futures and make better decisions without needing a finance degree.
+
+Built on a modern AI stack with a CA’s understanding of what financial guidance actually requires: accuracy, context and trust.
+
+### Insights on AI adoption.
+
+Practical writing on implementing AI inside real businesses — what works, what wastes money, and what to do on Monday morning.
+
+Guides: How to start AI implementation · AI for finance teams · Workflow automation (mid-market) · AI Opportunity Audit for CA firms
+
+### Signal for the long game.
+
+### Questions worth asking early.
+
+AI implementation means building and deploying AI systems that solve real business problems and deliver measurable P&L impact.
+
+Pratik starts with a structured AI Opportunity Audit : map workflows, score use cases on impact and risk, and produce a prioritised 90-day roadmap. See the Audit package for deliverables and how to book.
+
+Financial services, accounting and professional services, manufacturing and distribution, retail and e-commerce, healthcare, real estate, legal and compliance, and SaaS and technology.
+
+Architecture, retention and access controls are scoped to your policies. Sensitive engagements can use redaction layers, private deployments and audit trails.
+
+Book a discovery call, message Pratik on WhatsApp, connect on LinkedIn, or email hello@pratikbajoria.com . He aims to reply within one business day.
+
+### Let’s find your first AI win.
+
+Whether you’re exploring where to start or ready to build, a short conversation will tell us both whether there’s a fit. Book a call, message me on WhatsApp, or connect on LinkedIn.
+
+#### AI Opportunity Audit
+
+Find where AI moves your numbers.
+
+#### Implementation
+
+Build and ship production systems.
+
+#### Speaking & Workshops
+
+Corporate training and events.
+
+### The AI Implementation Brief.
+
+A weekly, AI-curated briefing for business leaders putting AI to work — real deployments, honest cost breakdowns and workflows worth copying.
+
+---
+
+## AI for Chartered Accountants in India: A Practical Implementation Hub
+
+URL: https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india
+Last updated: 2026-10-08
+Summary: AI for chartered accountants in India: a practical map for CA firms on which workflows to start with, client-data controls, human review and pilots.
+
+CA insights · 2026-09-25 · Updated 7 Oct 2026 · 8 min read
+
+### AI for Chartered Accountants in India: A Practical Implementation Hub
+
+A practical implementation map for CA firms: choose useful workflows, protect client data, define human review and scale only after a controlled pilot.
+
+Related: use the AI controls checklist for CA firms for review gates, or the 90-day finance automation roadmap for CFO and controller workflows.
+
+New practical guide: AI for Chartered Accountants — use cases and control gates .
+
+If you run or work in a CA practice, you have probably had some version of this conversation already. A partner has seen a demo. An article assistant is quietly using a chatbot on client files. Nobody can say what the firm's actual position is. AI for chartered accountants in India is a workflow and controls question before it is a software question: which work goes first, what client data the tool may see, who reviews the output, and how the file shows it.
+
+I write as Pratik Bajoria, Chartered Accountant, ex-Big 4, and founder of Findost. The lens is practical: structured workflows, measurable controls, and YMYL caution. Nothing here invents client metrics or promises regulatory outcomes. Use it as an implementation map, then verify tools and policies against your own practice.
+
+### What “AI for CA firms India” should mean in 2026
+
+Three jobs dominate early value: faster first drafts of analysis and memos under review; document extraction into structured working papers; and exception-led reconciliation or compliance checklists. Prediction theatre and unsupervised client advice are late-stage ideas — if they belong at all. The firms that climb search and win trust will publish and operate with that sequencing, not with hype.
+
+The scale is worth stating plainly. ICAI reports over 4 lakh members and around 9.85 lakh students , so small changes in how practices handle routine work add up across the profession. Adoption itself is no longer the question. McKinsey's 2025 global survey found that 88% of respondents say their organisations regularly use AI in at least one business function, but only about a third say they have begun to scale it . In practice, what I see in CA firms mirrors that gap: plenty of individual use, very little of it designed.
+
+Everything below follows that sequencing. It is a map, not a catalogue: a readiness rubric you can score honestly, a five-step implementation order, and links to the deeper playbooks on GST reconciliation, audit working papers, tooling, pilots and build-versus-buy.
+
+Evaluation framework only — illustrative example scores for a strong-fit profile. Score your own business on each axis from 1 to 5; this is not market-share or industry data.
+
+| Axis | 1 = weak fit | 5 = strong fit | Your score |
+| Workflow clarity | Tribal knowledge only | Five-line map exists for priority jobs | ___ |
+| Controls | Outputs go straight to clients/books | Human gate + logging defined | ___ |
+| Data | Anything pasted into consumer tools | Classes + approved environments | ___ |
+| Metrics | No baseline | Named metric reviewed weekly | ___ |
+| Scope | Transformation programme | One thin release funded | ___ |
+
+### A CA-led implementation sequence
+
+1. Map five recurring jobs. Research and first-draft analysis, document extraction, reconciliation and exceptions, management or client reporting, and routine communication. For each, write input, decision, output, owner and definition of good. Blank lines mean you are not ready to buy.
+
+2. Classify data. Client identity, unpublished financials, and advice drafts are restricted by default. Consumer chatbots are not an approved environment for restricted classes. Approved tools need access control, retention clarity and exportable logs.
+
+3. Design human gates before automation. Decide what a person must approve before something becomes a deliverable, a filing support pack or a ledger-adjacent entry. An unauditable answer is not a professional deliverable.
+
+4. Fund one thin release. One workflow, one team, one metric, two to four weeks, stop conditions in writing. Review weekly. Document the pattern if it works; stop if it does not.
+
+5. Only then expand tooling. Read the deeper guides on best AI tools for chartered accountants and finance professionals , why corporate AI pilots stall , and build vs buy for AI tooling . Tool lists without gates are shopping lists.
+
+From pratikbajoria.com
+
+Buy tools after you know which workflow pays back. Start with the free AI Opportunity Scorecard , or see the scoped AI Opportunity Audit for a 90-day map.
+
+### Where Indian CA practices should be careful
+
+Professional work sits in YMYL territory. Do not let keyword pressure push unverifiable claims onto your site or into client memos. Keep ICAI and firm quality standards in view; AI does not replace the signing professional. For securities-market adjacent work, treat SEBI’s public materials as part of your compliance reading list — not as a substitute for counsel. Prefer primary sources when you cite regulation.
+
+Two dates belong on every partner's calendar. The Digital Personal Data Protection Rules, 2025 were notified in November 2025 with an 18-month phased compliance timeline , so client personal data inside AI workflows is a live compliance matter, not a future one. And busy season has moved: for AY 2026-27 the CBDT has extended the specified date for tax audit reports from 30 September to 21 October 2026 . A pilot you start this month will run straight through that peak, so design it to survive it.
+
+Internal links worth keeping open while you plan: the free AI Opportunity Scorecard , the scoped AI Opportunity Audit , and discovery via a conversation on measurable P&L use cases .
+
+### How CA firms in India usually waste the first six months
+
+The pattern is familiar. A partner sees a demo. An associate is told to “try ChatGPT on research”. Someone buys three overlapping licences. Nobody names the metric. Busy season arrives and the experiment dies. Six months later the firm concludes “AI does not work for us”, when what failed was the operating design.
+
+Another failure mode is treating AI as a marketing slogan for the practice website while the delivery system stays unchanged. That may win a few enquiries; it will not survive peer review or a difficult client file. Cite-worthy implementation content — and cite-worthy delivery — both require the same discipline: narrow scope, evidence, named owners.
+
+A third failure mode is copying Silicon Valley tooling narratives into Indian practice economics. Staffing mixes, software stacks, GST and MCA filing calendars, and client confidentiality expectations differ. Import frameworks; do not import fantasy ROI slides. Budget for review time and exception handling on the same sheet as licences.
+
+### What “good” looks like after ninety days
+
+You should be able to show one completed thin release with: a five-line workflow map, a baseline sketch, a dual ownership record, an exception log, and a weekly metric review note. You should also be able to say what you declined — which pilots you refused because the gate or metric was missing. That refusal list is as important as the success story.
+
+From there, expand only along the five-job map. Keep a shared register of AI-assisted workflows. Link each live item to evidence locations. Revisit build-versus-buy when volume or data sensitivity changes. Do not expand because a vendor quarter-end discount appeared.
+
+Partners should also agree four one-page rules once at firm level: ownership, data classes, human gates, logging. Then let each service line fund its own thin release inside those rules. Central theatre committees without P&L ownership rarely ship.
+
+### Operating cadence that survives busy season
+
+AI that only works in a quiet week will die in filings season. Bake the thin release into the Monday checklist: owner, metric, exception path, data the tool may see, weekly review. Use a workspace for the register and evidence links; keep the books in the books. If a pilot cannot explain itself in five minutes on Monday, it is not ready.
+
+For multi-office practices, start with one office and one service line. Publish the pattern internally before you franchise it. The second deployment should be cheaper than the first because the evidence trail already exists — not because you bought a larger platform licence.
+
+### How to brief your partnership without a forty-page deck
+
+One page is enough. State the five-job map, the four rules, the single thin release you will fund, the metric, the stop conditions, and the review date. Attach the readiness rubric with your own scores — not illustrative bars from a vendor PDF. If partners cannot agree that page in one meeting, you are not ready to buy software.
+
+Then publish the same page internally so associates know what “good” looks like before busy season. Clarity beats enthusiasm. Enthusiasm without gates becomes another zombie licence.
+
+### Deeper CA playbooks: GST and audit
+
+Two workflows come up in almost every CA practice conversation. For monthly GST work, read how Indian CA firms can use AI for GST reconciliation without risking client data — GSTR-2B matching, IMS review and notice triage with a clear human gate. For assurance work, read AI for audit working papers in India: what to automate and what must stay human — how to use AI without weakening SA 230 documentation. If you run or staff a company’s internal audit under section 138, read AI for internal audit in Indian companies: a practical starting point — full-population testing of one process and what ICAI’s new SIA 240 on tools expects. For the operating habit that keeps both alive in busy season, see the Monday morning test for any AI workflow .
+
+### Choosing the assistant itself: ChatGPT, Copilot or Gemini
+
+Once the rules are agreed, partners usually ask which assistant to license. My view is that the deciding factors are where client files already live, how clean folder permissions are, and what the vendor’s business terms say about training, retention and logs, not which demo looked best. I have set out a partner-ready rubric in ChatGPT, Copilot or Gemini? How a CA firm in India should choose an AI assistant , alongside the AI controls checklist for CA firms that applies whichever tool you pick.
+
+### Running the first pilot: a 30/60/90-day playbook
+
+Agreeing the rules and picking the assistant are the start, not the result. The first real test is one workflow, run for ninety days, with a baseline taken before anyone opens the tool, full human review while it runs in parallel, and a written go, adjust or stop decision at the end. I have set out the month-by-month version, with a workflow selection scorecard and a go/no-go gate, in how to run a 90-day AI pilot in a CA firm in India .
+
+### The questions partners, CAs and students keep asking
+
+Four questions come up in almost every conversation I have with the profession, so I have answered each one properly, with sources: will AI replace chartered accountants in India ; how audit and accounting firms in India are using AI , from Big 4 platforms to ICAI’s own tools; which AI courses for chartered accountants are worth it , including ICAI’s AICA levels; and, for students, whether CA is worth it in 2026 with AI .
+
+### Monday-morning checklist
+
+- Pick one job from the five-job map and write the five-line workflow.
+- Classify data and block restricted classes from consumer tools.
+- Name dual owners and the weekly metric before buying licences.
+- Ship a thin release with stop conditions; review weekly.
+- Read tooling, pilots and build-vs-buy guides before expanding scope.
+- Keep a written list of pilots you declined and why.
+
+### Frequently asked questions
+
+#### What is the best starting point for AI in a CA firm?
+
+Start with a repetitive workflow where the input, output, owner and definition of good are clear. Research drafts, document extraction, reconciliation exceptions and reporting support are usually easier to test than unsupervised client advice.
+
+#### How should a CA firm protect client data when using AI?
+
+Classify the data first, use approved business accounts, define retention and access rules, redact where required and keep sensitive material out of unapproved consumer tools. The firm should document the decision and review vendor terms.
+
+#### What controls should be in place before scaling an AI pilot?
+
+Use a named owner, human review gate, test set with awkward cases, exception log, evidence trail and a clear incident path. Scale only when the process is measurably better without unacceptable control degradation.
+
+### Sources
+
+- NIST AI Risk Management Framework
+- SEBI — investor / regulatory portal
+- ICAI — Institute of Chartered Accountants of India
+- ICAI — press release on the 2025-26 Council (over 4 lakh members, around 9.85 lakh students)
+- McKinsey — The state of AI: global survey 2025
+- PIB — Government notifies DPDP Rules (14 November 2025)
+- PIB — CBDT extends AY 2026-27 due dates for audited taxpayers (29 September 2026)
+
+Educational commentary for CA and finance leaders in India — not personalised professional, tax, legal or investment advice. Confirm tools, privacy terms and firm policies before deployment.
+
+Educational content; not financial, investment, or legal advice.
+
+---
+
+## AI Opportunity Audit: A 2-Week AI Roadmap
+
+URL: https://pratikbajoria.com/audit
+Last updated: 2026-10-07
+Summary: AI Opportunity Audit: a fixed-fee two-week sprint to map workflows, score AI use cases and leave with a prioritised 90-day roadmap before you fund a build.
+
+#### For
+
+- CFOs, COOs and operators who need a ranked list of AI bets, not a tool tour
+- Finance and ops leaders under pressure to cut cycle time or error without adding headcount
+- Founders who have tried “AI pilots” and want a P&L-grounded next step
+- Teams ready to assign an owner and measure outcomes in 90 days
+
+---
+
+## AI Opportunity Scorecard
+
+URL: https://pratikbajoria.com/scorecard
+Last updated: 2026-10-07
+Summary: Free AI Opportunity Scorecard for CFOs and operators — score process, data, ROI, risk and ownership before you spend on AI.
+
+Lead magnet · Free
+
+### AI Opportunity Scorecard.
+
+A practical checklist for CFOs and operators. Score yourself across process, data, ROI, risk and ownership — before you fund another pilot that goes nowhere.
+
+Direct answer. The AI Opportunity Scorecard is a free checklist that helps CFOs and operators score process readiness, data quality, ROI, risk and ownership before committing budget to another AI pilot.
+
+Rate each criterion 0–10. Total of 100. Below 50 usually means fix ownership and baselines first. 70+ is when a structured Audit earns its fee.
+
+### Start scoring here.
+
+### Email to unlock.
+
+You’ll also join The AI Implementation Brief — a weekly, unglamorous briefing on what actually ships. Unsubscribe anytime.
+
+### The AI Implementation Brief.
+
+Weekly notes for leaders putting AI to work — deployments, cost honesty and workflows worth copying. Unlocking the scorecard opts you in; you can also subscribe from the homepage.
+
+Prefer a human conversation first? Book a discovery call or email hello@pratikbajoria.com .
+
+### Ten minutes now, not a wasted quarter.
+
+The scorecard exists because most AI proposals arrive with a tool attached and the hard questions missing. Who owns the workflow? What does it cost today? What data will the tool see, and who checks the output? If those answers are blank, the score will show it, and that is cheaper to learn now than after a renewal.
+
+Those gaps are common. Gartner predicted that at least 30% of generative AI projects would be abandoned after proof of concept by the end of 2025 , with unclear business value and weak risk controls among the reasons. Use is also running ahead of design: in Microsoft and LinkedIn's 2024 Work Trend Index, 75% of knowledge workers said they use generative AI at work, and 78% of those users bring their own tools . And McKinsey's 2025 survey found only about a third of organisations have begun to scale AI , even though most use it somewhere.
+
+Score honestly. A low score on ownership or data is not a failure; it is the most useful result the checklist can give you.
+
+Sources
+
+- Gartner — 30% of generative AI projects predicted to be abandoned after proof of concept by end of 2025 (29 July 2024)
+- Microsoft and LinkedIn — 2024 Work Trend Index
+- McKinsey — The state of AI: global survey 2025
+
+Updated 7 Oct 2026
+
+### Questions worth asking early.
+
+CFOs, COOs and operators who want a structured way to challenge AI proposals before funding them.
+
+Yes. Enter your work email to unlock the full checklist. You can also join the AI Implementation Brief.
+
+If gaps show up in ownership or data, fix those before buying tools. If scores are strong, book a discovery call about the AI Opportunity Audit.
+
+---
+
+## AI Opportunity Audit for CA Firms
+
+URL: https://pratikbajoria.com/ai-opportunity-audit-for-ca-firms
+Last updated: 2026-09-10
+Summary: What an AI Opportunity Audit means for CA firms: map delivery workflows, score use cases with auditability in mind, and leave with a prioritised 90-day roadmap.
+
+#### Delivery & back-office mapping
+
+Walk compliance calendars, engagement packs, reconciliation routines and client paperwork with the people who own the work.
+
+---
+
+## Will AI Replace Chartered Accountants in India? A CA’s Honest Answer
+
+URL: https://pratikbajoria.com/blog/2026-10-07-will-ai-replace-chartered-accountants-in-india
+Last updated: 2026-10-07
+Summary: Will AI replace chartered accountants in India? A CA on which tasks AI is taking, which stay human, and what ICAI, WEF and Microsoft data actually show.
+
+CA insights · 2026-10-07 · 8 min read
+
+### Will AI Replace Chartered Accountants in India? A CA’s Honest Answer
+
+Will AI replace chartered accountants in India? A CA and AI implementation consultant on which tasks AI is taking, which stay human, and what the evidence from ICAI, WEF and Microsoft says.
+
+Key takeaways
+
+- No. AI is taking routine CA work (data extraction, first-pass reconciliations, drafting, notice summaries), not the signature and professional accountability.
+- The WEF Future of Jobs Report 2025 lists accounting, bookkeeping and payroll clerks among the fastest-declining roles to 2030.
+- ICAI membership rose from 4,03,617 (1 April 2024) to 4,23,105 (1 April 2025); about 1.61 lakh members are in practice.
+- 92% of knowledge workers in India use AI at work (Microsoft and LinkedIn 2024 Work Trend Index).
+- Firms that move time to review, judgement and advice do well; those billing for routine volume feel the squeeze first.
+
+No. AI will not replace chartered accountants in India, but it is already replacing a large share of the work many CAs and their teams are paid for today. Those are different claims, and the gap between them is where your career or your practice will be decided over the next five years.
+
+I qualified as a CA, worked in Big 4, founded Findost and now spend my days putting AI into finance teams and CA practices. The question “will AI replace CAs?” comes up in almost every first conversation. Here is the answer I give, with the evidence I rely on.
+
+### The short answer: tasks go, accountability stays
+
+A chartered accountant is not paid to type entries. A CA is paid to sign: an audit report, a tax audit report, a certificate, a valuation, an opinion a bank or regulator will rely on. Indian law ties that signature to a qualified, regulated person who can be held responsible. No model can be struck off, sued or examined by a disciplinary committee, so the signing role is not going to a machine.
+
+What AI does take is the work underneath the signature: extracting data, first-pass reconciliations, drafting routine letters, summarising notices, flagging anomalies in a ledger. In most practices I see, that is a large chunk of article and junior staff time, and a fair share of manager time too.
+
+### What the evidence actually says
+
+The most quoted source is the World Economic Forum’s Future of Jobs Report 2025 . Its employer survey puts accounting, bookkeeping and payroll clerks among the fastest-declining roles to 2030, and lists accountants and auditors in the declining group as well, with AI and information-processing technology named as primary drivers. Read it carefully, though: it is a survey of employer expectations, and the steepest projected decline is in clerical roles, not in professionals who exercise judgement.
+
+Adoption in India is already high. Microsoft and LinkedIn’s 2024 Work Trend Index found that 92% of knowledge workers in India use AI at work, against 75% globally, and that 54% of Indian leaders worried their organisation lacked a plan and vision for implementing it. In other words, people are using AI whether or not their firm has decided how.
+
+The profession is not shrinking either. ICAI’s 76th Annual Report shows membership rising from 4,03,617 on 1 April 2024 to 4,23,105 on 1 April 2025, with 19,488 new members enrolled in that year. Only about 1.61 lakh of those members are in practice; the rest work in industry, finance and other roles. Those are the jobs where AI will change the day-to-day most visibly.
+
+And the regulator’s own institute is leaning in rather than resisting. ICAI says it has trained over 50,000 members in AI and built more than 150 GPT-based tools for members, and launched a third level of its AI certification in June 2026.
+
+### Which CA work is most exposed
+
+| Work | Exposure to AI | Why |
+| Data entry, bank categorisation, ledger scrutiny | High | Repetitive, rules-based, easy to check |
+| GST and TDS reconciliations | High for the first pass | Matching is mechanical; resolving exceptions is not |
+| Drafting notices, replies, emails, summaries | High for drafts | Language models write quickly; a CA still owns the position taken |
+| Audit testing and sampling | Medium | Tools can test whole populations, but evidence and judgement stay with the auditor |
+| Tax positions, opinions, structuring | Low | Facts, risk appetite and liability are client-specific |
+| Signing, client relationships, advisory | Low | Trust and accountability cannot be delegated to software |
+
+### What I tell practices and young CAs
+
+For partners: the risk is not that AI replaces you. It is that a competing firm uses AI to do compliance work at a lower cost and with faster turnaround, and your clients notice. Pick one high-volume workflow, measure how long it takes today, and test AI on it with full review. My 90-day AI pilot playbook for CA firms sets out how.
+
+For CAs in industry: the routine month-end and reporting work will shrink. The people who do well will own the controls around AI output, the business partnering and the explanation of numbers to management.
+
+For students and freshers: articleship that is only vouching and data entry will lose value. Learn to review machine output, write clearly, understand data and ask why a number moved. I have written more on this in is CA worth it in 2026 with AI .
+
+### Where AI genuinely fails CAs today
+
+General-purpose assistants still state wrong section numbers, outdated rates and invented case references with total confidence. They have no idea whether a client’s facts were complete. And anything you paste into a consumer account may sit outside the firm’s control, which matters for your confidentiality obligations and, where personal data is involved, for the Digital Personal Data Protection Act, 2023 . That is why every useful deployment I have built keeps a named reviewer and a written data rule. The AI controls checklist for CA firms covers the minimum set.
+
+### The bottom line
+
+AI will not take over the chartered accountant’s role. It will take over the parts of the job that never needed a chartered accountant. Firms and individuals who move their time up to review, judgement and advice will be fine; those who bill for volume of routine work will feel the squeeze first. If you want the wider map, start with the AI for chartered accountants in India hub , browse the AI tools for chartered accountants , look at the AI Opportunity Audit if you want a structured 90-day plan, or book a discovery call .
+
+### Frequently asked questions
+
+#### Will AI take over chartered accountants?
+
+No. AI is taking over routine tasks such as data entry, first-pass reconciliations and drafting, but signing audit and tax reports, forming opinions and carrying professional liability remain with a qualified, regulated CA. The role shifts towards review, judgement and advice.
+
+#### Which CA jobs are most at risk from AI?
+
+Roles built mainly on data entry, bookkeeping and routine reconciliations face the most pressure. The WEF Future of Jobs Report 2025 lists accounting, bookkeeping and payroll clerks among the fastest-declining roles to 2030, with AI and information processing named as key drivers.
+
+#### How can chartered accountants use AI?
+
+Start with frequent, checkable work: bank statement categorisation, GST reconciliation exception lists, notice summaries and first drafts of client emails. Use a firm-controlled business account, keep client data rules in writing and have a named reviewer check every output before it leaves the firm.
+
+#### What is the 30% rule for AI?
+
+It is an informal rule of thumb, not a regulation or standard. It is usually framed as letting AI handle the routine bulk of a task while people keep roughly 30% that needs judgement, quality control and accountability. For CAs the useful idea is simple: automate the predictable steps and keep a person responsible for anything that reaches a client, a filing or a signature.
+
+### Sources
+
+- World Economic Forum: Future of Jobs Report 2025, Jobs outlook
+- Microsoft India: 2024 Work Trend Index India findings (16 May 2024)
+- ICAI membership data from the 76th Annual Report 2024-25, as summarised by JurisHour (29 May 2026)
+- ICAI press release: AI Innovation Summit 2026, AICA Level 3 and Sarvam AI MoU (26 June 2026)
+- Digital Personal Data Protection Act, 2023 (Gazette text, MeitY)
+
+Disclaimer: this article is general educational commentary from my implementation work. It is not legal, tax, audit, career or data-protection advice. Fees, courses and tool terms change; check the current details at the source before acting.
+
+Educational content; not financial, investment, or legal advice.
+
+---
+
+## AI Controls Checklist for CA Firms in India: Practical Review Gates
+
+URL: https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india
+Last updated: 2026-10-07
+Summary: A practical AI controls checklist for CA firms in India covering client data, approved tools, human review, audit trails, testing, retention and incident handling.
+
+CA insights · 2026-10-04 · Updated 7 Oct 2026 · 9 min read
+
+### AI Controls Checklist for CA Firms in India: Practical Review Gates
+
+A practical checklist for using AI in accounting and advisory workflows without losing confidentiality, evidence, review discipline or professional judgement.
+
+In practice, what I see in CA firms is that AI is already in use before anyone has written the rules. Which tools are approved? Which client data may go in? Who checks the output, and what happens when it is wrong? AI can help a firm research a standard, extract fields from a document, draft a first version of a memo, flag reconciliation exceptions or organise a client query queue. It can also cause a confidentiality incident, repeat one error across fifty files, or make a polished draft look more reliable than it is. Which of those the firm gets depends on its controls, not on the model.
+
+I write this as a Chartered Accountant and AI implementation practitioner. The checklist is designed for partners, proprietors, finance leaders and practice managers who want a usable operating baseline. It is not a substitute for professional judgement, engagement terms, applicable law or the firm's own quality-control framework.
+
+### 1. Write the purpose and name the owner
+
+Every AI workflow should start with a narrow sentence: what work is being assisted, who owns the result and what good looks like. “Use AI for audit” is not a control objective. “Extract invoice fields into a review queue; the senior reviews low-confidence items before posting” is closer.
+
+- Purpose: the process constraint being addressed.
+- Owner: one person accountable for the workflow and exceptions.
+- Users: the people permitted to run or review it.
+- Output: the exact document, queue, report or draft produced.
+- Stop rule: the condition that sends work back to a human.
+
+### 2. Classify the data before choosing a tool
+
+Do not begin with a model catalogue. Begin with the data. Client identity, unpublished financial statements, payroll, bank details, tax working papers, audit evidence and draft advice should be classified before anyone decides where an input may be processed.
+
+Record whether each data class may be used in an approved cloud service, requires redaction, must remain in a controlled environment or should not enter the workflow at all. Data classification also needs an owner; a label nobody applies is not a control.
+
+This is no longer only good practice. Under the Digital Personal Data Protection Act, 2023, failing to take reasonable security safeguards to prevent a personal data breach can attract a penalty of up to ₹250 crore . The DPDP Rules, 2025, notified in November 2025 , give organisations an 18-month phased timeline to comply. Payroll, KYC and individual taxpayer files are personal data; classify them as such.
+
+### 3. Approve tools and accounts
+
+Maintain a short approved-tool register. For each service, document the account owner, permitted data classes, access method, retention setting, export route, vendor terms reviewed and the process for revoking access. A free trial account used by one employee can quietly become an unmanaged system of record.
+
+Read the vendor terms rather than assuming them. OpenAI states that it does not train its models on data from its business products, such as ChatGPT Enterprise and the API, by default . Microsoft states that prompts and responses in Microsoft 365 Copilot are not used to train its foundation models . Both commitments attach to the business offerings. Neither covers a personal account an employee signed up for on their phone.
+
+- Use named business accounts rather than personal accounts for client work.
+- Enable multi-factor authentication and least-privilege access.
+- Record which tools may receive client data and which may not.
+- Keep an exit path for prompts, files, outputs and workflow configuration.
+
+### 4. Define the human review gate
+
+AI can prepare, classify, reconcile, route and draft. The firm remains responsible for professional judgement and client-facing conclusions. Write the human gate in plain language: what the system may suggest, what must be checked, which confidence or exception conditions trigger review, and who signs off.
+
+For material items, unusual evidence, ambiguous documents, fraud indicators, tax positions, audit conclusions and investment or client advice, the review gate should be explicit rather than implied. “The partner will look at it” is weaker than a named review step with evidence.
+
+### 5. Preserve evidence and an audit trail
+
+A useful AI workflow should make reconstruction easier, not harder. Keep enough information to answer: which input was used, which workflow version ran, what output was produced, who reviewed it, what changed and why the final result was accepted.
+
+Companies already live with a version of this rule. Since 1 April 2023, the proviso to Rule 3(1) of the Companies (Accounts) Rules, 2014 has required accounting software that records an audit trail of every transaction, with an edit log that cannot be disabled . An AI step that feeds those books should not be the weak link in that trail.
+
+- Input source and date.
+- Workflow or prompt version.
+- Output and confidence or exception status.
+- Reviewer identity and review date.
+- Corrections, overrides and escalation reason.
+
+Retention should follow the firm's engagement, privacy and quality-control requirements. Do not retain sensitive data merely because the tool makes retention easy.
+
+### 6. Test normal cases and awkward cases
+
+A demonstration with clean data is not a control test. Build a small test set containing ordinary examples, missing fields, duplicate records, unusual vendors, low-quality scans, conflicting dates and items that should be escalated. Keep the test set separate from live client data where possible.
+
+Before release, record the expected result, observed result, error type, reviewer decision and remediation. After release, sample outputs periodically. A workflow that was safe in one month-end can drift when templates, vendors or source systems change.
+
+### 7. Protect client communication and engagement boundaries
+
+Decide what the firm tells clients about AI-assisted work. The answer depends on the engagement, data, professional standards and the role the tool plays. At minimum, staff should know what may be shared externally, what must be reviewed internally and how to respond when a client asks whether AI was used.
+
+Do not allow a generated answer to create a new client commitment, change a filing position or communicate professional advice without the review required by the engagement and the firm's quality process.
+
+### 8. Create an incident and exception path
+
+Controls are tested when something goes wrong. Define how a user reports an incorrect output, accidental disclosure, prompt injection, unusual document, suspected fraud signal or vendor outage. The workflow should make it easy to pause processing and preserve the relevant evidence.
+
+- Stop the workflow and quarantine the output where necessary.
+- Notify the named owner and relevant quality or security contact.
+- Assess affected data, clients, deliverables and deadlines.
+- Record the decision, remediation and return-to-service condition.
+
+### 9. Run a 30-day implementation sequence
+
+Small firms do not need a forty-page AI policy to start. A controlled first month is more useful:
+
+- Days 1–5: choose one low-risk, repetitive workflow and name its owner.
+- Days 6–10: classify data, approve the tool and define the human gate.
+- Days 11–20: test normal and awkward cases; record corrections.
+- Days 21–25: run a limited parallel workflow with review evidence.
+- Days 26–30: review time saved, exception quality, adoption and control concerns before scaling.
+
+For a broader finance sequence, see the AI finance automation roadmap for CFOs and controllers . For a CA-specific implementation hub, see AI for Chartered Accountants in India .
+
+### 10. What should stay human?
+
+Keep accountability human for material judgement, ambiguous evidence, unusual estimates, fraud indicators, client advice, professional conclusions and decisions that are difficult to reverse. Automation can reduce preparation and routing effort without becoming the decision-maker.
+
+### Frequently asked questions
+
+#### What should an AI controls checklist for a CA firm include?
+
+It should cover purpose and ownership, data classification, approved tools, human review, evidence and audit trails, access and retention, testing, client communication, monitoring and incident handling.
+
+#### Can a CA firm use AI for client work without human review?
+
+AI may assist with research, extraction, drafting, reconciliation and routing, but the firm should define a human review gate for professional judgement, material conclusions, unusual items and client-facing advice.
+
+#### How should a small CA firm start AI governance?
+
+Start with one low-risk workflow, name an owner, classify the data, approve the tool, keep a test set and log exceptions before expanding to more sensitive work.
+
+### Sources
+
+- NIST AI Risk Management Framework
+- ICAI announcement on AI in finance, accounting and tax services
+- MeitY — Digital Personal Data Protection Act, 2023 (Schedule: penalties)
+- PIB — Government notifies DPDP Rules (14 November 2025)
+- OpenAI — Business data privacy, security and compliance
+- Microsoft Learn — Enterprise data protection in Microsoft 365 Copilot
+- The Chartered Accountant journal (ICAI) — Mandatory audit trail
+
+This operational checklist is educational commentary, not personalised accounting, tax, legal, audit or investment advice. Verify current professional requirements, client terms, privacy obligations and vendor policies before deployment.
+
+NEXT STEP
+
+### Turn the checklist into a scoped release
+
+Use the free AI Opportunity Scorecard to score process, data, ROI, risk and ownership, or book a conversation about an AI Opportunity Audit .
+
+---
+
+## How to Run a 90-Day AI Pilot in a CA Firm in India: A 30/60/90 Playbook
+
+URL: https://pratikbajoria.com/blog/2026-10-07-how-to-run-a-90-day-ai-pilot-in-a-ca-firm-in-india
+Last updated: 2026-10-07
+Summary: A 30/60/90-day AI pilot playbook for CA firms in India: choosing the first workflow, taking a baseline, client-data rules, review gates and an honest go/no-go decision.
+
+CA insights · 2026-10-07 · 8 min read
+
+### How to Run a 90-Day AI Pilot in a CA Firm in India: A 30/60/90 Playbook
+
+A 30/60/90-day AI pilot playbook for CA firms in India: choosing the first workflow, taking a baseline, client-data rules, review gates and an honest go/no-go decision.
+
+Key takeaways
+
+- Run one pilot on one workflow for 90 days, with a baseline taken before any tool is used and a written go/no-go decision at the end.
+- Days 1–30: choose the workflow, log two to three weeks of baseline and agree one-page client-data rules.
+- Days 31–60: run AI in parallel with 100% review and an exception log.
+- Days 61–90: prove it at normal volume, including real deadline pressure, then decide go, adjust or stop.
+- Stopping with evidence is a valid result.
+
+If you are a partner in an Indian CA practice and want to start with AI properly, here is the short answer: run one pilot, on one workflow, for ninety days, with a baseline taken before anyone opens a tool and a go/no-go decision written down at the end. Days 1–30 are for choosing the workflow, measuring how it runs today and agreeing the client-data rules. Days 31–60 are for running AI alongside the existing process, never instead of it. Days 61–90 are for proving it at normal volume and deciding whether to keep it, change it or stop.
+
+Most firms skip the dull parts. They buy licences, let the keenest associates experiment, and three months later nobody can say whether anything improved. This is the playbook I would use with a practice that wants an answer rather than a demo.
+
+### What a pilot is, and what it is not
+
+A pilot is a time-boxed test of one workflow, with a named owner, a measured starting point and a fixed decision date. It is not a firm-wide rollout, not a tool trial run by whoever has spare time, and not a reason to relax review. If you cannot state the workflow, the owner and the decision date in one sentence, you do not have a pilot yet.
+
+Keep it to one workflow, however long the partners’ wish list. Partner attention is the scarcest resource in most practices.
+
+### Days 1–30: choose the workflow, take the baseline, set the rules
+
+#### Pick the first workflow on evidence, not excitement
+
+Good first candidates are frequent, repetitive and easy to check. In a typical practice that might be first-pass categorisation of bank statement lines for bookkeeping clients, drafting routine document-request emails, summarising long agreements or departmental notices so a reviewer knows where to look, preparing exception lists for GST reconciliation, or turning a new circular into an internal checklist. Poor first candidates are anything that ends in a professional opinion, a signed report, tax-position advice or a filing that could leave the firm without a person reading it.
+
+Score your shortlist against the criteria below, 1 to 5 each, and pick the highest total rather than the most interesting idea.
+
+| Criterion | Score high (5) when | Score low (1) when |
+| Volume | It happens every week across many clients | It happens a few times a year |
+| Rules | The steps are written down, or could be in an afternoon | It depends on one senior’s judgement |
+| Data sensitivity | It works on redacted or low-sensitivity data | It needs identity numbers, payroll or unpublished results |
+| Reviewability | A reviewer can check output against the source quickly | Checking takes as long as doing it |
+| Cost of an error | Mistakes are caught inside the firm | Mistakes reach a client, a department or a filing |
+| Ownership | A manager wants it fixed and will run the pilot | It is nobody’s job |
+
+#### Take the baseline before anyone touches a tool
+
+Without a baseline, the day-90 conversation is a contest of opinions. For two or three weeks, have the owner log the chosen workflow as it runs today: how many items were processed, roughly how long each took, how many came back from review, and what kind of errors the reviewer caught. Rough is fine. An honest log of twenty real items beats a confident estimate.
+
+#### Write the client-data rules on one page
+
+Your confidentiality obligations under ICAI’s framework do not pause for a pilot, and where the material includes personal data, the Digital Personal Data Protection Act, 2023 expects reasonable security safeguards, including when a vendor processes that data for you. Before the pilot starts, partners should agree, in writing:
+
+- which kinds of data may go into the tool, and which never may;
+- that only a firm-controlled business account is used, never a personal one;
+- who administers retention and access, and what the settings are;
+- where outputs are saved: the engagement file, not a chat history;
+- whether engagement letters or client communications need updating, on which you should take proper advice.
+
+The fuller version is in the AI controls checklist for CA firms in India . For a pilot, one page people actually read beats a policy nobody opens.
+
+#### Sign a one-page pilot charter
+
+The charter names the workflow, owner, reviewer, tool, data rules, baseline, success measures, stop conditions and decision date. Set the success measures before you begin, in terms you already track or can log: reviewer time per item, items returned at review, turnaround from receipt to completion, and any breach of the data rules. Agree the thresholds in advance. If the partners only decide what “good” means after seeing the results, the pilot will always succeed on paper.
+
+From pratikbajoria.com
+
+Not sure which workflow to pilot first? Start with the free AI Opportunity Scorecard , or see the scoped AI Opportunity Audit for a 90-day map.
+
+### Days 31–60: run it in parallel, with a review gate on everything
+
+In the second month the AI-assisted version runs alongside the normal process. Either the team does a sample both ways, or the tool drafts and a reviewer checks every single output. Review is 100% in this phase, with no exceptions for items that look fine.
+
+Keep an exception log. Every time the reviewer corrects something, record what was wrong, why it mattered and how serious it was. Then hold a twenty-minute weekly review with the owner, the reviewer and the sponsoring partner, and look at the log rather than anecdotes. Use what you learn to improve the inputs, templates and instructions. Do not widen the scope; a pilot that grows every week cannot be measured.
+
+Watch for three things: staff drifting outside the data rules because it is quicker, outputs that read well but cite the wrong section or figure, and preparation time saved being eaten by longer review. Only the log will show the last one.
+
+### Days 61–90: prove it at normal volume, then decide
+
+In the final month the tool drafts and a named person reviews and signs off, at normal volume and ideally through at least one stretch of real deadline pressure. A workflow that only works in a quiet week will not survive filing season. If, and only if, the exception log supports it, you can move internal-only items from full review to risk-based sampling. Anything that leaves the firm keeps full review.
+
+At the end, compare the pilot against the baseline and write a short decision memo. There are only three honest outcomes.
+
+| Decision | When it applies | What happens next |
+| Go | Measures met, no unresolved control issues, and the team uses it without being chased | Write the procedure, train the next team, add it to the firm’s AI register |
+| Adjust | Some value, but review effort is high or errors cluster in one step | Narrow the scope or fix the inputs, then rerun for 30 days on the same measures |
+| Stop | No measurable improvement, or a confidentiality or quality risk you cannot control | Record why, release any single-purpose licences, and pick the next candidate |
+
+Stopping is a legitimate result. A practice that can show partners why it stopped one pilot will find it much easier to fund the next one. I have written more about that in when a finance team should say no to an AI pilot .
+
+### Plan around the compliance calendar
+
+Indian practices have predictable crunch periods around return and audit due dates. Do not start the parallel run in the fortnight before a major deadline, because review is the first thing that gets squeezed. But make sure the final month includes some real load: the aim is to prove the workflow in an ordinary busy period, not to hide it from one.
+
+### Mistakes I see most often
+
+- Piloting the tool instead of the workflow. “Let’s try Copilot” is not a pilot. “Let’s cut reviewer time on bank categorisation for bookkeeping clients” is. If the tool itself is still undecided, settle that first; see how a CA firm in India should choose an AI assistant .
+- No baseline. Without one, every result is anecdotal.
+- Scope creep. Adding a second workflow in week five resets the measurement.
+- No owner for the decision date. Pilots without a fixed end quietly become unmanaged production.
+
+For the wider implementation map, start at the AI for chartered accountants in India hub. If GST is your likely first workflow, read using AI for GST reconciliation without risking client data . For help scoping the first pilot, take the free AI Opportunity Scorecard , look at the AI Opportunity Audit , or book a discovery call .
+
+### Pilot-ready checklist
+
+- One workflow named, with an owner and a reviewer.
+- Selection scores recorded for every shortlisted workflow.
+- Two to three weeks of baseline logged on real items.
+- One-page client-data rules agreed by the partners.
+- Firm-controlled business account set up, with retention configured.
+- Charter signed, with success measures, thresholds and stop conditions.
+- Exception log template ready before day 31.
+- Weekly twenty-minute review in the calendar.
+- Decision date fixed, and kept clear of the heaviest filing weeks.
+
+### Frequently asked questions
+
+#### How long should an AI pilot in a CA firm take?
+
+Ninety days is a practical default for one workflow: a month to choose it, take a baseline and agree data rules, a month running AI in parallel with full review, and a month at normal volume before a written go, adjust or stop decision.
+
+#### What is a good first AI use case for a CA practice in India?
+
+Pick something frequent, repetitive and easy to check, where mistakes are caught inside the firm: for example first-pass bank statement categorisation, routine document-request emails, summaries of long notices for a reviewer, or GST reconciliation exception lists. Avoid anything that ends in an opinion, a signed report or a filing.
+
+#### Do we need client consent to use AI on client work?
+
+It depends on your engagement terms, the data involved and your obligations under ICAI’s framework and the Digital Personal Data Protection Act, 2023. Take proper advice on your facts. Many firms start the pilot on redacted or internal-only data, which keeps the question manageable while they learn.
+
+#### What if the pilot does not work?
+
+Stopping with evidence is a valid result. Record why, release any single-purpose licences and move to the next candidate. A clear record of why one pilot stopped makes the next one easier to approve.
+
+### Sources
+
+- Digital Personal Data Protection Act, 2023 (Gazette text, MeitY)
+- NIST AI Risk Management Framework
+- NIST AI 600-1 — Generative AI Profile
+
+Disclaimer: this article is general educational commentary from implementation work. It is not legal, tax, audit, data-protection or procurement advice, and it does not create an adviser–client relationship. Tool terms and features change; read the current terms for your plan and take professional advice on your specific facts before acting.
+
+Educational content; not financial, investment, or legal advice.
+
+---
+
+## How Audit and Accounting Firms in India Are Using AI in 2026
+
+URL: https://pratikbajoria.com/blog/2026-10-07-how-audit-and-accounting-firms-in-india-are-using-ai
+Last updated: 2026-10-07
+Summary: How audit and accounting firms in India use AI in 2026: what Big 4 platforms, ICAI’s tools and mid-sized CA practices deploy, and what smaller firms should copy.
+
+CA insights · 2026-10-07 · 8 min read
+
+### How Audit and Accounting Firms in India Are Using AI in 2026
+
+How audit and accounting firms in India are using AI in 2026: what Big 4 platforms, ICAI’s tools and mid-sized CA practices are actually deploying, and what a smaller firm should copy first.
+
+Key takeaways
+
+- The Big 4 are embedding AI agents in their global audit platforms (EY Canvas, Deloitte Omnia) while keeping auditors accountable for conclusions.
+- ICAI offers CA GPT free to members (more than 70,000 users by November 2024) and the VERA audit suite built around the Standards on Auditing.
+- Smaller CA practices mostly use general assistants for drafting, summarising and first-pass reconciliations.
+- What to copy first: a one-page data rule, one high-volume workflow, before-and-after measurement and a human signature on every output.
+
+Audit and accounting firms in India are using AI in three distinct ways in 2026. The Big 4 are embedding AI agents inside global audit platforms used by their Indian teams. ICAI is putting free and low-cost tools in the hands of members. And mid-sized and smaller CA practices are using general assistants for drafting, summarising and reconciliation, often without written rules. The firms getting real value share one habit: they treat AI as a change to a specific workflow, with a reviewer, not as a tool everyone experiments with.
+
+I spent my early career in Big 4 and now help CA practices and finance teams implement AI, so I see both ends. Here is what is actually happening.
+
+### 1. The Big 4: AI inside the audit platform
+
+The large networks run global audit platforms that their Indian member firms use, and those platforms now have AI built in.
+
+- EY announced in April 2026 that it is embedding a multi-agent framework into EY Canvas , which it says covers the daily work of 130,000 assurance professionals across 160,000 audit engagements in more than 150 countries and processes over 1.4 trillion lines of journal entry data a year. EY expects it to support all end-to-end audit activities by 2028, while stressing that human judgement and scepticism remain central.
+- Deloitte has added a network of AI agents to Deloitte Omnia , its global audit platform, available to nearly 85,000 audit and assurance practitioners, and describes its approach as “human-led, AI-powered”.
+- On the tax side in India , EY India says its India Tax Platform includes AI agents for tax research, compliance and litigation, supports more than 4,000 clients and is built by over 650 tax technologists.
+
+The lesson for everyone else is not to copy the technology. It is that even firms with these budgets keep a person accountable for each conclusion and invest heavily in training alongside the tools.
+
+### 2. ICAI: tools for every member
+
+ICAI has moved faster than most professional bodies. It offers CA GPT free to members, which it says more than 70,000 members were using by November 2024 . It reports more than 150 GPT-based tools and over 50,000 members trained in AI . And ICAI VERA is a digital audit suite built around the Standards on Auditing, with engagement letters, materiality calculators, an evidence vault, Tally and GST data tools and report generators for SA 700/705/706, CARO 2020 and IFC reporting. VERA’s own disclaimer is worth repeating: final professional responsibility for audit conclusions lies with the signing CA.
+
+### 3. Mid-sized and smaller CA practices
+
+This is where most of the profession sits. ICAI’s 2024-25 membership data shows about 1.61 lakh members in practice. In the practices I work with, AI use typically looks like this:
+
+| Use | What works | What goes wrong |
+| Drafting emails, notice replies, engagement letters | Big time saving on first drafts | Wrong sections or rates sent without checking |
+| GST, TDS and bank reconciliations | Fast exception lists for a reviewer | Client data pasted into personal accounts |
+| Audit analytics and ledger scrutiny | Testing full populations, unusual-entry flags | Output not linked back to working papers |
+| Summarising agreements and circulars | Reviewer knows where to look | Summary treated as the reading |
+
+This matches the wider picture. Microsoft and LinkedIn’s 2024 Work Trend Index found 92% of Indian knowledge workers use AI at work, while 54% of Indian leaders worried their organisation lacked a plan to implement it. In CA practices, that gap shows up as juniors using tools quietly and partners not knowing what client data has gone where.
+
+### What a smaller firm should copy first
+
+- Write the data rule before buying anything. One page: what may go into which tool, under which account. Use the AI controls checklist for CA firms . Where personal data is involved, the Digital Personal Data Protection Act, 2023 expects reasonable security safeguards.
+- Pick one workflow with volume. Reconciliations and document-heavy review are good candidates. See AI for GST reconciliation and AI for audit working papers .
+- Measure before and after. Reviewer time per item and items sent back at review. Run it as a time-boxed pilot using my 90-day AI pilot playbook for CA firms .
+- Keep the signature human. Every big firm deploying agents says the same; your peer reviewer will too.
+
+### The real difference between firms
+
+It is not the tool. Big 4 teams, ICAI VERA users and a ten-person practice with a business AI licence can all get value, or all create risk. The difference is whether someone owns the workflow, the data rule and the review. If you want help mapping where AI pays back in your firm, see the AI Opportunity Audit , start with the AI for chartered accountants in India hub , or book a discovery call .
+
+### Frequently asked questions
+
+#### How is AI being used in accounting firms?
+
+Mostly for drafting client communications and notice replies, first-pass GST, TDS and bank reconciliations, ledger scrutiny and audit analytics, and summarising long documents for a reviewer. The largest firms are also embedding AI agents into their global audit platforms.
+
+#### How are audit firms using AI?
+
+Large networks such as EY and Deloitte have built AI agents into their audit platforms (EY Canvas and Deloitte Omnia) for risk assessment, testing and documentation, while keeping auditors accountable for conclusions. In India, ICAI offers members CA GPT and the VERA audit suite built around the Standards on Auditing.
+
+#### How can accounting firms use AI safely?
+
+Write a one-page data rule, use firm-controlled business accounts, start with one high-volume workflow, measure reviewer time and errors before and after, and keep a named person responsible for every output that reaches a client or a filing.
+
+#### Will AI take over Chartered Accountant work in audit firms?
+
+AI is taking over routine testing, data extraction and drafting, but audit opinions, professional scepticism and the signature remain with a qualified CA. Even firms deploying AI agents at scale describe their approach as human-led.
+
+### Sources
+
+- EY: enterprise-scale agentic AI in EY Canvas (7 April 2026)
+- Deloitte: connected agentic intelligence in Deloitte Omnia
+- EY India: AI-enabled enterprise tax solutions (18 February 2026)
+- ICAI press release: CA GPT platform and AICA course update (25 November 2024)
+- ICAI press release: AI Innovation Summit 2026, AICA Level 3 and Sarvam AI MoU (26 June 2026)
+- ICAI VERA: digital audit suite for CA firms
+- ICAI membership data from the 76th Annual Report 2024-25, as summarised by JurisHour (29 May 2026)
+- Microsoft India: 2024 Work Trend Index India findings (16 May 2024)
+- Digital Personal Data Protection Act, 2023 (Gazette text, MeitY)
+
+Disclaimer: this article is general educational commentary from my implementation work. It is not legal, tax, audit, career or data-protection advice. Fees, courses and tool terms change; check the current details at the source before acting.
+
+Educational content; not financial, investment, or legal advice.
+
+---
+
+## AI for GST Reconciliation in CA Firms Without Risking Client Data
+
+URL: https://pratikbajoria.com/blog/2026-09-28-how-indian-ca-firms-can-use-ai-for-gst-reconciliation-without-risking-client-data
+Last updated: 2026-10-07
+Summary: A CA’s playbook for AI on GSTR-2B reconciliation, IMS review and GST notice replies: what to automate, where the human gate sits, and how to protect client data.
+
+CA insights · 2026-09-28 · Updated 7 Oct 2026 · 8 min read
+
+### How Indian CA Firms Can Use AI for GST Reconciliation Without Risking Client Data
+
+A CA’s playbook for using AI on GSTR-2B reconciliation, IMS review and GST notice replies — what to automate, where the human gate sits, and how to keep client data out of the wrong tools.
+
+Key takeaways
+
+- Since 1 January 2022, section 16(2)(aa) of the CGST Act allows input tax credit only where the supplier has furnished the invoice details and they have been communicated to the recipient.
+- Much GSTR-2B matching needs no AI: match deterministically on GSTIN, invoice number and amount, and use AI for messy leftovers and reason coding.
+- Under GSTN's IMS FAQs, records with no action are deemed accepted when GSTR-2B is generated, so a named reviewer should take the IMS action.
+- Keep GSTR-2B exports and notices out of consumer chatbot accounts; the DPDP Act allows penalties of up to ₹250 crore for failing to take reasonable security safeguards.
+- AI can summarise notices and extract dates; the position and the reply stay with the responsible professional.
+
+Every month, somewhere between the 11th and the 20th, most CA practices in India run the same drill. Pull the client’s purchase register, download GSTR-2B, match line by line, chase vendors who have not uploaded, decide what to do with the stragglers, and file GSTR-3B. Add the occasional notice from the department and you have one of the most repetitive, deadline-driven workflows in the profession. It is exactly the kind of work people want to “throw AI at”.
+
+I think that instinct is right — with one condition. GST data is client data. It carries GSTINs, vendor relationships, pricing and, for proprietorships, information that identifies individuals. The question is not whether AI can help with GST reconciliation. It is how to use it so that a partner would be comfortable explaining the set-up to the client, to a peer reviewer, or to the department.
+
+The cost of getting the match wrong is written into the law. Since 1 January 2022, Section 16(2)(aa) of the CGST Act allows input tax credit only where the supplier has furnished the invoice details and they have been communicated to the recipient, which in practice means they appear in GSTR-2B. An unexplained mismatch is not a clerical loose end. It is credit the client may not be able to claim.
+
+### Where AI genuinely earns its place in GST work
+
+The useful jobs are mostly about language and mess, not tax judgement:
+
+- Normalising the purchase register. Vendor names spelled five ways, invoice numbers with and without prefixes, dates in mixed formats. Cleaning these is where most matching time actually goes.
+- Fuzzy matching and reason coding. Once exact matches are cleared by rules, a model can suggest likely pairs for the remainder and classify mismatches — timing, tax-rate difference, GSTIN error, missing upload — for a human to confirm.
+- Vendor follow-ups. Drafting polite, specific emails listing the invoices a supplier has not reported, for the article assistant to review and send.
+- Notice triage. Summarising a notice, extracting reference numbers, periods and due dates, and producing a checklist of documents likely to be needed.
+
+A lot of the matching itself does not need a large language model at all. A well-built spreadsheet or a short script that matches on GSTIN, invoice number and amount is deterministic, auditable and cheap. I use models for the parts rules handle badly: messy text, reason classification and first drafts.
+
+The data has also become more structured. E-invoicing has applied to businesses with aggregate turnover above ₹5 crore since 1 August 2023 , and from 1 April 2025 taxpayers with AATO of ₹10 crore and above cannot report an e-invoice on the IRP more than 30 days after its date . For a reconciliation team, that means more clean IRN data to match against, and less room to fix a supplier's late reporting after the event.
+
+### The IMS decision is a control point, not a chore
+
+Since GSTN introduced the Invoice Management System (IMS), recipients can accept, reject or keep pending the records their suppliers report. GSTN’s published FAQs say that records with no action are deemed accepted when GSTR-2B is generated, and that if you change actions after the draft GSTR-2B you need to recompute it before filing GSTR-3B. In other words, silence is a decision.
+
+That makes IMS the natural place for the human gate. Let the tool prepare a recommendation for each record with its reasoning — matched to books, missing in books, rate mismatch, possibly ineligible — and let a named reviewer take the action on the portal. The recommendation file becomes part of your working papers; the portal action remains a professional act.
+
+| GST task | What AI can reasonably do | Human gate | Client-data exposure |
+| Purchase register clean-up | Standardise vendor names, invoice formats and dates | Spot-check a sample before matching | Medium — keep inside approved tools |
+| Books vs GSTR-2B matching | Suggest pairs for non-exact items; classify mismatch reasons | Reviewer confirms matches above a value threshold | Medium — prefer scripts or approved environment |
+| IMS accept / reject / pending | Prepare a recommendation with reasoning per record | Named reviewer takes the portal action | Low if only the recommendation file is shared |
+| Vendor follow-up | Draft specific reminder emails | Article assistant reviews before sending | Low — share only the vendor’s own invoices |
+| Notice triage and reply | Summarise, extract dates, build document checklist and first-draft outline | Professional settles the position and signs the reply | High — notices often contain sensitive facts |
+
+### Keeping client data out of the wrong places
+
+The single most common failure I see is not a bad model. It is an article assistant pasting a client’s GSTR-2B export into a personal chatbot account because the approved tool was slower. So the rules need to be simple enough to remember in the second week of the month:
+
+Classify first. Purchase registers, GSTR-2B exports and notices are restricted client data by default. Consumer chatbot accounts are not an approved environment for restricted data.
+
+Know your role under the DPDP Act. The Digital Personal Data Protection Act, 2023 makes a data fiduciary responsible for processing done on its behalf by a data processor, allows processors to be engaged only under a valid contract, and requires reasonable security safeguards to prevent a personal data breach. Whether your firm is acting as a fiduciary or a processor for a given engagement is a question worth putting to counsel — but either way your AI vendor’s terms, storage location and retention settings need to be checked, not assumed.
+
+The ceiling is not small. The Act's Schedule allows a penalty of up to ₹250 crore for failing to take reasonable security safeguards to prevent a personal data breach, and the DPDP Rules, 2025 were notified in November 2025 with an 18-month phased timeline.
+
+Minimise what the model sees. Reason-coding a mismatch rarely needs the client’s name. Pseudonymise GSTINs and client identifiers where the task allows, and keep the mapping inside your own systems.
+
+Log it. Record which tool touched which client file, when, and who reviewed the output. The NIST AI Risk Management Framework is a useful reference for thinking about this proportionately; you do not need its full vocabulary to adopt the habit.
+
+From pratikbajoria.com
+
+Buy tools after you know which workflow pays back. Start with the free AI Opportunity Scorecard , or see the scoped AI Opportunity Audit for a 90-day map.
+
+### Notices: faster triage, same accountability
+
+On the GST portal, notices and orders are consolidated under Services › User Services › View Notices and Orders, according to GSTN’s user guide. A practical pattern is a weekly check of that page for each client, with every new item logged into your tracker. AI can then turn a dense notice into a one-page summary: what is alleged, for which period, the reply due date, and the documents you will probably need. It can propose an outline for the reply.
+
+What it cannot do is decide your position. Due dates extracted by a tool should be checked against the portal. The legal reasoning, the facts you rely on and the final reply must be settled by the responsible professional. I would also keep the model’s summary out of anything sent to the department; it is an internal working note.
+
+### How I would start in a practice this month
+
+Pick three clients with messy purchase registers and cooperative contacts. Build the deterministic match first. Add AI only for clean-up and reason coding on the leftovers. Put the IMS recommendation file in front of a named reviewer. Measure two things for one filing cycle: reviewer hours on reconciliation and the number of items still unexplained at filing. If both improve and nobody has touched an unapproved tool, extend to the next group of clients. If not, simplify before you scale.
+
+For the wider context — five-job map, data classes, thin releases — read the AI for chartered accountants in India hub. The companion pieces on AI tools for chartered accountants , where reconciliation automation helps and where it lies and AI for audit working papers go deeper on tooling and controls. If you want a structured view of where AI fits across your practice, the AI Opportunity Audit for CA firms is the scoped version, or you can book a discovery call .
+
+### Monday-morning checklist
+
+- List the clients whose GST reconciliation takes the most reviewer time; pick three.
+- Build deterministic matching (GSTIN, invoice number, amount) before adding any model.
+- Write down which tools are approved for GST data and ban consumer chatbot accounts for it.
+- Make IMS actions a named reviewer’s job, with the tool’s recommendation filed as a working paper.
+- Check each client’s View Notices and Orders page weekly and log every new item.
+- After one filing cycle, compare reviewer hours and unexplained items at filing.
+
+### Frequently asked questions
+
+#### Can AI decide whether input tax credit is eligible?
+
+No. AI can surface mismatches and suggest likely reasons, but ITC eligibility is a professional judgement on the facts and the law. Treat the tool’s output as a working note that a qualified person reviews before anything is accepted, rejected or claimed.
+
+#### Is it safe to upload a client’s GSTR-2B export to ChatGPT or a similar tool?
+
+Not to a consumer chatbot account. Use an approved environment with contractual data-processing terms, access control and retention settings your firm has reviewed, and redact or pseudonymise identifiers where the task allows. Deterministic matching in a spreadsheet or script often needs no AI model at all.
+
+#### What happens in IMS if nobody acts on an invoice?
+
+According to GSTN’s published IMS FAQs, records with no action are deemed accepted when GSTR-2B is generated. That is why the accept/reject/pending decision should sit with a named reviewer, even if an AI tool prepares the recommendation.
+
+#### Can AI draft replies to GST notices?
+
+It can summarise the notice, extract dates and build a document checklist and a first-draft structure. The position taken, the legal reasoning and the final reply must be settled and signed off by the responsible professional.
+
+### Sources
+
+- GSTN — Form GSTR-2B user manual (tutorial.gst.gov.in)
+- GSTN — Frequently Asked Questions on Invoice Management System (IMS)
+- GSTN — View Notices and Demand Orders (user guide)
+- CBIC — GST portal for law, rules and notifications
+- Digital Personal Data Protection Act, 2023 (Gazette text, MeitY)
+- NIST AI Risk Management Framework
+- ICAI — The Institute of Chartered Accountants of India
+- CBIC — Section 16, CGST Act, 2017
+- GST Council — Notification 10/2023-Central Tax (e-invoicing above ₹5 crore from 1 August 2023)
+- GSTN — advisory on the 30-day e-invoice reporting limit for AATO of ₹10 crore and above
+- MeitY — Digital Personal Data Protection Act, 2023 (Schedule: penalties)
+- PIB — Government notifies DPDP Rules (14 November 2025)
+
+Disclaimer: this article is general educational commentary from implementation work. It is not tax, legal, audit or data-protection advice, and it does not create an adviser–client relationship. GST procedures, portal functionality, Standards on Auditing and data-protection rules change; check the primary sources and take professional advice on your specific facts before acting.
+
+Educational content; not financial, investment, or legal advice.
+
+---
+
+## AI for Audit Working Papers in India: What a CA Should Automate
+
+URL: https://pratikbajoria.com/blog/2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human
+Last updated: 2026-10-07
+Summary: Using AI on audit working papers without weakening SA 230 documentation: what to automate, what stays with the engagement team, and how to record AI use.
+
+CA insights · 2026-09-30 · Updated 7 Oct 2026 · 7 min read
+
+### AI for Audit Working Papers in India: What a CA Should Automate and What Must Stay Human
+
+Using AI on audit working papers without weakening SA 230 documentation: which tasks to automate, which judgements stay with the engagement team, and how to document AI use on the file.
+
+Key takeaways
+
+- SA 230 still requires documentation an experienced auditor with no previous connection to the audit can understand, whether or not AI drafted part of it.
+- Automate mechanical work: PBC tracking, indexing and cross-referencing, tying lead schedules to the trial balance, field extraction and narratives of work already performed.
+- Keep human: risk assessment, materiality, sufficiency of evidence, sampling rationale, evaluation of misstatements and going concern.
+- Add a short AI-use block to each paper a tool touched: tool and version, input, output, reviewer and what the reviewer changed.
+- Since 1 April 2023, companies must use accounting software with an audit trail and edit log for every transaction.
+
+Busy season is when AI is most tempting on an audit file, and when it is most likely to go wrong. When I review how a firm is using AI on audits, I ask one question before looking at any tool: could an experienced auditor who has never seen this engagement pick up the file and understand what was done, what was found and why the team concluded what it did? That is not my invention. It is, in substance, the requirement in SA 230, Audit Documentation, as issued by ICAI. It is also the cleanest test I know for deciding which parts of working-paper preparation AI should touch.
+
+AI is very good at producing text that looks like a working paper. That is the danger. A fluent narrative that nobody performed, or a tie-out nobody checked, makes a file look complete while hollowing out the evidence underneath it.
+
+### What SA 230 actually asks of the file
+
+Paragraph 8 of SA 230 requires documentation sufficient to enable an experienced auditor, having no previous connection with the audit, to understand the nature, timing and extent of procedures performed, the results and evidence obtained, and significant matters, conclusions and professional judgements. Paragraph 9 requires recording who performed the work and when, and who reviewed it, when and to what extent. The application material notes that assembly of the final audit file is ordinarily completed not more than 60 days after the date of the auditor’s report .
+
+None of that is suspended because a model drafted part of the paper. If anything, AI raises the bar on the “who performed” and “who reviewed” lines, because the honest answer now has three parties: the person, the tool, and the reviewer.
+
+There is a second trail to keep in mind. For companies, the proviso to Rule 3(1) of the Companies (Accounts) Rules, 2014 has, since 1 April 2023, required accounting software with an audit trail and an edit log for every transaction . If an AI tool prepares entries or schedules that end up in those books, the working paper should let a reviewer connect the two.
+
+### What I would automate
+
+The work worth automating is mechanical, checkable and repetitive:
+
+- PBC tracking and indexing. Matching client uploads to the request list, naming files consistently, flagging what is missing.
+- Lead schedules and tie-outs. Mapping the trial balance to lead schedules and flagging differences — work that is easy to re-perform and verify.
+- Extraction for vouching support. Pulling dates, amounts and parties from invoices, confirmations and agreements into a schedule, with the source document linked on every row.
+- Reading aids. Summarising board minutes or long contracts to direct attention — not to replace reading the relevant sections.
+- Drafting narratives of completed work. Turning a senior’s notes on procedures already performed into a clean working-paper narrative, which the senior then checks line by line.
+
+### What must stay human
+
+Risk assessment and materiality. The judgement on whether evidence is sufficient and appropriate. The rationale for sampling approaches, even if a tool generates the selection. Evaluation of misstatements. Going-concern and key judgement areas. Communication with management and those charged with governance. Review and sign-off. These are the places where the file has to show professional judgement, and SA 230 expects significant judgements to be documented as judgements made by the engagement team.
+
+| Working-paper task | Automate? | Human responsibility | Evidence to keep on file |
+| PBC tracking and indexing | Yes | Senior confirms completeness of the request list | Tracker with dates and source links |
+| TB to lead schedule tie-out | Yes | Preparer investigates every difference flagged | Tie-out with differences and resolutions |
+| Field extraction from invoices and confirmations | Yes, with source links | Preparer checks a sample back to documents | Extraction schedule, tool used, sample check noted |
+| Sample selection | Tool may generate | Team sets population, method and rationale | Parameters, output and rationale |
+| Minutes and contract summaries | As a reading aid | Team reads relevant sections in full | Note of what was read and matters identified |
+| Risk assessment, materiality, conclusions | No | Engagement team and partner | Documented judgements and review evidence |
+
+### Documenting AI use without drowning in it
+
+Firms tend to swing between two extremes: no record of AI use at all, or a policy so heavy that people quietly stop disclosing it. I prefer a short, standard block on any working paper where a tool contributed: the tool and version, what it was given, what it produced, who reviewed it, when, and what they changed. That is enough for a reviewer to reconstruct the work, and it fits naturally alongside the preparer and reviewer sign-offs SA 230 already expects.
+
+Keep prompts that are reused across engagements in a controlled library, with an owner and change notes. When a prompt changes, the output changes; a reviewer should be able to see which version produced which paper. The NIST AI Risk Management Framework is a sensible reference for this kind of proportionate logging.
+
+From pratikbajoria.com
+
+Buy tools after you know which workflow pays back. Start with the free AI Opportunity Scorecard , or see the scoped AI Opportunity Audit for a 90-day map.
+
+### Confidentiality and client data
+
+Audit files contain some of the most sensitive information a client has: unpublished results, payroll, related-party dealings, legal matters. Consumer chatbot accounts are not an approved environment for that material. Use tools your firm has assessed for data processing, storage location, retention and access control. Where working papers include personal data — payroll and KYC are obvious examples — the Digital Personal Data Protection Act, 2023 expects the business to protect it with reasonable security safeguards, including when a processor handles it on its behalf. Your professional confidentiality obligations under ICAI’s framework apply regardless of which tool you choose.
+
+The rules have also firmed up. The DPDP Rules, 2025 were notified in November 2025 , with most obligations phased in over 18 months, so treat this as current compliance, not a future project.
+
+For audits within the remit of the National Financial Reporting Authority, expect files to be read closely by people who were not on the engagement. That is precisely the reader SA 230 has in mind.
+
+### A sensible first quarter
+
+Pick two or three engagements with cooperative clients and stable systems. Automate PBC tracking and lead-schedule tie-outs first. Add extraction for vouching support with a documented sample check. Introduce the standard AI-use block on every paper a tool touched. At the end of the quarter, ask a manager from a different team to read one file cold. If they can follow it, extend. If they cannot, the problem is the file, not the reviewer.
+
+Timing matters too. For AY 2026-27 the CBDT has moved the specified date for tax audit reports from 30 September to 21 October 2026 , which pushes tax audit work into the weeks many firms are also closing statutory files. A pilot that adds review steps in that window has to be planned for it, not discovered in it.
+
+For the full CA implementation map, see the AI for chartered accountants in India hub. Related pieces: using AI for GST reconciliation without risking client data , AI tools for chartered accountants and when to say no to an AI pilot . To see where AI fits across your practice, start with the free AI Opportunity Scorecard , look at the scoped AI Opportunity Audit , or book a discovery call .
+
+### Monday-morning checklist
+
+- Pick two or three engagements and name the manager accountable for the AI trial.
+- Automate PBC tracking and lead-schedule tie-outs before anything judgement-heavy.
+- Add source links to every extracted row and document a sample check.
+- Adopt a standard AI-use block: tool, input, output, reviewer, date, changes.
+- Keep client files out of consumer chatbot accounts; confirm vendor data terms.
+- At quarter end, have someone outside the team read one file cold.
+
+### Frequently asked questions
+
+#### Does using AI on an audit change what SA 230 requires?
+
+No. SA 230 still requires documentation sufficient for an experienced auditor with no previous connection to the audit to understand the procedures performed, the evidence obtained and the significant judgements made. AI-assisted work has to meet the same test, which usually means recording how the tool was used and who reviewed its output.
+
+#### Which audit tasks are safest to automate first?
+
+Administrative and mechanical work: PBC tracking, indexing and cross-referencing, tying lead schedules to the trial balance, extracting fields from confirmations and invoices, and drafting narratives of work already performed. These are easy to check and do not replace judgement.
+
+#### Can AI select audit samples?
+
+Tools can generate selections, but the sampling approach, the population, and the rationale remain the engagement team’s responsibility and should be documented as such. Keep the parameters and the output on file so the selection can be re-performed.
+
+#### How should I document AI use on the working paper?
+
+Note the tool and version, the input it was given, the output, who reviewed it and when, and what the reviewer changed. Keep it short, but make it possible for a reviewer to reconstruct what happened.
+
+### Sources
+
+- ICAI — SA 230, Audit Documentation (text of the Standard)
+- ICAI — Implementation Guide to SA 230, Audit Documentation (Revised 2022 Edition)
+- National Financial Reporting Authority (NFRA)
+- Digital Personal Data Protection Act, 2023 (Gazette text, MeitY)
+- NIST AI Risk Management Framework
+- ICAI — Implementation Guide to SA 230, Audit Documentation
+- The Chartered Accountant journal (ICAI) — Mandatory audit trail
+- PIB — Government notifies DPDP Rules (14 November 2025)
+- PIB — CBDT extends AY 2026-27 due dates for audited taxpayers (29 September 2026)
+
+Disclaimer: this article is general educational commentary from implementation work. It is not tax, legal, audit or data-protection advice, and it does not create an adviser–client relationship. GST procedures, portal functionality, Standards on Auditing and data-protection rules change; check the primary sources and take professional advice on your specific facts before acting.
+
+Educational content; not financial, investment, or legal advice.
+
+---
+
+## AI for Internal Audit in Indian Companies: A Practical Starting Point
+
+URL: https://pratikbajoria.com/blog/2026-10-08-ai-for-internal-audit-in-indian-companies-a-practical-starting-point
+Last updated: 2026-10-08
+Summary: A CA's starting point for AI in internal audit in India: who s.138 covers, what ICAI's new SIA 240 on tools asks for, and one full-population test.
+
+CA insights · 2026-10-08 · 11 min read
+
+### AI for Internal Audit in Indian Companies: A Practical Starting Point
+
+A CA's starting point for AI in internal audit in India: who s.138 covers, what ICAI's new SIA 240 on tools asks for, and one full-population test.
+
+Key takeaways
+
+- Rule 13 of the Companies (Accounts) Rules, 2014, under section 138, requires an internal auditor in listed companies and in unlisted public and private companies above set turnover or borrowing thresholds.
+- ICAI's SIA 240 expects tools, including AI, to be validated and documented, and says the internal auditor should not rely solely on automated outputs.
+- Start with full-population testing of one high-volume process, such as procure-to-pay, instead of a sample.
+- AI helps turn policy into tests, draft code, group exceptions and draft observations; people decide what is an issue and sign the report.
+- Under CARO 2020 clause 3(xiv), the statutory auditor reports on whether the internal audit system is commensurate with the business.
+
+If you run internal audit in an Indian company, or your CA firm is the appointed internal auditor under section 138, here is my short answer on AI: do not start with a dashboard. Start by testing one high-volume process on the full population instead of a sample, let people investigate every exception the test throws up, and document the tool the way you would document any other audit procedure. ICAI has now written that expectation down in a standard of its own, which makes this a good year to begin properly.
+
+I trained as a Chartered Accountant, spent my early years in Big 4 assurance, and now help finance and audit teams put AI into real workflows. The pattern I see in internal audit is the same one I saw in statutory audit: the technology is rarely the constraint. Clean data, a clear test and a reviewer who knows the business are.
+
+### Who this applies to: section 138 and Rule 13
+
+Internal audit is not optional for a large part of corporate India. Rule 13 of the Companies (Accounts) Rules, 2014 , made under section 138 of the Companies Act, 2013, requires an internal auditor in:
+
+- every listed company;
+- every unlisted public company with paid-up share capital of ₹50 crore or more, turnover of ₹200 crore or more, outstanding loans or borrowings from banks or public financial institutions above ₹100 crore, or outstanding deposits of ₹25 crore or more, at any point in the preceding financial year;
+- every private company with turnover of ₹200 crore or more, or outstanding loans or borrowings from banks or public financial institutions above ₹100 crore, at any point in the preceding financial year.
+
+Two details in the rule matter for AI. First, the internal auditor can be a Chartered Accountant, whether or not in practice, or an employee of the company, so the function may sit with an in-house team or an outside firm. Second, the Audit Committee or the Board, in consultation with the internal auditor, formulates the scope, functioning, periodicity and methodology of the internal audit. Moving from sampling to full-population analytics is a change of methodology. Take it to the Audit Committee before you rely on it, not after.
+
+### What the standards now say about tools and AI
+
+ICAI's Internal Audit Standards Board issued a revised compendium of Standards on Internal Audit in 2026 . It rationalises the earlier standards into 20 SIAs and adds new ones, including SIA 240, Use of Tools . SIA 240 names data analytics platforms, CAATs, visualisation tools, audit management software and "emerging technologies such as Artificial Intelligence (AI) and Machine Learning (ML)". It is recommendatory and effective from 1 April 2026 until the ICAI Council notifies the date from which it applies to internal audits.
+
+The requirements read like a sensible AI policy. Paraphrasing paragraph 4:
+
+- Plan it. Evaluate and record the proposed use of tools at the planning stage, aligned to the risk assessment.
+- Validate it. Check tools for relevance, reliability, security and confidentiality, and confirm that outputs are complete and accurate. The application material suggests trial runs, benchmarking against known outcomes and cross-checks with manual procedures.
+- Protect the data. Tools must comply with data privacy and cybersecurity rules, and third-party tools need confidentiality, ownership and access controls. The standard names the DPDP Act, 2023.
+- Document it. Record the rationale, configuration, test parameters and outcomes, and disclose any limitation that affects the conclusion.
+- Keep judgement. "The internal auditor should not rely solely on automated outputs."
+
+The same compendium carries SIA 230 on internal audit evidence and SIA 250 on documentation, so an AI-assisted test is held to the same evidence and file standard as a manual one. Internationally, the IIA Global Internal Audit Standards , with 15 principles across five domains, took effect on 9 January 2025 , and Standard 10.3 deals with the technological resources a function needs. If your team follows both frameworks, the direction is the same.
+
+### Where internal audit actually is with AI
+
+It is earlier than the conference talks suggest. The IIA's 2025 North American Pulse of Internal Audit found that the share of chief audit executives using generative AI rose from 15% in the previous edition to 40%. In the same survey, 92% named data analytics as the most important technology skill for internal audit, yet only 28% described their own analytics use as high or advanced. The IIA's Vision 2035 research reported that 18% of respondents were using AI in internal audit and a further 22% were researching it.
+
+Those surveys lean heavily towards North America, and I have not seen a comparable Indian dataset, so treat them as direction rather than benchmark. But the gap they show matches what I see: teams want generative AI, and many have not yet built the analytics habits that make it useful. Finance more broadly is similar. Gartner's 2025 AI in Finance survey found 59% of finance functions using AI, with error and anomaly detection among the three most common use cases.
+
+### Start with full-population testing of one process
+
+Sampling exists because testing everything used to be expensive. It is not any more. If a process produces structured data, a script can test every transaction, and the conversation with the audit committee changes from "we found nothing in 25 samples" to "we tested all of them, and here are the exceptions we investigated."
+
+Good first candidates are processes with volume, clear rules and data you can extract from the ERP:
+
+- Procure-to-pay: duplicate invoices, vendor master changes close to payment runs, purchase orders split to stay under an approval limit, payments to vendors who share bank details or addresses with employees.
+- Employee expenses: claims on non-working days, repeated round amounts, the same receipt claimed twice, claims approved by the claimant's own reportee.
+- Payroll: employees sharing bank accounts, pay to people after their exit date, changes to pay made outside the approval workflow.
+- Revenue and receivables: credit notes raised shortly after period end, manual adjustments to customer balances, discounts outside the policy grid.
+
+Pick one. The temptation to build a "continuous auditing platform" in the first quarter is strong and, in my experience, the reason many analytics programmes stall.
+
+### Where AI helps, and where it must not decide
+
+Most full-population testing is plain analytics: joins, filters and rules. AI earns its place around that core, and SIA 240's examples (Python scripts and AI-based applications alongside IDEA, ACL and Power BI) fit how I would use it:
+
+- Turning policy into tests. Give an assistant the delegation-of-authority matrix or the travel policy and ask it to propose test rules. The auditor approves every rule before it runs.
+- Writing the code. AI is good at drafting the SQL or Python for a test. Someone who can read it still reviews it, and the reviewed version is what goes on file.
+- Grouping exceptions. When a test returns hundreds of hits, AI can cluster them by vendor, approver or pattern so the team investigates causes rather than rows.
+- Drafting observations. A first draft of the finding, the risk and the recommendation, which the auditor then rewrites in the company's language and rates.
+
+What stays human: deciding whether an exception is a real issue, the conversation with the process owner, the risk rating, the conclusion and the report. SIA 240's application material says anomalies flagged by tools should be followed up through sampling, walkthroughs or corroborative procedures. That is the line I would draw.
+
+### A six-step way to run the first test
+
+- 1. Scope it with the Audit Committee. One process, one period, a stated objective, and a note that the methodology is changing to full-population testing.
+- 2. Get the data and prove it is complete. Extract the transactions and agree control totals to the ledger before you test anything. A brilliant test on an incomplete extract is worthless evidence.
+- 3. Write and validate the tests. Draft rules from the policy (AI can help), then run them against a period where you already know the answer, which is the "benchmarking against known outcomes" SIA 240 describes.
+- 4. Run on the full population. Keep the scripts, parameters and output files versioned.
+- 5. Investigate exceptions. People do this. Record what was checked, what the process owner said and what evidence closed each item.
+- 6. Report and document. Report what was tested and what was found, including any limits of the data, and put the tool documentation on file as SIA 240 and SIA 250 expect.
+
+### Controls around the AI itself
+
+Internal audit asks everyone else for controls, so its own AI use should be the best-controlled in the building. My minimum set:
+
+- Approved tools only. Company or firm-controlled accounts with retention and training settings you have checked, never personal chatbot accounts. Payroll and vendor data contain personal data.
+- Know your data-protection exposure. The DPDP Rules, 2025 were notified in November 2025 with an 18-month phased timeline, and the Act allows penalties of up to ₹250 crore for failing to maintain reasonable security safeguards. Share the minimum fields a test needs.
+- A tool register. Which tools, which versions, who may use them, for what. SIA 240 suggests a centralised tool registry, version control and usage logs.
+- No unreviewed output in the report. Every AI-drafted rule, script and observation has a named reviewer.
+
+For a broader version of these review gates, see my AI controls checklist for CA firms in India .
+
+### Remember who reads the file next
+
+Internal audit work does not stay inside the company. Under CARO 2020 , clause 3(xiv) asks the statutory auditor whether the company has an internal audit system commensurate with its size and the nature of its business, and whether the internal auditors' reports for the period were considered. If your exceptions list came from an undocumented prompt, expect questions. If it came from a validated, versioned test with a clear trail of investigation, you have made the statutory auditor's job easier, and your own position stronger.
+
+This is also where internal audit differs from statutory audit. For the statutory side, with SA 230 documentation, read AI for audit working papers in India . For how firms are adopting AI more generally, read how audit and accounting firms in India are using AI .
+
+### What I would tell an Audit Committee
+
+- We will test one process on the full population this quarter, not a sample.
+- Every exception will be investigated by a person, and the file will show how each one was closed.
+- The tools, scripts and AI assistance will be documented in line with SIA 240, and no client or employee data will go into unapproved tools.
+- We will report what the data could and could not tell us.
+- If it works, we will extend it to a second process next quarter. If it does not, we will say why.
+
+If you want a structured way to choose that first process and run it, my 90-day AI pilot playbook applies just as well to an internal audit team. The wider picture for the profession is in the AI for Chartered Accountants in India hub . If you would rather have someone map where AI pays back across your finance and audit work, that is what the AI Opportunity Audit is for.
+
+### Frequently asked questions
+
+#### Is internal audit mandatory for my company in India?
+
+Section 138 of the Companies Act, 2013, read with Rule 13 of the Companies (Accounts) Rules, 2014, requires an internal auditor in every listed company; in unlisted public companies with paid-up share capital of ₹50 crore or more, turnover of ₹200 crore or more, outstanding borrowings above ₹100 crore or deposits of ₹25 crore or more; and in private companies with turnover of ₹200 crore or more or outstanding borrowings above ₹100 crore. Check the thresholds against your own preceding-year figures.
+
+#### Do ICAI's Standards on Internal Audit allow AI?
+
+Yes. SIA 240, Use of Tools, in ICAI's 2026 compendium names AI and machine learning alongside data analytics and CAATs. It asks the internal auditor to plan and record tool use, validate tool outputs for completeness and accuracy, protect data, document configurations and results, and not rely solely on automated outputs. It is recommendatory from 1 April 2026 until the ICAI Council notifies a mandatory date.
+
+#### What is the best first AI use case for an internal audit team?
+
+In my view, full-population testing of one high-volume process, such as procure-to-pay or employee expense claims. It replaces sampling with a complete test, the exceptions are easy to verify, and it fits the evidence and documentation requirements the team already follows.
+
+#### Does the statutory auditor look at internal audit work?
+
+Yes. Under CARO 2020, clause 3(xiv), the statutory auditor reports whether the company has an internal audit system commensurate with its size and nature, and whether the internal auditors' reports were considered. AI-assisted work therefore needs to be documented well enough for another auditor to follow.
+
+#### Will AI replace internal auditors?
+
+No. It changes the work. Testing every transaction becomes cheap; deciding which exceptions matter, talking to process owners, rating findings and standing behind the report still need an experienced person. SIA 240 says as much: tool findings need professional scepticism and contextual evaluation.
+
+### Sources
+
+- Companies (Accounts) Rules, 2014, Rule 13 (internal audit under section 138)
+- ICAI Internal Audit Standards Board: Compendium of Standards on Internal Audit, 2026 (incl. SIA 240, Use of Tools)
+- ICAI Internal Audit Standards Board: publications
+- The IIA: Global Internal Audit Standards
+- The IIA: Global Internal Audit Standards effective 9 January 2025 (press release)
+- The IIA: 2025 North American Pulse of Internal Audit (report)
+- The IIA: Pulse of Internal Audit 2025 press release
+- The IIA Foundation: Vision 2035 report
+- Companies (Auditor's Report) Order, 2020: full text incl. clause 3(xiv) (TaxGuru)
+- PIB: Notification of Companies (Auditor's Report) Order, 2020
+- PIB: Government notifies DPDP Rules (14 November 2025)
+- PIB: DPDP Rules, 2025 explainer (penalties under the DPDP Act)
+- Gartner: Finance AI adoption remains steady in 2025
+
+Disclaimer: this article is general educational commentary. It is not legal, audit or data-protection advice and does not create an adviser–client relationship. Thresholds and standards change; check the current text of the Companies Act, the rules and the ICAI standards, and take professional advice on your facts.
+
+Educational content; not financial, investment, or legal advice.
+
+---
+
+## ChatGPT, Copilot or Gemini: Which AI Assistant Suits a CA Firm?
+
+URL: https://pratikbajoria.com/blog/2026-10-05-chatgpt-vs-copilot-vs-gemini-how-a-ca-firm-in-india-should-choose-an-ai-assistant
+Last updated: 2026-10-05
+Summary: ChatGPT, Microsoft 365 Copilot or Gemini for a CA practice in India? Compare data terms, permissions and retention, with a decision rubric for partners.
+
+CA insights · 2026-10-05 · 7 min read
+
+### ChatGPT, Copilot or Gemini? How a CA Firm in India Should Choose an AI Assistant
+
+Choosing between ChatGPT, Microsoft 365 Copilot and Gemini for a CA practice in India: where client files live, data terms, permissions, retention and a decision rubric for partners.
+
+Key takeaways
+
+- First decision: client work happens only in a firm-controlled business workspace, never a personal account.
+- Each vendor publishes business-tier data commitments; they do not cover personal or free accounts.
+- The deciding factor is where client files already live: Microsoft 365 points to Copilot, Google Workspace to Gemini.
+- Clean up client-folder permissions first, because integrated assistants surface existing permission mistakes.
+- Choose with a two-week bake-off on anonymised real tasks marked by one reviewer, not a demo.
+
+A question I hear more and more from partners in Indian CA practices is no longer “should we use AI?” It is “which one should we pay for: ChatGPT, Copilot or Gemini?” Usually an associate has already been using one of them on a personal account, a partner has seen a demo of another, and the IT vendor is pushing the third.
+
+My answer is rarely about which model writes the best paragraph. For a practice that holds client financials, PAN and payroll data, unpublished results and tax positions, the deciding questions are duller: where do your client files already live, who can see what, what does the vendor contractually do with your prompts, and can you prove afterwards who used the tool on which engagement? Get those right and any of the three can be a sensible choice. Get them wrong and the best model in the world is a confidentiality problem with a monthly invoice.
+
+### First, take personal accounts off the table
+
+Every comparison below is about the business tiers. A free or personal subscription that an associate signed up for with a Gmail address is not covered by the commitments these vendors publish for organisational customers, and the firm has no admin control over it. Your confidentiality obligations to clients under ICAI’s framework do not change because a tool is convenient, and where the material includes personal data, the Digital Personal Data Protection Act, 2023 expects reasonable security safeguards, including when a processor handles that data on your behalf.
+
+So the first decision is not which vendor. It is that client work happens only inside a firm-controlled workspace, and personal accounts are for nothing that identifies a client.
+
+### What each vendor says about your data
+
+I would rather you read the vendors’ own pages than rely on my summary, and the links are in the Sources section. As published when I checked them on 5 October 2026:
+
+- Microsoft 365 Copilot (which Microsoft now calls Microsoft Copilot) states that prompts, responses and data accessed through Microsoft Graph are not used to train foundation models, and that Copilot only surfaces organisational data the individual user already has at least view permission for. Admins can apply retention policies to Copilot interactions through Microsoft Purview. Microsoft also notes that customers outside the EU may have queries processed in the US, EU or other regions.
+- ChatGPT business plans (Business and Enterprise): OpenAI states it does not train its models on business data by default, that you own your inputs and outputs where allowed by law, and that workspace admins control retention, with deleted conversations removed within 30 days unless legally required to be kept.
+- Gemini in Google Workspace : Google’s privacy hub states that your content is not human-reviewed or used for generative AI model training outside your domain without permission, that Gemini does not access Workspace content the user lacks permission for, and that admins set how long prompts and responses are retained.
+
+On paper, the headline promises look similar. The differences that matter to a CA practice sit underneath them.
+
+### The real decision: where your files already live
+
+If the firm runs on Microsoft 365, with engagement folders in SharePoint or OneDrive and client correspondence in Outlook, Copilot’s main advantage is that it works inside that permission model rather than asking people to upload files somewhere new. If the firm runs on Google Workspace, the same logic points to Gemini. ChatGPT is a standalone workspace: strong for drafting, research and analysis on documents you deliberately give it, but every file is a conscious upload, which some partners actually prefer because it forces a decision each time.
+
+There is a catch with the integrated options that I would raise with any practice. Copilot and Gemini respect existing permissions, which means they also expose existing permission mistakes. If an articled assistant technically has view access to the entire “Clients” drive because nobody ever tightened it, an assistant that can search everything they can see will happily summarise a client file they were never meant to open. Before switching on either, run a permissions review on client folders. It is unglamorous work and it is the single most useful thing you can do first.
+
+### A decision rubric you can use in a partners’ meeting
+
+| Question | What good looks like | Red flag |
+| Where do client files live today? | The assistant works inside the system you already govern | Staff copying files into a second, ungoverned location |
+| Are folder permissions clean? | Access by engagement team, reviewed recently | “Everyone” or firm-wide access to client folders |
+| Is client data used for training? | Written “no” in the business terms you sign | Only a marketing page, or a personal-tier account |
+| Who controls retention? | Firm admin sets it and can apply it centrally | Each user decides, or nobody knows |
+| Where is data processed? | Answered in writing by the vendor for your plan | Assumed rather than confirmed |
+| Can you see who used it on what? | Admin search or export of interactions | No log beyond each user’s own history |
+| Does it help with your actual work? | Fewer reviewer edits on your own test tasks | Judged only on a vendor demo |
+
+Notice that only the last row is about output quality. The rest are about control, and for a professional practice that is the right weighting.
+
+From pratikbajoria.com
+
+Buy tools after you know which workflow pays back. Start with the free AI Opportunity Scorecard , or see the scoped AI Opportunity Audit for a 90-day map.
+
+### Run a two-week bake-off, not a demo
+
+Demos are built to impress. A bake-off is built to reveal. Pick three or four tasks your team really does, prepare anonymised or dummy versions, and run the same tasks through each shortlisted tool. Examples I would use: turning a senior’s rough notes into a clean working-paper narrative, summarising a long agreement to direct a reviewer’s attention, drafting a first reply to a routine departmental query from redacted facts, and building a checklist from a circular.
+
+Have the same reviewer mark every output. Track how much they had to change, what they caught that was wrong, and how long the whole cycle took compared with doing it the usual way. Write it down. The tool that needs the fewest corrections on your own work is the one that earns the licence, not the one with the best launch video.
+
+### What I would not do
+
+I would not buy all three “to see which sticks”; that guarantees three half-adopted tools and three sets of terms to monitor. I would not let associates expense personal subscriptions and call it a pilot. I would not paste anything that identifies a client into any tool before the firm has chosen one, set retention, and written down what is allowed. And I would not let the choice of assistant substitute for review: every output that reaches a client or a file still needs a named person who checked it.
+
+Whichever you choose, the controls that make it safe are the same, and I have set them out in the AI controls checklist for CA firms in India . For the full implementation map, start at the AI for chartered accountants in India hub. If GST is your first use case, read using AI for GST reconciliation without risking client data ; for assurance work, see AI for audit working papers in India . To see where AI pays back across your practice, take the free AI Opportunity Scorecard , look at the scoped AI Opportunity Audit , or book a discovery call .
+
+### Monday-morning checklist
+
+- Write one line in the firm’s policy: no client-identifying data in personal AI accounts.
+- List where client files actually live: Microsoft 365, Google Workspace, local drives or practice software.
+- Review permissions on client folders before enabling Copilot or Gemini.
+- Read each shortlisted vendor’s business data terms and save a dated copy.
+- Ask each vendor in writing where your prompts are processed and stored.
+- Prepare three or four anonymised test tasks and name one reviewer to mark them.
+- Decide who in the firm administers retention and can search usage.
+
+### Frequently asked questions
+
+#### Is ChatGPT, Copilot or Gemini safest for client data in a CA firm?
+
+None is safe or unsafe on its own. Each vendor publishes data commitments for its business tiers, and those commitments do not cover personal accounts. Safety depends on using a firm-controlled business workspace, clean folder permissions, admin-set retention and a review step before anything reaches a client.
+
+#### Should a firm on Microsoft 365 automatically choose Copilot?
+
+It is usually the natural starting point because it works inside the permission model you already manage. But clean up client-folder permissions first, and still run a short bake-off on your own tasks before committing licences across the firm.
+
+#### Can associates keep using their personal ChatGPT accounts for non-client work?
+
+That is a firm policy decision. The practical rule I suggest is simple: personal accounts may be used for general learning, never for anything that identifies a client, an engagement or a person.
+
+### Sources
+
+- Microsoft Learn — Data, privacy and security for Microsoft Copilot
+- OpenAI — Enterprise privacy
+- Google Workspace — Generative AI in Google Workspace Privacy Hub
+- Digital Personal Data Protection Act, 2023 (Gazette text, MeitY)
+- NIST AI Risk Management Framework
+- NIST AI 600-1 — Generative AI Profile
+
+Disclaimer: this article is general educational commentary from implementation work. It is not legal, tax, audit, data-protection or procurement advice, and it does not create an adviser–client relationship. Vendor terms, product names and features change; read the current terms for your plan and take professional advice on your specific facts before acting.
+
+Educational content; not financial, investment, or legal advice.
+
+---
+
+## AI Courses for Chartered Accountants in India: What Is Worth It
+
+URL: https://pratikbajoria.com/blog/2026-10-07-ai-courses-for-chartered-accountants-in-india-what-is-worth-it
+Last updated: 2026-10-07
+Summary: AI courses for chartered accountants in India in 2026: what ICAI’s AICA Levels 1–3 cost and cover, when a paid course helps, and how to learn on real work.
+
+CA insights · 2026-10-07 · 7 min read
+
+### AI Courses for Chartered Accountants in India: What Is Actually Worth It
+
+Best AI courses for chartered accountants in India in 2026: what ICAI’s AICA Levels 1–3 cost and cover, when a paid course helps, and how to learn AI on your own client work.
+
+Key takeaways
+
+- Start with ICAI's AICA Level 1: three days for ₹5,000 plus GST, with 18 structured CPE hours.
+- AICA Level 2 costs ₹10,000 plus GST; Level 3 was launched in June 2026.
+- CA GPT is free for ICAI members and a zero-cost place to start.
+- Before paying for a private course, check it uses Indian CA work, has you build something and teaches review and data rules.
+- A course will not fix implementation: pick one workflow, take a baseline and write a one-page data rule.
+
+If you are a chartered accountant in India looking for an AI course, start with ICAI’s own AI for Chartered Accountants (AICA) certificate, because it is cheap, earns structured CPE hours and is designed around CA work. Then spend far more time applying AI to one real workflow in your practice than collecting further certificates. A course teaches you what the tools can do; only your own files teach you where they break.
+
+I get asked about courses every week, usually by partners who have just watched a junior do in ten minutes what used to take an afternoon. Here is how I would think about it.
+
+### ICAI’s AICA courses: what they cost and cover
+
+ICAI’s AI Committee runs a three-level certificate. The figures below are taken from ICAI’s own pages as I write this; check them before you book, because fees and formats change.
+
+| Level | Format | Fee | CPE |
+| AICA Level 1 | 3 days, classroom, at ICAI branches ( course guidelines ) | ₹5,000 + GST ( ICAI AI site ) | 18 structured hours |
+| AICA Level 2 | 2 days online plus 3 days in person ( ICAI batch listings ) | ₹10,000 + GST ( ICAI AI site ) | See the batch details |
+| AICA Level 3 | Advanced; only for members who have completed Level 2 ( launched June 2026 ) | See ICAI announcements | See ICAI announcements |
+
+Level 1 asks for basic computer and Office skills, your own laptop and a daily online assessment, and it includes a group project on real finance and audit use cases. Scale is not a problem: ICAI reported that more than 7,500 members had registered within months of launch , and by June 2026 it said it had trained over 50,000 members in AI .
+
+ICAI also makes CA GPT available free to members; it launched on 1 July 2024 and ICAI reported more than 70,000 members using it by November that year. If you have never tried a domain-specific assistant, that is a zero-cost place to start.
+
+### When a paid private course is worth it
+
+There are plenty of paid “AI for CA” programmes. Some are good. Before you pay, ask four questions:
+
+- Does it use Indian CA work? GST reconciliation, tax audit reports, Tally exports, CARO, notices. Generic “AI for business” content will not transfer.
+- Do you build something? A working prompt library, a reconciliation workflow or a checklist you can use on Monday is worth more than hours of slides.
+- Does it teach review and data rules? If confidentiality, client data and checking output are not on the syllabus, the course is teaching you to create risk faster.
+- Who teaches it? Someone who has implemented AI inside a practice or finance team, not only someone who demos tools.
+
+Note that I am not naming or ranking private providers, because I have not audited their syllabuses and I will not recommend something I have not checked.
+
+### What a course will not give you
+
+Every partner I work with who finished a course hit the same wall: back in the office, nobody decided which workflow to change, who reviews output or what data may go into which tool. That is an implementation problem, not a skills gap. The fix is unglamorous: pick one workflow, take a baseline, write a one-page data rule and run it for ninety days with full review. My 90-day AI pilot playbook for CA firms sets out each step.
+
+### A self-study plan that costs almost nothing
+
+- Week 1: try CA GPT and one business-grade general assistant on a redacted sample of real work. Compare the output with what your team would have produced. My comparison of ChatGPT vs Copilot vs Gemini for a CA firm helps you choose.
+- Week 2: read the AI controls checklist for CA firms and agree, in writing, what may never go into a tool.
+- Weeks 3–4: apply AI to one workflow, for example AI for GST reconciliation , and log the time taken and errors caught.
+- Then: take AICA Level 1 with real questions in hand. You will get far more out of three days in a classroom once you know where you are stuck.
+
+### My recommendation
+
+For most CAs: AICA Level 1, CA GPT and one disciplined pilot. For partners who want the whole firm moving, training alone rarely does it; you need someone to map workflows and set the controls. That is what the AI Opportunity Audit is for. For the wider picture, start at the AI for chartered accountants in India hub , see my notes on AI tools for chartered accountants , or book a discovery call .
+
+### Frequently asked questions
+
+#### What is the best AI course for chartered accountants in India?
+
+For most CAs, ICAI’s AI for Chartered Accountants (AICA) Level 1 is the sensible first step: three days in a classroom for ₹5,000 plus GST, with 18 structured CPE hours, built around finance and audit use cases. Level 2 (₹10,000 plus GST, with online and in-person days) and the newer Level 3 go deeper. Check ICAI’s AI site for current fees and batches.
+
+#### Is an AI certification useful for a CA?
+
+A certificate shows intent, but clients and employers care about what you can do. The value comes from applying AI to a real workflow, with written data rules and review, and being able to show the time saved and errors caught.
+
+#### How can chartered accountants learn AI for free?
+
+Start with ICAI’s CA GPT, which is free for members, and a business-grade general assistant on redacted samples of your own work. Then apply it to one workflow for a few weeks and log what changes before paying for further training.
+
+#### How can Chartered Accountants use AI?
+
+Use it first on frequent, checkable work: bank categorisation, GST and TDS reconciliation exception lists, notice summaries and first drafts of client emails. Keep a named reviewer, a firm-controlled account and a written rule on which client data may be used.
+
+### Sources
+
+- ICAI AI Committee: AICA Level 1 batches and fee
+- ICAI AI Committee: AICA Level 1 course guidelines (duration, CPE hours)
+- ICAI AI Committee: AICA Level 2 batches and fee
+- ICAI press release: AI Innovation Summit 2026, AICA Level 3 and Sarvam AI MoU (26 June 2026)
+- ICAI press release: CA GPT platform and AICA course update (25 November 2024)
+
+Disclaimer: this article is general educational commentary from my implementation work. It is not legal, tax, audit, career or data-protection advice. Fees, courses and tool terms change; check the current details at the source before acting.
+
+Educational content; not financial, investment, or legal advice.
+
+---
+
+## Is CA Worth It in 2026 With AI? A Chartered Accountant’s View
+
+URL: https://pratikbajoria.com/blog/2026-10-07-is-ca-worth-it-in-2026-with-ai
+Last updated: 2026-10-07
+Summary: Is CA worth it in 2026 now AI handles routine accounting? A practising CA weighs pass rates, membership growth and AI’s impact, and the skills that pay off.
+
+CA insights · 2026-10-07 · 7 min read
+
+### Is CA Worth It in 2026 With AI? A Chartered Accountant’s View
+
+Is CA worth it in 2026 now that AI can do routine accounting? A practising CA weighs pass rates, membership growth and AI’s impact, and explains which skills make the qualification pay off.
+
+Key takeaways
+
+- Yes, if you treat CA as a qualification in judgement, accountability and the right to sign; it is a weak bet if you want routine accounting work.
+- The exam is still hard: 14.07% of candidates who sat both groups passed CA Final in May 2026 (3,345 of 23,776).
+- ICAI membership was 4,23,105 on 1 April 2025; most members work in industry, finance and other roles rather than practice.
+- Skills that make CA pay off alongside AI: review and scepticism, data fluency, clear writing, controls thinking and domain depth.
+
+Yes, CA is still worth it in 2026, but for a different reason than it was ten years ago. The qualification is no longer valuable because you can do the accounting; AI can increasingly do much of that. It is valuable because a chartered accountant is a regulated person who can sign, take responsibility and explain what the numbers mean. If you go in expecting to be paid for routine work, you will be disappointed. If you go in to become the person who reviews, judges and advises, the case is strong.
+
+I am a CA, ex-Big 4, a founder, and I now help firms implement AI. Students and parents ask me this more than any other question, so here is my honest answer with the numbers.
+
+### The hard part has not changed: it is a difficult exam
+
+In ICAI’s CA Final May 2026 result , 14.07% of candidates who sat both groups passed (3,345 out of 23,776). The Group I pass rate was 12% and Group II was 20.49%. That difficulty is exactly why the qualification still carries weight. It is also why you should go in with a realistic plan for several attempts and articleship years, not a fixed timeline.
+
+### The profession is growing, but practice is not the only path
+
+ICAI’s 76th Annual Report put membership at 4,23,105 on 1 April 2025, up from 4,03,617 a year earlier. About 1.61 lakh members were in full-time or part-time practice; the majority work in industry, finance, consulting and other roles. So “doing CA” today often means a finance career in a company, a GCC or a start-up rather than running a practice. Those are also the roles where AI is changing the daily work fastest.
+
+### What AI changes for a CA career
+
+The World Economic Forum’s Future of Jobs Report 2025 expects accounting, bookkeeping and payroll clerks to be among the fastest-declining roles to 2030, with AI and information processing as primary drivers. In India, Microsoft and LinkedIn’s 2024 Work Trend Index found 92% of knowledge workers already use AI at work. Put simply: the clerical layer of accounting is shrinking, and the people who remain are expected to use AI as a matter of course.
+
+For a CA, that means:
+
+- Articleship will feel different. Less vouching and typing, more checking machine output and dealing with exceptions. Firms will want article assistants who can review, not just prepare.
+- Entry-level value moves up. A newly qualified CA who can only do what a tool does will struggle on salary. One who can explain a variance to a CFO or defend a position in front of a department will not.
+- The signature becomes more valuable, not less. Somebody has to be accountable for AI-assisted numbers. Regulators and clients want that to be a qualified person.
+
+The institute itself is adapting: ICAI says it has trained over 50,000 members in AI and launched an advanced AI certification for members in June 2026. See my note on AI courses for chartered accountants in India .
+
+### Who should do CA in 2026
+
+It suits you if you enjoy reasoning about why a number is what it is, you are willing to put in years of exam preparation, and you want a regulated qualification that lets you sign, advise and move between practice and industry.
+
+Think twice if you mainly want a stable job doing defined, repetitive accounting tasks. That is exactly the work AI is absorbing, and you can reach it faster through other routes.
+
+### Skills that make CA pay off alongside AI
+
+- Review and scepticism: catching the confident wrong answer, whether from a junior or a model.
+- Data fluency: Excel done properly, a basic grasp of how data moves between Tally, GST and banks, and comfort with AI assistants. My guide to AI tools for chartered accountants is a starting point.
+- Clear writing and explanation: clients pay for clarity.
+- Controls thinking: knowing what data may go where, and why. The AI controls checklist for CA firms shows how a firm should think about it.
+- Domain depth: GST, direct tax, audit or a sector. AI is broad; clients pay for depth.
+
+### My answer
+
+CA is worth it in 2026 if you treat it as a qualification in judgement and accountability, and learn AI as part of how you work. It is a poor bet if you are buying it for the routine work. If you are already qualified and want to see how AI changes the work in your firm, read will AI replace chartered accountants in India , start at the AI for chartered accountants in India hub , see the AI Opportunity Audit , or book a discovery call .
+
+### Frequently asked questions
+
+#### Is CA worth it in 2026?
+
+Yes, if you want a regulated qualification built on judgement, accountability and the right to sign. The exam remains hard (14.07% of candidates who sat both groups passed CA Final in May 2026), and membership keeps growing. It is a weaker bet if you mainly want routine accounting work, which AI is absorbing.
+
+#### Will AI take over Chartered Accountant jobs?
+
+AI is taking over routine tasks such as data entry, reconciliations and first drafts. It is not taking over signing, opinions, advice or accountability, which stay with qualified CAs. The CAs most affected will be those whose work is mainly routine processing.
+
+#### How many chartered accountants are there in India?
+
+ICAI’s 76th Annual Report put total membership at 4,23,105 on 1 April 2025, up from 4,03,617 a year earlier. About 1.61 lakh members were in full-time or part-time practice; the rest work in industry, finance and other roles.
+
+#### What skills should CA students learn for an AI future?
+
+Review and professional scepticism, data and Excel fluency, comfort with AI assistants, clear writing, controls thinking and depth in a domain such as GST, direct tax or audit.
+
+### Sources
+
+- ICAI press release: Result of CA Final Examination held in May 2026
+- ICAI membership data from the 76th Annual Report 2024-25, as summarised by JurisHour (29 May 2026)
+- World Economic Forum: Future of Jobs Report 2025, Jobs outlook
+- Microsoft India: 2024 Work Trend Index India findings (16 May 2024)
+- ICAI press release: AI Innovation Summit 2026, AICA Level 3 and Sarvam AI MoU (26 June 2026)
+
+Disclaimer: this article is general educational commentary from my implementation work. It is not legal, tax, audit, career or data-protection advice. Fees, courses and tool terms change; check the current details at the source before acting.
+
+Educational content; not financial, investment, or legal advice.
+
+---
+
+## AI for Chartered Accountants: Practical Use Cases and Control Gates
+
+URL: https://pratikbajoria.com/blog/ai-for-chartered-accountants-practical-use-cases-and-controls
+Last updated: 2026-10-07
+Summary: A practical CA-led guide to AI for Chartered Accountants: five high-value use cases, review gates, data rules and a 90-day rollout plan for Indian CA firms.
+
+CA insights · 2026-10-04 · Updated 7 Oct 2026 · 10 min read
+
+### AI for Chartered Accountants: Practical Use Cases and Control Gates
+
+AI is useful in a CA practice when it reduces preparation and review time without weakening evidence, confidentiality or professional accountability. Here is a practical way to choose the first workflow.
+
+In practice, the question I hear from CA firms is not whether AI could help. It is how to pick the first workflow without putting a client file, a filing position or the firm's name at risk. The answer is less exciting than the demos, and much safer.
+
+Direct answer: Chartered Accountants should start with bounded, repeatable work that has a clear source record and a named reviewer. The best first use cases are document extraction, reconciliation exception triage, research first drafts, management reporting drafts and client-intake checklists. Do not begin with unsupervised tax conclusions, auto-filing or a general chatbot with no process owner.
+
+### Why AI for Chartered Accountants is a workflow question
+
+“AI for Chartered Accountants” sounds like a software category. In practice, it is a workflow-design question. A CA firm already has a sequence: receive information, classify it, test it, investigate exceptions, prepare a conclusion and obtain review. AI can accelerate parts of that sequence, but it does not remove the need to know what the official record is, who approves a material conclusion and how an exception is resolved.
+
+The practical test is simple: can the team explain what the system receives, what it produces, what evidence it keeps and when a human must intervene? If not, the firm is buying novelty rather than capacity.
+
+Finance teams are moving quickly, so the decision is coming whether or not the firm plans for it. Gartner's June 2024 survey of 121 finance leaders found 58% of finance functions using AI, up 21 percentage points on 2023 . The most common uses were intelligent process automation (44%), anomaly and error detection (39%) and analytics (28%) . That is the same unglamorous territory as the five starting points below.
+
+### Five high-value starting points
+
+#### 1. Document extraction and classification
+
+Invoices, bank statements, contracts, notices and supporting schedules often arrive in inconsistent formats. An AI-assisted workflow can classify documents, extract candidate fields and route incomplete items to a review queue. The control gate is not “the model was confident”; it is a source-linked check of the extracted value before it reaches a working paper, close pack or client communication.
+
+Measure extraction accuracy by field, rework hours and the percentage of items sent to exception review. Keep the original document attached to the extracted record.
+
+#### 2. Reconciliation exception triage
+
+AI can help group unmatched transactions, suggest likely reasons and prioritise exceptions by value, age or risk. It should not silently write off differences or post adjustments. The reviewer should see the source transactions, the proposed match logic and the reason an item was escalated.
+
+Start with one reconciliation type and a defined period. A narrow queue that becomes easier to review is more valuable than an ambitious autonomous reconciliation that nobody trusts.
+
+#### 3. Research and first-draft analysis
+
+Research assistants can help organise primary sources, create a first-pass issue list and surface questions for a professional to verify. Every material statement should be traceable to the source used. Generated text is a draft, not an authority and not a substitute for checking the current law, notification, circular or engagement context.
+
+Use a source register with the date accessed, the source URL and the reviewer’s sign-off. This creates a better audit trail than pasting an unverified answer into a memo.
+
+#### 4. Management reporting and commentary
+
+Once the numbers are approved, AI can draft variance commentary, management questions and a concise operating summary. Keep the model away from the source ledger unless the access pattern is deliberate and controlled. The accounting system remains the system of record; the model helps explain approved data.
+
+The useful metric is not “words generated”. Track reporting turnaround, reviewer edits, missed explanations and whether decision-makers receive the pack on time.
+
+#### 5. Client intake and checklist tracking
+
+Many practice bottlenecks begin before technical work: incomplete onboarding, missing documents, unclear scope or unanswered client questions. A controlled assistant can collect structured information, identify missing items and create a task for a named team member. It should be clear to the client when they are interacting with automation and how to reach a human.
+
+Keep sensitive data collection proportionate. Do not ask a public chatbot to become the firm’s client file.
+
+### The six control gates every CA firm should define
+
+- Purpose: write the exact job the system is allowed to support.
+- Data class: decide what may be processed, what must be redacted and what may not leave approved systems.
+- Evidence: preserve source documents, prompts or instructions where relevant, output versions and reviewer notes.
+- Human approval: name the person who approves material conclusions, client-facing advice or ledger-impacting actions.
+- Exception handling: define where mismatches go, how they are prioritised and when the workflow stops.
+- Measurement: baseline hours, cycle time, error/rework or exception rate before judging the pilot.
+
+These gates turn a vague AI policy into an operating control. They also make procurement more disciplined: a tool must fit the workflow and its controls, not the other way around.
+
+### What should stay human
+
+Professional judgement, materiality decisions, client-specific advice, final tax positions, audit conclusions and approval of filings should remain with appropriately authorised professionals. AI can prepare, compare, summarise, classify and flag. It should not be allowed to create a false impression that accountability has moved to the software.
+
+For a broader selection framework, see Best AI Tools for Chartered Accountants and Finance Professionals . For firm-level review gates, use the AI Controls Checklist for CA Firms in India .
+
+### A 90-day rollout for a CA practice
+
+Days 1–15 — Diagnose. Pick one workflow and interview the people who run it. Record volumes, systems, hand-offs, rework and the control points that cannot be skipped. If no one owns the workflow, fix ownership before buying software.
+
+Days 16–30 — Design. Define the allowed input data, the output format, the reviewer, the exception queue and the success metric. Compare build, buy and wait options. A practical starting point is the AI Opportunity Scorecard .
+
+Days 31–60 — Pilot. Run the narrowest useful release with a parallel review path. Sample outputs against source records and log every exception. Do not expand scope simply because the demo looks good.
+
+Days 61–90 — Decide. Compare the baseline with the pilot, review control performance and document the decision to keep, redesign or stop. If the result survives review, standardise the workflow and plan the next use case. If the economics do not work, stopping is a successful control decision.
+
+### Practical tool-selection questions
+
+- Can the firm restrict access by team, client or matter?
+- Can a reviewer see the source behind an extraction, answer or recommendation?
+- Can the firm export logs and evidence if the vendor changes its model?
+- What happens when the system is uncertain or the input is incomplete?
+- Can the workflow integrate with the systems of record without creating a shadow ledger?
+- Can the firm measure reviewer time and exception rates, not just usage?
+
+Tool availability, pricing and data terms change. Evaluate current documentation and your firm’s own policies before adoption. A public risk reference such as the NIST AI Risk Management Framework can help structure the conversation, but it is not a certification of a commercial product.
+
+Get the data terms in writing. OpenAI says its business products, such as ChatGPT Enterprise and the API, are not used to train its models by default ; Microsoft says Microsoft 365 Copilot prompts and responses are not used to train its foundation models . Neither statement covers a staff member's personal account, which is why the approved-tool register matters more than the brand.
+
+### FAQ
+
+Start with bounded tasks such as classification, extraction, reconciliation triage, drafting and checklist tracking. Keep a named reviewer, source evidence, access controls and exception logging for every material workflow.
+
+Document extraction, reconciliation exception triage, research first drafts, management reporting drafts and client-intake workflows are strong starting points when outputs can be checked against source records.
+
+AI can reduce repetitive preparation and review work, but professional judgement, accountability, client context and approval of material conclusions remain human responsibilities.
+
+Choose one workflow with measurable pain, map it, classify the data, define a human gate, baseline a metric and run a narrow test inside a 90-day roadmap.
+
+### Conclusion
+
+The CA practices that get real value from AI keep it deliberately boring: one workflow, one owner, one metric and one evidence trail. Start where the work is repetitive but the judgement boundary is clear. Use AI to cut preparation time and surface exceptions sooner, and keep professional accountability exactly where it already sits.
+
+For a structured two-week diagnostic, see the AI Opportunity Audit . It is designed to turn process ambiguity into a ranked 90-day roadmap.
+
+### Sources
+
+- Gartner — Survey shows 58% of finance functions using AI in 2024 (11 September 2024)
+- Journal of Accountancy — Gartner finance AI use cases (September 2024)
+- OpenAI — Business data privacy, security and compliance
+- Microsoft Learn — Enterprise data protection in Microsoft 365 Copilot
+- NIST — AI Risk Management Framework (AI RMF 1.0), January 2023
+
+### Disclaimer
+
+Educational and informational only — not personalised professional, tax, legal, audit or investment advice. Apply your engagement terms, applicable standards and current official guidance to your specific situation.
+
+Educational content; not financial, investment, tax, audit, or legal advice.

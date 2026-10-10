@@ -41,7 +41,12 @@ const BOTS = {
   'ChatGPT-User': 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot',
   PerplexityBot: 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; PerplexityBot/1.0; +https://perplexity.ai/perplexitybot',
   ClaudeBot: 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com',
-  'Google-Extended': 'Mozilla/5.0 (compatible; Google-Extended)'
+  'Google-Extended': 'Mozilla/5.0 (compatible; Google-Extended)',
+  'Claude-User': 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; Claude-User/1.0; +Claude-User@anthropic.com',
+  'Claude-SearchBot': 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; Claude-SearchBot/1.0; +Claude-SearchBot@anthropic.com',
+  'Perplexity-User': 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Perplexity-User/1.0; +https://perplexity.ai/perplexity-user)',
+  Applebot: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15 (Applebot/0.1; +http://www.apple.com/go/applebot)',
+  DuckDuckBot: 'DuckDuckBot/1.1; (+http://duckduckgo.com/duckduckbot.html)'
 };
 // Sites known to answer bots with 403/429/999 while serving real pages to people.
 const BOT_BLOCKING_HOSTS = /(^|\.)(linkedin\.com|icai\.org|deloitte\.com|ey\.com|pwc\.com|kpmg\.com|mckinsey\.com|bcg\.com|weforum\.org|microsoft\.com|gartner\.com|investopedia\.com|indeed\.com|glassdoor\.com|zoho\.com|hubspot\.com|semrush\.com|notion\.so|x\.com|twitter\.com|facebook\.com|instagram\.com|medium\.com|whatsapp\.com|wa\.me|reuters\.com|bloomberg\.com|ft\.com|wsj\.com|economictimes\.indiatimes\.com|livemint\.com|business-standard\.com|statista\.com|openai\.com|chatgpt\.com|anthropic\.com|claude\.ai|cbic-gst\.gov\.in|gst\.gov\.in|incometax\.gov\.in|incometaxindia\.gov\.in|cbic\.gov\.in|rbi\.org\.in|sebi\.gov\.in|mca\.gov\.in|meity\.gov\.in|pib\.gov\.in|indiacode\.nic\.in|nasscom\.in|quickbooks\.intuit\.com|intuit\.com|xero\.com|g2\.com|capterra\.com)$/i;

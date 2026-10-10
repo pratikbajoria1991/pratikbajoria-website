@@ -1,0 +1,70 @@
+{
+  "2026-10-07-will-ai-replace-chartered-accountants-in-india": [
+    "No. AI is taking routine CA work (data extraction, first-pass reconciliations, drafting, notice summaries), not the signature and professional accountability.",
+    "The WEF Future of Jobs Report 2025 lists accounting, bookkeeping and payroll clerks among the fastest-declining roles to 2030.",
+    "ICAI membership rose from 4,03,617 (1 April 2024) to 4,23,105 (1 April 2025); about 1.61 lakh members are in practice.",
+    "92% of knowledge workers in India use AI at work (Microsoft and LinkedIn 2024 Work Trend Index).",
+    "Firms that move time to review, judgement and advice do well; those billing for routine volume feel the squeeze first."
+  ],
+  "2026-10-07-is-ca-worth-it-in-2026-with-ai": [
+    "Yes, if you treat CA as a qualification in judgement, accountability and the right to sign; it is a weak bet if you want routine accounting work.",
+    "The exam is still hard: 14.07% of candidates who sat both groups passed CA Final in May 2026 (3,345 of 23,776).",
+    "ICAI membership was 4,23,105 on 1 April 2025; most members work in industry, finance and other roles rather than practice.",
+    "Skills that make CA pay off alongside AI: review and scepticism, data fluency, clear writing, controls thinking and domain depth."
+  ],
+  "2026-10-07-how-audit-and-accounting-firms-in-india-are-using-ai": [
+    "The Big 4 are embedding AI agents in their global audit platforms (EY Canvas, Deloitte Omnia) while keeping auditors accountable for conclusions.",
+    "ICAI offers CA GPT free to members (more than 70,000 users by November 2024) and the VERA audit suite built around the Standards on Auditing.",
+    "Smaller CA practices mostly use general assistants for drafting, summarising and first-pass reconciliations.",
+    "What to copy first: a one-page data rule, one high-volume workflow, before-and-after measurement and a human signature on every output."
+  ],
+  "2026-10-07-ai-courses-for-chartered-accountants-in-india-what-is-worth-it": [
+    "Start with ICAI's AICA Level 1: three days for ₹5,000 plus GST, with 18 structured CPE hours.",
+    "AICA Level 2 costs ₹10,000 plus GST; Level 3 was launched in June 2026.",
+    "CA GPT is free for ICAI members and a zero-cost place to start.",
+    "Before paying for a private course, check it uses Indian CA work, has you build something and teaches review and data rules.",
+    "A course will not fix implementation: pick one workflow, take a baseline and write a one-page data rule."
+  ],
+  "2026-10-07-how-to-run-a-90-day-ai-pilot-in-a-ca-firm-in-india": [
+    "Run one pilot on one workflow for 90 days, with a baseline taken before any tool is used and a written go/no-go decision at the end.",
+    "Days 1–30: choose the workflow, log two to three weeks of baseline and agree one-page client-data rules.",
+    "Days 31–60: run AI in parallel with 100% review and an exception log.",
+    "Days 61–90: prove it at normal volume, including real deadline pressure, then decide go, adjust or stop.",
+    "Stopping with evidence is a valid result."
+  ],
+  "2026-10-08-ai-for-internal-audit-in-indian-companies-a-practical-starting-point": [
+    "Rule 13 of the Companies (Accounts) Rules, 2014, under section 138, requires an internal auditor in listed companies and in unlisted public and private companies above set turnover or borrowing thresholds.",
+    "ICAI's SIA 240 expects tools, including AI, to be validated and documented, and says the internal auditor should not rely solely on automated outputs.",
+    "Start with full-population testing of one high-volume process, such as procure-to-pay, instead of a sample.",
+    "AI helps turn policy into tests, draft code, group exceptions and draft observations; people decide what is an issue and sign the report.",
+    "Under CARO 2020 clause 3(xiv), the statutory auditor reports on whether the internal audit system is commensurate with the business."
+  ],
+  "2026-10-05-chatgpt-vs-copilot-vs-gemini-how-a-ca-firm-in-india-should-choose-an-ai-assistant": [
+    "First decision: client work happens only in a firm-controlled business workspace, never a personal account.",
+    "Each vendor publishes business-tier data commitments; they do not cover personal or free accounts.",
+    "The deciding factor is where client files already live: Microsoft 365 points to Copilot, Google Workspace to Gemini.",
+    "Clean up client-folder permissions first, because integrated assistants surface existing permission mistakes.",
+    "Choose with a two-week bake-off on anonymised real tasks marked by one reviewer, not a demo."
+  ],
+  "2026-09-28-how-indian-ca-firms-can-use-ai-for-gst-reconciliation-without-risking-client-data": [
+    "Since 1 January 2022, section 16(2)(aa) of the CGST Act allows input tax credit only where the supplier has furnished the invoice details and they have been communicated to the recipient.",
+    "Much GSTR-2B matching needs no AI: match deterministically on GSTIN, invoice number and amount, and use AI for messy leftovers and reason coding.",
+    "Under GSTN's IMS FAQs, records with no action are deemed accepted when GSTR-2B is generated, so a named reviewer should take the IMS action.",
+    "Keep GSTR-2B exports and notices out of consumer chatbot accounts; the DPDP Act allows penalties of up to ₹250 crore for failing to take reasonable security safeguards.",
+    "AI can summarise notices and extract dates; the position and the reply stay with the responsible professional."
+  ],
+  "2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human": [
+    "SA 230 still requires documentation an experienced auditor with no previous connection to the audit can understand, whether or not AI drafted part of it.",
+    "Automate mechanical work: PBC tracking, indexing and cross-referencing, tying lead schedules to the trial balance, field extraction and narratives of work already performed.",
+    "Keep human: risk assessment, materiality, sufficiency of evidence, sampling rationale, evaluation of misstatements and going concern.",
+    "Add a short AI-use block to each paper a tool touched: tool and version, input, output, reviewer and what the reviewer changed.",
+    "Since 1 April 2023, companies must use accounting software with an audit trail and edit log for every transaction."
+  ],
+  "2026-10-09-ai-for-tax-audit-in-india-form-3cd-this-year-form-26-next-year": [
+    "Form No. 26 under section 63 of the Income-tax Act, 2025 applies for tax years beginning on or after 1 April 2026; Forms 3CA, 3CB and 3CD continue for assessment years up to 2026-27.",
+    "AI helps with the data work: ledger scrutiny, TDS/TCS reconciliation, cross-checking books against the Annual Information Statement and drafting document requests.",
+    "Clause answers, the classification of observations and the signature stay with the accountant.",
+    "Form 26 asks for the IP address and country of the server holding electronic books and the address of the India-located daily backup (Rule 46).",
+    "Use the remaining Form 3CD season as a pilot before Form 26 work starts."
+  ]
+}

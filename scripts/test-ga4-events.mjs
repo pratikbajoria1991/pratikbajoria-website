@@ -62,8 +62,12 @@ await check('every HTML page loads the same ga4.js version as the worker injects
   assert.equal(stale.length, 0, `stale ga4.js version in: ${stale.slice(0, 5).join(', ')}`);
 });
 await check('robots.txt disallows /api/ in every user-agent group', () => {
-  const groups = readFileSync(join(pub, 'robots.txt'), 'utf8').split(/\n(?=User-agent:)/).filter((g) => g.startsWith('User-agent:'));
-  for (const g of groups) assert.ok(/\nDisallow: \/api\/\n/.test(`${g}\n`), `group without Disallow: /api/ -> ${g.split('\n')[0]}`);
+  // A group = consecutive User-agent lines plus their rules (blank-line separated; comments dropped).
+  const groups = readFileSync(join(pub, 'robots.txt'), 'utf8').split(/\n\s*\n/)
+    .map((g) => g.split('\n').filter((l) => !l.startsWith('#')).join('\n').trim())
+    .filter((g) => g.startsWith('User-agent:'));
+  assert.ok(groups.length >= 6, `only ${groups.length} groups parsed`);
+  for (const g of groups) assert.ok(/\nDisallow: \/(api\/)?\n/.test(`${g}\n`), `group without Disallow: /api/ (or /) -> ${g.split('\n')[0]}`);
 });
 
 await check('no blog post links to itself or to a redirected URL', async () => {
@@ -92,7 +96,8 @@ const env = {
     return new Response('<!doctype html><html><head></head><body>x</body></html>', { status: 404, headers: { 'content-type': 'text/html' } });
   } }
 };
-const hit = (url, method = 'GET', host) => worker.fetch(new Request(url, { method, headers: host ? { host } : {} }), env);
+const BROWSER_UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0 Safari/537.36';
+const hit = (url, method = 'GET', host, ua = BROWSER_UA) => worker.fetch(new Request(url, { method, headers: { ...(host ? { host } : {}), ...(ua ? { 'user-agent': ua } : {}) } }), env);
 
 for (const [u, m] of [['https://pratikbajoria.com/api/subscribe', 'GET'], ['https://pratikbajoria.com/api/discovery', 'HEAD'], ['https://pratikbajoria.com/api/whatever', 'GET'], ['https://crossborder.pratikbajoria.com/api/subscribe', 'GET']]) {
   await check(`${m} ${u} -> X-Robots-Tag noindex, not HTML`, async () => {
@@ -103,7 +108,7 @@ for (const [u, m] of [['https://pratikbajoria.com/api/subscribe', 'GET'], ['http
   });
 }
 await check('POST /api/subscribe without DB -> 503 JSON with noindex', async () => {
-  const r = await worker.fetch(new Request('https://pratikbajoria.com/api/subscribe', { method: 'POST', body: '{}' }), env);
+  const r = await worker.fetch(new Request('https://pratikbajoria.com/api/subscribe', { method: 'POST', body: '{}', headers: { 'user-agent': BROWSER_UA } }), env);
   assert.equal(r.status, 503);
   assert.match(r.headers.get('x-robots-tag') || '', /noindex/);
 });
@@ -132,6 +137,57 @@ for (const p of ['/blog/2026-09-12-build-vs-buy-a-practical-framework-for-ai-too
     assert.equal(r.headers.get('location'), 'https://pratikbajoria.com/blog/build-vs-buy-ai-tooling');
   });
 }
+
+// Edge hygiene: constructive crawlers are never refused; scan paths and scanner UAs are.
+const GOOD_UAS = {
+  Googlebot: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
+  Bingbot: 'Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)',
+  GPTBot: 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.1; +https://openai.com/gptbot',
+  'OAI-SearchBot': 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot',
+  'ChatGPT-User': 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot',
+  ClaudeBot: 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ClaudeBot/1.0; +claudebot@anthropic.com',
+  'Claude-User': 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; Claude-User/1.0; +Claude-User@anthropic.com',
+  'Claude-SearchBot': 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; Claude-SearchBot/1.0; +Claude-SearchBot@anthropic.com',
+  PerplexityBot: 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; PerplexityBot/1.0; +https://perplexity.ai/perplexitybot)',
+  'Perplexity-User': 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Perplexity-User/1.0; +https://perplexity.ai/perplexity-user)',
+  'Google-Extended': 'Mozilla/5.0 (compatible; Google-Extended)',
+  Applebot: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15 (Applebot/0.1; +http://www.apple.com/go/applebot)',
+  DuckDuckBot: 'DuckDuckBot/1.1; (+http://duckduckgo.com/duckduckbot.html)',
+  AhrefsBot: 'Mozilla/5.0 (compatible; AhrefsBot/7.0; +http://ahrefs.com/robot/)',
+  UptimeRobot: 'Mozilla/5.0+(compatible; UptimeRobot/2.0; http://www.uptimerobot.com/)',
+  curl: 'curl/8.5.0', 'python-requests': 'python-requests/2.31.0', 'Go-http-client': 'Go-http-client/2.0', node: 'node'
+};
+for (const [name, ua] of Object.entries(GOOD_UAS)) {
+  await check(`${name} is not refused at the edge`, async () => {
+    for (const u of ['https://pratikbajoria.com/', 'https://pratikbajoria.com/robots.txt', 'https://crossborder.pratikbajoria.com/']) {
+      const r = await hit(u, 'GET', new URL(u).host, ua);
+      assert.notEqual(r.status, 403, `${u} -> 403`);
+    }
+  });
+}
+for (const p of ['/wp-login.php', '/wp-admin/', '/xmlrpc.php', '/.env', '/.env.production', '/.git/config', '/.git/HEAD', '/phpmyadmin/', '/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php', '/config.php', '/backup.sql', '/.aws/credentials', '/cgi-bin/luci', '/%2eenv', '/server-status']) {
+  await check(`scan path ${p} -> 403 on both hosts`, async () => {
+    for (const host of ['pratikbajoria.com', 'crossborder.pratikbajoria.com']) {
+      const r = await hit(`https://${host}${p}`, 'GET', host, GOOD_UAS.Googlebot);
+      assert.equal(r.status, 403, `${host}${p} -> ${r.status}`);
+    }
+  });
+}
+for (const ua of ['', 'sqlmap/1.7.2#stable (https://sqlmap.org)', 'Mozilla/5.0 (compatible; Nuclei - Open-source project (github.com/projectdiscovery/nuclei))', 'Mozilla/5.0 (Linux; Android 5.0) AppleWebKit/537.36 (KHTML, like Gecko) Mobile Safari/537.36 (compatible; Bytespider; spider-feedback@bytedance.com)', 'Scrapy/2.11.0 (+https://scrapy.org)']) {
+  await check(`UA ${JSON.stringify(ua.slice(0, 30))} -> 403 (robots.txt still readable)`, async () => {
+    assert.equal((await hit('https://pratikbajoria.com/', 'GET', null, ua)).status, 403);
+    assert.equal((await hit('https://pratikbajoria.com/robots.txt', 'GET', null, ua)).status, 200);
+  });
+}
+await check('/.well-known/ paths are not treated as scan paths', async () => {
+  assert.notEqual((await hit('https://pratikbajoria.com/.well-known/security.txt')).status, 403);
+});
+await check('crossborder robots.txt mirrors the main crawler groups with its own sitemap', async () => {
+  const t = await (await hit('https://crossborder.pratikbajoria.com/robots.txt', 'GET', 'crossborder.pratikbajoria.com')).text();
+  for (const bot of ['Googlebot', 'OAI-SearchBot', 'Claude-User', 'PerplexityBot', 'Bytespider']) assert.ok(t.includes(`User-agent: ${bot}\n`), bot);
+  assert.ok(t.includes('Sitemap: https://crossborder.pratikbajoria.com/sitemap.xml'));
+  assert.ok(!t.includes('Sitemap: https://pratikbajoria.com/sitemap.xml'));
+});
 
 if (failures) { console.error(`\n${failures} GA4/crawl check(s) failed`); process.exit(1); }
 console.log('\nGA4/crawl checks passed');

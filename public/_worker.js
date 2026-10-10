@@ -23,6 +23,61 @@ async function injectGa4(response) {
 }
 
 
+// ---------------------------------------------------------------------------
+// Edge hygiene (both hosts). Constructive crawlers (search engines, AI search and
+// user agents, SEO/backlink indexes, link previews, uptime monitors) are never blocked:
+// nothing here allow-lists by User-Agent, it only refuses
+//   1. vulnerability-scan paths this static site cannot have (WordPress/PHP, dotfiles,
+//      config/backup files, admin panels), whatever the User-Agent;
+//   2. an empty User-Agent and a short list of scanner/scraper tools by name.
+// curl, wget, python-requests, Go-http-client, node-fetch etc. are NOT blocked:
+// validators, IndexNow, uptime checks and our own audit scripts use them.
+// ---------------------------------------------------------------------------
+const SCAN_SEGMENTS = /(^|\/)(wp-admin|wp-includes|wp-content|wp-json|wordpress|wp|phpmyadmin|phpMyAdmin|pma|myadmin|mysql|cgi-bin|fcgi-bin|vendor\/phpunit|server-status|server-info|actuator|boaform|HNAP1|_ignition|telescope|solr|jenkins|manager\/html|xmlrpc|setup-config|install\.php|administrator|adminer)(\/|$)/i;
+const SCAN_EXTENSIONS = /\.(php\d?|phtml|asp|aspx|ashx|jsp|jspa|do|action|cgi|pl|env|ini|sql|sqlite|db|bak|backup|old|orig|save|swp|log|ya?ml|conf|cfg|htaccess|htpasswd|pem|key|tar|tgz|gz|rar|7z)$/i;
+const SCAN_DOTFILE = /(^|\/)\.(?!well-known(\/|$))[^/]+/;
+const BAD_UA = /(sqlmap|nikto|nmap|masscan|zgrab|nuclei|wpscan|acunetix|netsparker|invicti|dirbuster|gobuster|feroxbuster|ffuf|wfuzz|whatweb|openvas|nessus|arachni|w3af|skipfish|commix|xsstrike|jaeles|hydra|morfeus|zmeu|bytespider|img2dataset|scrapy)/i;
+
+function edgeBlockReason(request, url) {
+  let path = url.pathname;
+  try { path = decodeURIComponent(path); } catch { /* keep raw */ }
+  if (SCAN_DOTFILE.test(path) || SCAN_SEGMENTS.test(path) || SCAN_EXTENSIONS.test(path)) return 'path';
+  if (path === '/robots.txt') return null; // even unwelcome bots may read the rules
+  const ua = (request.headers.get('user-agent') || '').trim();
+  if (!ua) return 'ua-empty';
+  if (BAD_UA.test(ua)) return 'ua';
+  return null;
+}
+
+function forbidden(request, reason) {
+  return new Response(request.method === 'HEAD' ? null : 'Forbidden\n', {
+    status: 403,
+    headers: {
+      'Content-Type': 'text/plain; charset=utf-8',
+      'Cache-Control': reason === 'path' ? 'public, max-age=3600' : 'no-store',
+      'X-Robots-Tag': 'noindex, nofollow',
+      'X-Block-Reason': reason
+    }
+  });
+}
+
+// Canonical author for JSON-LD (same Person as the homepage @graph and scripts/update-author-schema.py).
+const AUTHOR_PERSON = {
+  '@type': 'Person',
+  '@id': 'https://pratikbajoria.com/#person',
+  name: 'Pratik Bajoria',
+  url: 'https://pratikbajoria.com/',
+  jobTitle: 'Chartered Accountant and AI implementation consultant',
+  sameAs: [
+    'https://www.linkedin.com/in/pratik-bajoria-6288b1119/',
+    'https://medium.com/@pratikbajoria1991',
+    'https://dev.to/pratik_bajoria_b0f8fa8367',
+    'https://github.com/pratikbajoria1991',
+    'https://www.indiehackers.com/pratikbajoria',
+    'https://wellfound.com/u/pratik-bajoria',
+    'https://hashnode.com/@pratikbajoria'
+  ]
+};
 
 // ---------------------------------------------------------------------------
 // Cross-border site: https://crossborder.pratikbajoria.com
@@ -128,7 +183,21 @@ async function xbNotFound(request, env, preview) {
   return xbHtml(request, preview ? xbPreviewHtml(body) : body, 404, true);
 }
 
-function xbRobots(request) {
+// Same crawler groups as the main robots.txt (single source of truth); only the
+// sitemap line differs. Falls back to the minimal inline file if the asset is missing.
+async function xbRobots(request, env) {
+  try {
+    const r = await env.ASSETS.fetch(internalAssetRequest(request, '/robots.txt'));
+    if (r.status === 200) {
+      const main = await r.text();
+      const body = `# ${XB_HOST} (same rules as https://pratikbajoria.com/robots.txt)\n${main
+        .split('\n')
+        .filter((l) => !/^\s*(sitemap|host)\s*:/i.test(l) && !/^# pratikbajoria\.com robots\.txt/.test(l))
+        .join('\n')
+        .replace(/\s*$/, '\n')}\nSitemap: ${XB_ORIGIN}/sitemap.xml\n`;
+      return new Response(request.method === 'HEAD' ? null : body, { status: 200, headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'public, max-age=3600' } });
+    }
+  } catch { /* inline fallback */ }
   const body = `# ${XB_HOST}
 # Content Signals — https://contentsignals.org/
 User-agent: *
@@ -156,7 +225,7 @@ async function serveCrossborder(request, env, url, mode) {
     return new Response('Method Not Allowed', { status: 405, headers: { Allow: 'GET, HEAD' } });
   }
   if (!preview) {
-    if (raw === '/robots.txt') return xbRobots(request);
+    if (raw === '/robots.txt') return xbRobots(request, env);
     if (raw === '/sitemap.xml') return xbSitemap(request, env);
     if (XB_SHARED_ROOT_ASSETS.has(raw) || /^\/fonts\/[a-z0-9-]+\.woff2$/.test(raw)) {
       const r = await env.ASSETS.fetch(internalAssetRequest(request, raw));
@@ -392,6 +461,13 @@ function faqJsonLd(post, canonical) {
   return `\n    <script type="application/ld+json">\n${JSON.stringify(ld, null, 2).replace(/</g, '\\u003c')}\n    </script>`;
 }
 
+// 'Key takeaways' box under the dek (same markup as scripts/add-key-takeaways.py).
+function takeawaysHtml(post) {
+  const items = Array.isArray(post.takeaways) ? post.takeaways.filter((t) => typeof t === 'string' && t.trim()) : [];
+  if (!items.length) return '';
+  return `\n        <aside class="key-takeaways" aria-label="Key takeaways" style="margin:22px 0 8px;padding:16px 20px;border:1px solid rgba(28,28,26,0.12);border-radius:12px"><p class="eyebrow">Key takeaways</p><ul style="margin:8px 0 0;padding-left:20px">${items.map((t) => `<li>${escHtml(t)}</li>`).join('')}</ul></aside>`;
+}
+
 function renderPostHtml(post, catalog) {
   const slug = post.slug;
   const canonical = `${SITE}/blog/${slug}`;
@@ -429,7 +505,7 @@ function renderPostHtml(post, catalog) {
     description: excerpt,
     datePublished: post.date || undefined,
     dateModified: post.dateModified || post.date || undefined,
-    author: { '@type': 'Person', name: 'Pratik Bajoria', url: `${SITE}/#person`, sameAs: ['https://www.linkedin.com/in/pratik-bajoria-6288b1119/'] },
+    author: AUTHOR_PERSON,
     publisher: { '@type': 'Person', name: 'Pratik Bajoria', '@id': `${SITE}/#person` },
     mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
     image,
@@ -493,7 +569,7 @@ ${crumbsJson}
       <article id="article">
         <p class="eyebrow">${escHtml(post.category || 'AI implementation')} · ${escHtml(post.date || '')} · ${escHtml(post.readTime || 6)} min read</p>
         <h1>${escHtml(title)}</h1>
-        <p class="article-dek">${escHtml(excerpt)}</p>
+        <p class="article-dek">${escHtml(excerpt)}</p>${takeawaysHtml(post)}
         <div class="article-body">
 ${paras}
 ${sourcesHtml}${structured ? `\n<p><em>${escHtml(post.disclaimer || STRUCTURED_DISCLAIMER)}</em></p>` : ''}
@@ -564,6 +640,21 @@ async function serveBlogPost(request, env, slug) {
   }
   // 3. Unknown slug: real 404.
   return notFound(request, env);
+}
+
+// llms.txt = static file + any published post it does not list yet (e.g. today's daily post),
+// so AI tools always see the full, current article list without a manual edit.
+async function appendMissingLlmsPosts(request, env, body) {
+  const posts = await loadAllPosts(request, env);
+  const seen = new Set();
+  const missing = posts
+    .filter((p) => p && p.slug && isBlogSlug(p.slug) && !blogPathAliases[`/blog/${p.slug}`])
+    .filter((p) => { if (seen.has(p.slug)) return false; seen.add(p.slug); return true; })
+    .filter((p) => !body.includes(`${SITE}/blog/${p.slug})`) && !body.includes(`${SITE}/blog/${p.slug}\n`))
+    .sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
+  if (!missing.length) return body;
+  const lines = missing.map((p) => `- [${String(p.title || p.slug).replace(/[\[\]]/g, '')}](${SITE}/blog/${p.slug})${p.excerpt ? `: ${String(p.excerpt).replace(/\s+/g, ' ').trim()}` : ''}`);
+  return `${body.replace(/\s*$/, '\n')}\n## Newest posts (not yet in the curated list above)\n\n${lines.join('\n')}\n`;
 }
 
 // sitemap.xml = static file + any JSON posts not yet listed (e.g. JSON-only daily posts).
@@ -687,6 +778,8 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (request.headers.get(INTERNAL_ASSET_HEADER) === '1') return env.ASSETS.fetch(request);
+    const blockReason = edgeBlockReason(request, url);
+    if (blockReason) return forbidden(request, blockReason);
     if (url.pathname === '/api' || url.pathname.startsWith('/api/')) {
       const r = await handleApi(request, env, url);
       const out = new Response(r.body, r);
@@ -721,6 +814,7 @@ export default {
       const r = await env.ASSETS.fetch(new Request(request, { headers: fresh }));
       if (r.status === 200) {
         let body = rewriteMainCrossborderLinks(await r.text());
+        if (url.pathname === '/llms.txt') body = await appendMissingLlmsPosts(request, env, body);
         if (url.pathname === '/robots.txt' && !body.includes(`${XB_ORIGIN}/sitemap.xml`)) body = `${body.replace(/\s*$/, '\n')}Sitemap: ${XB_ORIGIN}/sitemap.xml\n`;
         const h = new Headers(r.headers);
         h.delete('content-length');
