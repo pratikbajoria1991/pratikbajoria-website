@@ -83,6 +83,9 @@ def make_ld(title, description, published, slug, image, keywords) -> str:
                     "https://www.indiehackers.com/pratikbajoria",
                     "https://wellfound.com/u/pratik-bajoria",
                     "https://hashnode.com/@pratikbajoria",
+                    "https://www.crunchbase.com/person/pratik-bajoria",
+                    "https://www.f6s.com/pratik-bajoria",
+                    "https://contra.com/pratik_bajoria_bvmul54o",
                 ],
             },
             "publisher": {

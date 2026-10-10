@@ -75,7 +75,10 @@ const AUTHOR_PERSON = {
     'https://github.com/pratikbajoria1991',
     'https://www.indiehackers.com/pratikbajoria',
     'https://wellfound.com/u/pratik-bajoria',
-    'https://hashnode.com/@pratikbajoria'
+    'https://hashnode.com/@pratikbajoria',
+    'https://www.crunchbase.com/person/pratik-bajoria',
+    'https://www.f6s.com/pratik-bajoria',
+    'https://contra.com/pratik_bajoria_bvmul54o'
   ]
 };
 

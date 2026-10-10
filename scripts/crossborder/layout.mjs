@@ -1,5 +1,5 @@
 // Shared header, footer, <head> and helpers for the cross-border site.
-import { CONTACT_EMAIL, GOOGLE_SITE_VERIFICATION, ORIGIN, MAIN_SITE, WHATSAPP_NUMBER, WHATSAPP_DISPLAY, LINKEDIN, BRAND, BRAND_SHORT, BUYER_PATH, SELLER_PATH } from './config.mjs';
+import { CONTACT_EMAIL, GOOGLE_SITE_VERIFICATION, ORIGIN, MAIN_SITE, WHATSAPP_NUMBER, WHATSAPP_DISPLAY, LINKEDIN, BRAND, BRAND_SHORT, BUYER_PATH, SELLER_PATH, PERSON_SAME_AS } from './config.mjs';
 
 const ASSET_VERSION = '20261009';
 
@@ -112,7 +112,7 @@ const PERSON = {
   name: 'Pratik Bajoria',
   url: `${MAIN_SITE}/`,
   jobTitle: 'Chartered Accountant and AI implementation consultant',
-  sameAs: [LINKEDIN]
+  sameAs: PERSON_SAME_AS
 };
 
 export function orgNode() {

@@ -17,6 +17,19 @@ export const MAIN_SITE = 'https://pratikbajoria.com';
 export const WHATSAPP_NUMBER = '919804182483';
 export const WHATSAPP_DISPLAY = '+91 98041 82483';
 export const LINKEDIN = 'https://www.linkedin.com/in/pratik-bajoria-6288b1119/';
+// Pratik's live public profiles: Person.sameAs in the JSON-LD (same list as the main site).
+export const PERSON_SAME_AS = [
+  'https://www.linkedin.com/in/pratik-bajoria-6288b1119/',
+  'https://medium.com/@pratikbajoria1991',
+  'https://dev.to/pratik_bajoria_b0f8fa8367',
+  'https://github.com/pratikbajoria1991',
+  'https://www.indiehackers.com/pratikbajoria',
+  'https://wellfound.com/u/pratik-bajoria',
+  'https://hashnode.com/@pratikbajoria',
+  'https://www.crunchbase.com/person/pratik-bajoria',
+  'https://www.f6s.com/pratik-bajoria',
+  'https://contra.com/pratik_bajoria_bvmul54o',
+];
 export const BRAND = 'Cross-border Deals & Partnerships by Pratik Bajoria';
 export const BRAND_SHORT = 'Cross-border by Pratik Bajoria';
 // Date stamped into <lastmod> and the Insights "checked on" note.
