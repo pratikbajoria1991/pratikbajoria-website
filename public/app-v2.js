@@ -82,7 +82,18 @@ function setupVoiceAgent() {
   const canSpeak = typeof window.speechSynthesis !== 'undefined' && typeof window.SpeechSynthesisUtterance !== 'undefined';
   let recognition = null;
   let listening = false;
+  let voiceOpenedAt = 0;
   const conversation = { lastIntent: 'greeting', turns: [] };
+  const trackVoice = (name, params = {}) => window.pbTrackEvent?.(name, params);
+  const trackComplete = () => {
+    if (!voiceOpenedAt) return;
+    trackVoice('disha_conversation_complete', {
+      turn_count: conversation.turns.length,
+      conversation_seconds: Math.round((Date.now() - voiceOpenedAt) / 1000),
+      completed: conversation.turns.length > 0
+    });
+    voiceOpenedAt = 0;
+  };
   const voiceUnavailable = !Recognition || !canSpeak;
   // Keep the typed conversation available even on devices that expose the
   // speech APIs but have no usable microphone or audio output.
@@ -99,6 +110,11 @@ function setupVoiceAgent() {
 
   const setPanel = (open) => {
     panel.hidden = !open;
+    if (open && panel.hidden === false && !voiceOpenedAt) {
+      voiceOpenedAt = Date.now();
+      trackVoice('disha_open');
+    }
+    if (!open) trackComplete();
     if (!open && listening && recognition) recognition.stop();
     if (!open && canSpeak) window.speechSynthesis.cancel();
     if (open && voiceUnavailable) status.textContent = 'Is browser mein live voice available nahi hai. Neeche type karke Disha se Hinglish mein chat kijiye, ya Chrome/Edge ki normal tab mein microphone allow karke Talk to Disha use kijiye.';
@@ -109,7 +125,12 @@ function setupVoiceAgent() {
     panel.classList.toggle('is-listening', active);
     listen.classList.toggle('is-listening', active);
     listen.querySelector('span').textContent = active ? 'Listening…' : 'Talk to Disha';
-    if (active) status.textContent = 'Main sun rahi hoon — apna sawaal naturally boliye, phir pause kijiye.';
+    if (active) {
+      status.textContent = 'Main sun rahi hoon — apna sawaal naturally boliye, phir pause kijiye.';
+      trackVoice('disha_listening_start', { input_mode: 'voice' });
+    } else {
+      trackVoice('disha_listening_stop', { input_mode: 'voice' });
+    }
   };
 
   const speak = (text) => {
@@ -123,9 +144,9 @@ function setupVoiceAgent() {
       if (voice) { utterance.voice = voice; utterance.lang = voice.lang; } else utterance.lang = 'en-IN';
       utterance.rate = 0.92;
       utterance.pitch = 1.02;
-      utterance.onstart = () => { status.textContent = 'Disha bol rahi hai…'; };
+      utterance.onstart = () => { status.textContent = 'Disha bol rahi hai…'; trackVoice('disha_speech_start', { input_mode: 'voice' }); };
       utterance.onend = () => { if (!listening) status.textContent = 'Jawab ready hai — follow-up ke liye phir Talk to Disha press kijiye.'; };
-      utterance.onerror = () => { showTextFallback('Audio output start nahi ho paaya. Neeche type karke Disha se chat kijiye.'); };
+      utterance.onerror = () => { trackVoice('disha_voice_error', { stage: 'speech' }); showTextFallback('Audio output start nahi ho paaya. Neeche type karke Disha se chat kijiye.'); };
       window.speechSynthesis.speak(utterance);
     };
     if (window.speechSynthesis.getVoices().length) say();
@@ -133,8 +154,14 @@ function setupVoiceAgent() {
     return true;
   };
 
-  const answer = (question) => {
+  const answer = (question, inputMode = 'voice') => {
     const text = answerFor(question, conversation);
+    trackVoice('disha_question', {
+      input_mode: inputMode,
+      intent_bucket: window.pbClassifyIntent?.(question) || 'other',
+      question_length: question.length,
+      turn_number: conversation.turns.length + 1
+    });
     conversation.turns.push({ question, answer: text });
     transcript.textContent = `Aapne poocha: ${question}`;
     response.textContent = text;
@@ -161,6 +188,7 @@ function setupVoiceAgent() {
       if (finalText.trim()) answer(finalText.trim());
     };
     recognition.onerror = (event) => {
+      trackVoice('disha_voice_error', { stage: 'recognition', error_type: event.error || 'unknown' });
       setListening(false);
       const message = event.error === 'not-allowed' || event.error === 'service-not-allowed' ? 'Microphone permission blocked hai. Browser settings mein pratikbajoria.com ke liye allow karke phir try kijiye.' : event.error === 'audio-capture' ? 'Microphone detect nahi hua. Device mic check karke phir try kijiye.' : event.error === 'no-speech' ? 'Mujhe awaaz nahi mili. Thoda clearly bolkar dobara try kijiye.' : event.error === 'network' ? 'Voice service temporarily unavailable hai. Neeche type karke Disha se chat kijiye.' : 'Main clearly sun nahi paayi. Thoda slowly dobara boliye.';
       showTextFallback(message);
@@ -188,7 +216,7 @@ function setupVoiceAgent() {
     const question = textInput?.value.trim();
     if (!question) return;
     textInput.value = '';
-    answer(question);
+    answer(question, 'text');
   };
   textSend?.addEventListener('click', sendTextQuestion);
   textInput?.addEventListener('keydown', (event) => { if (event.key === 'Enter') sendTextQuestion(); });
