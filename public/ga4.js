@@ -190,7 +190,7 @@ function gtag(){ if (!PB_GA_SKIP) dataLayer.push(arguments); }
         try {
           var requestUrl = typeof input === 'string' ? input : (input && input.url) || '';
           var requestPath = new URL(requestUrl, location.href).pathname;
-          if ((requestPath === '/api/discovery' || requestPath === '/api/subscribe') && /application\\/json/i.test((init.headers && (init.headers['Content-Type'] || init.headers['content-type'])) || 'application/json')) {
+          if ((requestPath === '/api/discovery' || requestPath === '/api/subscribe') && /application\/json/i.test((init.headers && (init.headers['Content-Type'] || init.headers['content-type'])) || 'application/json')) {
             var requestBody = JSON.parse(init.body);
             requestBody.attribution = campaignAttribution();
             init = Object.assign({}, init, { body: JSON.stringify(requestBody) });
@@ -226,7 +226,7 @@ function gtag(){ if (!PB_GA_SKIP) dataLayer.push(arguments); }
 
   // Engagement: scroll milestones, foreground time, article depth and on-site blog search intent.
   var milestones = [25, 50, 75, 90], sentDepth = {};
-  var isArticle = /^\\/blog\\//.test(location.pathname);
+  var isArticle = /^\/blog\//.test(location.pathname);
   var articleStart = Date.now(), articleProgress = 0, activeSeconds = 0, lastActive = Date.now();
   function track(name, params) { send(name, params || {}); }
   function updateScroll() {
@@ -285,18 +285,35 @@ function gtag(){ if (!PB_GA_SKIP) dataLayer.push(arguments); }
       }, 500);
     });
   }
-  // Core Web Vitals for real users (GA4); supported APIs only.
-  function vital(name, value, unit, good, poor) {
-    track('web_vital', { metric_name: name, metric_value: Math.round(value * 1000) / 1000, metric_unit: unit, metric_rating: value <= good ? 'good' : (value <= poor ? 'needs_improvement' : 'poor') });
+  // Send one page-level sample per Web Vital at page exit/visibility change.
+  var latestLcp = 0, clsTotal = 0, interactionDurations = {}, vitalsSent = false;
+  function flushVitals() {
+    if (vitalsSent) return;
+    vitalsSent = true;
+    if (latestLcp) vital('LCP', latestLcp / 1000, 'seconds', 2.5, 4);
+    if (clsTotal) vital('CLS', clsTotal, 'score', 0.1, 0.25);
+    var durations = Object.keys(interactionDurations).map(function (id) { return interactionDurations[id]; }).sort(function (a, b) { return a - b; });
+    if (durations.length) vital('INP', durations[Math.max(0, Math.ceil(durations.length * 0.75) - 1)] / 1000, 'seconds', 0.2, 0.5);
   }
+  document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') flushVitals(); });
+  window.addEventListener('pagehide', flushVitals);
   try {
-    new PerformanceObserver(function (list) { list.getEntries().forEach(function (e) { if (e.entryType === 'largest-contentful-paint') vital('LCP', e.startTime / 1000, 'seconds', 2.5, 4); }); }).observe({ type: 'largest-contentful-paint', buffered: true });
+    new PerformanceObserver(function (list) {
+      list.getEntries().forEach(function (entry) { if (entry.entryType === 'largest-contentful-paint') latestLcp = entry.startTime; });
+    }).observe({ type: 'largest-contentful-paint', buffered: true });
   } catch (e) {}
   try {
-    new PerformanceObserver(function (list) { list.getEntries().forEach(function (e) { if (!e.hadRecentInput) vital('CLS', e.value, 'score', 0.1, 0.25); }); }).observe({ type: 'layout-shift', buffered: true });
+    new PerformanceObserver(function (list) {
+      list.getEntries().forEach(function (entry) { if (!entry.hadRecentInput) clsTotal += entry.value; });
+    }).observe({ type: 'layout-shift', buffered: true });
   } catch (e) {}
   try {
-    new PerformanceObserver(function (list) { list.getEntries().forEach(function (e) { if (e.duration) vital('INP', e.duration / 1000, 'seconds', 0.2, 0.5); }); }).observe({ type: 'event', buffered: true, durationThreshold: 40 });
+    new PerformanceObserver(function (list) {
+      list.getEntries().forEach(function (entry) {
+        if (!entry.interactionId || !entry.duration) return;
+        interactionDurations[entry.interactionId] = Math.max(interactionDurations[entry.interactionId] || 0, entry.duration);
+      });
+    }).observe({ type: 'event', buffered: true, durationThreshold: 40 });
   } catch (e) {}
 
   ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(function (e) {
