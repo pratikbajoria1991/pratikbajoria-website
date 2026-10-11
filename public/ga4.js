@@ -62,6 +62,35 @@ function gtag(){ if (!PB_GA_SKIP) dataLayer.push(arguments); }
     gtag('event', name, p);
   }
 
+  // First-touch campaign attribution: session-scoped so it survives same-tab navigation without long-lived tracking.
+  var ATTR_KEY = 'pb_campaign_attribution_v1';
+  function campaignAttribution() {
+    var saved = {};
+    try { saved = JSON.parse(sessionStorage.getItem(ATTR_KEY) || '{}'); } catch (e) {}
+    if (!saved.landing_page) saved.landing_page = (location.origin + location.pathname).slice(0, 500);
+    var q = new URLSearchParams(location.search);
+    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'].forEach(function (key) {
+      if (!saved[key] && q.get(key)) saved[key] = clip(q.get(key), 160);
+    });
+    try { sessionStorage.setItem(ATTR_KEY, JSON.stringify(saved)); } catch (e) {}
+    return saved;
+  }
+  window.pbCampaignAttribution = campaignAttribution;
+  window.pbClassifyIntent = function (value) {
+    var s = String(value || '').toLowerCase();
+    if (/chartered accountant|\bca\b|audit|accounting/.test(s)) return 'chartered_accountant_ai';
+    if (/finance|account|reconcil|close|gst|tds|compliance/.test(s)) return 'finance_ai_automation';
+    if (/wealth|portfolio|investment|findost/.test(s)) return 'wealth_technology';
+    if (/tool|course|learn|adopt/.test(s)) return 'ai_tools_and_adoption';
+    if (/implement|automation|workflow|agent|copilot/.test(s)) return 'ai_implementation';
+    return 'other';
+  };
+  window.pbTrackEvent = function (name, params) {
+    load();
+    send(name, params || {});
+  };
+  campaignAttribution();
+
   // Replay events parked by the previous page (clicked before gtag.js had loaded).
   try {
     var parked = JSON.parse(sessionStorage.getItem(PENDING_KEY) || '[]');
@@ -105,6 +134,8 @@ function gtag(){ if (!PB_GA_SKIP) dataLayer.push(arguments); }
     var u;
     try { u = new URL(a.href, location.href); } catch (e) { return null; }
     var h = u.hostname.toLowerCase();
+    if (h === 'www.linkedin.com' || h === 'linkedin.com' || h === 'lnkd.in') return { name: 'linkedin_click', params: { link_domain: h } };
+    if (h === 'findost.io' || h === 'www.findost.io') return { name: 'findost_click', params: { link_domain: 'findost.io' } };
     if (h === 'api.whatsapp.com' || h === 'wa.me' || h === 'web.whatsapp.com') return { name: 'whatsapp_click', params: { link_domain: h } };
     var sameSite = h === host;
     if (!sameSite && /^https?:$/.test(u.protocol) && isAffiliate(h)) return { name: 'affiliate_click', params: { link_domain: h.replace(/^www\./, ''), link_url: (u.origin + u.pathname).slice(0, 200) } };
@@ -154,6 +185,19 @@ function gtag(){ if (!PB_GA_SKIP) dataLayer.push(arguments); }
   if (window.fetch) {
     var origFetch = window.fetch;
     window.fetch = function (input, init) {
+      // Attach first-touch campaign metadata to lead/subscription POSTs.
+      if (init && typeof init.body === 'string') {
+        try {
+          var requestUrl = typeof input === 'string' ? input : (input && input.url) || '';
+          var requestPath = new URL(requestUrl, location.href).pathname;
+          if ((requestPath === '/api/discovery' || requestPath === '/api/subscribe') && /application\\/json/i.test((init.headers && (init.headers['Content-Type'] || init.headers['content-type'])) || 'application/json')) {
+            var requestBody = JSON.parse(init.body);
+            requestBody.attribution = campaignAttribution();
+            init = Object.assign({}, init, { body: JSON.stringify(requestBody) });
+          }
+        } catch (e) { /* preserve the original form request */ }
+      }
+      arguments[1] = init;
       var p = origFetch.apply(this, arguments);
       try {
         var url = typeof input === 'string' ? input : (input && input.url) || '';
@@ -179,6 +223,81 @@ function gtag(){ if (!PB_GA_SKIP) dataLayer.push(arguments); }
       return p;
     };
   }
+
+  // Engagement: scroll milestones, foreground time, article depth and on-site blog search intent.
+  var milestones = [25, 50, 75, 90], sentDepth = {};
+  var isArticle = /^\\/blog\\//.test(location.pathname);
+  var articleStart = Date.now(), articleProgress = 0, activeSeconds = 0, lastActive = Date.now();
+  function track(name, params) { send(name, params || {}); }
+  function updateScroll() {
+    var doc = document.documentElement;
+    var max = Math.max(1, doc.scrollHeight - window.innerHeight);
+    var pct = Math.min(100, Math.round((window.scrollY / max) * 100));
+    milestones.forEach(function (m) {
+      if (pct >= m && !sentDepth[m]) { sentDepth[m] = true; track(isArticle ? 'article_progress' : 'scroll_depth', { percent_scrolled: m }); }
+    });
+    if (isArticle) articleProgress = Math.max(articleProgress, pct);
+  }
+  window.addEventListener('scroll', updateScroll, { passive: true });
+  document.addEventListener('visibilitychange', function () { lastActive = Date.now(); });
+  setInterval(function () {
+    if (document.visibilityState === 'visible') activeSeconds += Math.max(0, Math.round((Date.now() - lastActive) / 1000));
+    lastActive = Date.now();
+    [15, 30, 60, 120, 300].forEach(function (m) {
+      if (activeSeconds >= m && !window['pb_time_' + m]) {
+        window['pb_time_' + m] = true;
+        track(isArticle ? 'article_engaged_time' : 'engaged_time', { engaged_seconds: m });
+      }
+    });
+    if (isArticle && articleProgress >= 90 && !window.pbArticleComplete) {
+      window.pbArticleComplete = true;
+      track('article_read_complete', { percent_scrolled: 90 });
+    }
+  }, 5000);
+  if (isArticle) track('article_view', { article_slug: location.pathname.split('/').filter(Boolean).pop() || 'article' });
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href^="/blog/"]') : null;
+    if (a) track('article_click', { destination_path: new URL(a.href, location.href).pathname });
+  });
+  // Add a local search box to the server-rendered blog index. Never transmit the raw query.
+  var blogList = document.getElementById('blog-index-list');
+  if (blogList && !document.getElementById('blog-search')) {
+    var label = document.createElement('label');
+    label.htmlFor = 'blog-search';
+    label.textContent = 'Search insights';
+    label.style.cssText = 'display:block;margin:22px 0 8px;font-weight:600';
+    var input = document.createElement('input');
+    input.id = 'blog-search'; input.type = 'search'; input.placeholder = 'Try “AI for finance” or “CA audit”';
+    input.setAttribute('aria-label', 'Search blog articles');
+    input.style.cssText = 'width:100%;max-width:620px;padding:13px 16px;border:1px solid #d7d4cb;border-radius:10px;font:inherit;margin-bottom:16px';
+    blogList.parentNode.insertBefore(label, blogList); blogList.parentNode.insertBefore(input, blogList);
+    var searchTimer;
+    input.addEventListener('input', function () {
+      var term = input.value.trim().toLowerCase();
+      var cards = Array.prototype.slice.call(blogList.querySelectorAll('.blog-index-card'));
+      var matches = 0;
+      cards.forEach(function (card) { var show = !term || card.textContent.toLowerCase().indexOf(term) !== -1; card.hidden = !show; if (show) matches++; });
+      clearTimeout(searchTimer);
+      if (!term) return;
+      searchTimer = setTimeout(function () {
+        var intent = window.pbClassifyIntent(term);
+        track('blog_search', { search_intent: intent, query_length: term.length, results_count: matches });
+      }, 500);
+    });
+  }
+  // Core Web Vitals for real users (GA4); supported APIs only.
+  function vital(name, value, unit, good, poor) {
+    track('web_vital', { metric_name: name, metric_value: Math.round(value * 1000) / 1000, metric_unit: unit, metric_rating: value <= good ? 'good' : (value <= poor ? 'needs_improvement' : 'poor') });
+  }
+  try {
+    new PerformanceObserver(function (list) { list.getEntries().forEach(function (e) { if (e.entryType === 'largest-contentful-paint') vital('LCP', e.startTime / 1000, 'seconds', 2.5, 4); }); }).observe({ type: 'largest-contentful-paint', buffered: true });
+  } catch (e) {}
+  try {
+    new PerformanceObserver(function (list) { list.getEntries().forEach(function (e) { if (!e.hadRecentInput) vital('CLS', e.value, 'score', 0.1, 0.25); }); }).observe({ type: 'layout-shift', buffered: true });
+  } catch (e) {}
+  try {
+    new PerformanceObserver(function (list) { list.getEntries().forEach(function (e) { if (e.duration) vital('INP', e.duration / 1000, 'seconds', 0.2, 0.5); }); }).observe({ type: 'event', buffered: true, durationThreshold: 40 });
+  } catch (e) {}
 
   ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(function (e) {
     window.addEventListener(e, load, { once: true, passive: true });
