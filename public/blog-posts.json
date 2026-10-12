@@ -1,5 +1,141 @@
 [
   {
+    "id": "2026-10-13-using-ai-for-tds-reconciliation-in-indian-ca-firms-from-26as-to-form-168",
+    "title": "Using AI for TDS Reconciliation in Indian CA Firms: From 26AS to Form 168",
+    "slug": "2026-10-13-using-ai-for-tds-reconciliation-in-indian-ca-firms-from-26as-to-form-168",
+    "url": "/blog/2026-10-13-using-ai-for-tds-reconciliation-in-indian-ca-firms-from-26as-to-form-168",
+    "date": "2026-10-13",
+    "dateModified": "2026-10-13",
+    "author": "Pratik Bajoria",
+    "category": "CA insights",
+    "readTime": 4,
+    "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=85",
+    "excerpt": "Form 26AS is now Form 168 under the new Act. How to automate TDS matching and the mismatch list, while a reviewer decides what to chase with the deductor.",
+    "content": "TDS reconciliation is one of the least glamorous and most useful places to put AI in a practice. The volume is high, the rules are clear, and the cost of a missed mismatch is a demand, a refund delay or an uncomfortable call with the client.\n\nIt is also changing names. Under the Income-tax Act, 2025, the statement many of us still call 26AS is Form No. 168, the Annual Information Statement, issued under section 510 read with Rule 245. The work behind it has not changed: match what the client booked with what others reported, and chase the differences.\n\nWhat the statement now contains\n\nThe Department’s Form 168 FAQs describe two parts. Part A carries general information about the taxpayer. Part B carries TDS and TCS information, Statement of Financial Transactions data from reporting entities, payment of taxes, demands and refunds, and other information such as dividends, interest on refunds, and securities and mutual fund transactions. The Taxpayer Information Summary (TIS) aggregates this by category and is updated after feedback is processed.\n\nIn practice a reconciliation now has two jobs: tie the TDS credits the client is claiming to what deductors reported, and make sure the income behind those credits is fully reflected in the books and the return.\n\nWhat to automate\n\nNone of this needs a clever model. A well-written script does most of it, and an AI assistant is useful for writing and maintaining that script, for reading messy ledger narrations and for drafting the deductor emails. Gartner’s 2025 AI in Finance survey found error and anomaly detection among the three most common finance AI use cases; TDS matching is a very practical version of it.\n\n• Parsing the downloaded statement into a clean table by deductor TAN, section, date and amount.\n\n• Matching each entry to the client’s ledger, first exactly, then within tolerances on date and amount, with every fuzzy match labelled as such.\n\n• Producing a mismatch list in three buckets: in the statement but not in the books, in the books but not in the statement, and in both with different amounts.\n\n• Drafting the email to each deductor listing the missing or short-reported entries, with invoice references attached.\n\n• Tracking responses and re-running the match after deductors file corrections.\n\nWhat a reviewer still decides\n\nWhether a difference is a timing issue, a deductor error, a booking error or income the client has not recognised is a judgement. So is the decision to submit feedback on an AIS entry, to wait for a correction statement, or to report income that does not appear in the statement at all. The FAQs are explicit that actual income must be reported even if it is missing from the AIS, and that the TIS cannot be edited directly.\n\nI would also keep a person on any match the tool marks as fuzzy. Fuzzy matching is where reconciliations quietly go wrong: two invoices of similar value from the same customer can be paired incorrectly, and the error will not surface until a deductor’s correction breaks it.\n\nThe tax auditor will ask the deductor-side question too\n\nFor clients who deduct tax, the new tax audit report raises the bar. Form 26 asks the auditor for the total number of transactions reported and not reported in the TDS/TCS return as it stands after the latest correction statement, and the amount of transactions not reported. A firm that already runs transaction-level matching for its clients’ own credits can extend the same scripts to their deduction compliance.\n\nA simple monthly rhythm\n\nIf this is the firm’s first AI workflow, run it as a time-boxed pilot with a baseline, as in my 90-day pilot playbook.\n\n• Download the statement and the ledger extract on a fixed day each month or quarter.\n\n• Run the match and publish the three-bucket mismatch list to the reviewer.\n\n• Reviewer classifies each item and approves the deductor emails.\n\n• Re-run after corrections, and close items with a note of how they were resolved.\n\n• Before the return, reconcile income heads in the TIS to the books and document every difference.\n\nFrequently asked questions\n\nIs Form 26AS still available?\nUnder the Income-tax Act, 2025 and the Income-tax Rules, 2026, the Annual Information Statement is Form No. 168, corresponding to Form 26AS and section 285BB under the 1961 Act.\n\nCan AI reconcile TDS automatically?\nIt can do the parsing, matching and drafting at high volume. A reviewer should still classify each difference, approve deductor follow-ups and decide on AIS feedback, and any fuzzy match should be confirmed by a person.\n\nWhat if income is missing from the AIS?\nAccording to the Department’s FAQs, all actual income must be reported in the return even if it does not appear in the AIS.\n\nWhat does Form 26 ask about TDS returns?\nFor assessees who deduct or collect tax, the auditor reports the number of transactions reported and not reported in the TDS/TCS return after the latest correction, and the amount of transactions not reported.",
+    "intro": [
+      "TDS reconciliation is one of the least glamorous and most useful places to put AI in a practice. The volume is high, the rules are clear, and the cost of a missed mismatch is a demand, a refund delay or an uncomfortable call with the client.",
+      "It is also changing names. Under the [Income-tax Act, 2025][3], the statement many of us still call 26AS is [Form No. 168, the Annual Information Statement][1], issued under section 510 read with Rule 245. The work behind it has not changed: match what the client booked with what others reported, and chase the differences."
+    ],
+    "sections": [
+      {
+        "heading": "What the statement now contains",
+        "paragraphs": [
+          "The Department’s [Form 168 FAQs][1] describe two parts. Part A carries general information about the taxpayer. Part B carries TDS and TCS information, Statement of Financial Transactions data from reporting entities, payment of taxes, demands and refunds, and other information such as dividends, interest on refunds, and securities and mutual fund transactions. The Taxpayer Information Summary (TIS) aggregates this by category and is updated after feedback is processed.",
+          "In practice a reconciliation now has two jobs: tie the TDS credits the client is claiming to what deductors reported, and make sure the income behind those credits is fully reflected in the books and the return."
+        ],
+        "bullets": []
+      },
+      {
+        "heading": "What to automate",
+        "paragraphs": [
+          "None of this needs a clever model. A well-written script does most of it, and an AI assistant is useful for writing and maintaining that script, for reading messy ledger narrations and for drafting the deductor emails. Gartner’s [2025 AI in Finance survey][4] found error and anomaly detection among the three most common finance AI use cases; TDS matching is a very practical version of it."
+        ],
+        "bullets": [
+          "Parsing the downloaded statement into a clean table by deductor TAN, section, date and amount.",
+          "Matching each entry to the client’s ledger, first exactly, then within tolerances on date and amount, with every fuzzy match labelled as such.",
+          "Producing a mismatch list in three buckets: in the statement but not in the books, in the books but not in the statement, and in both with different amounts.",
+          "Drafting the email to each deductor listing the missing or short-reported entries, with invoice references attached.",
+          "Tracking responses and re-running the match after deductors file corrections."
+        ]
+      },
+      {
+        "heading": "What a reviewer still decides",
+        "paragraphs": [
+          "Whether a difference is a timing issue, a deductor error, a booking error or income the client has not recognised is a judgement. So is the decision to submit feedback on an AIS entry, to wait for a correction statement, or to report income that does not appear in the statement at all. The [FAQs][1] are explicit that actual income must be reported even if it is missing from the AIS, and that the TIS cannot be edited directly.",
+          "I would also keep a person on any match the tool marks as fuzzy. Fuzzy matching is where reconciliations quietly go wrong: two invoices of similar value from the same customer can be paired incorrectly, and the error will not surface until a deductor’s correction breaks it."
+        ],
+        "bullets": []
+      },
+      {
+        "heading": "The tax auditor will ask the deductor-side question too",
+        "paragraphs": [
+          "For clients who deduct tax, the new tax audit report raises the bar. [Form 26][2] asks the auditor for the total number of transactions reported and not reported in the TDS/TCS return as it stands after the latest correction statement, and the amount of transactions not reported. A firm that already runs transaction-level matching for its clients’ own credits can extend the same scripts to their deduction compliance."
+        ],
+        "bullets": []
+      },
+      {
+        "heading": "A simple monthly rhythm",
+        "paragraphs": [
+          "If this is the firm’s first AI workflow, run it as a time-boxed pilot with a baseline, as in my [90-day pilot playbook](/blog/2026-10-07-how-to-run-a-90-day-ai-pilot-in-a-ca-firm-in-india)."
+        ],
+        "bullets": [
+          "Download the statement and the ledger extract on a fixed day each month or quarter.",
+          "Run the match and publish the three-bucket mismatch list to the reviewer.",
+          "Reviewer classifies each item and approves the deductor emails.",
+          "Re-run after corrections, and close items with a note of how they were resolved.",
+          "Before the return, reconcile income heads in the TIS to the books and document every difference."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Form 26AS still available?",
+        "a": "Under the Income-tax Act, 2025 and the Income-tax Rules, 2026, the Annual Information Statement is Form No. 168, corresponding to Form 26AS and section 285BB under the 1961 Act."
+      },
+      {
+        "q": "Can AI reconcile TDS automatically?",
+        "a": "It can do the parsing, matching and drafting at high volume. A reviewer should still classify each difference, approve deductor follow-ups and decide on AIS feedback, and any fuzzy match should be confirmed by a person."
+      },
+      {
+        "q": "What if income is missing from the AIS?",
+        "a": "According to the Department’s FAQs, all actual income must be reported in the return even if it does not appear in the AIS."
+      },
+      {
+        "q": "What does Form 26 ask about TDS returns?",
+        "a": "For assessees who deduct or collect tax, the auditor reports the number of transactions reported and not reported in the TDS/TCS return after the latest correction, and the amount of transactions not reported."
+      }
+    ],
+    "related": [
+      {
+        "title": "AI for Chartered Accountants in India: the implementation hub",
+        "url": "/blog/ai-for-chartered-accountants-in-india"
+      },
+      {
+        "title": "AI for GST reconciliation without risking client data",
+        "url": "/blog/2026-09-28-how-indian-ca-firms-can-use-ai-for-gst-reconciliation-without-risking-client-data"
+      },
+      {
+        "title": "How to run a 90-day AI pilot in a CA firm",
+        "url": "/blog/2026-10-07-how-to-run-a-90-day-ai-pilot-in-a-ca-firm-in-india"
+      },
+      {
+        "title": "The AI Opportunity Audit: a scoped 90-day map",
+        "url": "/audit"
+      }
+    ],
+    "keywords": [
+      "TDS reconciliation AI",
+      "26AS reconciliation",
+      "Form 168 AIS",
+      "AIS mismatch",
+      "AI for CA firms India"
+    ],
+    "sources": [
+      {
+        "title": "Income Tax Department: Form No. 168 (Annual Information Statement) FAQs",
+        "url": "https://www.incometaxindia.gov.in/documents/d/guest/form-168-faqs"
+      },
+      {
+        "title": "Income Tax Department: Form No. 26 FAQs (tax audit under section 63, Income-tax Act, 2025)",
+        "url": "https://www.incometaxindia.gov.in/documents/d/guest/form-26-faqs"
+      },
+      {
+        "title": "PIB: Income-tax Act, 2025 comes into force from 1 April 2026",
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2248005"
+      },
+      {
+        "title": "Gartner: Finance AI adoption remains steady in 2025 (press release)",
+        "url": "https://www.gartner.com/en/newsroom/press-releases/2025-11-18-gartner-survey-shows-finance-ai-adoption-remains-steady-in-2025"
+      }
+    ],
+    "generatedBy": "topic-bank",
+    "topicFile": "scripts/daily-topics/03-tds-reconciliation.js",
+    "affiliateTools": [],
+    "affiliate": {
+      "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
+    }
+  },
+  {
     "id": "2026-10-12-drafting-replies-to-gst-and-income-tax-notices-with-ai-without-losing-control",
     "title": "Drafting Replies to GST and Income Tax Notices With AI Without Losing Control",
     "slug": "2026-10-12-drafting-replies-to-gst-and-income-tax-notices-with-ai-without-losing-control",
