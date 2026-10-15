@@ -1,5 +1,140 @@
 [
   {
+    "id": "2026-10-15-ai-and-articleship-how-ca-firms-should-train-article-assistants-now",
+    "title": "AI and Articleship: How CA Firms Should Train Article Assistants Now",
+    "slug": "2026-10-15-ai-and-articleship-how-ca-firms-should-train-article-assistants-now",
+    "url": "/blog/2026-10-15-ai-and-articleship-how-ca-firms-should-train-article-assistants-now",
+    "date": "2026-10-15",
+    "dateModified": "2026-10-15",
+    "author": "Pratik Bajoria",
+    "category": "CA insights",
+    "readTime": 4,
+    "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=85",
+    "excerpt": "Articleship is two years under ICAI’s new scheme, and AI now drafts much of what articles used to prepare. How to train them to review, question and own the work.",
+    "content": "For most of us, articleship was where we learned the job by doing the repetitive parts: vouching, ticking, preparing schedules, chasing documents. A lot of that preparation can now be drafted by a tool in minutes. If firms keep training article assistants the old way, they will produce juniors who are good at work that is disappearing and untrained in the work that remains.\n\nThe time available has also shrunk. Under ICAI’s New Scheme of Education and Training, practical training is two years, so firms have less time to get it right.\n\nThe training window under the new scheme\n\nAccording to ICAI’s FAQs on the New Scheme of Education and Training, practical training starts after a student passes both groups of the Intermediate examination and completes the four-week ICITSS course, and lasts two years. Industrial training of 9 to 12 months is permitted in the last part of those two years, and 12 leaves are allowed in each year. The Advanced ICITSS course comes after practical training and before the Final examination.\n\nTwo years, minus leave and exam preparation, is not much time to turn a student into someone a partner can rely on. That argues for being deliberate about what articles spend their hours on.\n\nThe profession is already moving\n\nICAI has been unusually quick on AI. At its AI Innovation Summit 2026, the Institute said it had trained over 50,000 members in AI and developed more than 150 GPT-based tools, and it launched Level 3 of its AI certificate course for members. Students have their own tools too: ICAI’s November 2024 release reported a GPT for CA students covering Foundation, Intermediate and Final, with over 50,000 students using it at the time.\n\nSo articles will arrive already using AI. The firm’s job is not to introduce the tools; it is to teach professional habits around them.\n\nTeach review before preparation\n\nThe most valuable skill a junior can build now is checking machine output against evidence. I would restructure the first months of articleship around that.\n\n• Give articles AI-drafted schedules with deliberate errors planted, and assess how many they find and how they prove each one.\n\n• Make \"show me the source document\" the default response to any number an article presents, whoever or whatever produced it.\n\n• Have articles write the review note on an AI draft, not just correct it, so the reasoning is visible.\n\n• Rotate them through exception handling: the items a reconciliation tool could not match are where judgement is learned.\n\nKeep the fundamentals manual for a while\n\nThere is a real risk of juniors who can operate a tool but cannot do the underlying work. I would keep a short period of fully manual work on core tasks, such as a bank reconciliation, a GST return working and a set of audit vouching, before introducing AI on the same task. You cannot review what you have never done.\n\nThe internal audit standards make a similar point for the whole team. ICAI’s SIA 240 on use of tools requires that the team has the competencies to use selected tools and that the engagement lead ensures periodic training as tools evolve. The same principle applies in any practice.\n\nRules articles should know on day one\n\nNone of this needs a large programme. A one-page policy, a planted-error exercise in the first month, and partners who ask \"how do you know?\" consistently will do more than any course. If you are weighing formal courses for the team, I compared the options in AI courses for chartered accountants in India.\n\n• Which AI tools are approved, and that client data never goes into personal accounts.\n\n• What may be drafted by AI, and what must be done or concluded by a person.\n\n• That every AI-assisted output is labelled as such in the file until reviewed.\n\n• Who to ask when an AI answer and their own work disagree, and that disagreement is worth raising.\n\nFrequently asked questions\n\nHow long is CA articleship now?\nUnder ICAI’s New Scheme of Education and Training, practical training is two years, started after passing both groups of the Intermediate examination and completing ICITSS. Industrial training of 9 to 12 months is permitted in the last part.\n\nShould article assistants use AI?\nYes, within firm rules on approved tools and client data, and after they have done the core tasks manually at least once. The priority is teaching them to review AI output against evidence.\n\nWhat AI training does ICAI offer?\nICAI runs an AI certificate course for members, with Level 3 launched at its AI Innovation Summit 2026, and provides CA GPT tools for members and students. It reported training over 50,000 members in AI by June 2026.\n\nWhat skills matter most for juniors now?\nChecking outputs against source documents, writing clear review notes, handling exceptions and knowing when to escalate. Preparation still matters, but review is where trust is built.",
+    "intro": [
+      "For most of us, articleship was where we learned the job by doing the repetitive parts: vouching, ticking, preparing schedules, chasing documents. A lot of that preparation can now be drafted by a tool in minutes. If firms keep training article assistants the old way, they will produce juniors who are good at work that is disappearing and untrained in the work that remains.",
+      "The time available has also shrunk. Under ICAI’s New Scheme of Education and Training, practical training is two years, so firms have less time to get it right."
+    ],
+    "sections": [
+      {
+        "heading": "The training window under the new scheme",
+        "paragraphs": [
+          "According to ICAI’s [FAQs on the New Scheme of Education and Training][1], practical training starts after a student passes both groups of the Intermediate examination and completes the four-week ICITSS course, and lasts two years. Industrial training of 9 to 12 months is permitted in the last part of those two years, and 12 leaves are allowed in each year. The Advanced ICITSS course comes after practical training and before the Final examination.",
+          "Two years, minus leave and exam preparation, is not much time to turn a student into someone a partner can rely on. That argues for being deliberate about what articles spend their hours on."
+        ],
+        "bullets": []
+      },
+      {
+        "heading": "The profession is already moving",
+        "paragraphs": [
+          "ICAI has been unusually quick on AI. At its [AI Innovation Summit 2026][2], the Institute said it had trained over 50,000 members in AI and developed more than 150 GPT-based tools, and it launched Level 3 of its AI certificate course for members. Students have their own tools too: ICAI’s [November 2024 release][3] reported a GPT for CA students covering Foundation, Intermediate and Final, with over 50,000 students using it at the time.",
+          "So articles will arrive already using AI. The firm’s job is not to introduce the tools; it is to teach professional habits around them."
+        ],
+        "bullets": []
+      },
+      {
+        "heading": "Teach review before preparation",
+        "paragraphs": [
+          "The most valuable skill a junior can build now is checking machine output against evidence. I would restructure the first months of articleship around that."
+        ],
+        "bullets": [
+          "Give articles AI-drafted schedules with deliberate errors planted, and assess how many they find and how they prove each one.",
+          "Make \"show me the source document\" the default response to any number an article presents, whoever or whatever produced it.",
+          "Have articles write the review note on an AI draft, not just correct it, so the reasoning is visible.",
+          "Rotate them through exception handling: the items a reconciliation tool could not match are where judgement is learned."
+        ]
+      },
+      {
+        "heading": "Keep the fundamentals manual for a while",
+        "paragraphs": [
+          "There is a real risk of juniors who can operate a tool but cannot do the underlying work. I would keep a short period of fully manual work on core tasks, such as a bank reconciliation, a GST return working and a set of audit vouching, before introducing AI on the same task. You cannot review what you have never done.",
+          "The internal audit standards make a similar point for the whole team. ICAI’s [SIA 240 on use of tools][4] requires that the team has the competencies to use selected tools and that the engagement lead ensures periodic training as tools evolve. The same principle applies in any practice."
+        ],
+        "bullets": []
+      },
+      {
+        "heading": "Rules articles should know on day one",
+        "paragraphs": [
+          "None of this needs a large programme. A one-page policy, a planted-error exercise in the first month, and partners who ask \"how do you know?\" consistently will do more than any course. If you are weighing formal courses for the team, I compared the options in [AI courses for chartered accountants in India](/blog/2026-10-07-ai-courses-for-chartered-accountants-in-india-what-is-worth-it)."
+        ],
+        "bullets": [
+          "Which AI tools are approved, and that client data never goes into personal accounts.",
+          "What may be drafted by AI, and what must be done or concluded by a person.",
+          "That every AI-assisted output is labelled as such in the file until reviewed.",
+          "Who to ask when an AI answer and their own work disagree, and that disagreement is worth raising."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "How long is CA articleship now?",
+        "a": "Under ICAI’s New Scheme of Education and Training, practical training is two years, started after passing both groups of the Intermediate examination and completing ICITSS. Industrial training of 9 to 12 months is permitted in the last part."
+      },
+      {
+        "q": "Should article assistants use AI?",
+        "a": "Yes, within firm rules on approved tools and client data, and after they have done the core tasks manually at least once. The priority is teaching them to review AI output against evidence."
+      },
+      {
+        "q": "What AI training does ICAI offer?",
+        "a": "ICAI runs an AI certificate course for members, with Level 3 launched at its AI Innovation Summit 2026, and provides CA GPT tools for members and students. It reported training over 50,000 members in AI by June 2026."
+      },
+      {
+        "q": "What skills matter most for juniors now?",
+        "a": "Checking outputs against source documents, writing clear review notes, handling exceptions and knowing when to escalate. Preparation still matters, but review is where trust is built."
+      }
+    ],
+    "related": [
+      {
+        "title": "AI for Chartered Accountants in India: the implementation hub",
+        "url": "/blog/ai-for-chartered-accountants-in-india"
+      },
+      {
+        "title": "AI courses for chartered accountants in India",
+        "url": "/blog/2026-10-07-ai-courses-for-chartered-accountants-in-india-what-is-worth-it"
+      },
+      {
+        "title": "Will AI replace chartered accountants in India?",
+        "url": "/blog/2026-10-07-will-ai-replace-chartered-accountants-in-india"
+      },
+      {
+        "title": "How to run a 90-day AI pilot in a CA firm",
+        "url": "/blog/2026-10-07-how-to-run-a-90-day-ai-pilot-in-a-ca-firm-in-india"
+      }
+    ],
+    "keywords": [
+      "articleship AI",
+      "CA article assistants AI",
+      "training CA students AI",
+      "CA firm training India",
+      "ICAI new scheme articleship"
+    ],
+    "sources": [
+      {
+        "title": "ICAI Board of Studies: FAQs on the New Scheme of Education and Training",
+        "url": "https://resource.cdn.icai.org/75315bos-faqs-nset-july1.pdf"
+      },
+      {
+        "title": "ICAI: AI Innovation Summit 2026 press release (26 June 2026)",
+        "url": "https://www.icai.org/post/icai-ais2026-26062026"
+      },
+      {
+        "title": "ICAI: CA GPT platform press release (25 November 2024)",
+        "url": "https://icai.org/post/prc-icai-unveils-groundbreaking-ca-gpt-platform"
+      },
+      {
+        "title": "ICAI Internal Audit Standards Board: Compendium of Standards on Internal Audit, 2026 (SIA 240, Use of Tools)",
+        "url": "https://internalaudit.icai.org/wp-content/uploads/2026/03/Comp-of-Stnd-on-Internal-Audit-26.pdf"
+      }
+    ],
+    "generatedBy": "topic-bank",
+    "topicFile": "scripts/daily-topics/05-articleship.js",
+    "affiliateTools": [],
+    "affiliate": {
+      "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
+    }
+  },
+  {
     "id": "2026-10-14-how-ca-firms-in-india-should-price-work-when-ai-cuts-the-hours",
     "title": "How CA Firms in India Should Price Work When AI Cuts the Hours",
     "slug": "2026-10-14-how-ca-firms-in-india-should-price-work-when-ai-cuts-the-hours",
