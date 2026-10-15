@@ -475,6 +475,8 @@ function renderPostHtml(post, catalog) {
   const slug = post.slug;
   const canonical = `${SITE}/blog/${slug}`;
   const title = post.title || slug;
+  // <title> stays under 60 chars: brand suffix only when it fits; optional post.seoTitle override.
+  const titleTag = post.seoTitle || (`${title} — Pratik Bajoria`.length <= 60 ? `${title} — Pratik Bajoria` : title);
   const excerpt = post.excerpt || '';
   const image = post.image || 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=85';
   const allSources = Array.isArray(post.sources) ? post.sources : [];
@@ -533,7 +535,7 @@ function renderPostHtml(post, catalog) {
     <meta name="theme-color" content="#f4f0e8" />
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
     <meta name="author" content="Pratik Bajoria" />
-    <title>${escHtml(title)} — Pratik Bajoria</title>
+    <title>${escHtml(titleTag)}</title>
     <meta name="description" content="${escHtml(excerpt)}" />
     <link rel="canonical" href="${escHtml(canonical)}" />
     <meta property="og:type" content="article" />
@@ -598,6 +600,8 @@ ${sourcesHtml}${structured ? `\n<p><em>${escHtml(post.disclaimer || STRUCTURED_D
         <a href="/privacy">Privacy</a>
         <a href="/llms.txt">llms.txt</a>
         <a href="/blog">Blog</a>
+        <a href="/ai-automation-in-india">AI automation in India</a>
+        <a href="/blog/ai-for-chartered-accountants-in-india">AI for CAs</a>
         <a href="/topics">Topics</a>
         <a href="mailto:hello@pratikbajoria.com">Contact</a>
       </div>
@@ -871,6 +875,7 @@ export default {
       '/ai-implementation-for-finance-teams.html': '/ai-implementation-for-finance-teams',
       '/workflow-automation-with-ai-for-mid-market.html': '/workflow-automation-with-ai-for-mid-market',
       '/cross-border-partnerships.html': '/cross-border-partnerships',
+      '/ai-automation-in-india.html': '/ai-automation-in-india',
     };
     if (isRead && htmlAliases[url.pathname]) {
       return absoluteRedirect(url, htmlAliases[url.pathname]);

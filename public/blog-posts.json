@@ -89,12 +89,16 @@
         "url": "/blog/ai-for-chartered-accountants-in-india"
       },
       {
-        "title": "How to run a 90-day AI pilot in a CA firm",
+        "title": "How to Run a 90-Day AI Pilot in a CA Firm in India: A 30/60/90 Playbook",
         "url": "/blog/2026-10-07-how-to-run-a-90-day-ai-pilot-in-a-ca-firm-in-india"
       },
       {
-        "title": "Will AI replace chartered accountants in India?",
-        "url": "/blog/2026-10-07-will-ai-replace-chartered-accountants-in-india"
+        "title": "Notion for Finance Professionals: Templates, Dashboards, and Workflows",
+        "url": "/blog/notion-for-finance-professionals-templates-dashboards-workflows"
+      },
+      {
+        "title": "ChatGPT, Copilot or Gemini? How a CA Firm in India Should Choose an AI Assistant",
+        "url": "/blog/2026-10-05-chatgpt-vs-copilot-vs-gemini-how-a-ca-firm-in-india-should-choose-an-ai-assistant"
       },
       {
         "title": "The AI Opportunity Audit: a scoped 90-day map",
@@ -131,7 +135,8 @@
     "affiliateTools": [],
     "affiliate": {
       "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
-    }
+    },
+    "seoTitle": "How CA Firms Should Price Work When AI Cuts the Hours"
   },
   {
     "id": "2026-10-13-using-ai-for-tds-reconciliation-in-indian-ca-firms-from-26as-to-form-168",
@@ -225,12 +230,16 @@
         "url": "/blog/ai-for-chartered-accountants-in-india"
       },
       {
-        "title": "AI for GST reconciliation without risking client data",
-        "url": "/blog/2026-09-28-how-indian-ca-firms-can-use-ai-for-gst-reconciliation-without-risking-client-data"
+        "title": "AI for Tax Audit in India: Form 3CD This Year, Form 26 Next Year",
+        "url": "/blog/2026-10-09-ai-for-tax-audit-in-india-form-3cd-this-year-form-26-next-year"
       },
       {
-        "title": "How to run a 90-day AI pilot in a CA firm",
-        "url": "/blog/2026-10-07-how-to-run-a-90-day-ai-pilot-in-a-ca-firm-in-india"
+        "title": "Drafting Replies to GST and Income Tax Notices With AI Without Losing Control",
+        "url": "/blog/2026-10-12-drafting-replies-to-gst-and-income-tax-notices-with-ai-without-losing-control"
+      },
+      {
+        "title": "AI for Audit Working Papers in India: What a CA Should Automate and What Must Stay Human",
+        "url": "/blog/2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human"
       },
       {
         "title": "The AI Opportunity Audit: a scoped 90-day map",
@@ -267,7 +276,8 @@
     "affiliateTools": [],
     "affiliate": {
       "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
-    }
+    },
+    "seoTitle": "AI for TDS Reconciliation in CA Firms: 26AS to Form 168"
   },
   {
     "id": "2026-10-12-drafting-replies-to-gst-and-income-tax-notices-with-ai-without-losing-control",
@@ -360,12 +370,16 @@
         "url": "/blog/ai-for-chartered-accountants-in-india"
       },
       {
-        "title": "AI for GST reconciliation without risking client data",
+        "title": "Using AI for TDS Reconciliation in Indian CA Firms: From 26AS to Form 168",
+        "url": "/blog/2026-10-13-using-ai-for-tds-reconciliation-in-indian-ca-firms-from-26as-to-form-168"
+      },
+      {
+        "title": "How Indian CA Firms Can Use AI for GST Reconciliation Without Risking Client Data",
         "url": "/blog/2026-09-28-how-indian-ca-firms-can-use-ai-for-gst-reconciliation-without-risking-client-data"
       },
       {
-        "title": "AI controls checklist for CA firms in India",
-        "url": "/blog/ai-controls-checklist-ca-firms-india"
+        "title": "AI for Tax Audit in India: Form 3CD This Year, Form 26 Next Year",
+        "url": "/blog/2026-10-09-ai-for-tax-audit-in-india-form-3cd-this-year-form-26-next-year"
       },
       {
         "title": "The AI Opportunity Audit: a scoped 90-day map",
@@ -406,7 +420,8 @@
     "affiliateTools": [],
     "affiliate": {
       "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
-    }
+    },
+    "seoTitle": "Drafting GST and Income Tax Notice Replies With AI"
   },
   {
     "id": "2026-10-12-finance-ai-roi-for-mid-market-companies-in-india-a-cas-decision-rubric",
@@ -455,7 +470,8 @@
     "affiliateTools": [],
     "affiliate": {
       "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
-    }
+    },
+    "seoTitle": "Finance AI ROI in Indian Mid-Market Firms: A CA’s Rubric"
   },
   {
     "id": "2026-10-09-ai-for-tax-audit-in-india-form-3cd-this-year-form-26-next-year",
@@ -552,12 +568,16 @@
         "url": "/blog/ai-for-chartered-accountants-in-india"
       },
       {
-        "title": "AI controls checklist for CA firms in India",
-        "url": "/blog/ai-controls-checklist-ca-firms-india"
+        "title": "AI for Audit Working Papers in India: What a CA Should Automate and What Must Stay Human",
+        "url": "/blog/2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human"
       },
       {
-        "title": "How to run a 90-day AI pilot in a CA firm",
-        "url": "/blog/2026-10-07-how-to-run-a-90-day-ai-pilot-in-a-ca-firm-in-india"
+        "title": "Using AI for TDS Reconciliation in Indian CA Firms: From 26AS to Form 168",
+        "url": "/blog/2026-10-13-using-ai-for-tds-reconciliation-in-indian-ca-firms-from-26as-to-form-168"
+      },
+      {
+        "title": "AI for Internal Audit in Indian Companies: A Practical Starting Point",
+        "url": "/blog/2026-10-08-ai-for-internal-audit-in-indian-companies-a-practical-starting-point"
       },
       {
         "title": "The AI Opportunity Audit: a scoped 90-day map",
@@ -601,7 +621,8 @@
       "Clause answers, the classification of observations and the signature stay with the accountant.",
       "Form 26 asks for the IP address and country of the server holding electronic books and the address of the India-located daily backup (Rule 46).",
       "Use the remaining Form 3CD season as a pilot before Form 26 work starts."
-    ]
+    ],
+    "seoTitle": "AI for Tax Audit in India: Form 3CD Now, Form 26 Next"
   },
   {
     "id": "2026-10-08-ai-for-internal-audit-in-indian-companies-a-practical-starting-point",
@@ -704,7 +725,8 @@
         "q": "Will AI replace internal auditors?",
         "a": "No. It changes the work. Testing every transaction becomes cheap; deciding which exceptions matter, talking to process owners, rating findings and standing behind the report still need an experienced person. SIA 240 says as much: tool findings need professional scepticism and contextual evaluation."
       }
-    ]
+    ],
+    "seoTitle": "AI for Internal Audit in Indian Companies: Where to Start"
   },
   {
     "id": "2026-10-07-is-ca-worth-it-in-2026-with-ai",
@@ -752,7 +774,8 @@
     "affiliateTools": [],
     "affiliate": {
       "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
-    }
+    },
+    "seoTitle": "Is CA Worth It in 2026 With AI? A CA’s View"
   },
   {
     "id": "2026-10-07-how-audit-and-accounting-firms-in-india-are-using-ai",
@@ -816,7 +839,8 @@
     "affiliateTools": [],
     "affiliate": {
       "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
-    }
+    },
+    "seoTitle": "How Audit and Accounting Firms in India Use AI"
   },
   {
     "id": "2026-10-07-ai-courses-for-chartered-accountants-in-india-what-is-worth-it",
@@ -864,7 +888,8 @@
     "affiliateTools": [],
     "affiliate": {
       "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
-    }
+    },
+    "seoTitle": "AI Courses for Chartered Accountants in India"
   },
   {
     "id": "2026-10-07-will-ai-replace-chartered-accountants-in-india",
@@ -912,7 +937,8 @@
     "affiliateTools": [],
     "affiliate": {
       "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
-    }
+    },
+    "seoTitle": "Will AI Replace Chartered Accountants in India?"
   },
   {
     "id": "2026-10-07-how-to-run-a-90-day-ai-pilot-in-a-ca-firm-in-india",
@@ -952,7 +978,8 @@
     "affiliateTools": [],
     "affiliate": {
       "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
-    }
+    },
+    "seoTitle": "How to Run a 90-Day AI Pilot in a CA Firm in India"
   },
   {
     "id": "2026-10-05-chatgpt-vs-copilot-vs-gemini-how-a-ca-firm-in-india-should-choose-an-ai-assistant",
@@ -1004,7 +1031,8 @@
     "affiliateTools": [],
     "affiliate": {
       "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
-    }
+    },
+    "seoTitle": "ChatGPT, Copilot or Gemini for a CA Firm in India?"
   },
   {
     "id": "2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human",
@@ -1051,7 +1079,8 @@
     "affiliateTools": [],
     "affiliate": {
       "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
-    }
+    },
+    "seoTitle": "AI for Audit Working Papers in India: What to Automate"
   },
   {
     "id": "2026-09-29-the-monday-morning-test-for-any-ai-workflow",
@@ -1082,7 +1111,8 @@
     ],
     "affiliate": {
       "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
-    }
+    },
+    "seoTitle": "The Monday Morning Test for Any AI Workflow"
   },
   {
     "id": "2026-09-28-how-indian-ca-firms-can-use-ai-for-gst-reconciliation-without-risking-client-data",
@@ -1137,7 +1167,8 @@
     "affiliateTools": [],
     "affiliate": {
       "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
-    }
+    },
+    "seoTitle": "AI for GST Reconciliation in CA Firms, Safely"
   },
   {
     "id": "2026-09-28-whatsapp-automation-that-still-feels-like-customer-care",
@@ -1177,7 +1208,8 @@
     ],
     "affiliate": {
       "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
-    }
+    },
+    "seoTitle": "WhatsApp Automation That Still Feels Like Care"
   },
   {
     "id": "2026-09-27-hubspot-vs-spreadsheet-crm-the-real-switching-cost",
@@ -1212,7 +1244,8 @@
     ],
     "affiliate": {
       "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
-    }
+    },
+    "seoTitle": "HubSpot vs Spreadsheet CRM: The Real Switching Cost"
   },
   {
     "id": "2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction",
@@ -1248,7 +1281,8 @@
     ],
     "affiliate": {
       "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
-    }
+    },
+    "seoTitle": "Real Estate AI: Start With Leads and Documents"
   },
   {
     "id": "2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre",
@@ -1280,7 +1314,8 @@
     ],
     "affiliate": {
       "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
-    }
+    },
+    "seoTitle": "A 90-Day AI Opportunity Audit Without the Theatre"
   },
   {
     "id": "ai-for-chartered-accountants-in-india",
@@ -1317,7 +1352,8 @@
     "generatedBy": "editorial-hub",
     "affiliate": {
       "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
-    }
+    },
+    "seoTitle": "AI for Chartered Accountants in India: Practical Hub"
   },
   {
     "id": "2026-09-24-when-a-finance-team-should-say-no-to-an-ai-pilot",
@@ -1348,7 +1384,8 @@
     ],
     "affiliate": {
       "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
-    }
+    },
+    "seoTitle": "When a Finance Team Should Say No to an AI Pilot"
   },
   {
     "id": "2026-09-21-how-do-you-know-finance-ai-will-pay-for-itself-before-you-buy",
@@ -1378,7 +1415,8 @@
     "affiliate": {
       "disclosure": "This article may contain affiliate links. Recommendations remain editorially independent.",
       "links": []
-    }
+    },
+    "seoTitle": "Will Finance AI Pay for Itself? Test Before You Buy"
   },
   {
     "id": "2026-09-20-ecommerce-reconciliation-where-automation-helps-and-where-it-lies",
@@ -1410,7 +1448,8 @@
     ],
     "affiliate": {
       "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
-    }
+    },
+    "seoTitle": "Ecommerce Reconciliation: Where Automation Helps"
   },
   {
     "id": "2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer",
@@ -1441,7 +1480,8 @@
     ],
     "affiliate": {
       "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
-    }
+    },
+    "seoTitle": "AI Governance Without a Chief AI Officer"
   },
   {
     "id": "2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point",
@@ -1470,7 +1510,8 @@
     "affiliate": {
       "disclosure": "This article may contain affiliate links. Recommendations remain editorially independent.",
       "links": []
-    }
+    },
+    "seoTitle": "Finance Is AI’s Highest-ROI Starting Point"
   },
   {
     "id": "2026-09-14-how-much-should-a-mid-market-finance-team-budget-for-ai",
@@ -1499,7 +1540,8 @@
     "affiliate": {
       "disclosure": "This article may contain affiliate links. Recommendations remain editorially independent.",
       "links": []
-    }
+    },
+    "seoTitle": "How Much Should a Finance Team Budget for AI?"
   },
   {
     "id": "build-vs-buy-ai-tooling",
@@ -1528,6 +1570,7 @@
     "affiliate": {
       "disclosure": "This article may contain affiliate links. Recommendations remain editorially independent.",
       "links": []
-    }
+    },
+    "seoTitle": "Build vs Buy AI Tooling: A Practical Framework"
   }
 ]
