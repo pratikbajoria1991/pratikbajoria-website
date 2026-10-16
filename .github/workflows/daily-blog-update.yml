@@ -20,6 +20,11 @@ concurrency:
 jobs:
   update-blog:
     runs-on: ubuntu-latest
+    outputs:
+      pushed: ${{ steps.push.outputs.pushed }}
+      base: ${{ steps.push.outputs.base }}
+      head: ${{ steps.push.outputs.head }}
+      wait_url: ${{ steps.push.outputs.wait_url }}
 
     steps:
       - uses: actions/checkout@v4
@@ -38,6 +43,7 @@ jobs:
         run: npm test
 
       - name: Commit and push changes
+        id: push
         run: |
           # The worker server-renders /blog/{slug} from blog-posts.json; the sitemap must list it too.
           # Stage everything the generator may touch under public/ (JSON, sitemap, any SSR HTML).
@@ -49,7 +55,24 @@ jobs:
           git -c user.name="Blog Update Bot" -c user.email="action@github.com" \
             commit -m "Daily blog post update - $(TZ=Asia/Kolkata date +%Y-%m-%d)"
           git pull --rebase origin main
+          base=$(git rev-parse origin/main)
           git push origin HEAD:main
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+          echo "base=$base" >> "$GITHUB_OUTPUT"
+          echo "head=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          new=$(git diff --name-only "$base" HEAD -- public/blog | grep -E '\.html$' | head -1 || true)
+          if [ -n "$new" ]; then p="${new#public/}"; echo "wait_url=https://pratikbajoria.com/${p%.html}" >> "$GITHUB_OUTPUT"; fi
+
+  # Pushes made with GITHUB_TOKEN don't trigger purge-cache.yml's push event, so call it here.
+  purge-cache:
+    needs: update-blog
+    if: needs.update-blog.outputs.pushed == 'true'
+    uses: ./.github/workflows/purge-cache.yml
+    with:
+      base: ${{ needs.update-blog.outputs.base }}
+      head: ${{ needs.update-blog.outputs.head }}
+      wait_url: ${{ needs.update-blog.outputs.wait_url }}
+    secrets: inherit
 
   # No deploy job: Cloudflare Pages is git-connected to main and auto-deploys on every push.
   # The old wrangler Direct Upload job failed on an invalid CLOUDFLARE_API_TOKEN secret.

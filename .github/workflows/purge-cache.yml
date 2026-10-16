@@ -1,0 +1,61 @@
+name: Purge Cloudflare cache
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: 'Space-separated URLs to purge (blank = index URLs + last commit pages)'
+        required: false
+        default: ''
+  workflow_call:
+    inputs:
+      base:
+        type: string
+        default: ''
+      head:
+        type: string
+        default: ''
+      wait_url:
+        type: string
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: purge-cache
+  cancel-in-progress: false
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+      - name: Wait for Cloudflare Pages deploy
+        env:
+          WAIT_URL: ${{ inputs.wait_url }}
+        run: |
+          if [ -n "$WAIT_URL" ]; then
+            for i in $(seq 1 30); do
+              code=$(curl -s -o /dev/null -w '%{http_code}' -H 'Cache-Control: no-cache' "$WAIT_URL?cb=$(date +%s)")
+              echo "try $i: $code"; [ "$code" = "200" ] && break; sleep 10
+            done
+            sleep 15
+          elif [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
+            sleep 90
+          fi
+      - name: Purge
+        env:
+          CF_TOKEN: ${{ secrets.CF_PURGE_TOKEN || secrets.CLOUDFLARE_API_TOKEN }}
+          CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}
+          BASE: ${{ inputs.base || github.event.before }}
+          HEAD_SHA: ${{ inputs.head || github.sha }}
+          URLS: ${{ github.event.inputs.urls }}
+        run: |
+          # shellcheck disable=SC2086
+          scripts/cf-purge.sh "$BASE" "$HEAD_SHA" $URLS
