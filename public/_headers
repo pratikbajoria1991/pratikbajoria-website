@@ -53,6 +53,9 @@
 /ga4.js
   Cache-Control: public, max-age=86400
 
+/clarity.js
+  Cache-Control: public, max-age=86400
+
 /scorecard.js
   Cache-Control: public, max-age=86400
 

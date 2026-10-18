@@ -61,6 +61,24 @@ await check('every HTML page loads the same ga4.js version as the worker injects
   });
   assert.equal(stale.length, 0, `stale ga4.js version in: ${stale.slice(0, 5).join(', ')}`);
 });
+const clar = readFileSync(join(pub, 'clarity.js'), 'utf8');
+await check('clarity.js uses project yzjw4fzkbe, skips bots and loads after paint', () => {
+  assert.ok(clar.includes("CLARITY_ID = 'yzjw4fzkbe'") && clar.includes('https://www.clarity.ms/tag/'));
+  assert.ok(clar.includes('navigator.webdriver === true') && clar.includes('if (skip) return;'));
+  for (const t of ['HeadlessChrome', 'bot', 'crawl', 'spider', 'Lighthouse', 'PhantomJS', 'Puppeteer', 'Playwright']) assert.ok(clar.includes(t), t);
+  assert.ok(clar.includes("type: 'largest-contentful-paint'") && clar.includes('setTimeout(load, 3500)'));
+});
+await check('every HTML page with ga4.js also loads clarity.js (same version as the worker)', () => {
+  const worker = readFileSync(join(pub, '_worker.js'), 'utf8');
+  const v = worker.match(/GA4_SNIPPET = '[^']*\/clarity\.js\?v=([^"]+)"/)[1];
+  const bad = walk(pub).filter((f) => f.endsWith('.html')).filter((f) => {
+    const h = readFileSync(f, 'utf8');
+    if (!h.includes('/ga4.js')) return false;
+    const m = h.match(/\/clarity\.js\?v=([^"']+)/);
+    return !m || m[1] !== v;
+  });
+  assert.equal(bad.length, 0, `missing/stale clarity.js in: ${bad.slice(0, 5).join(', ')}`);
+});
 await check('robots.txt disallows /api/ in every user-agent group', () => {
   // A group = consecutive User-agent lines plus their rules (blank-line separated; comments dropped).
   const groups = readFileSync(join(pub, 'robots.txt'), 'utf8').split(/\n\s*\n/)
@@ -93,6 +111,7 @@ const env = {
     const p = new URL(req.url).pathname;
     if (p === '/robots.txt') return new Response(readFileSync(join(pub, 'robots.txt'), 'utf8'), { headers: { 'content-type': 'text/plain' } });
     if (p === '/ga4.js') return new Response(ga, { headers: { 'content-type': 'application/javascript' } });
+    if (p === '/clarity.js') return new Response(clar, { headers: { 'content-type': 'application/javascript' } });
     return new Response('<!doctype html><html><head></head><body>x</body></html>', { status: 404, headers: { 'content-type': 'text/html' } });
   } }
 };
@@ -120,6 +139,11 @@ await check('crossborder host serves /ga4.js (shared root asset)', async () => {
   const r = await hit('https://crossborder.pratikbajoria.com/ga4.js?v=x', 'GET', 'crossborder.pratikbajoria.com');
   assert.equal(r.status, 200);
   assert.ok((await r.text()).includes('G-CXQP7F8CRT'));
+});
+await check('crossborder host serves /clarity.js (shared root asset)', async () => {
+  const r = await hit('https://crossborder.pratikbajoria.com/clarity.js?v=x', 'GET', 'crossborder.pratikbajoria.com');
+  assert.equal(r.status, 200);
+  assert.ok((await r.text()).includes('yzjw4fzkbe'));
 });
 for (const p of ['/cross-border-partnerships', '/cross-border-partnerships.html', '/cross-border-partnerships/']) {
   for (const m of ['GET', 'HEAD']) {
