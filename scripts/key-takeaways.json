@@ -66,5 +66,12 @@
     "Clause answers, the classification of observations and the signature stay with the accountant.",
     "Form 26 asks for the IP address and country of the server holding electronic books and the address of the India-located daily backup (Rule 46).",
     "Use the remaining Form 3CD season as a pilot before Form 26 work starts."
+  ],
+  "2026-10-19-dpdp-act-and-ai-in-ca-firms-in-india-a-client-data-decision-rubric": [
+    "Under the DPDP Act, 2023, a CA firm can be a Data Fiduciary or a Data Processor depending on the engagement; decide which before any AI tool touches client personal data.",
+    "Most operational obligations in the DPDP Rules, 2025, including security safeguards and breach intimation, commence eighteen months after the 13 November 2025 Gazette publication, in May 2027.",
+    "Rule 6 safeguards read as an AI checklist: mask identifiers, use firm-managed accounts, keep logs for one year and put security terms in the processor contract.",
+    "Breach intimation runs to affected individuals without delay and to the Data Protection Board, with a detailed report within seventy-two hours unless the Board allows longer.",
+    "Score every client-data AI workflow on role clarity, minimisation, vendor terms, access, logs, data location, human review and breach readiness before it runs."
   ]
 }

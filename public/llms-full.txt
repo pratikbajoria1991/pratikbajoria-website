@@ -2,7 +2,7 @@
 
 > Plain-text copies of the main service pages and the most-used CA + AI articles on https://pratikbajoria.com, written by Pratik Bajoria (Chartered Accountant, ex-Big 4, AI implementation consultant). Cite the canonical URL given for each section. Index of everything: https://pratikbajoria.com/llms.txt
 
-Generated: 2026-10-17. Educational content; not legal, tax, audit, financial or investment advice.
+Generated: 2026-10-19. Educational content; not legal, tax, audit, financial or investment advice.
 
 ---
 
@@ -198,16 +198,16 @@ A weekly, AI-curated briefing for business leaders putting AI to work — real d
 ## AI for Chartered Accountants in India: A Practical Implementation Hub
 
 URL: https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india
-Last updated: 2026-10-17
+Last updated: 2026-10-19
 Summary: AI for chartered accountants in India: a practical map for CA firms on which workflows to start with, client-data controls, human review and pilots.
 
-CA insights · 2026-09-25 · Updated 12 Oct 2026 · 8 min read
+CA insights · 2026-09-25 · Updated 19 Oct 2026 · 8 min read
 
 ### AI for Chartered Accountants in India: A Practical Implementation Hub
 
 A practical implementation map for CA firms: choose useful workflows, protect client data, define human review and scale only after a controlled pilot.
 
-Related: use the AI controls checklist for CA firms for review gates, the 90-day finance automation roadmap for CFO and controller workflows, or finance AI ROI for mid-market companies in India for a CA’s measurement rubric.
+Related: use the AI controls checklist for CA firms for review gates, the 90-day finance automation roadmap for CFO and controller workflows, finance AI ROI for mid-market companies in India for a CA’s measurement rubric, or the DPDP Act and AI client-data rubric for CA firms before any tool touches client personal data.
 
 New practical guide: AI for Chartered Accountants — use cases and control gates .
 
@@ -296,6 +296,10 @@ Two workflows come up in almost every CA practice conversation. For monthly GST 
 
 Once the rules are agreed, partners usually ask which assistant to license. My view is that the deciding factors are where client files already live, how clean folder permissions are, and what the vendor’s business terms say about training, retention and logs, not which demo looked best. I have set out a partner-ready rubric in ChatGPT, Copilot or Gemini? How a CA firm in India should choose an AI assistant , alongside the AI controls checklist for CA firms that applies whichever tool you pick.
 
+### Client personal data under the DPDP Act
+
+Before any assistant touches salary registers, KYC or individual tax files, decide whether the firm is acting as Data Fiduciary or Data Processor on that engagement, read the vendor’s data terms, and put masking, firm-managed accounts, logs and breach escalation in place. Most operational obligations in the DPDP Rules, 2025 commence in May 2027. I have set out an eight-axis scoring rubric and a Monday checklist in DPDP Act and AI in CA Firms in India: A Client-Data Decision Rubric .
+
 ### Running the first pilot: a 30/60/90-day playbook
 
 The 90-day AI pilot roadmap for a CA firm: one workflow, a baseline before any tool, 100% review in the parallel run and a written decision on day 90. Source: DPDP Act, 2023 (MeitY) , NFRA Staff Series on Technology in Audit 01 , ICAI AICA Level 1 reference document .
@@ -317,6 +321,7 @@ Use this as the index. The first list covers running a CA practice with AI; the 
 
 #### Running a CA practice with AI
 
+- DPDP Act and AI in CA Firms in India: A Client-Data Decision Rubric
 - How CA Firms in India Should Price Work When AI Cuts the Hours
 - How to Run a 90-Day AI Pilot in a CA Firm in India: A 30/60/90 Playbook
 - ChatGPT, Copilot or Gemini? How a CA Firm in India Should Choose an AI Assistant

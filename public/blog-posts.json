@@ -1,5 +1,71 @@
 [
   {
+    "id": "2026-10-19-dpdp-act-and-ai-in-ca-firms-in-india-a-client-data-decision-rubric",
+    "title": "DPDP Act and AI in CA Firms in India: A Client-Data Decision Rubric",
+    "slug": "2026-10-19-dpdp-act-and-ai-in-ca-firms-in-india-a-client-data-decision-rubric",
+    "url": "/blog/2026-10-19-dpdp-act-and-ai-in-ca-firms-in-india-a-client-data-decision-rubric",
+    "date": "2026-10-19",
+    "dateModified": "2026-10-19",
+    "author": "Pratik Bajoria",
+    "category": "CA insights",
+    "readTime": 7,
+    "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=85",
+    "excerpt": "How CA firms in India should use AI under the DPDP Act and Rules, 2025: decide your role, vendor terms, safeguards and logs, with a rubric and Monday checklist.",
+    "content": "Most CA practices in India now have someone pasting client material into an AI assistant, and some of it is personal data: salary registers, Form 16s, KYC documents, director details for ROC filings. Under the Digital Personal Data Protection Act, 2023 that is a question of responsibility, contract and safeguards, and the DPDP Rules, 2025 have now put dates on it. I write as Pratik Bajoria, Chartered Accountant, ex-Big 4 and founder of Findost. This is a partner’s decision rubric, not legal advice and not a tool review.\n\nWhy the clock matters for CA firms now\n\nThe Rules were published in the Gazette on 13 November 2025 as G.S.R. 846(E) and commence in stages. Rules 1, 2 and 17 to 21 took effect on publication; Rule 4, on consent managers, follows a year later. The operational core — notice, security safeguards, breach intimation, retention and erasure, in Rules 3, 5 to 16, 22 and 23 — commences eighteen months after publication, in May 2027. A client-data AI workflow started this quarter will still be running then, and designing for it now is cheaper than retrofitting habits across every associate’s laptop mid-season.\n\nFirst decide your role, engagement by engagement\n\nThe Act turns on two roles. A Data Fiduciary decides why and how personal data is processed; a Data Processor processes it on a fiduciary’s behalf. A CA firm can be either. Running payroll or bookkeeping for a company that decides what it collects about its staff and vendors, the firm may well be the client’s processor. Holding an individual’s documents to prepare and file their return, it may look more like a fiduciary. The classification turns on facts and engagement terms, so take counsel’s view; what matters here is the consequence.\n\nA fiduciary stays responsible under section 8(1) for processing done on its behalf, irrespective of any agreement to the contrary, and section 8(2) allows it to involve a processor only under a valid contract. An AI vendor receiving client personal data sits in that chain. If the firm is itself the client’s processor, the client’s obligations flow down through the engagement letter, and an unapproved tool puts the client and the relationship at risk.\n\nAlongside this sits Subsection 114 of ICAI’s Code of Ethics : no disclosure of client information outside the firm without proper and specific authority, and reasonable steps so that staff respect that duty. The DPDP Act adds statutory consequences to a duty the profession already had.\n\nWhat the Rules expect of safeguards, read as an AI checklist\n\nRule 6 lists the minimum “reasonable security safeguards”. Four matter most for AI:\n\n• Protect the data itself by encryption, obfuscation, masking or virtual tokens: mask PANs, account numbers and names before a prompt whenever the task does not need them.\n\n• Control access to the computer resources used: firm-managed business accounts, not personal logins.\n\n• Keep logs with monitoring and review so unauthorised access can be detected and investigated, retained for one year unless another law requires otherwise.\n\n• Write security into the processor contract , as the Rule expects.\n\nRule 7 adds breach intimation: affected individuals without delay, and the Data Protection Board without delay, with a detailed report within seventy-two hours unless the Board allows longer. The Government’s own explainer notes penalties of up to ₹250 crore for failing to maintain reasonable security safeguards and up to ₹200 crore for failing to notify a breach.\n\nFrom pratikbajoria.com\n\nMap client-data risk before you scale AI across the practice. Start with the free AI Opportunity Scorecard , or see the scoped AI Opportunity Audit for a 90-day map with controls built in.\n\nOpen scorecard ↗ View audit →\n\nA decision rubric for any AI workflow that touches client personal data\n\nScore each workflow from one to five on every axis before it touches a live client file. A one on role clarity, vendor terms or human review means redesign before it runs. The NIST AI Risk Management Framework groups this work as govern, map, measure and manage; treat the rubric as the “map” step for client data.\n\nEvaluation framework only. Score your own workflows; this is not legal advice or benchmark data.\n\nAxis | Question to answer | Proceed (5) | Stop and redesign (1) | Your score |\n\nRole clarity | Fiduciary or processor on this engagement? | Recorded and reflected in the engagement letter | Never asked | ___ |\n\nMinimisation | Does the task need identifiers? | Masked or removed; only needed fields sent | Full ledgers or KYC pasted by default | ___ |\n\nVendor terms | What do terms say on training, retention, sub-processors? | Business plan; terms read and filed by a partner | Consumer account; terms unread | ___ |\n\nAccess | Who uses it, from which account? | Firm-managed accounts, multi-factor sign-in, leavers process | Personal logins or shared passwords | ___ |\n\nLogs and retention | Can we show who sent what, and delete on schedule? | Logs available; retention set against Rule 6 | No logs, or history kept on personal devices | ___ |\n\nData location | Where is data processed and stored? | Region recorded; watch for section 16 notifications | Unknown | ___ |\n\nHuman review | Who checks output before it leaves the firm? | Named reviewer, recorded sign-off | Output goes straight to the client | ___ |\n\nBreach readiness | Wrong file pasted: who is told, how fast? | Written escalation path; partner assesses within hours | Found at the next peer review | ___ |\n\nModel quality does not appear. A modest tool on a firm-managed account, with masked inputs and a named reviewer, is easier to defend than a stronger one used from a personal login.\n\nWhere AI still earns its place in the practice\n\nNone of this keeps AI out of the firm. Research on a provision, the structure of a reply, checklists and working-paper templates need no personal data; start there. Where client data is unavoidable, follow the pattern in how Indian CA firms can use AI for GST reconciliation without risking client data . The AI controls checklist for CA firms sets review gates once a workflow is live; this rubric decides whether it may touch personal data at all. For the vendor choice, see ChatGPT, Copilot or Gemini for a CA firm in India , then read the vendor’s own documentation for your plan, such as Microsoft’s Copilot privacy page or Google’s Workspace generative AI privacy hub .\n\nFor the wider map, start at the AI for chartered accountants in India hub. To score your own opportunities, take the free AI Opportunity Scorecard , see the scoped AI Opportunity Audit , or book a discovery call .\n\nMonday-morning checklist\n\n• List every AI tool in use, including personal accounts associates actually use.\n\n• For your five busiest client-data workflows, record whether the firm is fiduciary or processor.\n\n• Move client work to firm-managed business accounts.\n\n• Write a one-line masking rule: no PAN, Aadhaar, account numbers or salary data in prompts unless needed and the tool is approved.\n\n• Read each approved tool’s data terms; file the version and date.\n\n• Ask counsel to review a data-processing clause and AI-use line for your engagement letter.\n\n• Name the person who receives a suspected breach report, and rehearse the seventy-two-hour sequence once.\n\n• Put May 2027 in the partners’ calendar and re-score live workflows each quarter.\n\nFrequently asked questions\n\nDoes the DPDP Act apply to CA firms that use AI?\n\nYes, where the firm processes digital personal data such as salary records, KYC or individual tax files. It acts as a Data Fiduciary or a Data Processor depending on the engagement, and an AI vendor receiving that data normally becomes a processor in the chain.\n\nWhen do the DPDP Rules, 2025 obligations apply?\n\nThe Rules were published on 13 November 2025. Some took effect immediately; most operational obligations, including security safeguards and breach intimation, commence eighteen months later, in May 2027.\n\nCan a CA firm use ChatGPT, Copilot or Gemini on client data?\n\nOnly after deciding its role for that data, reading the vendor’s business data terms, using firm-managed accounts, masking unneeded identifiers and naming a human reviewer.\n\nSources\n\n• Digital Personal Data Protection Act, 2023 (Gazette text, MeitY)\n\n• Digital Personal Data Protection Rules, 2025 — G.S.R. 846(E), 13 November 2025 (MeitY)\n\n• MeitY — Data protection framework\n\n• PIB — Government notifies DPDP Rules (14 November 2025)\n\n• PIB explainer — DPDP Rules, 2025 notified (penalties under the DPDP Act)\n\n• ICAI Disciplinary Directorate — Code of Ethics (2019 Volume I, Subsection 114: Confidentiality)\n\n• NIST AI Risk Management Framework\n\n• Microsoft Learn — Data, privacy and security for Microsoft 365 Copilot\n\n• Google Workspace — Generative AI in Google Workspace Privacy Hub\n\nDisclaimer: this article is general educational commentary from implementation work. It is not legal, tax, audit, data-protection or procurement advice, and it does not create an adviser–client relationship. The DPDP Act and Rules, ICAI pronouncements and vendor terms change; verify primary sources and take professional advice on your specific facts before acting.",
+    "keywords": [
+      "DPDP Act for CA firms",
+      "DPDP Act AI compliance India",
+      "DPDP Rules 2025 CA firms",
+      "client data AI CA firm India",
+      "data fiduciary data processor CA firm",
+      "chartered accountant AI"
+    ],
+    "sources": [
+      {
+        "title": "Digital Personal Data Protection Act, 2023 (Gazette text, MeitY)",
+        "url": "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf"
+      },
+      {
+        "title": "Digital Personal Data Protection Rules, 2025 — G.S.R. 846(E), 13 November 2025 (MeitY)",
+        "url": "https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf"
+      },
+      {
+        "title": "MeitY — Data protection framework",
+        "url": "https://www.meity.gov.in/data-protection-framework"
+      },
+      {
+        "title": "PIB — Government notifies DPDP Rules (14 November 2025)",
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2190014"
+      },
+      {
+        "title": "PIB explainer — DPDP Rules, 2025 notified (penalties under the DPDP Act)",
+        "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc20251117695301.pdf"
+      },
+      {
+        "title": "ICAI Disciplinary Directorate — Code of Ethics (2019 Volume I, Subsection 114: Confidentiality)",
+        "url": "https://disc.icai.org/code-of-ethics/"
+      },
+      {
+        "title": "NIST AI Risk Management Framework",
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+      },
+      {
+        "title": "Microsoft Learn — Data, privacy and security for Microsoft 365 Copilot",
+        "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy"
+      },
+      {
+        "title": "Google Workspace — Generative AI in Google Workspace Privacy Hub",
+        "url": "https://knowledge.workspace.google.com/admin/generative-ai/generative-ai-in-google-workspace-privacy-hub"
+      }
+    ],
+    "generatedBy": "editorial-ca-cluster",
+    "affiliateTools": [],
+    "affiliate": {
+      "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
+    },
+    "seoTitle": "DPDP Act and AI in CA Firms: A Client-Data Rubric"
+  },
+  {
     "id": "2026-10-16-ai-for-caro-2020-reporting-where-it-helps-and-where-judgement-stays",
     "title": "AI for CARO 2020 Reporting: Where It Helps and Where Judgement Stays",
     "slug": "2026-10-16-ai-for-caro-2020-reporting-where-it-helps-and-where-judgement-stays",
