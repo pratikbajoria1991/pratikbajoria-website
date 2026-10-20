@@ -1,5 +1,142 @@
 [
   {
+    "id": "2026-10-20-ai-for-cma-data-and-bank-loan-project-reports-a-ca-s-review-checklist",
+    "title": "AI for CMA Data and Bank Loan Project Reports: A CA’s Review Checklist",
+    "slug": "2026-10-20-ai-for-cma-data-and-bank-loan-project-reports-a-ca-s-review-checklist",
+    "url": "/blog/2026-10-20-ai-for-cma-data-and-bank-loan-project-reports-a-ca-s-review-checklist",
+    "date": "2026-10-20",
+    "dateModified": "2026-10-20",
+    "author": "Pratik Bajoria",
+    "category": "CA insights",
+    "readTime": 4,
+    "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=85",
+    "excerpt": "AI tools now promise CMA data in minutes. What a CA should still check before a projection goes to the bank: turnover method, ratios, assumptions and evidence.",
+    "content": "Search for “AI tool for CMA data preparation” and almost every result is a software landing page promising a bank-ready CMA report in minutes, often with a line about saving the CA’s fee. I have no quarrel with faster spreadsheets. My concern is what gets lost: CMA data is a set of forward-looking claims that a banker will hold the borrower to, and sometimes the CA who prepared them.\n\nHere is how I would use AI in CMA and project report work for MSME clients, and the review checklist I would keep regardless of which tool builds the first draft.\n\nWhy this work matters more than it looks\n\nFormal credit is still hard for small businesses to get. The AI playbook for India’s SMEs, published by the World Economic Forum with IndiaAI and the Office of the Principal Scientific Adviser in August 2025, says only 19% of MSME credit demand in India is met through formal sources, and that informal lenders typically charge 12 to 16% more. A well-prepared, credible loan file is one of the most practical things a CA can do for a client.\n\nThat is also why speed alone is the wrong goal. A projection that is quick but unsupported can get a proposal rejected, or worse, sanctioned on numbers the business cannot meet.\n\nKnow which assessment method the bank will apply\n\nThe RBI’s MSME FAQs note that banks must appraise genuine working capital needs keeping the business cycle in mind, and that under the Nayak Committee approach, working capital limits for small units are computed at a minimum of 20% of estimated turnover for credit limits up to ₹5 crore. The same FAQs state that banks are mandated not to take collateral security for loans up to ₹10 lakh to units in the MSE sector.\n\nAn AI tool will happily compute both the turnover method and the traditional MPBF approach. Your job is to know which one the lender will use for this client and to make sure the projected turnover behind it is defensible.\n\nWhere AI genuinely helps\n\n• Extracting audited financials from PDFs into the operating statement and balance sheet formats, with a reconciliation back to the signed accounts.\n\n• Rolling forward projections from a short list of stated assumptions, and recalculating every form when one assumption changes.\n\n• Computing ratios consistently (current ratio, DSCR, debt-equity, holding periods) and flagging the ones that look out of line with the sector or with history.\n\n• Drafting the narrative sections of a project report from your notes: business background, the purpose of the loan and the repayment logic.\n\n• Preparing a list of questions the banker is likely to ask, so the client can gather evidence before the meeting.\n\nThe CA’s review checklist\n\n• Tie the historical columns to the audited financial statements and the filed GST returns, line by line.\n\n• Write down every projection assumption (growth, margins, debtor and creditor days, capex timing) and the evidence for it: order book, contracts, capacity, past trend.\n\n• Check that projected receivable and inventory days are consistent with what the business has actually achieved, not what the tool defaults to.\n\n• Recalculate DSCR yourself for at least one year and compare it with the tool’s figure.\n\n• Confirm the client’s MSME classification. The Union Budget 2025-26 raised the investment and turnover limits by 2.5 and 2 times, so older Udyam data may be out of date.\n\n• Read the generated narrative as the banker would. Remove any sentence the client cannot evidence.\n\nRed flags in AI-generated projections\n\nThe patterns I would watch for are smooth hockey-stick growth with no capacity explanation, margins that improve every year without a reason, working capital that shrinks as sales grow, and a balance sheet that “balances” only because a plug sits in other current liabilities. Tools that auto-balance projections are convenient, but the plug figure is exactly where the judgement belongs.\n\nAlso be careful with any tool that writes credit notes or approval probabilities. A banker will form their own view; a document that oversells is more likely to lose trust than to win a sanction.\n\nKeep the working file\n\nKeep the source documents, the assumption sheet, the tool’s output and your review notes together in the client file. If the bank asks how a figure was derived, or the account comes under stress later, you will want to show the basis rather than a screenshot of a tool. The same habit underpins my AI controls checklist for CA firms.\n\nFrequently asked questions\n\nCan AI prepare CMA data for a bank loan?\nAI tools can extract financials, build the CMA forms, roll forward projections and compute ratios quickly. A CA still needs to tie the history to audited accounts, evidence every assumption and review the plug figures before the file goes to the bank.\n\nHow do banks assess working capital for small businesses?\nThe RBI’s MSME FAQs say banks should appraise genuine requirements based on the business cycle, and that under the Nayak Committee approach limits for small units are computed at a minimum of 20% of estimated turnover for credit limits up to ₹5 crore.\n\nIs collateral needed for small MSE loans?\nAccording to the RBI’s MSME FAQs, banks are mandated not to accept collateral security for loans up to ₹10 lakh to units in the MSE sector.\n\nWhat should a CA check in an AI-generated project report?\nThe tie-out of historical figures, the evidence for each projection assumption, consistency of working capital days, a manual DSCR check, the client’s current MSME classification and any claims in the narrative the client cannot support.",
+    "intro": [
+      "Search for “AI tool for CMA data preparation” and almost every result is a software landing page promising a bank-ready CMA report in minutes, often with a line about saving the CA’s fee. I have no quarrel with faster spreadsheets. My concern is what gets lost: CMA data is a set of forward-looking claims that a banker will hold the borrower to, and sometimes the CA who prepared them.",
+      "Here is how I would use AI in CMA and project report work for MSME clients, and the review checklist I would keep regardless of which tool builds the first draft."
+    ],
+    "sections": [
+      {
+        "heading": "Why this work matters more than it looks",
+        "paragraphs": [
+          "Formal credit is still hard for small businesses to get. The [AI playbook for India’s SMEs][2], published by the World Economic Forum with IndiaAI and the Office of the Principal Scientific Adviser in August 2025, says only 19% of MSME credit demand in India is met through formal sources, and that informal lenders typically charge 12 to 16% more. A well-prepared, credible loan file is one of the most practical things a CA can do for a client.",
+          "That is also why speed alone is the wrong goal. A projection that is quick but unsupported can get a proposal rejected, or worse, sanctioned on numbers the business cannot meet."
+        ],
+        "bullets": []
+      },
+      {
+        "heading": "Know which assessment method the bank will apply",
+        "paragraphs": [
+          "The [RBI’s MSME FAQs][1] note that banks must appraise genuine working capital needs keeping the business cycle in mind, and that under the Nayak Committee approach, working capital limits for small units are computed at a minimum of 20% of estimated turnover for credit limits up to ₹5 crore. The same FAQs state that banks are mandated not to take collateral security for loans up to ₹10 lakh to units in the MSE sector.",
+          "An AI tool will happily compute both the turnover method and the traditional MPBF approach. Your job is to know which one the lender will use for this client and to make sure the projected turnover behind it is defensible."
+        ],
+        "bullets": []
+      },
+      {
+        "heading": "Where AI genuinely helps",
+        "paragraphs": [],
+        "bullets": [
+          "Extracting audited financials from PDFs into the operating statement and balance sheet formats, with a reconciliation back to the signed accounts.",
+          "Rolling forward projections from a short list of stated assumptions, and recalculating every form when one assumption changes.",
+          "Computing ratios consistently (current ratio, DSCR, debt-equity, holding periods) and flagging the ones that look out of line with the sector or with history.",
+          "Drafting the narrative sections of a project report from your notes: business background, the purpose of the loan and the repayment logic.",
+          "Preparing a list of questions the banker is likely to ask, so the client can gather evidence before the meeting."
+        ]
+      },
+      {
+        "heading": "The CA’s review checklist",
+        "paragraphs": [],
+        "bullets": [
+          "Tie the historical columns to the audited financial statements and the filed GST returns, line by line.",
+          "Write down every projection assumption (growth, margins, debtor and creditor days, capex timing) and the evidence for it: order book, contracts, capacity, past trend.",
+          "Check that projected receivable and inventory days are consistent with what the business has actually achieved, not what the tool defaults to.",
+          "Recalculate DSCR yourself for at least one year and compare it with the tool’s figure.",
+          "Confirm the client’s MSME classification. The [Union Budget 2025-26][3] raised the investment and turnover limits by 2.5 and 2 times, so older Udyam data may be out of date.",
+          "Read the generated narrative as the banker would. Remove any sentence the client cannot evidence."
+        ]
+      },
+      {
+        "heading": "Red flags in AI-generated projections",
+        "paragraphs": [
+          "The patterns I would watch for are smooth hockey-stick growth with no capacity explanation, margins that improve every year without a reason, working capital that shrinks as sales grow, and a balance sheet that “balances” only because a plug sits in other current liabilities. Tools that auto-balance projections are convenient, but the plug figure is exactly where the judgement belongs.",
+          "Also be careful with any tool that writes credit notes or approval probabilities. A banker will form their own view; a document that oversells is more likely to lose trust than to win a sanction."
+        ],
+        "bullets": []
+      },
+      {
+        "heading": "Keep the working file",
+        "paragraphs": [
+          "Keep the source documents, the assumption sheet, the tool’s output and your review notes together in the client file. If the bank asks how a figure was derived, or the account comes under stress later, you will want to show the basis rather than a screenshot of a tool. The same habit underpins my [AI controls checklist for CA firms](/blog/ai-controls-checklist-ca-firms-india)."
+        ],
+        "bullets": []
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can AI prepare CMA data for a bank loan?",
+        "a": "AI tools can extract financials, build the CMA forms, roll forward projections and compute ratios quickly. A CA still needs to tie the history to audited accounts, evidence every assumption and review the plug figures before the file goes to the bank."
+      },
+      {
+        "q": "How do banks assess working capital for small businesses?",
+        "a": "The RBI’s MSME FAQs say banks should appraise genuine requirements based on the business cycle, and that under the Nayak Committee approach limits for small units are computed at a minimum of 20% of estimated turnover for credit limits up to ₹5 crore."
+      },
+      {
+        "q": "Is collateral needed for small MSE loans?",
+        "a": "According to the RBI’s MSME FAQs, banks are mandated not to accept collateral security for loans up to ₹10 lakh to units in the MSE sector."
+      },
+      {
+        "q": "What should a CA check in an AI-generated project report?",
+        "a": "The tie-out of historical figures, the evidence for each projection assumption, consistency of working capital days, a manual DSCR check, the client’s current MSME classification and any claims in the narrative the client cannot support."
+      }
+    ],
+    "related": [
+      {
+        "title": "AI for Chartered Accountants in India: the implementation hub",
+        "url": "/blog/ai-for-chartered-accountants-in-india"
+      },
+      {
+        "title": "AI controls checklist for CA firms in India",
+        "url": "/blog/ai-controls-checklist-ca-firms-india"
+      },
+      {
+        "title": "AI automation in India: a practical hub for business owners",
+        "url": "/ai-automation-in-india"
+      },
+      {
+        "title": "The AI Opportunity Audit: a scoped 90-day map",
+        "url": "/audit"
+      }
+    ],
+    "keywords": [
+      "ai tool for cma data preparation",
+      "ai for project report",
+      "CMA data for bank loan",
+      "working capital assessment MSME",
+      "AI for CA practices"
+    ],
+    "sources": [
+      {
+        "title": "RBI: FAQs on Micro, Small and Medium Enterprises (updated 29 July 2025)",
+        "url": "https://www.rbi.org.in/commonman/Upload/English/FAQs/PDFs/MICRO30072025E.pdf"
+      },
+      {
+        "title": "World Economic Forum with IndiaAI (MeitY) and the Office of the PSA: Transforming Small Businesses — An AI Playbook for India’s SMEs (August 2025)",
+        "url": "https://www.psa.gov.in/CMS/web/sites/default/files/publication/WEF_Transforming_Small_Businesses_2025.pdf"
+      },
+      {
+        "title": "PIB: MSME investment and turnover limits enhanced 2.5 and 2 times (Union Budget 2025-26)",
+        "url": "https://pib.gov.in/Pressreleaseshare.aspx?PRID=2098389"
+      }
+    ],
+    "generatedBy": "topic-bank",
+    "topicFile": "scripts/daily-topics/02-ai-for-cma-data-and-bank-loan-reports.js",
+    "affiliateTools": [],
+    "affiliate": {
+      "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
+    }
+  },
+  {
     "id": "2026-10-19-how-to-use-claude-or-chatgpt-for-gstr-2b-reconciliation-a-ca-s-method",
     "title": "How to Use Claude or ChatGPT for GSTR-2B Reconciliation: A CA’s Method",
     "slug": "2026-10-19-how-to-use-claude-or-chatgpt-for-gstr-2b-reconciliation-a-ca-s-method",
