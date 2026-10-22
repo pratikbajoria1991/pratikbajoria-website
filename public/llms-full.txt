@@ -2,7 +2,7 @@
 
 > Plain-text copies of the main service pages and the most-used CA + AI articles on https://pratikbajoria.com, written by Pratik Bajoria (Chartered Accountant, ex-Big 4, AI implementation consultant). Cite the canonical URL given for each section. Index of everything: https://pratikbajoria.com/llms.txt
 
-Generated: 2026-10-19. Educational content; not legal, tax, audit, financial or investment advice.
+Generated: 2026-10-22. Educational content; not legal, tax, audit, financial or investment advice.
 
 ---
 
@@ -153,6 +153,40 @@ Findost brings AI-driven intelligence to personal wealth management — helping 
 
 Built on a modern AI stack with a CA’s understanding of what financial guidance actually requires: accuracy, context and trust.
 
+### Why implementation, not experimentation
+
+Most organisations already use AI somewhere. Far fewer get a measurable return. These are the sourced numbers behind how I work.
+
+59%
+
+of finance leaders report using AI in their finance function (183 CFOs and senior finance leaders surveyed, May–June 2025), against 37% in 2023.
+
+Source: Gartner, 18 November 2025
+
+37%
+
+of respondents attribute at least some EBIT impact to AI, essentially unchanged from 2025.
+
+Source: McKinsey, The state of AI in 2026, 25 August 2026
+
+About 6%
+
+of respondents are AI “high performers” (5%+ of EBIT from AI); nearly three-quarters of them have fundamentally redesigned workflows, against one-quarter of others.
+
+Source: McKinsey, The state of AI in 2026, 25 August 2026
+
+9.78 crore
+
+MSME registrations on Udyam and the Udyam Assist Platform as of 6 October 2026.
+
+Source: PIB factsheet, 6 October 2026
+
+1.65 crore
+
+GST taxpayers as of May 2026, up from 66.5 lakh in 2017.
+
+Source: PIB, 30 June 2026
+
 ### Insights on AI adoption.
 
 Practical writing on implementing AI inside real businesses — what works, what wastes money, and what to do on Monday morning.
@@ -198,7 +232,7 @@ A weekly, AI-curated briefing for business leaders putting AI to work — real d
 ## AI for Chartered Accountants in India: A Practical Implementation Hub
 
 URL: https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india
-Last updated: 2026-10-19
+Last updated: 2026-10-22
 Summary: AI for chartered accountants in India: a practical map for CA firms on which workflows to start with, client-data controls, human review and pilots.
 
 CA insights · 2026-09-25 · Updated 19 Oct 2026 · 8 min read
@@ -219,7 +253,7 @@ I write as Pratik Bajoria, Chartered Accountant, ex-Big 4, and founder of Findos
 
 Three jobs dominate early value: faster first drafts of analysis and memos under review; document extraction into structured working papers; and exception-led reconciliation or compliance checklists. Prediction theatre and unsupervised client advice are late-stage ideas — if they belong at all. The firms that climb search and win trust will publish and operate with that sequencing, not with hype.
 
-The scale is worth stating plainly. ICAI reports over 4 lakh members and around 9.85 lakh students , so small changes in how practices handle routine work add up across the profession. Adoption itself is no longer the question. McKinsey's 2025 global survey found that 88% of respondents say their organisations regularly use AI in at least one business function, but only about a third say they have begun to scale it . In practice, what I see in CA firms mirrors that gap: plenty of individual use, very little of it designed.
+The scale is worth stating plainly. ICAI describes itself as the world’s largest professional accountancy body, with over 15 lakh members and students (February 2026), so small changes in how practices handle routine work add up across the profession. Adoption itself is no longer the question. McKinsey’s 2026 global survey found that nearly nine in ten respondents report regular AI use in at least one business function, yet only 37% attribute any EBIT impact to it . In practice, what I see in CA firms mirrors that gap: plenty of individual use, very little of it designed.
 
 Everything below follows that sequencing. It is a map, not a catalogue: a readiness rubric you can score honestly, a five-step implementation order, and links to the deeper playbooks on GST reconciliation, audit working papers, tooling, pilots and build-versus-buy.
 
@@ -231,6 +265,46 @@ Evaluation framework only — illustrative example scores for a strong-fit profi
 | Data | Anything pasted into consumer tools | Classes + approved environments | ___ |
 | Metrics | No baseline | Named metric reviewed weekly | ___ |
 | Scope | Transformation programme | One thin release funded | ___ |
+
+### By the numbers
+
+The numbers that frame AI work in Indian practice. Each links to its official source and date.
+
+15 lakh+
+
+members and students of ICAI, the world’s largest professional accountancy body, with 185 branches in India.
+
+Source: ICAI, February 2026
+
+1.65 crore
+
+GST taxpayers as of May 2026, up from 66.5 lakh in 2017.
+
+Source: PIB, 30 June 2026
+
+₹22.27 lakh crore
+
+approximate gross GST collection in 2025-26, up from about ₹13.76 lakh crore in 2021-22.
+
+Source: PIB, 30 June 2026
+
+59%
+
+of finance leaders report using AI in their finance function (183 CFOs and senior finance leaders surveyed, May–June 2025), against 37% in 2023.
+
+Source: Gartner, 18 November 2025
+
+10 principles
+
+in NFRA’s first staff paper on technology in audit: tools may help, but responsibility for the opinion stays with the auditor.
+
+Source: NFRA, 23 July 2026
+
+60 days · 7 years
+
+to assemble the final audit file after the report date (ordinarily), and the minimum retention period, under SA 230 and SQC 1.
+
+Source: ICAI, SA 230
 
 ### A CA-led implementation sequence
 
@@ -290,7 +364,7 @@ Then publish the same page internally so associates know what “good” looks l
 
 ### Deeper CA playbooks: GST and audit
 
-Two workflows come up in almost every CA practice conversation. For monthly GST work, read how Indian CA firms can use AI for GST reconciliation without risking client data — GSTR-2B matching, IMS review and notice triage with a clear human gate. For assurance work, read AI for audit working papers in India: what to automate and what must stay human — how to use AI without weakening SA 230 documentation. If you run or staff a company’s internal audit under section 138, read AI for internal audit in Indian companies: a practical starting point — full-population testing of one process and what ICAI’s new SIA 240 on tools expects. For the operating habit that keeps both alive in busy season, see the Monday morning test for any AI workflow .
+Two workflows come up in almost every CA practice conversation. For monthly GST work, read how Indian CA firms can use AI for GST reconciliation without risking client data — GSTR-2B matching, IMS review and notice triage with a clear human gate. For assurance work, read AI for audit working papers in India: what to automate and what must stay human — how to use AI without weakening SA 230 documentation. If you run or staff a company’s internal audit under section 138, read AI for internal audit in Indian companies: a practical starting point — full-population testing of one process and what ICAI’s new SIA 240 on tools expects. For the operating habit that keeps both alive in busy season, see the Monday morning test for any AI workflow . For the companies audit report itself, AI for CARO 2020 reporting: where it helps and where judgement stays goes clause by clause through what a tool can prepare and what the auditor decides.
 
 ### Choosing the assistant itself: ChatGPT, Copilot or Gemini
 
@@ -313,7 +387,7 @@ Agreeing the rules and picking the assistant are the start, not the result. The 
 
 ### The questions partners, CAs and students keep asking
 
-Four questions come up in almost every conversation I have with the profession, so I have answered each one properly, with sources: will AI replace chartered accountants in India ; how audit and accounting firms in India are using AI , from Big 4 platforms to ICAI’s own tools; which AI courses for chartered accountants are worth it , including ICAI’s AICA levels; and, for students, whether CA is worth it in 2026 with AI .
+Four questions come up in almost every conversation I have with the profession, so I have answered each one properly, with sources: will AI replace chartered accountants in India ; how audit and accounting firms in India are using AI , from Big 4 platforms to ICAI’s own tools; which AI courses for chartered accountants are worth it , including ICAI’s AICA levels; and, for students, whether CA is worth it in 2026 with AI . If you run a practice, the training question is just as pressing: I have set out a two-year plan in AI and articleship: how CA firms should train article assistants now .
 
 ### Every guide in this hub
 
@@ -342,6 +416,8 @@ Use this as the index. The first list covers running a CA practice with AI; the 
 - Using AI for TDS Reconciliation in Indian CA Firms: From 26AS to Form 168
 - AI for Tax Audit in India: Form 3CD This Year, Form 26 Next Year
 - AI for Audit Working Papers in India: What a CA Should Automate and What Must Stay Human
+- AI for CARO 2020 Reporting: Where It Helps and Where Judgement Stays
+- AI and Articleship: How CA Firms Should Train Article Assistants Now
 - AI for Internal Audit in Indian Companies: A Practical Starting Point
 
 If you advise finance teams rather than run a practice, read AI implementation for finance teams . For operations, sales and customer workflows, see AI automation in India .
@@ -378,6 +454,10 @@ Use a named owner, human review gate, test set with awkward cases, exception log
 - McKinsey — The state of AI: global survey 2025
 - PIB — Government notifies DPDP Rules (14 November 2025)
 - PIB — CBDT extends AY 2026-27 due dates for audited taxpayers (29 September 2026)
+- ICAI — About ICAI, with membership and network figures (February 2026)
+- PIB — Nine Years of GST (30 June 2026)
+- Gartner — Finance AI adoption remains steady in 2025 (18 November 2025)
+- NFRA — Staff Series on Technology in Audit: General Principles (23 July 2026)
 
 Educational commentary for CA and finance leaders in India — not personalised professional, tax, legal or investment advice. Confirm tools, privacy terms and firm policies before deployment.
 
@@ -388,7 +468,7 @@ Educational content; not financial, investment, or legal advice.
 ## AI Opportunity Audit: A 2-Week AI Roadmap
 
 URL: https://pratikbajoria.com/audit
-Last updated: 2026-10-07
+Last updated: 2026-10-22
 Summary: AI Opportunity Audit: a fixed-fee two-week sprint to map workflows, score AI use cases and leave with a prioritised 90-day roadmap before you fund a build.
 
 #### For
@@ -469,7 +549,7 @@ Walk compliance calendars, engagement packs, reconciliation routines and client 
 ## Will AI Replace Chartered Accountants in India? A CA’s Honest Answer
 
 URL: https://pratikbajoria.com/blog/2026-10-07-will-ai-replace-chartered-accountants-in-india
-Last updated: 2026-10-07
+Last updated: 2026-10-22
 Summary: Will AI replace chartered accountants in India? A CA on which tasks AI is taking, which stay human, and what ICAI, WEF and Microsoft data actually show.
 
 CA insights · 2026-10-07 · 8 min read
@@ -531,6 +611,10 @@ General-purpose assistants still state wrong section numbers, outdated rates and
 ### The bottom line
 
 AI will not take over the chartered accountant’s role. It will take over the parts of the job that never needed a chartered accountant. Firms and individuals who move their time up to review, judgement and advice will be fine; those who bill for volume of routine work will feel the squeeze first. If you want the wider map, start with the AI for chartered accountants in India hub , browse the AI tools for chartered accountants , look at the AI Opportunity Audit if you want a structured 90-day plan, or book a discovery call .
+
+### Where the change shows up first
+
+It shows up in training and in reporting. I have written a two-year plan for article assistants in AI and articleship , a clause-by-clause view of statutory reporting in AI for CARO 2020 reporting , and what must stay human on the file in AI for audit working papers in India .
 
 ### Frequently asked questions
 
@@ -697,6 +781,8 @@ This guide is part of AI for Chartered Accountants in India: the implementation 
 - Will AI Replace Chartered Accountants in India? A CA’s Honest Answer
 - ChatGPT, Copilot or Gemini? How a CA Firm in India Should Choose an AI Assistant
 - How Audit and Accounting Firms in India Are Using AI in 2026
+- Drafting Replies to GST and Income Tax Notices With AI Without Losing Control
+- AI for Audit Working Papers in India: What a CA Should Automate and What Must Stay Human
 
 Also useful: AI automation in India: a practical hub for business owners .
 
@@ -1138,10 +1224,10 @@ Educational content; not financial, investment, or legal advice.
 ## AI for Audit Working Papers in India: What a CA Should Automate
 
 URL: https://pratikbajoria.com/blog/2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human
-Last updated: 2026-10-07
+Last updated: 2026-10-22
 Summary: Using AI on audit working papers without weakening SA 230 documentation: what to automate, what stays with the engagement team, and how to record AI use.
 
-CA insights · 2026-09-30 · Updated 7 Oct 2026 · 7 min read
+CA insights · 2026-09-30 · Updated 22 Oct 2026 · 9 min read
 
 ### AI for Audit Working Papers in India: What a CA Should Automate and What Must Stay Human
 
@@ -1155,9 +1241,9 @@ Key takeaways
 - Add a short AI-use block to each paper a tool touched: tool and version, input, output, reviewer and what the reviewer changed.
 - Since 1 April 2023, companies must use accounting software with an audit trail and edit log for every transaction.
 
-Busy season is when AI is most tempting on an audit file, and when it is most likely to go wrong. When I review how a firm is using AI on audits, I ask one question before looking at any tool: could an experienced auditor who has never seen this engagement pick up the file and understand what was done, what was found and why the team concluded what it did? That is not my invention. It is, in substance, the requirement in SA 230, Audit Documentation, as issued by ICAI. It is also the cleanest test I know for deciding which parts of working-paper preparation AI should touch.
+In July 2026 the National Financial Reporting Authority published its first staff paper on technology in audit, and its message to auditors of public interest entities was blunt: a tool can speed up judgement, but the responsibility for the audit opinion remains with the auditor , however sophisticated the tool. For anyone preparing working papers with AI this busy season, that changes the question from “can the tool do it?” to “can the file prove a person did the thinking?”
 
-AI is very good at producing text that looks like a working paper. That is the danger. A fluent narrative that nobody performed, or a tie-out nobody checked, makes a file look complete while hollowing out the evidence underneath it.
+My own test, before I look at any tool, is the one SA 230 already sets: could an experienced auditor who has never seen this engagement pick up the file and understand what was done, what was found and why the team concluded what it did? AI is very good at producing text that looks like a working paper. That is the danger. A fluent narrative that nobody performed, or a tie-out nobody checked, makes a file look complete while hollowing out the evidence underneath it.
 
 ### What SA 230 actually asks of the file
 
@@ -1166,6 +1252,17 @@ Paragraph 8 of SA 230 requires documentation sufficient to enable an experienced
 None of that is suspended because a model drafted part of the paper. If anything, AI raises the bar on the “who performed” and “who reviewed” lines, because the honest answer now has three parties: the person, the tool, and the reviewer.
 
 There is a second trail to keep in mind. For companies, the proviso to Rule 3(1) of the Companies (Accounts) Rules, 2014 has, since 1 April 2023, required accounting software with an audit trail and an edit log for every transaction . If an AI tool prepares entries or schedules that end up in those books, the working paper should let a reviewer connect the two.
+
+### What NFRA’s July 2026 principles add
+
+NFRA’s General Principles for Technology Adoption in Audit (Staff Series on Technology in Audit: 01, published 23 July 2026) sets out 10 principles. It says plainly that none of them is new: each restates an obligation already in the Standards on Auditing, the quality control standards or the ethical rules, applied to technology. Four of them bear directly on working papers:
+
+- Non-delegable responsibility (Principle 2). The opinion is the auditor’s, whatever produced the analysis behind it.
+- Evidence standards apply regardless of source (Principle 3). Tool output is held to the same sufficiency and appropriateness test as manual work.
+- Explainability commensurate with materiality (Principle 6). The more an output drives a material conclusion, the more the file must explain it, and the paper ties this expressly to documentation under SA 230.
+- Continuous monitoring, not one-time approval (Principle 10). Because the same input can give a different result on a different day, approving a tool once is only the starting point.
+
+Principle 8, data stewardship, adds that a firm cannot rely on a vendor’s terms of service, without validating them, as a substitute for its own duty to protect client and personal data under its confidentiality obligations and the DPDP Act, 2023. The paper is addressed to auditors of public interest entities, but I would treat it as the benchmark for any firm whose files may one day be read by a regulator.
 
 ### What I would automate
 
@@ -1189,6 +1286,19 @@ Risk assessment and materiality. The judgement on whether evidence is sufficient
 | Minutes and contract summaries | As a reading aid | Team reads relevant sections in full | Note of what was read and matters identified |
 | Risk assessment, materiality, conclusions | No | Engagement team and partner | Documented judgements and review evidence |
 
+### The file clock: where AI can and cannot help
+
+AI is often pitched as a way to “tidy up the file” after signing. SA 230 is precise about what is allowed once the report is dated, so it is worth setting the timeline out. Paragraph references are to the ICAI text of SA 230 .
+
+| Stage | What SA 230 requires | Reference |
+| Before the report is signed | All audit procedures, evidence and conclusions documented; AI-assisted papers reviewed and signed off | SA 230, paras 8–11 |
+| Within ordinarily 60 days of the report date | Assembly of the final audit file: only administrative changes such as sorting, cross-referencing and deleting superseded drafts | SA 230, para 14 and A21–A22 |
+| After assembly | Nothing may be deleted or discarded before the retention period ends | SA 230, para 15 |
+| Any later change | Record the specific reasons, and when and by whom the change was made and reviewed | SA 230, para 16 |
+| Retention | Ordinarily no shorter than seven years from the date of the auditor’s report (or the group auditor’s report, if later) | SA 230, para A23; SQC 1 |
+
+The practical rule follows from it. AI can help with assembly work, such as indexing, cross-referencing and spotting superseded drafts, because that is administrative. It must not be used after the report date to write up procedures that were never documented, because that would be new documentation of work, which SA 230 treats very differently.
+
 ### Documenting AI use without drowning in it
 
 Firms tend to swing between two extremes: no record of AI use at all, or a policy so heavy that people quietly stop disclosing it. I prefer a short, standard block on any working paper where a tool contributed: the tool and version, what it was given, what it produced, who reviewed it, when, and what they changed. That is enough for a reviewer to reconstruct the work, and it fits naturally alongside the preparer and reviewer sign-offs SA 230 already expects.
@@ -1205,7 +1315,7 @@ Audit files contain some of the most sensitive information a client has: unpubli
 
 The rules have also firmed up. The DPDP Rules, 2025 were notified in November 2025 , with most obligations phased in over 18 months, so treat this as current compliance, not a future project.
 
-For audits within the remit of the National Financial Reporting Authority, expect files to be read closely by people who were not on the engagement. That is precisely the reader SA 230 has in mind.
+For audits within NFRA’s remit, expect files to be read closely by people who were not on the engagement. That is precisely the reader SA 230 has in mind.
 
 ### A sensible first quarter
 
@@ -1223,6 +1333,8 @@ For the full CA implementation map, see the AI for chartered accountants in Indi
 - Adopt a standard AI-use block: tool, input, output, reviewer, date, changes.
 - Keep client files out of consumer chatbot accounts; confirm vendor data terms.
 - At quarter end, have someone outside the team read one file cold.
+- Re-approve each tool after a material model or vendor change, as NFRA’s Principle 10 expects.
+- Diary the 60-day file-assembly deadline for every signed report and lock the file once it is assembled.
 
 ### Frequently asked questions
 
@@ -1242,6 +1354,14 @@ Tools can generate selections, but the sampling approach, the population, and th
 
 Note the tool and version, the input it was given, the output, who reviewed it and when, and what the reviewer changed. Keep it short, but make it possible for a reviewer to reconstruct what happened.
 
+#### What does NFRA’s July 2026 guidance say about AI in audits?
+
+NFRA’s staff paper on General Principles for Technology Adoption in Audit (July 2026) sets out 10 principles. Auditors may use AI and data analytics, but responsibility for the opinion stays with the auditor, tool output must meet the same evidence standards as manual work, explainability must match materiality, and tools need continuous monitoring rather than one-time approval.
+
+#### How long after the audit report must the file be assembled, and how long is it kept?
+
+Under SA 230 and SQC 1, the final audit file should ordinarily be assembled not more than 60 days after the date of the auditor’s report, and retained for no shorter than seven years from that date, or from the group auditor’s report if later.
+
 ### Keep reading in this topic
 
 This guide is part of AI for Chartered Accountants in India: the implementation hub .
@@ -1249,6 +1369,8 @@ This guide is part of AI for Chartered Accountants in India: the implementation 
 - AI for Internal Audit in Indian Companies: A Practical Starting Point
 - AI for Tax Audit in India: Form 3CD This Year, Form 26 Next Year
 - How Indian CA Firms Can Use AI for GST Reconciliation Without Risking Client Data
+- AI controls checklist for CA firms in India
+- DPDP Act and AI in CA firms: a client-data decision rubric
 
 Also useful: AI implementation for finance teams: the CFO and controller guide .
 
@@ -1256,7 +1378,8 @@ Also useful: AI implementation for finance teams: the CFO and controller guide .
 
 - ICAI — SA 230, Audit Documentation (text of the Standard)
 - ICAI — Implementation Guide to SA 230, Audit Documentation (Revised 2022 Edition)
-- National Financial Reporting Authority (NFRA)
+- NFRA — General Principles for Technology Adoption in Audit (Staff Series on Technology in Audit: 01, July 2026)
+- NFRA — Staff Series on Technology in Audit (published 23 July 2026)
 - Digital Personal Data Protection Act, 2023 (Gazette text, MeitY)
 - NIST AI Risk Management Framework
 - ICAI — Implementation Guide to SA 230, Audit Documentation
@@ -1273,7 +1396,7 @@ Educational content; not financial, investment, or legal advice.
 ## AI for Internal Audit in Indian Companies: A Practical Starting Point
 
 URL: https://pratikbajoria.com/blog/2026-10-08-ai-for-internal-audit-in-indian-companies-a-practical-starting-point
-Last updated: 2026-10-08
+Last updated: 2026-10-22
 Summary: A CA's starting point for AI in internal audit in India: who s.138 covers, what ICAI's new SIA 240 on tools asks for, and one full-population test.
 
 CA insights · 2026-10-08 · 11 min read
@@ -1383,6 +1506,10 @@ This is also where internal audit differs from statutory audit. For the statutor
 - If it works, we will extend it to a second process next quarter. If it does not, we will say why.
 
 If you want a structured way to choose that first process and run it, my 90-day AI pilot playbook applies just as well to an internal audit team. The wider picture for the profession is in the AI for Chartered Accountants in India hub . If you would rather have someone map where AI pays back across your finance and audit work, that is what the AI Opportunity Audit is for.
+
+### The statutory audit side
+
+Statutory auditors face the same tool questions on CARO 2020, where most clauses are evidence assembly followed by a judgement; I go through it clause by clause in AI for CARO 2020 reporting: where it helps and where judgement stays . For what SA 230 still demands of the file whoever drafted it, see AI for audit working papers in India , and for training juniors to check tool output, AI and articleship .
 
 ### Frequently asked questions
 
@@ -1565,7 +1692,7 @@ Educational content; not financial, investment, or legal advice.
 ## AI Courses for Chartered Accountants in India: What Is Worth It
 
 URL: https://pratikbajoria.com/blog/2026-10-07-ai-courses-for-chartered-accountants-in-india-what-is-worth-it
-Last updated: 2026-10-07
+Last updated: 2026-10-22
 Summary: AI courses for chartered accountants in India in 2026: what ICAI’s AICA Levels 1–3 cost and cover, when a paid course helps, and how to learn on real work.
 
 CA insights · 2026-10-07 · 7 min read
@@ -1624,6 +1751,10 @@ Every partner I work with who finished a course hit the same wall: back in the o
 ### My recommendation
 
 For most CAs: AICA Level 1, CA GPT and one disciplined pilot. For partners who want the whole firm moving, training alone rarely does it; you need someone to map workflows and set the controls. That is what the AI Opportunity Audit is for. For the wider picture, start at the AI for chartered accountants in India hub , see my notes on AI tools for chartered accountants , or book a discovery call .
+
+### Courses are not the whole answer for juniors
+
+For article assistants, day-to-day habits matter more than a certificate. I have set out a quarter-by-quarter plan, built on ICAI’s two-year practical training rules, in AI and articleship: how CA firms should train article assistants now . A good live exercise is the evidence work in AI for CARO 2020 reporting .
 
 ### Frequently asked questions
 

@@ -44,14 +44,13 @@ Pratik works from India with business leaders in India, the United States, the U
 ## Selected articles
 
 - [How Much Should a Mid-Market Finance Team Budget for AI?](https://pratikbajoria.com/blog/2026-09-14-how-much-should-a-mid-market-finance-team-budget-for-ai)
-- [What Good AI Governance Looks Like in a Mid-Market Company](https://pratikbajoria.com/blog/2026-09-09-what-good-ai-governance-looks-like-in-a-mid-market-company)
-- [AI in Real Estate: Start With Lead Qualification and Documents](https://pratikbajoria.com/blog/2026-09-08-ai-in-real-estate-start-with-lead-qualification-and-documents)
-- [The AI Opportunity Audit: A 90-Day Roadmap for Leaders](https://pratikbajoria.com/blog/2026-09-07-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders)
-- [How to Automate a WhatsApp Workflow Without Losing Control](https://pratikbajoria.com/blog/2026-09-06-how-to-automate-a-whatsapp-workflow-without-losing-control)
-- [Build vs Buy: A Practical Framework for AI Tooling](https://pratikbajoria.com/blog/2026-09-05-build-vs-buy-a-practical-framework-for-ai-tooling)
-- [Why Most Corporate AI Pilots Never Reach Production](https://pratikbajoria.com/blog/2026-09-04-why-most-corporate-ai-pilots-never-reach-production)
-- [The Finance Function Is AI’s Highest-ROI Starting Point](https://pratikbajoria.com/blog/2026-09-03-the-finance-function-is-ai-s-highest-roi-starting-point)
-- [What Good AI Governance Looks Like in a Mid-Market Company](https://pratikbajoria.com/blog/2026-09-02-what-good-ai-governance-looks-like-in-a-mid-market-company)
+- [AI Governance for Mid-Market Teams Who Do Not Have a Chief AI Officer](https://pratikbajoria.com/blog/2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer)
+- [Real Estate AI: Start With Leads and Documents, Not Prediction](https://pratikbajoria.com/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction)
+- [The AI Opportunity Audit: A 90-Day Roadmap Without the Theatre](https://pratikbajoria.com/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre)
+- [WhatsApp Automation That Still Feels Like Customer Care](https://pratikbajoria.com/blog/2026-09-28-whatsapp-automation-that-still-feels-like-customer-care)
+- [Build vs Buy: A Practical Framework for AI Tooling](https://pratikbajoria.com/blog/build-vs-buy-ai-tooling)
+- [Why Most Corporate AI Pilots Never Reach Production](https://pratikbajoria.com/blog/corporate-ai-pilots)
+- [The Finance Function Is AI’s Highest-ROI Starting Point](https://pratikbajoria.com/blog/2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point)
 
 ## Contact
 
