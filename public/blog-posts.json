@@ -1039,16 +1039,16 @@
     "slug": "2026-10-12-drafting-replies-to-gst-and-income-tax-notices-with-ai-without-losing-control",
     "url": "/blog/2026-10-12-drafting-replies-to-gst-and-income-tax-notices-with-ai-without-losing-control",
     "date": "2026-10-12",
-    "dateModified": "2026-10-12",
+    "dateModified": "2026-10-22",
     "author": "Pratik Bajoria",
     "category": "CA insights",
-    "readTime": 4,
+    "readTime": 8,
     "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=85",
-    "excerpt": "AI is good at the chronology and the first draft of a notice reply. The legal position, the facts check and the filing stay with a named CA. Here is the split.",
+    "excerpt": "A GST or income-tax notice reply is a legal position with a deadline. Here is the clock for ASMT-10, section 74A and appeals, the e-proceedings rules, and where AI helps.",
     "content": "Notice work is where I see the most enthusiasm for AI in CA practices, and also the most risk. A good reply is mostly organisation: the timeline, the documents, the reconciliation, the relevant provisions. AI is very good at organisation. But a reply is also a legal position taken on a client’s behalf before a tax officer, and that part cannot be delegated to a model.\n\nHere is how I would split the work, using two common situations: a GST scrutiny notice and an income-tax mismatch query.\n\nKnow the clock before you open a tool\n\nDeadlines decide how much drafting help you can afford to verify. For GST return scrutiny, Rule 99 of the CGST Rules has the proper officer issue Form GST ASMT-10 seeking an explanation within 30 days of service, or a longer period the officer allows. The taxpayer replies in ASMT-11, and if the explanation is accepted the officer issues ASMT-12.\n\nFor demands relating to financial year 2024-25 onwards, section 74A of the CGST Act sets a single framework: the show cause notice must be issued within 42 months from the due date for the annual return of that year, and the order within 12 months of the notice, extendable by up to six months by a senior officer for recorded reasons.\n\nOn the income-tax side, remember that the Income-tax Act, 2025 came into force on 1 April 2026. Check which Act and which section a notice cites before anyone, human or machine, starts drafting.\n\nWhat AI does well in notice work\n\n• Reading a long notice and listing every specific discrepancy or allegation, with the paragraph it appears in, so nothing is missed in the reply.\n\n• Building a dated chronology from the client’s returns, correspondence and payment records.\n\n• Producing the reconciliation the officer is implicitly asking for, for example GSTR-1 against GSTR-3B, or books against the figures in the Annual Information Statement.\n\n• Drafting a first version of the reply in a clear structure: facts, reconciliation, submissions, documents enclosed.\n\n• Preparing the index of annexures and checking that every document referred to is actually attached.\n\nWhat stays with a named CA\n\nThree things. First, the facts check: every number in the reply ties to a source document the reviewer has seen. Second, the legal position: whether to accept and pay, contest, or partly accept, and on what grounds. Third, the decision to file and the filing itself.\n\nI would add a fourth for AI drafts specifically: every provision, circular or case cited must be checked against the official text. General-purpose assistants still produce confident references that do not exist or do not say what the draft claims. A reply that cites a non-existent judgment does more damage than a short reply that cites none.\n\nMismatch queries start in the AIS\n\nMany income-tax queries begin with a difference between the return and what third parties reported. The Department’s Form 168 FAQs explain that the Annual Information Statement shows transactions reported by banks, employers, fund houses, brokers and registrars, and that inaccurate entries should be corrected through the feedback option on the portal. The same FAQs make the point that all actual income must be reported even if it is missing from the AIS.\n\nThis is a good place for AI-assisted preparation before any notice arrives: compare the AIS with the client’s books each year, list differences, and draft the feedback or explanation while the facts are fresh.\n\nClient data rules for notice work\n\nNotice files contain more personal and sensitive data than almost any other work in a practice. Use firm-controlled tools with retention settings you have checked, and share only what the task needs. The DPDP Rules, 2025 were notified in November 2025 with an 18-month phased timeline, which is enough time to set this up properly but not enough to ignore it. My AI controls checklist for CA firms covers the wider review gates.\n\n• No client notice goes into a personal chatbot account.\n\n• Redact identifiers where the task does not need them.\n\n• Keep the AI draft, the reviewer’s changes and the final filed reply in the file.\n\n• Log who reviewed and approved each reply.\n\nFrequently asked questions\n\nHow long do I have to reply to a GST ASMT-10 notice?\nRule 99 of the CGST Rules provides for an explanation within 30 days of service of the notice, or such further period as the proper officer may permit. The reply is filed in Form GST ASMT-11.\n\nCan I use ChatGPT to draft a reply to a tax notice?\nYou can use an approved, firm-controlled assistant to organise facts and prepare a first draft. A CA must check every fact and citation against source documents and official texts, decide the legal position, and approve the final reply before filing.\n\nWhat is the time limit under section 74A of the CGST Act?\nFor financial year 2024-25 onwards, the show cause notice must be issued within 42 months from the due date for furnishing the annual return for that year, and the order within 12 months of the notice, extendable by up to six months.\n\nHow do I correct a wrong entry in the AIS?\nOpen the AIS on the e-filing portal, select the transaction and submit feedback with the appropriate reason, such as incorrect, duplicate or not related. The Taxpayer Information Summary updates after the feedback is processed; it cannot be edited directly.",
     "intro": [
-      "Notice work is where I see the most enthusiasm for AI in CA practices, and also the most risk. A good reply is mostly organisation: the timeline, the documents, the reconciliation, the relevant provisions. AI is very good at organisation. But a reply is also a legal position taken on a client’s behalf before a tax officer, and that part cannot be delegated to a model.",
-      "Here is how I would split the work, using two common situations: a GST scrutiny notice and an income-tax mismatch query."
+      "Two facts shape every notice reply I review. A GST scrutiny notice in Form ASMT-10 gives the taxpayer 30 days from service to explain, unless the officer allows longer. And a response submitted through the income-tax e-proceedings facility [cannot be edited once it is filed][7]. Put those together and the risk of AI in notice work is obvious: a fast, fluent draft that nobody checked becomes a permanent record before a tax officer.",
+      "That is not an argument for avoiding AI. A good reply is mostly organisation: the timeline, the documents, the reconciliation and the relevant provisions, and AI is very good at organisation. The legal position taken on a client’s behalf is a different matter. Below I set out the clock for the common notices, then split the work between the tool and the CA who signs off, using a GST scrutiny notice and an income-tax mismatch query as the two examples."
     ],
     "sections": [
       {
@@ -1058,7 +1058,57 @@
           "For demands relating to financial year 2024-25 onwards, [section 74A of the CGST Act][2] sets a single framework: the show cause notice must be issued within 42 months from the due date for the annual return of that year, and the order within 12 months of the notice, extendable by up to six months by a senior officer for recorded reasons.",
           "On the income-tax side, remember that the [Income-tax Act, 2025 came into force on 1 April 2026][4]. Check which Act and which section a notice cites before anyone, human or machine, starts drafting."
         ],
-        "bullets": []
+        "bullets": [],
+        "table": {
+          "caption": "Key GST and income-tax notice timelines, from the official texts. Check the notice itself: an officer may allow a longer period, and dates run from service or communication.",
+          "head": [
+            "Stage",
+            "Form or channel",
+            "Time limit",
+            "Source"
+          ],
+          "rows": [
+            [
+              "GST scrutiny of returns: explanation sought",
+              "ASMT-10, reply in ASMT-11",
+              "30 days from service of the notice, or a longer period the officer allows",
+              "[Rule 99, CGST Rules][1]"
+            ],
+            [
+              "GST demand, FY 2024-25 onwards: show cause notice",
+              "Section 74A",
+              "Within 42 months from the due date of the annual return for the year",
+              "[Section 74A, CGST Act][2]"
+            ],
+            [
+              "GST demand, FY 2024-25 onwards: order",
+              "Section 74A",
+              "Within 12 months of the notice, extendable by up to six months for recorded reasons",
+              "[Section 74A, CGST Act][2]"
+            ],
+            [
+              "GST appeal against an order",
+              "Appeal to the Appellate Authority",
+              "Three months from communication of the order; a further one month may be allowed for sufficient cause",
+              "[Section 107, CGST Act][6]"
+            ],
+            [
+              "GST appeal: pre-deposit",
+              "With the appeal",
+              "The admitted amount in full, plus 10% of the tax in dispute, capped at ₹20 crore under the CGST Act",
+              "[Section 107(6), CGST Act][6]"
+            ],
+            [
+              "Income-tax notices and intimations",
+              "e-Proceedings on the e-filing portal",
+              "As stated in the notice; the submit button can lapse after the response due date for CPC notices",
+              "[e-Proceedings FAQ][7]"
+            ]
+          ]
+        },
+        "after": [
+          "The appeal clock matters for drafting because the reply at notice stage is the record the appellate authority will read later. A weak or inconsistent reply drafted in a hurry is hard to repair three months on."
+        ]
       },
       {
         "heading": "What AI does well in notice work",
@@ -1086,6 +1136,29 @@
           "This is a good place for AI-assisted preparation before any notice arrives: compare the AIS with the client’s books each year, list differences, and draft the feedback or explanation while the facts are fresh."
         ],
         "bullets": []
+      },
+      {
+        "heading": "Income-tax e-proceedings: what the portal allows",
+        "paragraphs": [
+          "The Department’s [e-Proceedings user manual][8] says the service lets any registered user view and respond to notices, intimations and letters from the Assessing Officer, CPC or any other income-tax authority, including defective-return notices, prima facie adjustments and suo motu rectifications. A taxpayer can add an authorised representative to respond on their behalf, and each submission generates a transaction ID.",
+          "Three portal rules change how I use AI here. Responses can be marked as full or partial, so a holding partial response with the key reconciliation is often better than a rushed full one. Submitted responses can be viewed but [not edited][7]. And for CPC notices the submit button becomes inactive once the response due date has lapsed. Build the AI-assisted draft early, but treat the upload as a one-way door that a named CA opens."
+        ],
+        "bullets": []
+      },
+      {
+        "heading": "A review checklist before anything is filed",
+        "paragraphs": [
+          "I use this list on every AI-assisted reply. It is short on purpose, so that people actually use it under deadline pressure."
+        ],
+        "bullets": [
+          "The notice section, Act and tax period are confirmed against the notice itself, including whether it cites the Income-tax Act, 1961 or the Income-tax Act, 2025.",
+          "The deadline is diaried from the date of service or communication, not the date the client forwarded the notice.",
+          "Every figure in the draft ties to a return, the books or the AIS, with the working on file.",
+          "Every section, rule, circular and case cited has been opened and read in the official text.",
+          "The legal position (accept, contest or partly accept) is recorded as the reviewing CA’s decision.",
+          "Annexures listed in the reply match the files actually uploaded.",
+          "The AI draft, the reviewer’s changes and the filed version are all kept on the client file."
+        ]
       },
       {
         "heading": "Client data rules for notice work",
@@ -1116,12 +1189,28 @@
       {
         "q": "How do I correct a wrong entry in the AIS?",
         "a": "Open the AIS on the e-filing portal, select the transaction and submit feedback with the appropriate reason, such as incorrect, duplicate or not related. The Taxpayer Information Summary updates after the feedback is processed; it cannot be edited directly."
+      },
+      {
+        "q": "Can I edit a response after submitting it on the income-tax e-filing portal?",
+        "a": "No. The Income Tax Department’s e-Proceedings FAQ says a response cannot be edited once submitted. You can view what was submitted, so check the draft fully before uploading."
+      },
+      {
+        "q": "How long do I have to file a GST appeal against an order?",
+        "a": "Section 107 of the CGST Act allows three months from the date the order is communicated, and the Appellate Authority may allow a further one month if there was sufficient cause for the delay. A pre-deposit of the admitted amount plus 10% of the disputed tax is required."
       }
     ],
     "related": [
       {
         "title": "AI for Chartered Accountants in India: the implementation hub",
         "url": "/blog/ai-for-chartered-accountants-in-india"
+      },
+      {
+        "title": "AI controls checklist for CA firms in India",
+        "url": "/blog/ai-controls-checklist-ca-firms-india"
+      },
+      {
+        "title": "DPDP Act and AI in CA firms: a client-data decision rubric",
+        "url": "/blog/2026-10-19-dpdp-act-and-ai-in-ca-firms-in-india-a-client-data-decision-rubric"
       },
       {
         "title": "Using AI for TDS Reconciliation in Indian CA Firms: From 26AS to Form 168",
@@ -1167,6 +1256,18 @@
       {
         "title": "PIB: Government notifies DPDP Rules (14 November 2025)",
         "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2190014"
+      },
+      {
+        "title": "CBIC: Section 107, CGST Act, 2017 (appeals to Appellate Authority)",
+        "url": "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter18/section107_v1.00.html"
+      },
+      {
+        "title": "Income Tax Department: e-Proceedings FAQ (e-filing portal)",
+        "url": "https://www.incometax.gov.in/iec/foportal/help/respond-to-e-proceedings-faq"
+      },
+      {
+        "title": "Income Tax Department: e-Proceedings user manual",
+        "url": "https://www.incometax.gov.in/iec/foportal/help/respond-to-e-proceedings"
       }
     ],
     "generatedBy": "topic-bank",
@@ -1336,6 +1437,10 @@
       {
         "title": "The AI Opportunity Audit: a scoped 90-day map",
         "url": "/audit"
+      },
+      {
+        "title": "Drafting Replies to GST and Income Tax Notices With AI Without Losing Control",
+        "url": "/blog/2026-10-12-drafting-replies-to-gst-and-income-tax-notices-with-ai-without-losing-control"
       }
     ],
     "keywords": [

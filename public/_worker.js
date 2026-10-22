@@ -446,6 +446,12 @@ function structuredBodyHtml(post, sources) {
     for (const p of Array.isArray(sec.paragraphs) ? sec.paragraphs.slice(0, 1) : []) out.push(`<p>${inlineHtml(p, sources)}</p>`);
     if (Array.isArray(sec.bullets) && sec.bullets.length) out.push(`<ul>\n${sec.bullets.map((b) => `  <li>${inlineHtml(b, sources)}</li>`).join('\n')}\n</ul>`);
     for (const p of Array.isArray(sec.paragraphs) ? sec.paragraphs.slice(1) : []) out.push(`<p>${inlineHtml(p, sources)}</p>`);
+    const t = sec.table;
+    if (t && Array.isArray(t.head) && Array.isArray(t.rows) && t.rows.length) {
+      const cell = 'padding:10px;border:1px solid #cfc9bc;vertical-align:top';
+      out.push(`<table style="width:100%;border-collapse:collapse;margin:24px 0;font-size:0.95rem">${t.caption ? `\n  <caption style="text-align:left;padding:0 0 8px;color:#6f746d">${escHtml(t.caption)}</caption>` : ''}\n  <thead><tr style="background:#ebe6dc">${t.head.map((h) => `<th style="text-align:left;${cell}">${escHtml(h)}</th>`).join('')}</tr></thead>\n  <tbody>\n${t.rows.map((r) => `<tr>${r.map((c) => `<td style="${cell}">${inlineHtml(String(c), sources)}</td>`).join('')}</tr>`).join('\n')}\n  </tbody>\n</table>`);
+    }
+    for (const p of Array.isArray(sec.after) ? sec.after : []) out.push(`<p>${inlineHtml(p, sources)}</p>`);
   }
   const faq = Array.isArray(post.faq) ? post.faq.filter((f) => f && f.q && f.a) : [];
   if (faq.length) {

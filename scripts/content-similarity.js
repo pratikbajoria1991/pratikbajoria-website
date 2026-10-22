@@ -33,7 +33,7 @@ function htmlBodyText(html) {
 function jsonBodyText(post) {
   const parts = [];
   if (Array.isArray(post.intro)) parts.push(...post.intro);
-  if (Array.isArray(post.sections)) for (const s of post.sections) parts.push(s.heading || '', ...(s.paragraphs || []), ...(s.bullets || []));
+  if (Array.isArray(post.sections)) for (const s of post.sections) parts.push(s.heading || '', ...(s.paragraphs || []), ...(s.bullets || []), ...((s.table && s.table.rows) || []).map((r) => r.join(' ')), ...(s.after || []));
   if (Array.isArray(post.faq)) for (const f of post.faq) parts.push(f.q || '', f.a || '');
   const text = parts.length ? parts.join(' ') : String(post.content || '');
   return stripInline(text).replace(/\s+/g, ' ').trim();
