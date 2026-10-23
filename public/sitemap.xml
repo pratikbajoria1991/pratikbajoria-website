@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://pratikbajoria.com/</loc><lastmod>2026-10-22</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
   <url><loc>https://pratikbajoria.com/topics</loc><lastmod>2026-10-08</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://pratikbajoria.com/blog</loc><lastmod>2026-10-22</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://pratikbajoria.com/blog</loc><lastmod>2026-10-23</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
   <url><loc>https://pratikbajoria.com/blog/2026-09-21-how-do-you-know-finance-ai-will-pay-for-itself-before-you-buy</loc><lastmod>2026-10-17</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://pratikbajoria.com/privacy</loc><lastmod>2026-09-18</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://pratikbajoria.com/audit</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
@@ -64,4 +64,5 @@
   <url><loc>https://pratikbajoria.com/blog/2026-10-20-ai-for-cma-data-and-bank-loan-project-reports-a-ca-s-review-checklist</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://pratikbajoria.com/blog/2026-10-21-ai-for-itr-filing-what-a-ca-should-let-it-do-and-what-stays-human</loc><lastmod>2026-10-21</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://pratikbajoria.com/blog/2026-10-22-ai-for-tally-prime-automating-data-entry-without-losing-control-of-the-books</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-23-ai-tools-for-statutory-audit-in-india-what-nfra-s-2026-principles-mean</loc><lastmod>2026-10-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
 </urlset>
