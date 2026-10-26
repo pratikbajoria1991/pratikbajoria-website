@@ -232,10 +232,10 @@ A weekly, AI-curated briefing for business leaders putting AI to work — real d
 ## AI for Chartered Accountants in India: A Practical Implementation Hub
 
 URL: https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india
-Last updated: 2026-10-22
+Last updated: 2026-10-26
 Summary: AI for chartered accountants in India: a practical map for CA firms on which workflows to start with, client-data controls, human review and pilots.
 
-CA insights · 2026-09-25 · Updated 19 Oct 2026 · 8 min read
+CA insights · 2026-09-25 · Updated 26 Oct 2026 · 8 min read
 
 ### AI for Chartered Accountants in India: A Practical Implementation Hub
 
@@ -374,6 +374,10 @@ Once the rules are agreed, partners usually ask which assistant to license. My v
 
 Before any assistant touches salary registers, KYC or individual tax files, decide whether the firm is acting as Data Fiduciary or Data Processor on that engagement, read the vendor’s data terms, and put masking, firm-managed accounts, logs and breach escalation in place. Most operational obligations in the DPDP Rules, 2025 commence in May 2027. I have set out an eight-axis scoring rubric and a Monday checklist in DPDP Act and AI in CA Firms in India: A Client-Data Decision Rubric .
 
+### Transaction work: AI in financial due diligence
+
+Due diligence is where firms most often ask whether AI can read a data room. It can index documents, scan ledgers and extract contract clauses, but quality-of-earnings adjustments, net debt and tax exposures stay with the CA, and NDAs and SEBI’s insider trading rules on UPSI come before any upload. I have set out a workstream-by-workstream rubric and a Monday checklist in AI for Financial Due Diligence in India: A CA’s Decision Rubric .
+
 ### Running the first pilot: a 30/60/90-day playbook
 
 The 90-day AI pilot roadmap for a CA firm: one workflow, a baseline before any tool, 100% review in the parallel run and a written decision on day 90. Source: DPDP Act, 2023 (MeitY) , NFRA Staff Series on Technology in Audit 01 , ICAI AICA Level 1 reference document .
@@ -411,6 +415,7 @@ Use this as the index. The first list covers running a CA practice with AI; the 
 
 #### Tax, audit and GST workflows
 
+- AI for Financial Due Diligence in India: A CA’s Decision Rubric
 - How Indian CA Firms Can Use AI for GST Reconciliation Without Risking Client Data
 - Drafting Replies to GST and Income Tax Notices With AI Without Losing Control
 - Using AI for TDS Reconciliation in Indian CA Firms: From 26AS to Form 168

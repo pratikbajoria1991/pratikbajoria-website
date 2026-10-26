@@ -73,5 +73,12 @@
     "Rule 6 safeguards read as an AI checklist: mask identifiers, use firm-managed accounts, keep logs for one year and put security terms in the processor contract.",
     "Breach intimation runs to affected individuals without delay and to the Data Protection Board, with a detailed report within seventy-two hours unless the Board allows longer.",
     "Score every client-data AI workflow on role clarity, minimisation, vendor terms, access, logs, data location, human review and breach readiness before it runs."
+  ],
+  "2026-10-26-ai-for-financial-due-diligence-in-india-a-cas-decision-rubric": [
+    "AI can index the data room, scan ledgers, extract contract clauses, run reconciliations and draft narrative; each output is a list for a reviewer, not a conclusion.",
+    "Quality-of-earnings adjustments, net debt, normalised working capital, tax exposures and the signed conclusions stay with the CA.",
+    "Check the NDA before any upload, and use only business AI plans whose training and retention terms a partner has read.",
+    "For a listed target, SEBI’s insider trading regulations require confidentiality agreements for UPSI shared in a transaction and a structured digital database with time stamps and audit trails.",
+    "SEBI-regulated intermediaries are solely responsible for the output of AI tools they rely on, whether built or bought."
   ]
 }
