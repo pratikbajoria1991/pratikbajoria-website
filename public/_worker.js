@@ -7,12 +7,13 @@ const INTERNAL_ASSET_HEADER = 'x-pages-internal-asset';
 const LEAD_INTERESTS = new Set(['cross-border-buyer', 'cross-border-seller']);
 
 const GA4_SNIPPET = '<script src="/ga4.js?v=20261009-nobot" defer></script><script src="/clarity.js?v=20261018" defer></script>\n';
-async function injectGa4(response) {
+async function injectGa4(response, md = null) {
   const ctype = response.headers.get('content-type') || '';
   if (response.status !== 200 || !ctype.includes('text/html')) return response;
-  const text = rewriteMainCrossborderLinks(await response.text());
+  const text = addMdHeadSignals(rewriteMainCrossborderLinks(await response.text()), md);
   const headers = new Headers(response.headers);
   headers.delete('content-length');
+  if (md) headers.append('Vary', 'Accept');
   if (text.includes('/ga4.js') || text.includes('G-CXQP7F8CRT')) {
     return new Response(text, { status: response.status, statusText: response.statusText, headers });
   }
@@ -358,6 +359,137 @@ async function loadAllPosts(request, env) {
   return [...(Array.isArray(daily) ? daily : []), ...(Array.isArray(editorial) ? editorial : [])];
 }
 
+// ---------------------------------------------------------------------------
+// AI-readable markdown layer (main host). Built by scripts/build-md.mjs into public/md/;
+// this worker only routes and sets headers:
+//   /<path>.md, /index.md (homepage)   markdown twin, publicly cacheable
+//   /api/md/<path>, /api/md/_catalog   same content / route catalog (JSON)
+//   Accept: text/markdown on a page    negotiated markdown, never edge-cached (Cloudflare's
+//                                      cache ignores Vary, so it must not poison the HTML)
+// HTML pages get <meta name="ai-summary"> + <link rel="alternate" type="text/markdown">.
+// ---------------------------------------------------------------------------
+const MD_DISCOVERY_LINK = '</llms.txt>; rel="describedby"; type="text/plain", </llms-full.txt>; rel="describedby"; type="text/plain", </ai.txt>; rel="describedby"; type="text/plain"';
+const MD_CORS = { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, HEAD, OPTIONS', 'Access-Control-Allow-Headers': 'Accept', 'Access-Control-Expose-Headers': 'Content-Location, Link, X-Markdown-Tokens, Last-Modified' };
+let mdCatalogCache = null;
+async function mdCatalog(request, env) {
+  if (mdCatalogCache) return mdCatalogCache;
+  const c = await loadJsonAsset(request, env, '/md/_catalog.json', null);
+  if (!c || !Array.isArray(c.routes)) return { raw: { routes: [] }, byPath: new Map() };
+  mdCatalogCache = { raw: c, byPath: new Map(c.routes.map((r) => [r.path, r])) };
+  return mdCatalogCache;
+}
+async function mdRouteFor(request, env, pathname) {
+  return (await mdCatalog(request, env)).byPath.get(pathname) || null;
+}
+const mdFileFor = (path) => `/md${path === '/' ? '/index' : path}.md`;
+const mdUrlFor = (path) => `${SITE}${path === '/' ? '/index' : path}.md`;
+const mdCanonical = (path) => (path === '/' ? `${SITE}/` : `${SITE}${path}`);
+
+// q-value of the best match for `type` in an Accept header (exact > type/* > */*).
+function acceptQ(accept, type) {
+  let best = -1;
+  let q = 0;
+  for (const part of String(accept || '').split(',')) {
+    const [range, ...params] = part.trim().toLowerCase().split(';').map((x) => x.trim());
+    if (!range) continue;
+    const spec = range === type ? 3 : range === `${type.split('/')[0]}/*` ? 2 : range === '*/*' ? 1 : 0;
+    if (!spec || spec < best) continue;
+    const qp = params.find((x) => x.startsWith('q='));
+    const v = qp ? Number(qp.slice(2)) : 1;
+    const val = Number.isFinite(v) ? Math.min(Math.max(v, 0), 1) : 1;
+    if (spec > best) { best = spec; q = val; } else q = Math.max(q, val);
+  }
+  return best < 0 ? 0 : q;
+}
+// Markdown only when text/markdown is named explicitly and ranks above HTML (so */* gets HTML).
+function prefersMarkdown(request) {
+  const accept = request.headers.get('accept') || '';
+  if (!/text\/markdown/i.test(accept)) return false;
+  let md = 0;
+  for (const part of accept.split(',')) {
+    const [range, ...params] = part.trim().toLowerCase().split(';').map((x) => x.trim());
+    if (range !== 'text/markdown') continue;
+    const qp = params.find((x) => x.startsWith('q='));
+    const v = qp ? Number(qp.slice(2)) : 1;
+    md = Math.max(md, Number.isFinite(v) ? v : 1);
+  }
+  return md > 0 && md > acceptQ(accept, 'text/html');
+}
+
+function escAttr(v) {
+  return String(v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+function mdHeadTags(md) {
+  return `<meta name="ai-summary" content="${escAttr(md.summary || '')}" />\n<link rel="alternate" type="text/markdown" href="${mdUrlFor(md.path)}" title="Markdown version" />\n`;
+}
+function addMdHeadSignals(html, md) {
+  if (!md || html.includes('name="ai-summary"') || !html.includes('</head>')) return html;
+  return html.replace('</head>', `${mdHeadTags(md)}</head>`);
+}
+
+function markdownResponse(request, body, status, extra) {
+  const h = new Headers({ ...MD_CORS, 'Content-Type': 'text/markdown; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-Markdown-Tokens': String(Math.ceil(body.length / 4)), ...extra });
+  return new Response(request.method === 'HEAD' ? null : body, { status, headers: h });
+}
+function markdownNotFound(request, pathname) {
+  const body = `# Not found\n\nThere is no page or markdown version at \`${pathname}\` on ${SITE}.\n\n- [Homepage](${SITE}/index.md)\n- [All articles](${SITE}/blog.md)\n- [Site index for AI agents](${SITE}/llms.txt)\n- [Markdown catalog](${SITE}/api/md/_catalog)\n`;
+  return markdownResponse(request, body, 404, { 'Cache-Control': 'public, max-age=60', 'X-Robots-Tag': 'noindex, nofollow' });
+}
+// negotiated = true when answering an HTML URL because of Accept: text/markdown.
+async function serveMarkdown(request, env, route, negotiated) {
+  if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: { ...MD_CORS, 'Access-Control-Max-Age': '86400' } });
+  const r = await env.ASSETS.fetch(internalAssetRequest(request, mdFileFor(route.path)));
+  if (r.status !== 200) return markdownNotFound(request, route.path);
+  const body = await r.text();
+  const canonical = mdCanonical(route.path);
+  const isPost = route.path.startsWith('/blog/') || route.path === '/blog';
+  const extra = {
+    'Cache-Control': negotiated ? 'private, no-store' : `public, max-age=300, s-maxage=${isPost ? 3600 : 86400}, stale-while-revalidate=86400`,
+    'Content-Location': mdUrlFor(route.path),
+    Link: `<${canonical}>; rel="canonical", ${MD_DISCOVERY_LINK}`,
+    'X-Robots-Tag': 'noindex, follow'
+  };
+  if (negotiated) { extra['CDN-Cache-Control'] = 'no-store'; extra.Vary = 'Accept'; }
+  if (route.lastModified) extra['Last-Modified'] = new Date(`${route.lastModified}T00:00:00Z`).toUTCString();
+  return markdownResponse(request, body, 200, extra);
+}
+
+// /<path>.md, /index.md, /md/* and /api/md/*. Returns null when the URL is not a markdown URL.
+async function routeMarkdown(request, env, url) {
+  const p = url.pathname;
+  const method = request.method;
+  if (!['GET', 'HEAD', 'OPTIONS'].includes(method)) {
+    if (p.endsWith('.md') || p === '/api/md' || p.startsWith('/api/md/')) return markdownResponse(request, 'Method not allowed.\n', 405, { Allow: 'GET, HEAD, OPTIONS', 'Cache-Control': 'no-store' });
+    return null;
+  }
+  // Built files are internal: send direct hits to the public URL.
+  if (p === '/md/_catalog.json') return absoluteRedirect(url, '/api/md/_catalog');
+  if (p.startsWith('/md/') && p.endsWith('.md')) return absoluteRedirect(url, p.slice(3));
+  if (p === '/api/md/_catalog' || p === '/api/md/_catalog.json') {
+    if (method === 'OPTIONS') return new Response(null, { status: 204, headers: MD_CORS });
+    const { raw } = await mdCatalog(request, env);
+    return new Response(method === 'HEAD' ? null : `${JSON.stringify(raw, null, 2)}\n`, {
+      status: 200,
+      headers: { ...MD_CORS, 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'public, max-age=300, s-maxage=3600', 'X-Robots-Tag': 'noindex, follow', Link: MD_DISCOVERY_LINK }
+    });
+  }
+  let target = null;
+  if (p === '/api/md' || p.startsWith('/api/md/')) {
+    target = p.slice('/api/md'.length).replace(/\.md$/, '').replace(/\/+$/, '') || '/';
+    if (target === '/index') target = '/';
+  } else if (p.endsWith('.md')) {
+    target = p.slice(0, -3) || '/';
+    if (target === '/index') target = '/';
+    // Alias slugs answer like their HTML: one 301, to the target's markdown URL.
+    const alias = blogPathAliases[target];
+    if (alias) return absoluteRedirect(url, alias === '/' ? '/index.md' : `${alias.replace(/\/+$/, '')}.md`);
+  } else {
+    return null;
+  }
+  const route = await mdRouteFor(request, env, target);
+  return route ? serveMarkdown(request, env, route, false) : markdownNotFound(request, target);
+}
+
 // Detects Pages' SPA fallback (homepage served with 200 for a missing asset).
 function looksLikeRealBlogPage(html, slug) {
   return html.includes(`data-slug="${slug}"`) || html.includes(`rel="canonical" href="${SITE}/blog/`);
@@ -480,7 +612,7 @@ function takeawaysHtml(post) {
   return `\n        <aside class="key-takeaways" aria-label="Key takeaways" style="margin:22px 0 8px;padding:16px 20px;border:1px solid rgba(28,28,26,0.12);border-radius:12px"><p class="eyebrow">Key takeaways</p><ul style="margin:8px 0 0;padding-left:20px">${items.map((t) => `<li>${escHtml(t)}</li>`).join('')}</ul></aside>`;
 }
 
-function renderPostHtml(post, catalog) {
+function renderPostHtml(post, catalog, md = null) {
   const slug = post.slug;
   const canonical = `${SITE}/blog/${slug}`;
   const title = post.title || slug;
@@ -566,7 +698,8 @@ ${ldJson}
     </script>
     <script type="application/ld+json">
 ${crumbsJson}
-    </script>${structured ? faqJsonLd(post, canonical) : ''}
+    </script>${structured ? faqJsonLd(post, canonical) : ''}${md ? `
+    ${mdHeadTags(md).trim().replace(/\n/g, '\n    ')}` : ''}
     <script src="/ga4.js?v=20261009-nobot" defer></script><script src="/clarity.js?v=20261018" defer></script>
   </head>
   <body data-static-article="1" data-slug="${escHtml(slug)}">
@@ -634,7 +767,7 @@ async function serveBlogPost(request, env, slug) {
     const html = await direct.text();
     if (looksLikeRealBlogPage(html, slug)) {
       if (isHead) return new Response(null, { status: 200, statusText: direct.statusText, headers: direct.headers });
-      return injectGa4(new Response(html, { status: 200, statusText: direct.statusText, headers: direct.headers }));
+      return injectGa4(new Response(html, { status: 200, statusText: direct.statusText, headers: direct.headers }), await mdRouteFor(request, env, `/blog/${slug}`));
     }
     // else: SPA/homepage fallback — fall through.
   } else if (direct.status >= 300 && direct.status < 400) {
@@ -645,10 +778,12 @@ async function serveBlogPost(request, env, slug) {
   const post = posts.find((p) => p && p.slug === slug);
   if (post) {
     const catalog = await loadJsonAsset(request, env, '/affiliate-links.json', {});
-    return new Response(request.method === 'HEAD' ? null : renderPostHtml(post, catalog), {
+    const md = await mdRouteFor(request, env, `/blog/${slug}`);
+    return new Response(request.method === 'HEAD' ? null : renderPostHtml(post, catalog, md), {
       status: 200,
       headers: {
         'Content-Type': 'text/html; charset=utf-8',
+        ...(md ? { Vary: 'Accept' } : {}),
         'Cache-Control': 'public, max-age=300, must-revalidate',
         'X-Blog-Render': 'json-fallback'
       }
@@ -666,7 +801,7 @@ async function appendMissingLlmsPosts(request, env, body) {
   const missing = posts
     .filter((p) => p && p.slug && isBlogSlug(p.slug) && !blogPathAliases[`/blog/${p.slug}`])
     .filter((p) => { if (seen.has(p.slug)) return false; seen.add(p.slug); return true; })
-    .filter((p) => !body.includes(`${SITE}/blog/${p.slug})`) && !body.includes(`${SITE}/blog/${p.slug}\n`))
+    .filter((p) => !body.includes(`${SITE}/blog/${p.slug})`) && !body.includes(`${SITE}/blog/${p.slug}.md)`) && !body.includes(`${SITE}/blog/${p.slug}\n`))
     .sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
   if (!missing.length) return body;
   const lines = missing.map((p) => `- [${String(p.title || p.slug).replace(/[\[\]]/g, '')}](${SITE}/blog/${p.slug})${p.excerpt ? `: ${String(p.excerpt).replace(/\s+/g, ' ').trim()}` : ''}`);
@@ -766,12 +901,13 @@ async function serveBlogAsset(request, env, slug) {
     headers: assetHeaders,
     redirect: 'manual'
   }));
-  if (request.method !== 'GET' || shell.status !== 200 || !(shell.headers.get('content-type') || '').includes('text/html')) return injectGa4(shell);
+  const md = await mdRouteFor(request, env, '/blog');
+  if (request.method !== 'GET' || shell.status !== 200 || !(shell.headers.get('content-type') || '').includes('text/html')) return injectGa4(shell, md);
   const html = injectMissingBlogCards(await shell.text(), await loadAllPosts(request, env));
   const h = new Headers(shell.headers);
   h.delete('content-length');
   h.delete('etag');
-  return injectGa4(new Response(html, { status: 200, statusText: shell.statusText, headers: h }));
+  return injectGa4(new Response(html, { status: 200, statusText: shell.statusText, headers: h }), md);
 }
 
 // Every /api/* response (both hosts) carries X-Robots-Tag: noindex; robots.txt also disallows /api/.
@@ -790,12 +926,16 @@ async function handleApi(request, env, url) {
   return request.method === 'HEAD' ? new Response(null, r) : r;
 }
 
-export default {
-  async fetch(request, env) {
-    const url = new URL(request.url);
-    if (request.headers.get(INTERNAL_ASSET_HEADER) === '1') return env.ASSETS.fetch(request);
+// Main request router; the default export below adds the site-wide discovery Link header.
+const site = {
+  async fetch(request, env, url) {
     const blockReason = edgeBlockReason(request, url);
     if (blockReason) return forbidden(request, blockReason);
+    // Markdown URLs (incl. /api/md/*) on the main host, before the /api/* JSON handler.
+    if (requestHost(request, url) !== XB_HOST) {
+      const md = await routeMarkdown(request, env, url);
+      if (md) return md;
+    }
     if (url.pathname === '/api' || url.pathname.startsWith('/api/')) {
       const r = await handleApi(request, env, url);
       const out = new Response(r.body, r);
@@ -845,6 +985,10 @@ export default {
     // through to env.ASSETS and Pages answers with its own 308 + relative Location
     // (e.g. HEAD /topics.html -> 308 /topics), which crawlers/GSC report as a redirect error.
     const isRead = request.method === 'GET' || request.method === 'HEAD';
+
+    // Accept: text/markdown on a canonical page URL -> markdown (private, never edge-cached).
+    const mdRoute = isRead ? await mdRouteFor(request, env, url.pathname) : null;
+    if (mdRoute && prefersMarkdown(request)) return serveMarkdown(request, env, mdRoute, true);
 
     if (isRead && (url.pathname === '/blog' || url.pathname === '/blog.html')) {
       const legacySlug = url.searchParams.get('slug')?.trim();
@@ -906,6 +1050,20 @@ export default {
       if (m && isBlogSlug(m[1])) return serveBlogPost(request, env, m[1]);
     }
 
-    return injectGa4(await env.ASSETS.fetch(request));
+    return injectGa4(await env.ASSETS.fetch(request), mdRoute);
+  }
+};
+
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+    if (request.headers.get(INTERNAL_ASSET_HEADER) === '1') return env.ASSETS.fetch(request);
+    const r = await site.fetch(request, env, url);
+    // Every main-host page advertises the AI-readable index files (markdown responses
+    // already carry them; /api/* and the cross-border host are left alone).
+    if (requestHost(request, url) === XB_HOST || url.pathname.startsWith('/api/') || r.headers.has('Link') || r.status === 403) return r;
+    const out = new Response(r.body, r);
+    out.headers.append('Link', MD_DISCOVERY_LINK);
+    return out;
   }
 };

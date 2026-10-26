@@ -1,0 +1,658 @@
+{
+  "site": "https://pratikbajoria.com",
+  "name": "Pratik Bajoria — AI Implementation for Business",
+  "generated": "2026-10-26",
+  "count": 65,
+  "routes": [
+    {
+      "path": "/",
+      "url": "https://pratikbajoria.com/",
+      "markdown": "https://pratikbajoria.com/index.md",
+      "title": "I help companies actually implement AI.",
+      "summary": "Homepage of Pratik Bajoria, a Chartered Accountant and ex-Big 4 AI implementation consultant in India: services (AI Opportunity Audit, workflow automation, finance and compliance AI, workshops), process, FAQ and contact details.",
+      "section": "core",
+      "lastModified": "2026-10-22",
+      "tokens": 4195
+    },
+    {
+      "path": "/audit",
+      "url": "https://pratikbajoria.com/audit",
+      "markdown": "https://pratikbajoria.com/audit.md",
+      "title": "AI Opportunity Audit for finance teams and CA firms in India.",
+      "summary": "Service page for the AI Opportunity Audit by Pratik Bajoria: a fixed-fee two-week sprint that maps finance and CA-firm workflows, scores AI use cases and produces a prioritised 90-day roadmap.",
+      "section": "core",
+      "lastModified": "2026-10-26",
+      "tokens": 4734
+    },
+    {
+      "path": "/scorecard",
+      "url": "https://pratikbajoria.com/scorecard",
+      "markdown": "https://pratikbajoria.com/scorecard.md",
+      "title": "AI Opportunity Scorecard.",
+      "summary": "Free AI Opportunity Scorecard for CFOs and operators — score process, data, ROI, risk and ownership before you spend on AI.",
+      "section": "core",
+      "lastModified": "2026-10-07",
+      "tokens": 1002
+    },
+    {
+      "path": "/workshops",
+      "url": "https://pratikbajoria.com/workshops",
+      "markdown": "https://pratikbajoria.com/workshops.md",
+      "title": "Finance team AI enablement.",
+      "summary": "Finance team AI enablement: half-day executive workshop plus optional two-week cohort follow-on. Prompt libraries, SOPs and usage policy sketch.",
+      "section": "core",
+      "lastModified": "2026-09-18",
+      "tokens": 832
+    },
+    {
+      "path": "/resources",
+      "url": "https://pratikbajoria.com/resources",
+      "markdown": "https://pratikbajoria.com/resources.md",
+      "title": "Practical packs for finance teams.",
+      "summary": "Digital resources for finance and ops leaders: AI opportunity checklist, finance SOP starter pack and CA/finance prompt library.",
+      "section": "core",
+      "lastModified": "2026-09-18",
+      "tokens": 550
+    },
+    {
+      "path": "/topics",
+      "url": "https://pratikbajoria.com/topics",
+      "markdown": "https://pratikbajoria.com/topics.md",
+      "title": "Practical answers for the AI and finance questions business leaders ask.",
+      "summary": "A practical topic guide to AI for Chartered Accountants, finance professionals, entrepreneurs and business leaders from Pratik Bajoria.",
+      "section": "core",
+      "lastModified": "2026-10-08",
+      "tokens": 2275
+    },
+    {
+      "path": "/blog",
+      "url": "https://pratikbajoria.com/blog",
+      "markdown": "https://pratikbajoria.com/blog.md",
+      "title": "Insights",
+      "summary": "Index of every article on pratikbajoria.com about AI implementation, AI for Chartered Accountants, finance automation and business tools, newest first, each with a one-line summary.",
+      "section": "core",
+      "lastModified": "2026-10-26",
+      "tokens": 4130
+    },
+    {
+      "path": "/ai-automation-in-india",
+      "url": "https://pratikbajoria.com/ai-automation-in-india",
+      "markdown": "https://pratikbajoria.com/ai-automation-in-india.md",
+      "title": "AI Automation in India: A Practical Hub for Business Owners",
+      "summary": "AI automation in India for owners and operations heads: which workflows to automate first, DPDP and RBI considerations, human review and a 90-day plan.",
+      "section": "guides",
+      "lastModified": "2026-10-22",
+      "tokens": 3712
+    },
+    {
+      "path": "/ai-implementation-for-finance-teams",
+      "url": "https://pratikbajoria.com/ai-implementation-for-finance-teams",
+      "markdown": "https://pratikbajoria.com/ai-implementation-for-finance-teams.md",
+      "title": "AI implementation for finance teams.",
+      "summary": "Where CFOs and controllers should start with AI: month-end close, reconciliations, invoice intake and MIS, with controls, owners and a 90-day roadmap.",
+      "section": "guides",
+      "lastModified": "2026-10-22",
+      "tokens": 2365
+    },
+    {
+      "path": "/ai-opportunity-audit-for-ca-firms",
+      "url": "https://pratikbajoria.com/ai-opportunity-audit-for-ca-firms",
+      "markdown": "https://pratikbajoria.com/ai-opportunity-audit-for-ca-firms.md",
+      "title": "AI Opportunity Audit for CA firms.",
+      "summary": "What an AI Opportunity Audit means for CA firms: map delivery workflows, score use cases with auditability in mind, and leave with a prioritised 90-day roadmap.",
+      "section": "guides",
+      "lastModified": "2026-09-18",
+      "tokens": 1156
+    },
+    {
+      "path": "/how-to-start-ai-implementation",
+      "url": "https://pratikbajoria.com/how-to-start-ai-implementation",
+      "markdown": "https://pratikbajoria.com/how-to-start-ai-implementation.md",
+      "title": "How to start AI implementation.",
+      "summary": "How mid-market and finance teams should start AI implementation: map workflows, score use cases, then ship a prioritised 90-day roadmap — not another pilot.",
+      "section": "guides",
+      "lastModified": "2026-09-18",
+      "tokens": 1199
+    },
+    {
+      "path": "/workflow-automation-with-ai-for-mid-market",
+      "url": "https://pratikbajoria.com/workflow-automation-with-ai-for-mid-market",
+      "markdown": "https://pratikbajoria.com/workflow-automation-with-ai-for-mid-market.md",
+      "title": "Workflow automation with AI for mid-market.",
+      "summary": "Workflow automation with AI for mid-market COOs: map hand-offs, pick owned bottlenecks, decide build, buy or wait, and ship automations within 90 days.",
+      "section": "guides",
+      "lastModified": "2026-09-18",
+      "tokens": 1178
+    },
+    {
+      "path": "/privacy",
+      "url": "https://pratikbajoria.com/privacy",
+      "markdown": "https://pratikbajoria.com/privacy.md",
+      "title": "Privacy in plain English.",
+      "summary": "Privacy notice for pratikbajoria.com: what the discovery-call, cross-border and newsletter forms store, who can see it, and how to ask for deletion.",
+      "section": "legal",
+      "lastModified": "2026-09-18",
+      "tokens": 583
+    },
+    {
+      "path": "/blog/2026-09-14-how-much-should-a-mid-market-finance-team-budget-for-ai",
+      "url": "https://pratikbajoria.com/blog/2026-09-14-how-much-should-a-mid-market-finance-team-budget-for-ai",
+      "markdown": "https://pratikbajoria.com/blog/2026-09-14-how-much-should-a-mid-market-finance-team-budget-for-ai.md",
+      "title": "How Much Should a Mid-Market Finance Team Budget for AI?",
+      "summary": "Budget for AI as an operating programme with discovery, tooling, controls and adoption — not as a single software line item or a vanity pilot.",
+      "section": "posts",
+      "lastModified": "2026-10-07",
+      "tokens": 2315
+    },
+    {
+      "path": "/blog/2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point",
+      "url": "https://pratikbajoria.com/blog/2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point",
+      "markdown": "https://pratikbajoria.com/blog/2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point.md",
+      "title": "The Finance Function Is AI’s Highest-ROI Starting Point",
+      "summary": "Finance is a defensible first deployment because its work is structured, repetitive and measurable.",
+      "section": "posts",
+      "lastModified": "2026-10-07",
+      "tokens": 2167
+    },
+    {
+      "path": "/blog/2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer",
+      "url": "https://pratikbajoria.com/blog/2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer",
+      "markdown": "https://pratikbajoria.com/blog/2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer.md",
+      "title": "AI Governance for Indian Companies and CA Firms Without a Chief AI Officer",
+      "summary": "A chartered accountant’s one-page AI governance for Indian mid-market companies and CA firms: four rules, mapped to DPDP, MeitY’s AI Governance Guidelines, NFRA and the audit-trail rule.",
+      "section": "posts",
+      "lastModified": "2026-10-26",
+      "tokens": 2957
+    },
+    {
+      "path": "/blog/2026-09-20-ecommerce-reconciliation-where-automation-helps-and-where-it-lies",
+      "url": "https://pratikbajoria.com/blog/2026-09-20-ecommerce-reconciliation-where-automation-helps-and-where-it-lies",
+      "markdown": "https://pratikbajoria.com/blog/2026-09-20-ecommerce-reconciliation-where-automation-helps-and-where-it-lies.md",
+      "title": "Ecommerce Reconciliation: Where Automation Helps and Where It Lies",
+      "summary": "Automate mapping and matching; never automate away the settlement exception review.",
+      "section": "posts",
+      "lastModified": "2026-09-25",
+      "tokens": 1754
+    },
+    {
+      "path": "/blog/2026-09-21-how-do-you-know-finance-ai-will-pay-for-itself-before-you-buy",
+      "url": "https://pratikbajoria.com/blog/2026-09-21-how-do-you-know-finance-ai-will-pay-for-itself-before-you-buy",
+      "markdown": "https://pratikbajoria.com/blog/2026-09-21-how-do-you-know-finance-ai-will-pay-for-itself-before-you-buy.md",
+      "title": "How Do You Know Finance AI Will Pay for Itself Before You Buy?",
+      "summary": "Prove the payback before you buy: name the constraint, cost today’s process, design the human gate and buy only what moves a metric you manage.",
+      "section": "posts",
+      "lastModified": "2026-10-17",
+      "tokens": 2328
+    },
+    {
+      "path": "/blog/2026-09-24-when-a-finance-team-should-say-no-to-an-ai-pilot",
+      "url": "https://pratikbajoria.com/blog/2026-09-24-when-a-finance-team-should-say-no-to-an-ai-pilot",
+      "markdown": "https://pratikbajoria.com/blog/2026-09-24-when-a-finance-team-should-say-no-to-an-ai-pilot.md",
+      "title": "When a Finance Team Should Say No to an AI Pilot",
+      "summary": "When a finance team should say no to an AI pilot: refuse pilots with no owner, metric or baseline, write stop conditions, and fund a thin release instead.",
+      "section": "posts",
+      "lastModified": "2026-09-25",
+      "tokens": 1676
+    },
+    {
+      "path": "/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction",
+      "url": "https://pratikbajoria.com/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction",
+      "markdown": "https://pratikbajoria.com/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction.md",
+      "title": "Real Estate AI: Start With Leads and Documents, Not Prediction",
+      "summary": "Real estate AI that pays back: one pipeline for every enquiry, AI flags for missing unit documents, legal judgement kept with people.",
+      "section": "posts",
+      "lastModified": "2026-09-30",
+      "tokens": 1825
+    },
+    {
+      "path": "/blog/2026-09-27-hubspot-vs-spreadsheet-crm-the-real-switching-cost",
+      "url": "https://pratikbajoria.com/blog/2026-09-27-hubspot-vs-spreadsheet-crm-the-real-switching-cost",
+      "markdown": "https://pratikbajoria.com/blog/2026-09-27-hubspot-vs-spreadsheet-crm-the-real-switching-cost.md",
+      "title": "HubSpot vs Spreadsheet CRM: The Real Switching Cost",
+      "summary": "The cost is not the licence — it is defining stages your team will actually use.",
+      "section": "posts",
+      "lastModified": "2026-09-30",
+      "tokens": 1617
+    },
+    {
+      "path": "/blog/2026-09-28-how-indian-ca-firms-can-use-ai-for-gst-reconciliation-without-risking-client-data",
+      "url": "https://pratikbajoria.com/blog/2026-09-28-how-indian-ca-firms-can-use-ai-for-gst-reconciliation-without-risking-client-data",
+      "markdown": "https://pratikbajoria.com/blog/2026-09-28-how-indian-ca-firms-can-use-ai-for-gst-reconciliation-without-risking-client-data.md",
+      "title": "How Indian CA Firms Can Use AI for GST Reconciliation Without Risking Client Data",
+      "summary": "A CA’s playbook for AI on GSTR-2B reconciliation, IMS review and GST notices: what to automate, where the human gate sits, how to protect client data.",
+      "section": "posts",
+      "lastModified": "2026-10-17",
+      "tokens": 4637
+    },
+    {
+      "path": "/blog/2026-09-28-whatsapp-automation-that-still-feels-like-customer-care",
+      "url": "https://pratikbajoria.com/blog/2026-09-28-whatsapp-automation-that-still-feels-like-customer-care",
+      "markdown": "https://pratikbajoria.com/blog/2026-09-28-whatsapp-automation-that-still-feels-like-customer-care.md",
+      "title": "WhatsApp Automation That Still Feels Like Customer Care",
+      "summary": "Automate intake and logging first; keep judgement and exceptions with a named human.",
+      "section": "posts",
+      "lastModified": "2026-09-30",
+      "tokens": 1735
+    },
+    {
+      "path": "/blog/2026-09-29-the-monday-morning-test-for-any-ai-workflow",
+      "url": "https://pratikbajoria.com/blog/2026-09-29-the-monday-morning-test-for-any-ai-workflow",
+      "markdown": "https://pratikbajoria.com/blog/2026-09-29-the-monday-morning-test-for-any-ai-workflow.md",
+      "title": "The Monday Morning Test for Any AI Workflow",
+      "summary": "If the team cannot explain the workflow in five minutes on Monday, it is not ready for a model.",
+      "section": "posts",
+      "lastModified": "2026-09-30",
+      "tokens": 2086
+    },
+    {
+      "path": "/blog/2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human",
+      "url": "https://pratikbajoria.com/blog/2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human",
+      "markdown": "https://pratikbajoria.com/blog/2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human.md",
+      "title": "AI for Audit Working Papers in India: What a CA Should Automate and What Must Stay Human",
+      "summary": "Using AI on audit working papers without weakening SA 230 documentation: what to automate, what stays with the engagement team, and how to record AI use.",
+      "section": "posts",
+      "lastModified": "2026-10-22",
+      "tokens": 5059
+    },
+    {
+      "path": "/blog/2026-10-04-ai-finance-automation-roadmap-for-cfos-and-controllers",
+      "url": "https://pratikbajoria.com/blog/2026-10-04-ai-finance-automation-roadmap-for-cfos-and-controllers",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-04-ai-finance-automation-roadmap-for-cfos-and-controllers.md",
+      "title": "AI Finance Automation Roadmap: A 90-Day Plan for CFOs and Controllers",
+      "summary": "A practical 90-day AI finance automation roadmap for CFOs and controllers: choose one workflow, protect controls, measure payback and scale only after adoption.",
+      "section": "posts",
+      "lastModified": "2026-10-07",
+      "tokens": 3221
+    },
+    {
+      "path": "/blog/2026-10-05-chatgpt-vs-copilot-vs-gemini-how-a-ca-firm-in-india-should-choose-an-ai-assistant",
+      "url": "https://pratikbajoria.com/blog/2026-10-05-chatgpt-vs-copilot-vs-gemini-how-a-ca-firm-in-india-should-choose-an-ai-assistant",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-05-chatgpt-vs-copilot-vs-gemini-how-a-ca-firm-in-india-should-choose-an-ai-assistant.md",
+      "title": "ChatGPT, Copilot or Gemini? How a CA Firm in India Should Choose an AI Assistant",
+      "summary": "ChatGPT, Microsoft 365 Copilot or Gemini for a CA practice in India? Compare data terms, permissions and retention, with a decision rubric for partners.",
+      "section": "posts",
+      "lastModified": "2026-10-05",
+      "tokens": 3496
+    },
+    {
+      "path": "/blog/2026-10-07-ai-courses-for-chartered-accountants-in-india-what-is-worth-it",
+      "url": "https://pratikbajoria.com/blog/2026-10-07-ai-courses-for-chartered-accountants-in-india-what-is-worth-it",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-07-ai-courses-for-chartered-accountants-in-india-what-is-worth-it.md",
+      "title": "AI Courses for Chartered Accountants in India: What Is Actually Worth It",
+      "summary": "Which AI courses are worth it for CAs in 2026? ICAI’s AICA Levels 1–3 compared on cost and content, when to pay for a course and when to skip it.",
+      "section": "posts",
+      "lastModified": "2026-10-26",
+      "tokens": 2869
+    },
+    {
+      "path": "/blog/2026-10-07-how-audit-and-accounting-firms-in-india-are-using-ai",
+      "url": "https://pratikbajoria.com/blog/2026-10-07-how-audit-and-accounting-firms-in-india-are-using-ai",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-07-how-audit-and-accounting-firms-in-india-are-using-ai.md",
+      "title": "How Audit and Accounting Firms in India Are Using AI in 2026",
+      "summary": "How audit and accounting firms in India use AI in 2026: what Big 4 platforms, ICAI’s tools and mid-sized CA practices deploy, and what to copy.",
+      "section": "posts",
+      "lastModified": "2026-10-07",
+      "tokens": 3141
+    },
+    {
+      "path": "/blog/2026-10-07-how-to-run-a-90-day-ai-pilot-in-a-ca-firm-in-india",
+      "url": "https://pratikbajoria.com/blog/2026-10-07-how-to-run-a-90-day-ai-pilot-in-a-ca-firm-in-india",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-07-how-to-run-a-90-day-ai-pilot-in-a-ca-firm-in-india.md",
+      "title": "How to Run a 90-Day AI Pilot in a CA Firm in India: A 30/60/90 Playbook",
+      "summary": "A 30/60/90-day AI pilot playbook for CA firms in India: the first workflow, a baseline, client-data rules, review gates and a go/no-go decision.",
+      "section": "posts",
+      "lastModified": "2026-10-17",
+      "tokens": 4114
+    },
+    {
+      "path": "/blog/2026-10-07-is-ca-worth-it-in-2026-with-ai",
+      "url": "https://pratikbajoria.com/blog/2026-10-07-is-ca-worth-it-in-2026-with-ai",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-07-is-ca-worth-it-in-2026-with-ai.md",
+      "title": "Is CA Worth It in 2026 With AI? A Chartered Accountant’s Honest Answer",
+      "summary": "Is doing CA still worth it in 2026? A practising CA weighs pass rates, articleship and AI, with a clear checklist to decide if it suits you.",
+      "section": "posts",
+      "lastModified": "2026-10-26",
+      "tokens": 4442
+    },
+    {
+      "path": "/blog/2026-10-07-will-ai-replace-chartered-accountants-in-india",
+      "url": "https://pratikbajoria.com/blog/2026-10-07-will-ai-replace-chartered-accountants-in-india",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-07-will-ai-replace-chartered-accountants-in-india.md",
+      "title": "Will AI Replace Chartered Accountants in India? A CA’s Honest Answer",
+      "summary": "Will AI replace chartered accountants in India? A CA maps which tasks AI takes in 2026, which stay human, and what ICAI and WEF data show.",
+      "section": "posts",
+      "lastModified": "2026-10-26",
+      "tokens": 3219
+    },
+    {
+      "path": "/blog/2026-10-08-ai-for-internal-audit-in-indian-companies-a-practical-starting-point",
+      "url": "https://pratikbajoria.com/blog/2026-10-08-ai-for-internal-audit-in-indian-companies-a-practical-starting-point",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-08-ai-for-internal-audit-in-indian-companies-a-practical-starting-point.md",
+      "title": "AI for Internal Audit in Indian Companies: A Practical Starting Point",
+      "summary": "A CA's starting point for AI in internal audit in India: who s.138 covers, what ICAI's new SIA 240 on tools asks for, and one full-population test.",
+      "section": "posts",
+      "lastModified": "2026-10-22",
+      "tokens": 5454
+    },
+    {
+      "path": "/blog/2026-10-12-finance-ai-roi-for-mid-market-companies-in-india-a-cas-decision-rubric",
+      "url": "https://pratikbajoria.com/blog/2026-10-12-finance-ai-roi-for-mid-market-companies-in-india-a-cas-decision-rubric",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-12-finance-ai-roi-for-mid-market-companies-in-india-a-cas-decision-rubric.md",
+      "title": "Finance AI ROI for Mid-Market Companies in India: A CA's Decision Rubric",
+      "summary": "How to measure AI ROI for finance teams in India: a CA’s decision rubric for mid-market CFOs covering baseline, cost, payback, controls and a Monday checklist.",
+      "section": "posts",
+      "lastModified": "2026-10-12",
+      "tokens": 3471
+    },
+    {
+      "path": "/blog/2026-10-19-dpdp-act-and-ai-in-ca-firms-in-india-a-client-data-decision-rubric",
+      "url": "https://pratikbajoria.com/blog/2026-10-19-dpdp-act-and-ai-in-ca-firms-in-india-a-client-data-decision-rubric",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-19-dpdp-act-and-ai-in-ca-firms-in-india-a-client-data-decision-rubric.md",
+      "title": "DPDP Act and AI in CA Firms in India: A Client-Data Decision Rubric",
+      "summary": "How CA firms in India should use AI under the DPDP Act and Rules, 2025: decide your role, vendor terms, safeguards and logs, with a rubric and Monday checklist.",
+      "section": "posts",
+      "lastModified": "2026-10-19",
+      "tokens": 3503
+    },
+    {
+      "path": "/blog/2026-10-26-ai-for-financial-due-diligence-in-india-a-cas-decision-rubric",
+      "url": "https://pratikbajoria.com/blog/2026-10-26-ai-for-financial-due-diligence-in-india-a-cas-decision-rubric",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-26-ai-for-financial-due-diligence-in-india-a-cas-decision-rubric.md",
+      "title": "AI for Financial Due Diligence in India: A CA’s Decision Rubric",
+      "summary": "Where AI helps in financial due diligence in India, from data-room triage to ledger analytics, and where a CA’s judgement, NDAs and SEBI UPSI rules stay in charge.",
+      "section": "posts",
+      "lastModified": "2026-10-26",
+      "tokens": 3845
+    },
+    {
+      "path": "/blog/ai-controls-checklist-ca-firms-india",
+      "url": "https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india",
+      "markdown": "https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india.md",
+      "title": "AI Controls Checklist for CA Firms in India: Practical Review Gates",
+      "summary": "An AI controls checklist for CA firms in India: client data, approved tools, human review, audit trails, testing, retention and incidents.",
+      "section": "posts",
+      "lastModified": "2026-10-07",
+      "tokens": 3567
+    },
+    {
+      "path": "/blog/ai-for-chartered-accountants-in-india",
+      "url": "https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india",
+      "markdown": "https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india.md",
+      "title": "AI for Chartered Accountants in India: A Practical Implementation Hub",
+      "summary": "AI for chartered accountants in India: a practical map for CA firms on which workflows to start with, client-data controls, human review and pilots.",
+      "section": "posts",
+      "lastModified": "2026-10-26",
+      "tokens": 7069
+    },
+    {
+      "path": "/blog/ai-for-chartered-accountants-practical-use-cases-and-controls",
+      "url": "https://pratikbajoria.com/blog/ai-for-chartered-accountants-practical-use-cases-and-controls",
+      "markdown": "https://pratikbajoria.com/blog/ai-for-chartered-accountants-practical-use-cases-and-controls.md",
+      "title": "AI for Chartered Accountants: Practical Use Cases and Control Gates",
+      "summary": "A practical CA-led guide to AI for Chartered Accountants: five high-value use cases, review gates, data rules and a 90-day rollout plan for Indian CA firms.",
+      "section": "posts",
+      "lastModified": "2026-10-07",
+      "tokens": 3447
+    },
+    {
+      "path": "/blog/ai-tools-financial-analysis-practical-use-cases",
+      "url": "https://pratikbajoria.com/blog/ai-tools-financial-analysis-practical-use-cases",
+      "markdown": "https://pratikbajoria.com/blog/ai-tools-financial-analysis-practical-use-cases.md",
+      "title": "AI Tools for Financial Analysis: Practical Use Cases and Limitations",
+      "summary": "Where AI can accelerate financial analysis — and where judgement, source validation and professional accountability must remain human.",
+      "section": "posts",
+      "lastModified": "2026-09-25",
+      "tokens": 2351
+    },
+    {
+      "path": "/blog/best-accounting-automation-software-ecommerce-businesses",
+      "url": "https://pratikbajoria.com/blog/best-accounting-automation-software-ecommerce-businesses",
+      "markdown": "https://pratikbajoria.com/blog/best-accounting-automation-software-ecommerce-businesses.md",
+      "title": "Ecommerce Accounting Automation for Indian D2C Brands: A CA’s Guide to Settlements and GST",
+      "summary": "A chartered accountant’s guide to ecommerce accounting automation for Indian D2C brands: marketplace settlements, GST TCS, returns and e-invoicing, and how to pilot software safely.",
+      "section": "posts",
+      "lastModified": "2026-10-26",
+      "tokens": 3890
+    },
+    {
+      "path": "/blog/best-ai-tools-business-research-competitive-analysis",
+      "url": "https://pratikbajoria.com/blog/best-ai-tools-business-research-competitive-analysis",
+      "markdown": "https://pratikbajoria.com/blog/best-ai-tools-business-research-competitive-analysis.md",
+      "title": "Best AI Tools for Business Research and Competitive Analysis",
+      "summary": "A source-first research workflow for market mapping, competitor monitoring and decision briefs without confusing generated text with evidence.",
+      "section": "posts",
+      "lastModified": "2026-09-25",
+      "tokens": 2233
+    },
+    {
+      "path": "/blog/best-ai-tools-chartered-accountants-finance-professionals",
+      "url": "https://pratikbajoria.com/blog/best-ai-tools-chartered-accountants-finance-professionals",
+      "markdown": "https://pratikbajoria.com/blog/best-ai-tools-chartered-accountants-finance-professionals.md",
+      "title": "Best AI Tools for Chartered Accountants and Finance Professionals",
+      "summary": "A CA-led selection framework: map five recurring jobs, score control gates 1–5, and only keep tools that reduce review time without weakening evidence.",
+      "section": "posts",
+      "lastModified": "2026-09-25",
+      "tokens": 3350
+    },
+    {
+      "path": "/blog/best-business-planning-software-ca-review",
+      "url": "https://pratikbajoria.com/blog/best-business-planning-software-ca-review",
+      "markdown": "https://pratikbajoria.com/blog/best-business-planning-software-ca-review.md",
+      "title": "Best Business Planning Software: A CA's Review",
+      "summary": "How to judge planning software by assumptions, cash visibility, scenario quality and decision usefulness — not by presentation polish.",
+      "section": "posts",
+      "lastModified": "2026-09-25",
+      "tokens": 2263
+    },
+    {
+      "path": "/blog/build-lead-generation-system-ai-email-automation",
+      "url": "https://pratikbajoria.com/blog/build-lead-generation-system-ai-email-automation",
+      "markdown": "https://pratikbajoria.com/blog/build-lead-generation-system-ai-email-automation.md",
+      "title": "How to Build a Lead-Generation System Using AI and Email Automation",
+      "summary": "A permission-based acquisition system connecting useful content, qualification, CRM ownership and measurable follow-up.",
+      "section": "posts",
+      "lastModified": "2026-09-25",
+      "tokens": 2251
+    },
+    {
+      "path": "/blog/build-vs-buy-ai-tooling",
+      "url": "https://pratikbajoria.com/blog/build-vs-buy-ai-tooling",
+      "markdown": "https://pratikbajoria.com/blog/build-vs-buy-ai-tooling.md",
+      "title": "Build vs Buy AI for Finance Teams in India: A CA’s Decision Framework",
+      "summary": "Should an Indian finance team or CA firm build or buy AI tools? A chartered accountant’s framework covering data sensitivity, DPDP, audit trail, cost and switching risk.",
+      "section": "posts",
+      "lastModified": "2026-10-26",
+      "tokens": 3982
+    },
+    {
+      "path": "/blog/chartered-accountant-ai-toolkit-entrepreneurs",
+      "url": "https://pratikbajoria.com/blog/chartered-accountant-ai-toolkit-entrepreneurs",
+      "markdown": "https://pratikbajoria.com/blog/chartered-accountant-ai-toolkit-entrepreneurs.md",
+      "title": "A Chartered Accountant's AI Toolkit for Entrepreneurs",
+      "summary": "A practical stack for planning, building, marketing, operating and analysing a business — chosen around controls, adoption and measurable return.",
+      "section": "posts",
+      "lastModified": "2026-09-25",
+      "tokens": 2480
+    },
+    {
+      "path": "/blog/corporate-ai-pilots",
+      "url": "https://pratikbajoria.com/blog/corporate-ai-pilots",
+      "markdown": "https://pratikbajoria.com/blog/corporate-ai-pilots.md",
+      "title": "Why Most Corporate AI Pilots Never Reach Production",
+      "summary": "The failure is almost never technical. It is scoping, ownership and change management — and there is a repeatable pattern to avoiding all three.",
+      "section": "posts",
+      "lastModified": "2026-09-25",
+      "tokens": 2194
+    },
+    {
+      "path": "/blog/how-to-build-a-monthly-business-dashboard",
+      "url": "https://pratikbajoria.com/blog/how-to-build-a-monthly-business-dashboard",
+      "markdown": "https://pratikbajoria.com/blog/how-to-build-a-monthly-business-dashboard.md",
+      "title": "How to Build a Monthly Business Dashboard for Better Decisions",
+      "summary": "Build a monthly dashboard that answers what happened, why, and what you will do next — with a six-axis quality rubric and a Monday operating checklist.",
+      "section": "posts",
+      "lastModified": "2026-09-25",
+      "tokens": 2192
+    },
+    {
+      "path": "/blog/notion-for-finance-professionals-templates-dashboards-workflows",
+      "url": "https://pratikbajoria.com/blog/notion-for-finance-professionals-templates-dashboards-workflows",
+      "markdown": "https://pratikbajoria.com/blog/notion-for-finance-professionals-templates-dashboards-workflows.md",
+      "title": "Notion for Finance Professionals: Templates, Dashboards, and Workflows",
+      "summary": "Set up Notion for finance in 2026: close checklists, SOPs, decision logs and research, plus a six-axis rubric to score whether it suits your team.",
+      "section": "posts",
+      "lastModified": "2026-10-26",
+      "tokens": 2818
+    },
+    {
+      "path": "/blog/semrush-review-business-owners",
+      "url": "https://pratikbajoria.com/blog/semrush-review-business-owners",
+      "markdown": "https://pratikbajoria.com/blog/semrush-review-business-owners.md",
+      "title": "Semrush Review for Business Owners: Is It Worth the Investment?",
+      "summary": "A CA- and ops-led Semrush review: score fit on six axes, run a four-week pilot, and only renew when search work moves pipeline — not vanity rankings.",
+      "section": "posts",
+      "lastModified": "2026-09-25",
+      "tokens": 2719
+    },
+    {
+      "path": "/blog/small-business-ai-without-losing-financial-control",
+      "url": "https://pratikbajoria.com/blog/small-business-ai-without-losing-financial-control",
+      "markdown": "https://pratikbajoria.com/blog/small-business-ai-without-losing-financial-control.md",
+      "title": "How Small Businesses Can Use AI Without Losing Financial Control",
+      "summary": "The operating controls, approval rules and metrics that let an SME adopt AI while keeping its books, data and decisions defensible.",
+      "section": "posts",
+      "lastModified": "2026-09-25",
+      "tokens": 2273
+    },
+    {
+      "path": "/blog/zoho-crm-hubspot-crm-integration-finance-workflows",
+      "url": "https://pratikbajoria.com/blog/zoho-crm-hubspot-crm-integration-finance-workflows",
+      "markdown": "https://pratikbajoria.com/blog/zoho-crm-hubspot-crm-integration-finance-workflows.md",
+      "title": "Zoho CRM, HubSpot and Your Books: A CRM-to-Accounting Handoff for Indian SMEs",
+      "summary": "A CA’s guide for Indian SMEs: choose between Zoho CRM and HubSpot, connect either to Zoho Books or TallyPrime, and keep GSTIN, e-invoice and audit-trail data clean.",
+      "section": "posts",
+      "lastModified": "2026-10-26",
+      "tokens": 6543
+    },
+    {
+      "path": "/blog/2026-10-26-ai-for-msmes-in-india-three-first-automations-that-pay-back",
+      "url": "https://pratikbajoria.com/blog/2026-10-26-ai-for-msmes-in-india-three-first-automations-that-pay-back",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-26-ai-for-msmes-in-india-three-first-automations-that-pay-back.md",
+      "title": "AI for MSMEs in India: Three First Automations That Pay Back",
+      "summary": "Where an Indian MSME should start with AI: three first automations in collections, bills and customer replies, with sourced context and the controls to keep.",
+      "section": "posts",
+      "lastModified": "2026-10-26",
+      "tokens": 1766
+    },
+    {
+      "path": "/blog/2026-10-23-ai-tools-for-statutory-audit-in-india-what-nfra-s-2026-principles-mean",
+      "url": "https://pratikbajoria.com/blog/2026-10-23-ai-tools-for-statutory-audit-in-india-what-nfra-s-2026-principles-mean",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-23-ai-tools-for-statutory-audit-in-india-what-nfra-s-2026-principles-mean.md",
+      "title": "AI Tools for Statutory Audit in India: What NFRA’s 2026 Principles Mean",
+      "summary": "NFRA’s July 2026 principles on technology in audit, read by a practising CA: tool validation, scepticism, documentation and data duties for statutory auditors.",
+      "section": "posts",
+      "lastModified": "2026-10-23",
+      "tokens": 1856
+    },
+    {
+      "path": "/blog/2026-10-22-ai-for-tally-prime-automating-data-entry-without-losing-control-of-the-books",
+      "url": "https://pratikbajoria.com/blog/2026-10-22-ai-for-tally-prime-automating-data-entry-without-losing-control-of-the-books",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-22-ai-for-tally-prime-automating-data-entry-without-losing-control-of-the-books.md",
+      "title": "AI for Tally Prime: Automating Data Entry Without Losing Control of the Books",
+      "summary": "AI can now read bills and draft Tally Prime vouchers. Where it saves time, where errors creep in, and the review and GST checks a business should keep in place.",
+      "section": "posts",
+      "lastModified": "2026-10-22",
+      "tokens": 1731
+    },
+    {
+      "path": "/blog/2026-10-21-ai-for-itr-filing-what-a-ca-should-let-it-do-and-what-stays-human",
+      "url": "https://pratikbajoria.com/blog/2026-10-21-ai-for-itr-filing-what-a-ca-should-let-it-do-and-what-stays-human",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-21-ai-for-itr-filing-what-a-ca-should-let-it-do-and-what-stays-human.md",
+      "title": "AI for ITR Filing: What a CA Should Let It Do and What Stays Human",
+      "summary": "How a CA practice can use AI in ITR season: AIS tie-outs, document extraction and regime comparisons, with the review steps and data rules that stay human.",
+      "section": "posts",
+      "lastModified": "2026-10-21",
+      "tokens": 1851
+    },
+    {
+      "path": "/blog/2026-10-20-ai-for-cma-data-and-bank-loan-project-reports-a-ca-s-review-checklist",
+      "url": "https://pratikbajoria.com/blog/2026-10-20-ai-for-cma-data-and-bank-loan-project-reports-a-ca-s-review-checklist",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-20-ai-for-cma-data-and-bank-loan-project-reports-a-ca-s-review-checklist.md",
+      "title": "AI for CMA Data and Bank Loan Project Reports: A CA’s Review Checklist",
+      "summary": "AI tools now promise CMA data in minutes. What a CA should still check before a projection goes to the bank: turnover method, ratios, assumptions and evidence.",
+      "section": "posts",
+      "lastModified": "2026-10-20",
+      "tokens": 1943
+    },
+    {
+      "path": "/blog/2026-10-19-how-to-use-claude-or-chatgpt-for-gstr-2b-reconciliation-a-ca-s-method",
+      "url": "https://pratikbajoria.com/blog/2026-10-19-how-to-use-claude-or-chatgpt-for-gstr-2b-reconciliation-a-ca-s-method",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-19-how-to-use-claude-or-chatgpt-for-gstr-2b-reconciliation-a-ca-s-method.md",
+      "title": "How to Use Claude or ChatGPT for GSTR-2B Reconciliation: A CA’s Method",
+      "summary": "A CA’s step-by-step method for GSTR-2B reconciliation with Claude or ChatGPT: what to upload, the prompt structure, IMS actions and the checks before 3B.",
+      "section": "posts",
+      "lastModified": "2026-10-19",
+      "tokens": 1958
+    },
+    {
+      "path": "/blog/2026-10-16-ai-for-caro-2020-reporting-where-it-helps-and-where-judgement-stays",
+      "url": "https://pratikbajoria.com/blog/2026-10-16-ai-for-caro-2020-reporting-where-it-helps-and-where-judgement-stays",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-16-ai-for-caro-2020-reporting-where-it-helps-and-where-judgement-stays.md",
+      "title": "AI for CARO 2020 Reporting: Where It Helps and Where Judgement Stays",
+      "summary": "CARO 2020 asks auditors for a statement on 21 clauses. A clause-by-clause guide to where AI can assemble the evidence, what the auditor must still decide, and how to document the tool.",
+      "section": "posts",
+      "lastModified": "2026-10-22",
+      "tokens": 3793
+    },
+    {
+      "path": "/blog/2026-10-15-ai-and-articleship-how-ca-firms-should-train-article-assistants-now",
+      "url": "https://pratikbajoria.com/blog/2026-10-15-ai-and-articleship-how-ca-firms-should-train-article-assistants-now",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-15-ai-and-articleship-how-ca-firms-should-train-article-assistants-now.md",
+      "title": "AI and Articleship: How CA Firms Should Train Article Assistants Now",
+      "summary": "Articleship is now two years, and AI drafts much of what articles used to learn on. A practical training plan for CA firms: review before preparation, manual fundamentals first, and clear tool rules.",
+      "section": "posts",
+      "lastModified": "2026-10-22",
+      "tokens": 3118
+    },
+    {
+      "path": "/blog/2026-10-14-how-ca-firms-in-india-should-price-work-when-ai-cuts-the-hours",
+      "url": "https://pratikbajoria.com/blog/2026-10-14-how-ca-firms-in-india-should-price-work-when-ai-cuts-the-hours",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-14-how-ca-firms-in-india-should-price-work-when-ai-cuts-the-hours.md",
+      "title": "How CA Firms in India Should Price Work When AI Cuts the Hours",
+      "summary": "If AI halves preparation time, hourly billing hands the gain to the client. How Indian CA firms can price scope and risk instead, within ICAI’s rules on fees.",
+      "section": "posts",
+      "lastModified": "2026-10-22",
+      "tokens": 2216
+    },
+    {
+      "path": "/blog/2026-10-13-using-ai-for-tds-reconciliation-in-indian-ca-firms-from-26as-to-form-168",
+      "url": "https://pratikbajoria.com/blog/2026-10-13-using-ai-for-tds-reconciliation-in-indian-ca-firms-from-26as-to-form-168",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-13-using-ai-for-tds-reconciliation-in-indian-ca-firms-from-26as-to-form-168.md",
+      "title": "Using AI for TDS Reconciliation in Indian CA Firms: From 26AS to Form 168",
+      "summary": "Form 26AS is now Form 168 under the new Act. How to automate TDS matching and the mismatch list, while a reviewer decides what to chase with the deductor.",
+      "section": "posts",
+      "lastModified": "2026-10-22",
+      "tokens": 2070
+    },
+    {
+      "path": "/blog/2026-10-12-drafting-replies-to-gst-and-income-tax-notices-with-ai-without-losing-control",
+      "url": "https://pratikbajoria.com/blog/2026-10-12-drafting-replies-to-gst-and-income-tax-notices-with-ai-without-losing-control",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-12-drafting-replies-to-gst-and-income-tax-notices-with-ai-without-losing-control.md",
+      "title": "Drafting Replies to GST and Income Tax Notices With AI Without Losing Control",
+      "summary": "A GST or income-tax notice reply is a legal position with a deadline. Here is the clock for ASMT-10, section 74A and appeals, the e-proceedings rules, and where AI helps.",
+      "section": "posts",
+      "lastModified": "2026-10-22",
+      "tokens": 3595
+    },
+    {
+      "path": "/blog/2026-10-09-ai-for-tax-audit-in-india-form-3cd-this-year-form-26-next-year",
+      "url": "https://pratikbajoria.com/blog/2026-10-09-ai-for-tax-audit-in-india-form-3cd-this-year-form-26-next-year",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-09-ai-for-tax-audit-in-india-form-3cd-this-year-form-26-next-year.md",
+      "title": "AI for Tax Audit in India: Form 3CD This Year, Form 26 Next Year",
+      "summary": "Form 26 replaces Form 3CD from tax year 2026-27. Where AI helps a CA prepare tax audit data, and where the reported position must stay with the signer.",
+      "section": "posts",
+      "lastModified": "2026-10-22",
+      "tokens": 2732
+    }
+  ]
+}

@@ -38,6 +38,17 @@
   Content-Type: text/plain; charset=utf-8
   Cache-Control: public, max-age=3600
 
+/ai.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+# Build output of scripts/build-md.mjs. The worker serves these at /<path>.md and /api/md/*
+# with its own headers; direct /md/* hits are 301'd, this only covers the raw asset.
+/md/*
+  Content-Type: text/markdown; charset=utf-8
+  X-Robots-Tag: noindex, follow
+  Cache-Control: public, max-age=300
+
 /blog/*
   Cache-Control: public, max-age=300, must-revalidate
 

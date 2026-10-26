@@ -18,6 +18,8 @@ urls=()
 if [ "$#" -gt 0 ]; then urls+=("$@"); else
   urls+=("$SITE/" "$SITE/blog" "$SITE/blog/" "$SITE/sitemap.xml" "$SITE/llms.txt" "$SITE/llms-full.txt" "$SITE/blog-posts.json" "$SITE/robots.txt")
   urls+=("$XB/" "$XB/sitemap.xml" "$XB/robots.txt")
+  # AI-readable layer (scripts/build-md.mjs): index files, catalog and the markdown twins below.
+  urls+=("$SITE/ai.txt" "$SITE/.well-known/llms.txt" "$SITE/api/md/_catalog" "$SITE/index.md" "$SITE/blog.md")
   [ -f public/rss.xml ] && urls+=("$SITE/rss.xml")
   [ -f public/feed.xml ] && urls+=("$SITE/feed.xml")
   if [ -n "$BASE" ] && ! [[ "$BASE" =~ ^0+$ ]] && git cat-file -e "$BASE" 2>/dev/null; then
@@ -32,6 +34,13 @@ if [ "$#" -gt 0 ]; then urls+=("$@"); else
     # Cross-border pages are served on the subdomain from public/crossborder/.
     case "$p" in crossborder/*) q="${p#crossborder/}"; [ "$q" = "index" ] && q=""; urls+=("$XB/$q");; esac
   done
+  # Changed markdown twins: public/md/x.md is served at /x.md.
+  if [ -n "$BASE" ] && ! [[ "$BASE" =~ ^0+$ ]] && git cat-file -e "$BASE" 2>/dev/null; then
+    mdfiles=$(git diff --name-only "$BASE" "$HEAD" -- public/md | grep -E '\.md$' || true)
+  else
+    mdfiles=$(git show --name-only --format= "$HEAD" -- public/md | grep -E '\.md$' || true)
+  fi
+  for f in $mdfiles; do urls+=("$SITE/${f#public/md/}"); done
   # Posts that exist only in blog-posts.json are rendered by the worker from blog.html; when the
   # shell, the worker or the post data changes, every one of them must be purged too.
   if [ -n "$BASE" ] && ! [[ "$BASE" =~ ^0+$ ]] && git cat-file -e "$BASE" 2>/dev/null; then
