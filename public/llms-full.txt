@@ -2,7 +2,7 @@
 
 > Plain-text copies of the main service pages and the most-used CA + AI articles on https://pratikbajoria.com, written by Pratik Bajoria (Chartered Accountant, ex-Big 4, AI implementation consultant). Cite the canonical URL given for each section. Index of everything: https://pratikbajoria.com/llms.txt
 
-Generated: 2026-10-22. Educational content; not legal, tax, audit, financial or investment advice.
+Generated: 2026-10-26. Educational content; not legal, tax, audit, financial or investment advice.
 
 ---
 
@@ -465,11 +465,11 @@ Educational content; not financial, investment, or legal advice.
 
 ---
 
-## AI Opportunity Audit: A 2-Week AI Roadmap
+## AI Opportunity Audit for Finance Teams & CA Firms in India
 
 URL: https://pratikbajoria.com/audit
 Last updated: 2026-10-22
-Summary: AI Opportunity Audit: a fixed-fee two-week sprint to map workflows, score AI use cases and leave with a prioritised 90-day roadmap before you fund a build.
+Summary: AI opportunity audit by a chartered accountant: a fixed-fee two-week sprint that maps finance and CA-firm workflows, scores AI use cases and leaves a 90-day roadmap.
 
 #### For
 
@@ -546,11 +546,11 @@ Walk compliance calendars, engagement packs, reconciliation routines and client 
 
 ---
 
-## Will AI Replace Chartered Accountants in India? A CA’s Honest Answer
+## Will AI Replace CAs in India? 2026 Task-by-Task View
 
 URL: https://pratikbajoria.com/blog/2026-10-07-will-ai-replace-chartered-accountants-in-india
 Last updated: 2026-10-22
-Summary: Will AI replace chartered accountants in India? A CA on which tasks AI is taking, which stay human, and what ICAI, WEF and Microsoft data actually show.
+Summary: Will AI replace chartered accountants in India? A CA maps which tasks AI takes in 2026, which stay human, and what ICAI and WEF data show.
 
 CA insights · 2026-10-07 · 8 min read
 
@@ -1689,11 +1689,11 @@ Educational content; not financial, investment, or legal advice.
 
 ---
 
-## AI Courses for Chartered Accountants in India: What Is Worth It
+## AI Courses for CAs in India (2026): Which Are Worth It
 
 URL: https://pratikbajoria.com/blog/2026-10-07-ai-courses-for-chartered-accountants-in-india-what-is-worth-it
 Last updated: 2026-10-22
-Summary: AI courses for chartered accountants in India in 2026: what ICAI’s AICA Levels 1–3 cost and cover, when a paid course helps, and how to learn on real work.
+Summary: Which AI courses are worth it for CAs in 2026? ICAI’s AICA Levels 1–3 compared on cost and content, when to pay for a course and when to skip it.
 
 CA insights · 2026-10-07 · 7 min read
 
@@ -1764,7 +1764,7 @@ For most CAs, ICAI’s AI for Chartered Accountants (AICA) Level 1 is the sensib
 
 #### Is an AI certification useful for a CA?
 
-A certificate shows intent, but clients and employers care about what you can do. The value comes from applying AI to a real workflow, with written data rules and review, and being able to show the time saved and errors caught.
+A certificate shows intent, but clients and employers care about what you can do. The value comes from applying AI to a real workflow, with written data rules and review, and being able to show the time saved and errors caught. For a worked example of where review and documentation matter, see AI for audit working papers in India .
 
 #### How can chartered accountants learn AI for free?
 
@@ -1798,11 +1798,11 @@ Educational content; not financial, investment, or legal advice.
 
 ---
 
-## Is CA Worth It in 2026 With AI? A Chartered Accountant’s Honest Answer
+## Is CA Worth It in 2026? A Practising CA’s Verdict
 
 URL: https://pratikbajoria.com/blog/2026-10-07-is-ca-worth-it-in-2026-with-ai
 Last updated: 2026-10-17
-Summary: Is CA still worth it in 2026 with AI? A practising CA on pass rates, articleship, what AI changes, a decision checklist and the skills that pay off.
+Summary: Is doing CA still worth it in 2026? A practising CA weighs pass rates, articleship and AI, with a clear checklist to decide if it suits you.
 
 CA insights · 2026-10-07 · Updated 17 Oct 2026 · 11 min read
 
@@ -1849,7 +1849,7 @@ The World Economic Forum’s Future of Jobs Report 2025 expects accounting, book
 
 For a CA, that means:
 
-- Articleship will feel different. Less vouching and typing, more checking machine output and dealing with exceptions. Firms will want article assistants who can review, not just prepare.
+- Articleship will feel different. Less vouching and typing, more checking machine output and dealing with exceptions. Firms will want article assistants who can review, not just prepare. I set out what that looks like on an actual file in AI for audit working papers in India .
 - Entry-level value moves up. A newly qualified CA who can only do what a tool does will struggle on salary. One who can explain a variance to a CFO or defend a position in front of a department will not.
 - The signature becomes more valuable, not less. Somebody has to be accountable for AI-assisted numbers. Regulators and clients want that to be a qualified person.
 

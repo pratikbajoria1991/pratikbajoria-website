@@ -258,10 +258,13 @@ async function serveCrossborder(request, env, url, mode) {
 // Consolidated near-duplicate posts (7 Oct 2026): every loser 301s straight to its survivor (single hop).
 // Lookup is applied after normalising .html and trailing slashes, and to /blog?slug= / /blog.html?slug=.
 const blogPathAliases = {
-  '/blog/2026-08-31-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre',
-  '/blog/2026-09-07-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre',
-  '/blog/2026-09-14-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre',
-  '/blog/2026-10-02-a-90-day-ai-opportunity-audit-without-the-theatre': '/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre',
+  // 26 Oct 2026 consolidation: 90-day audit post folded into /audit; HubSpot vs Zoho folded into the CRM-to-accounting guide.
+  '/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre': '/audit',
+  '/blog/hubspot-vs-zoho-crm-growing-business': '/blog/zoho-crm-hubspot-crm-integration-finance-workflows',
+  '/blog/2026-08-31-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/audit',
+  '/blog/2026-09-07-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/audit',
+  '/blog/2026-09-14-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/audit',
+  '/blog/2026-10-02-a-90-day-ai-opportunity-audit-without-the-theatre': '/audit',
   '/blog/2026-09-01-ai-in-real-estate-start-with-lead-qualification-and-documents': '/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction',
   '/blog/2026-09-08-ai-in-real-estate-start-with-lead-qualification-and-documents': '/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction',
   '/blog/2026-09-15-ai-in-real-estate-start-with-lead-qualification-and-documents': '/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction',

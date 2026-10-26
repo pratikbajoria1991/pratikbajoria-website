@@ -17,7 +17,7 @@ SITE = 'https://pratikbajoria.com'
 XB = 'https://crossborder.pratikbajoria.com'
 
 worker = (PUB / '_worker.js').read_text(encoding='utf-8')
-aliased = set(re.findall(r"'/blog/([a-z0-9-]+)':\s*'/blog/", worker))
+aliased = set(re.findall(r"'/blog/([a-z0-9-]+)':\s*'/", worker))
 
 def meta(soup, name):
     t = soup.find('meta', attrs={'name': name}) or soup.find('meta', attrs={'property': name})

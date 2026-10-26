@@ -131,16 +131,16 @@
   },
   {
     "id": "2026-08-28-accounting-automation-ecommerce-businesses",
-    "title": "Best Accounting Automation Software for Ecommerce Businesses",
+    "title": "Ecommerce Accounting Automation for Indian D2C Brands: A CA’s Guide to Settlements and GST",
     "slug": "best-accounting-automation-software-ecommerce-businesses",
     "url": "/blog/best-accounting-automation-software-ecommerce-businesses",
     "date": "2026-08-28",
-    "dateModified": "2026-10-04",
+    "dateModified": "2026-10-26",
     "author": "Pratik Bajoria",
     "category": "Business systems",
     "readTime": 10,
     "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=85",
-    "excerpt": "A CA-led ecommerce accounting framework: map settlements, score automation fit, pilot in parallel, and keep GST and close evidence defensible.",
+    "excerpt": "How Indian D2C and marketplace sellers should compare accounting automation: settlements, GST TCS, returns, e-invoicing and a controlled pilot.",
     "keywords": [
       "accounting automation ecommerce",
       "ecommerce accounting automation",
@@ -157,40 +157,6 @@
       {
         "title": "Synder accounting automation",
         "url": "https://synder.com/"
-      }
-    ],
-    "affiliate": {
-      "disclosure": "Tool links go to the vendor’s official site. No affiliate tracking is active on this page yet. Recommendations are based on fit for finance, ops and AI implementation work — not on commission."
-    }
-  },
-  {
-    "id": "2026-08-27-hubspot-vs-zoho-crm-growing-business",
-    "title": "HubSpot vs Zoho CRM: Which Is Better for a Growing Business?",
-    "slug": "hubspot-vs-zoho-crm-growing-business",
-    "url": "/blog/hubspot-vs-zoho-crm-growing-business",
-    "date": "2026-08-27",
-    "author": "Pratik Bajoria",
-    "category": "Tool comparison",
-    "readTime": 9,
-    "image": "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1200&q=85",
-    "excerpt": "A finance-led CRM decision framework: score adoption, suite breadth, reporting and total cost — then pilot five real workflows before you commit.",
-    "keywords": [
-      "HubSpot vs Zoho CRM",
-      "CRM for small business",
-      "CRM comparison India"
-    ],
-    "affiliateTools": [
-      "hubspot"
-    ],
-    "content": "HubSpot and Zoho can both be sensible CRM choices. The better option depends on the operating system your business is ready to run. A CRM is not a contact list. It is a shared definition of pipeline stages, ownership, next actions, customer history and management reporting.\n\nChoose tools after you can describe those definitions on one page. Otherwise you will buy software that mirrors today’s chaos with nicer charts.\n\nFit criteria, not a beauty contest\n\nLean toward HubSpot when ease of adoption, polished marketing-to-sales workflows and a broad growth platform are priorities. Lean toward Zoho when you want a wider suite, deeper configuration or a cost-sensitive path across multiple back-office functions. These are fit criteria. They are not a substitute for testing current plans on the vendors’ official product pages.\n\nComparison rubric (score what matters to you)\n\n[Decision rubric table — see full article on site]\n\nFive workflows to pilot before you buy\n\nTest lead capture, qualification, follow-up, handover and lost-deal analysis with real data and one named owner. Model 24-month total cost: licences, migration, integrations, admin time, training and the cost of poor adoption. A cheap seat that nobody updates is expensive.\n\nFor a finance-led review, examine revenue attribution, approval controls, data export, user permissions and management reports. Run a controlled pilot with one segment before expanding. Confirm packaging on the HubSpot CRM product page and Zoho CRM directly — plans change.\n\nMonday-morning checklist\n\n- Write pipeline stages and exit criteria on one page before demos.\n\n- Pick five real deals or leads and walk them through both trial environments.\n\n- List integrations you actually need in year one — ignore the rest.\n\n- Estimate admin hours per week; if nobody owns them, pause the purchase.\n\n- Define one management report finance will trust monthly.\n\nDisclaimer\n\nThis is an educational comparison, not a guarantee of results. Prices, packaging, integrations and partner arrangements change; confirm them on vendor sites before purchase. Not financial, investment or legal advice.\n\nProcess maturity beats brand preference\n\nGrowing businesses often choose a CRM because a peer recommended a logo. Peers rarely share your stage definitions, discounting habits, handoff failures or reporting needs. Before demos, write: how a lead is born, how it becomes qualified, who owns each stage, what “won” and “lost” mean, and which fields finance needs for revenue recognition conversations.\n\nIf those answers are fuzzy, both HubSpot and Zoho will disappoint. Software cannot invent operating discipline. It can only make discipline visible — or make chaos searchable.\n\nTotal cost beyond the price list\n\nModel 24 months, not the promotional month. Include licences, implementation, data cleaning, integration maintenance, admin time, training refreshers and the cost of partial adoption (reps still living in spreadsheets). A lower list price with higher admin load can lose to a simpler stack the team actually uses.\n\nAsk vendors and implementers uncomfortable questions: what breaks at our volume, how do we export if we leave, which reports require paid tiers, and what is the realistic admin hours per week after go-live? Write the answers in the decision file next to your rubric scores.\n\nFinance and control questions that belong in the RFP\n\nWho can edit closed-won amounts? Can we restrict destructive deletes? How do we audit field changes on material deals? Can we export full history? How do marketing attribution reports reconcile to bookings? If AI features summarise notes or auto-enrich contacts, what data leaves your tenancy and who reviews errors?\n\nThese questions are not bureaucracy. They are how you avoid a CRM that sales loves and finance cannot defend. Bring a finance reviewer into the pilot readout, not only the kickoff.\n\nMigration and change management\n\nClean data before import. Map stages deliberately; do not carry forward five years of junk statuses. Train on the five workflows you piloted, not on every feature tour slide. Appoint a CRM champion with time on the calendar. Review adoption weekly for the first month: login is not adoption; updated next steps on active deals is.\n\nIf you are mid-migration from spreadsheets or a lighter tool, run dual tracking briefly for a critical segment, then cut over with a clear freeze date. Ambiguous cutovers create two truths and endless arguments in leadership meetings.\n\nA decision meeting agenda that prevents logo wars\n\nSchedule a 45-minute decision meeting with sales, marketing, finance and whoever will admin the CRM. Circulate the rubric scores and the five pilot workflow notes in advance. In the room: confirm the operating definitions, compare 24-month cost sketches, review control answers, and pick a primary platform with explicit stop conditions for the pilot. Document the decision the same day. Reopening the debate every week is how implementations stall.\n\nIf scores are tied, prefer the option your team will actually update daily. Adoption beats theoretical feature breadth. You can revisit suite expansion after the core pipeline discipline is real.\n\nSources\n\n- HubSpot CRM official product page\n\n- Zoho CRM",
-    "sources": [
-      {
-        "title": "HubSpot CRM official product page",
-        "url": "https://www.hubspot.com/products/crm"
-      },
-      {
-        "title": "Zoho CRM",
-        "url": "https://www.zoho.com/crm/"
       }
     ],
     "affiliate": {
