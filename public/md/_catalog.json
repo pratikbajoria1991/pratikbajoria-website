@@ -1,8 +1,8 @@
 {
   "site": "https://pratikbajoria.com",
   "name": "Pratik Bajoria — AI Implementation for Business",
-  "generated": "2026-10-26",
-  "count": 65,
+  "generated": "2026-10-27",
+  "count": 66,
   "routes": [
     {
       "path": "/",
@@ -71,8 +71,8 @@
       "title": "Insights",
       "summary": "Index of every article on pratikbajoria.com about AI implementation, AI for Chartered Accountants, finance automation and business tools, newest first, each with a one-line summary.",
       "section": "core",
-      "lastModified": "2026-10-26",
-      "tokens": 4130
+      "lastModified": "2026-10-27",
+      "tokens": 4216
     },
     {
       "path": "/ai-automation-in-india",
@@ -533,6 +533,16 @@
       "section": "posts",
       "lastModified": "2026-10-26",
       "tokens": 6543
+    },
+    {
+      "path": "/blog/2026-10-27-ai-agents-for-accounting-in-india-what-to-let-them-do-unsupervised",
+      "url": "https://pratikbajoria.com/blog/2026-10-27-ai-agents-for-accounting-in-india-what-to-let-them-do-unsupervised",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-27-ai-agents-for-accounting-in-india-what-to-let-them-do-unsupervised.md",
+      "title": "AI Agents for Accounting in India: What to Let Them Do Unsupervised",
+      "summary": "AI agents can now act inside accounting systems, not just answer questions. A CA’s rule of thumb for which tasks they may run alone and which need a human gate.",
+      "section": "posts",
+      "lastModified": "2026-10-27",
+      "tokens": 1746
     },
     {
       "path": "/blog/2026-10-26-ai-for-msmes-in-india-three-first-automations-that-pay-back",

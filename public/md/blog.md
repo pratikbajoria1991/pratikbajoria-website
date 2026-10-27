@@ -3,8 +3,9 @@
 > Practical writing on implementing AI inside real businesses — audits, finance workflows, governance and tooling.
 
 Canonical: https://pratikbajoria.com/blog
-Last updated: 2026-10-26
+Last updated: 2026-10-27
 
+- [AI Agents for Accounting in India: What to Let Them Do Unsupervised](https://pratikbajoria.com/blog/2026-10-27-ai-agents-for-accounting-in-india-what-to-let-them-do-unsupervised) - AI agents can now act inside accounting systems, not just answer questions. A CA’s rule of thumb for which tasks they may run alone and which need a human gate.
 - [AI for MSMEs in India: Three First Automations That Pay Back](https://pratikbajoria.com/blog/2026-10-26-ai-for-msmes-in-india-three-first-automations-that-pay-back) - Where an Indian MSME should start with AI: three first automations in collections, bills and customer replies, with sourced context and the controls to keep.
 - [AI for Financial Due Diligence in India: A CA’s Decision Rubric](https://pratikbajoria.com/blog/2026-10-26-ai-for-financial-due-diligence-in-india-a-cas-decision-rubric) - Where AI helps in financial due diligence in India, from data-room triage to ledger analytics, and where a CA’s judgement, NDAs and SEBI UPSI rules stay in charge.
 - [AI Tools for Statutory Audit in India: What NFRA’s 2026 Principles Mean](https://pratikbajoria.com/blog/2026-10-23-ai-tools-for-statutory-audit-in-india-what-nfra-s-2026-principles-mean) - NFRA’s July 2026 principles on technology in audit, read by a practising CA: tool validation, scepticism, documentation and data duties for statutory auditors.

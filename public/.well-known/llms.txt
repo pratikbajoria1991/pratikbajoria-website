@@ -89,6 +89,7 @@ Pratik works from India with business leaders in India, the United States, the U
 
 ## AI implementation, finance and operations
 
+- [AI Agents for Accounting in India: What to Let Them Do Unsupervised](https://pratikbajoria.com/blog/2026-10-27-ai-agents-for-accounting-in-india-what-to-let-them-do-unsupervised.md): AI agents can now act inside accounting systems, not just answer questions. A CA’s rule of thumb for which tasks they may run alone and which need a human gate.
 - [AI for MSMEs in India: Three First Automations That Pay Back](https://pratikbajoria.com/blog/2026-10-26-ai-for-msmes-in-india-three-first-automations-that-pay-back.md): Where an Indian MSME should start with AI: three first automations in collections, bills and customer replies, with sourced context and the controls to keep.
 - [AI for Tally Prime: Automating Data Entry Without Losing Control of the Books](https://pratikbajoria.com/blog/2026-10-22-ai-for-tally-prime-automating-data-entry-without-losing-control-of-the-books.md): AI can now read bills and draft Tally Prime vouchers. Where it saves time, where errors creep in, and the review and GST checks a business should keep in place.
 - [Zoho CRM, HubSpot and Your Books: A CRM-to-Accounting Handoff for Indian SMEs](https://pratikbajoria.com/blog/zoho-crm-hubspot-crm-integration-finance-workflows.md): A CA’s guide for Indian SMEs: choose between Zoho CRM and HubSpot, connect either to Zoho Books or TallyPrime, and keep GSTIN, e-invoice and audit-trail data clean.
