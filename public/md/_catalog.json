@@ -2,7 +2,7 @@
   "site": "https://pratikbajoria.com",
   "name": "Pratik Bajoria — AI Implementation for Business",
   "generated": "2026-10-28",
-  "count": 67,
+  "count": 68,
   "routes": [
     {
       "path": "/",
@@ -72,7 +72,7 @@
       "summary": "Index of every article on pratikbajoria.com about AI implementation, AI for Chartered Accountants, finance automation and business tools, newest first, each with a one-line summary.",
       "section": "core",
       "lastModified": "2026-10-28",
-      "tokens": 4303
+      "tokens": 4383
     },
     {
       "path": "/ai-automation-in-india",
@@ -543,6 +543,16 @@
       "section": "posts",
       "lastModified": "2026-10-26",
       "tokens": 6543
+    },
+    {
+      "path": "/blog/2026-10-28-ai-automation-agency-vs-consultant-in-india-how-to-choose",
+      "url": "https://pratikbajoria.com/blog/2026-10-28-ai-automation-agency-vs-consultant-in-india-how-to-choose",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-28-ai-automation-agency-vs-consultant-in-india-how-to-choose.md",
+      "title": "AI Automation Agency vs Consultant in India: How to Choose",
+      "summary": "Hiring help for AI automation in India? When an agency fits, when an independent consultant fits, and the questions to ask either before signing anything.",
+      "section": "posts",
+      "lastModified": "2026-10-28",
+      "tokens": 1712
     },
     {
       "path": "/blog/2026-10-27-ai-agents-for-accounting-in-india-what-to-let-them-do-unsupervised",
