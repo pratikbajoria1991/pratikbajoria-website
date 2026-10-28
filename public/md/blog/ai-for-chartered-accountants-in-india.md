@@ -3,7 +3,7 @@
 > AI for chartered accountants in India: a practical map for CA firms on which workflows to start with, client-data controls, human review and pilots.
 
 Canonical: https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india
-Last updated: 2026-10-26
+Last updated: 2026-10-28
 
 CA insights · 2026-09-25 · Updated 26 Oct 2026 · 8 min read
 
@@ -143,6 +143,8 @@ Before any assistant touches salary registers, KYC or individual tax files, deci
 
 ## Transaction work: AI in financial due diligence
 
+Company-law season is the other place firms ask about AI. A tool can tie AOC-4 figures to the signed accounts and build the shareholding, director and meeting tables for MGT-7 with a source on every row, but reasons statements, penalties, MGT-8 certification and the DSC stay human. I have set out the section 137 and 92 dates, a decision table and a Monday checklist in [AI for AOC-4 and MGT-7 Filings: What a CA Can Automate Before the ROC Deadline](https://pratikbajoria.com/blog/2026-10-28-ai-for-aoc-4-and-mgt-7-filings-what-a-ca-can-automate-before-the-roc-deadline).
+
 Due diligence is where firms most often ask whether AI can read a data room. It can index documents, scan ledgers and extract contract clauses, but quality-of-earnings adjustments, net debt and tax exposures stay with the CA, and NDAs and SEBI’s insider trading rules on UPSI come before any upload. I have set out a workstream-by-workstream rubric and a Monday checklist in [AI for Financial Due Diligence in India: A CA’s Decision Rubric](https://pratikbajoria.com/blog/2026-10-26-ai-for-financial-due-diligence-in-india-a-cas-decision-rubric).
 
 ## Running the first pilot: a 30/60/90-day playbook
@@ -184,6 +186,7 @@ Use this as the index. The first list covers running a CA practice with AI; the 
 
 ### Tax, audit and GST workflows
 
+- [AI for AOC-4 and MGT-7 Filings: What a CA Can Automate Before the ROC Deadline](https://pratikbajoria.com/blog/2026-10-28-ai-for-aoc-4-and-mgt-7-filings-what-a-ca-can-automate-before-the-roc-deadline)
 - [AI for Financial Due Diligence in India: A CA’s Decision Rubric](https://pratikbajoria.com/blog/2026-10-26-ai-for-financial-due-diligence-in-india-a-cas-decision-rubric)
 - [How Indian CA Firms Can Use AI for GST Reconciliation Without Risking Client Data](https://pratikbajoria.com/blog/2026-09-28-how-indian-ca-firms-can-use-ai-for-gst-reconciliation-without-risking-client-data)
 - [Drafting Replies to GST and Income Tax Notices With AI Without Losing Control](https://pratikbajoria.com/blog/2026-10-12-drafting-replies-to-gst-and-income-tax-notices-with-ai-without-losing-control)

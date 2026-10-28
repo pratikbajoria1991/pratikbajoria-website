@@ -80,5 +80,12 @@
     "Check the NDA before any upload, and use only business AI plans whose training and retention terms a partner has read.",
     "For a listed target, SEBI’s insider trading regulations require confidentiality agreements for UPSI shared in a transaction and a structured digital database with time stamps and audit trails.",
     "SEBI-regulated intermediaries are solely responsible for the output of AI tools they rely on, whether built or bought."
+  ],
+  "2026-10-28-ai-for-aoc-4-and-mgt-7-filings-what-a-ca-can-automate-before-the-roc-deadline": [
+    "AOC-4 is due within thirty days of the AGM under section 137, and MGT-7 within sixty days under section 92(4).",
+    "AI is best used to compare form data with the signed accounts and to build shareholding, director and meeting tables with a source on every row.",
+    "Reasons for not holding an AGM, penalties, compounding, MGT-8 certification and the digital signature stay with people.",
+    "Late annual returns attract ten thousand rupees plus one hundred rupees a day, capped at two lakh rupees for the company.",
+    "Build the master data once for AOC-4 and reuse it for MGT-7, and keep client identifiers inside a firm-managed business AI account."
   ]
 }
