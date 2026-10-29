@@ -2,7 +2,7 @@
   "site": "https://pratikbajoria.com",
   "name": "Pratik Bajoria — AI Implementation for Business",
   "generated": "2026-10-29",
-  "count": 67,
+  "count": 68,
   "routes": [
     {
       "path": "/",
@@ -71,8 +71,8 @@
       "title": "Insights",
       "summary": "Index of every article on pratikbajoria.com about AI implementation, AI for Chartered Accountants, finance automation and business tools, newest first, each with a one-line summary.",
       "section": "core",
-      "lastModified": "2026-10-28",
-      "tokens": 4269
+      "lastModified": "2026-10-29",
+      "tokens": 4356
     },
     {
       "path": "/ai-automation-in-india",
@@ -533,6 +533,16 @@
       "section": "posts",
       "lastModified": "2026-10-26",
       "tokens": 6477
+    },
+    {
+      "path": "/blog/2026-10-29-ai-for-ca-students-using-chatgpt-and-ca-gpt-without-weakening-your-prep",
+      "url": "https://pratikbajoria.com/blog/2026-10-29-ai-for-ca-students-using-chatgpt-and-ca-gpt-without-weakening-your-prep",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-29-ai-for-ca-students-using-chatgpt-and-ca-gpt-without-weakening-your-prep.md",
+      "title": "AI for CA Students: Using ChatGPT and CA GPT Without Weakening Your Prep",
+      "summary": "A practising CA’s guide for CA students: where ChatGPT and ICAI’s CA GPT help exam prep, where they mislead, and the habits that build real exam skill.",
+      "section": "posts",
+      "lastModified": "2026-10-29",
+      "tokens": 1768
     },
     {
       "path": "/blog/2026-10-28-ai-automation-agency-vs-consultant-in-india-how-to-choose",

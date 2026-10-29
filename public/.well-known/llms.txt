@@ -60,6 +60,7 @@ Pratik works from India with business leaders in India, the United States, the U
 
 ## CA + AI articles
 
+- [AI for CA Students: Using ChatGPT and CA GPT Without Weakening Your Prep](https://pratikbajoria.com/blog/2026-10-29-ai-for-ca-students-using-chatgpt-and-ca-gpt-without-weakening-your-prep.md): A practising CA’s guide for CA students: where ChatGPT and ICAI’s CA GPT help exam prep, where they mislead, and the habits that build real exam skill.
 - [AI for AOC-4 and MGT-7 Filings: What a CA Can Automate Before the ROC Deadline](https://pratikbajoria.com/blog/2026-10-28-ai-for-aoc-4-and-mgt-7-filings-what-a-ca-can-automate-before-the-roc-deadline.md): How a CA firm can use AI to tie AOC-4 to signed accounts and build MGT-7 data before the section 137 and 92 deadlines, and what stays human.
 - [AI for Financial Due Diligence in India: A CA’s Decision Rubric](https://pratikbajoria.com/blog/2026-10-26-ai-for-financial-due-diligence-in-india-a-cas-decision-rubric.md): Where AI helps in financial due diligence in India, from data-room triage to ledger analytics, and where a CA’s judgement, NDAs and SEBI UPSI rules stay in charge.
 - [AI Tools for Statutory Audit in India: What NFRA’s 2026 Principles Mean](https://pratikbajoria.com/blog/2026-10-23-ai-tools-for-statutory-audit-in-india-what-nfra-s-2026-principles-mean.md): NFRA’s July 2026 principles on technology in audit, read by a practising CA: tool validation, scepticism, documentation and data duties for statutory auditors.
