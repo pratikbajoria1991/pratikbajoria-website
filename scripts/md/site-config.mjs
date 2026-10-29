@@ -4,6 +4,9 @@
 // public/index.html; scripts/test-md-coverage.mjs fails if name, url, email or logo drift.
 // Wording below was moved verbatim from the hand-written top of the old public/llms.txt.
 
+import fs from 'node:fs';
+export const CLUSTERS = JSON.parse(fs.readFileSync(new URL('../../public/clusters.json', import.meta.url), 'utf8'));
+
 export const SITE = {
   name: 'Pratik Bajoria',
   title: 'Pratik Bajoria — AI Implementation for Business',
@@ -51,7 +54,7 @@ export const LLMS_INTRO_SECTIONS = [
 - Fractional AI Leadership: roadmap ownership, governance, vendor selection and reporting.
 - AI Product Advisory: architecture, model choices, pricing and go-to-market for AI products.`],
   ['Process', 'Diagnose → Prioritise → Build → Embed.'],
-  ['About', 'Pratik works from India with business leaders in India, the United States, the United Kingdom and globally. He is also the founder of Findost, an AI-powered wealth management platform (proof of shipping AI in a regulated domain — consulting remains the primary commercial entity on this site).'],
+  ['About', 'Pratik works from India with business leaders in India, the United States, the United Kingdom and globally. He is based in Kolkata, India, and is the author of every article on the site (author page: https://pratikbajoria.com/about). He is also the founder of Findost, an AI-powered wealth management platform (proof of shipping AI in a regulated domain — consulting remains the primary commercial entity on this site).'],
   ['Secondary offer: Cross-border Deals & Partnerships', `- Page: https://crossborder.pratikbajoria.com/
 - Introductions: Indian businesses to international clients and buyers; overseas companies to vetted Indian partners. Fees agreed per deal, paid only on a closed deal; no retainer.
 - Lane 1 — IT & software partnerships: companies in the US, UK and Middle East introduced to vetted Indian development agencies (web, mobile, AI, healthcare/fintech software).
@@ -68,16 +71,16 @@ export const LLMS_INTRO_SECTIONS = [
 
 export const LLMS_OUTRO_SECTIONS = [
   ['Editorial policy', 'Insights are practical, implementation-focused and may contain disclosed affiliate links. Affiliate recommendations are editorially independent. Finance and markets content is educational and does not constitute financial, investment or legal advice.'],
-  ['Editorial pillars', `- AI for Business: implementation, automation, governance and measurable operating impact.
-- Finance & Markets: financial analysis, controls and decision-making education; not investment advice.
-- Business Systems: dashboards, planning, CRM, workflow design and operating cadence.
-- Tool Reviews & Comparisons: practical evaluation of business software, AI tools and automation platforms.
-- CA Insights: accounting, compliance, controls and finance transformation explained for operators.`]
+  ['Editorial pillars (topic clusters)', CLUSTERS.clusters.map((c) => `- ${c.name}: ${c.summary} Hub: ${SITE.url}${c.hub}`).join('\n')],
+  ['Author', `- ${CLUSTERS.author.displayName}: ${CLUSTERS.author.role}. Based in Kolkata, India. Author page: ${SITE.url}/about
+- Every article is written and signed by Pratik Bajoria; Article schema names Person #person as author and Organization #business as publisher.`],
+  ['Featured in', CLUSTERS.featuredIn.map((f) => `- ${f.publication}: ${f.title} (${f.date}) ${f.url}`).join('\n')]
 ];
 
 // ai-summary overrides for key pages (everything else uses its meta description).
 export const AI_SUMMARIES = {
   '/': 'Homepage of Pratik Bajoria, a Chartered Accountant and ex-Big 4 AI implementation consultant in India: services (AI Opportunity Audit, workflow automation, finance and compliance AI, workshops), process, FAQ and contact details.',
+  '/about': 'Author page for CA Pratik Bajoria, a Kolkata-based Chartered Accountant (ex-Big 4, 9+ years post-qualification) who advises companies on AI implementation and builds Findost; lists his four topic hubs, CAclubindia feature and profiles.',
   '/audit': 'Service page for the AI Opportunity Audit by Pratik Bajoria: a fixed-fee two-week sprint that maps finance and CA-firm workflows, scores AI use cases and produces a prioritised 90-day roadmap.',
   '/blog': 'Index of every article on pratikbajoria.com about AI implementation, AI for Chartered Accountants, finance automation and business tools, newest first, each with a one-line summary.'
 };

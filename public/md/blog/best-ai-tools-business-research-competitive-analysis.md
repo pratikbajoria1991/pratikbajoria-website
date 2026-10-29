@@ -66,7 +66,6 @@ This is educational content, not investment advice and not a promise of market i
 
 This guide is part of [AI automation in India: a practical hub for business owners](https://pratikbajoria.com/ai-automation-in-india).
 
-- [Semrush Review for Business Owners: Is It Worth the Investment?](https://pratikbajoria.com/blog/semrush-review-business-owners)
 - [HubSpot vs Zoho CRM Integration: Finance Workflow Guide](https://pratikbajoria.com/blog/zoho-crm-hubspot-crm-integration-finance-workflows)
 - [The Monday Morning Test for Any AI Workflow](https://pratikbajoria.com/blog/2026-09-29-the-monday-morning-test-for-any-ai-workflow)
 
@@ -90,7 +89,6 @@ Tool links go to the vendor’s official site. No affiliate tracking is active o
 
 ## Related
 - [AI automation in India: a practical hub for business owners](https://pratikbajoria.com/ai-automation-in-india)
-- [Semrush Review for Business Owners: Is It Worth the Investment?](https://pratikbajoria.com/blog/semrush-review-business-owners)
 - [HubSpot vs Zoho CRM Integration: Finance Workflow Guide](https://pratikbajoria.com/blog/zoho-crm-hubspot-crm-integration-finance-workflows)
 - [The Monday Morning Test for Any AI Workflow](https://pratikbajoria.com/blog/2026-09-29-the-monday-morning-test-for-any-ai-workflow)
 - [AI implementation for finance teams: the CFO and controller guide](https://pratikbajoria.com/ai-implementation-for-finance-teams)

@@ -72,8 +72,6 @@ Carry forward only the workflows with a named owner and a metric you already man
 
 This guide is part of [AI automation in India: a practical hub for business owners](https://pratikbajoria.com/ai-automation-in-india).
 
-- [HubSpot vs Spreadsheet CRM: The Real Switching Cost](https://pratikbajoria.com/blog/2026-09-27-hubspot-vs-spreadsheet-crm-the-real-switching-cost)
-- [Real Estate AI: Start With Leads and Documents, Not Prediction](https://pratikbajoria.com/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction)
 - [Zoho CRM, HubSpot and Your Books: A CRM-to-Accounting Handoff for Indian SMEs](https://pratikbajoria.com/blog/zoho-crm-hubspot-crm-integration-finance-workflows)
 
 Also useful: [AI implementation for finance teams: the CFO and controller guide](https://pratikbajoria.com/ai-implementation-for-finance-teams).
@@ -97,7 +95,5 @@ Tool links go to the vendor’s official site. No affiliate tracking is active o
 ## Related
 - [HubSpot–Zoho CRM finance workflow guide](https://pratikbajoria.com/blog/zoho-crm-hubspot-crm-integration-finance-workflows)
 - [AI automation in India: a practical hub for business owners](https://pratikbajoria.com/ai-automation-in-india)
-- [HubSpot vs Spreadsheet CRM: The Real Switching Cost](https://pratikbajoria.com/blog/2026-09-27-hubspot-vs-spreadsheet-crm-the-real-switching-cost)
-- [Real Estate AI: Start With Leads and Documents, Not Prediction](https://pratikbajoria.com/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction)
 - [AI implementation for finance teams: the CFO and controller guide](https://pratikbajoria.com/ai-implementation-for-finance-teams)
 - [All articles](https://pratikbajoria.com/blog)

@@ -8,7 +8,19 @@ url: https://pratikbajoria.com/
 owner: Pratik Bajoria
 contact: hello@pratikbajoria.com
 language: en-IN
-updated: 2026-10-28
+updated: 2026-10-29
+
+[author]
+name: CA Pratik Bajoria
+role: Chartered Accountant, ex-Big 4, founder of Findost
+location: Kolkata, India
+profile: https://pratikbajoria.com/about
+
+[topics]
+ca-ai-india: https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india
+ai-automation-india: https://pratikbajoria.com/ai-automation-in-india
+finance-team-ai: https://pratikbajoria.com/ai-implementation-for-finance-teams
+ai-tools-accounting-software: https://pratikbajoria.com/blog/best-ai-tools-chartered-accountants-finance-professionals
 
 [signals]
 search: yes

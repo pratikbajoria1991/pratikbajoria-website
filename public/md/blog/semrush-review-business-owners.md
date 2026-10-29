@@ -3,7 +3,7 @@
 > A CA- and ops-led Semrush review: score fit on six axes, run a four-week pilot, and only renew when search work moves pipeline — not vanity rankings.
 
 Canonical: https://pratikbajoria.com/blog/semrush-review-business-owners
-Last updated: 2026-09-25
+Last updated: 2026-10-07
 
 Tool review · 2026-08-25 · Updated 7 Oct 2026 · 10 min read
 

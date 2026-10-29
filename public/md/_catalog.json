@@ -1,8 +1,8 @@
 {
   "site": "https://pratikbajoria.com",
   "name": "Pratik Bajoria — AI Implementation for Business",
-  "generated": "2026-10-28",
-  "count": 68,
+  "generated": "2026-10-29",
+  "count": 67,
   "routes": [
     {
       "path": "/",
@@ -12,7 +12,7 @@
       "summary": "Homepage of Pratik Bajoria, a Chartered Accountant and ex-Big 4 AI implementation consultant in India: services (AI Opportunity Audit, workflow automation, finance and compliance AI, workshops), process, FAQ and contact details.",
       "section": "core",
       "lastModified": "2026-10-22",
-      "tokens": 4195
+      "tokens": 4146
     },
     {
       "path": "/audit",
@@ -62,7 +62,7 @@
       "summary": "A practical topic guide to AI for Chartered Accountants, finance professionals, entrepreneurs and business leaders from Pratik Bajoria.",
       "section": "core",
       "lastModified": "2026-10-08",
-      "tokens": 2275
+      "tokens": 2250
     },
     {
       "path": "/blog",
@@ -72,7 +72,7 @@
       "summary": "Index of every article on pratikbajoria.com about AI implementation, AI for Chartered Accountants, finance automation and business tools, newest first, each with a one-line summary.",
       "section": "core",
       "lastModified": "2026-10-28",
-      "tokens": 4383
+      "tokens": 4269
     },
     {
       "path": "/ai-automation-in-india",
@@ -82,7 +82,7 @@
       "summary": "AI automation in India for owners and operations heads: which workflows to automate first, DPDP and RBI considerations, human review and a 90-day plan.",
       "section": "guides",
       "lastModified": "2026-10-22",
-      "tokens": 3712
+      "tokens": 3599
     },
     {
       "path": "/ai-implementation-for-finance-teams",
@@ -123,6 +123,16 @@
       "section": "guides",
       "lastModified": "2026-09-18",
       "tokens": 1178
+    },
+    {
+      "path": "/about",
+      "url": "https://pratikbajoria.com/about",
+      "markdown": "https://pratikbajoria.com/about.md",
+      "title": "CA Pratik Bajoria Chartered Accountant, Kolkata.",
+      "summary": "Author page for CA Pratik Bajoria, a Kolkata-based Chartered Accountant (ex-Big 4, 9+ years post-qualification) who advises companies on AI implementation and builds Findost; lists his four topic hubs, CAclubindia feature and profiles.",
+      "section": "core",
+      "lastModified": "2026-10-29",
+      "tokens": 1036
     },
     {
       "path": "/privacy",
@@ -172,7 +182,7 @@
       "summary": "Automate mapping and matching; never automate away the settlement exception review.",
       "section": "posts",
       "lastModified": "2026-09-25",
-      "tokens": 1754
+      "tokens": 1669
     },
     {
       "path": "/blog/2026-09-21-how-do-you-know-finance-ai-will-pay-for-itself-before-you-buy",
@@ -193,26 +203,6 @@
       "section": "posts",
       "lastModified": "2026-09-25",
       "tokens": 1676
-    },
-    {
-      "path": "/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction",
-      "url": "https://pratikbajoria.com/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction",
-      "markdown": "https://pratikbajoria.com/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction.md",
-      "title": "Real Estate AI: Start With Leads and Documents, Not Prediction",
-      "summary": "Real estate AI that pays back: one pipeline for every enquiry, AI flags for missing unit documents, legal judgement kept with people.",
-      "section": "posts",
-      "lastModified": "2026-09-30",
-      "tokens": 1825
-    },
-    {
-      "path": "/blog/2026-09-27-hubspot-vs-spreadsheet-crm-the-real-switching-cost",
-      "url": "https://pratikbajoria.com/blog/2026-09-27-hubspot-vs-spreadsheet-crm-the-real-switching-cost",
-      "markdown": "https://pratikbajoria.com/blog/2026-09-27-hubspot-vs-spreadsheet-crm-the-real-switching-cost.md",
-      "title": "HubSpot vs Spreadsheet CRM: The Real Switching Cost",
-      "summary": "The cost is not the licence — it is defining stages your team will actually use.",
-      "section": "posts",
-      "lastModified": "2026-09-30",
-      "tokens": 1617
     },
     {
       "path": "/blog/2026-09-28-how-indian-ca-firms-can-use-ai-for-gst-reconciliation-without-risking-client-data",
@@ -242,7 +232,7 @@
       "summary": "If the team cannot explain the workflow in five minutes on Monday, it is not ready for a model.",
       "section": "posts",
       "lastModified": "2026-09-30",
-      "tokens": 2086
+      "tokens": 2054
     },
     {
       "path": "/blog/2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human",
@@ -422,7 +412,7 @@
       "summary": "A chartered accountant’s guide to ecommerce accounting automation for Indian D2C brands: marketplace settlements, GST TCS, returns and e-invoicing, and how to pilot software safely.",
       "section": "posts",
       "lastModified": "2026-10-26",
-      "tokens": 3890
+      "tokens": 3804
     },
     {
       "path": "/blog/best-ai-tools-business-research-competitive-analysis",
@@ -432,7 +422,7 @@
       "summary": "A source-first research workflow for market mapping, competitor monitoring and decision briefs without confusing generated text with evidence.",
       "section": "posts",
       "lastModified": "2026-09-25",
-      "tokens": 2233
+      "tokens": 2167
     },
     {
       "path": "/blog/best-ai-tools-chartered-accountants-finance-professionals",
@@ -462,7 +452,7 @@
       "summary": "A permission-based acquisition system connecting useful content, qualification, CRM ownership and measurable follow-up.",
       "section": "posts",
       "lastModified": "2026-09-25",
-      "tokens": 2251
+      "tokens": 2090
     },
     {
       "path": "/blog/build-vs-buy-ai-tooling",
@@ -521,7 +511,7 @@
       "title": "Semrush Review for Business Owners: Is It Worth the Investment?",
       "summary": "A CA- and ops-led Semrush review: score fit on six axes, run a four-week pilot, and only renew when search work moves pipeline — not vanity rankings.",
       "section": "posts",
-      "lastModified": "2026-09-25",
+      "lastModified": "2026-10-07",
       "tokens": 2719
     },
     {
@@ -542,7 +532,7 @@
       "summary": "A CA’s guide for Indian SMEs: choose between Zoho CRM and HubSpot, connect either to Zoho Books or TallyPrime, and keep GSTIN, e-invoice and audit-trail data clean.",
       "section": "posts",
       "lastModified": "2026-10-26",
-      "tokens": 6543
+      "tokens": 6477
     },
     {
       "path": "/blog/2026-10-28-ai-automation-agency-vs-consultant-in-india-how-to-choose",

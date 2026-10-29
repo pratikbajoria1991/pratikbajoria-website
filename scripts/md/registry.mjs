@@ -30,6 +30,7 @@ export const STATIC_PAGES = [
   { path: '/ai-opportunity-audit-for-ca-firms', file: 'ai-opportunity-audit-for-ca-firms.html', section: 'guides' },
   { path: '/how-to-start-ai-implementation', file: 'how-to-start-ai-implementation.html', section: 'guides' },
   { path: '/workflow-automation-with-ai-for-mid-market', file: 'workflow-automation-with-ai-for-mid-market.html', section: 'guides' },
+  { path: '/about', file: 'about.html', section: 'core' },
   { path: '/privacy', file: 'privacy.html', section: 'legal' }
 ];
 

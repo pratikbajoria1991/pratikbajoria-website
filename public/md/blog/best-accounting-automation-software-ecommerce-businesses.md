@@ -129,7 +129,6 @@ Look for channel and settlement coverage, duplicate prevention, returns and inve
 
 This guide is part of [AI automation in India: a practical hub for business owners](https://pratikbajoria.com/ai-automation-in-india).
 
-- [Real Estate AI: Start With Leads and Documents, Not Prediction](https://pratikbajoria.com/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction)
 - [Ecommerce Reconciliation: Where Automation Helps and Where It Lies](https://pratikbajoria.com/blog/2026-09-20-ecommerce-reconciliation-where-automation-helps-and-where-it-lies)
 - [How to Build a Lead-Generation System Using AI and Email Automation](https://pratikbajoria.com/blog/build-lead-generation-system-ai-email-automation)
 
@@ -157,7 +156,6 @@ Tool links go to the vendor’s official site. No affiliate tracking is active o
 - [where ecommerce reconciliation automation helps and where it lies](https://pratikbajoria.com/blog/2026-09-20-ecommerce-reconciliation-where-automation-helps-and-where-it-lies)
 - [GSTR-2B reconciliation method](https://pratikbajoria.com/blog/2026-10-19-how-to-use-claude-or-chatgpt-for-gstr-2b-reconciliation-a-ca-s-method)
 - [AI automation in India: a practical hub for business owners](https://pratikbajoria.com/ai-automation-in-india)
-- [Real Estate AI: Start With Leads and Documents, Not Prediction](https://pratikbajoria.com/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction)
 - [How to Build a Lead-Generation System Using AI and Email Automation](https://pratikbajoria.com/blog/build-lead-generation-system-ai-email-automation)
 - [AI implementation for finance teams: the CFO and controller guide](https://pratikbajoria.com/ai-implementation-for-finance-teams)
 - [All articles](https://pratikbajoria.com/blog)

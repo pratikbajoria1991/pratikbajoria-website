@@ -251,7 +251,6 @@ Pilot five real workflows with a small dataset, reconcile records at each handof
 This guide is part of [AI automation in India: a practical hub for business owners](https://pratikbajoria.com/ai-automation-in-india).
 
 - [Best AI Tools for Business Research and Competitive Analysis](https://pratikbajoria.com/blog/best-ai-tools-business-research-competitive-analysis)
-- [Semrush Review for Business Owners: Is It Worth the Investment?](https://pratikbajoria.com/blog/semrush-review-business-owners)
 
 Also useful: [AI implementation for finance teams: the CFO and controller guide](https://pratikbajoria.com/ai-implementation-for-finance-teams).
 
@@ -284,6 +283,5 @@ Links go to the vendors’ official sites. No affiliate tracking is active on th
 - [AI Opportunity Audit](https://pratikbajoria.com/audit)
 - [AI automation in India: a practical hub for business owners](https://pratikbajoria.com/ai-automation-in-india)
 - [Best AI Tools for Business Research and Competitive Analysis](https://pratikbajoria.com/blog/best-ai-tools-business-research-competitive-analysis)
-- [Semrush Review for Business Owners: Is It Worth the Investment?](https://pratikbajoria.com/blog/semrush-review-business-owners)
 - [AI implementation for finance teams: the CFO and controller guide](https://pratikbajoria.com/ai-implementation-for-finance-teams)
 - [All articles](https://pratikbajoria.com/blog)

@@ -110,16 +110,13 @@ The full version, with an opportunity scoring method, is in [a 90-day AI opportu
 - [WhatsApp Automation That Still Feels Like Customer Care](https://pratikbajoria.com/blog/2026-09-28-whatsapp-automation-that-still-feels-like-customer-care)
 - [Ecommerce Reconciliation: Where Automation Helps and Where It Lies](https://pratikbajoria.com/blog/2026-09-20-ecommerce-reconciliation-where-automation-helps-and-where-it-lies)
 - [Best Accounting Automation Software for Ecommerce: A CA Comparison](https://pratikbajoria.com/blog/best-accounting-automation-software-ecommerce-businesses)
-- [Real Estate AI: Start With Leads and Documents, Not Prediction](https://pratikbajoria.com/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction)
 - [How to Build a Lead-Generation System Using AI and Email Automation](https://pratikbajoria.com/blog/build-lead-generation-system-ai-email-automation)
 
 ### CRM, research and tool choices
 
-- [HubSpot vs Spreadsheet CRM: The Real Switching Cost](https://pratikbajoria.com/blog/2026-09-27-hubspot-vs-spreadsheet-crm-the-real-switching-cost)
 - [Zoho CRM, HubSpot and Your Books: A CRM-to-Accounting Handoff for Indian SMEs](https://pratikbajoria.com/blog/zoho-crm-hubspot-crm-integration-finance-workflows)
 - [HubSpot vs Zoho CRM Integration: Finance Workflow Guide](https://pratikbajoria.com/blog/zoho-crm-hubspot-crm-integration-finance-workflows)
 - [Best AI Tools for Business Research and Competitive Analysis](https://pratikbajoria.com/blog/best-ai-tools-business-research-competitive-analysis)
-- [Semrush Review for Business Owners: Is It Worth the Investment?](https://pratikbajoria.com/blog/semrush-review-business-owners)
 
 ## Frequently asked questions
 

@@ -1,0 +1,93 @@
+{
+  "_note": "Topic clusters for pratikbajoria.com. Used by public/_worker.js (byline, cluster breadcrumb, hub and sibling links on every post, spoke lists on hubs) and scripts/build-md.mjs (llms.txt). New posts are assigned by 'posts' first, then by the first matching rule (slug regex, then category). Edit here only.",
+  "author": {
+    "name": "Pratik Bajoria",
+    "displayName": "CA Pratik Bajoria",
+    "url": "/about",
+    "role": "Chartered Accountant, ex-Big 4, founder of Findost",
+    "bio": "I'm a Chartered Accountant with over nine years of post-qualification experience across audit, financial analysis, taxation and business process transformation, part of it at a Big 4 firm. I advise companies and CA firms on putting AI into finance and operations work with review controls that hold up, and I build Findost, an AI-powered wealth management platform. I work from Kolkata."
+  },
+  "clusters": [
+    {
+      "id": "ca-ai-india",
+      "name": "AI for Chartered Accountants in India",
+      "short": "CA + AI in India",
+      "hub": "/blog/ai-for-chartered-accountants-in-india",
+      "summary": "How CA firms and practising CAs in India can use AI in audit, GST, income tax, TDS, ROC/MCA filings and practice management, with the review steps and ICAI, NFRA and DPDP rules that stay human.",
+      "rules": ["(^|-)ca(-|$)|chartered-accountant|ca-firm|caro|audit|gst|gstr|tds|itr|tax|aoc-4|mgt-7|roc|mca|cma-data|articleship|dpdp|notice|due-diligence|icai|nfra|ind-as|form-26|engagement-letter"],
+      "categories": ["CA insights"]
+    },
+    {
+      "id": "ai-automation-india",
+      "name": "AI automation for Indian businesses",
+      "short": "AI automation in India",
+      "hub": "/ai-automation-in-india",
+      "summary": "Practical AI and workflow automation for Indian MSMEs and growing companies: Tally, WhatsApp, documents, agents, CRM and email, and how to choose who builds it.",
+      "rules": ["automation|automate|msme|tally|whatsapp|agent|workflow|lead-generation|ecommerce|small-business|bank-statement|reconciliation"],
+      "categories": ["AI automation", "Workflow automation", "Business systems", "Business growth", "AI implementation"]
+    },
+    {
+      "id": "finance-team-ai",
+      "name": "AI implementation for finance teams",
+      "short": "AI for finance teams",
+      "hub": "/ai-implementation-for-finance-teams",
+      "summary": "For CFOs and controllers: where finance AI pays back, how to budget and govern it, when to say no to a pilot, and build-versus-buy decisions.",
+      "rules": ["finance|cfo|controller|roi|budget|governance|pilot|build-vs-buy|dashboard|month-end|close|mis|virtual-cfo"],
+      "categories": ["Finance & compliance", "Finance and controls", "AI governance", "AI strategy", "AI adoption", "Business intelligence", "Finance and markets"]
+    },
+    {
+      "id": "ai-tools-accounting-software",
+      "name": "AI tools and accounting software",
+      "short": "AI tools and software",
+      "hub": "/blog/best-ai-tools-chartered-accountants-finance-professionals",
+      "summary": "Hands-on comparisons of AI assistants, accounting automation software and business tools for CAs and finance teams, judged on controls and review effort.",
+      "rules": ["tools|software|chatgpt|copilot|gemini|claude|notion|zoho|hubspot|toolkit|review"],
+      "categories": ["Tool comparison", "Tool review", "AI for business"]
+    }
+  ],
+  "posts": {
+    "ai-for-chartered-accountants-in-india": "ca-ai-india",
+    "best-ai-tools-chartered-accountants-finance-professionals": "ai-tools-accounting-software",
+    "2026-10-05-chatgpt-vs-copilot-vs-gemini-how-a-ca-firm-in-india-should-choose-an-ai-assistant": "ai-tools-accounting-software",
+    "2026-10-07-ai-courses-for-chartered-accountants-in-india-what-is-worth-it": "ca-ai-india",
+    "2026-10-19-how-to-use-claude-or-chatgpt-for-gstr-2b-reconciliation-a-ca-s-method": "ca-ai-india",
+    "2026-10-22-ai-for-tally-prime-automating-data-entry-without-losing-control-of-the-books": "ai-automation-india",
+    "2026-10-27-ai-agents-for-accounting-in-india-what-to-let-them-do-unsupervised": "ai-automation-india",
+    "2026-10-28-ai-automation-agency-vs-consultant-in-india-how-to-choose": "ai-automation-india",
+    "2026-10-26-ai-for-msmes-in-india-three-first-automations-that-pay-back": "ai-automation-india",
+    "2026-09-29-the-monday-morning-test-for-any-ai-workflow": "ai-automation-india",
+    "2026-09-28-whatsapp-automation-that-still-feels-like-customer-care": "ai-automation-india",
+    "2026-09-20-ecommerce-reconciliation-where-automation-helps-and-where-it-lies": "ai-automation-india",
+    "build-lead-generation-system-ai-email-automation": "ai-automation-india",
+    "small-business-ai-without-losing-financial-control": "ai-automation-india",
+    "2026-09-28-how-indian-ca-firms-can-use-ai-for-gst-reconciliation-without-risking-client-data": "ca-ai-india",
+    "2026-10-12-finance-ai-roi-for-mid-market-companies-in-india-a-cas-decision-rubric": "finance-team-ai",
+    "2026-09-24-when-a-finance-team-should-say-no-to-an-ai-pilot": "finance-team-ai",
+    "2026-09-21-how-do-you-know-finance-ai-will-pay-for-itself-before-you-buy": "finance-team-ai",
+    "2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer": "finance-team-ai",
+    "2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point": "finance-team-ai",
+    "2026-09-14-how-much-should-a-mid-market-finance-team-budget-for-ai": "finance-team-ai",
+    "2026-10-04-ai-finance-automation-roadmap-for-cfos-and-controllers": "finance-team-ai",
+    "build-vs-buy-ai-tooling": "finance-team-ai",
+    "corporate-ai-pilots": "finance-team-ai",
+    "how-to-build-a-monthly-business-dashboard": "finance-team-ai",
+    "ai-tools-financial-analysis-practical-use-cases": "ai-tools-accounting-software",
+    "best-accounting-automation-software-ecommerce-businesses": "ai-tools-accounting-software",
+    "zoho-crm-hubspot-crm-integration-finance-workflows": "ai-tools-accounting-software",
+    "notion-for-finance-professionals-templates-dashboards-workflows": "ai-tools-accounting-software",
+    "best-business-planning-software-ca-review": "ai-tools-accounting-software",
+    "best-ai-tools-business-research-competitive-analysis": "ai-tools-accounting-software",
+    "chartered-accountant-ai-toolkit-entrepreneurs": "ai-tools-accounting-software",
+    "ai-controls-checklist-ca-firms-india": "ca-ai-india",
+    "ai-for-chartered-accountants-practical-use-cases-and-controls": "ca-ai-india"
+  },
+  "featuredIn": [
+    {
+      "publication": "CAclubindia",
+      "title": "AI for CA students: What helps Exam Preparation and What does Not",
+      "url": "https://www.caclubindia.com/articles/ai-for-ca-students-what-helps-exam-preparation-and-what-does-not-56512.asp",
+      "date": "2026-10-28"
+    }
+  ],
+  "noindex": ["semrush-review-business-owners"]
+}

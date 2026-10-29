@@ -45,7 +45,6 @@ This guide is part of [AI automation in India: a practical hub for business owne
 
 - [Best Accounting Automation Software for Ecommerce: A CA Comparison](https://pratikbajoria.com/blog/best-accounting-automation-software-ecommerce-businesses)
 - [WhatsApp Automation That Still Feels Like Customer Care](https://pratikbajoria.com/blog/2026-09-28-whatsapp-automation-that-still-feels-like-customer-care)
-- [Real Estate AI: Start With Leads and Documents, Not Prediction](https://pratikbajoria.com/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction)
 
 Also useful: [AI implementation for finance teams: the CFO and controller guide](https://pratikbajoria.com/ai-implementation-for-finance-teams).
 
@@ -68,6 +67,5 @@ Tool links go to the vendor’s official site. No affiliate tracking is active o
 - [AI automation in India: a practical hub for business owners](https://pratikbajoria.com/ai-automation-in-india)
 - [Best Accounting Automation Software for Ecommerce: A CA Comparison](https://pratikbajoria.com/blog/best-accounting-automation-software-ecommerce-businesses)
 - [WhatsApp Automation That Still Feels Like Customer Care](https://pratikbajoria.com/blog/2026-09-28-whatsapp-automation-that-still-feels-like-customer-care)
-- [Real Estate AI: Start With Leads and Documents, Not Prediction](https://pratikbajoria.com/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction)
 - [AI implementation for finance teams: the CFO and controller guide](https://pratikbajoria.com/ai-implementation-for-finance-teams)
 - [All articles](https://pratikbajoria.com/blog)

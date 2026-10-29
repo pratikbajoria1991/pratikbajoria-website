@@ -19,7 +19,7 @@ Diagnose → Prioritise → Build → Embed.
 
 ## About
 
-Pratik works from India with business leaders in India, the United States, the United Kingdom and globally. He is also the founder of Findost, an AI-powered wealth management platform (proof of shipping AI in a regulated domain — consulting remains the primary commercial entity on this site).
+Pratik works from India with business leaders in India, the United States, the United Kingdom and globally. He is based in Kolkata, India, and is the author of every article on the site (author page: https://pratikbajoria.com/about). He is also the founder of Findost, an AI-powered wealth management platform (proof of shipping AI in a regulated domain — consulting remains the primary commercial entity on this site).
 
 ## Secondary offer: Cross-border Deals & Partnerships
 
@@ -48,6 +48,7 @@ Pratik works from India with business leaders in India, the United States, the U
 - [Practical packs for finance teams.](https://pratikbajoria.com/resources.md): Digital resources for finance and ops leaders: AI opportunity checklist, finance SOP starter pack and CA/finance prompt library.
 - [Practical answers for the AI and finance questions business leaders ask.](https://pratikbajoria.com/topics.md): A practical topic guide to AI for Chartered Accountants, finance professionals, entrepreneurs and business leaders from Pratik Bajoria.
 - [Insights](https://pratikbajoria.com/blog.md): Index of every article on pratikbajoria.com about AI implementation, AI for Chartered Accountants, finance automation and business tools, newest first, each with a one-line summary.
+- [CA Pratik Bajoria Chartered Accountant, Kolkata.](https://pratikbajoria.com/about.md): Author page for CA Pratik Bajoria, a Kolkata-based Chartered Accountant (ex-Big 4, 9+ years post-qualification) who advises companies on AI implementation and builds Findost; lists his four topic hubs, CAclubindia feature and profiles.
 
 ## Guides
 
@@ -98,8 +99,6 @@ Pratik works from India with business leaders in India, the United States, the U
 - [AI Finance Automation Roadmap: A 90-Day Plan for CFOs and Controllers](https://pratikbajoria.com/blog/2026-10-04-ai-finance-automation-roadmap-for-cfos-and-controllers.md): A practical 90-day AI finance automation roadmap for CFOs and controllers: choose one workflow, protect controls, measure payback and scale only after adoption.
 - [The Monday Morning Test for Any AI Workflow](https://pratikbajoria.com/blog/2026-09-29-the-monday-morning-test-for-any-ai-workflow.md): If the team cannot explain the workflow in five minutes on Monday, it is not ready for a model.
 - [WhatsApp Automation That Still Feels Like Customer Care](https://pratikbajoria.com/blog/2026-09-28-whatsapp-automation-that-still-feels-like-customer-care.md): Automate intake and logging first; keep judgement and exceptions with a named human.
-- [HubSpot vs Spreadsheet CRM: The Real Switching Cost](https://pratikbajoria.com/blog/2026-09-27-hubspot-vs-spreadsheet-crm-the-real-switching-cost.md): The cost is not the licence — it is defining stages your team will actually use.
-- [Real Estate AI: Start With Leads and Documents, Not Prediction](https://pratikbajoria.com/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction.md): Real estate AI that pays back: one pipeline for every enquiry, AI flags for missing unit documents, legal judgement kept with people.
 - [When a Finance Team Should Say No to an AI Pilot](https://pratikbajoria.com/blog/2026-09-24-when-a-finance-team-should-say-no-to-an-ai-pilot.md): When a finance team should say no to an AI pilot: refuse pilots with no owner, metric or baseline, write stop conditions, and fund a thin release instead.
 - [How Do You Know Finance AI Will Pay for Itself Before You Buy?](https://pratikbajoria.com/blog/2026-09-21-how-do-you-know-finance-ai-will-pay-for-itself-before-you-buy.md): Prove the payback before you buy: name the constraint, cost today’s process, design the human gate and buy only what moves a metric you manage.
 - [Ecommerce Reconciliation: Where Automation Helps and Where It Lies](https://pratikbajoria.com/blog/2026-09-20-ecommerce-reconciliation-where-automation-helps-and-where-it-lies.md): Automate mapping and matching; never automate away the settlement exception review.
@@ -133,13 +132,21 @@ Pratik works from India with business leaders in India, the United States, the U
 
 Insights are practical, implementation-focused and may contain disclosed affiliate links. Affiliate recommendations are editorially independent. Finance and markets content is educational and does not constitute financial, investment or legal advice.
 
-## Editorial pillars
+## Editorial pillars (topic clusters)
 
-- AI for Business: implementation, automation, governance and measurable operating impact.
-- Finance & Markets: financial analysis, controls and decision-making education; not investment advice.
-- Business Systems: dashboards, planning, CRM, workflow design and operating cadence.
-- Tool Reviews & Comparisons: practical evaluation of business software, AI tools and automation platforms.
-- CA Insights: accounting, compliance, controls and finance transformation explained for operators.
+- AI for Chartered Accountants in India: How CA firms and practising CAs in India can use AI in audit, GST, income tax, TDS, ROC/MCA filings and practice management, with the review steps and ICAI, NFRA and DPDP rules that stay human. Hub: https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india
+- AI automation for Indian businesses: Practical AI and workflow automation for Indian MSMEs and growing companies: Tally, WhatsApp, documents, agents, CRM and email, and how to choose who builds it. Hub: https://pratikbajoria.com/ai-automation-in-india
+- AI implementation for finance teams: For CFOs and controllers: where finance AI pays back, how to budget and govern it, when to say no to a pilot, and build-versus-buy decisions. Hub: https://pratikbajoria.com/ai-implementation-for-finance-teams
+- AI tools and accounting software: Hands-on comparisons of AI assistants, accounting automation software and business tools for CAs and finance teams, judged on controls and review effort. Hub: https://pratikbajoria.com/blog/best-ai-tools-chartered-accountants-finance-professionals
+
+## Author
+
+- CA Pratik Bajoria: Chartered Accountant, ex-Big 4, founder of Findost. Based in Kolkata, India. Author page: https://pratikbajoria.com/about
+- Every article is written and signed by Pratik Bajoria; Article schema names Person #person as author and Organization #business as publisher.
+
+## Featured in
+
+- CAclubindia: AI for CA students: What helps Exam Preparation and What does Not (2026-10-28) https://www.caclubindia.com/articles/ai-for-ca-students-what-helps-exam-preparation-and-what-does-not-56512.asp
 
 ## Optional
 

@@ -58,7 +58,6 @@ In a CA or finance team, the test has a specific shape. Can the reviewer see the
 This guide is part of [AI automation in India: a practical hub for business owners](https://pratikbajoria.com/ai-automation-in-india).
 
 - [A 90-Day AI Opportunity Audit Without the Theatre](https://pratikbajoria.com/audit)
-- [Semrush Review for Business Owners: Is It Worth the Investment?](https://pratikbajoria.com/blog/semrush-review-business-owners)
 - [Why Most Corporate AI Pilots Never Reach Production](https://pratikbajoria.com/blog/corporate-ai-pilots)
 
 Also useful: [AI implementation for finance teams: the CFO and controller guide](https://pratikbajoria.com/ai-implementation-for-finance-teams).
@@ -86,6 +85,6 @@ Tool links go to the vendor’s official site. No affiliate tracking is active o
 - [AI controls checklist for CA firms](https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india)
 - [AI automation in India: a practical hub for business owners](https://pratikbajoria.com/ai-automation-in-india)
 - [A 90-Day AI Opportunity Audit Without the Theatre](https://pratikbajoria.com/audit)
-- [Semrush Review for Business Owners: Is It Worth the Investment?](https://pratikbajoria.com/blog/semrush-review-business-owners)
 - [Why Most Corporate AI Pilots Never Reach Production](https://pratikbajoria.com/blog/corporate-ai-pilots)
+- [AI implementation for finance teams: the CFO and controller guide](https://pratikbajoria.com/ai-implementation-for-finance-teams)
 - [All articles](https://pratikbajoria.com/blog)

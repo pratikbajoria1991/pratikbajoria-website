@@ -266,10 +266,10 @@ const blogPathAliases = {
   '/blog/2026-09-07-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/audit',
   '/blog/2026-09-14-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/audit',
   '/blog/2026-10-02-a-90-day-ai-opportunity-audit-without-the-theatre': '/audit',
-  '/blog/2026-09-01-ai-in-real-estate-start-with-lead-qualification-and-documents': '/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction',
-  '/blog/2026-09-08-ai-in-real-estate-start-with-lead-qualification-and-documents': '/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction',
-  '/blog/2026-09-15-ai-in-real-estate-start-with-lead-qualification-and-documents': '/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction',
-  '/blog/2026-10-03-real-estate-ai-start-with-leads-and-documents-not-prediction': '/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction',
+  '/blog/2026-09-01-ai-in-real-estate-start-with-lead-qualification-and-documents': '/ai-automation-in-india',
+  '/blog/2026-09-08-ai-in-real-estate-start-with-lead-qualification-and-documents': '/ai-automation-in-india',
+  '/blog/2026-09-15-ai-in-real-estate-start-with-lead-qualification-and-documents': '/ai-automation-in-india',
+  '/blog/2026-10-03-real-estate-ai-start-with-leads-and-documents-not-prediction': '/ai-automation-in-india',
   '/blog/2026-09-02-what-good-ai-governance-looks-like-in-a-mid-market-company': '/blog/2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer',
   '/blog/2026-09-09-what-good-ai-governance-looks-like-in-a-mid-market-company': '/blog/2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer',
   '/blog/2026-09-16-what-good-ai-governance-looks-like-in-a-mid-market-company': '/blog/2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer',
@@ -291,6 +291,9 @@ const blogPathAliases = {
   '/blog/2026-09-21-semrush-for-owners-when-search-spend-is-actually-rational': '/blog/semrush-review-business-owners',
   '/blog/2026-10-06-semrush-for-owners-when-search-spend-is-actually-rational': '/blog/semrush-review-business-owners',
   '/blog/2026-09-22-notion-as-a-finance-control-layer-not-a-second-ledger': '/blog/notion-for-finance-professionals-templates-dashboards-workflows',
+  // Topical-authority consolidation (29 Oct 2026): off-topic posts -> closest cluster page.
+  '/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction': '/ai-automation-in-india',
+  '/blog/2026-09-27-hubspot-vs-spreadsheet-crm-the-real-switching-cost': '/blog/zoho-crm-hubspot-crm-integration-finance-workflows',
   '/blog/ai-tools-that-pay-back-for-finance-and-ca-teams': '/blog/best-ai-tools-chartered-accountants-finance-professionals',
 };
 const blogAliasFor = (pathname) => {
@@ -652,7 +655,7 @@ function renderPostHtml(post, catalog, md = null) {
     datePublished: post.date || undefined,
     dateModified: post.dateModified || post.date || undefined,
     author: AUTHOR_PERSON,
-    publisher: { '@type': 'Person', name: 'Pratik Bajoria', '@id': `${SITE}/#person` },
+    publisher: { '@type': 'Organization', '@id': `${SITE}/#business`, name: 'Pratik Bajoria — AI Implementation', logo: { '@type': 'ImageObject', url: `${SITE}/favicon.png` } },
     mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
     image,
     keywords: Array.isArray(post.keywords) ? post.keywords : []
@@ -755,6 +758,215 @@ ${sourcesHtml}${structured ? `\n<p><em>${escHtml(post.disclaimer || STRUCTURED_D
 `;
 }
 
+
+// ---------------------------------------------------------------------------
+// Topical authority + author entity layer (data: public/clusters.json).
+// Applied at the edge to every /blog/{slug} page (static SSR or JSON-rendered) and to the
+// cluster hub pages, so posts published later by the daily workflow or the weekly routine
+// get the same byline, author box, cluster breadcrumb, hub + sibling links and Article
+// author/publisher schema without any per-post edit. Idempotent (data-authority marker).
+// ---------------------------------------------------------------------------
+const HUB_PATHS = new Set(['/ai-automation-in-india', '/ai-implementation-for-finance-teams']);
+const ORG_PUBLISHER = {
+  '@type': 'Organization',
+  '@id': `${SITE}/#business`,
+  name: 'Pratik Bajoria — AI Implementation',
+  url: `${SITE}/`,
+  logo: { '@type': 'ImageObject', url: `${SITE}/favicon.png` },
+  founder: { '@id': `${SITE}/#person` }
+};
+let clustersCache = null;
+async function loadClusters(request, env) {
+  if (clustersCache) return clustersCache;
+  const c = await loadJsonAsset(request, env, '/clusters.json', null);
+  if (!c || !Array.isArray(c.clusters) || !c.clusters.length) return null;
+  c.rx = c.clusters.map((k) => { try { return new RegExp((k.rules || []).join('|') || '^$', 'i'); } catch { return /^$/; } });
+  clustersCache = c;
+  return c;
+}
+function clusterFor(c, slug, category) {
+  const byId = (id) => c.clusters.find((k) => k.id === id);
+  if (c.posts && c.posts[slug] && byId(c.posts[slug])) return byId(c.posts[slug]);
+  const hub = c.clusters.find((k) => k.hub === `/blog/${slug}`);
+  if (hub) return hub;
+  if (category) {
+    const k = c.clusters.find((x) => (x.categories || []).includes(category));
+    if (k) return k;
+  }
+  const i = c.rx.findIndex((r) => r.test(slug));
+  return c.clusters[i >= 0 ? i : 0];
+}
+const isNoindexSlug = (c, slug) => Boolean(c && Array.isArray(c.noindex) && c.noindex.includes(slug));
+const unescHtml = (s) => String(s).replace(/&quot;/g, '"').replace(/&#39;|&#x27;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+const htmlText = (s) => unescHtml(String(s).replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ').trim();
+
+// Every indexable post with title + date + cluster (JSON posts, then the markdown catalog,
+// which also covers static-only posts).
+async function clusterIndex(request, env, c) {
+  const [posts, cat] = await Promise.all([loadAllPosts(request, env), mdCatalog(request, env)]);
+  const out = new Map();
+  for (const p of posts) {
+    if (!p || !isBlogSlug(p.slug || '') || blogPathAliases[`/blog/${p.slug}`] || isNoindexSlug(c, p.slug)) continue;
+    if (!out.has(p.slug)) out.set(p.slug, { slug: p.slug, title: p.title || p.slug, date: p.date || '', category: p.category || '' });
+  }
+  for (const r of cat.raw.routes || []) {
+    const m = /^\/blog\/([a-z0-9-]+)$/.exec(r.path || '');
+    if (!m || out.has(m[1]) || blogPathAliases[r.path] || isNoindexSlug(c, m[1])) continue;
+    out.set(m[1], { slug: m[1], title: r.title || m[1], date: (m[1].match(/^\d{4}-\d{2}-\d{2}/) || [r.lastModified || ''])[0], category: '' });
+  }
+  const list = [...out.values()].map((p) => ({ ...p, cluster: clusterFor(c, p.slug, p.category).id }));
+  return list.sort((a, b) => String(b.date).localeCompare(String(a.date)) || a.slug.localeCompare(b.slug));
+}
+
+function crumbsHtml(items) {
+  const sep = '<span aria-hidden="true" style="margin:0 8px;color:#a3a69e">/</span>';
+  const lis = items.map(([label, href], i) => `<li>${i ? sep : ''}${href ? `<a href="${escHtml(href)}" style="border-bottom:1px solid rgba(31,37,35,.25)">${label}</a>` : `<span aria-current="page">${label}</span>`}</li>`).join('');
+  return `<nav class="breadcrumbs" aria-label="Breadcrumb" style="font-size:12px;line-height:1.5;color:#5f645e;margin:18px 0 0"><ol style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:baseline">${lis}</ol></nav>`;
+}
+function authorBoxHtml(c) {
+  const a = c.author || {};
+  const li = (AUTHOR_PERSON.sameAs || []).find((u) => u.includes('linkedin.com')) || '';
+  const feat = (c.featuredIn || []).filter((f) => /^https:\/\//.test(f.url || ''));
+  return `
+        <aside class="author-box" data-authority="1" aria-label="About the author" style="margin-top:36px;padding:22px 24px;border:1px solid rgba(28,28,26,0.12);border-radius:12px">
+          <p class="eyebrow">About the author</p>
+          <p style="margin:8px 0 6px"><strong><a href="${escHtml(a.url || '/about')}" rel="author">${escHtml(a.displayName || 'CA Pratik Bajoria')}</a></strong> · ${escHtml(a.role || '')}</p>
+          <p style="margin:0 0 10px">${escHtml(a.bio || '')}</p>
+          <p style="margin:0;font-size:0.95rem"><a href="${escHtml(a.url || '/about')}">More about Pratik</a>${li ? ` · <a href="${escHtml(li)}" target="_blank" rel="me noopener noreferrer">LinkedIn</a>` : ''} · <a href="https://findost.io" target="_blank" rel="noopener noreferrer">Findost</a>${feat.length ? ` · Featured in ${feat.map((f) => `<a href="${escHtml(f.url)}" target="_blank" rel="noopener noreferrer">${escHtml(f.publication)}</a>`).join(', ')}` : ''}</p>
+        </aside>`;
+}
+function clusterBoxHtml(k, siblings) {
+  const items = siblings.map((p) => `<li><a href="/blog/${escHtml(p.slug)}">${escHtml(p.title)}</a></li>`).join('');
+  return `
+        <aside class="cluster-links" data-authority="1" aria-label="More on ${escHtml(k.name)}" style="margin-top:36px;padding:22px 24px;border:1px solid rgba(28,28,26,0.12);border-radius:12px">
+          <p class="eyebrow">More on ${escHtml(k.short || k.name)}</p>
+          <p style="margin:8px 0 10px">This article is part of my guide to <a href="${escHtml(k.hub)}">${escHtml(k.name)}</a>.</p>${items ? `
+          <ul style="margin:0;padding-left:20px">${items}</ul>` : ''}
+        </aside>`;
+}
+function hubListHtml(k, members) {
+  if (!members.length) return '';
+  return `
+        <section class="cluster-hub-list" data-authority="1" aria-label="Every article on ${escHtml(k.name)}" style="margin-top:40px">
+          <h2>Every article on ${escHtml(k.name)}</h2>
+          <p>${escHtml(k.summary || '')}</p>
+          <ul>${members.map((p) => `<li><a href="/blog/${escHtml(p.slug)}">${escHtml(p.title)}</a>${p.date ? ` <span style="color:#6f746d">(${escHtml(p.date)})</span>` : ''}</li>`).join('')}</ul>
+        </section>`;
+}
+function rewriteLd(html, fn) {
+  return html.replace(/(<script\b[^>]*type=["']application\/ld\+json["'][^>]*>)([\s\S]*?)(<\/script>)/gi, (all, open, body, close) => {
+    let data;
+    try { data = JSON.parse(body); } catch { return all; }
+    const visit = (n) => {
+      if (Array.isArray(n)) return n.map(visit);
+      if (!n || typeof n !== 'object') return n;
+      if (Array.isArray(n['@graph'])) n['@graph'] = n['@graph'].map(visit);
+      return fn(n) || n;
+    };
+    const next = visit(data);
+    return `${open}\n${JSON.stringify(next, null, 2).replace(/</g, '\\u003c')}\n    ${close}`;
+  });
+}
+const ldTypes = (n) => new Set([].concat(n['@type'] || []));
+const ARTICLE_LD = ['Article', 'BlogPosting', 'NewsArticle', 'TechArticle'];
+
+// html of a post page -> html with the authority layer. path = /blog/{slug}.
+async function applyPostAuthority(request, env, html, slug) {
+  if (html.includes('data-authority="1"')) return html;
+  const c = await loadClusters(request, env);
+  if (!c) return html;
+  const eyebrow = /<article\b[^>]*>\s*<p class="eyebrow">([^<·]+)·/i.exec(html);
+  const category = eyebrow ? htmlText(eyebrow[1]) : '';
+  const k = clusterFor(c, slug, category);
+  const path = `/blog/${slug}`;
+  const isHub = k.hub === path;
+  const h1 = /<h1\b[^>]*>([\s\S]*?)<\/h1>/i.exec(html);
+  const titleHtml = h1 ? h1[1].trim() : escHtml(slug);
+  const titleText = htmlText(titleHtml);
+  const all = await clusterIndex(request, env, c);
+  const members = all.filter((p) => p.cluster === k.id && `/blog/${p.slug}` !== k.hub);
+  let out = html;
+  // 1. Visible breadcrumb: Home / Blog / Cluster hub / Post.
+  const trail = isHub ? [['Home', '/'], ['Blog', '/blog'], [titleHtml, null]] : [['Home', '/'], ['Blog', '/blog'], [escHtml(k.short || k.name), k.hub], [titleHtml, null]];
+  if (/<nav class="breadcrumbs"[\s\S]*?<\/nav>/.test(out)) out = out.replace(/<nav class="breadcrumbs"[\s\S]*?<\/nav>/, crumbsHtml(trail));
+  // 2. Byline under the H1.
+  const a = c.author || {};
+  if (h1 && !/class="article-byline"/.test(out)) {
+    out = out.replace(h1[0], `${h1[0]}\n        <p class="article-byline" data-authority="1" style="margin:6px 0 0;font-size:0.95rem;color:#5f645e">By <a href="${escHtml(a.url || '/about')}" rel="author">${escHtml(a.displayName || 'CA Pratik Bajoria')}</a> · ${escHtml(a.role || '')} · <a href="${escHtml(k.hub)}">${escHtml(k.name)}</a></p>`);
+  }
+  // 3. Cluster box (hub + neighbouring spokes) or, on a hub post, the full spoke list; then the author box.
+  let boxes;
+  if (isHub) boxes = hubListHtml(k, members);
+  else {
+    const i = members.findIndex((p) => p.slug === slug);
+    const pool = members.filter((p) => p.slug !== slug);
+    const at = i < 0 ? 0 : i;
+    const sib = [...pool.slice(Math.max(0, at - 2), at), ...pool.slice(at, at + 3)].slice(0, 5);
+    boxes = clusterBoxHtml(k, sib);
+  }
+  boxes += authorBoxHtml(c);
+  const end = out.lastIndexOf('</article>');
+  if (end > 0) out = `${out.slice(0, end)}${boxes}\n      ${out.slice(end)}`;
+  // 4. JSON-LD: Article author/publisher/section, BreadcrumbList with the cluster level.
+  const canonical = `${SITE}${path}`;
+  out = rewriteLd(out, (n) => {
+    const t = ldTypes(n);
+    if (ARTICLE_LD.some((x) => t.has(x))) {
+      n.author = AUTHOR_PERSON;
+      n.publisher = ORG_PUBLISHER;
+      n.articleSection = k.name;
+      n.isPartOf = { '@type': 'CollectionPage', '@id': `${SITE}${k.hub}#cluster`, name: k.name, url: `${SITE}${k.hub}` };
+      if (!n.inLanguage) n.inLanguage = 'en-IN';
+      return n;
+    }
+    if (t.has('BreadcrumbList')) {
+      const items = [['Home', `${SITE}/`], ['Blog', `${SITE}/blog`]];
+      if (!isHub) items.push([k.short || k.name, `${SITE}${k.hub}`]);
+      items.push([titleText, canonical]);
+      n.itemListElement = items.map(([name, item], i) => ({ '@type': 'ListItem', position: i + 1, name, item }));
+      return n;
+    }
+    return null;
+  });
+  // 5. Consolidated (noindex) posts.
+  if (isNoindexSlug(c, slug)) {
+    out = out.replace(/<meta name="robots" content="[^"]*"\s*\/?>/i, '<meta name="robots" content="noindex,follow" />');
+  }
+  return out;
+}
+
+// Static hub pages (e.g. /ai-automation-in-india): append the live spoke list.
+async function applyHubAuthority(request, env, html, pathname) {
+  if (html.includes('data-authority="1"')) return html;
+  const c = await loadClusters(request, env);
+  if (!c) return html;
+  const k = c.clusters.find((x) => x.hub === pathname);
+  if (!k) return html;
+  const members = (await clusterIndex(request, env, c)).filter((p) => p.cluster === k.id);
+  html = rewriteLd(html, (n) => {
+    if ([...ldTypes(n)].some((t) => ARTICLE_LD.includes(t))) { n.author = AUTHOR_PERSON; n.publisher = ORG_PUBLISHER; }
+    return n;
+  });
+  const block = hubListHtml(k, members);
+  if (!block) return html;
+  const end = html.lastIndexOf('</article>') > 0 ? html.lastIndexOf('</article>') : html.lastIndexOf('</main>');
+  return end > 0 ? `${html.slice(0, end)}${block}\n      ${html.slice(end)}` : html;
+}
+async function withAuthority(request, env, response, kind, key) {
+  const ctype = response.headers.get('content-type') || '';
+  if (request.method !== 'GET' || response.status !== 200 || !ctype.includes('text/html')) return response;
+  const html = await response.text();
+  const out = kind === 'post' ? await applyPostAuthority(request, env, html, key) : await applyHubAuthority(request, env, html, key);
+  const h = new Headers(response.headers);
+  h.delete('content-length');
+  h.delete('etag');
+  if (kind === 'post') {
+    const c = await loadClusters(request, env);
+    if (isNoindexSlug(c, key)) h.set('X-Robots-Tag', 'noindex, follow');
+  }
+  return new Response(out, { status: response.status, statusText: response.statusText, headers: h });
+}
+
 async function serveBlogPost(request, env, slug) {
   // 1. Static SSR file (public/blog/{slug}.html) wins.
   // HEAD must be validated against the real body (an empty HEAD body would fail the
@@ -767,7 +979,7 @@ async function serveBlogPost(request, env, slug) {
     const html = await direct.text();
     if (looksLikeRealBlogPage(html, slug)) {
       if (isHead) return new Response(null, { status: 200, statusText: direct.statusText, headers: direct.headers });
-      return injectGa4(new Response(html, { status: 200, statusText: direct.statusText, headers: direct.headers }), await mdRouteFor(request, env, `/blog/${slug}`));
+      return injectGa4(await withAuthority(request, env, new Response(html, { status: 200, statusText: direct.statusText, headers: direct.headers }), 'post', slug), await mdRouteFor(request, env, `/blog/${slug}`));
     }
     // else: SPA/homepage fallback — fall through.
   } else if (direct.status >= 300 && direct.status < 400) {
@@ -779,13 +991,16 @@ async function serveBlogPost(request, env, slug) {
   if (post) {
     const catalog = await loadJsonAsset(request, env, '/affiliate-links.json', {});
     const md = await mdRouteFor(request, env, `/blog/${slug}`);
-    return new Response(request.method === 'HEAD' ? null : renderPostHtml(post, catalog, md), {
+    const c = await loadClusters(request, env);
+    const body = request.method === 'HEAD' ? null : await applyPostAuthority(request, env, renderPostHtml(post, catalog, md), slug);
+    return new Response(body, {
       status: 200,
       headers: {
         'Content-Type': 'text/html; charset=utf-8',
         ...(md ? { Vary: 'Accept' } : {}),
         'Cache-Control': 'public, max-age=300, must-revalidate',
-        'X-Blog-Render': 'json-fallback'
+        'X-Blog-Render': 'json-fallback',
+        ...(isNoindexSlug(c, slug) ? { 'X-Robots-Tag': 'noindex, follow' } : {})
       }
     });
   }
@@ -1017,6 +1232,7 @@ const site = {
 
     // Absolute 301s for legacy .html URLs (GSC flagged relative _redirects Location as Redirect error)
     const htmlAliases = {
+      '/about.html': '/about',
       '/topics.html': '/topics',
       '/privacy.html': '/privacy',
       '/audit.html': '/audit',
@@ -1050,7 +1266,9 @@ const site = {
       if (m && isBlogSlug(m[1])) return serveBlogPost(request, env, m[1]);
     }
 
-    return injectGa4(await env.ASSETS.fetch(request), mdRoute);
+    const asset = await env.ASSETS.fetch(request);
+    if (request.method === 'GET' && HUB_PATHS.has(url.pathname)) return injectGa4(await withAuthority(request, env, asset, 'hub', url.pathname), mdRoute);
+    return injectGa4(asset, mdRoute);
   }
 };
 

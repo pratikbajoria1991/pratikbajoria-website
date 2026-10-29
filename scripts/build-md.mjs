@@ -9,7 +9,7 @@
 // Run: npm run build:md   (the daily blog workflow runs it after generating a post)
 import fs from 'node:fs';
 import path from 'node:path';
-import { SITE, PRIVATE_PATHS, LLMS_INTRO_SECTIONS, LLMS_OUTRO_SECTIONS } from './md/site-config.mjs';
+import { SITE, CLUSTERS, PRIVATE_PATHS, LLMS_INTRO_SECTIONS, LLMS_OUTRO_SECTIONS } from './md/site-config.mjs';
 import { PUB, loadData, renderAll } from './md/registry.mjs';
 import { canonicalFor, mdUrlFor, approxTokens, heading, list } from './md/format.mjs';
 
@@ -114,6 +114,15 @@ owner: ${SITE.name}
 contact: ${SITE.email}
 language: ${SITE.language}
 updated: ${latest}
+
+[author]
+name: ${CLUSTERS.author.displayName}
+role: ${CLUSTERS.author.role}
+location: Kolkata, India
+profile: ${SITE.url}/about
+
+[topics]
+${CLUSTERS.clusters.map((c) => `${c.id}: ${SITE.url}${c.hub}`).join('\n')}
 
 [signals]
 search: yes
