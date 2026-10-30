@@ -1,8 +1,8 @@
 {
   "site": "https://pratikbajoria.com",
   "name": "Pratik Bajoria — AI Implementation for Business",
-  "generated": "2026-10-29",
-  "count": 68,
+  "generated": "2026-10-30",
+  "count": 69,
   "routes": [
     {
       "path": "/",
@@ -71,8 +71,8 @@
       "title": "Insights",
       "summary": "Index of every article on pratikbajoria.com about AI implementation, AI for Chartered Accountants, finance automation and business tools, newest first, each with a one-line summary.",
       "section": "core",
-      "lastModified": "2026-10-29",
-      "tokens": 4356
+      "lastModified": "2026-10-30",
+      "tokens": 4440
     },
     {
       "path": "/ai-automation-in-india",
@@ -533,6 +533,16 @@
       "section": "posts",
       "lastModified": "2026-10-26",
       "tokens": 6477
+    },
+    {
+      "path": "/blog/2026-10-30-ai-prompts-for-bank-reconciliation-what-works-and-what-to-check",
+      "url": "https://pratikbajoria.com/blog/2026-10-30-ai-prompts-for-bank-reconciliation-what-works-and-what-to-check",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-30-ai-prompts-for-bank-reconciliation-what-works-and-what-to-check.md",
+      "title": "AI Prompts for Bank Reconciliation: What Works and What to Check",
+      "summary": "Prompts for bank reconciliation with Claude or ChatGPT, written by a CA: file preparation, matching rules, outputs to request and the checks before you post.",
+      "section": "posts",
+      "lastModified": "2026-10-30",
+      "tokens": 1713
     },
     {
       "path": "/blog/2026-10-29-ai-for-ca-students-using-chatgpt-and-ca-gpt-without-weakening-your-prep",

@@ -8,7 +8,7 @@ url: https://pratikbajoria.com/
 owner: Pratik Bajoria
 contact: hello@pratikbajoria.com
 language: en-IN
-updated: 2026-10-29
+updated: 2026-10-30
 
 [author]
 name: CA Pratik Bajoria

@@ -3,8 +3,9 @@
 > Practical writing on implementing AI inside real businesses — audits, finance workflows, governance and tooling.
 
 Canonical: https://pratikbajoria.com/blog
-Last updated: 2026-10-29
+Last updated: 2026-10-30
 
+- [AI Prompts for Bank Reconciliation: What Works and What to Check](https://pratikbajoria.com/blog/2026-10-30-ai-prompts-for-bank-reconciliation-what-works-and-what-to-check) - Prompts for bank reconciliation with Claude or ChatGPT, written by a CA: file preparation, matching rules, outputs to request and the checks before you post.
 - [AI for CA Students: Using ChatGPT and CA GPT Without Weakening Your Prep](https://pratikbajoria.com/blog/2026-10-29-ai-for-ca-students-using-chatgpt-and-ca-gpt-without-weakening-your-prep) - A practising CA’s guide for CA students: where ChatGPT and ICAI’s CA GPT help exam prep, where they mislead, and the habits that build real exam skill.
 - [AI Automation Agency vs Consultant in India: How to Choose](https://pratikbajoria.com/blog/2026-10-28-ai-automation-agency-vs-consultant-in-india-how-to-choose) - Hiring help for AI automation in India? When an agency fits, when an independent consultant fits, and the questions to ask either before signing anything.
 - [AI for AOC-4 and MGT-7 Filings: What a CA Can Automate Before the ROC Deadline](https://pratikbajoria.com/blog/2026-10-28-ai-for-aoc-4-and-mgt-7-filings-what-a-ca-can-automate-before-the-roc-deadline) - How a CA firm can use AI to tie AOC-4 to signed accounts and build MGT-7 data before the section 137 and 92 deadlines, and what stays human.
