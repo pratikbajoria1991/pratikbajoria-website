@@ -1244,6 +1244,7 @@ const site = {
       '/ai-implementation-for-finance-teams.html': '/ai-implementation-for-finance-teams',
       '/workflow-automation-with-ai-for-mid-market.html': '/workflow-automation-with-ai-for-mid-market',
       '/cross-border-partnerships.html': '/cross-border-partnerships',
+      '/msme-services.html': '/msme-services',
       '/ai-automation-in-india.html': '/ai-automation-in-india',
     };
     if (isRead && htmlAliases[url.pathname]) {
