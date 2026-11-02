@@ -13,6 +13,12 @@ Every page below links to its markdown version (append `.md` to any page URL, or
 - Fractional AI Leadership: roadmap ownership, governance, vendor selection and reporting.
 - AI Product Advisory: architecture, model choices, pricing and go-to-market for AI products.
 
+## MSME business support
+
+- Page: https://pratikbajoria.com/msme-services
+- Five service areas: receivables recovery support, scheme discovery, debt readiness and financial strategy, excess inventory buyer matching, and tender intelligence/bid preparation.
+- Scope, fees and provider roles are agreed in writing. Eligibility, recovery, financing and tender outcomes are not guaranteed.
+
 ## Process
 
 Diagnose → Prioritise → Build → Embed.

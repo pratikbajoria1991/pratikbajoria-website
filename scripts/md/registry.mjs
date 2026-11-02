@@ -24,6 +24,7 @@ export const STATIC_PAGES = [
   { path: '/scorecard', file: 'scorecard.html', section: 'core' },
   { path: '/workshops', file: 'workshops.html', section: 'core' },
   { path: '/resources', file: 'resources.html', section: 'core' },
+  { path: '/msme-services', file: 'msme-services.html', section: 'core' },
   { path: '/topics', file: 'topics.html', section: 'core' },
   { path: '/ai-automation-in-india', file: 'ai-automation-in-india.html', section: 'guides' },
   { path: '/ai-implementation-for-finance-teams', file: 'ai-implementation-for-finance-teams.html', section: 'guides' },
