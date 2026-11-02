@@ -2,7 +2,7 @@
   "site": "https://pratikbajoria.com",
   "name": "Pratik Bajoria — AI Implementation for Business",
   "generated": "2026-10-30",
-  "count": 69,
+  "count": 70,
   "routes": [
     {
       "path": "/",
@@ -15,64 +15,14 @@
       "tokens": 4146
     },
     {
-      "path": "/audit",
-      "url": "https://pratikbajoria.com/audit",
-      "markdown": "https://pratikbajoria.com/audit.md",
-      "title": "AI Opportunity Audit for finance teams and CA firms in India.",
-      "summary": "Service page for the AI Opportunity Audit by Pratik Bajoria: a fixed-fee two-week sprint that maps finance and CA-firm workflows, scores AI use cases and produces a prioritised 90-day roadmap.",
+      "path": "/about",
+      "url": "https://pratikbajoria.com/about",
+      "markdown": "https://pratikbajoria.com/about.md",
+      "title": "CA Pratik Bajoria Chartered Accountant, Kolkata.",
+      "summary": "Author page for CA Pratik Bajoria, a Kolkata-based Chartered Accountant (ex-Big 4, 9+ years post-qualification) who advises companies on AI implementation and builds Findost; lists his four topic hubs, CAclubindia feature and profiles.",
       "section": "core",
-      "lastModified": "2026-10-26",
-      "tokens": 4734
-    },
-    {
-      "path": "/scorecard",
-      "url": "https://pratikbajoria.com/scorecard",
-      "markdown": "https://pratikbajoria.com/scorecard.md",
-      "title": "AI Opportunity Scorecard.",
-      "summary": "Free AI Opportunity Scorecard for CFOs and operators — score process, data, ROI, risk and ownership before you spend on AI.",
-      "section": "core",
-      "lastModified": "2026-10-07",
-      "tokens": 1002
-    },
-    {
-      "path": "/workshops",
-      "url": "https://pratikbajoria.com/workshops",
-      "markdown": "https://pratikbajoria.com/workshops.md",
-      "title": "Finance team AI enablement.",
-      "summary": "Finance team AI enablement: half-day executive workshop plus optional two-week cohort follow-on. Prompt libraries, SOPs and usage policy sketch.",
-      "section": "core",
-      "lastModified": "2026-09-18",
-      "tokens": 832
-    },
-    {
-      "path": "/resources",
-      "url": "https://pratikbajoria.com/resources",
-      "markdown": "https://pratikbajoria.com/resources.md",
-      "title": "Practical packs for finance teams.",
-      "summary": "Digital resources for finance and ops leaders: AI opportunity checklist, finance SOP starter pack and CA/finance prompt library.",
-      "section": "core",
-      "lastModified": "2026-09-18",
-      "tokens": 550
-    },
-    {
-      "path": "/topics",
-      "url": "https://pratikbajoria.com/topics",
-      "markdown": "https://pratikbajoria.com/topics.md",
-      "title": "Practical answers for the AI and finance questions business leaders ask.",
-      "summary": "A practical topic guide to AI for Chartered Accountants, finance professionals, entrepreneurs and business leaders from Pratik Bajoria.",
-      "section": "core",
-      "lastModified": "2026-10-08",
-      "tokens": 2250
-    },
-    {
-      "path": "/blog",
-      "url": "https://pratikbajoria.com/blog",
-      "markdown": "https://pratikbajoria.com/blog.md",
-      "title": "Insights",
-      "summary": "Index of every article on pratikbajoria.com about AI implementation, AI for Chartered Accountants, finance automation and business tools, newest first, each with a one-line summary.",
-      "section": "core",
-      "lastModified": "2026-10-30",
-      "tokens": 4440
+      "lastModified": "2026-10-29",
+      "tokens": 1036
     },
     {
       "path": "/ai-automation-in-india",
@@ -105,44 +55,24 @@
       "tokens": 1156
     },
     {
-      "path": "/how-to-start-ai-implementation",
-      "url": "https://pratikbajoria.com/how-to-start-ai-implementation",
-      "markdown": "https://pratikbajoria.com/how-to-start-ai-implementation.md",
-      "title": "How to start AI implementation.",
-      "summary": "How mid-market and finance teams should start AI implementation: map workflows, score use cases, then ship a prioritised 90-day roadmap — not another pilot.",
-      "section": "guides",
-      "lastModified": "2026-09-18",
-      "tokens": 1199
-    },
-    {
-      "path": "/workflow-automation-with-ai-for-mid-market",
-      "url": "https://pratikbajoria.com/workflow-automation-with-ai-for-mid-market",
-      "markdown": "https://pratikbajoria.com/workflow-automation-with-ai-for-mid-market.md",
-      "title": "Workflow automation with AI for mid-market.",
-      "summary": "Workflow automation with AI for mid-market COOs: map hand-offs, pick owned bottlenecks, decide build, buy or wait, and ship automations within 90 days.",
-      "section": "guides",
-      "lastModified": "2026-09-18",
-      "tokens": 1178
-    },
-    {
-      "path": "/about",
-      "url": "https://pratikbajoria.com/about",
-      "markdown": "https://pratikbajoria.com/about.md",
-      "title": "CA Pratik Bajoria Chartered Accountant, Kolkata.",
-      "summary": "Author page for CA Pratik Bajoria, a Kolkata-based Chartered Accountant (ex-Big 4, 9+ years post-qualification) who advises companies on AI implementation and builds Findost; lists his four topic hubs, CAclubindia feature and profiles.",
+      "path": "/audit",
+      "url": "https://pratikbajoria.com/audit",
+      "markdown": "https://pratikbajoria.com/audit.md",
+      "title": "AI Opportunity Audit for finance teams and CA firms in India.",
+      "summary": "Service page for the AI Opportunity Audit by Pratik Bajoria: a fixed-fee two-week sprint that maps finance and CA-firm workflows, scores AI use cases and produces a prioritised 90-day roadmap.",
       "section": "core",
-      "lastModified": "2026-10-29",
-      "tokens": 1036
+      "lastModified": "2026-10-26",
+      "tokens": 4734
     },
     {
-      "path": "/privacy",
-      "url": "https://pratikbajoria.com/privacy",
-      "markdown": "https://pratikbajoria.com/privacy.md",
-      "title": "Privacy in plain English.",
-      "summary": "Privacy notice for pratikbajoria.com: what the discovery-call, cross-border and newsletter forms store, who can see it, and how to ask for deletion.",
-      "section": "legal",
-      "lastModified": "2026-09-18",
-      "tokens": 583
+      "path": "/blog",
+      "url": "https://pratikbajoria.com/blog",
+      "markdown": "https://pratikbajoria.com/blog.md",
+      "title": "Insights",
+      "summary": "Index of every article on pratikbajoria.com about AI implementation, AI for Chartered Accountants, finance automation and business tools, newest first, each with a one-line summary.",
+      "section": "core",
+      "lastModified": "2026-10-30",
+      "tokens": 4440
     },
     {
       "path": "/blog/2026-09-14-how-much-should-a-mid-market-finance-team-budget-for-ai",
@@ -325,6 +255,26 @@
       "tokens": 5454
     },
     {
+      "path": "/blog/2026-10-09-ai-for-tax-audit-in-india-form-3cd-this-year-form-26-next-year",
+      "url": "https://pratikbajoria.com/blog/2026-10-09-ai-for-tax-audit-in-india-form-3cd-this-year-form-26-next-year",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-09-ai-for-tax-audit-in-india-form-3cd-this-year-form-26-next-year.md",
+      "title": "AI for Tax Audit in India: Form 3CD This Year, Form 26 Next Year",
+      "summary": "Form 26 replaces Form 3CD from tax year 2026-27. Where AI helps a CA prepare tax audit data, and where the reported position must stay with the signer.",
+      "section": "posts",
+      "lastModified": "2026-10-22",
+      "tokens": 2732
+    },
+    {
+      "path": "/blog/2026-10-12-drafting-replies-to-gst-and-income-tax-notices-with-ai-without-losing-control",
+      "url": "https://pratikbajoria.com/blog/2026-10-12-drafting-replies-to-gst-and-income-tax-notices-with-ai-without-losing-control",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-12-drafting-replies-to-gst-and-income-tax-notices-with-ai-without-losing-control.md",
+      "title": "Drafting Replies to GST and Income Tax Notices With AI Without Losing Control",
+      "summary": "A GST or income-tax notice reply is a legal position with a deadline. Here is the clock for ASMT-10, section 74A and appeals, the e-proceedings rules, and where AI helps.",
+      "section": "posts",
+      "lastModified": "2026-10-22",
+      "tokens": 3595
+    },
+    {
       "path": "/blog/2026-10-12-finance-ai-roi-for-mid-market-companies-in-india-a-cas-decision-rubric",
       "url": "https://pratikbajoria.com/blog/2026-10-12-finance-ai-roi-for-mid-market-companies-in-india-a-cas-decision-rubric",
       "markdown": "https://pratikbajoria.com/blog/2026-10-12-finance-ai-roi-for-mid-market-companies-in-india-a-cas-decision-rubric.md",
@@ -333,6 +283,46 @@
       "section": "posts",
       "lastModified": "2026-10-12",
       "tokens": 3471
+    },
+    {
+      "path": "/blog/2026-10-13-using-ai-for-tds-reconciliation-in-indian-ca-firms-from-26as-to-form-168",
+      "url": "https://pratikbajoria.com/blog/2026-10-13-using-ai-for-tds-reconciliation-in-indian-ca-firms-from-26as-to-form-168",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-13-using-ai-for-tds-reconciliation-in-indian-ca-firms-from-26as-to-form-168.md",
+      "title": "Using AI for TDS Reconciliation in Indian CA Firms: From 26AS to Form 168",
+      "summary": "Form 26AS is now Form 168 under the new Act. How to automate TDS matching and the mismatch list, while a reviewer decides what to chase with the deductor.",
+      "section": "posts",
+      "lastModified": "2026-10-22",
+      "tokens": 2070
+    },
+    {
+      "path": "/blog/2026-10-14-how-ca-firms-in-india-should-price-work-when-ai-cuts-the-hours",
+      "url": "https://pratikbajoria.com/blog/2026-10-14-how-ca-firms-in-india-should-price-work-when-ai-cuts-the-hours",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-14-how-ca-firms-in-india-should-price-work-when-ai-cuts-the-hours.md",
+      "title": "How CA Firms in India Should Price Work When AI Cuts the Hours",
+      "summary": "If AI halves preparation time, hourly billing hands the gain to the client. How Indian CA firms can price scope and risk instead, within ICAI’s rules on fees.",
+      "section": "posts",
+      "lastModified": "2026-10-22",
+      "tokens": 2216
+    },
+    {
+      "path": "/blog/2026-10-15-ai-and-articleship-how-ca-firms-should-train-article-assistants-now",
+      "url": "https://pratikbajoria.com/blog/2026-10-15-ai-and-articleship-how-ca-firms-should-train-article-assistants-now",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-15-ai-and-articleship-how-ca-firms-should-train-article-assistants-now.md",
+      "title": "AI and Articleship: How CA Firms Should Train Article Assistants Now",
+      "summary": "Articleship is now two years, and AI drafts much of what articles used to learn on. A practical training plan for CA firms: review before preparation, manual fundamentals first, and clear tool rules.",
+      "section": "posts",
+      "lastModified": "2026-10-22",
+      "tokens": 3118
+    },
+    {
+      "path": "/blog/2026-10-16-ai-for-caro-2020-reporting-where-it-helps-and-where-judgement-stays",
+      "url": "https://pratikbajoria.com/blog/2026-10-16-ai-for-caro-2020-reporting-where-it-helps-and-where-judgement-stays",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-16-ai-for-caro-2020-reporting-where-it-helps-and-where-judgement-stays.md",
+      "title": "AI for CARO 2020 Reporting: Where It Helps and Where Judgement Stays",
+      "summary": "CARO 2020 asks auditors for a statement on 21 clauses. A clause-by-clause guide to where AI can assemble the evidence, what the auditor must still decide, and how to document the tool.",
+      "section": "posts",
+      "lastModified": "2026-10-22",
+      "tokens": 3793
     },
     {
       "path": "/blog/2026-10-19-dpdp-act-and-ai-in-ca-firms-in-india-a-client-data-decision-rubric",
@@ -345,6 +335,56 @@
       "tokens": 3503
     },
     {
+      "path": "/blog/2026-10-19-how-to-use-claude-or-chatgpt-for-gstr-2b-reconciliation-a-ca-s-method",
+      "url": "https://pratikbajoria.com/blog/2026-10-19-how-to-use-claude-or-chatgpt-for-gstr-2b-reconciliation-a-ca-s-method",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-19-how-to-use-claude-or-chatgpt-for-gstr-2b-reconciliation-a-ca-s-method.md",
+      "title": "How to Use Claude or ChatGPT for GSTR-2B Reconciliation: A CA’s Method",
+      "summary": "A CA’s step-by-step method for GSTR-2B reconciliation with Claude or ChatGPT: what to upload, the prompt structure, IMS actions and the checks before 3B.",
+      "section": "posts",
+      "lastModified": "2026-10-19",
+      "tokens": 1958
+    },
+    {
+      "path": "/blog/2026-10-20-ai-for-cma-data-and-bank-loan-project-reports-a-ca-s-review-checklist",
+      "url": "https://pratikbajoria.com/blog/2026-10-20-ai-for-cma-data-and-bank-loan-project-reports-a-ca-s-review-checklist",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-20-ai-for-cma-data-and-bank-loan-project-reports-a-ca-s-review-checklist.md",
+      "title": "AI for CMA Data and Bank Loan Project Reports: A CA’s Review Checklist",
+      "summary": "AI tools now promise CMA data in minutes. What a CA should still check before a projection goes to the bank: turnover method, ratios, assumptions and evidence.",
+      "section": "posts",
+      "lastModified": "2026-10-20",
+      "tokens": 1943
+    },
+    {
+      "path": "/blog/2026-10-21-ai-for-itr-filing-what-a-ca-should-let-it-do-and-what-stays-human",
+      "url": "https://pratikbajoria.com/blog/2026-10-21-ai-for-itr-filing-what-a-ca-should-let-it-do-and-what-stays-human",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-21-ai-for-itr-filing-what-a-ca-should-let-it-do-and-what-stays-human.md",
+      "title": "AI for ITR Filing: What a CA Should Let It Do and What Stays Human",
+      "summary": "How a CA practice can use AI in ITR season: AIS tie-outs, document extraction and regime comparisons, with the review steps and data rules that stay human.",
+      "section": "posts",
+      "lastModified": "2026-10-21",
+      "tokens": 1851
+    },
+    {
+      "path": "/blog/2026-10-22-ai-for-tally-prime-automating-data-entry-without-losing-control-of-the-books",
+      "url": "https://pratikbajoria.com/blog/2026-10-22-ai-for-tally-prime-automating-data-entry-without-losing-control-of-the-books",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-22-ai-for-tally-prime-automating-data-entry-without-losing-control-of-the-books.md",
+      "title": "AI for Tally Prime: Automating Data Entry Without Losing Control of the Books",
+      "summary": "AI can now read bills and draft Tally Prime vouchers. Where it saves time, where errors creep in, and the review and GST checks a business should keep in place.",
+      "section": "posts",
+      "lastModified": "2026-10-22",
+      "tokens": 1731
+    },
+    {
+      "path": "/blog/2026-10-23-ai-tools-for-statutory-audit-in-india-what-nfra-s-2026-principles-mean",
+      "url": "https://pratikbajoria.com/blog/2026-10-23-ai-tools-for-statutory-audit-in-india-what-nfra-s-2026-principles-mean",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-23-ai-tools-for-statutory-audit-in-india-what-nfra-s-2026-principles-mean.md",
+      "title": "AI Tools for Statutory Audit in India: What NFRA’s 2026 Principles Mean",
+      "summary": "NFRA’s July 2026 principles on technology in audit, read by a practising CA: tool validation, scepticism, documentation and data duties for statutory auditors.",
+      "section": "posts",
+      "lastModified": "2026-10-23",
+      "tokens": 1856
+    },
+    {
       "path": "/blog/2026-10-26-ai-for-financial-due-diligence-in-india-a-cas-decision-rubric",
       "url": "https://pratikbajoria.com/blog/2026-10-26-ai-for-financial-due-diligence-in-india-a-cas-decision-rubric",
       "markdown": "https://pratikbajoria.com/blog/2026-10-26-ai-for-financial-due-diligence-in-india-a-cas-decision-rubric.md",
@@ -355,6 +395,36 @@
       "tokens": 3845
     },
     {
+      "path": "/blog/2026-10-26-ai-for-msmes-in-india-three-first-automations-that-pay-back",
+      "url": "https://pratikbajoria.com/blog/2026-10-26-ai-for-msmes-in-india-three-first-automations-that-pay-back",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-26-ai-for-msmes-in-india-three-first-automations-that-pay-back.md",
+      "title": "AI for MSMEs in India: Three First Automations That Pay Back",
+      "summary": "Where an Indian MSME should start with AI: three first automations in collections, bills and customer replies, with sourced context and the controls to keep.",
+      "section": "posts",
+      "lastModified": "2026-10-26",
+      "tokens": 1766
+    },
+    {
+      "path": "/blog/2026-10-27-ai-agents-for-accounting-in-india-what-to-let-them-do-unsupervised",
+      "url": "https://pratikbajoria.com/blog/2026-10-27-ai-agents-for-accounting-in-india-what-to-let-them-do-unsupervised",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-27-ai-agents-for-accounting-in-india-what-to-let-them-do-unsupervised.md",
+      "title": "AI Agents for Accounting in India: What to Let Them Do Unsupervised",
+      "summary": "AI agents can now act inside accounting systems, not just answer questions. A CA’s rule of thumb for which tasks they may run alone and which need a human gate.",
+      "section": "posts",
+      "lastModified": "2026-10-27",
+      "tokens": 1746
+    },
+    {
+      "path": "/blog/2026-10-28-ai-automation-agency-vs-consultant-in-india-how-to-choose",
+      "url": "https://pratikbajoria.com/blog/2026-10-28-ai-automation-agency-vs-consultant-in-india-how-to-choose",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-28-ai-automation-agency-vs-consultant-in-india-how-to-choose.md",
+      "title": "AI Automation Agency vs Consultant in India: How to Choose",
+      "summary": "Hiring help for AI automation in India? When an agency fits, when an independent consultant fits, and the questions to ask either before signing anything.",
+      "section": "posts",
+      "lastModified": "2026-10-28",
+      "tokens": 1712
+    },
+    {
       "path": "/blog/2026-10-28-ai-for-aoc-4-and-mgt-7-filings-what-a-ca-can-automate-before-the-roc-deadline",
       "url": "https://pratikbajoria.com/blog/2026-10-28-ai-for-aoc-4-and-mgt-7-filings-what-a-ca-can-automate-before-the-roc-deadline",
       "markdown": "https://pratikbajoria.com/blog/2026-10-28-ai-for-aoc-4-and-mgt-7-filings-what-a-ca-can-automate-before-the-roc-deadline.md",
@@ -363,6 +433,26 @@
       "section": "posts",
       "lastModified": "2026-10-28",
       "tokens": 3129
+    },
+    {
+      "path": "/blog/2026-10-29-ai-for-ca-students-using-chatgpt-and-ca-gpt-without-weakening-your-prep",
+      "url": "https://pratikbajoria.com/blog/2026-10-29-ai-for-ca-students-using-chatgpt-and-ca-gpt-without-weakening-your-prep",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-29-ai-for-ca-students-using-chatgpt-and-ca-gpt-without-weakening-your-prep.md",
+      "title": "AI for CA Students: Using ChatGPT and CA GPT Without Weakening Your Prep",
+      "summary": "A practising CA’s guide for CA students: where ChatGPT and ICAI’s CA GPT help exam prep, where they mislead, and the habits that build real exam skill.",
+      "section": "posts",
+      "lastModified": "2026-10-29",
+      "tokens": 1768
+    },
+    {
+      "path": "/blog/2026-10-30-ai-prompts-for-bank-reconciliation-what-works-and-what-to-check",
+      "url": "https://pratikbajoria.com/blog/2026-10-30-ai-prompts-for-bank-reconciliation-what-works-and-what-to-check",
+      "markdown": "https://pratikbajoria.com/blog/2026-10-30-ai-prompts-for-bank-reconciliation-what-works-and-what-to-check.md",
+      "title": "AI Prompts for Bank Reconciliation: What Works and What to Check",
+      "summary": "Prompts for bank reconciliation with Claude or ChatGPT, written by a CA: file preparation, matching rules, outputs to request and the checks before you post.",
+      "section": "posts",
+      "lastModified": "2026-10-30",
+      "tokens": 1713
     },
     {
       "path": "/blog/ai-controls-checklist-ca-firms-india",
@@ -535,164 +625,84 @@
       "tokens": 6477
     },
     {
-      "path": "/blog/2026-10-30-ai-prompts-for-bank-reconciliation-what-works-and-what-to-check",
-      "url": "https://pratikbajoria.com/blog/2026-10-30-ai-prompts-for-bank-reconciliation-what-works-and-what-to-check",
-      "markdown": "https://pratikbajoria.com/blog/2026-10-30-ai-prompts-for-bank-reconciliation-what-works-and-what-to-check.md",
-      "title": "AI Prompts for Bank Reconciliation: What Works and What to Check",
-      "summary": "Prompts for bank reconciliation with Claude or ChatGPT, written by a CA: file preparation, matching rules, outputs to request and the checks before you post.",
-      "section": "posts",
-      "lastModified": "2026-10-30",
-      "tokens": 1713
+      "path": "/how-to-start-ai-implementation",
+      "url": "https://pratikbajoria.com/how-to-start-ai-implementation",
+      "markdown": "https://pratikbajoria.com/how-to-start-ai-implementation.md",
+      "title": "How to start AI implementation.",
+      "summary": "How mid-market and finance teams should start AI implementation: map workflows, score use cases, then ship a prioritised 90-day roadmap — not another pilot.",
+      "section": "guides",
+      "lastModified": "2026-09-18",
+      "tokens": 1199
     },
     {
-      "path": "/blog/2026-10-29-ai-for-ca-students-using-chatgpt-and-ca-gpt-without-weakening-your-prep",
-      "url": "https://pratikbajoria.com/blog/2026-10-29-ai-for-ca-students-using-chatgpt-and-ca-gpt-without-weakening-your-prep",
-      "markdown": "https://pratikbajoria.com/blog/2026-10-29-ai-for-ca-students-using-chatgpt-and-ca-gpt-without-weakening-your-prep.md",
-      "title": "AI for CA Students: Using ChatGPT and CA GPT Without Weakening Your Prep",
-      "summary": "A practising CA’s guide for CA students: where ChatGPT and ICAI’s CA GPT help exam prep, where they mislead, and the habits that build real exam skill.",
-      "section": "posts",
-      "lastModified": "2026-10-29",
-      "tokens": 1768
+      "path": "/msme-services",
+      "url": "https://pratikbajoria.com/msme-services",
+      "markdown": "https://pratikbajoria.com/msme-services.md",
+      "title": "MSME Business Support in India",
+      "summary": "Practical support for receivables recovery, scheme discovery, debt readiness, excess inventory and tender intelligence. Scope and outcomes are confirmed case by case.",
+      "section": "core",
+      "lastModified": "2026-11-02",
+      "tokens": 1489
     },
     {
-      "path": "/blog/2026-10-28-ai-automation-agency-vs-consultant-in-india-how-to-choose",
-      "url": "https://pratikbajoria.com/blog/2026-10-28-ai-automation-agency-vs-consultant-in-india-how-to-choose",
-      "markdown": "https://pratikbajoria.com/blog/2026-10-28-ai-automation-agency-vs-consultant-in-india-how-to-choose.md",
-      "title": "AI Automation Agency vs Consultant in India: How to Choose",
-      "summary": "Hiring help for AI automation in India? When an agency fits, when an independent consultant fits, and the questions to ask either before signing anything.",
-      "section": "posts",
-      "lastModified": "2026-10-28",
-      "tokens": 1712
+      "path": "/privacy",
+      "url": "https://pratikbajoria.com/privacy",
+      "markdown": "https://pratikbajoria.com/privacy.md",
+      "title": "Privacy in plain English.",
+      "summary": "Privacy notice for pratikbajoria.com: what the discovery-call, cross-border and newsletter forms store, who can see it, and how to ask for deletion.",
+      "section": "legal",
+      "lastModified": "2026-09-18",
+      "tokens": 583
     },
     {
-      "path": "/blog/2026-10-27-ai-agents-for-accounting-in-india-what-to-let-them-do-unsupervised",
-      "url": "https://pratikbajoria.com/blog/2026-10-27-ai-agents-for-accounting-in-india-what-to-let-them-do-unsupervised",
-      "markdown": "https://pratikbajoria.com/blog/2026-10-27-ai-agents-for-accounting-in-india-what-to-let-them-do-unsupervised.md",
-      "title": "AI Agents for Accounting in India: What to Let Them Do Unsupervised",
-      "summary": "AI agents can now act inside accounting systems, not just answer questions. A CA’s rule of thumb for which tasks they may run alone and which need a human gate.",
-      "section": "posts",
-      "lastModified": "2026-10-27",
-      "tokens": 1746
+      "path": "/resources",
+      "url": "https://pratikbajoria.com/resources",
+      "markdown": "https://pratikbajoria.com/resources.md",
+      "title": "Practical packs for finance teams.",
+      "summary": "Digital resources for finance and ops leaders: AI opportunity checklist, finance SOP starter pack and CA/finance prompt library.",
+      "section": "core",
+      "lastModified": "2026-09-18",
+      "tokens": 550
     },
     {
-      "path": "/blog/2026-10-26-ai-for-msmes-in-india-three-first-automations-that-pay-back",
-      "url": "https://pratikbajoria.com/blog/2026-10-26-ai-for-msmes-in-india-three-first-automations-that-pay-back",
-      "markdown": "https://pratikbajoria.com/blog/2026-10-26-ai-for-msmes-in-india-three-first-automations-that-pay-back.md",
-      "title": "AI for MSMEs in India: Three First Automations That Pay Back",
-      "summary": "Where an Indian MSME should start with AI: three first automations in collections, bills and customer replies, with sourced context and the controls to keep.",
-      "section": "posts",
-      "lastModified": "2026-10-26",
-      "tokens": 1766
+      "path": "/scorecard",
+      "url": "https://pratikbajoria.com/scorecard",
+      "markdown": "https://pratikbajoria.com/scorecard.md",
+      "title": "AI Opportunity Scorecard.",
+      "summary": "Free AI Opportunity Scorecard for CFOs and operators — score process, data, ROI, risk and ownership before you spend on AI.",
+      "section": "core",
+      "lastModified": "2026-10-07",
+      "tokens": 1002
     },
     {
-      "path": "/blog/2026-10-23-ai-tools-for-statutory-audit-in-india-what-nfra-s-2026-principles-mean",
-      "url": "https://pratikbajoria.com/blog/2026-10-23-ai-tools-for-statutory-audit-in-india-what-nfra-s-2026-principles-mean",
-      "markdown": "https://pratikbajoria.com/blog/2026-10-23-ai-tools-for-statutory-audit-in-india-what-nfra-s-2026-principles-mean.md",
-      "title": "AI Tools for Statutory Audit in India: What NFRA’s 2026 Principles Mean",
-      "summary": "NFRA’s July 2026 principles on technology in audit, read by a practising CA: tool validation, scepticism, documentation and data duties for statutory auditors.",
-      "section": "posts",
-      "lastModified": "2026-10-23",
-      "tokens": 1856
+      "path": "/topics",
+      "url": "https://pratikbajoria.com/topics",
+      "markdown": "https://pratikbajoria.com/topics.md",
+      "title": "Practical answers for the AI and finance questions business leaders ask.",
+      "summary": "A practical topic guide to AI for Chartered Accountants, finance professionals, entrepreneurs and business leaders from Pratik Bajoria.",
+      "section": "core",
+      "lastModified": "2026-10-08",
+      "tokens": 2250
     },
     {
-      "path": "/blog/2026-10-22-ai-for-tally-prime-automating-data-entry-without-losing-control-of-the-books",
-      "url": "https://pratikbajoria.com/blog/2026-10-22-ai-for-tally-prime-automating-data-entry-without-losing-control-of-the-books",
-      "markdown": "https://pratikbajoria.com/blog/2026-10-22-ai-for-tally-prime-automating-data-entry-without-losing-control-of-the-books.md",
-      "title": "AI for Tally Prime: Automating Data Entry Without Losing Control of the Books",
-      "summary": "AI can now read bills and draft Tally Prime vouchers. Where it saves time, where errors creep in, and the review and GST checks a business should keep in place.",
-      "section": "posts",
-      "lastModified": "2026-10-22",
-      "tokens": 1731
+      "path": "/workflow-automation-with-ai-for-mid-market",
+      "url": "https://pratikbajoria.com/workflow-automation-with-ai-for-mid-market",
+      "markdown": "https://pratikbajoria.com/workflow-automation-with-ai-for-mid-market.md",
+      "title": "Workflow automation with AI for mid-market.",
+      "summary": "Workflow automation with AI for mid-market COOs: map hand-offs, pick owned bottlenecks, decide build, buy or wait, and ship automations within 90 days.",
+      "section": "guides",
+      "lastModified": "2026-09-18",
+      "tokens": 1178
     },
     {
-      "path": "/blog/2026-10-21-ai-for-itr-filing-what-a-ca-should-let-it-do-and-what-stays-human",
-      "url": "https://pratikbajoria.com/blog/2026-10-21-ai-for-itr-filing-what-a-ca-should-let-it-do-and-what-stays-human",
-      "markdown": "https://pratikbajoria.com/blog/2026-10-21-ai-for-itr-filing-what-a-ca-should-let-it-do-and-what-stays-human.md",
-      "title": "AI for ITR Filing: What a CA Should Let It Do and What Stays Human",
-      "summary": "How a CA practice can use AI in ITR season: AIS tie-outs, document extraction and regime comparisons, with the review steps and data rules that stay human.",
-      "section": "posts",
-      "lastModified": "2026-10-21",
-      "tokens": 1851
-    },
-    {
-      "path": "/blog/2026-10-20-ai-for-cma-data-and-bank-loan-project-reports-a-ca-s-review-checklist",
-      "url": "https://pratikbajoria.com/blog/2026-10-20-ai-for-cma-data-and-bank-loan-project-reports-a-ca-s-review-checklist",
-      "markdown": "https://pratikbajoria.com/blog/2026-10-20-ai-for-cma-data-and-bank-loan-project-reports-a-ca-s-review-checklist.md",
-      "title": "AI for CMA Data and Bank Loan Project Reports: A CA’s Review Checklist",
-      "summary": "AI tools now promise CMA data in minutes. What a CA should still check before a projection goes to the bank: turnover method, ratios, assumptions and evidence.",
-      "section": "posts",
-      "lastModified": "2026-10-20",
-      "tokens": 1943
-    },
-    {
-      "path": "/blog/2026-10-19-how-to-use-claude-or-chatgpt-for-gstr-2b-reconciliation-a-ca-s-method",
-      "url": "https://pratikbajoria.com/blog/2026-10-19-how-to-use-claude-or-chatgpt-for-gstr-2b-reconciliation-a-ca-s-method",
-      "markdown": "https://pratikbajoria.com/blog/2026-10-19-how-to-use-claude-or-chatgpt-for-gstr-2b-reconciliation-a-ca-s-method.md",
-      "title": "How to Use Claude or ChatGPT for GSTR-2B Reconciliation: A CA’s Method",
-      "summary": "A CA’s step-by-step method for GSTR-2B reconciliation with Claude or ChatGPT: what to upload, the prompt structure, IMS actions and the checks before 3B.",
-      "section": "posts",
-      "lastModified": "2026-10-19",
-      "tokens": 1958
-    },
-    {
-      "path": "/blog/2026-10-16-ai-for-caro-2020-reporting-where-it-helps-and-where-judgement-stays",
-      "url": "https://pratikbajoria.com/blog/2026-10-16-ai-for-caro-2020-reporting-where-it-helps-and-where-judgement-stays",
-      "markdown": "https://pratikbajoria.com/blog/2026-10-16-ai-for-caro-2020-reporting-where-it-helps-and-where-judgement-stays.md",
-      "title": "AI for CARO 2020 Reporting: Where It Helps and Where Judgement Stays",
-      "summary": "CARO 2020 asks auditors for a statement on 21 clauses. A clause-by-clause guide to where AI can assemble the evidence, what the auditor must still decide, and how to document the tool.",
-      "section": "posts",
-      "lastModified": "2026-10-22",
-      "tokens": 3793
-    },
-    {
-      "path": "/blog/2026-10-15-ai-and-articleship-how-ca-firms-should-train-article-assistants-now",
-      "url": "https://pratikbajoria.com/blog/2026-10-15-ai-and-articleship-how-ca-firms-should-train-article-assistants-now",
-      "markdown": "https://pratikbajoria.com/blog/2026-10-15-ai-and-articleship-how-ca-firms-should-train-article-assistants-now.md",
-      "title": "AI and Articleship: How CA Firms Should Train Article Assistants Now",
-      "summary": "Articleship is now two years, and AI drafts much of what articles used to learn on. A practical training plan for CA firms: review before preparation, manual fundamentals first, and clear tool rules.",
-      "section": "posts",
-      "lastModified": "2026-10-22",
-      "tokens": 3118
-    },
-    {
-      "path": "/blog/2026-10-14-how-ca-firms-in-india-should-price-work-when-ai-cuts-the-hours",
-      "url": "https://pratikbajoria.com/blog/2026-10-14-how-ca-firms-in-india-should-price-work-when-ai-cuts-the-hours",
-      "markdown": "https://pratikbajoria.com/blog/2026-10-14-how-ca-firms-in-india-should-price-work-when-ai-cuts-the-hours.md",
-      "title": "How CA Firms in India Should Price Work When AI Cuts the Hours",
-      "summary": "If AI halves preparation time, hourly billing hands the gain to the client. How Indian CA firms can price scope and risk instead, within ICAI’s rules on fees.",
-      "section": "posts",
-      "lastModified": "2026-10-22",
-      "tokens": 2216
-    },
-    {
-      "path": "/blog/2026-10-13-using-ai-for-tds-reconciliation-in-indian-ca-firms-from-26as-to-form-168",
-      "url": "https://pratikbajoria.com/blog/2026-10-13-using-ai-for-tds-reconciliation-in-indian-ca-firms-from-26as-to-form-168",
-      "markdown": "https://pratikbajoria.com/blog/2026-10-13-using-ai-for-tds-reconciliation-in-indian-ca-firms-from-26as-to-form-168.md",
-      "title": "Using AI for TDS Reconciliation in Indian CA Firms: From 26AS to Form 168",
-      "summary": "Form 26AS is now Form 168 under the new Act. How to automate TDS matching and the mismatch list, while a reviewer decides what to chase with the deductor.",
-      "section": "posts",
-      "lastModified": "2026-10-22",
-      "tokens": 2070
-    },
-    {
-      "path": "/blog/2026-10-12-drafting-replies-to-gst-and-income-tax-notices-with-ai-without-losing-control",
-      "url": "https://pratikbajoria.com/blog/2026-10-12-drafting-replies-to-gst-and-income-tax-notices-with-ai-without-losing-control",
-      "markdown": "https://pratikbajoria.com/blog/2026-10-12-drafting-replies-to-gst-and-income-tax-notices-with-ai-without-losing-control.md",
-      "title": "Drafting Replies to GST and Income Tax Notices With AI Without Losing Control",
-      "summary": "A GST or income-tax notice reply is a legal position with a deadline. Here is the clock for ASMT-10, section 74A and appeals, the e-proceedings rules, and where AI helps.",
-      "section": "posts",
-      "lastModified": "2026-10-22",
-      "tokens": 3595
-    },
-    {
-      "path": "/blog/2026-10-09-ai-for-tax-audit-in-india-form-3cd-this-year-form-26-next-year",
-      "url": "https://pratikbajoria.com/blog/2026-10-09-ai-for-tax-audit-in-india-form-3cd-this-year-form-26-next-year",
-      "markdown": "https://pratikbajoria.com/blog/2026-10-09-ai-for-tax-audit-in-india-form-3cd-this-year-form-26-next-year.md",
-      "title": "AI for Tax Audit in India: Form 3CD This Year, Form 26 Next Year",
-      "summary": "Form 26 replaces Form 3CD from tax year 2026-27. Where AI helps a CA prepare tax audit data, and where the reported position must stay with the signer.",
-      "section": "posts",
-      "lastModified": "2026-10-22",
-      "tokens": 2732
+      "path": "/workshops",
+      "url": "https://pratikbajoria.com/workshops",
+      "markdown": "https://pratikbajoria.com/workshops.md",
+      "title": "Finance team AI enablement.",
+      "summary": "Finance team AI enablement: half-day executive workshop plus optional two-week cohort follow-on. Prompt libraries, SOPs and usage policy sketch.",
+      "section": "core",
+      "lastModified": "2026-09-18",
+      "tokens": 832
     }
   ]
 }
