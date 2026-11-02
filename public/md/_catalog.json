@@ -635,16 +635,6 @@
       "tokens": 1199
     },
     {
-      "path": "/msme-services",
-      "url": "https://pratikbajoria.com/msme-services",
-      "markdown": "https://pratikbajoria.com/msme-services.md",
-      "title": "MSME Business Support in India",
-      "summary": "Practical support for receivables recovery, scheme discovery, debt readiness, excess inventory and tender intelligence. Scope and outcomes are confirmed case by case.",
-      "section": "core",
-      "lastModified": "2026-11-02",
-      "tokens": 1489
-    },
-    {
       "path": "/privacy",
       "url": "https://pratikbajoria.com/privacy",
       "markdown": "https://pratikbajoria.com/privacy.md",
@@ -663,6 +653,16 @@
       "section": "core",
       "lastModified": "2026-09-18",
       "tokens": 550
+    },
+    {
+      "path": "/msme-services",
+      "url": "https://pratikbajoria.com/msme-services",
+      "markdown": "https://pratikbajoria.com/msme-services.md",
+      "title": "MSME Business Support in India",
+      "summary": "Practical support for receivables recovery, scheme discovery, debt readiness, excess inventory and tender intelligence. Scope and outcomes are confirmed case by case.",
+      "section": "core",
+      "lastModified": "2026-11-02",
+      "tokens": 1489
     },
     {
       "path": "/scorecard",
