@@ -16,12 +16,15 @@ export async function onRequestPost({ request, env }) {
   const email = text(body.email, 254).toLowerCase();
   const pageUrl = text(body.pageUrl, 500);
   const referrer = text(body.referrer, 500);
+  const resource = text(body.resource, 40).toLowerCase();
+  const resourceSources = new Set(['automation', 'msme', 'crossborder', 'startups']);
+  const source = resourceSources.has(resource) ? `resource:${resource}` : 'newsletter';
   const consent = body.consent === true;
   if (!isEmail(email) || !consent) return json({ ok: false, error: 'Please provide a valid email address and consent.' }, 422);
 
   const now = new Date().toISOString();
   await env.DB.prepare(`INSERT INTO leads (id, kind, created_at, consent_at, email, source, page_url, referrer) VALUES (?, 'newsletter', ?, ?, ?, ?, ?, ?)`)
-    .bind(crypto.randomUUID(), now, now, email, 'newsletter', pageUrl || null, referrer || null).run();
+    .bind(crypto.randomUUID(), now, now, email, source, pageUrl || null, referrer || null).run();
   return json({ ok: true, message: 'You are on the list.' }, 201);
 }
 
