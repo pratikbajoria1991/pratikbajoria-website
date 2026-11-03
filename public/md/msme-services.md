@@ -2,7 +2,7 @@
 
 > Practical MSME support for overdue receivables, scheme discovery, debt readiness, excess inventory and tender opportunities. Scope and outcomes are confirmed case by case.
 
-Canonical: https://pratikbajoria.com/msme-services
+Canonical: https://msme.pratikbajoria.com/
 Last updated: 2026-11-02
 
 For Indian MSMEs · Practical commercial support

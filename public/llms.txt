@@ -15,7 +15,7 @@ Every page below links to its markdown version (append `.md` to any page URL, or
 
 ## MSME business support
 
-- Page: https://pratikbajoria.com/msme-services
+- Page: https://msme.pratikbajoria.com/
 - Five service areas: receivables recovery support, scheme discovery, debt readiness and financial strategy, excess inventory buyer matching, and tender intelligence/bid preparation.
 - Scope, fees and provider roles are agreed in writing. Eligibility, recovery, financing and tender outcomes are not guaranteed.
 
