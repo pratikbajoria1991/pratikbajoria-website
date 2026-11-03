@@ -1173,7 +1173,7 @@ const site = {
       if (url.pathname === '/msme-services' || url.pathname === '/msme-services.html' || url.pathname === '/index.html') return absoluteRedirect(url, '/');
       if (url.pathname === '/') {
         const md = await mdRouteFor(request, env, '/msme-services');
-        const asset = await env.ASSETS.fetch(internalAssetRequest(request, '/msme-services.html'));
+        const asset = await env.ASSETS.fetch(internalAssetRequest(request, '/msme-services'));
         return injectGa4(asset, md);
       }
     }
