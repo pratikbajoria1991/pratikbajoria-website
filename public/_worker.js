@@ -103,6 +103,8 @@ const AUTHOR_PERSON = {
 // ---------------------------------------------------------------------------
 const CROSSBORDER_LIVE = true;
 const XB_HOST = 'crossborder.pratikbajoria.com';
+const MSME_HOST = 'msme.pratikbajoria.com';
+const MSME_ORIGIN = `https://${MSME_HOST}`;
 const XB_ORIGIN = `https://${XB_HOST}`;
 const XB_DIR = '/crossborder';
 const XB_OLD_PAGE = '/cross-border-partnerships';
@@ -1146,9 +1148,16 @@ const site = {
   async fetch(request, env, url) {
     const blockReason = edgeBlockReason(request, url);
     if (blockReason) return forbidden(request, blockReason);
-    // Markdown URLs (incl. /api/md/*) on the main host, before the /api/* JSON handler.
+    // Keep the former main-domain URL as a single-hop canonical redirect.
+    if (requestHost(request, url) !== MSME_HOST && ['/msme-services', '/msme-services/', '/msme-services.html'].includes(url.pathname)) {
+      return xbRedirect(`${MSME_ORIGIN}/`);
+    }
+
+    // Markdown URLs (incl. /api/md/*), with the MSME hostname mapped to its page route.
     if (requestHost(request, url) !== XB_HOST) {
-      const md = await routeMarkdown(request, env, url);
+      const markdownUrl = new URL(url);
+      if (requestHost(request, url) === MSME_HOST && markdownUrl.pathname === '/') markdownUrl.pathname = '/msme-services';
+      const md = await routeMarkdown(request, env, markdownUrl);
       if (md) return md;
     }
     if (url.pathname === '/api' || url.pathname.startsWith('/api/')) {
@@ -1156,6 +1165,17 @@ const site = {
       const out = new Response(r.body, r);
       out.headers.set('X-Robots-Tag', 'noindex, nofollow');
       return out;
+    }
+
+    // MSME subdomain: serve the dedicated service page at the hostname root.
+    if (requestHost(request, url) === MSME_HOST) {
+      if (request.method !== 'GET' && request.method !== 'HEAD') return new Response('Method Not Allowed', { status: 405, headers: { Allow: 'GET, HEAD' } });
+      if (url.pathname === '/msme-services' || url.pathname === '/msme-services.html' || url.pathname === '/index.html') return absoluteRedirect(url, '/');
+      if (url.pathname === '/') {
+        const md = await mdRouteFor(request, env, '/msme-services');
+        const asset = await env.ASSETS.fetch(internalAssetRequest(request, '/msme-services.html'));
+        return injectGa4(asset, md);
+      }
     }
 
     // Cross-border subdomain (API routes above work on both hosts).
