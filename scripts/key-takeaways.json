@@ -87,5 +87,12 @@
     "Reasons for not holding an AGM, penalties, compounding, MGT-8 certification and the digital signature stay with people.",
     "Late annual returns attract ten thousand rupees plus one hundred rupees a day, capped at two lakh rupees for the company.",
     "Build the master data once for AOC-4 and reuse it for MGT-7, and keep client identifiers inside a firm-managed business AI account."
+  ],
+  "2026-11-04-ai-for-marketplace-seller-reconciliation-in-india-gst-tcs-and-194-o-tds": [
+    "GST TCS (section 52) is 0.5 per cent of net taxable supplies from 10 July 2024; income-tax TDS on e-commerce is 0.1 per cent of gross sales.",
+    "From 1 April 2026, section 194-O moves to section 393(1) Table serial 8(v) of the Income-tax Act, 2025, at the same 0.1 per cent.",
+    "Sellers must accept or reject every TCS row on the GST portal before the credit reaches the electronic cash ledger.",
+    "Operators cannot correct 2025-26 GSTR-8 errors after 30 November 2026 (or the annual statement, if earlier), so raise rejections now.",
+    "Let AI map settlement reports and build the tie-outs; keep accept/reject decisions and tax positions with a named reviewer."
   ]
 }

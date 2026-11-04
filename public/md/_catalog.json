@@ -1,8 +1,8 @@
 {
   "site": "https://pratikbajoria.com",
   "name": "Pratik Bajoria — AI Implementation for Business",
-  "generated": "2026-10-30",
-  "count": 70,
+  "generated": "2026-11-04",
+  "count": 71,
   "routes": [
     {
       "path": "/",
@@ -12,17 +12,17 @@
       "summary": "Homepage of Pratik Bajoria, a Chartered Accountant and ex-Big 4 AI implementation consultant in India: services (AI Opportunity Audit, workflow automation, finance and compliance AI, workshops), process, FAQ and contact details.",
       "section": "core",
       "lastModified": "2026-10-22",
-      "tokens": 4146
+      "tokens": 4178
     },
     {
       "path": "/audit",
       "url": "https://pratikbajoria.com/audit",
       "markdown": "https://pratikbajoria.com/audit.md",
-      "title": "AI Opportunity Audit for finance teams and CA firms in India.",
+      "title": "AI Opportunity Audit for business workflows across teams.",
       "summary": "Service page for the AI Opportunity Audit by Pratik Bajoria: a fixed-fee two-week sprint that maps finance and CA-firm workflows, scores AI use cases and produces a prioritised 90-day roadmap.",
       "section": "core",
       "lastModified": "2026-10-26",
-      "tokens": 4734
+      "tokens": 4739
     },
     {
       "path": "/scorecard",
@@ -48,21 +48,31 @@
       "path": "/resources",
       "url": "https://pratikbajoria.com/resources",
       "markdown": "https://pratikbajoria.com/resources.md",
-      "title": "Practical packs for finance teams.",
-      "summary": "Digital resources for finance and ops leaders: AI opportunity checklist, finance SOP starter pack and CA/finance prompt library.",
+      "title": "Practical resources for the work ahead.",
+      "summary": "Free business workflow automation, MSME operations, cross-border and startup resources. Download the MSME evidence readiness checklist free.",
       "section": "core",
       "lastModified": "2026-09-18",
-      "tokens": 550
+      "tokens": 724
     },
     {
       "path": "/msme-services",
-      "url": "https://msme.pratikbajoria.com/",
+      "url": "https://pratikbajoria.com/msme-services",
       "markdown": "https://pratikbajoria.com/msme-services.md",
-      "title": "MSME Business Support in India",
-      "summary": "Practical support for receivables recovery, scheme discovery, debt readiness, excess inventory and tender intelligence. Scope and outcomes are confirmed case by case.",
+      "title": "Unlock cash and make the next move.",
+      "summary": "Practical MSME support for overdue receivables, scheme discovery, debt readiness, excess inventory and tender opportunities. Scope and outcomes are confirmed case by case.",
       "section": "core",
-      "lastModified": "2026-11-02",
-      "tokens": 1489
+      "lastModified": null,
+      "tokens": 1482
+    },
+    {
+      "path": "/blog",
+      "url": "https://pratikbajoria.com/blog",
+      "markdown": "https://pratikbajoria.com/blog.md",
+      "title": "Insights",
+      "summary": "Index of every article on pratikbajoria.com about AI implementation, AI for Chartered Accountants, finance automation and business tools, newest first, each with a one-line summary.",
+      "section": "core",
+      "lastModified": "2026-11-04",
+      "tokens": 4526
     },
     {
       "path": "/topics",
@@ -73,16 +83,6 @@
       "section": "core",
       "lastModified": "2026-10-08",
       "tokens": 2250
-    },
-    {
-      "path": "/blog",
-      "url": "https://pratikbajoria.com/blog",
-      "markdown": "https://pratikbajoria.com/blog.md",
-      "title": "Insights",
-      "summary": "Index of every article on pratikbajoria.com about AI implementation, AI for Chartered Accountants, finance automation and business tools, newest first, each with a one-line summary.",
-      "section": "core",
-      "lastModified": "2026-10-30",
-      "tokens": 4440
     },
     {
       "path": "/ai-automation-in-india",
@@ -259,7 +259,7 @@
       "url": "https://pratikbajoria.com/blog/2026-10-04-ai-finance-automation-roadmap-for-cfos-and-controllers",
       "markdown": "https://pratikbajoria.com/blog/2026-10-04-ai-finance-automation-roadmap-for-cfos-and-controllers.md",
       "title": "AI Finance Automation Roadmap: A 90-Day Plan for CFOs and Controllers",
-      "summary": "A practical 90-day AI finance automation roadmap for CFOs and controllers: choose one workflow, protect controls, measure payback and scale only after adoption.",
+      "summary": "A practical finance team automation roadmap: pick one measurable workflow, map hand-offs, protect controls, and scale only after adoption and payback are clear.",
       "section": "posts",
       "lastModified": "2026-10-07",
       "tokens": 3221
@@ -375,6 +375,16 @@
       "tokens": 3129
     },
     {
+      "path": "/blog/2026-11-04-ai-for-marketplace-seller-reconciliation-in-india-gst-tcs-and-194-o-tds",
+      "url": "https://pratikbajoria.com/blog/2026-11-04-ai-for-marketplace-seller-reconciliation-in-india-gst-tcs-and-194-o-tds",
+      "markdown": "https://pratikbajoria.com/blog/2026-11-04-ai-for-marketplace-seller-reconciliation-in-india-gst-tcs-and-194-o-tds.md",
+      "title": "AI for Marketplace Seller Reconciliation in India: GST TCS and 194-O TDS",
+      "summary": "How a CA can use AI to reconcile marketplace GST TCS and 194-O/section 393 TDS for Indian sellers before the 30 November cut-off, and what stays human.",
+      "section": "posts",
+      "lastModified": "2026-11-04",
+      "tokens": 3754
+    },
+    {
       "path": "/blog/ai-controls-checklist-ca-firms-india",
       "url": "https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india",
       "markdown": "https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india.md",
@@ -391,8 +401,8 @@
       "title": "AI for Chartered Accountants in India: A Practical Implementation Hub",
       "summary": "AI for chartered accountants in India: a practical map for CA firms on which workflows to start with, client-data controls, human review and pilots.",
       "section": "posts",
-      "lastModified": "2026-10-28",
-      "tokens": 7263
+      "lastModified": "2026-11-04",
+      "tokens": 7434
     },
     {
       "path": "/blog/ai-for-chartered-accountants-practical-use-cases-and-controls",

@@ -1,19 +1,19 @@
-# Practical packs for finance teams.
+# Practical resources for the work ahead.
 
-> Digital resources for finance and ops leaders: AI opportunity checklist, finance SOP starter pack and CA/finance prompt library.
+> Free business workflow automation, MSME operations, cross-border and startup resources. Download the MSME evidence readiness checklist free.
 
 Canonical: https://pratikbajoria.com/resources
 Last updated: 2026-09-18
 
-Digital products · Secondary path
+Free practical tools
 
-Lightweight downloads for leaders who want structure before a full engagement. High-ticket work still starts with the Audit — these packs help you prepare.
+Free, practical materials for teams improving workflows, MSMEs building reliable operations, cross-border businesses, and startups setting up to grow.
 
-**Direct answer.** Resources is a collection of practical packs for finance and ops leaders — checklists and playbooks you can use before a full consulting engagement. Join the notify list when a pack is ready.
+**Direct answer.** Choose a resource area below. The MSME Evidence Readiness Checklist is ready to download free; join the list for updates on other packs.
 
-Shop 01 — 03
+Free resources 01 — 04
 
-## Coming online *shortly.*
+## Choose your *starting point.*
 
 01 / CHECKLIST
 
@@ -21,23 +21,33 @@ Shop 01 — 03
 
 Printable worksheets to map workflows, owners and kill-criteria before you buy tools.
 
-₹2,499 Placeholder · not a live price
+₹2,499 **Free** ₹2,499 was illustrative only, not a previous selling price.
 
-02 / SOPS
+02 / MSME OPERATIONS
 
-### Finance AI SOP Starter Pack
+### MSME Evidence Readiness Checklist
 
-Starter operating procedures for common finance AI uses — with review steps baked in.
+A practical CSV to organise records for payment follow-up, scheme applications, debt conversations, inventory and tender opportunities.
 
-₹2,499 Placeholder · not a live price
+₹2,499 **Free** ₹2,499 was illustrative only, not a previous selling price.
 
-03 / PROMPTS
+Requirements vary by scheme, lender, buyer and situation. Verify current criteria with the official authority or your professional adviser. This checklist is an organisational aid, not legal, tax, lending or eligibility advice.
 
-### CA / Finance Prompt Library
+03 / CROSS-BORDER
 
-A curated prompt set for CA and finance workflows — editable, versionable, team-owned.
+### Partner Readiness Checklist
 
-₹2,499 Placeholder · not a live price
+Questions to clarify your offer, target market, partner fit, responsibilities and next steps before an introduction.
+
+₹2,499 **Free** ₹2,499 was illustrative only, not a previous selling price.
+
+04 / STARTUPS
+
+### Startup Operations Starter Kit
+
+A practical set of SOP, project and KPI tools to help founders assign owners and keep essential work moving.
+
+₹2,499 **Free** ₹2,499 was illustrative only, not a previous selling price.
 
 High-ticket implementation starts with clarity. If you need a scored, fixed-fee diagnostic and 90-day roadmap, begin with the [AI Opportunity Audit](https://pratikbajoria.com/audit) — or try the free [AI Opportunity Scorecard](https://pratikbajoria.com/scorecard).
 
@@ -45,15 +55,15 @@ Notify me LIST
 
 ## Get launch *notes.*
 
-Same list as The AI Implementation Brief. When packs go live, you’ll hear first. No invented Gumroad links here — `data-gumroad="PASTE_URL"` is ready on each card.
+The MSME checklist downloads directly without a form. Use the email form to opt in for updates about the other free resource packs; it records your interest and does not send downloads automatically.
 
 FAQ FAQ
 
 ## Questions worth *asking early.*
 
-### Are products live for purchase?
+### Are the free resources ready to download?
 
-Packs are listed as coming soon. Use the notify form and you will hear when a pack is available — no invented storefront URLs here.
+The MSME Evidence Readiness Checklist is available as a free CSV download. Other packs are being prepared; join the email list for updates.
 
 ### How is this different from the Audit?
 

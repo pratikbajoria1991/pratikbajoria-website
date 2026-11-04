@@ -1,6 +1,6 @@
 # I help companies actually implement AI.
 
-> Pratik Bajoria is a Chartered Accountant and ex-Big 4 AI implementation consultant helping companies create measurable P&L impact.
+> Pratik Bajoria helps businesses automate workflows across sales, operations, customer service and finance with practical AI and process automation.
 
 Canonical: https://pratikbajoria.com/
 Last updated: 2026-10-22
@@ -340,6 +340,8 @@ Find where AI moves your numbers.
 ### Implementation
 
 Build and ship production systems.
+
+[Explore workflow automation with AI →](https://pratikbajoria.com/workflow-automation-with-ai-for-mid-market)
 
 **◌**
 

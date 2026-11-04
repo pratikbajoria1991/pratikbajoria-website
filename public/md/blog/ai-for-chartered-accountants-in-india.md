@@ -3,7 +3,7 @@
 > AI for chartered accountants in India: a practical map for CA firms on which workflows to start with, client-data controls, human review and pilots.
 
 Canonical: https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india
-Last updated: 2026-10-28
+Last updated: 2026-11-04
 
 CA insights · 2026-09-25 · Updated 26 Oct 2026 · 8 min read
 
@@ -133,6 +133,8 @@ Then publish the same page internally so associates know what “good” looks l
 
 Two workflows come up in almost every CA practice conversation. For monthly GST work, read [how Indian CA firms can use AI for GST reconciliation without risking client data](https://pratikbajoria.com/blog/2026-09-28-how-indian-ca-firms-can-use-ai-for-gst-reconciliation-without-risking-client-data) — GSTR-2B matching, IMS review and notice triage with a clear human gate. For assurance work, read [AI for audit working papers in India: what to automate and what must stay human](https://pratikbajoria.com/blog/2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human) — how to use AI without weakening SA 230 documentation. If you run or staff a company’s internal audit under section 138, read [AI for internal audit in Indian companies: a practical starting point](https://pratikbajoria.com/blog/2026-10-08-ai-for-internal-audit-in-indian-companies-a-practical-starting-point) — full-population testing of one process and what ICAI’s new SIA 240 on tools expects. For the operating habit that keeps both alive in busy season, see [the Monday morning test for any AI workflow](https://pratikbajoria.com/blog/2026-09-29-the-monday-morning-test-for-any-ai-workflow). For the companies audit report itself, [AI for CARO 2020 reporting: where it helps and where judgement stays](https://pratikbajoria.com/blog/2026-10-16-ai-for-caro-2020-reporting-where-it-helps-and-where-judgement-stays) goes clause by clause through what a tool can prepare and what the auditor decides.
 
+Sellers on Amazon, Flipkart and other marketplaces bring a reconciliation of their own: GST TCS under section 52 on net supplies, and income-tax TDS under section 194-O (section 393 from 1 April 2026) on gross sales. Read [how a CA can use AI for marketplace TCS and TDS reconciliation](https://pratikbajoria.com/blog/2026-11-04-ai-for-marketplace-seller-reconciliation-in-india-gst-tcs-and-194-o-tds) for the tie-outs, the 30 November correction cut-off and the decisions that stay human.
+
 ## Choosing the assistant itself: ChatGPT, Copilot or Gemini
 
 Once the rules are agreed, partners usually ask which assistant to license. My view is that the deciding factors are where client files already live, how clean folder permissions are, and what the vendor’s business terms say about training, retention and logs, not which demo looked best. I have set out a partner-ready rubric in [ChatGPT, Copilot or Gemini? How a CA firm in India should choose an AI assistant](https://pratikbajoria.com/blog/2026-10-05-chatgpt-vs-copilot-vs-gemini-how-a-ca-firm-in-india-should-choose-an-ai-assistant), alongside the [AI controls checklist for CA firms](https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india) that applies whichever tool you pick.
@@ -186,6 +188,7 @@ Use this as the index. The first list covers running a CA practice with AI; the 
 
 ### Tax, audit and GST workflows
 
+- [AI for Marketplace Seller Reconciliation in India: GST TCS and 194-O TDS](https://pratikbajoria.com/blog/2026-11-04-ai-for-marketplace-seller-reconciliation-in-india-gst-tcs-and-194-o-tds)
 - [AI for AOC-4 and MGT-7 Filings: What a CA Can Automate Before the ROC Deadline](https://pratikbajoria.com/blog/2026-10-28-ai-for-aoc-4-and-mgt-7-filings-what-a-ca-can-automate-before-the-roc-deadline)
 - [AI for Financial Due Diligence in India: A CA’s Decision Rubric](https://pratikbajoria.com/blog/2026-10-26-ai-for-financial-due-diligence-in-india-a-cas-decision-rubric)
 - [How Indian CA Firms Can Use AI for GST Reconciliation Without Risking Client Data](https://pratikbajoria.com/blog/2026-09-28-how-indian-ca-firms-can-use-ai-for-gst-reconciliation-without-risking-client-data)

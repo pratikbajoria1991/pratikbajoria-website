@@ -1,6 +1,6 @@
 # AI Finance Automation Roadmap: A 90-Day Plan for CFOs and Controllers
 
-> A practical 90-day AI finance automation roadmap for CFOs and controllers: choose one workflow, protect controls, measure payback and scale only after adoption.
+> A practical finance team automation roadmap: pick one measurable workflow, map hand-offs, protect controls, and scale only after adoption and payback are clear.
 
 Canonical: https://pratikbajoria.com/blog/2026-10-04-ai-finance-automation-roadmap-for-cfos-and-controllers
 Last updated: 2026-10-07

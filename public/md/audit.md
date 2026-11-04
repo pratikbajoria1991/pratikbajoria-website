@@ -1,6 +1,6 @@
-# AI Opportunity Audit for finance teams and CA firms in India.
+# AI Opportunity Audit for business workflows across teams.
 
-> AI opportunity audit by a chartered accountant: a fixed-fee two-week sprint that maps finance and CA-firm workflows, scores AI use cases and leaves a 90-day roadmap.
+> A fixed-fee, two-week AI opportunity audit for business leaders. Map workflows across teams, score automation opportunities by value and risk, and leave with a prioritised 90-day roadmap.
 
 Canonical: https://pratikbajoria.com/audit
 Last updated: 2026-10-26
