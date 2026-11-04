@@ -2,7 +2,7 @@
   "site": "https://pratikbajoria.com",
   "name": "Pratik Bajoria — AI Implementation for Business",
   "generated": "2026-11-04",
-  "count": 72,
+  "count": 73,
   "routes": [
     {
       "path": "/",
@@ -72,7 +72,7 @@
       "summary": "Index of every article on pratikbajoria.com about AI implementation, AI for Chartered Accountants, finance automation and business tools, newest first, each with a one-line summary.",
       "section": "core",
       "lastModified": "2026-11-04",
-      "tokens": 4526
+      "tokens": 4606
     },
     {
       "path": "/startup-operations",
@@ -563,6 +563,16 @@
       "section": "posts",
       "lastModified": "2026-10-26",
       "tokens": 6477
+    },
+    {
+      "path": "/blog/2026-11-04-updating-engagement-letters-for-ai-use-in-a-ca-firm",
+      "url": "https://pratikbajoria.com/blog/2026-11-04-updating-engagement-letters-for-ai-use-in-a-ca-firm",
+      "markdown": "https://pratikbajoria.com/blog/2026-11-04-updating-engagement-letters-for-ai-use-in-a-ca-firm.md",
+      "title": "Updating Engagement Letters for AI Use in a CA Firm",
+      "summary": "Tell clients plainly how AI is used on their work, what data it sees and who reviews it. What to add to CA engagement letters now that the DPDP Rules are notified.",
+      "section": "posts",
+      "lastModified": "2026-11-04",
+      "tokens": 1915
     },
     {
       "path": "/blog/2026-10-30-ai-prompts-for-bank-reconciliation-what-works-and-what-to-check",

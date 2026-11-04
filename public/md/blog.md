@@ -5,6 +5,7 @@
 Canonical: https://pratikbajoria.com/blog
 Last updated: 2026-11-04
 
+- [Updating Engagement Letters for AI Use in a CA Firm](https://pratikbajoria.com/blog/2026-11-04-updating-engagement-letters-for-ai-use-in-a-ca-firm) - Tell clients plainly how AI is used on their work, what data it sees and who reviews it. What to add to CA engagement letters now that the DPDP Rules are notified.
 - [AI for Marketplace Seller Reconciliation in India: GST TCS and 194-O TDS](https://pratikbajoria.com/blog/2026-11-04-ai-for-marketplace-seller-reconciliation-in-india-gst-tcs-and-194-o-tds) - How a CA can use AI to reconcile marketplace GST TCS and 194-O/section 393 TDS for Indian sellers before the 30 November cut-off, and what stays human.
 - [AI Prompts for Bank Reconciliation: What Works and What to Check](https://pratikbajoria.com/blog/2026-10-30-ai-prompts-for-bank-reconciliation-what-works-and-what-to-check) - Prompts for bank reconciliation with Claude or ChatGPT, written by a CA: file preparation, matching rules, outputs to request and the checks before you post.
 - [AI for CA Students: Using ChatGPT and CA GPT Without Weakening Your Prep](https://pratikbajoria.com/blog/2026-10-29-ai-for-ca-students-using-chatgpt-and-ca-gpt-without-weakening-your-prep) - A practising CA’s guide for CA students: where ChatGPT and ICAI’s CA GPT help exam prep, where they mislead, and the habits that build real exam skill.
