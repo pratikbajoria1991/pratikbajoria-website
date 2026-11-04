@@ -2,7 +2,7 @@
   "site": "https://pratikbajoria.com",
   "name": "Pratik Bajoria — AI Implementation for Business",
   "generated": "2026-11-04",
-  "count": 71,
+  "count": 72,
   "routes": [
     {
       "path": "/",
@@ -73,6 +73,16 @@
       "section": "core",
       "lastModified": "2026-11-04",
       "tokens": 4526
+    },
+    {
+      "path": "/startup-operations",
+      "url": "https://pratikbajoria.com/startup-operations",
+      "markdown": "https://pratikbajoria.com/startup-operations.md",
+      "title": "Startup operations, from setup to scale.",
+      "summary": "Startup operations support tailored to your stage, city and budget: workspace search, business operations, finance workflows and AI automation, with partner scope made clear.",
+      "section": "core",
+      "lastModified": "2026-11-01",
+      "tokens": 1297
     },
     {
       "path": "/topics",
