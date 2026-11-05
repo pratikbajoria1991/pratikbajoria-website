@@ -2,7 +2,7 @@
 
 > Pratik Bajoria is a Chartered Accountant and ex-Big 4 AI implementation consultant helping companies create measurable P&L impact. Consulting entity is primary; Findost is product proof.
 
-Source: https://pratikbajoria.com · Index: https://pratikbajoria.com/llms.txt · Last updated: 2026-11-05
+Source: https://pratikbajoria.com · Index: https://pratikbajoria.com/llms.txt · Last updated: 2026-11-06
 
 ---
 
@@ -1110,8 +1110,9 @@ Share your sector, state, approximate business stage and a short description of 
 > Practical writing on implementing AI inside real businesses — audits, finance workflows, governance and tooling.
 
 Canonical: https://pratikbajoria.com/blog
-Last updated: 2026-11-05
+Last updated: 2026-11-06
 
+- [AI for Bank Statement Categorisation for Bookkeeping Clients in India](https://pratikbajoria.com/blog/2026-11-06-ai-for-bank-statement-categorisation-for-bookkeeping-clients-in-india) - Bank statement categorisation is the best first AI workflow for many bookkeeping practices: high volume, easy to check, low risk. How to set it up properly.
 - [AI for Month-End Close in Indian Mid-Market Finance Teams](https://pratikbajoria.com/blog/2026-11-05-ai-for-month-end-close-in-indian-mid-market-finance-teams) - Where AI shortens the month-end close for Indian mid-market finance teams: reconciliations, accrual support and variance commentary, with the controller signing off.
 - [Updating Engagement Letters for AI Use in a CA Firm](https://pratikbajoria.com/blog/2026-11-04-updating-engagement-letters-for-ai-use-in-a-ca-firm) - Tell clients plainly how AI is used on their work, what data it sees and who reviews it. What to add to CA engagement letters now that the DPDP Rules are notified.
 - [AI for Marketplace Seller Reconciliation in India: GST TCS and 194-O TDS](https://pratikbajoria.com/blog/2026-11-04-ai-for-marketplace-seller-reconciliation-in-india-gst-tcs-and-194-o-tds) - How a CA can use AI to reconcile marketplace GST TCS and 194-O/section 393 TDS for Indian sellers before the 30 November cut-off, and what stays human.
@@ -2121,6 +2122,92 @@ Try the free [Scorecard](https://pratikbajoria.com/scorecard), review the [Audit
 ## Related
 - [Scorecard](https://pratikbajoria.com/scorecard)
 - [Audit](https://pratikbajoria.com/audit)
+
+---
+
+# AI for Bank Statement Categorisation for Bookkeeping Clients in India
+
+> Bank statement categorisation is the best first AI workflow for many bookkeeping practices: high volume, easy to check, low risk. How to set it up properly.
+
+Canonical: https://pratikbajoria.com/blog/2026-11-06-ai-for-bank-statement-categorisation-for-bookkeeping-clients-in-india
+Last updated: 2026-11-06
+
+CA insights · 2026-11-06 · 4 min read
+
+If a bookkeeping practice asks me where to start with AI, the answer is usually the bank statement. Every client has one, the volume is high, the categories repeat month after month, and every mistake is easy to see and fix before it reaches a return.
+
+It is also unglamorous, which is part of the appeal. The aim is not a clever demo. It is getting a month of transactions into the right ledgers faster, with a person checking the parts that need checking.
+
+## Why it is a good first workflow
+
+It is also close to what finance teams already do with AI. Gartner’s [2025 survey](https://www.gartner.com/en/newsroom/press-releases/2025-11-18-gartner-survey-shows-finance-ai-adoption-remains-steady-in-2025) found error and anomaly detection among the three most common finance AI use cases.
+
+- Volume: hundreds or thousands of lines per client per month, mostly repetitive.
+- Checkability: each categorisation can be verified against the narration, the counterparty and the invoice.
+- Low downstream risk if reviewed: errors are caught at the ledger stage, long before a return is filed.
+- A learning loop: corrections made by the reviewer become rules for next month.
+
+## Getting the data in cleanly
+
+The weak point in most practices is not the categorisation; it is the input. PDFs, scanned statements and password-protected files waste more time than any classification error. Consent-based data sharing is changing that. India’s Account Aggregator ecosystem [crossed 500 million fulfilled consents in September 2026](https://sahamati.org.in/media-article/account-aggregator-crosses-500-million-consents-as-india-marks-5th-aa-foundation-day/), with more than 2.8 billion financial accounts enabled for sharing and over 1,100 regulated entities live, according to Sahamati, which the Reserve Bank recognised as the self-regulatory organisation for the ecosystem in June 2026.
+
+Not every client or bookkeeping tool will use that route yet, but structured, consented feeds are the direction of travel. Where they are available, they remove a whole class of errors.
+
+## A categorisation workflow that holds up
+
+- Start with the client’s own chart of accounts and last year’s categorised data as the reference.
+- Apply firm rules first, for known vendors, salary runs and tax payments, then let AI propose categories for the rest with a confidence level.
+- Route low-confidence lines, round-figure transfers, cash withdrawals and related-party payments to a reviewer.
+- Record every reviewer correction and turn recurring ones into rules.
+- Reconcile the closing balance to the statement every month, without exception.
+
+## Where the reviewer earns their fee
+
+Some lines need judgement: whether a transfer is a loan, capital or a sale; whether a payment is personal; whether a receipt is income at all. Those decisions affect tax and should never be left to a model’s guess.
+
+It also pays to look at the bank data the way the tax department does. The [Form 168 FAQs](https://www.incometaxindia.gov.in/documents/d/guest/form-168-faqs) explain that banks are among the institutions whose reports feed the Annual Information Statement. Categorising transactions properly during the year makes the year-end comparison with the AIS much less painful.
+
+## Mind where the books live
+
+Under the new income-tax framework, the [Form 26 FAQs](https://www.incometaxindia.gov.in/documents/d/guest/form-26-faqs) point to Rule 46: where books of account are kept electronically they must remain accessible in India, with a daily backup on servers located in India, and the tax audit report asks for the server location. If a categorisation or bookkeeping tool stores client books, know where. If it processes data outside India, check whether that affects the client’s compliance before you rely on it.
+
+If this is your first AI workflow, treat it as a pilot with a baseline and a decision date; my [90-day pilot playbook](https://pratikbajoria.com/blog/2026-10-07-how-to-run-a-90-day-ai-pilot-in-a-ca-firm-in-india) lists this as a good first candidate.
+
+## Frequently asked questions
+
+### Can AI categorise bank statements accurately?
+
+For repetitive transactions with a good reference history, it can propose categories quickly. Accuracy depends on clean inputs and a reviewer who checks low-confidence, unusual and tax-sensitive lines and feeds corrections back as rules.
+
+### What is the Account Aggregator framework?
+
+It is India’s consent-based system for sharing financial data between regulated entities. According to Sahamati, it crossed 500 million fulfilled consents in September 2026, with more than 2.8 billion accounts enabled for sharing.
+
+### Which transactions should a person always review?
+
+Low-confidence suggestions, cash withdrawals, round-figure and related-party transfers, loans and capital movements, and anything that changes taxable income.
+
+### Does it matter where bookkeeping software stores data?
+
+Yes. Under Rule 46 of the Income-tax Rules, 2026, electronic books must remain accessible in India with a daily backup on India-located servers, and Form 26 asks for the server location.
+
+## Sources
+
+- [Sahamati: Account Aggregator crosses 500 million consents (2 September 2026)](https://sahamati.org.in/media-article/account-aggregator-crosses-500-million-consents-as-india-marks-5th-aa-foundation-day/)
+- [Income Tax Department: Form No. 26 FAQs (tax audit under section 63, Income-tax Act, 2025)](https://www.incometaxindia.gov.in/documents/d/guest/form-26-faqs)
+- [Income Tax Department: Form No. 168 (Annual Information Statement) FAQs](https://www.incometaxindia.gov.in/documents/d/guest/form-168-faqs)
+- [Gartner: Finance AI adoption remains steady in 2025 (press release)](https://www.gartner.com/en/newsroom/press-releases/2025-11-18-gartner-survey-shows-finance-ai-adoption-remains-steady-in-2025)
+
+*Disclaimer: this article is general educational commentary. It is not legal, tax, audit or data-protection advice and does not create an adviser–client relationship. Laws, standards and thresholds change; check the current official text and take professional advice on your facts before acting.*
+
+*Educational content; not financial, investment, or legal advice.*
+
+## Related
+- [AI for Chartered Accountants in India: the implementation hub](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india)
+- [How to run a 90-day AI pilot in a CA firm](https://pratikbajoria.com/blog/2026-10-07-how-to-run-a-90-day-ai-pilot-in-a-ca-firm-in-india)
+- [AI controls checklist for CA firms in India](https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india)
+- [The AI Opportunity Audit: a scoped 90-day map](https://pratikbajoria.com/audit)
+- [All articles](https://pratikbajoria.com/blog)
 
 ---
 
@@ -5310,102 +5397,9 @@ Also useful: [AI automation in India: a practical hub for business owners](https
 
 ---
 
-# The Monday Morning Test for Any AI Workflow
-
-> If the team cannot explain the workflow in five minutes on Monday, it is not ready for a model.
-
-Canonical: https://pratikbajoria.com/blog/2026-09-29-the-monday-morning-test-for-any-ai-workflow
-Last updated: 2026-09-30
-
-AI implementation · 2026-09-29 · Updated 7 Oct 2026 · 5 min read
-
-If the team cannot explain the workflow in five minutes on Monday, it is not ready for a model.
-
-If the team cannot explain the workflow in five minutes on Monday, it is not ready for a model. Most AI workflows fail quietly. The model works in a sandbox; the Monday morning handoff does not. The test I use is deliberately simple, so it survives busy weeks, and it can be run as a fifteen-minute stand-up.
-
-## The five questions
-
-**1. Who owns it?** One named person accountable for the outcome — not “the finance team” and not the vendor. If ownership is shared, name who breaks the tie.
-
-**2. What is the metric?** One number that already matters: cycle time, rework, aged exceptions, review hours, days to close. If the metric only exists because the pilot created it, be suspicious.
-
-**3. What happens to exceptions?** Where does an item go when the tool is unsure or wrong, who clears it, and by when? A workflow without an exception path is a workflow that silently drops things.
-
-**4. What data may the tool see?** Name the data classes. Client identity, unpublished financials, payroll and advice drafts are restricted by default. If the answer is “whatever people paste in”, stop here.
-
-**5. When is the review?** A recurring slot in the calendar where someone looks at the metric and a sample of outputs. If it is not booked, it will not happen in filing season.
-
-If any answer is blank, pause the rollout. Not cancel — pause. Blank answers are cheap to fix before go-live and expensive to fix after.
-
-## A worked example: bank reconciliation in a small practice
-
-Take an illustrative CA practice using AI to suggest matches between bank statements and client books. Owner: the manager for that client group. Metric: unreconciled items older than the review date. Exceptions: anything the tool marks below its confidence threshold, plus any match over a value limit the partner sets, goes to a queue the article assistant clears and the manager reviews. Data: bank statements and ledgers stay inside the firm’s approved environment; nothing goes to consumer chatbots. Review: fifteen minutes every Monday on the queue and a sample of auto-matched items.
-
-Notice what is missing: the model name. The test does not care which tool you use. It cares whether the work around the tool is designed. That is also why the test travels well across functions — collections, vendor onboarding, WhatsApp intake, document extraction.
-
-## What failure usually looks like
-
-The metric improves in week one because people are paying attention, then drifts back. Exceptions accumulate because nobody owns the queue. Someone pastes client data into an unapproved tool because the approved one was slower. Each of these is a Monday-test failure that was visible early.
-
-**Related reading:** start with the [AI for chartered accountants in India](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india) hub, then [AI tools that pay back for finance and CA teams](https://pratikbajoria.com/blog/best-ai-tools-chartered-accountants-finance-professionals), [Notion as a finance control layer](https://pratikbajoria.com/blog/notion-for-finance-professionals-templates-dashboards-workflows).
-
-## Why most workflows fail on a Monday, not in the demo
-
-Most AI workflows do not fail in the demo. They fail on a Monday morning, when the person who set them up is on leave, the input file has a new column, and nobody is sure whether last week's output was checked before it went to a client.
-
-That is the normal outcome rather than bad luck. Gartner predicted that [at least 30% of generative AI projects would be abandoned after proof of concept by the end of 2025](https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025), citing poor data quality, inadequate risk controls, escalating costs or unclear business value. Meanwhile Microsoft and LinkedIn's 2024 Work Trend Index found that [75% of knowledge workers already use generative AI at work, and 78% of those users bring their own tools](https://news.microsoft.com/source/2024/05/08/microsoft-and-linkedin-release-the-2024-work-trend-index-on-the-state-of-ai-at-work/). The workflow is often running before anyone has designed it.
-
-In a CA or finance team, the test has a specific shape. Can the reviewer see the source document behind each output? Is there a list of what the tool got wrong last week, and what was done about it? Does the article assistant know which client files may never go into it? If the answer to any of those is a shrug, the problem is the operating design, not the model. For the firm-level rules, see the [AI controls checklist for CA firms](https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india). For a CA-specific map of where to start, see [AI for chartered accountants in India](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india).
-
-## Monday-morning checklist
-
-- Name the owner.
-- Name the metric that already matters.
-- Name the exception path and who clears it.
-- Name the data classes the tool may see.
-- Book the weekly review — if any line is blank, pause the rollout.
-
-## Keep reading in this topic
-
-This guide is part of [AI automation in India: a practical hub for business owners](https://pratikbajoria.com/ai-automation-in-india).
-
-- [A 90-Day AI Opportunity Audit Without the Theatre](https://pratikbajoria.com/audit)
-- [Why Most Corporate AI Pilots Never Reach Production](https://pratikbajoria.com/blog/corporate-ai-pilots)
-
-Also useful: [AI implementation for finance teams: the CFO and controller guide](https://pratikbajoria.com/ai-implementation-for-finance-teams).
-
-## Sources
-
-- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
-- [Gartner — 30% of generative AI projects predicted to be abandoned after proof of concept by end of 2025 (29 July 2024)](https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025)
-- [Microsoft and LinkedIn — 2024 Work Trend Index](https://news.microsoft.com/source/2024/05/08/microsoft-and-linkedin-release-the-2024-work-trend-index-on-the-state-of-ai-at-work/)
-
-Educational commentary from implementation work — not personalised financial, tax, legal or investment advice. Verify vendor pricing, privacy terms and your own policies before you buy.
-
-Tools worth evaluating
-
-[**Notion** Knowledge management and workspace Visit Notion official site ↗](https://www.notion.so/product)
-
-Tool links go to the vendor’s official site. No affiliate tracking is active on this page yet. Recommendations are based on fit for finance, ops and AI implementation work — not on commission.
-
-*Educational content; not financial, investment, or legal advice.*
-
-## Related
-- [AI for chartered accountants in India](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india)
-- [AI tools that pay back for finance and CA teams](https://pratikbajoria.com/blog/best-ai-tools-chartered-accountants-finance-professionals)
-- [Notion as a finance control layer](https://pratikbajoria.com/blog/notion-for-finance-professionals-templates-dashboards-workflows)
-- [AI controls checklist for CA firms](https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india)
-- [AI automation in India: a practical hub for business owners](https://pratikbajoria.com/ai-automation-in-india)
-- [A 90-Day AI Opportunity Audit Without the Theatre](https://pratikbajoria.com/audit)
-- [Why Most Corporate AI Pilots Never Reach Production](https://pratikbajoria.com/blog/corporate-ai-pilots)
-- [AI implementation for finance teams: the CFO and controller guide](https://pratikbajoria.com/ai-implementation-for-finance-teams)
-- [All articles](https://pratikbajoria.com/blog)
-
----
-
 ## Articles not included in this file
 
-This file is capped at about 450k characters. 29 older articles are not included here; each is listed in https://pratikbajoria.com/llms.txt and has its own markdown version:
+This file is capped at about 450k characters. 30 older articles are not included here; each is listed in https://pratikbajoria.com/llms.txt and has its own markdown version:
 
 - [Will AI Replace Chartered Accountants in India? A CA’s Honest Answer](https://pratikbajoria.com/blog/2026-10-07-will-ai-replace-chartered-accountants-in-india.md)
 - [Zoho CRM, HubSpot and Your Books: A CRM-to-Accounting Handoff for Indian SMEs](https://pratikbajoria.com/blog/zoho-crm-hubspot-crm-integration-finance-workflows.md)
@@ -5414,6 +5408,7 @@ This file is capped at about 450k characters. 29 older articles are not included
 - [AI Controls Checklist for CA Firms in India: Practical Review Gates](https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india.md)
 - [AI for Chartered Accountants: Practical Use Cases and Control Gates](https://pratikbajoria.com/blog/ai-for-chartered-accountants-practical-use-cases-and-controls.md)
 - [AI for Audit Working Papers in India: What a CA Should Automate and What Must Stay Human](https://pratikbajoria.com/blog/2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human.md)
+- [The Monday Morning Test for Any AI Workflow](https://pratikbajoria.com/blog/2026-09-29-the-monday-morning-test-for-any-ai-workflow.md)
 - [How Indian CA Firms Can Use AI for GST Reconciliation Without Risking Client Data](https://pratikbajoria.com/blog/2026-09-28-how-indian-ca-firms-can-use-ai-for-gst-reconciliation-without-risking-client-data.md)
 - [WhatsApp Automation That Still Feels Like Customer Care](https://pratikbajoria.com/blog/2026-09-28-whatsapp-automation-that-still-feels-like-customer-care.md)
 - [AI for Chartered Accountants in India: A Practical Implementation Hub](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india.md)

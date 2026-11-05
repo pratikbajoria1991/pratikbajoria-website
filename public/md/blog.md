@@ -3,8 +3,9 @@
 > Practical writing on implementing AI inside real businesses — audits, finance workflows, governance and tooling.
 
 Canonical: https://pratikbajoria.com/blog
-Last updated: 2026-11-05
+Last updated: 2026-11-06
 
+- [AI for Bank Statement Categorisation for Bookkeeping Clients in India](https://pratikbajoria.com/blog/2026-11-06-ai-for-bank-statement-categorisation-for-bookkeeping-clients-in-india) - Bank statement categorisation is the best first AI workflow for many bookkeeping practices: high volume, easy to check, low risk. How to set it up properly.
 - [AI for Month-End Close in Indian Mid-Market Finance Teams](https://pratikbajoria.com/blog/2026-11-05-ai-for-month-end-close-in-indian-mid-market-finance-teams) - Where AI shortens the month-end close for Indian mid-market finance teams: reconciliations, accrual support and variance commentary, with the controller signing off.
 - [Updating Engagement Letters for AI Use in a CA Firm](https://pratikbajoria.com/blog/2026-11-04-updating-engagement-letters-for-ai-use-in-a-ca-firm) - Tell clients plainly how AI is used on their work, what data it sees and who reviews it. What to add to CA engagement letters now that the DPDP Rules are notified.
 - [AI for Marketplace Seller Reconciliation in India: GST TCS and 194-O TDS](https://pratikbajoria.com/blog/2026-11-04-ai-for-marketplace-seller-reconciliation-in-india-gst-tcs-and-194-o-tds) - How a CA can use AI to reconcile marketplace GST TCS and 194-O/section 393 TDS for Indian sellers before the 30 November cut-off, and what stays human.
