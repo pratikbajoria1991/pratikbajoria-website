@@ -3,8 +3,9 @@
 > Practical writing on implementing AI inside real businesses — audits, finance workflows, governance and tooling.
 
 Canonical: https://pratikbajoria.com/blog
-Last updated: 2026-11-09
+Last updated: 2026-11-10
 
+- [Using AI for Ind AS Research and Disclosure Checklists](https://pratikbajoria.com/blog/2026-11-10-using-ai-for-ind-as-research-and-disclosure-checklists) - Use AI to find the right Ind AS paragraph, build disclosure checklists and compare peer disclosures. Never let it decide the accounting treatment. A CA’s method.
 - [AI for GSTR-9 and GSTR-9C: What a CA Can Automate Before 31 December](https://pratikbajoria.com/blog/2026-11-09-ai-for-gstr-9-and-gstr-9c-what-a-ca-can-automate-before-31-december) - How a CA can use AI to prepare GSTR-9 and GSTR-9C for FY 2025-26, why filing before 30 November can cut off ITC, and what stays human.
 - [AI for Bank Statement Categorisation for Bookkeeping Clients in India](https://pratikbajoria.com/blog/2026-11-06-ai-for-bank-statement-categorisation-for-bookkeeping-clients-in-india) - Bank statement categorisation is the best first AI workflow for many bookkeeping practices: high volume, easy to check, low risk. How to set it up properly.
 - [AI for Month-End Close in Indian Mid-Market Finance Teams](https://pratikbajoria.com/blog/2026-11-05-ai-for-month-end-close-in-indian-mid-market-finance-teams) - Where AI shortens the month-end close for Indian mid-market finance teams: reconciliations, accrual support and variance commentary, with the controller signing off.

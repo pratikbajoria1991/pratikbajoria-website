@@ -2,7 +2,7 @@
 
 > Pratik Bajoria is a Chartered Accountant and ex-Big 4 AI implementation consultant helping companies create measurable P&L impact. Consulting entity is primary; Findost is product proof.
 
-Source: https://pratikbajoria.com · Index: https://pratikbajoria.com/llms.txt · Last updated: 2026-11-09
+Source: https://pratikbajoria.com · Index: https://pratikbajoria.com/llms.txt · Last updated: 2026-11-10
 
 ---
 
@@ -1110,8 +1110,9 @@ Share your sector, state, approximate business stage and a short description of 
 > Practical writing on implementing AI inside real businesses — audits, finance workflows, governance and tooling.
 
 Canonical: https://pratikbajoria.com/blog
-Last updated: 2026-11-09
+Last updated: 2026-11-10
 
+- [Using AI for Ind AS Research and Disclosure Checklists](https://pratikbajoria.com/blog/2026-11-10-using-ai-for-ind-as-research-and-disclosure-checklists) - Use AI to find the right Ind AS paragraph, build disclosure checklists and compare peer disclosures. Never let it decide the accounting treatment. A CA’s method.
 - [AI for GSTR-9 and GSTR-9C: What a CA Can Automate Before 31 December](https://pratikbajoria.com/blog/2026-11-09-ai-for-gstr-9-and-gstr-9c-what-a-ca-can-automate-before-31-december) - How a CA can use AI to prepare GSTR-9 and GSTR-9C for FY 2025-26, why filing before 30 November can cut off ITC, and what stays human.
 - [AI for Bank Statement Categorisation for Bookkeeping Clients in India](https://pratikbajoria.com/blog/2026-11-06-ai-for-bank-statement-categorisation-for-bookkeeping-clients-in-india) - Bank statement categorisation is the best first AI workflow for many bookkeeping practices: high volume, easy to check, low risk. How to set it up properly.
 - [AI for Month-End Close in Indian Mid-Market Finance Teams](https://pratikbajoria.com/blog/2026-11-05-ai-for-month-end-close-in-indian-mid-market-finance-teams) - Where AI shortens the month-end close for Indian mid-market finance teams: reconciliations, accrual support and variance commentary, with the controller signing off.
@@ -2123,6 +2124,93 @@ Try the free [Scorecard](https://pratikbajoria.com/scorecard), review the [Audit
 ## Related
 - [Scorecard](https://pratikbajoria.com/scorecard)
 - [Audit](https://pratikbajoria.com/audit)
+
+---
+
+# Using AI for Ind AS Research and Disclosure Checklists
+
+> Use AI to find the right Ind AS paragraph, build disclosure checklists and compare peer disclosures. Never let it decide the accounting treatment. A CA’s method.
+
+Canonical: https://pratikbajoria.com/blog/2026-11-10-using-ai-for-ind-as-research-and-disclosure-checklists
+Last updated: 2026-11-10
+
+CA insights · 2026-11-10 · 4 min read
+
+Ind AS research is one of the places where AI is both most tempting and most dangerous. Tempting, because the standards are long and cross-referenced, and a good assistant can find the relevant paragraph in seconds. Dangerous, because a plausible answer about recognition or measurement can be completely wrong, and the error ends up in audited financial statements.
+
+My rule is simple: AI may find, organise and compare. It may not decide the accounting.
+
+## Who is on Ind AS
+
+The [Companies (Indian Accounting Standards) Rules, 2015](https://thc.nic.in/Central%20Governmental%20Rules/Companies%20%28Indian%20Accounting%20Standards%29%20Rules,2015.pdf) brought in Ind AS in phases. From accounting periods beginning on or after 1 April 2016: listed companies and companies in the process of listing with net worth of ₹500 crore or more, and unlisted companies with net worth of ₹500 crore or more, together with their holding, subsidiary, joint venture and associate companies. From 1 April 2017: the remaining listed companies and those in the process of listing, and unlisted companies with net worth of ₹250 crore or more but less than ₹500 crore, again with their group companies.
+
+Voluntary adoption is irrevocable, and once a company applies Ind AS it continues even if it later falls below the thresholds. That leaves a long tail of mid-sized companies, and the CAs who work with them, who need reliable Ind AS research without a technical accounting team.
+
+## Where AI is genuinely useful
+
+Gartner’s [2025 AI in Finance survey](https://www.gartner.com/en/newsroom/press-releases/2025-11-18-gartner-survey-shows-finance-ai-adoption-remains-steady-in-2025) found knowledge management to be the most common finance AI use case, at 49% of adopters. Ind AS research is knowledge management with higher stakes.
+
+- Finding the relevant standard and paragraphs for a fact pattern, as a starting point for reading the standard itself.
+- Building a disclosure checklist for a specific company from the standards that apply to it, and marking which items are relevant to its transactions.
+- Comparing a draft note with the checklist and flagging omissions.
+- Comparing disclosures with peers. ICAI’s [CA GPT Industry Forum](https://icai.org/post/prc-icai-unveils-groundbreaking-ca-gpt-platform) integrated annual reports of about 5,000 listed companies for 2023-24 into its member platform, which makes this kind of benchmarking far quicker.
+- Summarising changes between the previous year’s notes and this year’s draft.
+
+## Where it must not go
+
+Recognition, measurement, classification and judgement-heavy areas such as revenue from contracts with multiple obligations, leases, financial instruments, impairment and consolidation need a qualified person reading the standard and the facts. An assistant can describe what a standard says in general; it does not know your contract terms, and it will not reliably flag the exception that changes the answer.
+
+I would also never accept an AI paragraph reference without opening the standard. References are where general-purpose tools fail most quietly: the paragraph exists but says something different, or belongs to a different standard.
+
+## A research method that holds up
+
+- Write the fact pattern first, in your own words, with the key contract terms.
+- Ask the assistant for the relevant standards and paragraphs, not for the answer.
+- Read those paragraphs in the official text, and any related guidance your firm relies on.
+- Form the conclusion yourself, and write a short memo stating facts, analysis and conclusion.
+- Keep the AI interaction in the file as supporting research, clearly labelled.
+
+## Disclosure checklists: the best first use
+
+If you want one place to start, make it the disclosure checklist. It is structured, it is easy to check against the standards, and an omission found by the checklist is cheap; an omission found by a regulator is not.
+
+Treat the tool the way ICAI’s [SIA 240](https://internalaudit.icai.org/wp-content/uploads/2026/03/Comp-of-Stnd-on-Internal-Audit-26.pdf) asks internal auditors to treat any tool: validate its outputs against known results before relying on it, document how it was used, and apply professional judgement to everything it produces. Run last year’s approved financial statements through the checklist process first and see whether it finds what your reviewers found. Which assistant you use matters less than this discipline, though I compared the main options in [ChatGPT vs Copilot vs Gemini for a CA firm](https://pratikbajoria.com/blog/2026-10-05-chatgpt-vs-copilot-vs-gemini-how-a-ca-firm-in-india-should-choose-an-ai-assistant).
+
+## Frequently asked questions
+
+### Which companies must follow Ind AS?
+
+Under the Companies (Indian Accounting Standards) Rules, 2015: listed companies and those in the process of listing, unlisted companies with net worth of ₹250 crore or more, and their holding, subsidiary, joint venture and associate companies, applied in phases from 1 April 2016 and 1 April 2017.
+
+### Can AI decide an Ind AS accounting treatment?
+
+No. It can help find relevant paragraphs and organise research, but recognition, measurement and classification decisions need a qualified person who has read the standard and the facts, documented in a memo.
+
+### What is ICAI CA GPT?
+
+ICAI’s AI platform for members, launched in July 2024 and free for members. In November 2024 ICAI added an Industry Forum with annual reports of about 5,000 listed companies for 2023-24.
+
+### What is a good first AI use in financial reporting?
+
+A disclosure checklist built from the standards that apply to the company, used to compare draft notes and flag omissions, validated first against a set of financial statements that has already been reviewed.
+
+## Sources
+
+- [Companies (Indian Accounting Standards) Rules, 2015 (Gazette text)](https://thc.nic.in/Central%20Governmental%20Rules/Companies%20%28Indian%20Accounting%20Standards%29%20Rules,2015.pdf)
+- [ICAI: CA GPT platform press release (25 November 2024)](https://icai.org/post/prc-icai-unveils-groundbreaking-ca-gpt-platform)
+- [Gartner: Finance AI adoption remains steady in 2025 (press release)](https://www.gartner.com/en/newsroom/press-releases/2025-11-18-gartner-survey-shows-finance-ai-adoption-remains-steady-in-2025)
+- [ICAI Internal Audit Standards Board: Compendium of Standards on Internal Audit, 2026 (SIA 240, Use of Tools)](https://internalaudit.icai.org/wp-content/uploads/2026/03/Comp-of-Stnd-on-Internal-Audit-26.pdf)
+
+*Disclaimer: this article is general educational commentary. It is not legal, tax, audit or data-protection advice and does not create an adviser–client relationship. Laws, standards and thresholds change; check the current official text and take professional advice on your facts before acting.*
+
+*Educational content; not financial, investment, or legal advice.*
+
+## Related
+- [AI for Chartered Accountants in India: the implementation hub](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india)
+- [ChatGPT vs Copilot vs Gemini for a CA firm](https://pratikbajoria.com/blog/2026-10-05-chatgpt-vs-copilot-vs-gemini-how-a-ca-firm-in-india-should-choose-an-ai-assistant)
+- [AI controls checklist for CA firms in India](https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india)
+- [The AI Opportunity Audit: a scoped 90-day map](https://pratikbajoria.com/audit)
+- [All articles](https://pratikbajoria.com/blog)
 
 ---
 
@@ -5170,179 +5258,127 @@ Also useful: [AI automation in India: a practical hub for business owners](https
 
 ---
 
-# How to Run a 90-Day AI Pilot in a CA Firm in India: A 30/60/90 Playbook
+# Will AI Replace Chartered Accountants in India? A CA’s Honest Answer
 
-> A 30/60/90-day AI pilot playbook for CA firms in India: the first workflow, a baseline, client-data rules, review gates and a go/no-go decision.
+> Will AI replace chartered accountants in India? A CA maps which tasks AI takes in 2026, which stay human, and what ICAI and WEF data show.
 
-Canonical: https://pratikbajoria.com/blog/2026-10-07-how-to-run-a-90-day-ai-pilot-in-a-ca-firm-in-india
-Last updated: 2026-10-17
+Canonical: https://pratikbajoria.com/blog/2026-10-07-will-ai-replace-chartered-accountants-in-india
+Last updated: 2026-10-22
 
 CA insights · 2026-10-07 · 8 min read
 
-A 30/60/90-day AI pilot playbook for CA firms in India: choosing the first workflow, taking a baseline, client-data rules, review gates and an honest go/no-go decision.
+Will AI replace chartered accountants in India? A CA and AI implementation consultant on which tasks AI is taking, which stay human, and what the evidence from ICAI, WEF and Microsoft says.
 
 Key takeaways
 
-- Run one pilot on one workflow for 90 days, with a baseline taken before any tool is used and a written go/no-go decision at the end.
-- Days 1–30: choose the workflow, log two to three weeks of baseline and agree one-page client-data rules.
-- Days 31–60: run AI in parallel with 100% review and an exception log.
-- Days 61–90: prove it at normal volume, including real deadline pressure, then decide go, adjust or stop.
-- Stopping with evidence is a valid result.
+- No. AI is taking routine CA work (data extraction, first-pass reconciliations, drafting, notice summaries), not the signature and professional accountability.
+- The WEF Future of Jobs Report 2025 lists accounting, bookkeeping and payroll clerks among the fastest-declining roles to 2030.
+- ICAI membership rose from 4,03,617 (1 April 2024) to 4,23,105 (1 April 2025); about 1.61 lakh members are in practice.
+- 92% of knowledge workers in India use AI at work (Microsoft and LinkedIn 2024 Work Trend Index).
+- Firms that move time to review, judgement and advice do well; those billing for routine volume feel the squeeze first.
 
-If you are a partner in an Indian CA practice and want to start with AI properly, here is the short answer: run one pilot, on one workflow, for ninety days, with a baseline taken before anyone opens a tool and a go/no-go decision written down at the end. Days 1–30 are for choosing the workflow, measuring how it runs today and agreeing the client-data rules. Days 31–60 are for running AI alongside the existing process, never instead of it. Days 61–90 are for proving it at normal volume and deciding whether to keep it, change it or stop.
+No. AI will not replace chartered accountants in India, but it is already replacing a large share of the work many CAs and their teams are paid for today. Those are different claims, and the gap between them is where your career or your practice will be decided over the next five years.
 
-Most firms skip the dull parts. They buy licences, let the keenest associates experiment, and three months later nobody can say whether anything improved. This is the playbook I would use with a practice that wants an answer rather than a demo.
+I qualified as a CA, worked in Big 4, founded Findost and now spend my days putting AI into finance teams and CA practices. The question “will AI replace CAs?” comes up in almost every first conversation. Here is the answer I give, with the evidence I rely on.
 
-## What a pilot is, and what it is not
+## The short answer: tasks go, accountability stays
 
-A pilot is a time-boxed test of one workflow, with a named owner, a measured starting point and a fixed decision date. It is not a firm-wide rollout, not a tool trial run by whoever has spare time, and not a reason to relax review. If you cannot state the workflow, the owner and the decision date in one sentence, you do not have a pilot yet.
+A chartered accountant is not paid to type entries. A CA is paid to sign: an audit report, a tax audit report, a certificate, a valuation, an opinion a bank or regulator will rely on. Indian law ties that signature to a qualified, regulated person who can be held responsible. No model can be struck off, sued or examined by a disciplinary committee, so the signing role is not going to a machine.
 
-Keep it to one workflow, however long the partners’ wish list. Partner attention is the scarcest resource in most practices.
+What AI does take is the work underneath the signature: extracting data, first-pass reconciliations, drafting routine letters, summarising notices, flagging anomalies in a ledger. In most practices I see, that is a large chunk of article and junior staff time, and a fair share of manager time too.
 
-The 90-day AI pilot roadmap for a CA firm: one workflow, a baseline before any tool, 100% review in the parallel run and a written decision on day 90. Source: [DPDP Act, 2023 (MeitY)](https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf), [NFRA Staff Series on Technology in Audit 01](https://nfra.gov.in/staff-series-on-technology-in-audit/), [ICAI AICA Level 1 reference document](https://ai.icai.org/assets/upload/attachment/AICA_L1.pdf).
+## What the evidence actually says
 
-### Text version of this infographic
+The most quoted source is the World Economic Forum’s [Future of Jobs Report 2025](https://www.weforum.org/publications/the-future-of-jobs-report-2025/in-full/2-jobs-outlook/). Its employer survey puts accounting, bookkeeping and payroll clerks among the fastest-declining roles to 2030, and lists accountants and auditors in the declining group as well, with AI and information-processing technology named as primary drivers. Read it carefully, though: it is a survey of employer expectations, and the steepest projected decline is in clerical roles, not in professionals who exercise judgement.
 
-- **Days 1–30, choose and baseline:** score the shortlist on volume, written rules, data sensitivity, reviewability, cost of an error and ownership; log at least 20 real items as they run today; agree one page of client-data rules using firm-controlled business accounts only; sign a pilot charter with success thresholds and stop conditions.
-- **Days 31–60, run in parallel:** AI drafts alongside the normal process and 100% of output is reviewed; keep an exception log; hold a 20-minute weekly review of the log; improve inputs and instructions without widening scope.
-- **Days 61–90, prove and decide:** run at normal volume with a named reviewer signing off; compare reviewer time, returns and turnaround with the baseline; decide in writing to keep, change or stop; if kept, write the SOP and add the tool to the approved register.
-- **Guardrails:** the DPDP Act, 2023 requires reasonable security safeguards for personal data, including when a vendor processes it; NFRA’s July 2026 paper expects tools to be validated and approved before use on a live audit engagement; ICAI’s AICA Level 1 is 3 days and 18 structured CPE hours.
+Adoption in India is already high. Microsoft and LinkedIn’s [2024 Work Trend Index](https://news.microsoft.com/en-in/92-of-indian-knowledge-workers-use-ai-in-the-workplace-finds-microsoft-and-linkedin-2024-work-trend-index/) found that 92% of knowledge workers in India use AI at work, against 75% globally, and that 54% of Indian leaders worried their organisation lacked a plan and vision for implementing it. In other words, people are using AI whether or not their firm has decided how.
 
-## Days 1–30: choose the workflow, take the baseline, set the rules
+The profession is not shrinking either. ICAI’s [76th Annual Report](https://www.jurishour.in/columns/india-has-around-4-23-lakh-active-ca/) shows membership rising from 4,03,617 on 1 April 2024 to 4,23,105 on 1 April 2025, with 19,488 new members enrolled in that year. Only about 1.61 lakh of those members are in practice; the rest work in industry, finance and other roles. Those are the jobs where AI will change the day-to-day most visibly.
 
-### Pick the first workflow on evidence, not excitement
+And the regulator’s own institute is leaning in rather than resisting. ICAI [says it has trained over 50,000 members in AI](https://www.icai.org/post/icai-ais2026-26062026) and built more than 150 GPT-based tools for members, and launched a third level of its AI certification in June 2026.
 
-Good first candidates are frequent, repetitive and easy to check. In a typical practice that might be first-pass categorisation of bank statement lines for bookkeeping clients, drafting routine document-request emails, summarising long agreements or departmental notices so a reviewer knows where to look, preparing exception lists for GST reconciliation, or turning a new circular into an internal checklist. Poor first candidates are anything that ends in a professional opinion, a signed report, tax-position advice or a filing that could leave the firm without a person reading it.
+## Which CA work is most exposed
 
-Score your shortlist against the criteria below, 1 to 5 each, and pick the highest total rather than the most interesting idea.
+My working view from implementation projects, not survey data.
 
-Selection framework only. Score your own candidate workflows; this is not benchmark data.
-
-| Criterion | Score high (5) when | Score low (1) when |
+| Work | Exposure to AI | Why |
 | --- | --- | --- |
-| Volume | It happens every week across many clients | It happens a few times a year |
-| Rules | The steps are written down, or could be in an afternoon | It depends on one senior’s judgement |
-| Data sensitivity | It works on redacted or low-sensitivity data | It needs identity numbers, payroll or unpublished results |
-| Reviewability | A reviewer can check output against the source quickly | Checking takes as long as doing it |
-| Cost of an error | Mistakes are caught inside the firm | Mistakes reach a client, a department or a filing |
-| Ownership | A manager wants it fixed and will run the pilot | It is nobody’s job |
+| Data entry, bank categorisation, ledger scrutiny | High | Repetitive, rules-based, easy to check |
+| GST and TDS reconciliations | High for the first pass | Matching is mechanical; resolving exceptions is not |
+| Drafting notices, replies, emails, summaries | High for drafts | Language models write quickly; a CA still owns the position taken |
+| Audit testing and sampling | Medium | Tools can test whole populations, but evidence and judgement stay with the auditor |
+| Tax positions, opinions, structuring | Low | Facts, risk appetite and liability are client-specific |
+| Signing, client relationships, advisory | Low | Trust and accountability cannot be delegated to software |
 
-### Take the baseline before anyone touches a tool
+## What I tell practices and young CAs
 
-Without a baseline, the day-90 conversation is a contest of opinions. For two or three weeks, have the owner log the chosen workflow as it runs today: how many items were processed, roughly how long each took, how many came back from review, and what kind of errors the reviewer caught. Rough is fine. An honest log of twenty real items beats a confident estimate.
+**For partners:** the risk is not that AI replaces you. It is that a competing firm uses AI to do compliance work at a lower cost and with faster turnaround, and your clients notice. Pick one high-volume workflow, measure how long it takes today, and test AI on it with full review. My [90-day AI pilot playbook for CA firms](https://pratikbajoria.com/blog/2026-10-07-how-to-run-a-90-day-ai-pilot-in-a-ca-firm-in-india) sets out how.
 
-### Write the client-data rules on one page
+**For CAs in industry:** the routine month-end and reporting work will shrink. The people who do well will own the controls around AI output, the business partnering and the explanation of numbers to management.
 
-Your confidentiality obligations under ICAI’s framework do not pause for a pilot, and where the material includes personal data, the Digital Personal Data Protection Act, 2023 expects reasonable security safeguards, including when a vendor processes that data for you. Before the pilot starts, partners should agree, in writing:
+**For students and freshers:** articleship that is only vouching and data entry will lose value. Learn to review machine output, write clearly, understand data and ask why a number moved. I have written more on this in [is CA worth it in 2026 with AI](https://pratikbajoria.com/blog/2026-10-07-is-ca-worth-it-in-2026-with-ai).
 
-- which kinds of data may go into the tool, and which never may;
-- that only a firm-controlled business account is used, never a personal one;
-- who administers retention and access, and what the settings are;
-- where outputs are saved: the engagement file, not a chat history;
-- whether engagement letters or client communications need updating, on which you should take proper advice.
+## Where AI genuinely fails CAs today
 
-The fuller version is in the [AI controls checklist for CA firms in India](https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india). For a pilot, one page people actually read beats a policy nobody opens.
+General-purpose assistants still state wrong section numbers, outdated rates and invented case references with total confidence. They have no idea whether a client’s facts were complete. And anything you paste into a consumer account may sit outside the firm’s control, which matters for your confidentiality obligations and, where personal data is involved, for the [Digital Personal Data Protection Act, 2023](https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf). That is why every useful deployment I have built keeps a named reviewer and a written data rule. The [AI controls checklist for CA firms](https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india) covers the minimum set.
 
-### Sign a one-page pilot charter
+## The bottom line
 
-The charter names the workflow, owner, reviewer, tool, data rules, baseline, success measures, stop conditions and decision date. Set the success measures before you begin, in terms you already track or can log: reviewer time per item, items returned at review, turnaround from receipt to completion, and any breach of the data rules. Agree the thresholds in advance. If the partners only decide what “good” means after seeing the results, the pilot will always succeed on paper.
+AI will not take over the chartered accountant’s role. It will take over the parts of the job that never needed a chartered accountant. Firms and individuals who move their time up to review, judgement and advice will be fine; those who bill for volume of routine work will feel the squeeze first. If you want the wider map, start with the [AI for chartered accountants in India hub](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india), browse the [AI tools for chartered accountants](https://pratikbajoria.com/blog/best-ai-tools-chartered-accountants-finance-professionals), look at the [AI Opportunity Audit](https://pratikbajoria.com/audit) if you want a structured 90-day plan, or [book a discovery call](https://pratikbajoria.com/#contact).
 
-## Days 31–60: run it in parallel, with a review gate on everything
+## Where the change shows up first
 
-In the second month the AI-assisted version runs alongside the normal process. Either the team does a sample both ways, or the tool drafts and a reviewer checks every single output. Review is 100% in this phase, with no exceptions for items that look fine.
-
-Keep an exception log. Every time the reviewer corrects something, record what was wrong, why it mattered and how serious it was. Then hold a twenty-minute weekly review with the owner, the reviewer and the sponsoring partner, and look at the log rather than anecdotes. Use what you learn to improve the inputs, templates and instructions. Do not widen the scope; a pilot that grows every week cannot be measured.
-
-Watch for three things: staff drifting outside the data rules because it is quicker, outputs that read well but cite the wrong section or figure, and preparation time saved being eaten by longer review. Only the log will show the last one.
-
-## Days 61–90: prove it at normal volume, then decide
-
-In the final month the tool drafts and a named person reviews and signs off, at normal volume and ideally through at least one stretch of real deadline pressure. A workflow that only works in a quiet week will not survive filing season. If, and only if, the exception log supports it, you can move internal-only items from full review to risk-based sampling. Anything that leaves the firm keeps full review.
-
-At the end, compare the pilot against the baseline and write a short decision memo. There are only three honest outcomes.
-
-Go/no-go gate. Apply the thresholds your partners agreed in the charter.
-
-| Decision | When it applies | What happens next |
-| --- | --- | --- |
-| Go | Measures met, no unresolved control issues, and the team uses it without being chased | Write the procedure, train the next team, add it to the firm’s AI register |
-| Adjust | Some value, but review effort is high or errors cluster in one step | Narrow the scope or fix the inputs, then rerun for 30 days on the same measures |
-| Stop | No measurable improvement, or a confidentiality or quality risk you cannot control | Record why, release any single-purpose licences, and pick the next candidate |
-
-Stopping is a legitimate result. A practice that can show partners why it stopped one pilot will find it much easier to fund the next one. I have written more about that in [when a finance team should say no to an AI pilot](https://pratikbajoria.com/blog/2026-09-24-when-a-finance-team-should-say-no-to-an-ai-pilot).
-
-## Plan around the compliance calendar
-
-Indian practices have predictable crunch periods around return and audit due dates. Do not start the parallel run in the fortnight before a major deadline, because review is the first thing that gets squeezed. But make sure the final month includes some real load: the aim is to prove the workflow in an ordinary busy period, not to hide it from one.
-
-## Mistakes I see most often
-
-- **Piloting the tool instead of the workflow.** “Let’s try Copilot” is not a pilot. “Let’s cut reviewer time on bank categorisation for bookkeeping clients” is. If the tool itself is still undecided, settle that first; see [how a CA firm in India should choose an AI assistant](https://pratikbajoria.com/blog/2026-10-05-chatgpt-vs-copilot-vs-gemini-how-a-ca-firm-in-india-should-choose-an-ai-assistant).
-- **No baseline.** Without one, every result is anecdotal.
-- **Scope creep.** Adding a second workflow in week five resets the measurement.
-- **No owner for the decision date.** Pilots without a fixed end quietly become unmanaged production.
-
-For the wider implementation map, start at the [AI for chartered accountants in India](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india) hub. If GST is your likely first workflow, read [using AI for GST reconciliation without risking client data](https://pratikbajoria.com/blog/2026-09-28-how-indian-ca-firms-can-use-ai-for-gst-reconciliation-without-risking-client-data). For help scoping the first pilot, take the free [AI Opportunity Scorecard](https://pratikbajoria.com/scorecard), look at the [AI Opportunity Audit](https://pratikbajoria.com/audit), or [book a discovery call](https://pratikbajoria.com/#contact).
-
-## Pilot-ready checklist
-
-- One workflow named, with an owner and a reviewer.
-- Selection scores recorded for every shortlisted workflow.
-- Two to three weeks of baseline logged on real items.
-- One-page client-data rules agreed by the partners.
-- Firm-controlled business account set up, with retention configured.
-- Charter signed, with success measures, thresholds and stop conditions.
-- Exception log template ready before day 31.
-- Weekly twenty-minute review in the calendar.
-- Decision date fixed, and kept clear of the heaviest filing weeks.
+It shows up in training and in reporting. I have written a two-year plan for article assistants in [AI and articleship](https://pratikbajoria.com/blog/2026-10-15-ai-and-articleship-how-ca-firms-should-train-article-assistants-now), a clause-by-clause view of statutory reporting in [AI for CARO 2020 reporting](https://pratikbajoria.com/blog/2026-10-16-ai-for-caro-2020-reporting-where-it-helps-and-where-judgement-stays), and what must stay human on the file in [AI for audit working papers in India](https://pratikbajoria.com/blog/2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human).
 
 ## Frequently asked questions
 
-### How long should an AI pilot in a CA firm take?
+### Will AI take over chartered accountants?
 
-Ninety days is a practical default for one workflow: a month to choose it, take a baseline and agree data rules, a month running AI in parallel with full review, and a month at normal volume before a written go, adjust or stop decision.
+No. AI is taking over routine tasks such as data entry, first-pass reconciliations and drafting, but signing audit and tax reports, forming opinions and carrying professional liability remain with a qualified, regulated CA. The role shifts towards review, judgement and advice.
 
-### What is a good first AI use case for a CA practice in India?
+### Which CA jobs are most at risk from AI?
 
-Pick something frequent, repetitive and easy to check, where mistakes are caught inside the firm: for example first-pass bank statement categorisation, routine document-request emails, summaries of long notices for a reviewer, or GST reconciliation exception lists. Avoid anything that ends in an opinion, a signed report or a filing.
+Roles built mainly on data entry, bookkeeping and routine reconciliations face the most pressure. The WEF Future of Jobs Report 2025 lists accounting, bookkeeping and payroll clerks among the fastest-declining roles to 2030, with AI and information processing named as key drivers.
 
-### Do we need client consent to use AI on client work?
+### How can chartered accountants use AI?
 
-It depends on your engagement terms, the data involved and your obligations under ICAI’s framework and the Digital Personal Data Protection Act, 2023. Take proper advice on your facts. Many firms start the pilot on redacted or internal-only data, which keeps the question manageable while they learn.
+Start with frequent, checkable work: bank statement categorisation, GST reconciliation exception lists, notice summaries and first drafts of client emails. Use a firm-controlled business account, keep client data rules in writing and have a named reviewer check every output before it leaves the firm.
 
-### What if the pilot does not work?
+### What is the 30% rule for AI?
 
-Stopping with evidence is a valid result. Record why, release any single-purpose licences and move to the next candidate. A clear record of why one pilot stopped makes the next one easier to approve.
+It is an informal rule of thumb, not a regulation or standard. It is usually framed as letting AI handle the routine bulk of a task while people keep roughly 30% that needs judgement, quality control and accountability. For CAs the useful idea is simple: automate the predictable steps and keep a person responsible for anything that reaches a client, a filing or a signature.
 
 ## Keep reading in this topic
 
 This guide is part of [AI for Chartered Accountants in India: the implementation hub](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india).
 
-- [ChatGPT, Copilot or Gemini? How a CA Firm in India Should Choose an AI Assistant](https://pratikbajoria.com/blog/2026-10-05-chatgpt-vs-copilot-vs-gemini-how-a-ca-firm-in-india-should-choose-an-ai-assistant)
-- [How CA Firms in India Should Price Work When AI Cuts the Hours](https://pratikbajoria.com/blog/2026-10-14-how-ca-firms-in-india-should-price-work-when-ai-cuts-the-hours)
+- [How Audit and Accounting Firms in India Are Using AI in 2026](https://pratikbajoria.com/blog/2026-10-07-how-audit-and-accounting-firms-in-india-are-using-ai)
 - [AI Controls Checklist for CA Firms in India: Practical Review Gates](https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india)
+- [AI Courses for Chartered Accountants in India: What Is Actually Worth It](https://pratikbajoria.com/blog/2026-10-07-ai-courses-for-chartered-accountants-in-india-what-is-worth-it)
 
 Also useful: [AI automation in India: a practical hub for business owners](https://pratikbajoria.com/ai-automation-in-india).
 
 ## Sources
 
+- [World Economic Forum: Future of Jobs Report 2025, Jobs outlook](https://www.weforum.org/publications/the-future-of-jobs-report-2025/in-full/2-jobs-outlook/)
+- [Microsoft India: 2024 Work Trend Index India findings (16 May 2024)](https://news.microsoft.com/en-in/92-of-indian-knowledge-workers-use-ai-in-the-workplace-finds-microsoft-and-linkedin-2024-work-trend-index/)
+- [ICAI membership data from the 76th Annual Report 2024-25, as summarised by JurisHour (29 May 2026)](https://www.jurishour.in/columns/india-has-around-4-23-lakh-active-ca/)
+- [ICAI press release: AI Innovation Summit 2026, AICA Level 3 and Sarvam AI MoU (26 June 2026)](https://www.icai.org/post/icai-ais2026-26062026)
 - [Digital Personal Data Protection Act, 2023 (Gazette text, MeitY)](https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf)
-- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
-- [NIST AI 600-1 — Generative AI Profile](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence)
 
-*Disclaimer: this article is general educational commentary from implementation work. It is not legal, tax, audit, data-protection or procurement advice, and it does not create an adviser–client relationship. Tool terms and features change; read the current terms for your plan and take professional advice on your specific facts before acting.*
+*Disclaimer: this article is general educational commentary from my implementation work. It is not legal, tax, audit, career or data-protection advice. Fees, courses and tool terms change; check the current details at the source before acting.*
 
 *Educational content; not financial, investment, or legal advice.*
 
 ## Related
-- [AI controls checklist for CA firms in India](https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india)
-- [when a finance team should say no to an AI pilot](https://pratikbajoria.com/blog/2026-09-24-when-a-finance-team-should-say-no-to-an-ai-pilot)
-- [how a CA firm in India should choose an AI assistant](https://pratikbajoria.com/blog/2026-10-05-chatgpt-vs-copilot-vs-gemini-how-a-ca-firm-in-india-should-choose-an-ai-assistant)
-- [AI for chartered accountants in India](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india)
-- [using AI for GST reconciliation without risking client data](https://pratikbajoria.com/blog/2026-09-28-how-indian-ca-firms-can-use-ai-for-gst-reconciliation-without-risking-client-data)
-- [AI Opportunity Scorecard](https://pratikbajoria.com/scorecard)
+- [90-day AI pilot playbook for CA firms](https://pratikbajoria.com/blog/2026-10-07-how-to-run-a-90-day-ai-pilot-in-a-ca-firm-in-india)
+- [is CA worth it in 2026 with AI](https://pratikbajoria.com/blog/2026-10-07-is-ca-worth-it-in-2026-with-ai)
+- [AI controls checklist for CA firms](https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india)
+- [AI for chartered accountants in India hub](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india)
+- [AI tools for chartered accountants](https://pratikbajoria.com/blog/best-ai-tools-chartered-accountants-finance-professionals)
 - [AI Opportunity Audit](https://pratikbajoria.com/audit)
-- [How CA Firms in India Should Price Work When AI Cuts the Hours](https://pratikbajoria.com/blog/2026-10-14-how-ca-firms-in-india-should-price-work-when-ai-cuts-the-hours)
+- [AI and articleship](https://pratikbajoria.com/blog/2026-10-15-ai-and-articleship-how-ca-firms-should-train-article-assistants-now)
+- [AI for CARO 2020 reporting](https://pratikbajoria.com/blog/2026-10-16-ai-for-caro-2020-reporting-where-it-helps-and-where-judgement-stays)
 - [All articles](https://pratikbajoria.com/blog)
 
 ---
@@ -5351,8 +5387,8 @@ Also useful: [AI automation in India: a practical hub for business owners](https
 
 This file is capped at about 450k characters. 31 older articles are not included here; each is listed in https://pratikbajoria.com/llms.txt and has its own markdown version:
 
+- [How to Run a 90-Day AI Pilot in a CA Firm in India: A 30/60/90 Playbook](https://pratikbajoria.com/blog/2026-10-07-how-to-run-a-90-day-ai-pilot-in-a-ca-firm-in-india.md)
 - [Is CA Worth It in 2026 With AI? A Chartered Accountant’s Honest Answer](https://pratikbajoria.com/blog/2026-10-07-is-ca-worth-it-in-2026-with-ai.md)
-- [Will AI Replace Chartered Accountants in India? A CA’s Honest Answer](https://pratikbajoria.com/blog/2026-10-07-will-ai-replace-chartered-accountants-in-india.md)
 - [Zoho CRM, HubSpot and Your Books: A CRM-to-Accounting Handoff for Indian SMEs](https://pratikbajoria.com/blog/zoho-crm-hubspot-crm-integration-finance-workflows.md)
 - [ChatGPT, Copilot or Gemini? How a CA Firm in India Should Choose an AI Assistant](https://pratikbajoria.com/blog/2026-10-05-chatgpt-vs-copilot-vs-gemini-how-a-ca-firm-in-india-should-choose-an-ai-assistant.md)
 - [AI Finance Automation Roadmap: A 90-Day Plan for CFOs and Controllers](https://pratikbajoria.com/blog/2026-10-04-ai-finance-automation-roadmap-for-cfos-and-controllers.md)

@@ -1,5 +1,140 @@
 [
   {
+    "id": "2026-11-10-using-ai-for-ind-as-research-and-disclosure-checklists",
+    "title": "Using AI for Ind AS Research and Disclosure Checklists",
+    "slug": "2026-11-10-using-ai-for-ind-as-research-and-disclosure-checklists",
+    "url": "/blog/2026-11-10-using-ai-for-ind-as-research-and-disclosure-checklists",
+    "date": "2026-11-10",
+    "dateModified": "2026-11-10",
+    "author": "Pratik Bajoria",
+    "category": "CA insights",
+    "readTime": 4,
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=85",
+    "excerpt": "Use AI to find the right Ind AS paragraph, build disclosure checklists and compare peer disclosures. Never let it decide the accounting treatment. A CA’s method.",
+    "content": "Ind AS research is one of the places where AI is both most tempting and most dangerous. Tempting, because the standards are long and cross-referenced, and a good assistant can find the relevant paragraph in seconds. Dangerous, because a plausible answer about recognition or measurement can be completely wrong, and the error ends up in audited financial statements.\n\nMy rule is simple: AI may find, organise and compare. It may not decide the accounting.\n\nWho is on Ind AS\n\nThe Companies (Indian Accounting Standards) Rules, 2015 brought in Ind AS in phases. From accounting periods beginning on or after 1 April 2016: listed companies and companies in the process of listing with net worth of ₹500 crore or more, and unlisted companies with net worth of ₹500 crore or more, together with their holding, subsidiary, joint venture and associate companies. From 1 April 2017: the remaining listed companies and those in the process of listing, and unlisted companies with net worth of ₹250 crore or more but less than ₹500 crore, again with their group companies.\n\nVoluntary adoption is irrevocable, and once a company applies Ind AS it continues even if it later falls below the thresholds. That leaves a long tail of mid-sized companies, and the CAs who work with them, who need reliable Ind AS research without a technical accounting team.\n\nWhere AI is genuinely useful\n\nGartner’s 2025 AI in Finance survey found knowledge management to be the most common finance AI use case, at 49% of adopters. Ind AS research is knowledge management with higher stakes.\n\n• Finding the relevant standard and paragraphs for a fact pattern, as a starting point for reading the standard itself.\n\n• Building a disclosure checklist for a specific company from the standards that apply to it, and marking which items are relevant to its transactions.\n\n• Comparing a draft note with the checklist and flagging omissions.\n\n• Comparing disclosures with peers. ICAI’s CA GPT Industry Forum integrated annual reports of about 5,000 listed companies for 2023-24 into its member platform, which makes this kind of benchmarking far quicker.\n\n• Summarising changes between the previous year’s notes and this year’s draft.\n\nWhere it must not go\n\nRecognition, measurement, classification and judgement-heavy areas such as revenue from contracts with multiple obligations, leases, financial instruments, impairment and consolidation need a qualified person reading the standard and the facts. An assistant can describe what a standard says in general; it does not know your contract terms, and it will not reliably flag the exception that changes the answer.\n\nI would also never accept an AI paragraph reference without opening the standard. References are where general-purpose tools fail most quietly: the paragraph exists but says something different, or belongs to a different standard.\n\nA research method that holds up\n\n• Write the fact pattern first, in your own words, with the key contract terms.\n\n• Ask the assistant for the relevant standards and paragraphs, not for the answer.\n\n• Read those paragraphs in the official text, and any related guidance your firm relies on.\n\n• Form the conclusion yourself, and write a short memo stating facts, analysis and conclusion.\n\n• Keep the AI interaction in the file as supporting research, clearly labelled.\n\nDisclosure checklists: the best first use\n\nIf you want one place to start, make it the disclosure checklist. It is structured, it is easy to check against the standards, and an omission found by the checklist is cheap; an omission found by a regulator is not.\n\nTreat the tool the way ICAI’s SIA 240 asks internal auditors to treat any tool: validate its outputs against known results before relying on it, document how it was used, and apply professional judgement to everything it produces. Run last year’s approved financial statements through the checklist process first and see whether it finds what your reviewers found. Which assistant you use matters less than this discipline, though I compared the main options in ChatGPT vs Copilot vs Gemini for a CA firm.\n\nFrequently asked questions\n\nWhich companies must follow Ind AS?\nUnder the Companies (Indian Accounting Standards) Rules, 2015: listed companies and those in the process of listing, unlisted companies with net worth of ₹250 crore or more, and their holding, subsidiary, joint venture and associate companies, applied in phases from 1 April 2016 and 1 April 2017.\n\nCan AI decide an Ind AS accounting treatment?\nNo. It can help find relevant paragraphs and organise research, but recognition, measurement and classification decisions need a qualified person who has read the standard and the facts, documented in a memo.\n\nWhat is ICAI CA GPT?\nICAI’s AI platform for members, launched in July 2024 and free for members. In November 2024 ICAI added an Industry Forum with annual reports of about 5,000 listed companies for 2023-24.\n\nWhat is a good first AI use in financial reporting?\nA disclosure checklist built from the standards that apply to the company, used to compare draft notes and flag omissions, validated first against a set of financial statements that has already been reviewed.",
+    "intro": [
+      "Ind AS research is one of the places where AI is both most tempting and most dangerous. Tempting, because the standards are long and cross-referenced, and a good assistant can find the relevant paragraph in seconds. Dangerous, because a plausible answer about recognition or measurement can be completely wrong, and the error ends up in audited financial statements.",
+      "My rule is simple: AI may find, organise and compare. It may not decide the accounting."
+    ],
+    "sections": [
+      {
+        "heading": "Who is on Ind AS",
+        "paragraphs": [
+          "The [Companies (Indian Accounting Standards) Rules, 2015][1] brought in Ind AS in phases. From accounting periods beginning on or after 1 April 2016: listed companies and companies in the process of listing with net worth of ₹500 crore or more, and unlisted companies with net worth of ₹500 crore or more, together with their holding, subsidiary, joint venture and associate companies. From 1 April 2017: the remaining listed companies and those in the process of listing, and unlisted companies with net worth of ₹250 crore or more but less than ₹500 crore, again with their group companies.",
+          "Voluntary adoption is irrevocable, and once a company applies Ind AS it continues even if it later falls below the thresholds. That leaves a long tail of mid-sized companies, and the CAs who work with them, who need reliable Ind AS research without a technical accounting team."
+        ],
+        "bullets": []
+      },
+      {
+        "heading": "Where AI is genuinely useful",
+        "paragraphs": [
+          "Gartner’s [2025 AI in Finance survey][3] found knowledge management to be the most common finance AI use case, at 49% of adopters. Ind AS research is knowledge management with higher stakes."
+        ],
+        "bullets": [
+          "Finding the relevant standard and paragraphs for a fact pattern, as a starting point for reading the standard itself.",
+          "Building a disclosure checklist for a specific company from the standards that apply to it, and marking which items are relevant to its transactions.",
+          "Comparing a draft note with the checklist and flagging omissions.",
+          "Comparing disclosures with peers. ICAI’s [CA GPT Industry Forum][2] integrated annual reports of about 5,000 listed companies for 2023-24 into its member platform, which makes this kind of benchmarking far quicker.",
+          "Summarising changes between the previous year’s notes and this year’s draft."
+        ]
+      },
+      {
+        "heading": "Where it must not go",
+        "paragraphs": [
+          "Recognition, measurement, classification and judgement-heavy areas such as revenue from contracts with multiple obligations, leases, financial instruments, impairment and consolidation need a qualified person reading the standard and the facts. An assistant can describe what a standard says in general; it does not know your contract terms, and it will not reliably flag the exception that changes the answer.",
+          "I would also never accept an AI paragraph reference without opening the standard. References are where general-purpose tools fail most quietly: the paragraph exists but says something different, or belongs to a different standard."
+        ],
+        "bullets": []
+      },
+      {
+        "heading": "A research method that holds up",
+        "paragraphs": [],
+        "bullets": [
+          "Write the fact pattern first, in your own words, with the key contract terms.",
+          "Ask the assistant for the relevant standards and paragraphs, not for the answer.",
+          "Read those paragraphs in the official text, and any related guidance your firm relies on.",
+          "Form the conclusion yourself, and write a short memo stating facts, analysis and conclusion.",
+          "Keep the AI interaction in the file as supporting research, clearly labelled."
+        ]
+      },
+      {
+        "heading": "Disclosure checklists: the best first use",
+        "paragraphs": [
+          "If you want one place to start, make it the disclosure checklist. It is structured, it is easy to check against the standards, and an omission found by the checklist is cheap; an omission found by a regulator is not.",
+          "Treat the tool the way ICAI’s [SIA 240][4] asks internal auditors to treat any tool: validate its outputs against known results before relying on it, document how it was used, and apply professional judgement to everything it produces. Run last year’s approved financial statements through the checklist process first and see whether it finds what your reviewers found. Which assistant you use matters less than this discipline, though I compared the main options in [ChatGPT vs Copilot vs Gemini for a CA firm](/blog/2026-10-05-chatgpt-vs-copilot-vs-gemini-how-a-ca-firm-in-india-should-choose-an-ai-assistant)."
+        ],
+        "bullets": []
+      }
+    ],
+    "faq": [
+      {
+        "q": "Which companies must follow Ind AS?",
+        "a": "Under the Companies (Indian Accounting Standards) Rules, 2015: listed companies and those in the process of listing, unlisted companies with net worth of ₹250 crore or more, and their holding, subsidiary, joint venture and associate companies, applied in phases from 1 April 2016 and 1 April 2017."
+      },
+      {
+        "q": "Can AI decide an Ind AS accounting treatment?",
+        "a": "No. It can help find relevant paragraphs and organise research, but recognition, measurement and classification decisions need a qualified person who has read the standard and the facts, documented in a memo."
+      },
+      {
+        "q": "What is ICAI CA GPT?",
+        "a": "ICAI’s AI platform for members, launched in July 2024 and free for members. In November 2024 ICAI added an Industry Forum with annual reports of about 5,000 listed companies for 2023-24."
+      },
+      {
+        "q": "What is a good first AI use in financial reporting?",
+        "a": "A disclosure checklist built from the standards that apply to the company, used to compare draft notes and flag omissions, validated first against a set of financial statements that has already been reviewed."
+      }
+    ],
+    "related": [
+      {
+        "title": "AI for Chartered Accountants in India: the implementation hub",
+        "url": "/blog/ai-for-chartered-accountants-in-india"
+      },
+      {
+        "title": "ChatGPT vs Copilot vs Gemini for a CA firm",
+        "url": "/blog/2026-10-05-chatgpt-vs-copilot-vs-gemini-how-a-ca-firm-in-india-should-choose-an-ai-assistant"
+      },
+      {
+        "title": "AI controls checklist for CA firms in India",
+        "url": "/blog/ai-controls-checklist-ca-firms-india"
+      },
+      {
+        "title": "The AI Opportunity Audit: a scoped 90-day map",
+        "url": "/audit"
+      }
+    ],
+    "keywords": [
+      "Ind AS AI",
+      "disclosure checklist AI",
+      "financial reporting AI India",
+      "AI for CAs in industry",
+      "Ind AS research"
+    ],
+    "sources": [
+      {
+        "title": "Companies (Indian Accounting Standards) Rules, 2015 (Gazette text)",
+        "url": "https://thc.nic.in/Central%20Governmental%20Rules/Companies%20(Indian%20Accounting%20Standards)%20Rules,2015.pdf"
+      },
+      {
+        "title": "ICAI: CA GPT platform press release (25 November 2024)",
+        "url": "https://icai.org/post/prc-icai-unveils-groundbreaking-ca-gpt-platform"
+      },
+      {
+        "title": "Gartner: Finance AI adoption remains steady in 2025 (press release)",
+        "url": "https://www.gartner.com/en/newsroom/press-releases/2025-11-18-gartner-survey-shows-finance-ai-adoption-remains-steady-in-2025"
+      },
+      {
+        "title": "ICAI Internal Audit Standards Board: Compendium of Standards on Internal Audit, 2026 (SIA 240, Use of Tools)",
+        "url": "https://internalaudit.icai.org/wp-content/uploads/2026/03/Comp-of-Stnd-on-Internal-Audit-26.pdf"
+      }
+    ],
+    "generatedBy": "topic-bank",
+    "topicFile": "scripts/daily-topics/20-ind-as-research.js",
+    "affiliateTools": [],
+    "affiliate": {
+      "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
+    }
+  },
+  {
     "id": "2026-11-09-ai-for-gstr-9-and-gstr-9c-what-a-ca-can-automate-before-31-december",
     "title": "AI for GSTR-9 and GSTR-9C: What a CA Can Automate Before 31 December",
     "slug": "2026-11-09-ai-for-gstr-9-and-gstr-9c-what-a-ca-can-automate-before-31-december",

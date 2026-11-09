@@ -1,8 +1,8 @@
 {
   "site": "https://pratikbajoria.com",
   "name": "Pratik Bajoria — AI Implementation for Business",
-  "generated": "2026-11-09",
-  "count": 76,
+  "generated": "2026-11-10",
+  "count": 77,
   "routes": [
     {
       "path": "/",
@@ -71,8 +71,8 @@
       "title": "Insights",
       "summary": "Index of every article on pratikbajoria.com about AI implementation, AI for Chartered Accountants, finance automation and business tools, newest first, each with a one-line summary.",
       "section": "core",
-      "lastModified": "2026-11-09",
-      "tokens": 4855
+      "lastModified": "2026-11-10",
+      "tokens": 4935
     },
     {
       "path": "/startup-operations",
@@ -573,6 +573,16 @@
       "section": "posts",
       "lastModified": "2026-10-26",
       "tokens": 6477
+    },
+    {
+      "path": "/blog/2026-11-10-using-ai-for-ind-as-research-and-disclosure-checklists",
+      "url": "https://pratikbajoria.com/blog/2026-11-10-using-ai-for-ind-as-research-and-disclosure-checklists",
+      "markdown": "https://pratikbajoria.com/blog/2026-11-10-using-ai-for-ind-as-research-and-disclosure-checklists.md",
+      "title": "Using AI for Ind AS Research and Disclosure Checklists",
+      "summary": "Use AI to find the right Ind AS paragraph, build disclosure checklists and compare peer disclosures. Never let it decide the accounting treatment. A CA’s method.",
+      "section": "posts",
+      "lastModified": "2026-11-10",
+      "tokens": 1960
     },
     {
       "path": "/blog/2026-11-06-ai-for-bank-statement-categorisation-for-bookkeeping-clients-in-india",
