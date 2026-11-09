@@ -383,12 +383,19 @@ function applyHtmlCanonical(html, canonicalUrl) {
 async function serveCanonicalPage(request, env, canonicalPath, mdRoute = null) {
   const can = canonicalPath === '/' ? `${SITE}/` : `${SITE}${canonicalPath}`;
   let response;
+  // Re-point the request at the canonical URL: serveBlogPost/serveBlogAsset fetch the
+  // incoming request from ASSETS, and for a legacy URL like /blog.html?slug=… Pages
+  // answers 308 -> /blog?slug=… (relative), which GSC reports as "Redirect error".
+  const canUrl = new URL(request.url);
+  canUrl.pathname = canonicalPath;
+  canUrl.search = '';
+  const canReq = new Request(canUrl.toString(), { method: request.method, headers: request.headers, redirect: 'manual' });
   if (canonicalPath === '/blog') {
-    response = await serveBlogAsset(request, env, null);
+    response = await serveBlogAsset(canReq, env, null);
   } else if (canonicalPath.startsWith('/blog/')) {
     const slug = canonicalPath.slice('/blog/'.length);
     if (!isBlogSlug(slug)) return notFound(request, env);
-    response = await serveBlogPost(request, env, slug);
+    response = await serveBlogPost(canReq, env, slug);
   } else {
     const asset = await fetchHtmlAsset(request, env, canonicalPath);
     if (!asset) return notFound(request, env);
