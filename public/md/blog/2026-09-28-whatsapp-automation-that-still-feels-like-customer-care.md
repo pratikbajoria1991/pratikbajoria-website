@@ -3,7 +3,7 @@
 > Automate intake and logging first; keep judgement and exceptions with a named human.
 
 Canonical: https://pratikbajoria.com/blog/2026-09-28-whatsapp-automation-that-still-feels-like-customer-care
-Last updated: 2026-09-30
+Last updated: 2026-10-07
 
 Workflow automation · 2026-09-28 · Updated 7 Oct 2026 · 5 min read
 

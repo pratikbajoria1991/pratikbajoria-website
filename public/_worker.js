@@ -324,6 +324,76 @@ const absoluteRedirect = (requestUrl, pathname) => {
   });
 };
 
+// True when the clean path is a real page (static .html asset, JSON blog post, or alias).
+// Used so /guides.html and other unknown .html URLs 404 instead of 301-ing to a 404.
+async function cleanPathExists(request, env, pathname) {
+  if (!pathname || pathname === '/') return true;
+  if (blogPathAliases[pathname]) return true;
+  if (pathname === '/blog') {
+    const r = await env.ASSETS.fetch(internalAssetRequest(request, '/blog.html'));
+    return r.status === 200;
+  }
+  const m = pathname.match(/^\/blog\/([^/]+)$/);
+  if (m) {
+    if (!isBlogSlug(m[1])) return false;
+    const html = await env.ASSETS.fetch(internalAssetRequest(request, `/blog/${m[1]}.html`));
+    if (html.status === 200) return true;
+    const posts = await loadAllPosts(request, env);
+    return posts.some((p) => p && p.slug === m[1]);
+  }
+  const asset = await env.ASSETS.fetch(internalAssetRequest(request, `${pathname}.html`));
+  return asset.status === 200;
+}
+
+
+// Serve destination HTML at a legacy URL with HTTP 200 + self-declared canonical.
+// Prefer this over 301 for URLs GSC has flagged as "Redirect error" (/topics.html,
+// /blog.html?slug=…, /blog/), because Cloudflare was caching the 301 (cf-cache-status:HIT,
+// max-age=3600) and validation kept failing even when the hop looked clean from curl.
+function applyHtmlCanonical(html, canonicalUrl) {
+  if (/<link\s+rel=["']canonical["']/i.test(html)) {
+    return html.replace(/<link\s+rel=["']canonical["']\s+href=["'][^"']*["']\s*\/?>/i, `<link rel="canonical" href="${canonicalUrl}" />`);
+  }
+  if (html.includes('</head>')) {
+    return html.replace('</head>', `    <link rel="canonical" href="${canonicalUrl}" />\n</head>`);
+  }
+  return html;
+}
+
+async function serveCanonicalPage(request, env, canonicalPath, mdRoute = null) {
+  const can = canonicalPath === '/' ? `${SITE}/` : `${SITE}${canonicalPath}`;
+  let response;
+  if (canonicalPath === '/blog') {
+    response = await serveBlogAsset(request, env, null);
+  } else if (canonicalPath.startsWith('/blog/')) {
+    const slug = canonicalPath.slice('/blog/'.length);
+    if (!isBlogSlug(slug)) return notFound(request, env);
+    response = await serveBlogPost(request, env, slug);
+  } else {
+    const asset = await env.ASSETS.fetch(internalAssetRequest(request, `${canonicalPath}.html`));
+    if (asset.status !== 200) return notFound(request, env);
+    response = await injectGa4(asset, mdRoute);
+  }
+  if (response.status !== 200) return response;
+  const headers = new Headers(response.headers);
+  headers.set('Cache-Control', 'public, max-age=300, must-revalidate');
+  const canLink = `<${can}>; rel="canonical"`;
+  const existing = headers.get('Link') || '';
+  if (/rel=["']?canonical["']?/i.test(existing)) {
+    headers.set('Link', existing.replace(/<[^>]+>;\s*rel=["']?canonical["']?/i, canLink));
+  } else {
+    headers.set('Link', existing ? `${canLink}, ${existing}` : canLink);
+  }
+  const ctype = headers.get('Content-Type') || headers.get('content-type') || '';
+  if (request.method === 'HEAD' || !ctype.includes('text/html')) {
+    return new Response(null, { status: 200, statusText: response.statusText, headers });
+  }
+  const html = applyHtmlCanonical(await response.text(), can);
+  headers.delete('content-length');
+  return new Response(html, { status: 200, statusText: response.statusText, headers });
+}
+
+
 
 // ---------------------------------------------------------------------------
 // Blog safety net: /blog/{slug} with no static SSR file is rendered from
@@ -1026,11 +1096,20 @@ async function appendMissingLlmsPosts(request, env, body) {
 }
 
 // sitemap.xml = static file + any JSON posts not yet listed (e.g. JSON-only daily posts).
+// Drop off-property hosts, clusters.json noindex slugs, and aliased/consolidated posts.
 async function serveSitemap(request, env) {
   const r = await env.ASSETS.fetch(request);
   if (r.status !== 200) return r;
   let xml = await r.text();
   if (CROSSBORDER_LIVE) xml = xml.replace(/[ \t]*<url>\s*<loc>https:\/\/pratikbajoria\.com\/cross-border-partnerships<\/loc>[\s\S]*?<\/url>\s*\n?/g, '');
+  // Main sitemap is for pratikbajoria.com only (subdomains have their own sitemap/robots).
+  xml = xml.replace(/[ \t]*<url>\s*<loc>https?:\/\/(?!pratikbajoria\.com(?:\/|"|<))[^<]+<\/loc>[\s\S]*?<\/url>\s*\n?/g, '');
+  const clusters = await loadClusters(request, env);
+  const noindex = new Set((clusters && Array.isArray(clusters.noindex)) ? clusters.noindex : []);
+  const reEsc = (s) => String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  for (const slug of noindex) {
+    xml = xml.replace(new RegExp(`[ \\t]*<url>\\s*<loc>${reEsc(SITE)}/blog/${reEsc(slug)}</loc>[\\s\\S]*?</url>\\s*\\n?`, 'g'), '');
+  }
   const posts = await loadAllPosts(request, env);
   const have = new Set([...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim()));
   const extra = [];
@@ -1039,17 +1118,29 @@ async function serveSitemap(request, env) {
     if (!p || !p.slug || !isBlogSlug(p.slug) || seen.has(p.slug)) continue;
     seen.add(p.slug);
     if (blogPathAliases[`/blog/${p.slug}`]) continue;
+    if (noindex.has(p.slug)) continue;
     const loc = `${SITE}/blog/${p.slug}`;
-    if (have.has(loc)) continue;
-    const lastmod = /^\d{4}-\d{2}-\d{2}$/.test(p.date || '') ? `<lastmod>${p.date}</lastmod>` : '';
+    const lastmodDate = /^\d{4}-\d{2}-\d{2}$/.test(p.dateModified || '') ? p.dateModified : (/^\d{4}-\d{2}-\d{2}$/.test(p.date || '') ? p.date : '');
+    if (have.has(loc)) {
+      if (lastmodDate) {
+        xml = xml.replace(new RegExp(`(<loc>${reEsc(loc)}</loc>)\\s*(?:<lastmod>[^<]*</lastmod>)?`), `$1<lastmod>${lastmodDate}</lastmod>`);
+      }
+      continue;
+    }
+    const lastmod = lastmodDate ? `<lastmod>${lastmodDate}</lastmod>` : '';
     extra.push(`  <url><loc>${loc}</loc>${lastmod}<changefreq>monthly</changefreq><priority>0.75</priority></url>\n`);
   }
   if (extra.length) xml = xml.replace('</urlset>', extra.join('') + '</urlset>');
   return new Response(xml, {
     status: 200,
-    headers: { 'Content-Type': 'application/xml; charset=utf-8', 'Cache-Control': 'public, max-age=3600' }
+    headers: {
+      'Content-Type': 'application/xml; charset=utf-8',
+      'Cache-Control': 'public, max-age=3600',
+      'X-Robots-Tag': 'noindex, follow'
+    }
   });
 }
+
 
 async function handleDiscovery(request, env) {
   if (!env.DB) return json({ ok: false, error: 'Lead storage is not configured.' }, 503);
@@ -1195,7 +1286,7 @@ const site = {
     if (CROSSBORDER_LIVE && (url.pathname === XB_OLD_PAGE || url.pathname === `${XB_OLD_PAGE}.html` || url.pathname === `${XB_OLD_PAGE}/`)) {
       return xbRedirect(`${XB_ORIGIN}/`);
     }
-    if (CROSSBORDER_LIVE && request.method === 'GET' && (url.pathname === '/robots.txt' || url.pathname === '/llms.txt')) {
+    if (CROSSBORDER_LIVE && request.method === 'GET' && (url.pathname === '/robots.txt' || url.pathname === '/llms.txt' || url.pathname === '/llms-full.txt' || url.pathname === '/ai.txt')) {
       // The body is rewritten here, so the static file's validators no longer describe it:
       // ignore the client's/edge's If-None-Match / If-Modified-Since (otherwise the asset
       // server answers 304 and a stale cached copy survives) and drop ETag/Last-Modified.
@@ -1211,6 +1302,9 @@ const site = {
         h.delete('content-length');
         h.delete('etag');
         h.delete('last-modified');
+        if (url.pathname === '/llms.txt' || url.pathname === '/llms-full.txt' || url.pathname === '/ai.txt') {
+          h.set('X-Robots-Tag', 'noindex, follow');
+        }
         return new Response(body, { status: 200, headers: h });
       }
       return r;
@@ -1225,15 +1319,17 @@ const site = {
     const mdRoute = isRead ? await mdRouteFor(request, env, url.pathname) : null;
     if (mdRoute && prefersMarkdown(request)) return serveMarkdown(request, env, mdRoute, true);
 
-    if (isRead && (url.pathname === '/blog' || url.pathname === '/blog.html')) {
+    if (isRead && (url.pathname === '/blog' || url.pathname === '/blog/' || url.pathname === '/blog.html')) {
       const legacySlug = url.searchParams.get('slug')?.trim();
       if (legacySlug && isBlogSlug(legacySlug)) {
         const aliased = blogPathAliases[`/blog/${legacySlug}`];
-        return absoluteRedirect(url, aliased || `/blog/${encodeURIComponent(legacySlug)}`);
+        const dest = aliased || `/blog/${legacySlug}`;
+        // Soft-serve (200 + canonical) — GSC "Redirect error" kept failing on the 301
+        // even when curl saw a single hop (Cloudflare was caching the redirect).
+        return serveCanonicalPage(request, env, dest, await mdRouteFor(request, env, dest));
       }
-      // Collapse /blog.html → /blog (single hop; avoids GSC redirect-chain errors)
-      if (url.pathname === '/blog.html') {
-        return absoluteRedirect(url, '/blog');
+      if (url.pathname === '/blog.html' || url.pathname === '/blog/') {
+        return serveCanonicalPage(request, env, '/blog', await mdRouteFor(request, env, '/blog'));
       }
       return serveBlogAsset(request, env, null);
     }
@@ -1268,14 +1364,27 @@ const site = {
       '/ai-automation-in-india.html': '/ai-automation-in-india',
     };
     if (isRead && htmlAliases[url.pathname]) {
-      return absoluteRedirect(url, htmlAliases[url.pathname]);
+      const dest = htmlAliases[url.pathname];
+      // Soft-serve known .html twins (200 + canonical) so GSC stops flagging Redirect error
+      // on URLs like /topics.html. Cross-border / msme HTML still redirect via earlier rules.
+      if (dest === XB_OLD_PAGE || dest === '/msme-services') {
+        return absoluteRedirect(url, dest);
+      }
+      return serveCanonicalPage(request, env, dest, await mdRouteFor(request, env, dest));
     }
 
     // Every other /path/, /path.html and /path/index.html: one absolute 301 to the clean URL
-    // (Pages would otherwise answer 308 with a relative Location, which GSC flags).
+    // only when that clean URL exists. Unknown .html paths (e.g. /guides.html) used to 301 to a
+    // 404, which GSC reports as a redirect error — return a real 404 instead.
     if (isRead) {
       const clean = cleanPathname(url.pathname);
-      if (clean !== url.pathname) return absoluteRedirect(url, `${blogAliasFor(clean) || clean}${url.search}`);
+      if (clean !== url.pathname) {
+        const dest = blogAliasFor(clean) || clean;
+        if (blogAliasFor(clean) || await cleanPathExists(request, env, dest)) {
+          return absoluteRedirect(url, `${dest}${url.search}`);
+        }
+        return notFound(request, env);
+      }
     }
 
     if (request.method === 'GET' && url.pathname === '/sitemap.xml') {
@@ -1298,11 +1407,20 @@ export default {
     const url = new URL(request.url);
     if (request.headers.get(INTERNAL_ASSET_HEADER) === '1') return env.ASSETS.fetch(request);
     const r = await site.fetch(request, env, url);
+    const aiNoindex = url.pathname === '/ai.txt' || url.pathname === '/llms.txt' || url.pathname === '/llms-full.txt' || url.pathname === '/sitemap.xml';
     // Every main-host page advertises the AI-readable index files (markdown responses
     // already carry them; /api/* and the cross-border host are left alone).
-    if (requestHost(request, url) === XB_HOST || url.pathname.startsWith('/api/') || r.headers.has('Link') || r.status === 403) return r;
+    if (requestHost(request, url) === XB_HOST || url.pathname.startsWith('/api/') || r.status === 403) {
+      if (aiNoindex && !r.headers.get('X-Robots-Tag')) {
+        const out = new Response(r.body, r);
+        out.headers.set('X-Robots-Tag', 'noindex, follow');
+        return out;
+      }
+      return r;
+    }
     const out = new Response(r.body, r);
-    out.headers.append('Link', MD_DISCOVERY_LINK);
+    if (!out.headers.has('Link')) out.headers.append('Link', MD_DISCOVERY_LINK);
+    if (aiNoindex) out.headers.set('X-Robots-Tag', 'noindex, follow');
     return out;
   }
 };

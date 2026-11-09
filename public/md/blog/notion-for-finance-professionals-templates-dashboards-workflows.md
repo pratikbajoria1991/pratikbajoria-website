@@ -3,7 +3,7 @@
 > Set up Notion for finance in 2026: close checklists, SOPs, decision logs and research, plus a six-axis rubric to score whether it suits your team.
 
 Canonical: https://pratikbajoria.com/blog/notion-for-finance-professionals-templates-dashboards-workflows
-Last updated: 2026-10-26
+Last updated: 2026-10-07
 
 CA insights · 2026-08-24 · Updated 7 Oct 2026 · 9 min read
 

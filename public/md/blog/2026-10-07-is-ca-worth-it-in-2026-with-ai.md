@@ -3,7 +3,7 @@
 > Is doing CA still worth it in 2026? A practising CA weighs pass rates, articleship and AI, with a clear checklist to decide if it suits you.
 
 Canonical: https://pratikbajoria.com/blog/2026-10-07-is-ca-worth-it-in-2026-with-ai
-Last updated: 2026-10-26
+Last updated: 2026-10-17
 
 CA insights · 2026-10-07 · Updated 17 Oct 2026 · 11 min read
 

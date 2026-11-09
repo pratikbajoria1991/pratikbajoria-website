@@ -3,7 +3,7 @@
 > If the team cannot explain the workflow in five minutes on Monday, it is not ready for a model.
 
 Canonical: https://pratikbajoria.com/blog/2026-09-29-the-monday-morning-test-for-any-ai-workflow
-Last updated: 2026-09-30
+Last updated: 2026-10-07
 
 AI implementation · 2026-09-29 · Updated 7 Oct 2026 · 5 min read
 

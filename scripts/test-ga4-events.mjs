@@ -112,6 +112,27 @@ const env = {
     if (p === '/robots.txt') return new Response(readFileSync(join(pub, 'robots.txt'), 'utf8'), { headers: { 'content-type': 'text/plain' } });
     if (p === '/ga4.js') return new Response(ga, { headers: { 'content-type': 'application/javascript' } });
     if (p === '/clarity.js') return new Response(clar, { headers: { 'content-type': 'application/javascript' } });
+    if (p === '/clusters.json') return new Response(readFileSync(join(pub, 'clusters.json'), 'utf8'), { headers: { 'content-type': 'application/json' } });
+    if (p === '/blog-posts.json') return new Response(readFileSync(join(pub, 'blog-posts.json'), 'utf8'), { headers: { 'content-type': 'application/json' } });
+    if (p === '/affiliate-articles.json') return new Response(readFileSync(join(pub, 'affiliate-articles.json'), 'utf8'), { headers: { 'content-type': 'application/json' } });
+    if (p === '/sitemap.xml') return new Response(readFileSync(join(pub, 'sitemap.xml'), 'utf8'), { headers: { 'content-type': 'application/xml' } });
+    if (p === '/ai.txt' || p === '/llms.txt' || p === '/llms-full.txt') {
+      return new Response(readFileSync(join(pub, p.slice(1)), 'utf8'), { headers: { 'content-type': 'text/plain; charset=utf-8' } });
+    }
+    // Serve real HTML assets when present (soft-canonical + blog SSR paths).
+    const file = p.endsWith('.html') ? join(pub, p.slice(1)) : (p === '/blog' ? join(pub, 'blog.html') : null);
+    if (file) {
+      try {
+        const html = readFileSync(file, 'utf8');
+        return new Response(html, { status: 200, headers: { 'content-type': 'text/html; charset=utf-8' } });
+      } catch { /* fall through */ }
+    }
+    if (p.startsWith('/blog/') && p.endsWith('.html')) {
+      try {
+        const html = readFileSync(join(pub, p.slice(1)), 'utf8');
+        return new Response(html, { status: 200, headers: { 'content-type': 'text/html; charset=utf-8' } });
+      } catch { /* fall through */ }
+    }
     return new Response('<!doctype html><html><head></head><body>x</body></html>', { status: 404, headers: { 'content-type': 'text/html' } });
   } }
 };
@@ -212,6 +233,43 @@ await check('crossborder robots.txt mirrors the main crawler groups with its own
   assert.ok(t.includes('Sitemap: https://crossborder.pratikbajoria.com/sitemap.xml'));
   assert.ok(!t.includes('Sitemap: https://pratikbajoria.com/sitemap.xml'));
 });
+
+
+// Soft-canonical for GSC Redirect-error URLs (200 + Link/html canonical, no 301).
+for (const [path, can] of [
+  ['/topics.html', 'https://pratikbajoria.com/topics'],
+  ['/blog/', 'https://pratikbajoria.com/blog'],
+  ['/blog.html', 'https://pratikbajoria.com/blog'],
+  ['/blog.html?slug=best-ai-tools-chartered-accountants-finance-professionals', 'https://pratikbajoria.com/blog/best-ai-tools-chartered-accountants-finance-professionals'],
+]) {
+  await check(`GET ${path} -> 200 soft-canonical ${can}`, async () => {
+    const r = await hit(`https://pratikbajoria.com${path}`);
+    assert.equal(r.status, 200, `status ${r.status}`);
+    const link = r.headers.get('link') || '';
+    assert.ok(link.includes(`<${can}>`) && /rel=["']?canonical/i.test(link), `Link header missing canonical ${can}: ${link}`);
+    const html = await r.text();
+    assert.ok(html.includes(`rel="canonical" href="${can}"`) || html.includes(`rel='canonical' href='${can}'`), 'html canonical missing');
+  });
+}
+await check('GET /guides.html -> 404 (no redirect to missing clean path)', async () => {
+  const r = await hit('https://pratikbajoria.com/guides.html');
+  assert.equal(r.status, 404);
+});
+await check('GET /sitemap.xml -> X-Robots-Tag noindex and no msme/semrush locs', async () => {
+  const r = await hit('https://pratikbajoria.com/sitemap.xml');
+  assert.equal(r.status, 200);
+  assert.match(r.headers.get('x-robots-tag') || '', /noindex/);
+  const xml = await r.text();
+  assert.ok(!xml.includes('msme.pratikbajoria.com'), 'msme host still in sitemap');
+  assert.ok(!xml.includes('semrush-review-business-owners'), 'noindex slug still in sitemap');
+});
+for (const p of ['/ai.txt', '/llms.txt', '/llms-full.txt']) {
+  await check(`GET ${p} -> X-Robots-Tag noindex`, async () => {
+    const r = await hit(`https://pratikbajoria.com${p}`);
+    assert.equal(r.status, 200);
+    assert.match(r.headers.get('x-robots-tag') || '', /noindex/);
+  });
+}
 
 if (failures) { console.error(`\n${failures} GA4/crawl check(s) failed`); process.exit(1); }
 console.log('\nGA4/crawl checks passed');

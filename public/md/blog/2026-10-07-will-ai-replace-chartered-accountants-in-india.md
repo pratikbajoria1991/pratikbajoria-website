@@ -3,7 +3,7 @@
 > Will AI replace chartered accountants in India? A CA maps which tasks AI takes in 2026, which stay human, and what ICAI and WEF data show.
 
 Canonical: https://pratikbajoria.com/blog/2026-10-07-will-ai-replace-chartered-accountants-in-india
-Last updated: 2026-10-26
+Last updated: 2026-10-22
 
 CA insights · 2026-10-07 · 8 min read
 

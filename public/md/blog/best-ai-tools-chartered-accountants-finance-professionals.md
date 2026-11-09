@@ -3,7 +3,7 @@
 > A CA-led selection framework: map five recurring jobs, score control gates 1–5, and only keep tools that reduce review time without weakening evidence.
 
 Canonical: https://pratikbajoria.com/blog/best-ai-tools-chartered-accountants-finance-professionals
-Last updated: 2026-09-25
+Last updated: 2026-10-07
 
 CA insights · 2026-09-01 · Updated 7 Oct 2026 · 9 min read
 
