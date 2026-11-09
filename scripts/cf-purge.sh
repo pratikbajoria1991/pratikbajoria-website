@@ -17,6 +17,10 @@ fi
 urls=()
 if [ "$#" -gt 0 ]; then urls+=("$@"); else
   urls+=("$SITE/" "$SITE/blog" "$SITE/blog/" "$SITE/sitemap.xml" "$SITE/llms.txt" "$SITE/llms-full.txt" "$SITE/blog-posts.json" "$SITE/robots.txt")
+  # Legacy URLs GSC flagged as Redirect error — must drop any cached 301 from the previous worker.
+  urls+=("$SITE/topics.html" "$SITE/blog.html" "$SITE/about.html" "$SITE/privacy.html" "$SITE/audit.html" "$SITE/resources.html" "$SITE/workshops.html" "$SITE/scorecard.html" "$SITE/ai-automation-in-india.html" "$SITE/ai-implementation-for-finance-teams.html" "$SITE/guides.html" "$SITE/contact.html" "$SITE/services.html")
+  urls+=("$SITE/blog.html?slug=best-ai-tools-chartered-accountants-finance-professionals")
+  urls+=("$SITE/ai.txt")
   urls+=("$XB/" "$XB/sitemap.xml" "$XB/robots.txt")
   # AI-readable layer (scripts/build-md.mjs): index files, catalog and the markdown twins below.
   urls+=("$SITE/ai.txt" "$SITE/.well-known/llms.txt" "$SITE/api/md/_catalog" "$SITE/index.md" "$SITE/blog.md")

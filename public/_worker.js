@@ -326,23 +326,43 @@ const absoluteRedirect = (requestUrl, pathname) => {
 
 // True when the clean path is a real page (static .html asset, JSON blog post, or alias).
 // Used so /guides.html and other unknown .html URLs 404 instead of 301-ing to a 404.
+// Pages often answers .html asset fetches with 308 → pretty URL; follow one hop.
+async function fetchHtmlAsset(request, env, pathname) {
+  const candidates = pathname === '/'
+    ? ['/index.html', '/']
+    : (pathname.startsWith('/blog/')
+      ? [`${pathname}.html`, pathname]
+      : [`${pathname}.html`, pathname, `${pathname}/index.html`]);
+  for (const candidate of candidates) {
+    let r = await env.ASSETS.fetch(internalAssetRequest(request, candidate));
+    if (r.status >= 300 && r.status < 400) {
+      const loc = r.headers.get('location');
+      if (loc) {
+        try {
+          const next = new URL(loc, SITE).pathname;
+          r = await env.ASSETS.fetch(internalAssetRequest(request, next));
+        } catch { /* keep original */ }
+      }
+    }
+    if (r.status === 200 && (r.headers.get('content-type') || '').includes('text/html')) return r;
+  }
+  return null;
+}
+
 async function cleanPathExists(request, env, pathname) {
   if (!pathname || pathname === '/') return true;
   if (blogPathAliases[pathname]) return true;
   if (pathname === '/blog') {
-    const r = await env.ASSETS.fetch(internalAssetRequest(request, '/blog.html'));
-    return r.status === 200;
+    return Boolean(await fetchHtmlAsset(request, env, '/blog'));
   }
   const m = pathname.match(/^\/blog\/([^/]+)$/);
   if (m) {
     if (!isBlogSlug(m[1])) return false;
-    const html = await env.ASSETS.fetch(internalAssetRequest(request, `/blog/${m[1]}.html`));
-    if (html.status === 200) return true;
+    if (await fetchHtmlAsset(request, env, pathname)) return true;
     const posts = await loadAllPosts(request, env);
     return posts.some((p) => p && p.slug === m[1]);
   }
-  const asset = await env.ASSETS.fetch(internalAssetRequest(request, `${pathname}.html`));
-  return asset.status === 200;
+  return Boolean(await fetchHtmlAsset(request, env, pathname));
 }
 
 
@@ -370,8 +390,8 @@ async function serveCanonicalPage(request, env, canonicalPath, mdRoute = null) {
     if (!isBlogSlug(slug)) return notFound(request, env);
     response = await serveBlogPost(request, env, slug);
   } else {
-    const asset = await env.ASSETS.fetch(internalAssetRequest(request, `${canonicalPath}.html`));
-    if (asset.status !== 200) return notFound(request, env);
+    const asset = await fetchHtmlAsset(request, env, canonicalPath);
+    if (!asset) return notFound(request, env);
     response = await injectGa4(asset, mdRoute);
   }
   if (response.status !== 200) return response;
