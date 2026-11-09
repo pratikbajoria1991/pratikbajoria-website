@@ -3,7 +3,7 @@
 > AI for chartered accountants in India: a practical map for CA firms on which workflows to start with, client-data controls, human review and pilots.
 
 Canonical: https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india
-Last updated: 2026-11-04
+Last updated: 2026-11-09
 
 CA insights · 2026-09-25 · Updated 26 Oct 2026 · 8 min read
 
@@ -135,6 +135,8 @@ Two workflows come up in almost every CA practice conversation. For monthly GST 
 
 Sellers on Amazon, Flipkart and other marketplaces bring a reconciliation of their own: GST TCS under section 52 on net supplies, and income-tax TDS under section 194-O (section 393 from 1 April 2026) on gross sales. Read [how a CA can use AI for marketplace TCS and TDS reconciliation](https://pratikbajoria.com/blog/2026-11-04-ai-for-marketplace-seller-reconciliation-in-india-gst-tcs-and-194-o-tds) for the tie-outs, the 30 November correction cut-off and the decisions that stay human.
 
+The GST annual return is where a year of monthly differences has to be explained. For 2025-26, GSTR-9 is due by 31 December 2026, GSTR-9C applies above five crore rupees of turnover, and filing early can close the input tax credit window before 30 November. Read [AI for GSTR-9 and GSTR-9C: what a CA can automate before 31 December](https://pratikbajoria.com/blog/2026-11-09-ai-for-gstr-9-and-gstr-9c-what-a-ca-can-automate-before-31-december) for the tie-outs, the review rubric and what stays human.
+
 ## Choosing the assistant itself: ChatGPT, Copilot or Gemini
 
 Once the rules are agreed, partners usually ask which assistant to license. My view is that the deciding factors are where client files already live, how clean folder permissions are, and what the vendor’s business terms say about training, retention and logs, not which demo looked best. I have set out a partner-ready rubric in [ChatGPT, Copilot or Gemini? How a CA firm in India should choose an AI assistant](https://pratikbajoria.com/blog/2026-10-05-chatgpt-vs-copilot-vs-gemini-how-a-ca-firm-in-india-should-choose-an-ai-assistant), alongside the [AI controls checklist for CA firms](https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india) that applies whichever tool you pick.
@@ -188,6 +190,7 @@ Use this as the index. The first list covers running a CA practice with AI; the 
 
 ### Tax, audit and GST workflows
 
+- [AI for GSTR-9 and GSTR-9C: What a CA Can Automate Before 31 December](https://pratikbajoria.com/blog/2026-11-09-ai-for-gstr-9-and-gstr-9c-what-a-ca-can-automate-before-31-december)
 - [AI for Marketplace Seller Reconciliation in India: GST TCS and 194-O TDS](https://pratikbajoria.com/blog/2026-11-04-ai-for-marketplace-seller-reconciliation-in-india-gst-tcs-and-194-o-tds)
 - [AI for AOC-4 and MGT-7 Filings: What a CA Can Automate Before the ROC Deadline](https://pratikbajoria.com/blog/2026-10-28-ai-for-aoc-4-and-mgt-7-filings-what-a-ca-can-automate-before-the-roc-deadline)
 - [AI for Financial Due Diligence in India: A CA’s Decision Rubric](https://pratikbajoria.com/blog/2026-10-26-ai-for-financial-due-diligence-in-india-a-cas-decision-rubric)

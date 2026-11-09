@@ -3,8 +3,9 @@
 > Practical writing on implementing AI inside real businesses — audits, finance workflows, governance and tooling.
 
 Canonical: https://pratikbajoria.com/blog
-Last updated: 2026-11-06
+Last updated: 2026-11-09
 
+- [AI for GSTR-9 and GSTR-9C: What a CA Can Automate Before 31 December](https://pratikbajoria.com/blog/2026-11-09-ai-for-gstr-9-and-gstr-9c-what-a-ca-can-automate-before-31-december) - How a CA can use AI to prepare GSTR-9 and GSTR-9C for FY 2025-26, why filing before 30 November can cut off ITC, and what stays human.
 - [AI for Bank Statement Categorisation for Bookkeeping Clients in India](https://pratikbajoria.com/blog/2026-11-06-ai-for-bank-statement-categorisation-for-bookkeeping-clients-in-india) - Bank statement categorisation is the best first AI workflow for many bookkeeping practices: high volume, easy to check, low risk. How to set it up properly.
 - [AI for Month-End Close in Indian Mid-Market Finance Teams](https://pratikbajoria.com/blog/2026-11-05-ai-for-month-end-close-in-indian-mid-market-finance-teams) - Where AI shortens the month-end close for Indian mid-market finance teams: reconciliations, accrual support and variance commentary, with the controller signing off.
 - [Updating Engagement Letters for AI Use in a CA Firm](https://pratikbajoria.com/blog/2026-11-04-updating-engagement-letters-for-ai-use-in-a-ca-firm) - Tell clients plainly how AI is used on their work, what data it sees and who reviews it. What to add to CA engagement letters now that the DPDP Rules are notified.

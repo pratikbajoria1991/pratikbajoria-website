@@ -94,5 +94,12 @@
     "Sellers must accept or reject every TCS row on the GST portal before the credit reaches the electronic cash ledger.",
     "Operators cannot correct 2025-26 GSTR-8 errors after 30 November 2026 (or the annual statement, if earlier), so raise rejections now.",
     "Let AI map settlement reports and build the tie-outs; keep accept/reject decisions and tax positions with a named reviewer."
+  ],
+  "2026-11-09-ai-for-gstr-9-and-gstr-9c-what-a-ca-can-automate-before-31-december": [
+    "GSTR-9 for 2025-26 is due by 31 December 2026; turnover up to ₹2 crore is exempt under Notification No. 15/2025–Central Tax.",
+    "Above ₹5 crore aggregate turnover, a self-certified GSTR-9C must be furnished with the annual return (rule 80(3)).",
+    "Section 16(4) closes 2025-26 ITC on 30 November 2026 or on filing the annual return, whichever is earlier, so do not file GSTR-9 before the unclaimed-credit list is closed.",
+    "From 2024-25 the portal highlights any override of a system-computed value in red, and the highlight stays after filing.",
+    "Let AI build the tie-outs, Table 8A match, HSN split and 9C bridge; keep claims, liabilities and the signature with named people."
   ]
 }

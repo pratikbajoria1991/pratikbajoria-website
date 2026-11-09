@@ -1,5 +1,68 @@
 [
   {
+    "id": "2026-11-09-ai-for-gstr-9-and-gstr-9c-what-a-ca-can-automate-before-31-december",
+    "title": "AI for GSTR-9 and GSTR-9C: What a CA Can Automate Before 31 December",
+    "slug": "2026-11-09-ai-for-gstr-9-and-gstr-9c-what-a-ca-can-automate-before-31-december",
+    "url": "/blog/2026-11-09-ai-for-gstr-9-and-gstr-9c-what-a-ca-can-automate-before-31-december",
+    "date": "2026-11-09",
+    "dateModified": "2026-11-09",
+    "author": "Pratik Bajoria",
+    "category": "CA insights",
+    "readTime": "6",
+    "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=85",
+    "excerpt": "How a CA can use AI to prepare GSTR-9 and GSTR-9C for FY 2025-26, why filing before 30 November can cut off ITC, and what stays human.",
+    "content": "Every November the same two dates collide in a CA practice. Input tax credit for 2025-26 has to be taken by 30 November 2026, and the annual return for the same year is due on 31 December 2026. Clients want GSTR-9 done early. Before anyone hands the job to an AI tool or files in a hurry, look at how the two dates interact: filing early can shut a door you did not mean to shut. This post is for CAs and finance leads preparing GSTR-9 and GSTR-9C for 2025-26: what the law requires, where AI saves hours, and what stays with a person. It builds on my GSTR-2B reconciliation method ; the annual return is where those monthly differences finally have to be explained. Who files what for 2025-26 Under rule 80 of the CGST Rules , GSTR-9 is due by 31 December following the end of the financial year. A registered person whose aggregate turnover exceeds five crore rupees must also furnish GSTR-9C, a self-certified reconciliation statement, along with it. Section 44(1) of the CGST Act describes that statement as reconciling the supplies declared in returns with the audited annual financial statement. At the other end, Notification No. 15/2025–Central Tax of 17 September 2025 exempts registered persons whose aggregate turnover in a financial year is up to two crore rupees from filing the annual return, for 2024-25 onwards. So for 2025-26 the bands are simple: up to two crore, no GSTR-9; above two crore, GSTR-9; above five crore, GSTR-9 and GSTR-9C. The 30 November trap Section 16(4) says credit on an invoice or debit note cannot be taken after 30 November following the end of the financial year, or after furnishing the relevant annual return, whichever is earlier. Read that twice. If a client files GSTR-9 for 2025-26 on 15 November, the window for any 2025-26 credit still sitting unclaimed closes on 15 November, not 30 November. That is the first job I would give an AI tool this month: list every 2025-26 invoice that appears in GSTR-2B or the purchase register but has not been claimed in a GSTR-3B, with supplier, amount and month. A person decides what to claim before the deadline. Only then should anyone file the annual return. What changed on the portal The GST portal’s GSTR-9 manual sets out several changes that matter for review: From 2023-24, Table 8A uses document-wise details from GSTR-2B. It includes only documents the supplier has actually filed, so not everything visible in GSTR-2B will appear there. From 2024-25, Table 6 has two new fields, A1 and A2, and some labels were revised. From 2024-25, any value that differs from the system-computed figure is highlighted in red as a warning, and the highlight stays after the return is filed. From 2024-25, you can download Table 12 HSN data from GSTR-1 and GSTR-1A, consolidated in the format Table 17 needs. That red highlight matters. Every override of a system figure stays visible on the filed return, so each one needs a written reason in the working paper. 2025-26 also has a mid-year rate change. Most rate changes recommended at the 56th GST Council meeting took effect from 22 September 2025, so rate-wise and HSN-wise totals for the year combine two structures. Splitting turnover before and after that date is exactly the kind of mechanical sorting a tool does well. Where AI genuinely helps Building the year-long tie-out. Books against GSTR-1 against GSTR-3B, month by month, for outward supply and tax paid. The tool produces the table; every difference gets a reason column. Table 8A against the books. Matching the downloaded Table 8A document file to the purchase register, flagging supplier-not-filed, wrong GSTIN, duplicate and blocked-credit candidates. HSN and rate splits. Mapping item masters to HSN codes, consolidating Table 12 data for Table 17, and separating periods before and after 22 September 2025. The 9C bridge. Drafting the reconciliation from audited turnover to GST turnover: unbilled revenue, credit notes, advances, deemed supplies and non-GST income, each with the ledger it came from. Where judgement stays human Four things should not be delegated. Whether to claim, reverse or pay on a difference is a tax position. Whether an unexplained gap is timing or under-declaration needs facts the ledger does not hold. Paying any additional liability through DRC-03 is a decision for the client and the partner. And GSTR-9C is self-certified, which means the client’s signatory owns every line, whoever drafted it. The NIST AI Risk Management Framework frames this as mapping where a system is used and managing the risk at that point. Here that means: the tool prepares, a person decides, and the decision is written down. A workflow I would actually run Start with one client above five crore. Export twelve months of GSTR-1, GSTR-3B and GSTR-2B summaries, the Table 8A file, the HSN download and the trial balance. Strip customer and employee personal data first, and use a business AI plan whose retention terms a partner has read, as my DPDP rubric for CA firms sets out. A person writes the mapping rules; the tool builds the tables. Review the reasons, not the rows that agree. The deliverable is a short evidence pack: the tie-outs, the unclaimed-credit decision log, every system-value override with its reason, the 9C bridge and the name of each reviewer. If the same team also files AOC-4 and MGT-7 , reuse the master data. To roll it out across the client book, follow the 90-day pilot guide for CA firms . Monday-morning checklist Sort every GST client into three bands for 2025-26: up to two crore, above two crore, above five crore. Confirm all GSTR-1 and GSTR-3B returns for 2025-26 are filed for each GSTIN, so the annual return tile opens. Run the unclaimed-credit list and get decisions in before 30 November 2026. Do not file GSTR-9 before that. Download the Table 8A file and the HSN report for each GSTIN and store them with the working paper. Split rate-wise turnover at 22 September 2025. Agree who approves each override of a system-computed value, and who signs GSTR-9C. To see where this sits among the other workflows in a practice, start from the AI for Chartered Accountants in India hub . To find which compliance work is worth automating first, take the free AI Opportunity Scorecard , see the scoped AI Opportunity Audit , or book a discovery call . Frequently asked questions Who must file GSTR-9 and GSTR-9C for FY 2025-26? Registered persons whose aggregate turnover exceeds two crore rupees file GSTR-9 by 31 December 2026; those up to two crore are exempt under Notification No. 15/2025–Central Tax. Above five crore rupees, a self-certified GSTR-9C must also be furnished with the annual return under rule 80(3) of the CGST Rules. Does filing GSTR-9 early affect input tax credit? Yes. Under section 16(4) of the CGST Act, credit for a year cannot be taken after 30 November following that year or after the annual return is furnished, whichever is earlier. Filing GSTR-9 for 2025-26 before 30 November 2026 closes the credit window on the filing date. Can AI prepare GSTR-9C? AI can draft the reconciliation between audited turnover and GST returns and list the reasons for each difference. GSTR-9C is self-certified, so the client’s signatory owns every figure, and a CA or finance lead should review the bridge against the signed financial statements before filing.",
+    "keywords": [
+      "GSTR-9 FY 2025-26",
+      "GSTR-9C reconciliation statement",
+      "AI for GST annual return",
+      "GSTR-9 due date 31 December 2026",
+      "section 16(4) ITC 30 November",
+      "Table 8A GSTR-9",
+      "chartered accountant AI"
+    ],
+    "sources": [
+      {
+        "title": "CBIC — Section 44, CGST Act, 2017: Annual return",
+        "url": "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter9/section44_v1.00.html"
+      },
+      {
+        "title": "CBIC — Rule 80, CGST Rules, 2017: Annual return and GSTR-9C",
+        "url": "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/rules/cgst_rules/active/chapter8/rule80_v1.00.html"
+      },
+      {
+        "title": "Gazette of India — Notification No. 15/2025–Central Tax, S.O. 4205(E), 17 September 2025 (annual return exemption up to ₹2 crore)",
+        "url": "https://egazette.gov.in/WriteReadData/2025/266213.pdf"
+      },
+      {
+        "title": "CBIC — Section 16, CGST Act, 2017: Eligibility and conditions for input tax credit",
+        "url": "https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter5/section16_v1.00.html"
+      },
+      {
+        "title": "GST portal user manual — Form GSTR-9",
+        "url": "https://tutorial.gst.gov.in/userguide/returns/Manual_gstr9.htm"
+      },
+      {
+        "title": "GST portal — FAQs and user manual: GSTR-9C offline utility",
+        "url": "https://tutorial.gst.gov.in/downloads/gstr9cofflineutilitynew.pdf"
+      },
+      {
+        "title": "PIB — Recommendations of the 56th meeting of the GST Council (3 September 2025)",
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2163555"
+      },
+      {
+        "title": "NIST — AI Risk Management Framework",
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+      }
+    ],
+    "generatedBy": "editorial-ca-cluster",
+    "affiliateTools": [],
+    "affiliate": {
+      "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
+    },
+    "seoTitle": "AI for GSTR-9 and GSTR-9C: A CA’s FY 2025-26 Checklist"
+  },
+  {
     "id": "2026-11-06-ai-for-bank-statement-categorisation-for-bookkeeping-clients-in-india",
     "title": "AI for Bank Statement Categorisation for Bookkeeping Clients in India",
     "slug": "2026-11-06-ai-for-bank-statement-categorisation-for-bookkeeping-clients-in-india",
