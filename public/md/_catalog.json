@@ -1,8 +1,8 @@
 {
   "site": "https://pratikbajoria.com",
   "name": "Pratik Bajoria — AI Implementation for Business",
-  "generated": "2026-11-10",
-  "count": 77,
+  "generated": "2026-11-11",
+  "count": 78,
   "routes": [
     {
       "path": "/",
@@ -71,8 +71,8 @@
       "title": "Insights",
       "summary": "Index of every article on pratikbajoria.com about AI implementation, AI for Chartered Accountants, finance automation and business tools, newest first, each with a one-line summary.",
       "section": "core",
-      "lastModified": "2026-11-10",
-      "tokens": 4935
+      "lastModified": "2026-11-11",
+      "tokens": 5018
     },
     {
       "path": "/startup-operations",
@@ -573,6 +573,16 @@
       "section": "posts",
       "lastModified": "2026-10-26",
       "tokens": 6477
+    },
+    {
+      "path": "/blog/2026-11-11-ai-for-virtual-cfo-services-mis-packs-clients-actually-read",
+      "url": "https://pratikbajoria.com/blog/2026-11-11-ai-for-virtual-cfo-services-mis-packs-clients-actually-read",
+      "markdown": "https://pratikbajoria.com/blog/2026-11-11-ai-for-virtual-cfo-services-mis-packs-clients-actually-read.md",
+      "title": "AI for Virtual CFO Services: MIS Packs Clients Actually Read",
+      "summary": "AI makes the monthly MIS pack faster to build. What a virtual CFO adds is the few lines of commentary a partner stands behind. How to build packs clients read.",
+      "section": "posts",
+      "lastModified": "2026-11-11",
+      "tokens": 1885
     },
     {
       "path": "/blog/2026-11-10-using-ai-for-ind-as-research-and-disclosure-checklists",
