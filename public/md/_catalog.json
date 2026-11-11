@@ -2,7 +2,7 @@
   "site": "https://pratikbajoria.com",
   "name": "Pratik Bajoria — AI Implementation for Business",
   "generated": "2026-11-11",
-  "count": 78,
+  "count": 79,
   "routes": [
     {
       "path": "/",
@@ -72,7 +72,7 @@
       "summary": "Index of every article on pratikbajoria.com about AI implementation, AI for Chartered Accountants, finance automation and business tools, newest first, each with a one-line summary.",
       "section": "core",
       "lastModified": "2026-11-11",
-      "tokens": 5018
+      "tokens": 5113
     },
     {
       "path": "/startup-operations",
@@ -405,6 +405,16 @@
       "tokens": 3689
     },
     {
+      "path": "/blog/2026-11-11-income-tax-act-2025-transition-how-a-ca-firm-can-use-ai-to-remap-templates-safely",
+      "url": "https://pratikbajoria.com/blog/2026-11-11-income-tax-act-2025-transition-how-a-ca-firm-can-use-ai-to-remap-templates-safely",
+      "markdown": "https://pratikbajoria.com/blog/2026-11-11-income-tax-act-2025-transition-how-a-ca-firm-can-use-ai-to-remap-templates-safely.md",
+      "title": "Income-tax Act, 2025 Transition: How a CA Firm Can Use AI to Remap Templates Safely",
+      "summary": "How a CA firm can use AI to remap templates, checklists and client letters from the 1961 Act to the Income-tax Act, 2025 without trusting model-made section numbers.",
+      "section": "posts",
+      "lastModified": "2026-11-11",
+      "tokens": 3576
+    },
+    {
       "path": "/blog/ai-controls-checklist-ca-firms-india",
       "url": "https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india",
       "markdown": "https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india.md",
@@ -421,8 +431,8 @@
       "title": "AI for Chartered Accountants in India: A Practical Implementation Hub",
       "summary": "AI for chartered accountants in India: a practical map for CA firms on which workflows to start with, client-data controls, human review and pilots.",
       "section": "posts",
-      "lastModified": "2026-11-09",
-      "tokens": 7606
+      "lastModified": "2026-11-11",
+      "tokens": 7784
     },
     {
       "path": "/blog/ai-for-chartered-accountants-practical-use-cases-and-controls",

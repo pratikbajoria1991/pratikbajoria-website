@@ -101,5 +101,12 @@
     "Section 16(4) closes 2025-26 ITC on 30 November 2026 or on filing the annual return, whichever is earlier, so do not file GSTR-9 before the unclaimed-credit list is closed.",
     "From 2024-25 the portal highlights any override of a system-computed value in red, and the highlight stays after filing.",
     "Let AI build the tie-outs, Table 8A match, HSN split and 9C bridge; keep claims, liabilities and the signature with named people."
+  ],
+  "2026-11-11-income-tax-act-2025-transition-how-a-ca-firm-can-use-ai-to-remap-templates-safely": [
+    "The Income-tax Act, 2025 came into force on 1 April 2026; the Income-tax Rules, 2026 were notified on 20 March 2026 with new forms.",
+    "Sections fell from 819 to 536 and chapters from 47 to 23; “tax year” replaces “previous year” and “assessment year”.",
+    "Section 536 keeps the 1961 Act and its procedure for proceedings relating to tax years beginning before 1 April 2026, even if started later.",
+    "Use the Income Tax Department’s comparison utilities as the source of truth; never let a model choose section numbers.",
+    "Let AI extract references and redraft templates; keep the mapping, split provisions and which-Act decisions with named people."
   ]
 }

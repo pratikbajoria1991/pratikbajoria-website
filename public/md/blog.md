@@ -5,6 +5,7 @@
 Canonical: https://pratikbajoria.com/blog
 Last updated: 2026-11-11
 
+- [Income-tax Act, 2025 Transition: How a CA Firm Can Use AI to Remap Templates Safely](https://pratikbajoria.com/blog/2026-11-11-income-tax-act-2025-transition-how-a-ca-firm-can-use-ai-to-remap-templates-safely) - How a CA firm can use AI to remap templates, checklists and client letters from the 1961 Act to the Income-tax Act, 2025 without trusting model-made section numbers.
 - [AI for Virtual CFO Services: MIS Packs Clients Actually Read](https://pratikbajoria.com/blog/2026-11-11-ai-for-virtual-cfo-services-mis-packs-clients-actually-read) - AI makes the monthly MIS pack faster to build. What a virtual CFO adds is the few lines of commentary a partner stands behind. How to build packs clients read.
 - [Using AI for Ind AS Research and Disclosure Checklists](https://pratikbajoria.com/blog/2026-11-10-using-ai-for-ind-as-research-and-disclosure-checklists) - Use AI to find the right Ind AS paragraph, build disclosure checklists and compare peer disclosures. Never let it decide the accounting treatment. A CA’s method.
 - [AI for GSTR-9 and GSTR-9C: What a CA Can Automate Before 31 December](https://pratikbajoria.com/blog/2026-11-09-ai-for-gstr-9-and-gstr-9c-what-a-ca-can-automate-before-31-december) - How a CA can use AI to prepare GSTR-9 and GSTR-9C for FY 2025-26, why filing before 30 November can cut off ITC, and what stays human.

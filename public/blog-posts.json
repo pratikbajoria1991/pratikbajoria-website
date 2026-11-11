@@ -1,5 +1,60 @@
 [
   {
+    "id": "2026-11-11-income-tax-act-2025-transition-how-a-ca-firm-can-use-ai-to-remap-templates-safely",
+    "title": "Income-tax Act, 2025 Transition: How a CA Firm Can Use AI to Remap Templates Safely",
+    "slug": "2026-11-11-income-tax-act-2025-transition-how-a-ca-firm-can-use-ai-to-remap-templates-safely",
+    "url": "/blog/2026-11-11-income-tax-act-2025-transition-how-a-ca-firm-can-use-ai-to-remap-templates-safely",
+    "date": "2026-11-11",
+    "dateModified": "2026-11-11",
+    "author": "Pratik Bajoria",
+    "category": "CA insights",
+    "readTime": "6",
+    "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=85",
+    "excerpt": "How a CA firm can use AI to remap templates, checklists and client letters from the 1961 Act to the Income-tax Act, 2025 without trusting model-made section numbers.",
+    "content": "Since 1 April 2026 every CA practice in India has been running two income-tax laws at once. Returns, notices and appeals for 2025-26 and earlier years still sit under the Income-tax Act, 1961. Income from 1 April 2026 falls under the Income-tax Act, 2025, with new section numbers, new rules and new forms. Meanwhile the firm’s engagement letters, checklists, notice-reply templates and client emails were mostly written for the old law. Remapping all of that is exactly the kind of tedious, high-volume job firms want to hand to an AI tool. It is also the job where a general chatbot is most likely to be confidently wrong. This post sets out a method that uses AI for the volume and keeps the section numbers anchored to the official source. What actually changed, in four facts Dates. Parliament passed the Bill on 12 August 2025, it received the President’s assent on 21 August 2025, and it came into force on 1 April 2026, according to the PIB release of 1 April 2026 . The Income-tax Rules, 2026 were notified on 20 March 2026, with new forms. Structure. Sections fell from 819 to 536 and chapters from 47 to 23, with 39 new tables and 40 new formulas, as reported by PTI at assent . Vocabulary. “Previous year” and “assessment year” are replaced by a single “tax year”, the twelve months of the financial year starting 1 April (section 3 of the Act as amended by the Finance Act, 2026 ). Transition. Section 536 repeals the 1961 Act but keeps it, and its procedure, for proceedings pending on 1 April 2026 and for proceedings started later, including notices, assessments, penalties and appeals, for any tax year beginning before 1 April 2026. The government’s own explainer presents the Act as simplification, not a policy change. For a practice, that means most of the work is re-addressing: the same rule now sits at a different number, sometimes merged or split. Why a chatbot gets this wrong General-purpose models learnt Indian tax law from six decades of material on the 1961 Act and comparatively little on the 2025 Act. Ask one for “the new section for 80C” and it may answer correctly (section 123), or it may produce a plausible number from a draft Bill, a blog post or nowhere. Both Acts also use the numbers 1 to 536, so a number can be valid in both and mean different things. A wrong reference in an engagement letter is embarrassing; a wrong reference in a reply to a notice is a problem. The fix is not to avoid AI. It is to stop asking the model to remember section numbers, and make it look them up instead. The source of truth already exists The Income Tax Department’s Income-tax Act, 2025 page has utilities that show a 1961 Act section next to its counterpart in the 2025 Act, and separate ones for Rules 1962 against Rules 2026 and for old forms against new forms. They can be used without logging in. Every mapping in your firm’s templates should trace back to one of these utilities or to the Act text itself, not to a model’s memory or a third-party table. A remapping workflow I would actually run Inventory. List every document that cites the Act, Rules or forms: engagement letters, ITR and tax audit checklists, TDS rate charts, notice-reply templates, advance tax reminders, onboarding forms, standard client emails and any prompts your team already uses. Extract. Use AI to pull every statutory reference into one table: document, paragraph, reference as written, and the sentence around it. This is pure extraction and models do it well. Spot-check a sample against the originals. Classify by tax year. Mark each reference as relating to 2025-26 or earlier (stays on the 1961 Act under section 536), 2026-27 onwards (moves to the 2025 Act), or both. Map from the official utility. A person, or a script reading a table built from the CBDT utility, fills in the new section, rule or form. The model does not choose numbers. Flag anything that maps to more than one provision, or to none, for a senior. Draft the new wording. Now let AI rewrite the paragraph using the mapped reference. During the transition, dual references help clients and staff: “section 123 of the Income-tax Act, 2025 (section 80C of the 1961 Act)”. Replace “assessment year” with “tax year” only where the document relates to 2026-27 onwards. Review and version. A named reviewer approves each changed template, the old version is archived, and the mapping table is saved as the working paper. Keep client data out of this exercise entirely: it is about templates, not files. Where a template carries client details, strip them first, in line with my DPDP rubric for CA firms . Where judgement stays human Three calls should not be delegated. First, which law governs a matter: a reassessment notice issued this year for 2023-24 runs under the 1961 Act and its procedure, by virtue of section 536, even though it is dated after 1 April 2026. Second, whether a provision has changed in substance and not just in number; the Finance Act, 2026 has already amended the new Act, so always read the current text. Third, anything in litigation, where existing grounds and citations stay on the old numbering. The NIST AI Risk Management Framework describes this as managing risk at the point of use: here, the tool prepares, a person decides, and the decision is written down. The same thinking applies to the forms. My tax audit post covers the move from Form 3CD to its successor, and the TDS reconciliation guide covers the statements side. To roll the remapping out across the firm, use the 90-day pilot structure : one team, one set of templates, then scale. Monday-morning checklist Name one owner for the firm’s Act 2025 mapping table. Bookmark the CBDT utilities for sections, rules and forms, and ban model-generated section numbers in client documents. Inventory every template that cites the Act, Rules or forms. Tag each reference by tax year: 2025-26 and earlier, 2026-27 onwards, or both. Update engagement letters and advance tax reminders for 2026-27 first; they reach the most clients. Keep litigation files and pending-proceeding templates on 1961 Act references. For the wider picture of AI in a practice, start from the AI for Chartered Accountants in India hub . To see which compliance work is worth automating first, take the free AI Opportunity Scorecard , look at the scoped AI Opportunity Audit , or book a discovery call . Frequently asked questions Which income-tax law applies to FY 2025-26 income? The Income-tax Act, 1961. Section 536 of the Income-tax Act, 2025 keeps the 1961 Act and its procedure for proceedings relating to any tax year beginning before 1 April 2026, including notices, assessments, penalties and appeals started after that date. Income from 1 April 2026 falls under the 2025 Act. Where can I check the new section number for an old section? Use the utilities on the Income Tax Department’s Income-tax Act, 2025 page, which show a 1961 Act section beside its 2025 Act counterpart, with separate utilities for the Rules and the forms. Treat that, and the Act text, as the source of truth rather than a chatbot answer. Can AI update a CA firm’s templates for the Income-tax Act, 2025? Yes, for extraction and drafting. AI can list every statutory reference in your templates and rewrite paragraphs once the mapping is fixed. The mapping itself should come from the official utility, and a named reviewer should approve each changed template.",
+    "keywords": [
+      "Income-tax Act 2025",
+      "Income-tax Act 1961 to 2025 section mapping",
+      "old vs new section income tax",
+      "section 536 Income-tax Act 2025",
+      "tax year Income-tax Act 2025",
+      "AI for CA firms India",
+      "chartered accountant AI"
+    ],
+    "sources": [
+      {
+        "title": "PIB — Income-tax Act, 2025 comes into force from today (1 April 2026)",
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2248005&lang=1&reg=3"
+      },
+      {
+        "title": "Income Tax Department — Income-tax Act, 2025 page with section, rules and forms comparison utilities",
+        "url": "https://www.incometaxindia.gov.in/income-tax-act-20251"
+      },
+      {
+        "title": "Income Tax Department — Income-tax Act, 2025 as amended by the Finance Act, 2026 (sections 3 and 536)",
+        "url": "https://www.incometaxindia.gov.in/documents/d/guest/income_tax_act_2025_as_amended_by_fa_act_2026-pdf"
+      },
+      {
+        "title": "PIB — The Income Tax Act, 2025: Reshaping Tax Framework (3 September 2025)",
+        "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/sep/doc202593626601.pdf"
+      },
+      {
+        "title": "The Hindu (PTI) — Income Tax Act gets President Droupadi Murmu’s assent (22 August 2025)",
+        "url": "https://www.thehindu.com/business/Economy/income-tax-act-gets-president-droupadi-murmus-assent/article69965067.ece"
+      },
+      {
+        "title": "NIST — AI Risk Management Framework",
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+      }
+    ],
+    "generatedBy": "editorial-ca-cluster",
+    "affiliateTools": [],
+    "affiliate": {
+      "disclosure": "Tool links go to the vendor’s official site unless an affiliate URL is configured. Recommendations are based on fit for finance, ops and AI implementation — not on commission."
+    },
+    "seoTitle": "Income-tax Act 2025 Transition: AI Remapping for CA Firms"
+  },
+  {
     "id": "2026-11-11-ai-for-virtual-cfo-services-mis-packs-clients-actually-read",
     "title": "AI for Virtual CFO Services: MIS Packs Clients Actually Read",
     "slug": "2026-11-11-ai-for-virtual-cfo-services-mis-packs-clients-actually-read",
