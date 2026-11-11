@@ -1,17 +1,21 @@
 # AI Opportunity Audit for business workflows across teams.
 
-> A fixed-fee, two-week AI opportunity audit for business leaders. Map workflows across teams, score automation opportunities by value and risk, and leave with a prioritised 90-day roadmap.
+> A fixed-fee, two-week AI opportunity audit for business teams and CA firms in India. Map workflows, score use cases by value and risk, and leave with a prioritised 90-day roadmap.
 
 Canonical: https://pratikbajoria.com/audit
-Last updated: 2026-10-26
+Last updated: 2026-11-11
 
 Productised engagement · 2 weeks
 
-An AI opportunity audit, run by a chartered accountant: a fixed-fee, two-week sprint that finds where AI moves your P&L — and where it does not. Mapping, scoring, build/buy/wait calls, and a prioritised 90-day roadmap. No vanity pilots.
+An AI opportunity audit, run by a Chartered Accountant in Kolkata: a fixed-fee, two-week sprint that maps workflows, scores use cases, and leaves a prioritised 90-day roadmap. It is built for business teams and for CA firms in India that want throughput gains without weakening review controls.
 
-**Direct answer.** An AI opportunity audit is a structured review of where AI can save time or reduce errors in your workflows, and where it should not be used. Mine is a fixed-fee, two-week sprint that maps workflows, scores use cases, and delivers a prioritised 90-day roadmap — so leaders know where AI moves the P&L before they fund a build.
+**Direct answer.** An AI opportunity audit is a fixed-fee, two-week review, led by a Chartered Accountant in Kolkata, of where AI can save time or reduce errors. It maps the work, scores use cases, and leaves a prioritised 90-day roadmap. An AI opportunity audit for CA firms in India applies the same method to delivery and back-office work with review gates.
 
-For a CA-firm-specific explanation of the audit, read the [AI Opportunity Audit for CA firms guide](https://pratikbajoria.com/ai-opportunity-audit-for-ca-firms).
+For the CA-firm walkthrough, including who it is for and how the two weeks run, read the [AI Opportunity Audit for CA firms](https://pratikbajoria.com/ai-opportunity-audit-for-ca-firms).
+
+Last updated 11 November 2026 · Written by [CA Pratik Bajoria](https://pratikbajoria.com/about), Chartered Accountant in Kolkata
+
+**As featured in:** [CAclubindia: AI for CA students, what helps exam preparation and what does not](https://www.caclubindia.com/articles/ai-for-ca-students-what-helps-exam-preparation-and-what-does-not-56512.asp)
 
 **2 weeks** Fixed sprint
 
@@ -23,7 +27,7 @@ For a CA-firm-specific explanation of the audit, read the [AI Opportunity Audit 
 
 Fit check 01
 
-## Who this is *for — and not.*
+## Who is the AI opportunity audit *for?*
 
 ### For
 
@@ -41,7 +45,7 @@ Fit check 01
 
 Deliverables 02
 
-## What’s *included.*
+## What does the AI opportunity audit *include?*
 
 Everything you need to decide where to invest — and where to wait — without inventing a second programme of work.
 
@@ -71,7 +75,7 @@ A sequenced plan for the first quarter: what ships first, who owns it, what “d
 
 How it works A — D
 
-## Diagnose in *two weeks.*
+## How long does the AI opportunity audit *take?*
 
 The Audit is the Diagnose stage of the wider engagement model — compressed into a fixed sprint so you leave with decisions, not homework.
 
@@ -301,8 +305,17 @@ Yes. Remote interviews and screen-shares work well. On-site days can be scoped w
 
 Book a discovery call, or message on WhatsApp mentioning the Audit. Expect a reply within one business day.
 
+### What is an AI opportunity audit for CA firms in India?
+
+An AI opportunity audit for CA firms in India is a fixed-fee, two-week diagnostic, led by a Chartered Accountant in Kolkata, that maps delivery and back-office workflows, scores use cases against review gates and client-data risk, and leaves a prioritised 90-day roadmap. The CA-firm walkthrough is on the [Audit for CA firms](https://pratikbajoria.com/ai-opportunity-audit-for-ca-firms) page.
+
+### How long does the AI opportunity audit take?
+
+The diagnostic itself is a fixed two-week sprint. The roadmap it leaves is designed so one first release can run, beside the old process, by day 90. The fee is confirmed on the discovery call; there is no published list price on this page.
+
 ## Related
-- [AI Opportunity Audit for CA firms guide](https://pratikbajoria.com/ai-opportunity-audit-for-ca-firms)
+- [AI Opportunity Audit for CA firms](https://pratikbajoria.com/ai-opportunity-audit-for-ca-firms)
+- [CA Pratik Bajoria](https://pratikbajoria.com/about)
 - [AI automation in India: a practical hub for business owners](https://pratikbajoria.com/ai-automation-in-india)
 - [Why Most Corporate AI Pilots Never Reach Production](https://pratikbajoria.com/blog/corporate-ai-pilots)
 - [The Monday Morning Test for Any AI Workflow](https://pratikbajoria.com/blog/2026-09-29-the-monday-morning-test-for-any-ai-workflow)

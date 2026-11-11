@@ -3,13 +3,15 @@
 > Finance team AI enablement: half-day executive workshop plus optional two-week cohort follow-on. Prompt libraries, SOPs and usage policy sketch.
 
 Canonical: https://pratikbajoria.com/workshops
-Last updated: 2026-09-18
+Last updated: 2026-11-11
 
 Team enablement · Paid workshop
 
 A half-day executive workshop that gets finance and ops leaders using AI with guardrails — plus an optional two-week cohort to turn prompts into SOPs your team will actually follow.
 
-**Direct answer.** Finance team AI workshops combine a half-day executive session with an optional cohort so teams adopt AI with the same discipline they bring to controls and close.
+**Direct answer.** A finance team AI workshop is a half-day executive session, with an optional two-week cohort afterwards, that gets finance and operations leaders using AI with the same discipline they already bring to controls and close. You leave with prompt libraries, SOP drafts and a usage-policy sketch. The fee is quoted on inquiry.
+
+Last updated 11 November 2026 · Written by [CA Pratik Bajoria](https://pratikbajoria.com/about), Chartered Accountant in Kolkata
 
 **½ day** Executive workshop
 
@@ -123,3 +125,6 @@ No. Workshop fees are quoted on inquiry after we understand team size and format
 ### Can workshops stay remote?
 
 Yes. Remote delivery works well; on-site is available when preferred.
+
+## Related
+- [CA Pratik Bajoria](https://pratikbajoria.com/about)

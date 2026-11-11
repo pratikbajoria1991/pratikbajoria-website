@@ -3,11 +3,15 @@
 > A practical topic guide to AI for Chartered Accountants, finance professionals, entrepreneurs and business leaders from Pratik Bajoria.
 
 Canonical: https://pratikbajoria.com/topics
-Last updated: 2026-10-08
+Last updated: 2026-11-11
 
 Topic guide · AI · Finance · Business systems
 
-This directory maps the site’s editorial coverage across 50 related search themes. Each topic leads to practical, sourced guidance—not a generic keyword page.
+This directory maps the site’s editorial coverage across related search themes on AI for chartered accountants in India, AI automation for Indian businesses, AI implementation for finance teams, and AI tools. Each topic leads to a sourced guide or hub, not a generic keyword page.
+
+**Direct answer.** Start with the hub that matches the job: [AI for Chartered Accountants in India](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india) for CA firms, [AI automation in India](https://pratikbajoria.com/ai-automation-in-india) for business owners, [AI implementation for finance teams](https://pratikbajoria.com/ai-implementation-for-finance-teams) for CFOs and controllers, or the [AI Opportunity Audit](https://pratikbajoria.com/audit) if you want a scored 90-day roadmap.
+
+Last updated 11 November 2026 · Written by [CA Pratik Bajoria](https://pratikbajoria.com/about)
 
 **Editorial standard:** content is written for Chartered Accountants, finance professionals, entrepreneurs and operators. It separates software evaluation from investment advice and focuses on controls, evidence, implementation effort and measurable business outcomes.
 
@@ -54,11 +58,11 @@ Independent evaluation and practical implementation guidance for teams choosing 
 This topic guide is editorial, educational and informational. Software availability, pricing, privacy terms and affiliate arrangements can change. Product links are for evaluation; investment content on this site is not personalised financial advice.
 
 ## Related
-- [AI for Chartered Accountants](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india)
+- [AI for Chartered Accountants in India](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india)
+- [AI automation in India](https://pratikbajoria.com/ai-automation-in-india)
+- [AI implementation for finance teams](https://pratikbajoria.com/ai-implementation-for-finance-teams)
+- [AI Opportunity Audit](https://pratikbajoria.com/audit)
+- [CA Pratik Bajoria](https://pratikbajoria.com/about)
 - [Will AI replace CAs](https://pratikbajoria.com/blog/2026-10-07-will-ai-replace-chartered-accountants-in-india)
 - [AI courses for CAs in India](https://pratikbajoria.com/blog/2026-10-07-ai-courses-for-chartered-accountants-in-india-what-is-worth-it)
 - [AI in audit firms](https://pratikbajoria.com/blog/2026-10-07-how-audit-and-accounting-firms-in-india-are-using-ai)
-- [Is CA worth it with AI](https://pratikbajoria.com/blog/2026-10-07-is-ca-worth-it-in-2026-with-ai)
-- [AI tools for CA professionals](https://pratikbajoria.com/blog/best-ai-tools-chartered-accountants-finance-professionals)
-- [AI for finance professionals](https://pratikbajoria.com/blog/ai-tools-financial-analysis-practical-use-cases)
-- [AI finance transformation](https://pratikbajoria.com/blog/small-business-ai-without-losing-financial-control)

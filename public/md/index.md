@@ -1,13 +1,13 @@
 # I help companies actually implement AI.
 
-> Pratik Bajoria helps businesses automate workflows across sales, operations, customer service and finance with practical AI and process automation.
+> Pratik Bajoria, a Chartered Accountant in Kolkata, is an AI consultant for CA firms and businesses in India. Work starts with a two-week AI opportunity audit and a 90-day roadmap.
 
 Canonical: https://pratikbajoria.com/
-Last updated: 2026-10-22
+Last updated: 2026-11-11
 
 Now taking AI implementation engagements
 
-Chartered Accountant, ex-Big 4, with over nine years of experience. I work with business leaders to identify where AI creates real P&L impact — then build and ship the systems that deliver it.
+I'm a Chartered Accountant in Kolkata and an AI consultant for CA firms and businesses in India. I have more than nine years' post-qualification experience, including time at a Big 4 firm. I help teams find where AI saves time or reduces errors, then ship a first release with review controls. Most engagements start with a two-week AI opportunity audit.
 
 Alongside AI work, I make selective cross-border introductions — Indian businesses to international clients and buyers, overseas companies to vetted Indian partners. [Cross-border partnerships →](https://crossborder.pratikbajoria.com/)
 
@@ -19,13 +19,15 @@ Alongside AI work, I make selective cross-border introductions — Indian busine
 
 **Findost** Founder
 
+Last updated 11 November 2026 · [CA Pratik Bajoria](https://pratikbajoria.com/about), Kolkata
+
 What I do 01 — 06
 
 ## AI implementation, *grounded in business reality.*
 
 Most AI initiatives fail because they start with the technology instead of the process. I start with your P&L, your workflows and your constraints — then bring AI to where it actually moves the number.
 
-**Direct answer.** Most engagements begin with the [AI Opportunity Audit](https://pratikbajoria.com/audit) — a fixed-fee two-week sprint that produces a prioritised 90-day roadmap.
+**Direct answer.** AI for business in India, as I practise it, means putting a working system into one owned workflow, with a human review gate. For CA firms, that starts with an AI opportunity audit: a fixed-fee two-week sprint that maps delivery work, scores use cases and leaves a 90-day roadmap. Details are on the [Audit](https://pratikbajoria.com/audit) page and the [CA firms guide](https://pratikbajoria.com/ai-opportunity-audit-for-ca-firms).
 
 01 / STRATEGY
 
@@ -207,7 +209,7 @@ The Big-4 years taught me something most AI consultants never learn: how enterpr
 
 My advantage isn’t that I understand AI. Plenty of people do. It’s that I spent nearly a decade inside the finance and operations functions AI is meant to transform, so I can tell a genuine opportunity from an expensive distraction before you commit budget to it.
 
-Today my main work is advising companies on AI implementation, alongside building **Findost**, my AI-powered wealth management platform. Everything I recommend to clients, I have shipped myself.
+Today my main work is advising CA firms and companies in India on AI implementation, alongside building **Findost**, my AI-powered wealth management platform. Everything I recommend to clients, I have shipped myself.
 
 I also make a small number of [cross-border introductions](https://crossborder.pratikbajoria.com/) — connecting Indian businesses with international clients and buyers, and overseas companies with vetted Indian partners. Same lens, different problem: I vet both sides the way I would review a counterparty, and I am paid only if a deal closes.
 
@@ -317,6 +319,14 @@ Architecture, retention and access controls are scoped to your policies. Sensiti
 
 Book a discovery call, message Pratik on WhatsApp, connect on LinkedIn, or email [hello@pratikbajoria.com](mailto:hello@pratikbajoria.com). He aims to reply within one business day.
 
+### What does an AI consultant for CA firms in India do?
+
+An AI consultant for CA firms in India helps a practice choose which workflows to automate, design the review gates around client data and signed opinions, and ship one controlled release. I do that work as a Chartered Accountant based in Kolkata, usually starting with an [AI opportunity audit](https://pratikbajoria.com/ai-opportunity-audit-for-ca-firms).
+
+### What is AI for business in India, as you practise it?
+
+AI for business in India, as I practise it, means putting a working system into one owned workflow, with a human review gate. Most engagements begin with the [AI Opportunity Audit](https://pratikbajoria.com/audit), a fixed-fee two-week sprint that leaves a prioritised 90-day roadmap. The business-owner hub is [AI automation in India](https://pratikbajoria.com/ai-automation-in-india).
+
 **AI Opportunity Scorecard** Free checklist for CFOs and operators — score process, data, ROI, risk and ownership before you fund another pilot.
 
 Also · India and the world **Cross-border deals & partnerships** Introductions between Indian businesses and international clients, buyers and partners — IT & software partnerships and export sourcing. Fees agreed per deal, paid only on a closed deal.
@@ -354,11 +364,11 @@ Corporate training and events.
 [hello@pratikbajoria.com](mailto:hello@pratikbajoria.com?subject=Subscribe%20to%20The%20AI%20Implementation%20Brief) · [findost.io](https://findost.io/)
 
 ## Related
-- [AI Opportunity Audit](https://pratikbajoria.com/audit)
-- [More about me, how I work and where I write](https://pratikbajoria.com/about)
+- [CA Pratik Bajoria](https://pratikbajoria.com/about)
+- [Audit](https://pratikbajoria.com/audit)
+- [CA firms guide](https://pratikbajoria.com/ai-opportunity-audit-for-ca-firms)
 - [How to start AI implementation](https://pratikbajoria.com/how-to-start-ai-implementation)
 - [AI for finance teams](https://pratikbajoria.com/ai-implementation-for-finance-teams)
 - [Workflow automation (mid-market)](https://pratikbajoria.com/workflow-automation-with-ai-for-mid-market)
-- [AI Opportunity Audit for CA firms](https://pratikbajoria.com/ai-opportunity-audit-for-ca-firms)
 - [CA insights · 2026-09-25 **AI for Chartered Accountants in India** A practical hub for CA AI implementation in India: control rubric, thin releases, and links to tooling and pilots.](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india)
 - [CA insights · 2026-10-04 **AI for Chartered Accountants: Practical Use Cases and Control Gates** Five bounded use cases, six control gates and a practical 90-day rollout for responsible CA-led AI adoption.](https://pratikbajoria.com/blog/ai-for-chartered-accountants-practical-use-cases-and-controls)

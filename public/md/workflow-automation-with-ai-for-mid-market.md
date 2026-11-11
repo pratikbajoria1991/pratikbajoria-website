@@ -3,13 +3,15 @@
 > Workflow automation with AI for mid-market COOs: map hand-offs, pick owned bottlenecks, decide build, buy or wait, and ship automations within 90 days.
 
 Canonical: https://pratikbajoria.com/workflow-automation-with-ai-for-mid-market
-Last updated: 2026-09-18
+Last updated: 2026-11-11
 
 Guide · Mid-market ops & COO
 
 A practical playbook for COOs and ops leaders who need production automations on owned bottlenecks — not another pilot that dies in a slide deck.
 
 **Direct answer.** Mid-market workflow automation with AI starts by picking one owned bottleneck with volume, mapping hand-offs and systems end to end, scoring build/buy/wait, then shipping inside a prioritised 90-day roadmap with a stop rule. Skip tool tours without process ownership. Next steps: free [Scorecard](https://pratikbajoria.com/scorecard), structured [Audit](https://pratikbajoria.com/audit), or [contact](https://pratikbajoria.com/#contact).
+
+Last updated 11 November 2026 · Written by [CA Pratik Bajoria](https://pratikbajoria.com/about), Chartered Accountant in Kolkata
 
 Why pilots stall 01
 
@@ -116,3 +118,4 @@ Try the free [Scorecard](https://pratikbajoria.com/scorecard), review the [Audit
 ## Related
 - [Scorecard](https://pratikbajoria.com/scorecard)
 - [Audit](https://pratikbajoria.com/audit)
+- [CA Pratik Bajoria](https://pratikbajoria.com/about)

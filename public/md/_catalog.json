@@ -9,20 +9,20 @@
       "url": "https://pratikbajoria.com/",
       "markdown": "https://pratikbajoria.com/index.md",
       "title": "I help companies actually implement AI.",
-      "summary": "Homepage of Pratik Bajoria, a Chartered Accountant and ex-Big 4 AI implementation consultant in India: services (AI Opportunity Audit, workflow automation, finance and compliance AI, workshops), process, FAQ and contact details.",
+      "summary": "Homepage of Pratik Bajoria, a Chartered Accountant in Kolkata and AI consultant for CA firms and businesses in India: AI Opportunity Audit, workflow automation, finance and compliance AI, workshops, process, FAQ and contact details.",
       "section": "core",
-      "lastModified": "2026-10-22",
-      "tokens": 4178
+      "lastModified": "2026-11-11",
+      "tokens": 4524
     },
     {
       "path": "/audit",
       "url": "https://pratikbajoria.com/audit",
       "markdown": "https://pratikbajoria.com/audit.md",
       "title": "AI Opportunity Audit for business workflows across teams.",
-      "summary": "Service page for the AI Opportunity Audit by Pratik Bajoria: a fixed-fee two-week sprint that maps finance and CA-firm workflows, scores AI use cases and produces a prioritised 90-day roadmap.",
+      "summary": "Service page for the AI Opportunity Audit by Pratik Bajoria: a fixed-fee two-week sprint, led by a Chartered Accountant in Kolkata, that maps business and CA-firm workflows, scores AI use cases and produces a prioritised 90-day roadmap.",
       "section": "core",
-      "lastModified": "2026-10-26",
-      "tokens": 4739
+      "lastModified": "2026-11-11",
+      "tokens": 5061
     },
     {
       "path": "/scorecard",
@@ -31,8 +31,8 @@
       "title": "AI Opportunity Scorecard.",
       "summary": "Free AI Opportunity Scorecard for CFOs and operators — score process, data, ROI, risk and ownership before you spend on AI.",
       "section": "core",
-      "lastModified": "2026-10-07",
-      "tokens": 1002
+      "lastModified": "2026-11-11",
+      "tokens": 1105
     },
     {
       "path": "/workshops",
@@ -41,8 +41,8 @@
       "title": "Finance team AI enablement.",
       "summary": "Finance team AI enablement: half-day executive workshop plus optional two-week cohort follow-on. Prompt libraries, SOPs and usage policy sketch.",
       "section": "core",
-      "lastModified": "2026-09-18",
-      "tokens": 832
+      "lastModified": "2026-11-11",
+      "tokens": 921
     },
     {
       "path": "/resources",
@@ -69,7 +69,7 @@
       "url": "https://pratikbajoria.com/blog",
       "markdown": "https://pratikbajoria.com/blog.md",
       "title": "Insights",
-      "summary": "Index of every article on pratikbajoria.com about AI implementation, AI for Chartered Accountants, finance automation and business tools, newest first, each with a one-line summary.",
+      "summary": "Index of every article on pratikbajoria.com about AI for Chartered Accountants in India, AI automation, finance implementation and business tools, newest first, each with a one-line summary.",
       "section": "core",
       "lastModified": "2026-11-11",
       "tokens": 5113
@@ -91,18 +91,18 @@
       "title": "Practical answers for the AI and finance questions business leaders ask.",
       "summary": "A practical topic guide to AI for Chartered Accountants, finance professionals, entrepreneurs and business leaders from Pratik Bajoria.",
       "section": "core",
-      "lastModified": "2026-10-08",
-      "tokens": 2250
+      "lastModified": "2026-11-11",
+      "tokens": 2394
     },
     {
       "path": "/ai-automation-in-india",
       "url": "https://pratikbajoria.com/ai-automation-in-india",
       "markdown": "https://pratikbajoria.com/ai-automation-in-india.md",
       "title": "AI Automation in India: A Practical Hub for Business Owners",
-      "summary": "AI automation in India for owners and operations heads: which workflows to automate first, DPDP and RBI considerations, human review and a 90-day plan.",
+      "summary": "Hub on AI automation in India for business owners: which workflows to automate first, DPDP and sector rules, human review, and a 90-day first project.",
       "section": "guides",
-      "lastModified": "2026-10-22",
-      "tokens": 3599
+      "lastModified": "2026-11-11",
+      "tokens": 3810
     },
     {
       "path": "/ai-implementation-for-finance-teams",
@@ -111,18 +111,18 @@
       "title": "AI implementation for finance teams.",
       "summary": "Where CFOs and controllers should start with AI: month-end close, reconciliations, invoice intake and MIS, with controls, owners and a 90-day roadmap.",
       "section": "guides",
-      "lastModified": "2026-10-22",
-      "tokens": 2365
+      "lastModified": "2026-11-11",
+      "tokens": 2368
     },
     {
       "path": "/ai-opportunity-audit-for-ca-firms",
       "url": "https://pratikbajoria.com/ai-opportunity-audit-for-ca-firms",
       "markdown": "https://pratikbajoria.com/ai-opportunity-audit-for-ca-firms.md",
       "title": "AI Opportunity Audit for CA firms.",
-      "summary": "What an AI Opportunity Audit means for CA firms: map delivery workflows, score use cases with auditability in mind, and leave with a prioritised 90-day roadmap.",
+      "summary": "An AI opportunity audit for CA firms in India: a fixed-fee two-week diagnostic, led by a Chartered Accountant in Kolkata, that maps delivery workflows, scores use cases with review gates, and leaves a prioritised 90-day roadmap.",
       "section": "guides",
-      "lastModified": "2026-09-18",
-      "tokens": 1156
+      "lastModified": "2026-11-11",
+      "tokens": 2170
     },
     {
       "path": "/how-to-start-ai-implementation",
@@ -131,8 +131,8 @@
       "title": "How to start AI implementation.",
       "summary": "How mid-market and finance teams should start AI implementation: map workflows, score use cases, then ship a prioritised 90-day roadmap — not another pilot.",
       "section": "guides",
-      "lastModified": "2026-09-18",
-      "tokens": 1199
+      "lastModified": "2026-11-11",
+      "tokens": 1245
     },
     {
       "path": "/workflow-automation-with-ai-for-mid-market",
@@ -141,18 +141,18 @@
       "title": "Workflow automation with AI for mid-market.",
       "summary": "Workflow automation with AI for mid-market COOs: map hand-offs, pick owned bottlenecks, decide build, buy or wait, and ship automations within 90 days.",
       "section": "guides",
-      "lastModified": "2026-09-18",
-      "tokens": 1178
+      "lastModified": "2026-11-11",
+      "tokens": 1224
     },
     {
       "path": "/about",
       "url": "https://pratikbajoria.com/about",
       "markdown": "https://pratikbajoria.com/about.md",
       "title": "CA Pratik Bajoria Chartered Accountant, Kolkata.",
-      "summary": "Author page for CA Pratik Bajoria, a Kolkata-based Chartered Accountant (ex-Big 4, 9+ years post-qualification) who advises companies on AI implementation and builds Findost; lists his four topic hubs, CAclubindia feature and profiles.",
+      "summary": "Author page for CA Pratik Bajoria, a Kolkata-based Chartered Accountant (ex-Big 4, 9+ years post-qualification) and AI consultant for CA firms and businesses in India; founder of Findost; lists his four topic hubs, CAclubindia feature and profiles.",
       "section": "core",
-      "lastModified": "2026-10-29",
-      "tokens": 1036
+      "lastModified": "2026-11-11",
+      "tokens": 1544
     },
     {
       "path": "/privacy",
@@ -429,10 +429,10 @@
       "url": "https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india",
       "markdown": "https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india.md",
       "title": "AI for Chartered Accountants in India: A Practical Implementation Hub",
-      "summary": "AI for chartered accountants in India: a practical map for CA firms on which workflows to start with, client-data controls, human review and pilots.",
+      "summary": "Hub on AI for chartered accountants in India: which workflows to start with, client-data controls, human review, and how an AI consultant for CA firms works.",
       "section": "posts",
       "lastModified": "2026-11-11",
-      "tokens": 7784
+      "tokens": 8396
     },
     {
       "path": "/blog/ai-for-chartered-accountants-practical-use-cases-and-controls",

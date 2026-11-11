@@ -3,13 +3,15 @@
 > How mid-market and finance teams should start AI implementation: map workflows, score use cases, then ship a prioritised 90-day roadmap — not another pilot.
 
 Canonical: https://pratikbajoria.com/how-to-start-ai-implementation
-Last updated: 2026-09-18
+Last updated: 2026-11-11
 
 Guide · Mid-market & finance
 
 A practical sequence for CFOs, COOs and operators who want measurable P&L impact — not another demo that dies in a slide deck.
 
 **Direct answer.** Start by picking one high-friction workflow with clear owners and measurable pain, map it end to end, score candidate use cases on impact and risk, then decide build/buy/wait before you fund a tool. Compress that into a prioritised 90-day roadmap — the same discipline as an [AI Opportunity Audit](https://pratikbajoria.com/audit).
+
+Last updated 11 November 2026 · Written by [CA Pratik Bajoria](https://pratikbajoria.com/about), Chartered Accountant in Kolkata
 
 Why most starts fail 01
 
@@ -119,4 +121,5 @@ Use the booking form, WhatsApp, or email [hello@pratikbajoria.com](mailto:hello@
 
 ## Related
 - [AI Opportunity Audit](https://pratikbajoria.com/audit)
+- [CA Pratik Bajoria](https://pratikbajoria.com/about)
 - [AI Opportunity Scorecard](https://pratikbajoria.com/scorecard)

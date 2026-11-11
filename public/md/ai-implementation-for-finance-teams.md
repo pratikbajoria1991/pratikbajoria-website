@@ -3,13 +3,15 @@
 > Where CFOs and controllers should start with AI: month-end close, reconciliations, invoice intake and MIS, with controls, owners and a 90-day roadmap.
 
 Canonical: https://pratikbajoria.com/ai-implementation-for-finance-teams
-Last updated: 2026-10-22
+Last updated: 2026-11-11
 
 Guide · CFOs & finance controllers
 
 A direct path for CFOs and controllers who need measurable cycle-time and error-cost wins — without weakening controls, GST/TDS discipline or board-pack integrity.
 
 **Direct answer.** Finance teams should start AI implementation on one high-friction owned workflow — close, reconciliation, invoice intake or MIS — map systems and control points, score use cases on impact and risk, then ship a prioritised 90-day roadmap with review gates. Tool demos come after process ownership. Prefer a free self-check via the [Scorecard](https://pratikbajoria.com/scorecard), a structured [Audit](https://pratikbajoria.com/audit), or [book a discovery call](https://pratikbajoria.com/#contact).
+
+Last updated 11 November 2026 · Written by [CA Pratik Bajoria](https://pratikbajoria.com/about), Chartered Accountant in Kolkata
 
 Why finance first 01
 
@@ -173,9 +175,9 @@ Use the [contact section](https://pratikbajoria.com/#contact), WhatsApp, or emai
 ## Related
 - [Scorecard](https://pratikbajoria.com/scorecard)
 - [Audit](https://pratikbajoria.com/audit)
+- [CA Pratik Bajoria](https://pratikbajoria.com/about)
 - [Finance AI ROI for Mid-Market Companies in India: A CA's Decision Rubric](https://pratikbajoria.com/blog/2026-10-12-finance-ai-roi-for-mid-market-companies-in-india-a-cas-decision-rubric)
 - [The Finance Function Is AI’s Highest-ROI Starting Point](https://pratikbajoria.com/blog/2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point)
 - [How Do You Know Finance AI Will Pay for Itself Before You Buy?](https://pratikbajoria.com/blog/2026-09-21-how-do-you-know-finance-ai-will-pay-for-itself-before-you-buy)
 - [How Much Should a Mid-Market Finance Team Budget for AI?](https://pratikbajoria.com/blog/2026-09-14-how-much-should-a-mid-market-finance-team-budget-for-ai)
 - [When a Finance Team Should Say No to an AI Pilot](https://pratikbajoria.com/blog/2026-09-24-when-a-finance-team-should-say-no-to-an-ai-pilot)
-- [AI Finance Automation Roadmap: A 90-Day Plan for CFOs and Controllers](https://pratikbajoria.com/blog/2026-10-04-ai-finance-automation-roadmap-for-cfos-and-controllers)

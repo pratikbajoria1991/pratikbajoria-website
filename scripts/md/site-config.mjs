@@ -79,8 +79,11 @@ export const LLMS_OUTRO_SECTIONS = [
 
 // ai-summary overrides for key pages (everything else uses its meta description).
 export const AI_SUMMARIES = {
-  '/': 'Homepage of Pratik Bajoria, a Chartered Accountant and ex-Big 4 AI implementation consultant in India: services (AI Opportunity Audit, workflow automation, finance and compliance AI, workshops), process, FAQ and contact details.',
-  '/about': 'Author page for CA Pratik Bajoria, a Kolkata-based Chartered Accountant (ex-Big 4, 9+ years post-qualification) who advises companies on AI implementation and builds Findost; lists his four topic hubs, CAclubindia feature and profiles.',
-  '/audit': 'Service page for the AI Opportunity Audit by Pratik Bajoria: a fixed-fee two-week sprint that maps finance and CA-firm workflows, scores AI use cases and produces a prioritised 90-day roadmap.',
-  '/blog': 'Index of every article on pratikbajoria.com about AI implementation, AI for Chartered Accountants, finance automation and business tools, newest first, each with a one-line summary.'
+  '/': 'Homepage of Pratik Bajoria, a Chartered Accountant in Kolkata and AI consultant for CA firms and businesses in India: AI Opportunity Audit, workflow automation, finance and compliance AI, workshops, process, FAQ and contact details.',
+  '/about': 'Author page for CA Pratik Bajoria, a Kolkata-based Chartered Accountant (ex-Big 4, 9+ years post-qualification) and AI consultant for CA firms and businesses in India; founder of Findost; lists his four topic hubs, CAclubindia feature and profiles.',
+  '/audit': 'Service page for the AI Opportunity Audit by Pratik Bajoria: a fixed-fee two-week sprint, led by a Chartered Accountant in Kolkata, that maps business and CA-firm workflows, scores AI use cases and produces a prioritised 90-day roadmap.',
+  '/blog': 'Index of every article on pratikbajoria.com about AI for Chartered Accountants in India, AI automation, finance implementation and business tools, newest first, each with a one-line summary.',
+  '/ai-opportunity-audit-for-ca-firms': 'An AI opportunity audit for CA firms in India: a fixed-fee two-week diagnostic, led by a Chartered Accountant in Kolkata, that maps delivery workflows, scores use cases with review gates, and leaves a prioritised 90-day roadmap.',
+  '/ai-automation-in-india': 'Hub on AI automation in India for business owners: which workflows to automate first, DPDP and sector rules, human review, and a 90-day first project.',
+  '/blog/ai-for-chartered-accountants-in-india': 'Hub on AI for chartered accountants in India: which workflows to start with, client-data controls, human review, and how an AI consultant for CA firms works.'
 };

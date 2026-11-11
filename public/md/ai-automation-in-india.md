@@ -3,11 +3,13 @@
 > AI automation in India for owners and operations heads: which workflows to automate first, DPDP and RBI considerations, human review and a 90-day plan.
 
 Canonical: https://pratikbajoria.com/ai-automation-in-india
-Last updated: 2026-10-22
+Last updated: 2026-11-11
 
-AI automation · Updated 15 Oct 2026 · 7 min read
+AI automation · Updated 11 November 2026 · 7 min read
 
 Where AI automation actually pays back for Indian businesses, what the DPDP Act and sector regulators expect, and how to run a first project without losing control of the work.
+
+**Direct answer.** AI automation in India, as I use the term, means putting AI inside one owned business workflow (a customer message, a document, a reconciliation exception or a recurring report) so the routine part runs faster while a named person still owns the result. For CA practices, the parallel guide is [AI for Chartered Accountants in India](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india).
 
 Most conversations I have about “AI automation in India” start with a tool and end with a pilot nobody uses. The businesses that get value tend to do it the other way round. They pick one workflow that already hurts, write down who owns it and what good looks like, and only then decide what to automate. I am a chartered accountant and worked at a Big 4 firm before founding Findost, so I come at this from the controls side: if you cannot explain the output to an auditor, a customer or a regulator, it is not ready.
 
@@ -120,6 +122,10 @@ The full version, with an opportunity scoring method, is in [a 90-day AI opportu
 
 ## Frequently asked questions
 
+### What is AI for business in India?
+
+AI for business in India, as I practise it, means putting a working system into one owned workflow, with a human review gate. The starting point is a painful, owned process, not a tool shortlist. This hub covers the business-owner path. CA firms should use the [AI for Chartered Accountants in India](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india) hub.
+
 ### What is AI automation for a business in India?
 
 It is using AI inside a defined workflow, such as reading an invoice, sorting a customer enquiry or flagging a reconciliation exception, so that the routine part runs faster while a named person still owns the result. It is different from simply giving staff a chatbot.
@@ -154,7 +160,7 @@ Educational commentary for business owners and operations leaders in India — n
 *Educational content; not financial, investment, or legal advice.*
 
 ## Related
-- [AI for chartered accountants in India](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india)
+- [AI for Chartered Accountants in India](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india)
 - [AI implementation for finance teams](https://pratikbajoria.com/ai-implementation-for-finance-teams)
 - [the Monday morning test for any AI workflow](https://pratikbajoria.com/blog/2026-09-29-the-monday-morning-test-for-any-ai-workflow)
 - [why most corporate AI pilots never reach production](https://pratikbajoria.com/blog/corporate-ai-pilots)

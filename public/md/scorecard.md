@@ -3,13 +3,13 @@
 > Free AI Opportunity Scorecard for CFOs and operators — score process, data, ROI, risk and ownership before you spend on AI.
 
 Canonical: https://pratikbajoria.com/scorecard
-Last updated: 2026-10-07
+Last updated: 2026-11-11
 
 Lead magnet · Free
 
 A practical checklist for CFOs and operators. Score yourself across process, data, ROI, risk and ownership — before you fund another pilot that goes nowhere.
 
-**Direct answer.** The AI Opportunity Scorecard is a free checklist that helps CFOs and operators score process readiness, data quality, ROI, risk and ownership before committing budget to another AI pilot.
+**Direct answer.** The AI Opportunity Scorecard is a free checklist for CFOs, operators and CA-firm partners. It scores process readiness, data quality, likely return, risk and ownership before you fund an AI pilot. Enter a work email to unlock the full list. If the gaps are in ownership or data, fix those first; if scores are strong, the next step is the [AI Opportunity Audit](https://pratikbajoria.com/audit).
 
 Rate each criterion 0–10. Total of 100. Below 50 usually means fix ownership and baselines first. 70+ is when a structured Audit earns its fee.
 
@@ -65,7 +65,7 @@ Score honestly. A low score on ownership or data is not a failure; it is the mos
 - [Microsoft and LinkedIn — 2024 Work Trend Index](https://news.microsoft.com/source/2024/05/08/microsoft-and-linkedin-release-the-2024-work-trend-index-on-the-state-of-ai-at-work/)
 - [McKinsey — The state of AI: global survey 2025](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai)
 
-Updated 7 Oct 2026
+Last updated 11 November 2026 · Written by [CA Pratik Bajoria](https://pratikbajoria.com/about)
 
 FAQ FAQ
 
@@ -82,3 +82,7 @@ Yes. Enter your work email to unlock the full checklist. You can also join the A
 ### What should I do after scoring?
 
 If gaps show up in ownership or data, fix those before buying tools. If scores are strong, book a discovery call about the AI Opportunity Audit.
+
+## Related
+- [AI Opportunity Audit](https://pratikbajoria.com/audit)
+- [CA Pratik Bajoria](https://pratikbajoria.com/about)
