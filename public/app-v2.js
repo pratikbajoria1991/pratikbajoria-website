@@ -1,3 +1,4 @@
+function cardImg(u){u=String(u||'');return /images\.unsplash\.com/.test(u)&&!/[?&](auto=format|fm=webp)/.test(u)?u+(u.includes('?')?'&':'?')+'auto=format':u}
 const fallbackPosts = [
   { title: 'Why 70% of Corporate AI Pilots Never Reach Production', slug: 'corporate-ai-pilots', date: '2026-02-18', category: 'AI adoption', readTime: 8, image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=85', excerpt: 'The failure is almost never technical. It is scoping, ownership and change management — and there is a repeatable pattern to avoiding all three.' },
   { title: "The Finance Function is AI's Highest-ROI Starting Point", slug: '2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point', date: '2026-02-10', category: 'Finance & compliance', readTime: 6, image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=85', excerpt: 'Structured data, repetitive judgement, measurable output. A CA’s view on why reconciliation and close automation beat chatbots every time.' },
@@ -9,7 +10,7 @@ const formatDate = (value) => new Intl.DateTimeFormat('en-IN', { day: '2-digit',
 
 function storyCard(post) {
   const target = post.url && post.url !== '#' ? post.url : `/blog/${encodeURIComponent(post.slug || '')}`;
-  return `<article class="story-card"><a href="${target}" aria-label="Read ${esc(post.title)}"><div class="story-image"><img loading="lazy" src="${esc(post.image)}" alt="" /></div><div class="story-meta"><span>${esc(post.category || 'AI implementation')}</span><span>${formatDate(post.date)} · ${esc(post.readTime || 6)} min</span></div><h3 class="story-title">${esc(post.title)}</h3><p class="story-excerpt">${esc(post.excerpt || '')}</p></a></article>`;
+  return `<article class="story-card"><a href="${target}" aria-label="Read ${esc(post.title)}"><div class="story-image"><img loading="lazy" decoding="async" width="1200" height="800" src="${esc(cardImg(post.image))}" alt="Cover image for ${esc(post.title)}" /></div><div class="story-meta"><span>${esc(post.category || 'AI implementation')}</span><span>${formatDate(post.date)} · ${esc(post.readTime || 6)} min</span></div><h3 class="story-title">${esc(post.title)}</h3><p class="story-excerpt">${esc(post.excerpt || '')}</p></a></article>`;
 }
 
 async function loadPosts() {

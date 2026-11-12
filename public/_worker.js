@@ -6,13 +6,14 @@ const isBlogSlug = (value) => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value);
 const INTERNAL_ASSET_HEADER = 'x-pages-internal-asset';
 const LEAD_INTERESTS = new Set(['cross-border-buyer', 'cross-border-seller']);
 
-const GA4_SNIPPET = '<script src="/ga4.js?v=20261009-nobot" defer></script>\n';
-async function injectGa4(response) {
+const GA4_SNIPPET = '<script src="/ga4.js?v=20261009-nobot" defer></script><script src="/clarity.js?v=20261018" defer></script>\n';
+async function injectGa4(response, md = null) {
   const ctype = response.headers.get('content-type') || '';
   if (response.status !== 200 || !ctype.includes('text/html')) return response;
-  const text = rewriteMainCrossborderLinks(await response.text());
+  const text = addMdHeadSignals(rewriteMainCrossborderLinks(await response.text()), md);
   const headers = new Headers(response.headers);
   headers.delete('content-length');
+  if (md) headers.append('Vary', 'Accept');
   if (text.includes('/ga4.js') || text.includes('G-CXQP7F8CRT')) {
     return new Response(text, { status: response.status, statusText: response.statusText, headers });
   }
@@ -78,7 +79,8 @@ const AUTHOR_PERSON = {
     'https://hashnode.com/@pratikbajoria',
     'https://www.crunchbase.com/person/pratik-bajoria',
     'https://www.f6s.com/pratik-bajoria',
-    'https://contra.com/pratik_bajoria_bvmul54o'
+    'https://contra.com/pratik_bajoria_bvmul54o',
+    'https://findost.io'
   ]
 };
 
@@ -102,12 +104,14 @@ const AUTHOR_PERSON = {
 // ---------------------------------------------------------------------------
 const CROSSBORDER_LIVE = true;
 const XB_HOST = 'crossborder.pratikbajoria.com';
+const MSME_HOST = 'msme.pratikbajoria.com';
+const MSME_ORIGIN = `https://${MSME_HOST}`;
 const XB_ORIGIN = `https://${XB_HOST}`;
 const XB_DIR = '/crossborder';
 const XB_OLD_PAGE = '/cross-border-partnerships';
 // Root files the subdomain shares with the main site (incl. the IndexNow key file, which
 // IndexNow requires on every host whose URLs are submitted).
-const XB_SHARED_ROOT_ASSETS = new Set(['/favicon.ico', '/favicon.png', '/ga4.js', '/d5d19724f0e88d56c47096f6decf1880.txt']);
+const XB_SHARED_ROOT_ASSETS = new Set(['/favicon.ico', '/favicon.png', '/ga4.js', '/clarity.js', '/d5d19724f0e88d56c47096f6decf1880.txt']);
 // Retired cross-border URLs -> their replacements (301 on the subdomain and on the /crossborder/ preview).
 const XB_REDIRECTS = {
   '/buyers': '/find-a-partner-in-india',
@@ -258,14 +262,17 @@ async function serveCrossborder(request, env, url, mode) {
 // Consolidated near-duplicate posts (7 Oct 2026): every loser 301s straight to its survivor (single hop).
 // Lookup is applied after normalising .html and trailing slashes, and to /blog?slug= / /blog.html?slug=.
 const blogPathAliases = {
-  '/blog/2026-08-31-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre',
-  '/blog/2026-09-07-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre',
-  '/blog/2026-09-14-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre',
-  '/blog/2026-10-02-a-90-day-ai-opportunity-audit-without-the-theatre': '/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre',
-  '/blog/2026-09-01-ai-in-real-estate-start-with-lead-qualification-and-documents': '/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction',
-  '/blog/2026-09-08-ai-in-real-estate-start-with-lead-qualification-and-documents': '/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction',
-  '/blog/2026-09-15-ai-in-real-estate-start-with-lead-qualification-and-documents': '/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction',
-  '/blog/2026-10-03-real-estate-ai-start-with-leads-and-documents-not-prediction': '/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction',
+  // 26 Oct 2026 consolidation: 90-day audit post folded into /audit; HubSpot vs Zoho folded into the CRM-to-accounting guide.
+  '/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre': '/audit',
+  '/blog/hubspot-vs-zoho-crm-growing-business': '/blog/zoho-crm-hubspot-crm-integration-finance-workflows',
+  '/blog/2026-08-31-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/audit',
+  '/blog/2026-09-07-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/audit',
+  '/blog/2026-09-14-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders': '/audit',
+  '/blog/2026-10-02-a-90-day-ai-opportunity-audit-without-the-theatre': '/audit',
+  '/blog/2026-09-01-ai-in-real-estate-start-with-lead-qualification-and-documents': '/ai-automation-in-india',
+  '/blog/2026-09-08-ai-in-real-estate-start-with-lead-qualification-and-documents': '/ai-automation-in-india',
+  '/blog/2026-09-15-ai-in-real-estate-start-with-lead-qualification-and-documents': '/ai-automation-in-india',
+  '/blog/2026-10-03-real-estate-ai-start-with-leads-and-documents-not-prediction': '/ai-automation-in-india',
   '/blog/2026-09-02-what-good-ai-governance-looks-like-in-a-mid-market-company': '/blog/2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer',
   '/blog/2026-09-09-what-good-ai-governance-looks-like-in-a-mid-market-company': '/blog/2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer',
   '/blog/2026-09-16-what-good-ai-governance-looks-like-in-a-mid-market-company': '/blog/2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer',
@@ -287,6 +294,9 @@ const blogPathAliases = {
   '/blog/2026-09-21-semrush-for-owners-when-search-spend-is-actually-rational': '/blog/semrush-review-business-owners',
   '/blog/2026-10-06-semrush-for-owners-when-search-spend-is-actually-rational': '/blog/semrush-review-business-owners',
   '/blog/2026-09-22-notion-as-a-finance-control-layer-not-a-second-ledger': '/blog/notion-for-finance-professionals-templates-dashboards-workflows',
+  // Topical-authority consolidation (29 Oct 2026): off-topic posts -> closest cluster page.
+  '/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction': '/ai-automation-in-india',
+  '/blog/2026-09-27-hubspot-vs-spreadsheet-crm-the-real-switching-cost': '/blog/zoho-crm-hubspot-crm-integration-finance-workflows',
   '/blog/ai-tools-that-pay-back-for-finance-and-ca-teams': '/blog/best-ai-tools-chartered-accountants-finance-professionals',
 };
 const blogAliasFor = (pathname) => {
@@ -314,6 +324,103 @@ const absoluteRedirect = (requestUrl, pathname) => {
     }
   });
 };
+
+// True when the clean path is a real page (static .html asset, JSON blog post, or alias).
+// Used so /guides.html and other unknown .html URLs 404 instead of 301-ing to a 404.
+// Pages often answers .html asset fetches with 308 → pretty URL; follow one hop.
+async function fetchHtmlAsset(request, env, pathname) {
+  const candidates = pathname === '/'
+    ? ['/index.html', '/']
+    : (pathname.startsWith('/blog/')
+      ? [`${pathname}.html`, pathname]
+      : [`${pathname}.html`, pathname, `${pathname}/index.html`]);
+  for (const candidate of candidates) {
+    let r = await env.ASSETS.fetch(internalAssetRequest(request, candidate));
+    if (r.status >= 300 && r.status < 400) {
+      const loc = r.headers.get('location');
+      if (loc) {
+        try {
+          const next = new URL(loc, SITE).pathname;
+          r = await env.ASSETS.fetch(internalAssetRequest(request, next));
+        } catch { /* keep original */ }
+      }
+    }
+    if (r.status === 200 && (r.headers.get('content-type') || '').includes('text/html')) return r;
+  }
+  return null;
+}
+
+async function cleanPathExists(request, env, pathname) {
+  if (!pathname || pathname === '/') return true;
+  if (blogPathAliases[pathname]) return true;
+  if (pathname === '/blog') {
+    return Boolean(await fetchHtmlAsset(request, env, '/blog'));
+  }
+  const m = pathname.match(/^\/blog\/([^/]+)$/);
+  if (m) {
+    if (!isBlogSlug(m[1])) return false;
+    if (await fetchHtmlAsset(request, env, pathname)) return true;
+    const posts = await loadAllPosts(request, env);
+    return posts.some((p) => p && p.slug === m[1]);
+  }
+  return Boolean(await fetchHtmlAsset(request, env, pathname));
+}
+
+
+// Serve destination HTML at a legacy URL with HTTP 200 + self-declared canonical.
+// Prefer this over 301 for URLs GSC has flagged as "Redirect error" (/topics.html,
+// /blog.html?slug=…, /blog/), because Cloudflare was caching the 301 (cf-cache-status:HIT,
+// max-age=3600) and validation kept failing even when the hop looked clean from curl.
+function applyHtmlCanonical(html, canonicalUrl) {
+  if (/<link\s+rel=["']canonical["']/i.test(html)) {
+    return html.replace(/<link\s+rel=["']canonical["']\s+href=["'][^"']*["']\s*\/?>/i, `<link rel="canonical" href="${canonicalUrl}" />`);
+  }
+  if (html.includes('</head>')) {
+    return html.replace('</head>', `    <link rel="canonical" href="${canonicalUrl}" />\n</head>`);
+  }
+  return html;
+}
+
+async function serveCanonicalPage(request, env, canonicalPath, mdRoute = null) {
+  const can = canonicalPath === '/' ? `${SITE}/` : `${SITE}${canonicalPath}`;
+  let response;
+  // Re-point the request at the canonical URL: serveBlogPost/serveBlogAsset fetch the
+  // incoming request from ASSETS, and for a legacy URL like /blog.html?slug=… Pages
+  // answers 308 -> /blog?slug=… (relative), which GSC reports as "Redirect error".
+  const canUrl = new URL(request.url);
+  canUrl.pathname = canonicalPath;
+  canUrl.search = '';
+  const canReq = new Request(canUrl.toString(), { method: request.method, headers: request.headers, redirect: 'manual' });
+  if (canonicalPath === '/blog') {
+    response = await serveBlogAsset(canReq, env, null);
+  } else if (canonicalPath.startsWith('/blog/')) {
+    const slug = canonicalPath.slice('/blog/'.length);
+    if (!isBlogSlug(slug)) return notFound(request, env);
+    response = await serveBlogPost(canReq, env, slug);
+  } else {
+    const asset = await fetchHtmlAsset(request, env, canonicalPath);
+    if (!asset) return notFound(request, env);
+    response = await injectGa4(asset, mdRoute);
+  }
+  if (response.status !== 200) return response;
+  const headers = new Headers(response.headers);
+  headers.set('Cache-Control', 'public, max-age=300, must-revalidate');
+  const canLink = `<${can}>; rel="canonical"`;
+  const existing = headers.get('Link') || '';
+  if (/rel=["']?canonical["']?/i.test(existing)) {
+    headers.set('Link', existing.replace(/<[^>]+>;\s*rel=["']?canonical["']?/i, canLink));
+  } else {
+    headers.set('Link', existing ? `${canLink}, ${existing}` : canLink);
+  }
+  const ctype = headers.get('Content-Type') || headers.get('content-type') || '';
+  if (request.method === 'HEAD' || !ctype.includes('text/html')) {
+    return new Response(null, { status: 200, statusText: response.statusText, headers });
+  }
+  const html = applyHtmlCanonical(await response.text(), can);
+  headers.delete('content-length');
+  return new Response(html, { status: 200, statusText: response.statusText, headers });
+}
+
 
 
 // ---------------------------------------------------------------------------
@@ -353,6 +460,137 @@ async function loadAllPosts(request, env) {
     loadJsonAsset(request, env, '/affiliate-articles.json', [])
   ]);
   return [...(Array.isArray(daily) ? daily : []), ...(Array.isArray(editorial) ? editorial : [])];
+}
+
+// ---------------------------------------------------------------------------
+// AI-readable markdown layer (main host). Built by scripts/build-md.mjs into public/md/;
+// this worker only routes and sets headers:
+//   /<path>.md, /index.md (homepage)   markdown twin, publicly cacheable
+//   /api/md/<path>, /api/md/_catalog   same content / route catalog (JSON)
+//   Accept: text/markdown on a page    negotiated markdown, never edge-cached (Cloudflare's
+//                                      cache ignores Vary, so it must not poison the HTML)
+// HTML pages get <meta name="ai-summary"> + <link rel="alternate" type="text/markdown">.
+// ---------------------------------------------------------------------------
+const MD_DISCOVERY_LINK = '</llms.txt>; rel="describedby"; type="text/plain", </llms-full.txt>; rel="describedby"; type="text/plain", </ai.txt>; rel="describedby"; type="text/plain"';
+const MD_CORS = { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, HEAD, OPTIONS', 'Access-Control-Allow-Headers': 'Accept', 'Access-Control-Expose-Headers': 'Content-Location, Link, X-Markdown-Tokens, Last-Modified' };
+let mdCatalogCache = null;
+async function mdCatalog(request, env) {
+  if (mdCatalogCache) return mdCatalogCache;
+  const c = await loadJsonAsset(request, env, '/md/_catalog.json', null);
+  if (!c || !Array.isArray(c.routes)) return { raw: { routes: [] }, byPath: new Map() };
+  mdCatalogCache = { raw: c, byPath: new Map(c.routes.map((r) => [r.path, r])) };
+  return mdCatalogCache;
+}
+async function mdRouteFor(request, env, pathname) {
+  return (await mdCatalog(request, env)).byPath.get(pathname) || null;
+}
+const mdFileFor = (path) => `/md${path === '/' ? '/index' : path}.md`;
+const mdUrlFor = (path) => `${SITE}${path === '/' ? '/index' : path}.md`;
+const mdCanonical = (path) => (path === '/' ? `${SITE}/` : `${SITE}${path}`);
+
+// q-value of the best match for `type` in an Accept header (exact > type/* > */*).
+function acceptQ(accept, type) {
+  let best = -1;
+  let q = 0;
+  for (const part of String(accept || '').split(',')) {
+    const [range, ...params] = part.trim().toLowerCase().split(';').map((x) => x.trim());
+    if (!range) continue;
+    const spec = range === type ? 3 : range === `${type.split('/')[0]}/*` ? 2 : range === '*/*' ? 1 : 0;
+    if (!spec || spec < best) continue;
+    const qp = params.find((x) => x.startsWith('q='));
+    const v = qp ? Number(qp.slice(2)) : 1;
+    const val = Number.isFinite(v) ? Math.min(Math.max(v, 0), 1) : 1;
+    if (spec > best) { best = spec; q = val; } else q = Math.max(q, val);
+  }
+  return best < 0 ? 0 : q;
+}
+// Markdown only when text/markdown is named explicitly and ranks above HTML (so */* gets HTML).
+function prefersMarkdown(request) {
+  const accept = request.headers.get('accept') || '';
+  if (!/text\/markdown/i.test(accept)) return false;
+  let md = 0;
+  for (const part of accept.split(',')) {
+    const [range, ...params] = part.trim().toLowerCase().split(';').map((x) => x.trim());
+    if (range !== 'text/markdown') continue;
+    const qp = params.find((x) => x.startsWith('q='));
+    const v = qp ? Number(qp.slice(2)) : 1;
+    md = Math.max(md, Number.isFinite(v) ? v : 1);
+  }
+  return md > 0 && md > acceptQ(accept, 'text/html');
+}
+
+function escAttr(v) {
+  return String(v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+function mdHeadTags(md) {
+  return `<meta name="ai-summary" content="${escAttr(md.summary || '')}" />\n<link rel="alternate" type="text/markdown" href="${mdUrlFor(md.path)}" title="Markdown version" />\n`;
+}
+function addMdHeadSignals(html, md) {
+  if (!md || html.includes('name="ai-summary"') || !html.includes('</head>')) return html;
+  return html.replace('</head>', `${mdHeadTags(md)}</head>`);
+}
+
+function markdownResponse(request, body, status, extra) {
+  const h = new Headers({ ...MD_CORS, 'Content-Type': 'text/markdown; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-Markdown-Tokens': String(Math.ceil(body.length / 4)), ...extra });
+  return new Response(request.method === 'HEAD' ? null : body, { status, headers: h });
+}
+function markdownNotFound(request, pathname) {
+  const body = `# Not found\n\nThere is no page or markdown version at \`${pathname}\` on ${SITE}.\n\n- [Homepage](${SITE}/index.md)\n- [All articles](${SITE}/blog.md)\n- [Site index for AI agents](${SITE}/llms.txt)\n- [Markdown catalog](${SITE}/api/md/_catalog)\n`;
+  return markdownResponse(request, body, 404, { 'Cache-Control': 'public, max-age=60', 'X-Robots-Tag': 'noindex, nofollow' });
+}
+// negotiated = true when answering an HTML URL because of Accept: text/markdown.
+async function serveMarkdown(request, env, route, negotiated) {
+  if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: { ...MD_CORS, 'Access-Control-Max-Age': '86400' } });
+  const r = await env.ASSETS.fetch(internalAssetRequest(request, mdFileFor(route.path)));
+  if (r.status !== 200) return markdownNotFound(request, route.path);
+  const body = await r.text();
+  const canonical = mdCanonical(route.path);
+  const isPost = route.path.startsWith('/blog/') || route.path === '/blog';
+  const extra = {
+    'Cache-Control': negotiated ? 'private, no-store' : `public, max-age=300, s-maxage=${isPost ? 3600 : 86400}, stale-while-revalidate=86400`,
+    'Content-Location': mdUrlFor(route.path),
+    Link: `<${canonical}>; rel="canonical", ${MD_DISCOVERY_LINK}`,
+    'X-Robots-Tag': 'noindex, follow'
+  };
+  if (negotiated) { extra['CDN-Cache-Control'] = 'no-store'; extra.Vary = 'Accept'; }
+  if (route.lastModified) extra['Last-Modified'] = new Date(`${route.lastModified}T00:00:00Z`).toUTCString();
+  return markdownResponse(request, body, 200, extra);
+}
+
+// /<path>.md, /index.md, /md/* and /api/md/*. Returns null when the URL is not a markdown URL.
+async function routeMarkdown(request, env, url) {
+  const p = url.pathname;
+  const method = request.method;
+  if (!['GET', 'HEAD', 'OPTIONS'].includes(method)) {
+    if (p.endsWith('.md') || p === '/api/md' || p.startsWith('/api/md/')) return markdownResponse(request, 'Method not allowed.\n', 405, { Allow: 'GET, HEAD, OPTIONS', 'Cache-Control': 'no-store' });
+    return null;
+  }
+  // Built files are internal: send direct hits to the public URL.
+  if (p === '/md/_catalog.json') return absoluteRedirect(url, '/api/md/_catalog');
+  if (p.startsWith('/md/') && p.endsWith('.md')) return absoluteRedirect(url, p.slice(3));
+  if (p === '/api/md/_catalog' || p === '/api/md/_catalog.json') {
+    if (method === 'OPTIONS') return new Response(null, { status: 204, headers: MD_CORS });
+    const { raw } = await mdCatalog(request, env);
+    return new Response(method === 'HEAD' ? null : `${JSON.stringify(raw, null, 2)}\n`, {
+      status: 200,
+      headers: { ...MD_CORS, 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'public, max-age=300, s-maxage=3600', 'X-Robots-Tag': 'noindex, follow', Link: MD_DISCOVERY_LINK }
+    });
+  }
+  let target = null;
+  if (p === '/api/md' || p.startsWith('/api/md/')) {
+    target = p.slice('/api/md'.length).replace(/\.md$/, '').replace(/\/+$/, '') || '/';
+    if (target === '/index') target = '/';
+  } else if (p.endsWith('.md')) {
+    target = p.slice(0, -3) || '/';
+    if (target === '/index') target = '/';
+    // Alias slugs answer like their HTML: one 301, to the target's markdown URL.
+    const alias = blogPathAliases[target];
+    if (alias) return absoluteRedirect(url, alias === '/' ? '/index.md' : `${alias.replace(/\/+$/, '')}.md`);
+  } else {
+    return null;
+  }
+  const route = await mdRouteFor(request, env, target);
+  return route ? serveMarkdown(request, env, route, false) : markdownNotFound(request, target);
 }
 
 // Detects Pages' SPA fallback (homepage served with 200 for a missing asset).
@@ -446,6 +684,12 @@ function structuredBodyHtml(post, sources) {
     for (const p of Array.isArray(sec.paragraphs) ? sec.paragraphs.slice(0, 1) : []) out.push(`<p>${inlineHtml(p, sources)}</p>`);
     if (Array.isArray(sec.bullets) && sec.bullets.length) out.push(`<ul>\n${sec.bullets.map((b) => `  <li>${inlineHtml(b, sources)}</li>`).join('\n')}\n</ul>`);
     for (const p of Array.isArray(sec.paragraphs) ? sec.paragraphs.slice(1) : []) out.push(`<p>${inlineHtml(p, sources)}</p>`);
+    const t = sec.table;
+    if (t && Array.isArray(t.head) && Array.isArray(t.rows) && t.rows.length) {
+      const cell = 'padding:10px;border:1px solid #cfc9bc;vertical-align:top';
+      out.push(`<table style="width:100%;border-collapse:collapse;margin:24px 0;font-size:0.95rem">${t.caption ? `\n  <caption style="text-align:left;padding:0 0 8px;color:#6f746d">${escHtml(t.caption)}</caption>` : ''}\n  <thead><tr style="background:#ebe6dc">${t.head.map((h) => `<th style="text-align:left;${cell}">${escHtml(h)}</th>`).join('')}</tr></thead>\n  <tbody>\n${t.rows.map((r) => `<tr>${r.map((c) => `<td style="${cell}">${inlineHtml(String(c), sources)}</td>`).join('')}</tr>`).join('\n')}\n  </tbody>\n</table>`);
+    }
+    for (const p of Array.isArray(sec.after) ? sec.after : []) out.push(`<p>${inlineHtml(p, sources)}</p>`);
   }
   const faq = Array.isArray(post.faq) ? post.faq.filter((f) => f && f.q && f.a) : [];
   if (faq.length) {
@@ -471,10 +715,12 @@ function takeawaysHtml(post) {
   return `\n        <aside class="key-takeaways" aria-label="Key takeaways" style="margin:22px 0 8px;padding:16px 20px;border:1px solid rgba(28,28,26,0.12);border-radius:12px"><p class="eyebrow">Key takeaways</p><ul style="margin:8px 0 0;padding-left:20px">${items.map((t) => `<li>${escHtml(t)}</li>`).join('')}</ul></aside>`;
 }
 
-function renderPostHtml(post, catalog) {
+function renderPostHtml(post, catalog, md = null) {
   const slug = post.slug;
   const canonical = `${SITE}/blog/${slug}`;
   const title = post.title || slug;
+  // <title> stays under 60 chars: brand suffix only when it fits; optional post.seoTitle override.
+  const titleTag = post.seoTitle || (`${title} — Pratik Bajoria`.length <= 60 ? `${title} — Pratik Bajoria` : title);
   const excerpt = post.excerpt || '';
   const image = post.image || 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=85';
   const allSources = Array.isArray(post.sources) ? post.sources : [];
@@ -509,7 +755,7 @@ function renderPostHtml(post, catalog) {
     datePublished: post.date || undefined,
     dateModified: post.dateModified || post.date || undefined,
     author: AUTHOR_PERSON,
-    publisher: { '@type': 'Person', name: 'Pratik Bajoria', '@id': `${SITE}/#person` },
+    publisher: { '@type': 'Organization', '@id': `${SITE}/#business`, name: 'Pratik Bajoria — AI Implementation', logo: { '@type': 'ImageObject', url: `${SITE}/favicon.png` } },
     mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
     image,
     keywords: Array.isArray(post.keywords) ? post.keywords : []
@@ -533,7 +779,7 @@ function renderPostHtml(post, catalog) {
     <meta name="theme-color" content="#f4f0e8" />
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
     <meta name="author" content="Pratik Bajoria" />
-    <title>${escHtml(title)} — Pratik Bajoria</title>
+    <title>${escHtml(titleTag)}</title>
     <meta name="description" content="${escHtml(excerpt)}" />
     <link rel="canonical" href="${escHtml(canonical)}" />
     <meta property="og:type" content="article" />
@@ -555,8 +801,9 @@ ${ldJson}
     </script>
     <script type="application/ld+json">
 ${crumbsJson}
-    </script>${structured ? faqJsonLd(post, canonical) : ''}
-    <script src="/ga4.js?v=20261009-nobot" defer></script>
+    </script>${structured ? faqJsonLd(post, canonical) : ''}${md ? `
+    ${mdHeadTags(md).trim().replace(/\n/g, '\n    ')}` : ''}
+    <script src="/ga4.js?v=20261009-nobot" defer></script><script src="/clarity.js?v=20261018" defer></script>
   </head>
   <body data-static-article="1" data-slug="${escHtml(slug)}">
     <main class="shell article-page">
@@ -598,6 +845,8 @@ ${sourcesHtml}${structured ? `\n<p><em>${escHtml(post.disclaimer || STRUCTURED_D
         <a href="/privacy">Privacy</a>
         <a href="/llms.txt">llms.txt</a>
         <a href="/blog">Blog</a>
+        <a href="/ai-automation-in-india">AI automation in India</a>
+        <a href="/blog/ai-for-chartered-accountants-in-india">AI for CAs</a>
         <a href="/topics">Topics</a>
         <a href="mailto:hello@pratikbajoria.com">Contact</a>
       </div>
@@ -607,6 +856,215 @@ ${sourcesHtml}${structured ? `\n<p><em>${escHtml(post.disclaimer || STRUCTURED_D
   </body>
 </html>
 `;
+}
+
+
+// ---------------------------------------------------------------------------
+// Topical authority + author entity layer (data: public/clusters.json).
+// Applied at the edge to every /blog/{slug} page (static SSR or JSON-rendered) and to the
+// cluster hub pages, so posts published later by the daily workflow or the weekly routine
+// get the same byline, author box, cluster breadcrumb, hub + sibling links and Article
+// author/publisher schema without any per-post edit. Idempotent (data-authority marker).
+// ---------------------------------------------------------------------------
+const HUB_PATHS = new Set(['/ai-automation-in-india', '/ai-implementation-for-finance-teams']);
+const ORG_PUBLISHER = {
+  '@type': 'Organization',
+  '@id': `${SITE}/#business`,
+  name: 'Pratik Bajoria — AI Implementation',
+  url: `${SITE}/`,
+  logo: { '@type': 'ImageObject', url: `${SITE}/favicon.png` },
+  founder: { '@id': `${SITE}/#person` }
+};
+let clustersCache = null;
+async function loadClusters(request, env) {
+  if (clustersCache) return clustersCache;
+  const c = await loadJsonAsset(request, env, '/clusters.json', null);
+  if (!c || !Array.isArray(c.clusters) || !c.clusters.length) return null;
+  c.rx = c.clusters.map((k) => { try { return new RegExp((k.rules || []).join('|') || '^$', 'i'); } catch { return /^$/; } });
+  clustersCache = c;
+  return c;
+}
+function clusterFor(c, slug, category) {
+  const byId = (id) => c.clusters.find((k) => k.id === id);
+  if (c.posts && c.posts[slug] && byId(c.posts[slug])) return byId(c.posts[slug]);
+  const hub = c.clusters.find((k) => k.hub === `/blog/${slug}`);
+  if (hub) return hub;
+  if (category) {
+    const k = c.clusters.find((x) => (x.categories || []).includes(category));
+    if (k) return k;
+  }
+  const i = c.rx.findIndex((r) => r.test(slug));
+  return c.clusters[i >= 0 ? i : 0];
+}
+const isNoindexSlug = (c, slug) => Boolean(c && Array.isArray(c.noindex) && c.noindex.includes(slug));
+const unescHtml = (s) => String(s).replace(/&quot;/g, '"').replace(/&#39;|&#x27;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+const htmlText = (s) => unescHtml(String(s).replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ').trim();
+
+// Every indexable post with title + date + cluster (JSON posts, then the markdown catalog,
+// which also covers static-only posts).
+async function clusterIndex(request, env, c) {
+  const [posts, cat] = await Promise.all([loadAllPosts(request, env), mdCatalog(request, env)]);
+  const out = new Map();
+  for (const p of posts) {
+    if (!p || !isBlogSlug(p.slug || '') || blogPathAliases[`/blog/${p.slug}`] || isNoindexSlug(c, p.slug)) continue;
+    if (!out.has(p.slug)) out.set(p.slug, { slug: p.slug, title: p.title || p.slug, date: p.date || '', category: p.category || '' });
+  }
+  for (const r of cat.raw.routes || []) {
+    const m = /^\/blog\/([a-z0-9-]+)$/.exec(r.path || '');
+    if (!m || out.has(m[1]) || blogPathAliases[r.path] || isNoindexSlug(c, m[1])) continue;
+    out.set(m[1], { slug: m[1], title: r.title || m[1], date: (m[1].match(/^\d{4}-\d{2}-\d{2}/) || [r.lastModified || ''])[0], category: '' });
+  }
+  const list = [...out.values()].map((p) => ({ ...p, cluster: clusterFor(c, p.slug, p.category).id }));
+  return list.sort((a, b) => String(b.date).localeCompare(String(a.date)) || a.slug.localeCompare(b.slug));
+}
+
+function crumbsHtml(items) {
+  const sep = '<span aria-hidden="true" style="margin:0 8px;color:#a3a69e">/</span>';
+  const lis = items.map(([label, href], i) => `<li>${i ? sep : ''}${href ? `<a href="${escHtml(href)}" style="border-bottom:1px solid rgba(31,37,35,.25)">${label}</a>` : `<span aria-current="page">${label}</span>`}</li>`).join('');
+  return `<nav class="breadcrumbs" aria-label="Breadcrumb" style="font-size:12px;line-height:1.5;color:#5f645e;margin:18px 0 0"><ol style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:baseline">${lis}</ol></nav>`;
+}
+function authorBoxHtml(c) {
+  const a = c.author || {};
+  const li = (AUTHOR_PERSON.sameAs || []).find((u) => u.includes('linkedin.com')) || '';
+  const feat = (c.featuredIn || []).filter((f) => /^https:\/\//.test(f.url || ''));
+  return `
+        <aside class="author-box" data-authority="1" aria-label="About the author" style="margin-top:36px;padding:22px 24px;border:1px solid rgba(28,28,26,0.12);border-radius:12px">
+          <p class="eyebrow">About the author</p>
+          <p style="margin:8px 0 6px"><strong><a href="${escHtml(a.url || '/about')}" rel="author">${escHtml(a.displayName || 'CA Pratik Bajoria')}</a></strong> · ${escHtml(a.role || '')}</p>
+          <p style="margin:0 0 10px">${escHtml(a.bio || '')}</p>
+          <p style="margin:0;font-size:0.95rem"><a href="${escHtml(a.url || '/about')}">More about Pratik</a>${li ? ` · <a href="${escHtml(li)}" target="_blank" rel="me noopener noreferrer">LinkedIn</a>` : ''} · <a href="https://findost.io" target="_blank" rel="noopener noreferrer">Findost</a>${feat.length ? ` · Featured in ${feat.map((f) => `<a href="${escHtml(f.url)}" target="_blank" rel="noopener noreferrer">${escHtml(f.publication)}</a>`).join(', ')}` : ''}</p>
+        </aside>`;
+}
+function clusterBoxHtml(k, siblings) {
+  const items = siblings.map((p) => `<li><a href="/blog/${escHtml(p.slug)}">${escHtml(p.title)}</a></li>`).join('');
+  return `
+        <aside class="cluster-links" data-authority="1" aria-label="More on ${escHtml(k.name)}" style="margin-top:36px;padding:22px 24px;border:1px solid rgba(28,28,26,0.12);border-radius:12px">
+          <p class="eyebrow">More on ${escHtml(k.short || k.name)}</p>
+          <p style="margin:8px 0 10px">This article is part of my guide to <a href="${escHtml(k.hub)}">${escHtml(k.name)}</a>.</p>${items ? `
+          <ul style="margin:0;padding-left:20px">${items}</ul>` : ''}
+        </aside>`;
+}
+function hubListHtml(k, members) {
+  if (!members.length) return '';
+  return `
+        <section class="cluster-hub-list" data-authority="1" aria-label="Every article on ${escHtml(k.name)}" style="margin-top:40px">
+          <h2>Every article on ${escHtml(k.name)}</h2>
+          <p>${escHtml(k.summary || '')}</p>
+          <ul>${members.map((p) => `<li><a href="/blog/${escHtml(p.slug)}">${escHtml(p.title)}</a>${p.date ? ` <span style="color:#6f746d">(${escHtml(p.date)})</span>` : ''}</li>`).join('')}</ul>
+        </section>`;
+}
+function rewriteLd(html, fn) {
+  return html.replace(/(<script\b[^>]*type=["']application\/ld\+json["'][^>]*>)([\s\S]*?)(<\/script>)/gi, (all, open, body, close) => {
+    let data;
+    try { data = JSON.parse(body); } catch { return all; }
+    const visit = (n) => {
+      if (Array.isArray(n)) return n.map(visit);
+      if (!n || typeof n !== 'object') return n;
+      if (Array.isArray(n['@graph'])) n['@graph'] = n['@graph'].map(visit);
+      return fn(n) || n;
+    };
+    const next = visit(data);
+    return `${open}\n${JSON.stringify(next, null, 2).replace(/</g, '\\u003c')}\n    ${close}`;
+  });
+}
+const ldTypes = (n) => new Set([].concat(n['@type'] || []));
+const ARTICLE_LD = ['Article', 'BlogPosting', 'NewsArticle', 'TechArticle'];
+
+// html of a post page -> html with the authority layer. path = /blog/{slug}.
+async function applyPostAuthority(request, env, html, slug) {
+  if (html.includes('data-authority="1"')) return html;
+  const c = await loadClusters(request, env);
+  if (!c) return html;
+  const eyebrow = /<article\b[^>]*>\s*<p class="eyebrow">([^<·]+)·/i.exec(html);
+  const category = eyebrow ? htmlText(eyebrow[1]) : '';
+  const k = clusterFor(c, slug, category);
+  const path = `/blog/${slug}`;
+  const isHub = k.hub === path;
+  const h1 = /<h1\b[^>]*>([\s\S]*?)<\/h1>/i.exec(html);
+  const titleHtml = h1 ? h1[1].trim() : escHtml(slug);
+  const titleText = htmlText(titleHtml);
+  const all = await clusterIndex(request, env, c);
+  const members = all.filter((p) => p.cluster === k.id && `/blog/${p.slug}` !== k.hub);
+  let out = html;
+  // 1. Visible breadcrumb: Home / Blog / Cluster hub / Post.
+  const trail = isHub ? [['Home', '/'], ['Blog', '/blog'], [titleHtml, null]] : [['Home', '/'], ['Blog', '/blog'], [escHtml(k.short || k.name), k.hub], [titleHtml, null]];
+  if (/<nav class="breadcrumbs"[\s\S]*?<\/nav>/.test(out)) out = out.replace(/<nav class="breadcrumbs"[\s\S]*?<\/nav>/, crumbsHtml(trail));
+  // 2. Byline under the H1.
+  const a = c.author || {};
+  if (h1 && !/class="article-byline"/.test(out)) {
+    out = out.replace(h1[0], `${h1[0]}\n        <p class="article-byline" data-authority="1" style="margin:6px 0 0;font-size:0.95rem;color:#5f645e">By <a href="${escHtml(a.url || '/about')}" rel="author">${escHtml(a.displayName || 'CA Pratik Bajoria')}</a> · ${escHtml(a.role || '')} · <a href="${escHtml(k.hub)}">${escHtml(k.name)}</a></p>`);
+  }
+  // 3. Cluster box (hub + neighbouring spokes) or, on a hub post, the full spoke list; then the author box.
+  let boxes;
+  if (isHub) boxes = hubListHtml(k, members);
+  else {
+    const i = members.findIndex((p) => p.slug === slug);
+    const pool = members.filter((p) => p.slug !== slug);
+    const at = i < 0 ? 0 : i;
+    const sib = [...pool.slice(Math.max(0, at - 2), at), ...pool.slice(at, at + 3)].slice(0, 5);
+    boxes = clusterBoxHtml(k, sib);
+  }
+  boxes += authorBoxHtml(c);
+  const end = out.lastIndexOf('</article>');
+  if (end > 0) out = `${out.slice(0, end)}${boxes}\n      ${out.slice(end)}`;
+  // 4. JSON-LD: Article author/publisher/section, BreadcrumbList with the cluster level.
+  const canonical = `${SITE}${path}`;
+  out = rewriteLd(out, (n) => {
+    const t = ldTypes(n);
+    if (ARTICLE_LD.some((x) => t.has(x))) {
+      n.author = AUTHOR_PERSON;
+      n.publisher = ORG_PUBLISHER;
+      n.articleSection = k.name;
+      n.isPartOf = { '@type': 'CollectionPage', '@id': `${SITE}${k.hub}#cluster`, name: k.name, url: `${SITE}${k.hub}` };
+      if (!n.inLanguage) n.inLanguage = 'en-IN';
+      return n;
+    }
+    if (t.has('BreadcrumbList')) {
+      const items = [['Home', `${SITE}/`], ['Blog', `${SITE}/blog`]];
+      if (!isHub) items.push([k.short || k.name, `${SITE}${k.hub}`]);
+      items.push([titleText, canonical]);
+      n.itemListElement = items.map(([name, item], i) => ({ '@type': 'ListItem', position: i + 1, name, item }));
+      return n;
+    }
+    return null;
+  });
+  // 5. Consolidated (noindex) posts.
+  if (isNoindexSlug(c, slug)) {
+    out = out.replace(/<meta name="robots" content="[^"]*"\s*\/?>/i, '<meta name="robots" content="noindex,follow" />');
+  }
+  return out;
+}
+
+// Static hub pages (e.g. /ai-automation-in-india): append the live spoke list.
+async function applyHubAuthority(request, env, html, pathname) {
+  if (html.includes('data-authority="1"')) return html;
+  const c = await loadClusters(request, env);
+  if (!c) return html;
+  const k = c.clusters.find((x) => x.hub === pathname);
+  if (!k) return html;
+  const members = (await clusterIndex(request, env, c)).filter((p) => p.cluster === k.id);
+  html = rewriteLd(html, (n) => {
+    if ([...ldTypes(n)].some((t) => ARTICLE_LD.includes(t))) { n.author = AUTHOR_PERSON; n.publisher = ORG_PUBLISHER; }
+    return n;
+  });
+  const block = hubListHtml(k, members);
+  if (!block) return html;
+  const end = html.lastIndexOf('</article>') > 0 ? html.lastIndexOf('</article>') : html.lastIndexOf('</main>');
+  return end > 0 ? `${html.slice(0, end)}${block}\n      ${html.slice(end)}` : html;
+}
+async function withAuthority(request, env, response, kind, key) {
+  const ctype = response.headers.get('content-type') || '';
+  if (request.method !== 'GET' || response.status !== 200 || !ctype.includes('text/html')) return response;
+  const html = await response.text();
+  const out = kind === 'post' ? await applyPostAuthority(request, env, html, key) : await applyHubAuthority(request, env, html, key);
+  const h = new Headers(response.headers);
+  h.delete('content-length');
+  h.delete('etag');
+  if (kind === 'post') {
+    const c = await loadClusters(request, env);
+    if (isNoindexSlug(c, key)) h.set('X-Robots-Tag', 'noindex, follow');
+  }
+  return new Response(out, { status: response.status, statusText: response.statusText, headers: h });
 }
 
 async function serveBlogPost(request, env, slug) {
@@ -621,7 +1079,7 @@ async function serveBlogPost(request, env, slug) {
     const html = await direct.text();
     if (looksLikeRealBlogPage(html, slug)) {
       if (isHead) return new Response(null, { status: 200, statusText: direct.statusText, headers: direct.headers });
-      return injectGa4(new Response(html, { status: 200, statusText: direct.statusText, headers: direct.headers }));
+      return injectGa4(await withAuthority(request, env, new Response(html, { status: 200, statusText: direct.statusText, headers: direct.headers }), 'post', slug), await mdRouteFor(request, env, `/blog/${slug}`));
     }
     // else: SPA/homepage fallback — fall through.
   } else if (direct.status >= 300 && direct.status < 400) {
@@ -632,12 +1090,17 @@ async function serveBlogPost(request, env, slug) {
   const post = posts.find((p) => p && p.slug === slug);
   if (post) {
     const catalog = await loadJsonAsset(request, env, '/affiliate-links.json', {});
-    return new Response(request.method === 'HEAD' ? null : renderPostHtml(post, catalog), {
+    const md = await mdRouteFor(request, env, `/blog/${slug}`);
+    const c = await loadClusters(request, env);
+    const body = request.method === 'HEAD' ? null : await applyPostAuthority(request, env, renderPostHtml(post, catalog, md), slug);
+    return new Response(body, {
       status: 200,
       headers: {
         'Content-Type': 'text/html; charset=utf-8',
+        ...(md ? { Vary: 'Accept' } : {}),
         'Cache-Control': 'public, max-age=300, must-revalidate',
-        'X-Blog-Render': 'json-fallback'
+        'X-Blog-Render': 'json-fallback',
+        ...(isNoindexSlug(c, slug) ? { 'X-Robots-Tag': 'noindex, follow' } : {})
       }
     });
   }
@@ -653,7 +1116,7 @@ async function appendMissingLlmsPosts(request, env, body) {
   const missing = posts
     .filter((p) => p && p.slug && isBlogSlug(p.slug) && !blogPathAliases[`/blog/${p.slug}`])
     .filter((p) => { if (seen.has(p.slug)) return false; seen.add(p.slug); return true; })
-    .filter((p) => !body.includes(`${SITE}/blog/${p.slug})`) && !body.includes(`${SITE}/blog/${p.slug}\n`))
+    .filter((p) => !body.includes(`${SITE}/blog/${p.slug})`) && !body.includes(`${SITE}/blog/${p.slug}.md)`) && !body.includes(`${SITE}/blog/${p.slug}\n`))
     .sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
   if (!missing.length) return body;
   const lines = missing.map((p) => `- [${String(p.title || p.slug).replace(/[\[\]]/g, '')}](${SITE}/blog/${p.slug})${p.excerpt ? `: ${String(p.excerpt).replace(/\s+/g, ' ').trim()}` : ''}`);
@@ -661,11 +1124,20 @@ async function appendMissingLlmsPosts(request, env, body) {
 }
 
 // sitemap.xml = static file + any JSON posts not yet listed (e.g. JSON-only daily posts).
+// Drop off-property hosts, clusters.json noindex slugs, and aliased/consolidated posts.
 async function serveSitemap(request, env) {
   const r = await env.ASSETS.fetch(request);
   if (r.status !== 200) return r;
   let xml = await r.text();
   if (CROSSBORDER_LIVE) xml = xml.replace(/[ \t]*<url>\s*<loc>https:\/\/pratikbajoria\.com\/cross-border-partnerships<\/loc>[\s\S]*?<\/url>\s*\n?/g, '');
+  // Main sitemap is for pratikbajoria.com only (subdomains have their own sitemap/robots).
+  xml = xml.replace(/[ \t]*<url>\s*<loc>https?:\/\/(?!pratikbajoria\.com(?:\/|"|<))[^<]+<\/loc>[\s\S]*?<\/url>\s*\n?/g, '');
+  const clusters = await loadClusters(request, env);
+  const noindex = new Set((clusters && Array.isArray(clusters.noindex)) ? clusters.noindex : []);
+  const reEsc = (s) => String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  for (const slug of noindex) {
+    xml = xml.replace(new RegExp(`[ \\t]*<url>\\s*<loc>${reEsc(SITE)}/blog/${reEsc(slug)}</loc>[\\s\\S]*?</url>\\s*\\n?`, 'g'), '');
+  }
   const posts = await loadAllPosts(request, env);
   const have = new Set([...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim()));
   const extra = [];
@@ -674,17 +1146,29 @@ async function serveSitemap(request, env) {
     if (!p || !p.slug || !isBlogSlug(p.slug) || seen.has(p.slug)) continue;
     seen.add(p.slug);
     if (blogPathAliases[`/blog/${p.slug}`]) continue;
+    if (noindex.has(p.slug)) continue;
     const loc = `${SITE}/blog/${p.slug}`;
-    if (have.has(loc)) continue;
-    const lastmod = /^\d{4}-\d{2}-\d{2}$/.test(p.date || '') ? `<lastmod>${p.date}</lastmod>` : '';
+    const lastmodDate = /^\d{4}-\d{2}-\d{2}$/.test(p.dateModified || '') ? p.dateModified : (/^\d{4}-\d{2}-\d{2}$/.test(p.date || '') ? p.date : '');
+    if (have.has(loc)) {
+      if (lastmodDate) {
+        xml = xml.replace(new RegExp(`(<loc>${reEsc(loc)}</loc>)\\s*(?:<lastmod>[^<]*</lastmod>)?`), `$1<lastmod>${lastmodDate}</lastmod>`);
+      }
+      continue;
+    }
+    const lastmod = lastmodDate ? `<lastmod>${lastmodDate}</lastmod>` : '';
     extra.push(`  <url><loc>${loc}</loc>${lastmod}<changefreq>monthly</changefreq><priority>0.75</priority></url>\n`);
   }
   if (extra.length) xml = xml.replace('</urlset>', extra.join('') + '</urlset>');
   return new Response(xml, {
     status: 200,
-    headers: { 'Content-Type': 'application/xml; charset=utf-8', 'Cache-Control': 'public, max-age=3600' }
+    headers: {
+      'Content-Type': 'application/xml; charset=utf-8',
+      'Cache-Control': 'public, max-age=3600',
+      'X-Robots-Tag': 'noindex, follow'
+    }
   });
 }
+
 
 async function handleDiscovery(request, env) {
   if (!env.DB) return json({ ok: false, error: 'Lead storage is not configured.' }, 503);
@@ -753,12 +1237,13 @@ async function serveBlogAsset(request, env, slug) {
     headers: assetHeaders,
     redirect: 'manual'
   }));
-  if (request.method !== 'GET' || shell.status !== 200 || !(shell.headers.get('content-type') || '').includes('text/html')) return injectGa4(shell);
+  const md = await mdRouteFor(request, env, '/blog');
+  if (request.method !== 'GET' || shell.status !== 200 || !(shell.headers.get('content-type') || '').includes('text/html')) return injectGa4(shell, md);
   const html = injectMissingBlogCards(await shell.text(), await loadAllPosts(request, env));
   const h = new Headers(shell.headers);
   h.delete('content-length');
   h.delete('etag');
-  return injectGa4(new Response(html, { status: 200, statusText: shell.statusText, headers: h }));
+  return injectGa4(new Response(html, { status: 200, statusText: shell.statusText, headers: h }), md);
 }
 
 // Every /api/* response (both hosts) carries X-Robots-Tag: noindex; robots.txt also disallows /api/.
@@ -777,17 +1262,39 @@ async function handleApi(request, env, url) {
   return request.method === 'HEAD' ? new Response(null, r) : r;
 }
 
-export default {
-  async fetch(request, env) {
-    const url = new URL(request.url);
-    if (request.headers.get(INTERNAL_ASSET_HEADER) === '1') return env.ASSETS.fetch(request);
+// Main request router; the default export below adds the site-wide discovery Link header.
+const site = {
+  async fetch(request, env, url) {
     const blockReason = edgeBlockReason(request, url);
     if (blockReason) return forbidden(request, blockReason);
+    // Keep the former main-domain URL as a single-hop canonical redirect.
+    if (requestHost(request, url) !== MSME_HOST && ['/msme-services', '/msme-services/', '/msme-services.html'].includes(url.pathname)) {
+      return xbRedirect(`${MSME_ORIGIN}/`);
+    }
+
+    // Markdown URLs (incl. /api/md/*), with the MSME hostname mapped to its page route.
+    if (requestHost(request, url) !== XB_HOST) {
+      const markdownUrl = new URL(url);
+      if (requestHost(request, url) === MSME_HOST && markdownUrl.pathname === '/') markdownUrl.pathname = '/msme-services';
+      const md = await routeMarkdown(request, env, markdownUrl);
+      if (md) return md;
+    }
     if (url.pathname === '/api' || url.pathname.startsWith('/api/')) {
       const r = await handleApi(request, env, url);
       const out = new Response(r.body, r);
       out.headers.set('X-Robots-Tag', 'noindex, nofollow');
       return out;
+    }
+
+    // MSME subdomain: serve the dedicated service page at the hostname root.
+    if (requestHost(request, url) === MSME_HOST) {
+      if (request.method !== 'GET' && request.method !== 'HEAD') return new Response('Method Not Allowed', { status: 405, headers: { Allow: 'GET, HEAD' } });
+      if (url.pathname === '/msme-services' || url.pathname === '/msme-services.html' || url.pathname === '/index.html') return absoluteRedirect(url, '/');
+      if (url.pathname === '/') {
+        const md = await mdRouteFor(request, env, '/msme-services');
+        const asset = await env.ASSETS.fetch(internalAssetRequest(request, '/msme-services'));
+        return injectGa4(asset, md);
+      }
     }
 
     // Cross-border subdomain (API routes above work on both hosts).
@@ -807,7 +1314,7 @@ export default {
     if (CROSSBORDER_LIVE && (url.pathname === XB_OLD_PAGE || url.pathname === `${XB_OLD_PAGE}.html` || url.pathname === `${XB_OLD_PAGE}/`)) {
       return xbRedirect(`${XB_ORIGIN}/`);
     }
-    if (CROSSBORDER_LIVE && request.method === 'GET' && (url.pathname === '/robots.txt' || url.pathname === '/llms.txt')) {
+    if (CROSSBORDER_LIVE && request.method === 'GET' && (url.pathname === '/robots.txt' || url.pathname === '/llms.txt' || url.pathname === '/llms-full.txt' || url.pathname === '/ai.txt')) {
       // The body is rewritten here, so the static file's validators no longer describe it:
       // ignore the client's/edge's If-None-Match / If-Modified-Since (otherwise the asset
       // server answers 304 and a stale cached copy survives) and drop ETag/Last-Modified.
@@ -823,6 +1330,9 @@ export default {
         h.delete('content-length');
         h.delete('etag');
         h.delete('last-modified');
+        if (url.pathname === '/llms.txt' || url.pathname === '/llms-full.txt' || url.pathname === '/ai.txt') {
+          h.set('X-Robots-Tag', 'noindex, follow');
+        }
         return new Response(body, { status: 200, headers: h });
       }
       return r;
@@ -833,15 +1343,21 @@ export default {
     // (e.g. HEAD /topics.html -> 308 /topics), which crawlers/GSC report as a redirect error.
     const isRead = request.method === 'GET' || request.method === 'HEAD';
 
-    if (isRead && (url.pathname === '/blog' || url.pathname === '/blog.html')) {
+    // Accept: text/markdown on a canonical page URL -> markdown (private, never edge-cached).
+    const mdRoute = isRead ? await mdRouteFor(request, env, url.pathname) : null;
+    if (mdRoute && prefersMarkdown(request)) return serveMarkdown(request, env, mdRoute, true);
+
+    if (isRead && (url.pathname === '/blog' || url.pathname === '/blog/' || url.pathname === '/blog.html')) {
       const legacySlug = url.searchParams.get('slug')?.trim();
       if (legacySlug && isBlogSlug(legacySlug)) {
         const aliased = blogPathAliases[`/blog/${legacySlug}`];
-        return absoluteRedirect(url, aliased || `/blog/${encodeURIComponent(legacySlug)}`);
+        const dest = aliased || `/blog/${legacySlug}`;
+        // Soft-serve (200 + canonical) — GSC "Redirect error" kept failing on the 301
+        // even when curl saw a single hop (Cloudflare was caching the redirect).
+        return serveCanonicalPage(request, env, dest, await mdRouteFor(request, env, dest));
       }
-      // Collapse /blog.html → /blog (single hop; avoids GSC redirect-chain errors)
-      if (url.pathname === '/blog.html') {
-        return absoluteRedirect(url, '/blog');
+      if (url.pathname === '/blog.html' || url.pathname === '/blog/') {
+        return serveCanonicalPage(request, env, '/blog', await mdRouteFor(request, env, '/blog'));
       }
       return serveBlogAsset(request, env, null);
     }
@@ -860,6 +1376,7 @@ export default {
 
     // Absolute 301s for legacy .html URLs (GSC flagged relative _redirects Location as Redirect error)
     const htmlAliases = {
+      '/about.html': '/about',
       '/topics.html': '/topics',
       '/privacy.html': '/privacy',
       '/audit.html': '/audit',
@@ -871,16 +1388,31 @@ export default {
       '/ai-implementation-for-finance-teams.html': '/ai-implementation-for-finance-teams',
       '/workflow-automation-with-ai-for-mid-market.html': '/workflow-automation-with-ai-for-mid-market',
       '/cross-border-partnerships.html': '/cross-border-partnerships',
+      '/msme-services.html': '/msme-services',
+      '/ai-automation-in-india.html': '/ai-automation-in-india',
     };
     if (isRead && htmlAliases[url.pathname]) {
-      return absoluteRedirect(url, htmlAliases[url.pathname]);
+      const dest = htmlAliases[url.pathname];
+      // Soft-serve known .html twins (200 + canonical) so GSC stops flagging Redirect error
+      // on URLs like /topics.html. Cross-border / msme HTML still redirect via earlier rules.
+      if (dest === XB_OLD_PAGE || dest === '/msme-services') {
+        return absoluteRedirect(url, dest);
+      }
+      return serveCanonicalPage(request, env, dest, await mdRouteFor(request, env, dest));
     }
 
     // Every other /path/, /path.html and /path/index.html: one absolute 301 to the clean URL
-    // (Pages would otherwise answer 308 with a relative Location, which GSC flags).
+    // only when that clean URL exists. Unknown .html paths (e.g. /guides.html) used to 301 to a
+    // 404, which GSC reports as a redirect error — return a real 404 instead.
     if (isRead) {
       const clean = cleanPathname(url.pathname);
-      if (clean !== url.pathname) return absoluteRedirect(url, `${blogAliasFor(clean) || clean}${url.search}`);
+      if (clean !== url.pathname) {
+        const dest = blogAliasFor(clean) || clean;
+        if (blogAliasFor(clean) || await cleanPathExists(request, env, dest)) {
+          return absoluteRedirect(url, `${dest}${url.search}`);
+        }
+        return notFound(request, env);
+      }
     }
 
     if (request.method === 'GET' && url.pathname === '/sitemap.xml') {
@@ -892,6 +1424,31 @@ export default {
       if (m && isBlogSlug(m[1])) return serveBlogPost(request, env, m[1]);
     }
 
-    return injectGa4(await env.ASSETS.fetch(request));
+    const asset = await env.ASSETS.fetch(request);
+    if (request.method === 'GET' && HUB_PATHS.has(url.pathname)) return injectGa4(await withAuthority(request, env, asset, 'hub', url.pathname), mdRoute);
+    return injectGa4(asset, mdRoute);
+  }
+};
+
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+    if (request.headers.get(INTERNAL_ASSET_HEADER) === '1') return env.ASSETS.fetch(request);
+    const r = await site.fetch(request, env, url);
+    const aiNoindex = url.pathname === '/ai.txt' || url.pathname === '/llms.txt' || url.pathname === '/llms-full.txt' || url.pathname === '/sitemap.xml';
+    // Every main-host page advertises the AI-readable index files (markdown responses
+    // already carry them; /api/* and the cross-border host are left alone).
+    if (requestHost(request, url) === XB_HOST || url.pathname.startsWith('/api/') || r.status === 403) {
+      if (aiNoindex && !r.headers.get('X-Robots-Tag')) {
+        const out = new Response(r.body, r);
+        out.headers.set('X-Robots-Tag', 'noindex, follow');
+        return out;
+      }
+      return r;
+    }
+    const out = new Response(r.body, r);
+    if (!out.headers.has('Link')) out.headers.append('Link', MD_DISCOVERY_LINK);
+    if (aiNoindex) out.headers.set('X-Robots-Tag', 'noindex, follow');
+    return out;
   }
 };

@@ -61,6 +61,24 @@ await check('every HTML page loads the same ga4.js version as the worker injects
   });
   assert.equal(stale.length, 0, `stale ga4.js version in: ${stale.slice(0, 5).join(', ')}`);
 });
+const clar = readFileSync(join(pub, 'clarity.js'), 'utf8');
+await check('clarity.js uses project yzjw4fzkbe, skips bots and loads after paint', () => {
+  assert.ok(clar.includes("CLARITY_ID = 'yzjw4fzkbe'") && clar.includes('https://www.clarity.ms/tag/'));
+  assert.ok(clar.includes('navigator.webdriver === true') && clar.includes('if (skip) return;'));
+  for (const t of ['HeadlessChrome', 'bot', 'crawl', 'spider', 'Lighthouse', 'PhantomJS', 'Puppeteer', 'Playwright']) assert.ok(clar.includes(t), t);
+  assert.ok(clar.includes("type: 'largest-contentful-paint'") && clar.includes('setTimeout(load, 3500)'));
+});
+await check('every HTML page with ga4.js also loads clarity.js (same version as the worker)', () => {
+  const worker = readFileSync(join(pub, '_worker.js'), 'utf8');
+  const v = worker.match(/GA4_SNIPPET = '[^']*\/clarity\.js\?v=([^"]+)"/)[1];
+  const bad = walk(pub).filter((f) => f.endsWith('.html')).filter((f) => {
+    const h = readFileSync(f, 'utf8');
+    if (!h.includes('/ga4.js')) return false;
+    const m = h.match(/\/clarity\.js\?v=([^"']+)/);
+    return !m || m[1] !== v;
+  });
+  assert.equal(bad.length, 0, `missing/stale clarity.js in: ${bad.slice(0, 5).join(', ')}`);
+});
 await check('robots.txt disallows /api/ in every user-agent group', () => {
   // A group = consecutive User-agent lines plus their rules (blank-line separated; comments dropped).
   const groups = readFileSync(join(pub, 'robots.txt'), 'utf8').split(/\n\s*\n/)
@@ -93,6 +111,28 @@ const env = {
     const p = new URL(req.url).pathname;
     if (p === '/robots.txt') return new Response(readFileSync(join(pub, 'robots.txt'), 'utf8'), { headers: { 'content-type': 'text/plain' } });
     if (p === '/ga4.js') return new Response(ga, { headers: { 'content-type': 'application/javascript' } });
+    if (p === '/clarity.js') return new Response(clar, { headers: { 'content-type': 'application/javascript' } });
+    if (p === '/clusters.json') return new Response(readFileSync(join(pub, 'clusters.json'), 'utf8'), { headers: { 'content-type': 'application/json' } });
+    if (p === '/blog-posts.json') return new Response(readFileSync(join(pub, 'blog-posts.json'), 'utf8'), { headers: { 'content-type': 'application/json' } });
+    if (p === '/affiliate-articles.json') return new Response(readFileSync(join(pub, 'affiliate-articles.json'), 'utf8'), { headers: { 'content-type': 'application/json' } });
+    if (p === '/sitemap.xml') return new Response(readFileSync(join(pub, 'sitemap.xml'), 'utf8'), { headers: { 'content-type': 'application/xml' } });
+    if (p === '/ai.txt' || p === '/llms.txt' || p === '/llms-full.txt') {
+      return new Response(readFileSync(join(pub, p.slice(1)), 'utf8'), { headers: { 'content-type': 'text/plain; charset=utf-8' } });
+    }
+    // Serve real HTML assets when present (soft-canonical + blog SSR paths).
+    const file = p.endsWith('.html') ? join(pub, p.slice(1)) : (p === '/blog' ? join(pub, 'blog.html') : null);
+    if (file) {
+      try {
+        const html = readFileSync(file, 'utf8');
+        return new Response(html, { status: 200, headers: { 'content-type': 'text/html; charset=utf-8' } });
+      } catch { /* fall through */ }
+    }
+    if (p.startsWith('/blog/') && p.endsWith('.html')) {
+      try {
+        const html = readFileSync(join(pub, p.slice(1)), 'utf8');
+        return new Response(html, { status: 200, headers: { 'content-type': 'text/html; charset=utf-8' } });
+      } catch { /* fall through */ }
+    }
     return new Response('<!doctype html><html><head></head><body>x</body></html>', { status: 404, headers: { 'content-type': 'text/html' } });
   } }
 };
@@ -120,6 +160,11 @@ await check('crossborder host serves /ga4.js (shared root asset)', async () => {
   const r = await hit('https://crossborder.pratikbajoria.com/ga4.js?v=x', 'GET', 'crossborder.pratikbajoria.com');
   assert.equal(r.status, 200);
   assert.ok((await r.text()).includes('G-CXQP7F8CRT'));
+});
+await check('crossborder host serves /clarity.js (shared root asset)', async () => {
+  const r = await hit('https://crossborder.pratikbajoria.com/clarity.js?v=x', 'GET', 'crossborder.pratikbajoria.com');
+  assert.equal(r.status, 200);
+  assert.ok((await r.text()).includes('yzjw4fzkbe'));
 });
 for (const p of ['/cross-border-partnerships', '/cross-border-partnerships.html', '/cross-border-partnerships/']) {
   for (const m of ['GET', 'HEAD']) {
@@ -188,6 +233,43 @@ await check('crossborder robots.txt mirrors the main crawler groups with its own
   assert.ok(t.includes('Sitemap: https://crossborder.pratikbajoria.com/sitemap.xml'));
   assert.ok(!t.includes('Sitemap: https://pratikbajoria.com/sitemap.xml'));
 });
+
+
+// Soft-canonical for GSC Redirect-error URLs (200 + Link/html canonical, no 301).
+for (const [path, can] of [
+  ['/topics.html', 'https://pratikbajoria.com/topics'],
+  ['/blog/', 'https://pratikbajoria.com/blog'],
+  ['/blog.html', 'https://pratikbajoria.com/blog'],
+  ['/blog.html?slug=best-ai-tools-chartered-accountants-finance-professionals', 'https://pratikbajoria.com/blog/best-ai-tools-chartered-accountants-finance-professionals'],
+]) {
+  await check(`GET ${path} -> 200 soft-canonical ${can}`, async () => {
+    const r = await hit(`https://pratikbajoria.com${path}`);
+    assert.equal(r.status, 200, `status ${r.status}`);
+    const link = r.headers.get('link') || '';
+    assert.ok(link.includes(`<${can}>`) && /rel=["']?canonical/i.test(link), `Link header missing canonical ${can}: ${link}`);
+    const html = await r.text();
+    assert.ok(html.includes(`rel="canonical" href="${can}"`) || html.includes(`rel='canonical' href='${can}'`), 'html canonical missing');
+  });
+}
+await check('GET /guides.html -> 404 (no redirect to missing clean path)', async () => {
+  const r = await hit('https://pratikbajoria.com/guides.html');
+  assert.equal(r.status, 404);
+});
+await check('GET /sitemap.xml -> X-Robots-Tag noindex and no msme/semrush locs', async () => {
+  const r = await hit('https://pratikbajoria.com/sitemap.xml');
+  assert.equal(r.status, 200);
+  assert.match(r.headers.get('x-robots-tag') || '', /noindex/);
+  const xml = await r.text();
+  assert.ok(!xml.includes('msme.pratikbajoria.com'), 'msme host still in sitemap');
+  assert.ok(!xml.includes('semrush-review-business-owners'), 'noindex slug still in sitemap');
+});
+for (const p of ['/ai.txt', '/llms.txt', '/llms-full.txt']) {
+  await check(`GET ${p} -> X-Robots-Tag noindex`, async () => {
+    const r = await hit(`https://pratikbajoria.com${p}`);
+    assert.equal(r.status, 200);
+    assert.match(r.headers.get('x-robots-tag') || '', /noindex/);
+  });
+}
 
 if (failures) { console.error(`\n${failures} GA4/crawl check(s) failed`); process.exit(1); }
 console.log('\nGA4/crawl checks passed');

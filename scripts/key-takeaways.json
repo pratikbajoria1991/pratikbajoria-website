@@ -66,5 +66,47 @@
     "Clause answers, the classification of observations and the signature stay with the accountant.",
     "Form 26 asks for the IP address and country of the server holding electronic books and the address of the India-located daily backup (Rule 46).",
     "Use the remaining Form 3CD season as a pilot before Form 26 work starts."
+  ],
+  "2026-10-19-dpdp-act-and-ai-in-ca-firms-in-india-a-client-data-decision-rubric": [
+    "Under the DPDP Act, 2023, a CA firm can be a Data Fiduciary or a Data Processor depending on the engagement; decide which before any AI tool touches client personal data.",
+    "Most operational obligations in the DPDP Rules, 2025, including security safeguards and breach intimation, commence eighteen months after the 13 November 2025 Gazette publication, in May 2027.",
+    "Rule 6 safeguards read as an AI checklist: mask identifiers, use firm-managed accounts, keep logs for one year and put security terms in the processor contract.",
+    "Breach intimation runs to affected individuals without delay and to the Data Protection Board, with a detailed report within seventy-two hours unless the Board allows longer.",
+    "Score every client-data AI workflow on role clarity, minimisation, vendor terms, access, logs, data location, human review and breach readiness before it runs."
+  ],
+  "2026-10-26-ai-for-financial-due-diligence-in-india-a-cas-decision-rubric": [
+    "AI can index the data room, scan ledgers, extract contract clauses, run reconciliations and draft narrative; each output is a list for a reviewer, not a conclusion.",
+    "Quality-of-earnings adjustments, net debt, normalised working capital, tax exposures and the signed conclusions stay with the CA.",
+    "Check the NDA before any upload, and use only business AI plans whose training and retention terms a partner has read.",
+    "For a listed target, SEBI’s insider trading regulations require confidentiality agreements for UPSI shared in a transaction and a structured digital database with time stamps and audit trails.",
+    "SEBI-regulated intermediaries are solely responsible for the output of AI tools they rely on, whether built or bought."
+  ],
+  "2026-10-28-ai-for-aoc-4-and-mgt-7-filings-what-a-ca-can-automate-before-the-roc-deadline": [
+    "AOC-4 is due within thirty days of the AGM under section 137, and MGT-7 within sixty days under section 92(4).",
+    "AI is best used to compare form data with the signed accounts and to build shareholding, director and meeting tables with a source on every row.",
+    "Reasons for not holding an AGM, penalties, compounding, MGT-8 certification and the digital signature stay with people.",
+    "Late annual returns attract ten thousand rupees plus one hundred rupees a day, capped at two lakh rupees for the company.",
+    "Build the master data once for AOC-4 and reuse it for MGT-7, and keep client identifiers inside a firm-managed business AI account."
+  ],
+  "2026-11-04-ai-for-marketplace-seller-reconciliation-in-india-gst-tcs-and-194-o-tds": [
+    "GST TCS (section 52) is 0.5 per cent of net taxable supplies from 10 July 2024; income-tax TDS on e-commerce is 0.1 per cent of gross sales.",
+    "From 1 April 2026, section 194-O moves to section 393(1) Table serial 8(v) of the Income-tax Act, 2025, at the same 0.1 per cent.",
+    "Sellers must accept or reject every TCS row on the GST portal before the credit reaches the electronic cash ledger.",
+    "Operators cannot correct 2025-26 GSTR-8 errors after 30 November 2026 (or the annual statement, if earlier), so raise rejections now.",
+    "Let AI map settlement reports and build the tie-outs; keep accept/reject decisions and tax positions with a named reviewer."
+  ],
+  "2026-11-09-ai-for-gstr-9-and-gstr-9c-what-a-ca-can-automate-before-31-december": [
+    "GSTR-9 for 2025-26 is due by 31 December 2026; turnover up to ₹2 crore is exempt under Notification No. 15/2025–Central Tax.",
+    "Above ₹5 crore aggregate turnover, a self-certified GSTR-9C must be furnished with the annual return (rule 80(3)).",
+    "Section 16(4) closes 2025-26 ITC on 30 November 2026 or on filing the annual return, whichever is earlier, so do not file GSTR-9 before the unclaimed-credit list is closed.",
+    "From 2024-25 the portal highlights any override of a system-computed value in red, and the highlight stays after filing.",
+    "Let AI build the tie-outs, Table 8A match, HSN split and 9C bridge; keep claims, liabilities and the signature with named people."
+  ],
+  "2026-11-11-income-tax-act-2025-transition-how-a-ca-firm-can-use-ai-to-remap-templates-safely": [
+    "The Income-tax Act, 2025 came into force on 1 April 2026; the Income-tax Rules, 2026 were notified on 20 March 2026 with new forms.",
+    "Sections fell from 819 to 536 and chapters from 47 to 23; “tax year” replaces “previous year” and “assessment year”.",
+    "Section 536 keeps the 1961 Act and its procedure for proceedings relating to tax years beginning before 1 April 2026, even if started later.",
+    "Use the Income Tax Department’s comparison utilities as the source of truth; never let a model choose section numbers.",
+    "Let AI extract references and redraft templates; keep the mapping, split provisions and which-Act decisions with named people."
   ]
 }

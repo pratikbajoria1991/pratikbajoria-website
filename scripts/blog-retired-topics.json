@@ -5,25 +5,25 @@
       "slug": "2026-08-31-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders",
       "baseSlug": "the-ai-opportunity-audit-a-90-day-roadmap-for-leaders",
       "title": "The AI Opportunity Audit: A 90-Day Roadmap for Leaders",
-      "survivor": "/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre"
+      "survivor": "/audit"
     },
     {
       "slug": "2026-09-07-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders",
       "baseSlug": "the-ai-opportunity-audit-a-90-day-roadmap-for-leaders",
       "title": "The AI Opportunity Audit: A 90-Day Roadmap for Leaders",
-      "survivor": "/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre"
+      "survivor": "/audit"
     },
     {
       "slug": "2026-09-14-the-ai-opportunity-audit-a-90-day-roadmap-for-leaders",
       "baseSlug": "the-ai-opportunity-audit-a-90-day-roadmap-for-leaders",
       "title": "The AI Opportunity Audit: A 90-Day Roadmap for Leaders",
-      "survivor": "/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre"
+      "survivor": "/audit"
     },
     {
       "slug": "2026-10-02-a-90-day-ai-opportunity-audit-without-the-theatre",
       "baseSlug": "a-90-day-ai-opportunity-audit-without-the-theatre",
       "title": "A 90-Day AI Opportunity Audit Without the Theatre",
-      "survivor": "/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre"
+      "survivor": "/audit"
     },
     {
       "slug": "2026-09-01-ai-in-real-estate-start-with-lead-qualification-and-documents",
@@ -180,6 +180,18 @@
       "baseSlug": "ai-tools-that-pay-back-for-finance-and-ca-teams",
       "title": "AI Tools That Actually Pay Back for Finance and CA Teams",
       "survivor": "/blog/best-ai-tools-chartered-accountants-finance-professionals"
+    },
+    {
+      "slug": "2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre",
+      "baseSlug": "a-90-day-ai-opportunity-audit-without-the-theatre",
+      "title": "The AI Opportunity Audit: A 90-Day Roadmap Without the Theatre",
+      "survivor": "/audit"
+    },
+    {
+      "slug": "hubspot-vs-zoho-crm-growing-business",
+      "baseSlug": "hubspot-vs-zoho-crm-growing-business",
+      "title": "HubSpot vs Zoho CRM: Which Is Better for a Growing Business?",
+      "survivor": "/blog/zoho-crm-hubspot-crm-integration-finance-workflows"
     }
   ]
 }

@@ -21,6 +21,7 @@ SAME_AS = [
     'https://www.crunchbase.com/person/pratik-bajoria',
     'https://www.f6s.com/pratik-bajoria',
     'https://contra.com/pratik_bajoria_bvmul54o',
+    'https://findost.io',
 ]
 AUTHOR = {
     '@type': 'Person',

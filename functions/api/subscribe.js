@@ -28,6 +28,9 @@ export async function onRequestPost({ request, env }) {
   const email = text(body.email, 254).toLowerCase();
   const pageUrl = text(body.pageUrl, 500);
   const referrer = text(body.referrer, 500);
+  const resource = text(body.resource, 40).toLowerCase();
+  const resourceSources = new Set(['automation', 'msme', 'crossborder', 'startups']);
+  const source = resourceSources.has(resource) ? `resource:${resource}` : 'newsletter';
   const consent = body.consent === true;
   const rawAttribution = body.attribution && typeof body.attribution === 'object' ? body.attribution : {};
   const attr = {
@@ -45,8 +48,8 @@ export async function onRequestPost({ request, env }) {
   const now = new Date().toISOString();
   const id = crypto.randomUUID();
   await env.DB.prepare(`INSERT INTO leads (id, kind, created_at, consent_at, email, source, page_url, referrer, landing_page, utm_source, utm_medium, utm_campaign, utm_term, utm_content, gclid, fbclid) VALUES (?, 'newsletter', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
-    .bind(id, now, now, email, 'newsletter', pageUrl || null, referrer || null, attr.landing_page || null, attr.utm_source || null, attr.utm_medium || null, attr.utm_campaign || null, attr.utm_term || null, attr.utm_content || null, attr.gclid || null, attr.fbclid || null).run();
-  await mirrorToSheets(env, { id, type: 'newsletter', receivedAt: now, consentAt: now, email, source: 'newsletter', pageUrl, referrer, ...attr });
+    .bind(id, now, now, email, source, pageUrl || null, referrer || null, attr.landing_page || null, attr.utm_source || null, attr.utm_medium || null, attr.utm_campaign || null, attr.utm_term || null, attr.utm_content || null, attr.gclid || null, attr.fbclid || null).run();
+  await mirrorToSheets(env, { id, type: 'newsletter', receivedAt: now, consentAt: now, email, source, pageUrl, referrer, ...attr });
   return json({ ok: true, message: 'You are on the list.' }, 201);
 }
 

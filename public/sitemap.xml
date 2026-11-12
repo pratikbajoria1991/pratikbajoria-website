@@ -1,55 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://pratikbajoria.com/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
-  <url><loc>https://pratikbajoria.com/topics</loc><lastmod>2026-10-08</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://pratikbajoria.com/blog</loc><lastmod>2026-10-09</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://pratikbajoria.com/blog/2026-09-21-how-do-you-know-finance-ai-will-pay-for-itself-before-you-buy</loc><lastmod>2026-09-21</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pratikbajoria.com/</loc><lastmod>2026-11-11</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://pratikbajoria.com/topics</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pratikbajoria.com/blog</loc><lastmod>2026-11-11</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-09-21-how-do-you-know-finance-ai-will-pay-for-itself-before-you-buy</loc><lastmod>2026-10-17</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pratikbajoria.com/about</loc><lastmod>2026-11-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://pratikbajoria.com/privacy</loc><lastmod>2026-09-18</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://pratikbajoria.com/audit</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://pratikbajoria.com/how-to-start-ai-implementation</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pratikbajoria.com/ai-opportunity-audit-for-ca-firms</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pratikbajoria.com/ai-implementation-for-finance-teams</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pratikbajoria.com/workflow-automation-with-ai-for-mid-market</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pratikbajoria.com/scorecard</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-<url><loc>https://pratikbajoria.com/workshops</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pratikbajoria.com/audit</loc><lastmod>2026-11-11</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://pratikbajoria.com/how-to-start-ai-implementation</loc><lastmod>2026-11-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pratikbajoria.com/ai-opportunity-audit-for-ca-firms</loc><lastmod>2026-11-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pratikbajoria.com/ai-automation-in-india</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://pratikbajoria.com/ai-implementation-for-finance-teams</loc><lastmod>2026-11-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pratikbajoria.com/workflow-automation-with-ai-for-mid-market</loc><lastmod>2026-11-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pratikbajoria.com/startup-operations</loc><lastmod>2026-11-01</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://pratikbajoria.com/scorecard</loc><lastmod>2026-11-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://pratikbajoria.com/workshops</loc><lastmod>2026-11-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://pratikbajoria.com/resources</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pratikbajoria.com/blog/corporate-ai-pilots</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://pratikbajoria.com/blog/build-vs-buy-ai-tooling</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://pratikbajoria.com/blog/best-ai-tools-chartered-accountants-finance-professionals</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/build-vs-buy-ai-tooling</loc><lastmod>2026-10-26</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/best-ai-tools-chartered-accountants-finance-professionals</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://pratikbajoria.com/blog/small-business-ai-without-losing-financial-control</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://pratikbajoria.com/blog/best-business-planning-software-ca-review</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://pratikbajoria.com/blog/ai-tools-financial-analysis-practical-use-cases</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://pratikbajoria.com/blog/best-accounting-automation-software-ecommerce-businesses</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://pratikbajoria.com/blog/hubspot-vs-zoho-crm-growing-business</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/best-accounting-automation-software-ecommerce-businesses</loc><lastmod>2026-10-26</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://pratikbajoria.com/blog/how-to-build-a-monthly-business-dashboard</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://pratikbajoria.com/blog/semrush-review-business-owners</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://pratikbajoria.com/blog/notion-for-finance-professionals-templates-dashboards-workflows</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/notion-for-finance-professionals-templates-dashboards-workflows</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://pratikbajoria.com/blog/build-lead-generation-system-ai-email-automation</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://pratikbajoria.com/blog/best-ai-tools-business-research-competitive-analysis</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://pratikbajoria.com/blog/chartered-accountant-ai-toolkit-entrepreneurs</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://pratikbajoria.com/blog/2026-09-14-how-much-should-a-mid-market-finance-team-budget-for-ai</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://pratikbajoria.com/blog/2026-09-17-the-finance-function-is-ai-s-highest-roi-starting-point</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://pratikbajoria.com/blog/2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-09-19-ai-governance-for-mid-market-teams-who-do-not-have-a-chief-ai-officer</loc><lastmod>2026-10-26</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://pratikbajoria.com/blog/2026-09-20-ecommerce-reconciliation-where-automation-helps-and-where-it-lies</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://pratikbajoria.com/blog/2026-09-24-when-a-finance-team-should-say-no-to-an-ai-pilot</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india</loc><lastmod>2026-10-08</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pratikbajoria.com/blog/2026-09-28-how-indian-ca-firms-can-use-ai-for-gst-reconciliation-without-risking-client-data</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pratikbajoria.com/blog/2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pratikbajoria.com/blog/2026-09-25-a-90-day-ai-opportunity-audit-without-the-theatre</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://pratikbajoria.com/blog/2026-09-26-real-estate-ai-start-with-leads-and-documents-not-prediction</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://pratikbajoria.com/blog/2026-09-27-hubspot-vs-spreadsheet-crm-the-real-switching-cost</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://pratikbajoria.com/blog/2026-09-28-whatsapp-automation-that-still-feels-like-customer-care</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://pratikbajoria.com/blog/2026-09-29-the-monday-morning-test-for-any-ai-workflow</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-11-04-ai-for-marketplace-seller-reconciliation-in-india-gst-tcs-and-194-o-tds</loc><lastmod>2026-11-04</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-11-09-ai-for-gstr-9-and-gstr-9c-what-a-ca-can-automate-before-31-december</loc><lastmod>2026-11-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-11-11-income-tax-act-2025-transition-how-a-ca-firm-can-use-ai-to-remap-templates-safely</loc><lastmod>2026-11-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india</loc><lastmod>2026-11-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-09-28-how-indian-ca-firms-can-use-ai-for-gst-reconciliation-without-risking-client-data</loc><lastmod>2026-10-17</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-09-28-whatsapp-automation-that-still-feels-like-customer-care</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-09-29-the-monday-morning-test-for-any-ai-workflow</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
 <url><loc>https://pratikbajoria.com/blog/2026-10-04-ai-finance-automation-roadmap-for-cfos-and-controllers</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
 <url><loc>https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://pratikbajoria.com/blog/ai-for-chartered-accountants-practical-use-cases-and-controls</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://pratikbajoria.com/blog/2026-10-05-chatgpt-vs-copilot-vs-gemini-how-a-ca-firm-in-india-should-choose-an-ai-assistant</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pratikbajoria.com/blog/zoho-crm-hubspot-crm-integration-finance-workflows</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pratikbajoria.com/blog/2026-10-07-how-to-run-a-90-day-ai-pilot-in-a-ca-firm-in-india</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pratikbajoria.com/blog/2026-10-08-ai-for-internal-audit-in-indian-companies-a-practical-starting-point</loc><lastmod>2026-10-08</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pratikbajoria.com/blog/2026-10-07-will-ai-replace-chartered-accountants-in-india</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pratikbajoria.com/blog/2026-10-07-ai-courses-for-chartered-accountants-in-india-what-is-worth-it</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/zoho-crm-hubspot-crm-integration-finance-workflows</loc><lastmod>2026-10-26</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-07-how-to-run-a-90-day-ai-pilot-in-a-ca-firm-in-india</loc><lastmod>2026-10-17</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-08-ai-for-internal-audit-in-indian-companies-a-practical-starting-point</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-07-will-ai-replace-chartered-accountants-in-india</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-07-ai-courses-for-chartered-accountants-in-india-what-is-worth-it</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://pratikbajoria.com/blog/2026-10-07-how-audit-and-accounting-firms-in-india-are-using-ai</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pratikbajoria.com/blog/2026-10-07-is-ca-worth-it-in-2026-with-ai</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://pratikbajoria.com/blog/2026-10-09-ai-for-tax-audit-in-india-form-3cd-this-year-form-26-next-year</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-07-is-ca-worth-it-in-2026-with-ai</loc><lastmod>2026-10-17</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-09-ai-for-tax-audit-in-india-form-3cd-this-year-form-26-next-year</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-12-finance-ai-roi-for-mid-market-companies-in-india-a-cas-decision-rubric</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-12-drafting-replies-to-gst-and-income-tax-notices-with-ai-without-losing-control</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-13-using-ai-for-tds-reconciliation-in-indian-ca-firms-from-26as-to-form-168</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-14-how-ca-firms-in-india-should-price-work-when-ai-cuts-the-hours</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-15-ai-and-articleship-how-ca-firms-should-train-article-assistants-now</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-16-ai-for-caro-2020-reporting-where-it-helps-and-where-judgement-stays</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-19-dpdp-act-and-ai-in-ca-firms-in-india-a-client-data-decision-rubric</loc><lastmod>2026-10-19</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-19-how-to-use-claude-or-chatgpt-for-gstr-2b-reconciliation-a-ca-s-method</loc><lastmod>2026-10-19</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-20-ai-for-cma-data-and-bank-loan-project-reports-a-ca-s-review-checklist</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-21-ai-for-itr-filing-what-a-ca-should-let-it-do-and-what-stays-human</loc><lastmod>2026-10-21</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-22-ai-for-tally-prime-automating-data-entry-without-losing-control-of-the-books</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-23-ai-tools-for-statutory-audit-in-india-what-nfra-s-2026-principles-mean</loc><lastmod>2026-10-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-26-ai-for-financial-due-diligence-in-india-a-cas-decision-rubric</loc><lastmod>2026-10-26</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-26-ai-for-msmes-in-india-three-first-automations-that-pay-back</loc><lastmod>2026-10-26</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-27-ai-agents-for-accounting-in-india-what-to-let-them-do-unsupervised</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-28-ai-for-aoc-4-and-mgt-7-filings-what-a-ca-can-automate-before-the-roc-deadline</loc><lastmod>2026-10-28</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-28-ai-automation-agency-vs-consultant-in-india-how-to-choose</loc><lastmod>2026-10-28</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-29-ai-for-ca-students-using-chatgpt-and-ca-gpt-without-weakening-your-prep</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-10-30-ai-prompts-for-bank-reconciliation-what-works-and-what-to-check</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-11-04-updating-engagement-letters-for-ai-use-in-a-ca-firm</loc><lastmod>2026-11-04</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-11-05-ai-for-month-end-close-in-indian-mid-market-finance-teams</loc><lastmod>2026-11-05</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-11-06-ai-for-bank-statement-categorisation-for-bookkeeping-clients-in-india</loc><lastmod>2026-11-06</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-11-10-using-ai-for-ind-as-research-and-disclosure-checklists</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://pratikbajoria.com/blog/2026-11-11-ai-for-virtual-cfo-services-mis-packs-clients-actually-read</loc><lastmod>2026-11-11</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
 </urlset>

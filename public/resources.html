@@ -6,10 +6,10 @@
     <meta name="theme-color" content="#f4f0e8" />
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
     <meta name="author" content="Pratik Bajoria" />
-    <meta name="description" content="Digital resources for finance and ops leaders: AI opportunity checklist, finance SOP starter pack and CA/finance prompt library." />
+    <meta name="description" content="Free business workflow automation, MSME operations, cross-border and startup resources. Download the MSME evidence readiness checklist free." />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Resources — Pratik Bajoria" />
-    <meta property="og:description" content="Digital resources for finance and ops leaders: AI opportunity checklist, finance SOP starter pack and CA/finance prompt library." />
+    <meta property="og:description" content="Free resources for workflow automation, MSME operations, cross-border business and startups, including a downloadable MSME evidence readiness checklist." />
     <meta property="og:url" content="https://pratikbajoria.com/resources" />
     <link rel="canonical" href="https://pratikbajoria.com/resources" />
     <meta property="og:image" content="https://pratikbajoria.com/og.png" />
@@ -26,6 +26,12 @@
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/styles-overrides.css" />
     <link rel="stylesheet" href="/monetize-pages.css" />
+    <style>
+      .resources-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .resources-grid .product-price s { color: var(--muted); font-size: .68em; }
+      .resources-grid .product-price strong { color: var(--ink); }
+      @media (max-width: 900px) { .resources-grid { grid-template-columns: 1fr; } }
+    </style>
     <title>Resources — Pratik Bajoria</title>
       <script type="application/ld+json">
 {
@@ -34,8 +40,8 @@
     {
       "@type": "Service",
       "@id": "https://pratikbajoria.com/resources#service",
-      "name": "Digital resources for finance and ops leaders",
-      "description": "Practical digital packs and checklists for finance and operations teams evaluating AI opportunities.",
+      "name": "Free business resources",
+      "description": "Free practical resources for workflow automation, MSMEs, cross-border business and startups.",
       "url": "https://pratikbajoria.com/resources",
       "provider": {
         "@id": "https://pratikbajoria.com/#person"
@@ -52,7 +58,7 @@
       "@id": "https://pratikbajoria.com/resources#webpage",
       "url": "https://pratikbajoria.com/resources",
       "name": "Resources — Pratik Bajoria",
-      "description": "Digital resources for finance and ops leaders: AI opportunity checklist, finance AI playbooks and practical packs — notify when available.",
+      "description": "Free business workflow automation, MSME operations, cross-border and startup resources. Download the MSME evidence readiness checklist free.",
       "isPartOf": {
         "@id": "https://pratikbajoria.com/#website"
       },
@@ -64,25 +70,15 @@
       }
     },
     {
-      "@type": "Offer",
-      "@id": "https://pratikbajoria.com/resources#offer",
-      "itemOffered": {
-        "@id": "https://pratikbajoria.com/resources#service"
-      },
-      "url": "https://pratikbajoria.com/resources",
-      "availability": "https://schema.org/InStock",
-      "description": "Quote confirmed on a discovery call. No published list price on this page."
-    },
-    {
       "@type": "FAQPage",
       "@id": "https://pratikbajoria.com/resources#faq",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Are products live for purchase?",
+          "name": "Are the resources ready to download?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Packs are listed as coming soon. Use the notify form and you will hear when a pack is available — no invented storefront URLs here."
+            "text": "The MSME Evidence Readiness Checklist is available as a free CSV download. Other resource packs are in preparation; join the email list for updates."
           }
         },
         {
@@ -98,7 +94,7 @@
   ]
 }
     </script>
-      <script src="/ga4.js?v=20261009-nobot" defer></script>
+      <script src="/ga4.js?v=20261009-nobot" defer></script><script src="/clarity.js?v=20261018" defer></script>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -124,12 +120,11 @@
     <header class="site-header">
       <a class="wordmark" href="/" aria-label="Pratik Bajoria home"><span>PB</span></a>
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href="/#services">Services</a>
-        <a href="/audit">Audit</a>
-        <a href="/workshops">Workshops</a>
-        <a href="/resources" aria-current="page">Resources</a>
-        <a href="/scorecard">Scorecard</a>
+        <a href="/ai-automation-in-india">Automation</a>
+        <a href="https://msme.pratikbajoria.com/">MSME</a>
         <a href="https://crossborder.pratikbajoria.com/">Cross-border</a>
+        <a href="/startup-operations">Startups</a>
+        <a href="/resources" aria-current="page">Resources</a>
         <a href="/#about">About</a>
       </nav>
       <a class="nav-cta" href="/#contact">Book a call <span>↗</span></a>
@@ -138,40 +133,48 @@
 
     <main>
       <section class="page-hero shell">
-        <p class="eyebrow page-kicker">Digital products · Secondary path</p>
-        <h1>Practical packs<br /><em>for finance teams.</em></h1>
-        <p class="hero-copy">Lightweight downloads for leaders who want structure before a full engagement. High-ticket work still starts with the Audit — these packs help you prepare.</p>
-        <p class="direct-answer" style="margin-top:22px;padding:16px 18px;border-left:3px solid #1c1c1a;background:rgba(28,28,26,0.04);max-width:720px;line-height:1.55"><strong>Direct answer.</strong> Resources is a collection of practical packs for finance and ops leaders — checklists and playbooks you can use before a full consulting engagement. Join the notify list when a pack is ready.</p>
+        <p class="eyebrow page-kicker">Free practical tools</p>
+        <h1>Practical resources<br /><em>for the work ahead.</em></h1>
+        <p class="hero-copy">Free, practical materials for teams improving workflows, MSMEs building reliable operations, cross-border businesses, and startups setting up to grow.</p>
+        <p class="direct-answer" style="margin-top:22px;padding:16px 18px;border-left:3px solid #1c1c1a;background:rgba(28,28,26,0.04);max-width:720px;line-height:1.55"><strong>Direct answer.</strong> Choose a resource area below. The MSME Evidence Readiness Checklist is ready to download free; join the list for updates on other packs.</p>
 
       </section>
 
       <section class="content-section shell" style="padding-top:20px">
-        <div class="section-heading"><span class="eyebrow">Shop</span><span class="section-count">01 — 03</span></div>
-        <h2 class="section-title-large">Coming online<br /><em>shortly.</em></h2>
-        <div class="product-grid">
-          <article class="product-card" data-gumroad="PASTE_URL">
+        <div class="section-heading"><span class="eyebrow">Free resources</span><span class="section-count">01 — 04</span></div>
+        <h2 class="section-title-large">Choose your<br /><em>starting point.</em></h2>
+        <div class="product-grid resources-grid">
+          <article class="product-card" id="automation">
             <span class="service-num">01 / CHECKLIST</span>
             <h3>AI Opportunity Checklist Pack</h3>
             <p>Printable worksheets to map workflows, owners and kill-criteria before you buy tools.</p>
             <!-- PRICE PLACEHOLDER (example only — not live): ₹2,499 -->
-            <div class="product-price">₹2,499<small>Placeholder · not a live price</small></div>
-            <a class="button button-dark" href="#notify">Notify me <span>↗</span></a>
+            <div class="product-price"><s aria-label="Illustrative placeholder price, never a live price">₹2,499</s> <strong>Free</strong><small>₹2,499 was illustrative only, not a previous selling price.</small></div>
+            <a class="button button-dark" href="#notify" data-resource="automation">Get launch update <span>↗</span></a>
           </article>
-          <article class="product-card" data-gumroad="PASTE_URL">
-            <span class="service-num">02 / SOPS</span>
-            <h3>Finance AI SOP Starter Pack</h3>
-            <p>Starter operating procedures for common finance AI uses — with review steps baked in.</p>
+          <article class="product-card" id="msme">
+            <span class="service-num">02 / MSME OPERATIONS</span>
+            <h3>MSME Evidence Readiness Checklist</h3>
+            <p>A practical CSV to organise records for payment follow-up, scheme applications, debt conversations, inventory and tender opportunities.</p>
             <!-- PRICE PLACEHOLDER (example only — not live): ₹2,499 -->
-            <div class="product-price">₹2,499<small>Placeholder · not a live price</small></div>
-            <a class="button button-dark" href="#notify">Coming soon <span>↗</span></a>
+            <div class="product-price"><s aria-label="Illustrative placeholder price, never a live price">₹2,499</s> <strong>Free</strong><small>₹2,499 was illustrative only, not a previous selling price.</small></div>
+            <a class="button button-dark" href="/resources/msme-evidence-readiness-checklist.csv" download>Download checklist <span>↓</span></a>
+            <p class="resource-disclaimer">Requirements vary by scheme, lender, buyer and situation. Verify current criteria with the official authority or your professional adviser. This checklist is an organisational aid, not legal, tax, lending or eligibility advice.</p>
           </article>
-          <article class="product-card" data-gumroad="PASTE_URL">
-            <span class="service-num">03 / PROMPTS</span>
-            <h3>CA / Finance Prompt Library</h3>
-            <p>A curated prompt set for CA and finance workflows — editable, versionable, team-owned.</p>
+          <article class="product-card" id="crossborder">
+            <span class="service-num">03 / CROSS-BORDER</span>
+            <h3>Partner Readiness Checklist</h3>
+            <p>Questions to clarify your offer, target market, partner fit, responsibilities and next steps before an introduction.</p>
             <!-- PRICE PLACEHOLDER (example only — not live): ₹2,499 -->
-            <div class="product-price">₹2,499<small>Placeholder · not a live price</small></div>
-            <a class="button button-dark" href="#notify">Notify me <span>↗</span></a>
+            <div class="product-price"><s aria-label="Illustrative placeholder price, never a live price">₹2,499</s> <strong>Free</strong><small>₹2,499 was illustrative only, not a previous selling price.</small></div>
+            <a class="button button-dark" href="#notify" data-resource="crossborder">Get launch update <span>↗</span></a>
+          </article>
+          <article class="product-card" id="startups">
+            <span class="service-num">04 / STARTUPS</span>
+            <h3>Startup Operations Starter Kit</h3>
+            <p>A practical set of SOP, project and KPI tools to help founders assign owners and keep essential work moving.</p>
+            <div class="product-price"><s aria-label="Illustrative placeholder price, never a live price">₹2,499</s> <strong>Free</strong><small>₹2,499 was illustrative only, not a previous selling price.</small></div>
+            <a class="button button-dark" href="#notify" data-resource="startups">Get launch update <span>↗</span></a>
           </article>
         </div>
         <div class="resources-note">
@@ -182,7 +185,7 @@
       <section class="content-section shell" id="notify" style="padding-top:40px">
         <div class="section-heading"><span class="eyebrow">Notify me</span><span class="section-count">LIST</span></div>
         <h2 class="section-title-large">Get launch<br /><em>notes.</em></h2>
-        <p class="section-intro">Same list as The AI Implementation Brief. When packs go live, you’ll hear first. No invented Gumroad links here — <code>data-gumroad=&quot;PASTE_URL&quot;</code> is ready on each card.</p>
+        <p class="section-intro">The MSME checklist downloads directly without a form. Use the email form to opt in for updates about the other free resource packs; it records your interest and does not send downloads automatically.</p>
         <form class="subscribe-form" id="resources-notify-form" style="max-width:520px">
           <label for="resources-email">Work email</label>
           <div class="input-row">
@@ -190,6 +193,7 @@
             <button class="button button-dark" type="submit">Notify me <span>↗</span></button>
           </div>
           <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
+          <input type="hidden" name="resource" id="resources-interest" value="general" />
           <label class="consent-row"><input type="checkbox" name="consent" required /> <span>I agree to receive product updates and the Brief by email, and to the <a href="/privacy" target="_blank" rel="noopener">privacy notice</a>.</span></label>
           <p id="resources-status" class="form-status" role="status">No spam. Unsubscribe whenever you want.</p>
         </form>
@@ -199,7 +203,7 @@
         <div class="section-heading"><span class="eyebrow">FAQ</span><span class="section-count">FAQ</span></div>
         <h2 class="section-title-large">Questions worth<br /><em>asking early.</em></h2>
         <div class="faq-grid">
-          <details><summary>Are products live for purchase?</summary><p>Packs are listed as coming soon. Use the notify form and you will hear when a pack is available — no invented storefront URLs here.</p></details>
+          <details><summary>Are the free resources ready to download?</summary><p>The MSME Evidence Readiness Checklist is available as a free CSV download. Other packs are being prepared; join the email list for updates.</p></details>
           <details><summary>How is this different from the Audit?</summary><p>Resources are self-serve materials. The AI Opportunity Audit is a facilitated two-week engagement with a custom roadmap.</p></details>
         </div>
       </section>
@@ -209,7 +213,12 @@
 (() => {
   const form = document.getElementById('resources-notify-form');
   const status = document.getElementById('resources-status');
+  const interest = document.getElementById('resources-interest');
   if (!form) return;
+  document.querySelectorAll('[data-resource]').forEach((link) => link.addEventListener('click', () => {
+    if (interest) interest.value = link.dataset.resource || 'general';
+    if (status) status.textContent = `You’re joining the ${link.dataset.resource || 'general'} resource update list.`;
+  }));
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const data = new FormData(form);
@@ -221,6 +230,7 @@
         body: JSON.stringify({
           email: String(data.get('email') || '').trim(),
           consent: data.get('consent') === 'on',
+          resource: String(data.get('resource') || 'general'),
           website: data.get('website') || '',
           pageUrl: window.location.href,
           referrer: document.referrer || 'direct'

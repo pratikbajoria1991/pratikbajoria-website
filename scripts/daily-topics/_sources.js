@@ -25,5 +25,21 @@ module.exports = {
   sahamati: { title: 'Sahamati: Account Aggregator crosses 500 million consents (2 September 2026)', url: 'https://sahamati.org.in/media-article/account-aggregator-crosses-500-million-consents-as-india-marks-5th-aa-foundation-day/' },
   indAsRules: { title: 'Companies (Indian Accounting Standards) Rules, 2015 (Gazette text)', url: 'https://thc.nic.in/Central%20Governmental%20Rules/Companies%20(Indian%20Accounting%20Standards)%20Rules,2015.pdf' },
   msmed: { title: 'Micro, Small and Medium Enterprises Development Act, 2006 (Gazette text, DC-MSME)', url: 'https://www.dcmsme.gov.in/msmed2006.pdf' },
-  msmeBudget: { title: 'PIB: MSME investment and turnover limits enhanced 2.5 and 2 times (Union Budget 2025-26)', url: 'https://pib.gov.in/Pressreleaseshare.aspx?PRID=2098389' }
+  msmeBudget: { title: 'PIB: MSME investment and turnover limits enhanced 2.5 and 2 times (Union Budget 2025-26)', url: 'https://pib.gov.in/Pressreleaseshare.aspx?PRID=2098389' },
+  /* Added 17 Oct 2026 (verified live from the box, or via search index where the host blocks the box). */
+  cbic193: { title: 'CBIC Circular No. 193/05/2023-GST: ITC only up to the extent communicated in GSTR-2B from 1 January 2022 (section 16(2)(aa))', url: 'https://gstcouncil.gov.in/sites/default/files/2024-06/circular-cgst-193.pdf' },
+  ims: { title: 'GSTN: Advisory on the Invoice Management System (IMS) — accept, reject or keep pending before GSTR-2B', url: 'https://tutorial.gst.gov.in/downloads/news/revised_advisory_on_ims.pdf' },
+  rbiMsmeFaq: { title: 'RBI: FAQs on Micro, Small and Medium Enterprises (updated 29 July 2025)', url: 'https://www.rbi.org.in/commonman/Upload/English/FAQs/PDFs/MICRO30072025E.pdf' },
+  wefMsme: { title: 'World Economic Forum with IndiaAI (MeitY) and the Office of the PSA: Transforming Small Businesses — An AI Playbook for India’s SMEs (August 2025)', url: 'https://www.psa.gov.in/CMS/web/sites/default/files/publication/WEF_Transforming_Small_Businesses_2025.pdf' },
+  itrApplicable: { title: 'Income Tax Department e-Filing portal: which ITR form applies to an individual', url: 'https://www.incometax.gov.in/iec/foportal/help/individual/return-applicable-1' },
+  cnbcItr: { title: 'CNBC-TV18: ChatGPT and your ITR — what AI can do and what it may get wrong', url: 'https://www.cnbctv18.com/personal-finance/chatgpt-and-itr-filing-income-tax-return-what-ai-can-do-what-not-19949597.htm' },
+  tallyIra: { title: 'Tally Solutions: How TallyPrime’s AI invoice processing (Docs by Ira) works for SMEs', url: 'https://tallysolutions.com/tally/tallyprime-ai-invoice-processing-indian-smes/' },
+  nfraTech: { title: 'NFRA Staff Series on Technology in Audit 01: General Principles for Technology Adoption in Audit (July 2026)', url: 'https://nfra.gov.in/staff-series-on-technology-in-audit/' },
+  caFinalMay26: { title: 'ICAI: Result of CA Final Examination held in May 2026 (press release, 18 June 2026)', url: 'https://www.icai.org/post/prc-caresult-may2026' },
+  caGptPortal: { title: 'ICAI: CA GPT portal (members and students)', url: 'https://ai.icai.org/cagpt/' },
+  aica1: { title: 'ICAI: AICA Level 1 reference document for participants (3 days, 18 CPE hours)', url: 'https://ai.icai.org/assets/upload/attachment/AICA_L1.pdf' },
+  wefSkills: { title: 'World Economic Forum: Future of Jobs Report 2025 — Skills outlook', url: 'https://www.weforum.org/publications/the-future-of-jobs-report-2025/in-full/3-skills-outlook/' },
+  rbiFreeAi: { title: 'RBI: Report of the Committee on the FREE-AI framework for the financial sector (press release, 13 August 2025)', url: 'https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=61018' },
+  meityAiGov: { title: 'PIB: MeitY unveils the India AI Governance Guidelines (5 November 2025)', url: 'https://www.pib.gov.in/PressReleasePage.aspx?PRID=2186639' },
+  nist: { title: 'NIST: AI Risk Management Framework', url: 'https://www.nist.gov/itl/ai-risk-management-framework' }
 };
