@@ -3,11 +3,13 @@
 > Is doing CA still worth it in 2026? A practising CA weighs pass rates, articleship and AI, with a clear checklist to decide if it suits you.
 
 Canonical: https://pratikbajoria.com/blog/2026-10-07-is-ca-worth-it-in-2026-with-ai
-Last updated: 2026-10-17
+Last updated: 2026-11-13
 
-CA insights · 2026-10-07 · Updated 17 Oct 2026 · 11 min read
+CA insights · 2026-10-07 · Updated 13 Nov 2026 · 11 min read
 
 Is CA worth it in 2026 now that AI can do routine accounting? A practising CA weighs pass rates, membership growth and AI’s impact, and explains which skills make the qualification pay off.
+
+**Direct answer.** Yes. Doing CA is still worth it in 2026 if you want a regulated qualification in judgement, accountability and the right to sign. It is a weaker bet if you mainly want routine accounting work, which AI is absorbing. ICAI’s May 2026 CA Final results show that 14.07% of candidates who sat both groups passed (3,345 of 23,776).
 
 Key takeaways
 
@@ -27,7 +29,7 @@ In ICAI’s [CA Final May 2026 result](https://www.icai.org/post/prc-caresult-ma
 
 ## The profession is growing, but practice is not the only path
 
-ICAI’s [76th Annual Report](https://www.jurishour.in/columns/india-has-around-4-23-lakh-active-ca/) put membership at 4,23,105 on 1 April 2025, up from 4,03,617 a year earlier. About 1.61 lakh members were in full-time or part-time practice; the majority work in industry, finance, consulting and other roles. So “doing CA” today often means a finance career in a company, a GCC or a start-up rather than running a practice. Those are also the roles where AI is changing the daily work fastest.
+ICAI’s [76th Annual Report](https://resource.cdn.icai.org/8747476th-annual-report-icai.pdf) put membership at 4,23,105 on 1 April 2025, up from 4,03,617 a year earlier. About 1.61 lakh members were in full-time or part-time practice; the majority work in industry, finance, consulting and other roles. So “doing CA” today often means a finance career in a company, a GCC or a start-up rather than running a practice. Those are also the roles where AI is changing the daily work fastest.
 
 ## The CA route in 2026, in numbers
 
@@ -124,7 +126,7 @@ CA is worth it in 2026 if you treat it as a qualification in judgement and accou
 
 ### Is CA worth it in 2026?
 
-Yes, if you want a regulated qualification built on judgement, accountability and the right to sign. The exam remains hard (14.07% of candidates who sat both groups passed CA Final in May 2026), and membership keeps growing. It is a weaker bet if you mainly want routine accounting work, which AI is absorbing.
+Yes. Doing CA is still worth it in 2026 if you want a regulated qualification in judgement, accountability and the right to sign. It is a weaker bet if you mainly want routine accounting work, which AI is absorbing. ICAI’s May 2026 CA Final results show that 14.07% of candidates who sat both groups passed (3,345 of 23,776).
 
 ### Will AI take over Chartered Accountant jobs?
 
@@ -163,7 +165,8 @@ Also useful: [AI automation in India: a practical hub for business owners](https
 ## Sources
 
 - [ICAI press release: Result of CA Final Examination held in May 2026](https://www.icai.org/post/prc-caresult-may2026)
-- [ICAI membership data from the 76th Annual Report 2024-25, as summarised by JurisHour (29 May 2026)](https://www.jurishour.in/columns/india-has-around-4-23-lakh-active-ca/)
+- [ICAI 76th Annual Report and Accounts 2024-25 (membership 4,23,105 as on 1 April 2025; Gazette copy hosted by ICAI)](https://resource.cdn.icai.org/8747476th-annual-report-icai.pdf)
+- [JurisHour summary of ICAI membership figures from the 76th Annual Report (29 May 2026)](https://www.jurishour.in/columns/india-has-around-4-23-lakh-active-ca/)
 - [World Economic Forum: Future of Jobs Report 2025, Jobs outlook](https://www.weforum.org/publications/the-future-of-jobs-report-2025/in-full/2-jobs-outlook/)
 - [Microsoft India: 2024 Work Trend Index India findings (16 May 2024)](https://news.microsoft.com/en-in/92-of-indian-knowledge-workers-use-ai-in-the-workplace-finds-microsoft-and-linkedin-2024-work-trend-index/)
 - [ICAI press release: AI Innovation Summit 2026, AICA Level 3 and Sarvam AI MoU (26 June 2026)](https://www.icai.org/post/icai-ais2026-26062026)

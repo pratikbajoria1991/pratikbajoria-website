@@ -1,13 +1,15 @@
 # AI for Audit Working Papers in India: What a CA Should Automate and What Must Stay Human
 
-> Using AI on audit working papers without weakening SA 230 documentation: what to automate, what stays with the engagement team, and how to record AI use.
+> How to implement AI audit automation in a CA firm without weakening SA 230: which working-paper tasks to automate, what to look for in an auditing tool, and how to record AI use.
 
 Canonical: https://pratikbajoria.com/blog/2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human
-Last updated: 2026-10-22
+Last updated: 2026-11-13
 
-CA insights · 2026-09-30 · Updated 22 Oct 2026 · 9 min read
+CA insights · 2026-09-30 · Updated 13 Nov 2026 · 9 min read
 
 Using AI on audit working papers without weakening SA 230 documentation: which tasks to automate, which judgements stay with the engagement team, and how to document AI use on the file.
+
+**Direct answer.** To implement AI audit automation in a CA firm, start with mechanical working-paper tasks: PBC tracking, lead-schedule tie-outs, and extracting fields from invoices and confirmations, with a source link on every row. Keep risk assessment, materiality, sampling rationale, conclusions and sign-off with the engagement team. Record the tool, input, output, reviewer and changes so the file still meets SA 230.
 
 Key takeaways
 
@@ -115,6 +117,14 @@ For the full CA implementation map, see the [AI for chartered accountants in Ind
 - Diary the 60-day file-assembly deadline for every signed report and lock the file once it is assembled.
 
 ## Frequently asked questions
+
+### How do I implement AI audit automation in my CA firm?
+
+To implement AI audit automation in a CA firm, start with mechanical working-paper tasks: PBC tracking, lead-schedule tie-outs, and extracting fields from invoices and confirmations, with a source link on every row. Keep risk assessment, materiality, sampling rationale, conclusions and sign-off with the engagement team. Record the tool, input, output, reviewer and changes so the file still meets SA 230.
+
+### What should I look for in an auditing tool for chartered accountants?
+
+Look for a tool that works on mechanical audit tasks you can re-perform: PBC tracking, lead-schedule tie-outs and field extraction from invoices and confirmations, with the source document linked on every row. It should leave a record of the tool, the input, the output and who reviewed it. Risk assessment, materiality, sampling rationale, conclusions and the opinion must stay with the engagement team.
 
 ### Does using AI on an audit change what SA 230 requires?
 

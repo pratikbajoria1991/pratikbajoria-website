@@ -1,13 +1,15 @@
 # DPDP Act and AI in CA Firms in India: A Client-Data Decision Rubric
 
-> How CA firms in India should use AI under the DPDP Act and Rules, 2025: decide your role, vendor terms, safeguards and logs, with a rubric and Monday checklist.
+> How the DPDP Act applies to CA firms using AI on client data: confidentiality, fiduciary or processor role, vendor terms, safeguards and a decision rubric.
 
 Canonical: https://pratikbajoria.com/blog/2026-10-19-dpdp-act-and-ai-in-ca-firms-in-india-a-client-data-decision-rubric
-Last updated: 2026-10-19
+Last updated: 2026-11-13
 
-CA insights · 2026-10-19 · 7 min read
+CA insights · 2026-10-19 · Updated 13 Nov 2026 · 7 min read
 
 How CA firms in India should use AI under the DPDP Act and Rules, 2025: decide your role, vendor terms, safeguards and logs, with a rubric and Monday checklist.
+
+**Direct answer.** Under the DPDP Act, 2023, a CA firm using AI on client personal data must first decide whether it is a Data Fiduciary or a Data Processor for that engagement. Confidentiality still sits with the firm: use firm-managed accounts, mask unneeded identifiers, put security terms in the vendor contract and keep logs. Most operational duties under the DPDP Rules, 2025 commence in May 2027.
 
 Key takeaways
 
@@ -79,6 +81,10 @@ For the wider map, start at the [AI for chartered accountants in India](https://
 - Put May 2027 in the partners’ calendar and re-score live workflows each quarter.
 
 ## Frequently asked questions
+
+### How does the DPDP Act affect CA client data confidentiality when using AI?
+
+Under the DPDP Act, 2023, a CA firm using AI on client personal data must first decide whether it is a Data Fiduciary or a Data Processor for that engagement. Confidentiality still sits with the firm: use firm-managed accounts, mask unneeded identifiers, put security terms in the vendor contract and keep logs. Most operational duties under the DPDP Rules, 2025 commence in May 2027.
 
 ### Does the DPDP Act apply to CA firms that use AI?
 

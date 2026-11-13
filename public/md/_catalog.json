@@ -1,7 +1,7 @@
 {
   "site": "https://pratikbajoria.com",
   "name": "Pratik Bajoria — AI Implementation for Business",
-  "generated": "2026-11-11",
+  "generated": "2026-11-13",
   "count": 79,
   "routes": [
     {
@@ -71,7 +71,7 @@
       "title": "Insights",
       "summary": "Index of every article on pratikbajoria.com about AI for Chartered Accountants in India, AI automation, finance implementation and business tools, newest first, each with a one-line summary.",
       "section": "core",
-      "lastModified": "2026-11-11",
+      "lastModified": "2026-11-13",
       "tokens": 5113
     },
     {
@@ -259,10 +259,10 @@
       "url": "https://pratikbajoria.com/blog/2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human",
       "markdown": "https://pratikbajoria.com/blog/2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human.md",
       "title": "AI for Audit Working Papers in India: What a CA Should Automate and What Must Stay Human",
-      "summary": "Using AI on audit working papers without weakening SA 230 documentation: what to automate, what stays with the engagement team, and how to record AI use.",
+      "summary": "How to implement AI audit automation in a CA firm without weakening SA 230: which working-paper tasks to automate, what to look for in an auditing tool, and how to record AI use.",
       "section": "posts",
-      "lastModified": "2026-10-22",
-      "tokens": 5059
+      "lastModified": "2026-11-13",
+      "tokens": 5409
     },
     {
       "path": "/blog/2026-10-04-ai-finance-automation-roadmap-for-cfos-and-controllers",
@@ -289,10 +289,10 @@
       "url": "https://pratikbajoria.com/blog/2026-10-07-ai-courses-for-chartered-accountants-in-india-what-is-worth-it",
       "markdown": "https://pratikbajoria.com/blog/2026-10-07-ai-courses-for-chartered-accountants-in-india-what-is-worth-it.md",
       "title": "AI Courses for Chartered Accountants in India: What Is Actually Worth It",
-      "summary": "Which AI courses are worth it for CAs in 2026? ICAI’s AICA Levels 1–3 compared on cost and content, when to pay for a course and when to skip it.",
+      "summary": "The best AI course for chartered accountants in India is ICAI’s AICA Level 1: three days, 18 structured CPE hours, ₹5,000 plus GST. When Level 2 is worth it, and when to skip a paid course.",
       "section": "posts",
-      "lastModified": "2026-10-22",
-      "tokens": 2869
+      "lastModified": "2026-11-13",
+      "tokens": 2989
     },
     {
       "path": "/blog/2026-10-07-how-audit-and-accounting-firms-in-india-are-using-ai",
@@ -321,18 +321,18 @@
       "title": "Is CA Worth It in 2026 With AI? A Chartered Accountant’s Honest Answer",
       "summary": "Is doing CA still worth it in 2026? A practising CA weighs pass rates, articleship and AI, with a clear checklist to decide if it suits you.",
       "section": "posts",
-      "lastModified": "2026-10-17",
-      "tokens": 4442
+      "lastModified": "2026-11-13",
+      "tokens": 4573
     },
     {
       "path": "/blog/2026-10-07-will-ai-replace-chartered-accountants-in-india",
       "url": "https://pratikbajoria.com/blog/2026-10-07-will-ai-replace-chartered-accountants-in-india",
       "markdown": "https://pratikbajoria.com/blog/2026-10-07-will-ai-replace-chartered-accountants-in-india.md",
       "title": "Will AI Replace Chartered Accountants in India? A CA’s Honest Answer",
-      "summary": "Will AI replace chartered accountants in India? A CA maps which tasks AI takes in 2026, which stay human, and what ICAI and WEF data show.",
+      "summary": "Is CA going to be replaced by AI? A practising CA maps which tasks AI takes in 2026, which stay human, and what ICAI and WEF data show.",
       "section": "posts",
-      "lastModified": "2026-10-22",
-      "tokens": 3219
+      "lastModified": "2026-11-13",
+      "tokens": 3409
     },
     {
       "path": "/blog/2026-10-08-ai-for-internal-audit-in-indian-companies-a-practical-starting-point",
@@ -359,10 +359,10 @@
       "url": "https://pratikbajoria.com/blog/2026-10-19-dpdp-act-and-ai-in-ca-firms-in-india-a-client-data-decision-rubric",
       "markdown": "https://pratikbajoria.com/blog/2026-10-19-dpdp-act-and-ai-in-ca-firms-in-india-a-client-data-decision-rubric.md",
       "title": "DPDP Act and AI in CA Firms in India: A Client-Data Decision Rubric",
-      "summary": "How CA firms in India should use AI under the DPDP Act and Rules, 2025: decide your role, vendor terms, safeguards and logs, with a rubric and Monday checklist.",
+      "summary": "How the DPDP Act applies to CA firms using AI on client data: confidentiality, fiduciary or processor role, vendor terms, safeguards and a decision rubric.",
       "section": "posts",
-      "lastModified": "2026-10-19",
-      "tokens": 3503
+      "lastModified": "2026-11-13",
+      "tokens": 3725
     },
     {
       "path": "/blog/2026-10-26-ai-for-financial-due-diligence-in-india-a-cas-decision-rubric",
@@ -439,10 +439,10 @@
       "url": "https://pratikbajoria.com/blog/ai-for-chartered-accountants-practical-use-cases-and-controls",
       "markdown": "https://pratikbajoria.com/blog/ai-for-chartered-accountants-practical-use-cases-and-controls.md",
       "title": "AI for Chartered Accountants: Practical Use Cases and Control Gates",
-      "summary": "A practical CA-led guide to AI for Chartered Accountants: five high-value use cases, review gates, data rules and a 90-day rollout plan for Indian CA firms.",
+      "summary": "A practical CA-led guide to AI for Chartered Accountants in India, including document management, extraction, review gates, data rules and a 90-day rollout plan.",
       "section": "posts",
-      "lastModified": "2026-10-07",
-      "tokens": 3447
+      "lastModified": "2026-11-13",
+      "tokens": 3669
     },
     {
       "path": "/blog/ai-tools-financial-analysis-practical-use-cases",
