@@ -2,7 +2,7 @@
 
 > Pratik Bajoria is a Chartered Accountant and ex-Big 4 AI implementation consultant helping companies create measurable P&L impact. Consulting entity is primary; Findost is product proof.
 
-Source: https://pratikbajoria.com · Index: https://pratikbajoria.com/llms.txt · Last updated: 2026-11-13
+Source: https://pratikbajoria.com · Index: https://pratikbajoria.com/llms.txt · Last updated: 2026-11-16
 
 ---
 
@@ -1144,6 +1144,7 @@ Share your sector, state, approximate business stage and a short description of 
 Canonical: https://pratikbajoria.com/blog
 Last updated: 2026-11-13
 
+- [Advance Tax by 15 December 2026: How a CA Firm Can Use AI Without Getting the Estimate Wrong](https://pratikbajoria.com/blog/2026-11-16-advance-tax-by-15-december-2026-how-a-ca-firm-can-use-ai-without-getting-the-estimate-wrong) - How a CA firm can use AI for the 15 December 2026 advance tax instalment under the Income-tax Act, 2025: worksheets, AIS checks and client notes, with the estimate kept human.
 - [Income-tax Act, 2025 Transition: How a CA Firm Can Use AI to Remap Templates Safely](https://pratikbajoria.com/blog/2026-11-11-income-tax-act-2025-transition-how-a-ca-firm-can-use-ai-to-remap-templates-safely) - How a CA firm can use AI to remap templates, checklists and client letters from the 1961 Act to the Income-tax Act, 2025 without trusting model-made section numbers.
 - [AI for Virtual CFO Services: MIS Packs Clients Actually Read](https://pratikbajoria.com/blog/2026-11-11-ai-for-virtual-cfo-services-mis-packs-clients-actually-read) - AI makes the monthly MIS pack faster to build. What a virtual CFO adds is the few lines of commentary a partner stands behind. How to build packs clients read.
 - [Using AI for Ind AS Research and Disclosure Checklists](https://pratikbajoria.com/blog/2026-11-10-using-ai-for-ind-as-research-and-disclosure-checklists) - Use AI to find the right Ind AS paragraph, build disclosure checklists and compare peer disclosures. Never let it decide the accounting treatment. A CA’s method.
@@ -2253,6 +2254,141 @@ Try the free [Scorecard](https://pratikbajoria.com/scorecard), review the [Audit
 - [Scorecard](https://pratikbajoria.com/scorecard)
 - [Audit](https://pratikbajoria.com/audit)
 - [CA Pratik Bajoria](https://pratikbajoria.com/about)
+
+---
+
+# Advance Tax by 15 December 2026: How a CA Firm Can Use AI Without Getting the Estimate Wrong
+
+> How a CA firm can use AI for the 15 December 2026 advance tax instalment under the Income-tax Act, 2025: worksheets, AIS checks and client notes, with the estimate kept human.
+
+Canonical: https://pratikbajoria.com/blog/2026-11-16-advance-tax-by-15-december-2026-how-a-ca-firm-can-use-ai-without-getting-the-estimate-wrong
+Last updated: 2026-11-16
+
+CA insights · 2026-11-16 · 7 min read
+
+How a CA firm can use AI for the 15 December 2026 advance tax instalment under the Income-tax Act, 2025: worksheets, AIS checks and client notes, with the estimate kept human.
+
+Key takeaways
+
+- The third advance tax instalment for tax year 2026-27 is due on Tuesday, 15 December 2026, under the Income-tax Act, 2025.
+- By then at least 75% of the year’s estimated tax, after TDS and TCS, should be paid (section 408); presumptive-income clients pay by 15 March.
+- A December shortfall attracts 3% interest under section 425, measured against the income finally returned, with no safe margin.
+- Let AI build worksheets from books and the AIS, flag new income and draft client notes.
+- Keep the estimate, the rate table and the challan details with named people, and pay under the 2025 Act for tax year 2026-27.
+
+The third advance tax instalment for 2026-27 is due on Tuesday, 15 December 2026. For most practices it is the busiest advance tax date of the year, and the one with the least room for error. It is also the first instalment under the Income-tax Act, 2025 where a client’s estimate is tested without any cushion.
+
+December is when firms reach for AI in a hurry: a chatbot to “work out advance tax” from a ledger export, or to write a hundred reminders. One of those can cost a client interest if nobody checks it. Here is how I would split the work.
+
+## What the law asks for this December
+
+Advance tax for tax year 2026-27 (financial year 2026-27) runs under the Income-tax Act, 2025, and the e-filing portal asks you to choose that Act when you pay, according to the [Income Tax Department’s payment FAQs](https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/General%20Questions-faqs). Self-assessment tax for AY 2026-27 still goes under the 1961 Act, so the challan screen is itself a place where a rushed junior can go wrong. The rules that matter, as enacted in the [Gazette text of the Act](https://egazette.gov.in/WriteReadData/2025/265620.pdf):
+
+- **Who pays.** Anyone whose tax for the year, after TDS and TCS, is ₹10,000 or more (sections 404 and 405). A resident individual aged 60 or over with no business or professional income is outside the scheme (section 403(3)).
+- **How much by 15 December.** At least 75% of the estimated tax for the year, cumulative, less what was paid in June and September (section 408). Presumptive-income clients under section 58(2) pay the whole amount by 15 March instead.
+- **What a shortfall costs.** Under section 425, interest of 3% on the shortfall against 75% of the tax due on the income finally returned. June and September have a margin (no interest if 12% and 36% are paid); December does not. Section 424 separately charges 1% a month if total advance tax falls below 90% of the assessed tax.
+- **Room to correct.** A client can raise or lower later instalments as the estimate changes (section 406(2)), and anything paid by 31 March counts as advance tax for the year (section 408(3)).
+
+The December test is measured against income the client eventually returns, not what anyone guessed in November. A poor estimate is not neutral.
+
+A quick illustration, with made-up numbers: a client’s tax for the year after TDS turns out to be ₹4,00,000. By 15 December they should have paid ₹3,00,000. If they paid ₹1,80,000 in September and nothing more, the December shortfall is ₹1,20,000 and section 425 interest on it is ₹3,600. Small, but multiply it across a client list.
+
+## Where AI genuinely helps
+
+Advance tax work is mostly collection and arithmetic around a few judgement calls. AI earns its place in the collection and the arithmetic.
+
+1. **Gathering the numbers.** For each client you need books to the latest close, TDS and TCS so far, and what has already been paid. The [Annual Information Statement](https://www.incometax.gov.in/iec/foportal/sites/default/files/2022-07/Click%20Here_1.pdf) shows TDS and TCS, reported transactions such as dividends, interest and securities sales, and taxes already paid, including advance tax. AI can turn a client’s AIS download and a trial balance export into one standard worksheet, if the files come in through a controlled route.
+2. **Projecting the year.** Once the eight months to November are in, a model can draft a projection: run-rate for regular income, known one-offs listed separately, and last year’s pattern as a sense check. The draft is a starting point for the partner’s call, not the estimate.
+3. **Spotting what changed.** This is where it is most useful. Ask it to compare the AIS against the client’s own records and list anything new: a property sale, a large dividend, interest from a fresh deposit, an ESOP sale. Those are the items that blow up an estimate, and section 425(4) gives relief for some of them, such as capital gains and dividends, only if the tax is paid in a later instalment once the income arises.
+4. **Client communication.** Drafting the reminder, the computation note and the “here is why your instalment went up” email is low risk and high volume. My [pricing post](https://pratikbajoria.com/blog/2026-10-14-how-ca-firms-in-india-should-price-work-when-ai-cuts-the-hours) covers how that saved time should show up in billing.
+
+For the books side, the same discipline as my [Tally Prime guide](https://pratikbajoria.com/blog/2026-10-22-ai-for-tally-prime-automating-data-entry-without-losing-control-of-the-books) and the [bank statement categorisation workflow](https://pratikbajoria.com/blog/2026-11-06-ai-for-bank-statement-categorisation-for-bookkeeping-clients-in-india) applies: an estimate built on uncategorised entries is a guess with decimals.
+
+## Where it must not decide
+
+Three things stay with a named person.
+
+**The estimate itself.** A model extends a trend with confidence. It does not know that a large customer has stopped ordering or that a property sale is planned for February. The partner, or the senior who knows the client, signs the number.
+
+**Rates and regime.** Slab rates, surcharge, the regime the client has chosen and any deductions come from the Finance Act for the year and the client’s own position. Do not let a general model supply rates from memory; it learnt mostly from earlier years and from the 1961 Act. I made the same argument about section numbers in the [Income-tax Act, 2025 transition post](https://pratikbajoria.com/blog/2026-11-11-income-tax-act-2025-transition-how-a-ca-firm-can-use-ai-to-remap-templates-safely). Put the rates in a reviewed table and have the tool read from it.
+
+**The challan.** Which Act, which tax year, which type of payment and which PAN are checked by a human before anything is paid. A payment under the wrong head is fixable, but slow.
+
+The [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) treats human oversight as something to define and document, not assume. Here that means the tool prepares and a named person decides, on the record.
+
+Decision rubric for December advance tax work. Evaluation framework only; adapt it to your practice. Not tax advice or benchmark data.
+
+| Task | AI role | Minimum review gate | Stop if |
+| --- | --- | --- | --- |
+| Building the worksheet from books and AIS | Automate | Totals tie to the trial balance and AIS | Books are not closed to at least October |
+| Flagging new income in the AIS | Automate, then read | Senior reviews every flagged item | The client disputes an AIS entry |
+| Full-year projection | Draft only | Partner or client lead signs the estimate | A one-off is expected before 31 March |
+| Tax computation | Calculate from a reviewed rate table | Reviewer re-performs a sample | A rate or threshold came from the model’s memory |
+| Client reminder and computation note | Draft | Master template approved once | It promises a refund or a final liability |
+| Challan details and payment | Human only | Second person checks Act, tax year, head and PAN | Anyone pays from an unchecked draft |
+
+## Client data, before anything is uploaded
+
+An AIS is one of the most personal documents a client has: bank interest, investments, property and salary in a single file. It should go only into a tool the firm has approved, with retention and training settings checked, and only the fields the worksheet needs. My [DPDP rubric for CA firms](https://pratikbajoria.com/blog/2026-10-19-dpdp-act-and-ai-in-ca-firms-in-india-a-client-data-decision-rubric) sets out how to decide. If your team already reconciles TDS with AI, reuse that pipeline; the [TDS reconciliation guide](https://pratikbajoria.com/blog/2026-10-13-using-ai-for-tds-reconciliation-in-indian-ca-firms-from-26as-to-form-168) covers the matching logic, and the credits it confirms feed straight into the advance tax worksheet.
+
+Keep the December worksheet: it is the starting point for March and, later, for the return, as the [ITR filing post](https://pratikbajoria.com/blog/2026-10-21-ai-for-itr-filing-what-a-ca-should-let-it-do-and-what-stays-human) explains.
+
+## Monday-morning checklist
+
+- Pull the list of clients who paid in June or September, or who should have; they are your December list.
+- Ask each client for the latest AIS and books to 30 November, through the firm’s approved upload route only.
+- Put this year’s rates, surcharge and regime choices in one reviewed table; ban rates typed from memory.
+- Run AI on the worksheet build and the “what changed in AIS” flags; route every flag to a senior.
+- Have the partner sign each estimate, and note the one-offs expected before 31 March.
+- Check every challan for Act (2025), tax year (2026-27), payment type and PAN before 15 December.
+
+For the wider picture of AI in a practice, start from the [AI for Chartered Accountants in India hub](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india). To see which compliance work is worth automating first, take the [free AI Opportunity Scorecard](https://pratikbajoria.com/scorecard), look at the scoped [AI Opportunity Audit](https://pratikbajoria.com/audit), or [book a discovery call](https://pratikbajoria.com/#contact).
+
+## Frequently asked questions
+
+### What is the advance tax due date in December 2026?
+
+15 December 2026, a Tuesday. By then cumulative advance tax for tax year 2026-27 should be at least 75% of the estimated tax for the year, less TDS and TCS, under section 408 of the Income-tax Act, 2025. Presumptive-income taxpayers under section 58(2) pay the whole amount by 15 March 2027.
+
+### What interest applies if the December instalment is short?
+
+Under section 425, interest of 3% on the shortfall against 75% of the tax due on the income finally returned. Unlike June and September, there is no lower safe threshold in December. Section 424 separately charges 1% a month if advance tax paid for the year is below 90% of the assessed tax.
+
+### Can AI calculate advance tax for a CA firm’s clients?
+
+It can build the worksheet, project the year and flag new income in the AIS, and it can calculate from a rate table your firm has reviewed. The estimate, the rates and the challan should be checked and signed by a named person, because interest is charged on the income finally returned.
+
+## Keep reading in this topic
+
+Part of [AI for Chartered Accountants in India: the implementation hub](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india).
+
+- [Income-tax Act, 2025 Transition: How a CA Firm Can Use AI to Remap Templates Safely](https://pratikbajoria.com/blog/2026-11-11-income-tax-act-2025-transition-how-a-ca-firm-can-use-ai-to-remap-templates-safely)
+- [Using AI for TDS Reconciliation in Indian CA Firms: From 26AS to Form 168](https://pratikbajoria.com/blog/2026-10-13-using-ai-for-tds-reconciliation-in-indian-ca-firms-from-26as-to-form-168)
+- [AI for ITR Filing: What a CA Should Let It Do and What Stays Human](https://pratikbajoria.com/blog/2026-10-21-ai-for-itr-filing-what-a-ca-should-let-it-do-and-what-stays-human)
+
+Also useful: [AI Opportunity Audit for CA firms](https://pratikbajoria.com/ai-opportunity-audit-for-ca-firms).
+
+## Sources
+
+- [Gazette of India — The Income-tax Act, 2025 (No. 30 of 2025), sections 403–408, 424 and 425](https://egazette.gov.in/WriteReadData/2025/265620.pdf)
+- [Income Tax Department e-filing portal — General questions FAQs (which Act applies to tax payments)](https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/General%20Questions-faqs)
+- [Income Tax Department e-filing portal — FAQs on the Annual Information Statement (AIS)](https://www.incometax.gov.in/iec/foportal/sites/default/files/2022-07/Click%20Here_1.pdf)
+- [NIST — AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
+
+*Disclaimer: this article is general educational commentary from implementation work. It is not tax or legal advice. Section references are to the Income-tax Act, 2025 as enacted; the Act has since been amended by the Finance Act, 2026, so check the current consolidated text, the Finance Act rates and the e-filing portal before computing or paying advance tax, and take professional advice on any client’s position. The interest example is illustrative, not client data.*
+
+*Educational content; not financial, investment, or legal advice.*
+
+## Related
+- [pricing post](https://pratikbajoria.com/blog/2026-10-14-how-ca-firms-in-india-should-price-work-when-ai-cuts-the-hours)
+- [Tally Prime guide](https://pratikbajoria.com/blog/2026-10-22-ai-for-tally-prime-automating-data-entry-without-losing-control-of-the-books)
+- [bank statement categorisation workflow](https://pratikbajoria.com/blog/2026-11-06-ai-for-bank-statement-categorisation-for-bookkeeping-clients-in-india)
+- [Income-tax Act, 2025 transition post](https://pratikbajoria.com/blog/2026-11-11-income-tax-act-2025-transition-how-a-ca-firm-can-use-ai-to-remap-templates-safely)
+- [DPDP rubric for CA firms](https://pratikbajoria.com/blog/2026-10-19-dpdp-act-and-ai-in-ca-firms-in-india-a-client-data-decision-rubric)
+- [TDS reconciliation guide](https://pratikbajoria.com/blog/2026-10-13-using-ai-for-tds-reconciliation-in-indian-ca-firms-from-26as-to-form-168)
+- [ITR filing post](https://pratikbajoria.com/blog/2026-10-21-ai-for-itr-filing-what-a-ca-should-let-it-do-and-what-stays-human)
+- [AI for Chartered Accountants in India hub](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india)
+- [All articles](https://pratikbajoria.com/blog)
 
 ---
 
@@ -5193,184 +5329,95 @@ Yes. Form 26 asks for the IP address and country of the server holding electroni
 
 ---
 
-# AI for Internal Audit in Indian Companies: A Practical Starting Point
+# The Monday Morning Test for Any AI Workflow
 
-> A CA's starting point for AI in internal audit in India: who s.138 covers, what ICAI's new SIA 240 on tools asks for, and one full-population test.
+> If the team cannot explain the workflow in five minutes on Monday, it is not ready for a model.
 
-Canonical: https://pratikbajoria.com/blog/2026-10-08-ai-for-internal-audit-in-indian-companies-a-practical-starting-point
-Last updated: 2026-10-22
+Canonical: https://pratikbajoria.com/blog/2026-09-29-the-monday-morning-test-for-any-ai-workflow
+Last updated: 2026-10-07
 
-CA insights · 2026-10-08 · 11 min read
+AI implementation · 2026-09-29 · Updated 7 Oct 2026 · 5 min read
 
-A CA's starting point for AI in internal audit in India: who s.138 covers, what ICAI's new SIA 240 on tools asks for, and one full-population test.
+If the team cannot explain the workflow in five minutes on Monday, it is not ready for a model.
 
-Key takeaways
+If the team cannot explain the workflow in five minutes on Monday, it is not ready for a model. Most AI workflows fail quietly. The model works in a sandbox; the Monday morning handoff does not. The test I use is deliberately simple, so it survives busy weeks, and it can be run as a fifteen-minute stand-up.
 
-- Rule 13 of the Companies (Accounts) Rules, 2014, under section 138, requires an internal auditor in listed companies and in unlisted public and private companies above set turnover or borrowing thresholds.
-- ICAI's SIA 240 expects tools, including AI, to be validated and documented, and says the internal auditor should not rely solely on automated outputs.
-- Start with full-population testing of one high-volume process, such as procure-to-pay, instead of a sample.
-- AI helps turn policy into tests, draft code, group exceptions and draft observations; people decide what is an issue and sign the report.
-- Under CARO 2020 clause 3(xiv), the statutory auditor reports on whether the internal audit system is commensurate with the business.
+## The five questions
 
-If you run internal audit in an Indian company, or your CA firm is the appointed internal auditor under section 138, here is my short answer on AI: do not start with a dashboard. Start by testing one high-volume process on the full population instead of a sample, let people investigate every exception the test throws up, and document the tool the way you would document any other audit procedure. ICAI has now written that expectation down in a standard of its own, which makes this a good year to begin properly.
+**1. Who owns it?** One named person accountable for the outcome — not “the finance team” and not the vendor. If ownership is shared, name who breaks the tie.
 
-I trained as a Chartered Accountant, spent my early years in Big 4 assurance, and now help finance and audit teams put AI into real workflows. The pattern I see in internal audit is the same one I saw in statutory audit: the technology is rarely the constraint. Clean data, a clear test and a reviewer who knows the business are.
+**2. What is the metric?** One number that already matters: cycle time, rework, aged exceptions, review hours, days to close. If the metric only exists because the pilot created it, be suspicious.
 
-## Who this applies to: section 138 and Rule 13
+**3. What happens to exceptions?** Where does an item go when the tool is unsure or wrong, who clears it, and by when? A workflow without an exception path is a workflow that silently drops things.
 
-Internal audit is not optional for a large part of corporate India. [Rule 13 of the Companies (Accounts) Rules, 2014](https://thc.nic.in/Central%20Governmental%20Rules/Companies%20%28Accounts%29%20Rules,%202014..pdf), made under section 138 of the Companies Act, 2013, requires an internal auditor in:
+**4. What data may the tool see?** Name the data classes. Client identity, unpublished financials, payroll and advice drafts are restricted by default. If the answer is “whatever people paste in”, stop here.
 
-- every listed company;
-- every unlisted public company with paid-up share capital of ₹50 crore or more, turnover of ₹200 crore or more, outstanding loans or borrowings from banks or public financial institutions above ₹100 crore, or outstanding deposits of ₹25 crore or more, at any point in the preceding financial year;
-- every private company with turnover of ₹200 crore or more, or outstanding loans or borrowings from banks or public financial institutions above ₹100 crore, at any point in the preceding financial year.
+**5. When is the review?** A recurring slot in the calendar where someone looks at the metric and a sample of outputs. If it is not booked, it will not happen in filing season.
 
-Two details in the rule matter for AI. First, the internal auditor can be a Chartered Accountant, whether or not in practice, or an employee of the company, so the function may sit with an in-house team or an outside firm. Second, the Audit Committee or the Board, in consultation with the internal auditor, formulates the scope, functioning, periodicity and methodology of the internal audit. Moving from sampling to full-population analytics is a change of methodology. Take it to the Audit Committee before you rely on it, not after.
+If any answer is blank, pause the rollout. Not cancel — pause. Blank answers are cheap to fix before go-live and expensive to fix after.
 
-## What the standards now say about tools and AI
+## A worked example: bank reconciliation in a small practice
 
-ICAI's Internal Audit Standards Board issued a [revised compendium of Standards on Internal Audit in 2026](https://internalaudit.icai.org/wp-content/uploads/2026/03/Comp-of-Stnd-on-Internal-Audit-26.pdf). It rationalises the earlier standards into 20 SIAs and adds new ones, including **SIA 240, Use of Tools**. SIA 240 names data analytics platforms, CAATs, visualisation tools, audit management software and "emerging technologies such as Artificial Intelligence (AI) and Machine Learning (ML)". It is recommendatory and effective from 1 April 2026 until the ICAI Council notifies the date from which it applies to internal audits.
+Take an illustrative CA practice using AI to suggest matches between bank statements and client books. Owner: the manager for that client group. Metric: unreconciled items older than the review date. Exceptions: anything the tool marks below its confidence threshold, plus any match over a value limit the partner sets, goes to a queue the article assistant clears and the manager reviews. Data: bank statements and ledgers stay inside the firm’s approved environment; nothing goes to consumer chatbots. Review: fifteen minutes every Monday on the queue and a sample of auto-matched items.
 
-The requirements read like a sensible AI policy. Paraphrasing paragraph 4:
+Notice what is missing: the model name. The test does not care which tool you use. It cares whether the work around the tool is designed. That is also why the test travels well across functions — collections, vendor onboarding, WhatsApp intake, document extraction.
 
-- **Plan it.** Evaluate and record the proposed use of tools at the planning stage, aligned to the risk assessment.
-- **Validate it.** Check tools for relevance, reliability, security and confidentiality, and confirm that outputs are complete and accurate. The application material suggests trial runs, benchmarking against known outcomes and cross-checks with manual procedures.
-- **Protect the data.** Tools must comply with data privacy and cybersecurity rules, and third-party tools need confidentiality, ownership and access controls. The standard names the DPDP Act, 2023.
-- **Document it.** Record the rationale, configuration, test parameters and outcomes, and disclose any limitation that affects the conclusion.
-- **Keep judgement.** "The internal auditor should not rely solely on automated outputs."
+## What failure usually looks like
 
-The same compendium carries SIA 230 on internal audit evidence and SIA 250 on documentation, so an AI-assisted test is held to the same evidence and file standard as a manual one. Internationally, the [IIA Global Internal Audit Standards](https://www.theiia.org/en/standards/), with 15 principles across five domains, [took effect on 9 January 2025](https://www.theiia.org/en/content/communications/press-releases/2025/january/the-iia-celebrates-the-effective-date-of-the-global-internal-audit-standards/), and Standard 10.3 deals with the technological resources a function needs. If your team follows both frameworks, the direction is the same.
+The metric improves in week one because people are paying attention, then drifts back. Exceptions accumulate because nobody owns the queue. Someone pastes client data into an unapproved tool because the approved one was slower. Each of these is a Monday-test failure that was visible early.
 
-## Where internal audit actually is with AI
+**Related reading:** start with the [AI for chartered accountants in India](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india) hub, then [AI tools that pay back for finance and CA teams](https://pratikbajoria.com/blog/best-ai-tools-chartered-accountants-finance-professionals), [Notion as a finance control layer](https://pratikbajoria.com/blog/notion-for-finance-professionals-templates-dashboards-workflows).
 
-It is earlier than the conference talks suggest. The IIA's [2025 North American Pulse of Internal Audit](https://www.theiia.org/globalassets/site/resources/research-and-reports/pulse-of-internal-audit/2025-iia-pulse-report.pdf) found that the share of chief audit executives using generative AI rose from 15% in the previous edition to 40%. In the same survey, 92% named data analytics as the most important technology skill for internal audit, yet only 28% described their own analytics use as high or advanced. The IIA's [Vision 2035 research](https://www.theiia.org/globalassets/site/foundation/latest-research-and-products/vision-2035-report.pdf) reported that 18% of respondents were using AI in internal audit and a further 22% were researching it.
+## Why most workflows fail on a Monday, not in the demo
 
-Those surveys lean heavily towards North America, and I have not seen a comparable Indian dataset, so treat them as direction rather than benchmark. But the gap they show matches what I see: teams want generative AI, and many have not yet built the analytics habits that make it useful. Finance more broadly is similar. [Gartner's 2025 AI in Finance survey](https://www.gartner.com/en/newsroom/press-releases/2025-11-18-gartner-survey-shows-finance-ai-adoption-remains-steady-in-2025) found 59% of finance functions using AI, with error and anomaly detection among the three most common use cases.
+Most AI workflows do not fail in the demo. They fail on a Monday morning, when the person who set them up is on leave, the input file has a new column, and nobody is sure whether last week's output was checked before it went to a client.
 
-## Start with full-population testing of one process
+That is the normal outcome rather than bad luck. Gartner predicted that [at least 30% of generative AI projects would be abandoned after proof of concept by the end of 2025](https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025), citing poor data quality, inadequate risk controls, escalating costs or unclear business value. Meanwhile Microsoft and LinkedIn's 2024 Work Trend Index found that [75% of knowledge workers already use generative AI at work, and 78% of those users bring their own tools](https://news.microsoft.com/source/2024/05/08/microsoft-and-linkedin-release-the-2024-work-trend-index-on-the-state-of-ai-at-work/). The workflow is often running before anyone has designed it.
 
-Sampling exists because testing everything used to be expensive. It is not any more. If a process produces structured data, a script can test every transaction, and the conversation with the audit committee changes from "we found nothing in 25 samples" to "we tested all of them, and here are the exceptions we investigated."
+In a CA or finance team, the test has a specific shape. Can the reviewer see the source document behind each output? Is there a list of what the tool got wrong last week, and what was done about it? Does the article assistant know which client files may never go into it? If the answer to any of those is a shrug, the problem is the operating design, not the model. For the firm-level rules, see the [AI controls checklist for CA firms](https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india). For a CA-specific map of where to start, see [AI for chartered accountants in India](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india).
 
-Good first candidates are processes with volume, clear rules and data you can extract from the ERP:
+## Monday-morning checklist
 
-- **Procure-to-pay:** duplicate invoices, vendor master changes close to payment runs, purchase orders split to stay under an approval limit, payments to vendors who share bank details or addresses with employees.
-- **Employee expenses:** claims on non-working days, repeated round amounts, the same receipt claimed twice, claims approved by the claimant's own reportee.
-- **Payroll:** employees sharing bank accounts, pay to people after their exit date, changes to pay made outside the approval workflow.
-- **Revenue and receivables:** credit notes raised shortly after period end, manual adjustments to customer balances, discounts outside the policy grid.
-
-Pick one. The temptation to build a "continuous auditing platform" in the first quarter is strong and, in my experience, the reason many analytics programmes stall.
-
-## Where AI helps, and where it must not decide
-
-Most full-population testing is plain analytics: joins, filters and rules. AI earns its place around that core, and SIA 240's examples (Python scripts and AI-based applications alongside IDEA, ACL and Power BI) fit how I would use it:
-
-- **Turning policy into tests.** Give an assistant the delegation-of-authority matrix or the travel policy and ask it to propose test rules. The auditor approves every rule before it runs.
-- **Writing the code.** AI is good at drafting the SQL or Python for a test. Someone who can read it still reviews it, and the reviewed version is what goes on file.
-- **Grouping exceptions.** When a test returns hundreds of hits, AI can cluster them by vendor, approver or pattern so the team investigates causes rather than rows.
-- **Drafting observations.** A first draft of the finding, the risk and the recommendation, which the auditor then rewrites in the company's language and rates.
-
-What stays human: deciding whether an exception is a real issue, the conversation with the process owner, the risk rating, the conclusion and the report. SIA 240's application material says anomalies flagged by tools should be followed up through sampling, walkthroughs or corroborative procedures. That is the line I would draw.
-
-## A six-step way to run the first test
-
-- **1. Scope it with the Audit Committee.** One process, one period, a stated objective, and a note that the methodology is changing to full-population testing.
-- **2. Get the data and prove it is complete.** Extract the transactions and agree control totals to the ledger before you test anything. A brilliant test on an incomplete extract is worthless evidence.
-- **3. Write and validate the tests.** Draft rules from the policy (AI can help), then run them against a period where you already know the answer, which is the "benchmarking against known outcomes" SIA 240 describes.
-- **4. Run on the full population.** Keep the scripts, parameters and output files versioned.
-- **5. Investigate exceptions.** People do this. Record what was checked, what the process owner said and what evidence closed each item.
-- **6. Report and document.** Report what was tested and what was found, including any limits of the data, and put the tool documentation on file as SIA 240 and SIA 250 expect.
-
-## Controls around the AI itself
-
-Internal audit asks everyone else for controls, so its own AI use should be the best-controlled in the building. My minimum set:
-
-- **Approved tools only.** Company or firm-controlled accounts with retention and training settings you have checked, never personal chatbot accounts. Payroll and vendor data contain personal data.
-- **Know your data-protection exposure.** The [DPDP Rules, 2025 were notified in November 2025](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2190014) with an 18-month phased timeline, and [the Act allows penalties of up to ₹250 crore](https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc20251117695301.pdf) for failing to maintain reasonable security safeguards. Share the minimum fields a test needs.
-- **A tool register.** Which tools, which versions, who may use them, for what. SIA 240 suggests a centralised tool registry, version control and usage logs.
-- **No unreviewed output in the report.** Every AI-drafted rule, script and observation has a named reviewer.
-
-For a broader version of these review gates, see my [AI controls checklist for CA firms in India](https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india).
-
-## Remember who reads the file next
-
-Internal audit work does not stay inside the company. Under [CARO 2020](https://taxguru.in/company-law/caro-2020.html), clause 3(xiv) asks the statutory auditor whether the company has an internal audit system commensurate with its size and the nature of its business, and whether the internal auditors' reports for the period were considered. If your exceptions list came from an undocumented prompt, expect questions. If it came from a validated, versioned test with a clear trail of investigation, you have made the statutory auditor's job easier, and your own position stronger.
-
-This is also where internal audit differs from statutory audit. For the statutory side, with SA 230 documentation, read [AI for audit working papers in India](https://pratikbajoria.com/blog/2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human). For how firms are adopting AI more generally, read [how audit and accounting firms in India are using AI](https://pratikbajoria.com/blog/2026-10-07-how-audit-and-accounting-firms-in-india-are-using-ai).
-
-## What I would tell an Audit Committee
-
-- We will test one process on the full population this quarter, not a sample.
-- Every exception will be investigated by a person, and the file will show how each one was closed.
-- The tools, scripts and AI assistance will be documented in line with SIA 240, and no client or employee data will go into unapproved tools.
-- We will report what the data could and could not tell us.
-- If it works, we will extend it to a second process next quarter. If it does not, we will say why.
-
-If you want a structured way to choose that first process and run it, my [90-day AI pilot playbook](https://pratikbajoria.com/blog/2026-10-07-how-to-run-a-90-day-ai-pilot-in-a-ca-firm-in-india) applies just as well to an internal audit team. The wider picture for the profession is in the [AI for Chartered Accountants in India hub](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india). If you would rather have someone map where AI pays back across your finance and audit work, that is what the [AI Opportunity Audit](https://pratikbajoria.com/audit) is for.
-
-## The statutory audit side
-
-Statutory auditors face the same tool questions on CARO 2020, where most clauses are evidence assembly followed by a judgement; I go through it clause by clause in [AI for CARO 2020 reporting: where it helps and where judgement stays](https://pratikbajoria.com/blog/2026-10-16-ai-for-caro-2020-reporting-where-it-helps-and-where-judgement-stays). For what SA 230 still demands of the file whoever drafted it, see [AI for audit working papers in India](https://pratikbajoria.com/blog/2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human), and for training juniors to check tool output, [AI and articleship](https://pratikbajoria.com/blog/2026-10-15-ai-and-articleship-how-ca-firms-should-train-article-assistants-now).
-
-## Frequently asked questions
-
-### Is internal audit mandatory for my company in India?
-
-Section 138 of the Companies Act, 2013, read with Rule 13 of the Companies (Accounts) Rules, 2014, requires an internal auditor in every listed company; in unlisted public companies with paid-up share capital of ₹50 crore or more, turnover of ₹200 crore or more, outstanding borrowings above ₹100 crore or deposits of ₹25 crore or more; and in private companies with turnover of ₹200 crore or more or outstanding borrowings above ₹100 crore. Check the thresholds against your own preceding-year figures.
-
-### Do ICAI's Standards on Internal Audit allow AI?
-
-Yes. SIA 240, Use of Tools, in ICAI's 2026 compendium names AI and machine learning alongside data analytics and CAATs. It asks the internal auditor to plan and record tool use, validate tool outputs for completeness and accuracy, protect data, document configurations and results, and not rely solely on automated outputs. It is recommendatory from 1 April 2026 until the ICAI Council notifies a mandatory date.
-
-### What is the best first AI use case for an internal audit team?
-
-In my view, full-population testing of one high-volume process, such as procure-to-pay or employee expense claims. It replaces sampling with a complete test, the exceptions are easy to verify, and it fits the evidence and documentation requirements the team already follows.
-
-### Does the statutory auditor look at internal audit work?
-
-Yes. Under CARO 2020, clause 3(xiv), the statutory auditor reports whether the company has an internal audit system commensurate with its size and nature, and whether the internal auditors' reports were considered. AI-assisted work therefore needs to be documented well enough for another auditor to follow.
-
-### Will AI replace internal auditors?
-
-No. It changes the work. Testing every transaction becomes cheap; deciding which exceptions matter, talking to process owners, rating findings and standing behind the report still need an experienced person. SIA 240 says as much: tool findings need professional scepticism and contextual evaluation.
+- Name the owner.
+- Name the metric that already matters.
+- Name the exception path and who clears it.
+- Name the data classes the tool may see.
+- Book the weekly review — if any line is blank, pause the rollout.
 
 ## Keep reading in this topic
 
-This guide is part of [AI for Chartered Accountants in India: the implementation hub](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india).
+This guide is part of [AI automation in India: a practical hub for business owners](https://pratikbajoria.com/ai-automation-in-india).
 
-- [How Indian CA Firms Can Use AI for GST Reconciliation Without Risking Client Data](https://pratikbajoria.com/blog/2026-09-28-how-indian-ca-firms-can-use-ai-for-gst-reconciliation-without-risking-client-data)
-- [AI for Audit Working Papers in India: What a CA Should Automate and What Must Stay Human](https://pratikbajoria.com/blog/2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human)
-- [Drafting Replies to GST and Income Tax Notices With AI Without Losing Control](https://pratikbajoria.com/blog/2026-10-12-drafting-replies-to-gst-and-income-tax-notices-with-ai-without-losing-control)
+- [A 90-Day AI Opportunity Audit Without the Theatre](https://pratikbajoria.com/audit)
+- [Why Most Corporate AI Pilots Never Reach Production](https://pratikbajoria.com/blog/corporate-ai-pilots)
 
 Also useful: [AI implementation for finance teams: the CFO and controller guide](https://pratikbajoria.com/ai-implementation-for-finance-teams).
 
 ## Sources
 
-- [Companies (Accounts) Rules, 2014, Rule 13 (internal audit under section 138)](https://thc.nic.in/Central%20Governmental%20Rules/Companies%20%28Accounts%29%20Rules,%202014..pdf)
-- [ICAI Internal Audit Standards Board: Compendium of Standards on Internal Audit, 2026 (incl. SIA 240, Use of Tools)](https://internalaudit.icai.org/wp-content/uploads/2026/03/Comp-of-Stnd-on-Internal-Audit-26.pdf)
-- [ICAI Internal Audit Standards Board: publications](https://internalaudit.icai.org/publications/)
-- [The IIA: Global Internal Audit Standards](https://www.theiia.org/en/standards/)
-- [The IIA: Global Internal Audit Standards effective 9 January 2025 (press release)](https://www.theiia.org/en/content/communications/press-releases/2025/january/the-iia-celebrates-the-effective-date-of-the-global-internal-audit-standards/)
-- [The IIA: 2025 North American Pulse of Internal Audit (report)](https://www.theiia.org/globalassets/site/resources/research-and-reports/pulse-of-internal-audit/2025-iia-pulse-report.pdf)
-- [The IIA: Pulse of Internal Audit 2025 press release](https://www.theiia.org/en/content/communications/press-releases/2025/march/new-report-reveals-the-value-of-strategy-plus-increasing-responsibility-for-internal-audit-leaders/)
-- [The IIA Foundation: Vision 2035 report](https://www.theiia.org/globalassets/site/foundation/latest-research-and-products/vision-2035-report.pdf)
-- [Companies (Auditor's Report) Order, 2020: full text incl. clause 3(xiv) (TaxGuru)](https://taxguru.in/company-law/caro-2020.html)
-- [PIB: Notification of Companies (Auditor's Report) Order, 2020](https://www.pib.gov.in/newsite/PrintRelease.aspx?relid=199571)
-- [PIB: Government notifies DPDP Rules (14 November 2025)](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2190014)
-- [PIB: DPDP Rules, 2025 explainer (penalties under the DPDP Act)](https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc20251117695301.pdf)
-- [Gartner: Finance AI adoption remains steady in 2025](https://www.gartner.com/en/newsroom/press-releases/2025-11-18-gartner-survey-shows-finance-ai-adoption-remains-steady-in-2025)
+- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
+- [Gartner — 30% of generative AI projects predicted to be abandoned after proof of concept by end of 2025 (29 July 2024)](https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025)
+- [Microsoft and LinkedIn — 2024 Work Trend Index](https://news.microsoft.com/source/2024/05/08/microsoft-and-linkedin-release-the-2024-work-trend-index-on-the-state-of-ai-at-work/)
 
-*Disclaimer: this article is general educational commentary. It is not legal, audit or data-protection advice and does not create an adviser–client relationship. Thresholds and standards change; check the current text of the Companies Act, the rules and the ICAI standards, and take professional advice on your facts.*
+Educational commentary from implementation work — not personalised financial, tax, legal or investment advice. Verify vendor pricing, privacy terms and your own policies before you buy.
+
+Tools worth evaluating
+
+[**Notion** Knowledge management and workspace Visit Notion official site ↗](https://www.notion.so/product)
+
+Tool links go to the vendor’s official site. No affiliate tracking is active on this page yet. Recommendations are based on fit for finance, ops and AI implementation work — not on commission.
 
 *Educational content; not financial, investment, or legal advice.*
 
 ## Related
-- [AI controls checklist for CA firms in India](https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india)
-- [AI for audit working papers in India](https://pratikbajoria.com/blog/2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human)
-- [how audit and accounting firms in India are using AI](https://pratikbajoria.com/blog/2026-10-07-how-audit-and-accounting-firms-in-india-are-using-ai)
-- [90-day AI pilot playbook](https://pratikbajoria.com/blog/2026-10-07-how-to-run-a-90-day-ai-pilot-in-a-ca-firm-in-india)
-- [AI for Chartered Accountants in India hub](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india)
-- [AI Opportunity Audit](https://pratikbajoria.com/audit)
-- [AI for CARO 2020 reporting: where it helps and where judgement stays](https://pratikbajoria.com/blog/2026-10-16-ai-for-caro-2020-reporting-where-it-helps-and-where-judgement-stays)
-- [AI and articleship](https://pratikbajoria.com/blog/2026-10-15-ai-and-articleship-how-ca-firms-should-train-article-assistants-now)
+- [AI for chartered accountants in India](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india)
+- [AI tools that pay back for finance and CA teams](https://pratikbajoria.com/blog/best-ai-tools-chartered-accountants-finance-professionals)
+- [Notion as a finance control layer](https://pratikbajoria.com/blog/notion-for-finance-professionals-templates-dashboards-workflows)
+- [AI controls checklist for CA firms](https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india)
+- [AI automation in India: a practical hub for business owners](https://pratikbajoria.com/ai-automation-in-india)
+- [A 90-Day AI Opportunity Audit Without the Theatre](https://pratikbajoria.com/audit)
+- [Why Most Corporate AI Pilots Never Reach Production](https://pratikbajoria.com/blog/corporate-ai-pilots)
+- [AI implementation for finance teams: the CFO and controller guide](https://pratikbajoria.com/ai-implementation-for-finance-teams)
 - [All articles](https://pratikbajoria.com/blog)
 
 ---
@@ -5379,6 +5426,7 @@ Also useful: [AI implementation for finance teams: the CFO and controller guide]
 
 This file is capped at about 450k characters. 34 older articles are not included here; each is listed in https://pratikbajoria.com/llms.txt and has its own markdown version:
 
+- [AI for Internal Audit in Indian Companies: A Practical Starting Point](https://pratikbajoria.com/blog/2026-10-08-ai-for-internal-audit-in-indian-companies-a-practical-starting-point.md)
 - [AI Courses for Chartered Accountants in India: What Is Actually Worth It](https://pratikbajoria.com/blog/2026-10-07-ai-courses-for-chartered-accountants-in-india-what-is-worth-it.md)
 - [How Audit and Accounting Firms in India Are Using AI in 2026](https://pratikbajoria.com/blog/2026-10-07-how-audit-and-accounting-firms-in-india-are-using-ai.md)
 - [How to Run a 90-Day AI Pilot in a CA Firm in India: A 30/60/90 Playbook](https://pratikbajoria.com/blog/2026-10-07-how-to-run-a-90-day-ai-pilot-in-a-ca-firm-in-india.md)
@@ -5390,7 +5438,6 @@ This file is capped at about 450k characters. 34 older articles are not included
 - [AI Controls Checklist for CA Firms in India: Practical Review Gates](https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india.md)
 - [AI for Chartered Accountants: Practical Use Cases and Control Gates](https://pratikbajoria.com/blog/ai-for-chartered-accountants-practical-use-cases-and-controls.md)
 - [AI for Audit Working Papers in India: What a CA Should Automate and What Must Stay Human](https://pratikbajoria.com/blog/2026-09-30-ai-for-audit-working-papers-in-india-what-a-ca-should-automate-and-what-must-stay-human.md)
-- [The Monday Morning Test for Any AI Workflow](https://pratikbajoria.com/blog/2026-09-29-the-monday-morning-test-for-any-ai-workflow.md)
 - [How Indian CA Firms Can Use AI for GST Reconciliation Without Risking Client Data](https://pratikbajoria.com/blog/2026-09-28-how-indian-ca-firms-can-use-ai-for-gst-reconciliation-without-risking-client-data.md)
 - [WhatsApp Automation That Still Feels Like Customer Care](https://pratikbajoria.com/blog/2026-09-28-whatsapp-automation-that-still-feels-like-customer-care.md)
 - [AI for Chartered Accountants in India: A Practical Implementation Hub](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india.md)

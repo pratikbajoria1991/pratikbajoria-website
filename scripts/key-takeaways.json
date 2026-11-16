@@ -108,5 +108,12 @@
     "Section 536 keeps the 1961 Act and its procedure for proceedings relating to tax years beginning before 1 April 2026, even if started later.",
     "Use the Income Tax Department’s comparison utilities as the source of truth; never let a model choose section numbers.",
     "Let AI extract references and redraft templates; keep the mapping, split provisions and which-Act decisions with named people."
+  ],
+  "2026-11-16-advance-tax-by-15-december-2026-how-a-ca-firm-can-use-ai-without-getting-the-estimate-wrong": [
+    "The third advance tax instalment for tax year 2026-27 is due on Tuesday, 15 December 2026, under the Income-tax Act, 2025.",
+    "By then at least 75% of the year’s estimated tax, after TDS and TCS, should be paid (section 408); presumptive-income clients pay by 15 March.",
+    "A December shortfall attracts 3% interest under section 425, measured against the income finally returned, with no safe margin.",
+    "Let AI build worksheets from books and the AIS, flag new income and draft client notes.",
+    "Keep the estimate, the rate table and the challan details with named people, and pay under the 2025 Act for tax year 2026-27."
   ]
 }

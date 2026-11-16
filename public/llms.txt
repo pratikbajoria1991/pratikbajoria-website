@@ -62,6 +62,7 @@ Pratik works from India with business leaders in India, the United States, the U
 
 ## CA + AI articles
 
+- [Advance Tax by 15 December 2026: How a CA Firm Can Use AI Without Getting the Estimate Wrong](https://pratikbajoria.com/blog/2026-11-16-advance-tax-by-15-december-2026-how-a-ca-firm-can-use-ai-without-getting-the-estimate-wrong.md): How a CA firm can use AI for the 15 December 2026 advance tax instalment under the Income-tax Act, 2025: worksheets, AIS checks and client notes, with the estimate kept human.
 - [AI for Virtual CFO Services: MIS Packs Clients Actually Read](https://pratikbajoria.com/blog/2026-11-11-ai-for-virtual-cfo-services-mis-packs-clients-actually-read.md): AI makes the monthly MIS pack faster to build. What a virtual CFO adds is the few lines of commentary a partner stands behind. How to build packs clients read.
 - [Income-tax Act, 2025 Transition: How a CA Firm Can Use AI to Remap Templates Safely](https://pratikbajoria.com/blog/2026-11-11-income-tax-act-2025-transition-how-a-ca-firm-can-use-ai-to-remap-templates-safely.md): How a CA firm can use AI to remap templates, checklists and client letters from the 1961 Act to the Income-tax Act, 2025 without trusting model-made section numbers.
 - [Using AI for Ind AS Research and Disclosure Checklists](https://pratikbajoria.com/blog/2026-11-10-using-ai-for-ind-as-research-and-disclosure-checklists.md): Use AI to find the right Ind AS paragraph, build disclosure checklists and compare peer disclosures. Never let it decide the accounting treatment. A CA’s method.
