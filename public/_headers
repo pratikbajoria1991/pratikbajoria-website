@@ -42,6 +42,13 @@
   Content-Type: text/plain; charset=utf-8
   Cache-Control: public, max-age=3600
 
+# Clean Markdown twins must not be indexed alongside their canonical HTML pages.
+# The Worker also emits a canonical Link header; this fallback covers static serving.
+/*.md
+  Content-Type: text/markdown; charset=utf-8
+  X-Robots-Tag: noindex, follow
+  Cache-Control: public, max-age=300
+
 # Build output of scripts/build-md.mjs. The worker serves these at /<path>.md and /api/md/*
 # with its own headers; direct /md/* hits are 301'd, this only covers the raw asset.
 /md/*
