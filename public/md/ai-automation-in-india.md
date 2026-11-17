@@ -117,7 +117,7 @@ The full version, with an opportunity scoring method, is in [a 90-day AI opportu
 ### CRM, research and tool choices
 
 - [Zoho CRM, HubSpot and Your Books: A CRM-to-Accounting Handoff for Indian SMEs](https://pratikbajoria.com/blog/zoho-crm-hubspot-crm-integration-finance-workflows)
-- [HubSpot vs Spreadsheet CRM: The Real Switching Cost](https://pratikbajoria.com/blog/2026-09-27-hubspot-vs-spreadsheet-crm-the-real-switching-cost)
+- [Build a Lead-Generation System Using AI and Email Automation](https://pratikbajoria.com/blog/build-lead-generation-system-ai-email-automation)
 - [Best AI Tools for Business Research and Competitive Analysis](https://pratikbajoria.com/blog/best-ai-tools-business-research-competitive-analysis)
 
 ## Frequently asked questions
