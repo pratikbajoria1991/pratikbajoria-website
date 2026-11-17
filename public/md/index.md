@@ -1,13 +1,13 @@
 # I help companies actually implement AI.
 
-> Pratik Bajoria, a Chartered Accountant in Kolkata, is an AI consultant for CA firms and businesses in India. Work starts with a two-week AI opportunity audit and a 90-day roadmap.
+> Pratik Bajoria helps Indian businesses automate workflows with practical AI across operations, sales, customer service and finance. Chartered Accountant, Kolkata.
 
 Canonical: https://pratikbajoria.com/
 Last updated: 2026-11-11
 
 Now taking AI implementation engagements
 
-I'm a Chartered Accountant in Kolkata and an AI consultant for CA firms and businesses in India. I have more than nine years' post-qualification experience, including time at a Big 4 firm. I help teams find where AI saves time or reduces errors, then ship a first release with review controls. Most engagements start with a two-week AI opportunity audit.
+I'm a Chartered Accountant in Kolkata with more than nine years of post-qualification experience, including time at a Big 4 firm. I help startups, MSMEs and established companies automate workflows across sales, customer service, operations and finance, then ship a first release with human review and measurable outcomes. Most engagements start with a two-week AI opportunity audit.
 
 Alongside AI work, I make selective cross-border introductions — Indian businesses to international clients and buyers, overseas companies to vetted Indian partners. [Cross-border partnerships →](https://crossborder.pratikbajoria.com/)
 
@@ -19,7 +19,7 @@ Alongside AI work, I make selective cross-border introductions — Indian busine
 
 **Findost** Founder
 
-Last updated 11 November 2026 · [CA Pratik Bajoria](https://pratikbajoria.com/about), Kolkata
+Last updated 17 November 2026 · [CA Pratik Bajoria](https://pratikbajoria.com/about), Kolkata
 
 What I do 01 — 06
 
