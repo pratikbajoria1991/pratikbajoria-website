@@ -3,7 +3,7 @@
 > AI for chartered accountants in India: a practical map for CA firms on which workflows to start with, client-data controls, human review and pilots.
 
 Canonical: https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india
-Last updated: 2026-11-16
+Last updated: 2026-11-23
 
 CA insights · 2026-09-25 · Updated 11 November 2026 · 8 min read
 
@@ -141,6 +141,8 @@ Since 1 April 2026 a practice runs two income-tax laws at once: the 1961 Act for
 
 The third advance tax instalment for 2026-27 falls on 15 December 2026, the first under the new Act, and it is the one with no safe margin: anything short of 75% of the tax on the income finally returned attracts interest under section 425. Read [how a CA firm can use AI for the 15 December advance tax instalment](https://pratikbajoria.com/blog/2026-11-16-advance-tax-by-15-december-2026-how-a-ca-firm-can-use-ai-without-getting-the-estimate-wrong) for a worksheet-and-review workflow that keeps the estimate, rates and challan with named people.
 
+Year-end is also when the creditors’ ledger gets tested: GST credit on bills unpaid after 180 days has to be reversed under rule 37, late payments to micro and small suppliers delay the income-tax deduction, and auditors start balance confirmations under SA 505. Read [how a CA can use AI for vendor reconciliation and year-end balance confirmations](https://pratikbajoria.com/blog/2026-11-23-ai-for-vendor-reconciliation-in-india-a-cas-method-for-year-end-balance-confirmations) for a matching workflow that keeps write-offs, reversals and confirmations with named people.
+
 ## Choosing the assistant itself: ChatGPT, Copilot or Gemini
 
 Once the rules are agreed, partners usually ask which assistant to license. My view is that the deciding factors are where client files already live, how clean folder permissions are, and what the vendor’s business terms say about training, retention and logs, not which demo looked best. I have set out a partner-ready rubric in [ChatGPT, Copilot or Gemini? How a CA firm in India should choose an AI assistant](https://pratikbajoria.com/blog/2026-10-05-chatgpt-vs-copilot-vs-gemini-how-a-ca-firm-in-india-should-choose-an-ai-assistant), alongside the [AI controls checklist for CA firms](https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india) that applies whichever tool you pick.
@@ -194,6 +196,7 @@ Use this as the index. The first list covers running a CA practice with AI; the 
 
 ### Tax, audit and GST workflows
 
+- [AI for Vendor Reconciliation in India: A CA’s Method for Year-End Balance Confirmations](https://pratikbajoria.com/blog/2026-11-23-ai-for-vendor-reconciliation-in-india-a-cas-method-for-year-end-balance-confirmations)
 - [Advance Tax by 15 December 2026: How a CA Firm Can Use AI Without Getting the Estimate Wrong](https://pratikbajoria.com/blog/2026-11-16-advance-tax-by-15-december-2026-how-a-ca-firm-can-use-ai-without-getting-the-estimate-wrong)
 - [Income-tax Act, 2025 Transition: How a CA Firm Can Use AI to Remap Templates Safely](https://pratikbajoria.com/blog/2026-11-11-income-tax-act-2025-transition-how-a-ca-firm-can-use-ai-to-remap-templates-safely)
 - [AI for GSTR-9 and GSTR-9C: What a CA Can Automate Before 31 December](https://pratikbajoria.com/blog/2026-11-09-ai-for-gstr-9-and-gstr-9c-what-a-ca-can-automate-before-31-december)

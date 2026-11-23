@@ -115,5 +115,12 @@
     "A December shortfall attracts 3% interest under section 425, measured against the income finally returned, with no safe margin.",
     "Let AI build worksheets from books and the AIS, flag new income and draft client notes.",
     "Keep the estimate, the rate table and the challan details with named people, and pay under the 2025 Act for tax year 2026-27."
+  ],
+  "2026-11-23-ai-for-vendor-reconciliation-in-india-a-cas-method-for-year-end-balance-confirmations": [
+    "Vendor reconciliation is reading and matching work that AI does well: extracting statements in any format, proposing matches and sorting differences by reason.",
+    "Two December tests depend on it: GST credit on invoices unpaid after 180 days must be reversed under rule 37, and late payments to micro and small suppliers delay the income-tax deduction.",
+    "SA 505 requires the auditor to control confirmation requests; an AI agent emailing vendors from the client’s mailbox is not an external confirmation.",
+    "Treat any vendor reply that changes bank details as a fraud risk to verify by call-back, never as a reconciliation item.",
+    "Let AI extract, match, sort and draft; keep write-offs, GST reversals and MSME status with named people."
   ]
 }

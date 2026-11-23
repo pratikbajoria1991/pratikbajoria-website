@@ -1,8 +1,8 @@
 {
   "site": "https://pratikbajoria.com",
   "name": "Pratik Bajoria — AI Implementation for Business",
-  "generated": "2026-11-16",
-  "count": 80,
+  "generated": "2026-11-23",
+  "count": 81,
   "routes": [
     {
       "path": "/",
@@ -72,7 +72,7 @@
       "summary": "Index of every article on pratikbajoria.com about AI for Chartered Accountants in India, AI automation, finance implementation and business tools, newest first, each with a one-line summary.",
       "section": "core",
       "lastModified": "2026-11-13",
-      "tokens": 5216
+      "tokens": 5315
     },
     {
       "path": "/startup-operations",
@@ -425,6 +425,16 @@
       "tokens": 3717
     },
     {
+      "path": "/blog/2026-11-23-ai-for-vendor-reconciliation-in-india-a-cas-method-for-year-end-balance-confirmations",
+      "url": "https://pratikbajoria.com/blog/2026-11-23-ai-for-vendor-reconciliation-in-india-a-cas-method-for-year-end-balance-confirmations",
+      "markdown": "https://pratikbajoria.com/blog/2026-11-23-ai-for-vendor-reconciliation-in-india-a-cas-method-for-year-end-balance-confirmations.md",
+      "title": "AI for Vendor Reconciliation in India: A CA’s Method for Year-End Balance Confirmations",
+      "summary": "How a CA can use AI to reconcile vendor ledgers before the December close: statement matching, the 180-day GST and MSME checks, and SA 505 confirmations kept with the auditor.",
+      "section": "posts",
+      "lastModified": "2026-11-23",
+      "tokens": 4321
+    },
+    {
       "path": "/blog/ai-controls-checklist-ca-firms-india",
       "url": "https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india",
       "markdown": "https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india.md",
@@ -441,8 +451,8 @@
       "title": "AI for Chartered Accountants in India: A Practical Implementation Hub",
       "summary": "Hub on AI for chartered accountants in India: which workflows to start with, client-data controls, human review, and how an AI consultant for CA firms works.",
       "section": "posts",
-      "lastModified": "2026-11-16",
-      "tokens": 8592
+      "lastModified": "2026-11-23",
+      "tokens": 8791
     },
     {
       "path": "/blog/ai-for-chartered-accountants-practical-use-cases-and-controls",
