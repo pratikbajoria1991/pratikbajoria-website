@@ -1291,14 +1291,14 @@ const site = {
       if (request.method !== 'GET' && request.method !== 'HEAD') return new Response('Method Not Allowed', { status: 405, headers: { Allow: 'GET, HEAD' } });
       if (url.pathname === '/msme-services' || url.pathname === '/msme-services.html' || url.pathname === '/index.html') return absoluteRedirect(url, '/');
       if (url.pathname === '/sitemap.xml') {
-        const xml = `<?xml version="1.0" encoding="UTF-8"?>\\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\\n  <url><loc>${MSME_ORIGIN}/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>\\n</urlset>\\n`;
+        const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>${MSME_ORIGIN}/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>\n</urlset>\n`;
         return new Response(request.method === 'HEAD' ? null : xml, { status: 200, headers: { 'Content-Type': 'application/xml; charset=utf-8', 'Cache-Control': 'public, max-age=3600', 'X-Robots-Tag': 'noindex, follow' } });
       }
       if (url.pathname === '/robots.txt') {
         const sourceRequest = new Request(new URL('/robots.txt', url), { headers: request.headers });
         const source = await env.ASSETS.fetch(internalAssetRequest(sourceRequest, '/robots.txt'));
-        const rules = source.status === 200 ? (await source.text()).replace(/^\\s*Sitemap:.*$/gmi, '').replace(/\\s*$/, '\\n') : 'User-agent: *\\nAllow: /\\nDisallow: /api/\\n';
-        const body = `${rules}\\nSitemap: ${MSME_ORIGIN}/sitemap.xml\\n`;
+        const rules = source.status === 200 ? (await source.text()).replace(/^\s*Sitemap:.*$/gmi, '').replace(/\\s*$/, '\n') : 'User-agent: *\nAllow: /\nDisallow: /api/\n';
+        const body = `${rules}\nSitemap: ${MSME_ORIGIN}/sitemap.xml\n`;
         return new Response(request.method === 'HEAD' ? null : body, { status: 200, headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'public, max-age=3600' } });
       }
       if (url.pathname === '/') {
