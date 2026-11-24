@@ -35,6 +35,7 @@ I write every post under my own name, and where a figure appears it links to its
 ## As featured in
 
 - [CAclubindia: AI for CA students, what helps exam preparation and what does not](https://www.caclubindia.com/articles/ai-for-ca-students-what-helps-exam-preparation-and-what-does-not-56512.asp) (28 October 2026)
+- [Taxmann expert opinion: AI-drafted replies to tax notices and the reviewer’s role](https://www.taxmann.com/research/gst-new/top-story/105010000000029284/ai-drafted-replies-to-tax-notices-where-the-draft-bot-fits-and-where-the-reviewer-stays-experts-opinion) (30 October 2026)
 
 ## Elsewhere
 

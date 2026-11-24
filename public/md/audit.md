@@ -303,7 +303,7 @@ Yes. Remote interviews and screen-shares work well. On-site days can be scoped w
 
 ### How do I start?
 
-Book a discovery call, or message on WhatsApp mentioning the Audit. Expect a reply within one business day.
+Request a discovery call, or message on WhatsApp mentioning the Audit. Expect a reply within one business day.
 
 ### What is an AI opportunity audit for CA firms in India?
 

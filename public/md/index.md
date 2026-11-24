@@ -53,6 +53,8 @@ Production-grade AI systems built on your existing stack — deployed, tested an
 - CRM, ERP and finance integrations
 - Internal copilots and assistants
 
+[Explore the workflow automation playbook →](https://pratikbajoria.com/workflow-automation-with-ai-for-mid-market)
+
 03 / FINANCE
 
 ### Finance & Compliance AI
@@ -317,7 +319,7 @@ Architecture, retention and access controls are scoped to your policies. Sensiti
 
 ### How do I get in touch?
 
-Book a discovery call, message Pratik on WhatsApp, connect on LinkedIn, or email [hello@pratikbajoria.com](mailto:hello@pratikbajoria.com). He aims to reply within one business day.
+Request a discovery call, message Pratik on WhatsApp, connect on LinkedIn, or email [hello@pratikbajoria.com](mailto:hello@pratikbajoria.com). He aims to reply within one business day.
 
 ### What does an AI consultant for CA firms in India do?
 
@@ -335,7 +337,7 @@ Get in touch OPEN / 01
 
 ## Let’s find your *first AI win.*
 
-Whether you’re exploring where to start or ready to build, a short conversation will tell us both whether there’s a fit. Book a call, message me on WhatsApp, or connect on LinkedIn.
+Whether you’re exploring where to start or ready to build, a short conversation will tell us both whether there’s a fit. Request a call, message me on WhatsApp, or connect on LinkedIn.
 
 **⌕**
 
@@ -367,8 +369,8 @@ Corporate training and events.
 - [CA Pratik Bajoria](https://pratikbajoria.com/about)
 - [Audit](https://pratikbajoria.com/audit)
 - [CA firms guide](https://pratikbajoria.com/ai-opportunity-audit-for-ca-firms)
+- [Explore the workflow automation playbook](https://pratikbajoria.com/workflow-automation-with-ai-for-mid-market)
 - [How to start AI implementation](https://pratikbajoria.com/how-to-start-ai-implementation)
 - [AI for finance teams](https://pratikbajoria.com/ai-implementation-for-finance-teams)
-- [Workflow automation (mid-market)](https://pratikbajoria.com/workflow-automation-with-ai-for-mid-market)
 - [CA insights · 2026-09-25 **AI for Chartered Accountants in India** A practical hub for CA AI implementation in India: control rubric, thin releases, and links to tooling and pilots.](https://pratikbajoria.com/blog/ai-for-chartered-accountants-in-india)
 - [CA insights · 2026-10-04 **AI for Chartered Accountants: Practical Use Cases and Control Gates** Five bounded use cases, six control gates and a practical 90-day rollout for responsible CA-led AI adoption.](https://pratikbajoria.com/blog/ai-for-chartered-accountants-practical-use-cases-and-controls)

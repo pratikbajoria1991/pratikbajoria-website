@@ -71,6 +71,20 @@ Focus your team on opportunities that appear to fit your products, credentials, 
 - Review document gaps and support bid preparation and pricing inputs.
 - Submission requires your approval; selection remains with the procuring authority.
 
+Official references 04
+
+## Verify routes and rules *at the source.*
+
+Use these government and regulator sources to check current processes, eligibility and requirements. Rules and programmes can change; the issuing authority’s latest guidance takes precedence.
+
+- [MSME ODR Portal ↗](https://odr.msme.gov.in/) Ministry of MSME portal for delayed-payment dispute resolution.
+- [RBI TReDS Directions, 2026 ↗](https://www.rbi.org.in/scripts/NotificationUser.aspx?Id=13526) Regulatory directions for Trade Receivables Discounting System platforms.
+- [Udyam Registration ↗](https://udyamregistration.gov.in/) Official MSME registration information from the Ministry of MSME.
+- [Government e-Marketplace (GeM) ↗](https://gem.gov.in/) Official marketplace for government procurement and seller information.
+- [myScheme ↗](https://www.myscheme.gov.in/) Government scheme discovery; confirm requirements with the scheme owner.
+
+These are independent public resources. A listing or reference does not mean a business is eligible, a claim will succeed, financing will be approved, or a tender will be awarded.
+
 **Engagement boundaries:** Work starts only after the parties agree deliverables, access to information, provider responsibilities and fees in writing. Do not share sensitive financial, customer or identity data through an initial enquiry.
 
 How an engagement starts 02

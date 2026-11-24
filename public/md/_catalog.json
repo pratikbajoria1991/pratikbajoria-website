@@ -1,7 +1,7 @@
 {
   "site": "https://pratikbajoria.com",
   "name": "Pratik Bajoria — AI Implementation for Business",
-  "generated": "2026-11-23",
+  "generated": "2026-11-24",
   "count": 81,
   "routes": [
     {
@@ -12,7 +12,7 @@
       "summary": "Homepage of Pratik Bajoria, a Chartered Accountant in Kolkata and AI consultant for CA firms and businesses in India: AI Opportunity Audit, workflow automation, finance and compliance AI, workshops, process, FAQ and contact details.",
       "section": "core",
       "lastModified": "2026-11-11",
-      "tokens": 4527
+      "tokens": 4560
     },
     {
       "path": "/audit",
@@ -22,7 +22,7 @@
       "summary": "Service page for the AI Opportunity Audit by Pratik Bajoria: a fixed-fee two-week sprint, led by a Chartered Accountant in Kolkata, that maps business and CA-firm workflows, scores AI use cases and produces a prioritised 90-day roadmap.",
       "section": "core",
       "lastModified": "2026-11-11",
-      "tokens": 5061
+      "tokens": 5062
     },
     {
       "path": "/scorecard",
@@ -62,7 +62,7 @@
       "summary": "Practical MSME support for overdue receivables, scheme discovery, debt readiness, excess inventory and tender opportunities. Scope and outcomes are confirmed case by case.",
       "section": "core",
       "lastModified": null,
-      "tokens": 1482
+      "tokens": 1757
     },
     {
       "path": "/blog",
@@ -152,7 +152,7 @@
       "summary": "Author page for CA Pratik Bajoria, a Kolkata-based Chartered Accountant (ex-Big 4, 9+ years post-qualification) and AI consultant for CA firms and businesses in India; founder of Findost; lists his four topic hubs, CAclubindia feature and profiles.",
       "section": "core",
       "lastModified": "2026-11-11",
-      "tokens": 1544
+      "tokens": 1614
     },
     {
       "path": "/privacy",
@@ -681,8 +681,8 @@
       "title": "AI Automation Agency vs Consultant in India: How to Choose",
       "summary": "Hiring help for AI automation in India? When an agency fits, when an independent consultant fits, and the questions to ask either before signing anything.",
       "section": "posts",
-      "lastModified": "2026-10-28",
-      "tokens": 1712
+      "lastModified": "2026-11-24",
+      "tokens": 1743
     },
     {
       "path": "/blog/2026-10-27-ai-agents-for-accounting-in-india-what-to-let-them-do-unsupervised",
