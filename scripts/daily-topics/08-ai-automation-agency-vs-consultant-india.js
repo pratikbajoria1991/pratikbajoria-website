@@ -67,5 +67,5 @@ module.exports = {
     { q: 'Do Indian AI governance rules affect automation projects?', a: 'MeitY’s India AI Governance Guidelines are principles-based and rely on existing laws, and the DPDP Rules, 2025 set a phased timeline for personal data duties. Both mean controls and data handling should be in scope from the start.' },
     { q: 'How do I test an AI provider before a big commitment?', a: 'Buy a short paid discovery and one narrow release run alongside your current process, then decide on a larger contract based on the measured result.' }
   ],
-  related: [L.AUTO_HUB, L.AUDIT, L.ROADMAP, L.CONTROLS]
+  related: [L.AUTO_HUB, L.AUDIT, { title: 'Workflow automation with AI for mid-market firms', url: '/workflow-automation-with-ai-for-mid-market' }, L.ROADMAP, L.CONTROLS]
 };
