@@ -3,7 +3,7 @@
 > Hiring help for AI automation in India? When an agency fits, when an independent consultant fits, and the questions to ask either before signing anything.
 
 Canonical: https://pratikbajoria.com/blog/2026-10-28-ai-automation-agency-vs-consultant-in-india-how-to-choose
-Last updated: 2026-10-28
+Last updated: 2026-11-24
 
 AI automation · 2026-10-28 · 4 min read
 
@@ -80,6 +80,7 @@ Buy a short paid discovery and one narrow release run alongside your current pro
 ## Related
 - [AI automation in India: a practical hub for business owners](https://pratikbajoria.com/ai-automation-in-india)
 - [The AI Opportunity Audit: a scoped 90-day map](https://pratikbajoria.com/audit)
+- [Workflow automation with AI for mid-market firms](https://pratikbajoria.com/workflow-automation-with-ai-for-mid-market)
 - [AI finance automation roadmap for CFOs and controllers](https://pratikbajoria.com/blog/2026-10-04-ai-finance-automation-roadmap-for-cfos-and-controllers)
 - [AI controls checklist for CA firms in India](https://pratikbajoria.com/blog/ai-controls-checklist-ca-firms-india)
 - [All articles](https://pratikbajoria.com/blog)
